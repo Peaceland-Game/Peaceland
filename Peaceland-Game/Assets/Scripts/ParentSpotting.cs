@@ -7,6 +7,7 @@ public class ParentSpotting : MonoBehaviour
     [SerializeField] float fov = 60.0f;
     [SerializeField] GameObject player;
     [SerializeField] GameObject eye;
+    [SerializeField] float speed;
     private RaycastHit hit;
 
     // Start is called before the first frame update
@@ -19,7 +20,10 @@ public class ParentSpotting : MonoBehaviour
     void Update()
     {
         if (LineOfSight(player))
+        {
             Debug.Log("Spotted");
+            //MoveTowards(player.transform);
+        }
     }
 
     public bool LineOfSight(GameObject player)
@@ -31,5 +35,12 @@ public class ParentSpotting : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void MoveTowards(Transform target)
+    {
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        transform.LookAt(target);
     }
 }
