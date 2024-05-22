@@ -26,7 +26,7 @@ public class PlayerSingleton : MonoBehaviour
     {
         foreach(GameObject obj in objects) 
         {
-
+            
         }
     }
 }
