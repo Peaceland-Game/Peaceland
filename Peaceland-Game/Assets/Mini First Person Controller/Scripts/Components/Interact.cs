@@ -10,27 +10,38 @@ public class Interact : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(key)) 
+        if (Input.GetKeyDown(key))
         {
-            foreach (GameObject obj in PlayerSingleton.instance.objects) 
+            if (PlayerSingleton.Instance.isLockpicking) return;
+
+            foreach (GameObject obj in PlayerSingleton.Instance.objects)
             {
-                if (obj.tag == "Item")
+                if (obj.CompareTag("Item"))
                 {
-                    PlayerSingleton.instance.objects.Remove(obj);
+                    PlayerSingleton.Instance.objects.Remove(obj);
                     Destroy(obj);
+                    return;
                 }
 
-                else if (obj.tag == "Door") 
+                else if (obj.CompareTag("Door"))
                 {
-                    obj.GetComponent<Door>().OpenDoor();
+                    //obj.GetComponent<Door>().OpenDoor(); return;
+                    obj.GetComponent<Door>().StartLockpicking();
+                        
+                    return;
                 }
             }
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
+            PlayerSingleton.Instance.EndLockPiking();
         }
     }
 }

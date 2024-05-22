@@ -8,7 +8,7 @@ public class SphereCollider : MonoBehaviour
     {
         if (other.gameObject.layer == 3)
         {
-            PlayerSingleton.instance.objects.Add(other.gameObject);
+            PlayerSingleton.Instance.objects.Add(other.gameObject);
         }
     }
 
@@ -16,7 +16,7 @@ public class SphereCollider : MonoBehaviour
     {
         if(other.gameObject.layer == 3) 
         {
-            PlayerSingleton.instance.objects.Remove(other.gameObject);
+            PlayerSingleton.Instance.objects.Remove(other.gameObject);
         }
     }
     // Start is called before the first frame update

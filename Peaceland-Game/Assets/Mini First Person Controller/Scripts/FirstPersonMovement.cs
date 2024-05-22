@@ -25,6 +25,7 @@ public class FirstPersonMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (PlayerSingleton.Instance.isLockpicking) return;
         // Update IsRunning from input.
         IsRunning = canRun && Input.GetKey(runningKey);
 

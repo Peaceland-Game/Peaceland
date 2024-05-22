@@ -17,6 +17,11 @@ namespace DoorScript
         public AudioSource asource;
         public AudioClip openDoor, closeDoor;
 
+
+
+        [SerializeField] LockBehaviour lockObject;
+        [SerializeField] GameObject lockParent;
+
         public enum DoorState
         {
             Moving,
@@ -35,7 +40,7 @@ namespace DoorScript
         void Update()
         {
             transform.localRotation = Quaternion.Slerp(transform.localRotation, target, Time.deltaTime * 5 * smooth);
-            if(Quaternion.Angle(transform.localRotation, target) <= 0.02f) { state = DoorState.NotMoving; }
+            if (Quaternion.Angle(transform.localRotation, target) <= 0.02f) { state = DoorState.NotMoving; }
         }
 
         public void OpenDoor()
@@ -43,13 +48,24 @@ namespace DoorScript
             if (state == DoorState.NotMoving)
             {
                 state = DoorState.Moving;
-                if(open) { target = Quaternion.Euler(0, DoorCloseAngle, 0); }
+                if (open) { target = Quaternion.Euler(0, DoorCloseAngle, 0); }
                 else { target = Quaternion.Euler(0, DoorOpenAngle, 0); }
 
                 open = !open;
                 asource.clip = open ? openDoor : closeDoor;
                 asource.Play();
             }
+        }
+        public void StartLockpicking()
+        {
+            if (open) return;
+            Debug.Log("Starting lockpick (door)");
+            lockParent.SetActive(true);
+            lockObject.StartLockPicking();
+            
+            PlayerSingleton.Instance.StartLockPicking(lockObject);
+
+
         }
     }
 }

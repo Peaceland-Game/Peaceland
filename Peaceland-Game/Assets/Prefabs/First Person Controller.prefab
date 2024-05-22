@@ -1422,7 +1422,7 @@ Transform:
   - {fileID: 5667860588956930621}
   - {fileID: 1352544216890081410}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1962559171986718761
 CapsuleCollider:
@@ -1534,7 +1534,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db621035a8bc3504ebc62532a81149ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lockPrefab: {fileID: 8797088779918493403, guid: 2730aff69cdc227468c9dc18cae79ccc,
+    type: 3}
+  lockCameraOffsetDist: 1
   objects: []
+  isLockpicking: 0
 --- !u!114 &-4624715040588936209
 MonoBehaviour:
   m_ObjectHideFlags: 0
