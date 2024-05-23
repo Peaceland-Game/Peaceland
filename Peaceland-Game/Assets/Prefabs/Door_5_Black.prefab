@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3191422060722740887}
   - component: {fileID: 2990029657966346789}
   - component: {fileID: 1649522625235769389}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Knob
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6428980556169664032}
   - component: {fileID: 2542196726784837146}
   - component: {fileID: 6792601700685614099}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,9 +203,9 @@ GameObject:
   - component: {fileID: 7140745107033865596}
   - component: {fileID: 7289640206654669815}
   - component: {fileID: 3835200533004519997}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -410,6 +410,8 @@ MonoBehaviour:
   asource: {fileID: 0}
   openDoor: {fileID: 8300000, guid: 44b63b0db16ce624b97e45ebde0a0971, type: 3}
   closeDoor: {fileID: 8300000, guid: bc37ad25465405a428a26ff0facd9a7b, type: 3}
+  lockObject: {fileID: 0}
+  lockParent: {fileID: 0}
   state: 1
 --- !u!1 &3358050202484190275
 GameObject:
@@ -420,7 +422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 263895230295920583}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Door_5_Black
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -435,7 +437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3358050202484190275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.000022888184, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_ConstrainProportionsScale: 1
   m_Children:
