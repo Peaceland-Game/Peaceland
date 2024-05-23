@@ -59,9 +59,10 @@ public class PlayerSingleton : MonoBehaviour
             door.playerPos.position.x,
             transform.position.y,
             door.playerPos.position.z);
-        // Debug.Log(transform.position);
-        // Debug.Log(door.transform.position);
-        //var lookDir = new Vector3(door.transform.position.x - transform.position.x, 0, door.transform.position.z - transform.position.z);
+       // Debug.Log(transform.position);
+       // Debug.Log(door.transform.position);
+        var lookDir = new Vector3(door.transform.position.x - transform.position.x, 0, door.transform.position.z - transform.position.z);
+        rb.velocity = Vector3.zero;
 
 
 
