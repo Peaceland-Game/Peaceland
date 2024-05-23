@@ -9,7 +9,7 @@ public class PlayerSingleton : MonoBehaviour
     public static PlayerSingleton Instance;
 
     [SerializeField] private GameObject lockPrefab;
-    [SerializeField] private float lockCameraOffsetDist = 1;
+    [SerializeField] private float lockCameraOffsetDist = 1.5f;
 
     public List<GameObject> objects;
 
@@ -23,8 +23,10 @@ public class PlayerSingleton : MonoBehaviour
     private Rigidbody rb;
 
     private Crouch crouchScript;
-    public const float MAX_NOISE_OUTPUT= 9f;
-    
+    public const float MAX_NOISE_OUTPUT = 9f;
+    public Vector3 lockCamOffset;
+
+    //-0.018 0.029
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +50,7 @@ public class PlayerSingleton : MonoBehaviour
         //Debug.Log(NoiseOutput);
         uiScript.UpdateNoiseBar(NoiseOutput, MAX_NOISE_OUTPUT);
     }
-    
+
     public void StartLockPicking(Door door)
     {
         if (isLockpicking) return;
@@ -57,16 +59,21 @@ public class PlayerSingleton : MonoBehaviour
             door.playerPos.position.x,
             transform.position.y,
             door.playerPos.position.z);
-       // Debug.Log(transform.position);
-       // Debug.Log(door.transform.position);
-        var lookDir = new Vector3(door.transform.position.x - transform.position.x, 0, door.transform.position.z - transform.position.z);
-       
+        // Debug.Log(transform.position);
+        // Debug.Log(door.transform.position);
+        //var lookDir = new Vector3(door.transform.position.x - transform.position.x, 0, door.transform.position.z - transform.position.z);
 
-        transform.localRotation = Quaternion.LookRotation(lookDir, Vector3.up);
+
+
+       // transform.localRotation = Quaternion.LookRotation(lookDir, Vector3.up);
         //firstPersonLookCamera.transform.rotation = Quaternion.identity;
 
         isLockpicking = true;
         activeLock = door.lockObject;
+        activeLock.transform.parent = firstPersonLookCamera.transform;
+        activeLock.transform.localPosition = -Camera.main.transform.forward * lockCameraOffsetDist;
+        activeLock.transform.localPosition += -lockCamOffset.x * transform.right;
+        activeLock.transform.localPosition += lockCamOffset.y * -transform.up;
         uiScript.ShowLockPickRules();
         //var lockPos = transform.position;// + Camera.main.transform.forward * lockCameraOffsetDist;
         //var lockRotation = Quaternion.Euler(-90, 0, 0);
@@ -84,8 +91,8 @@ public class PlayerSingleton : MonoBehaviour
         uiScript.HideLockPickRules();
         activeLock.CancelLockpick();
         activeLock = null;
-      //  Debug.Log("End Lockpicking");
+        //  Debug.Log("End Lockpicking");
     }
 
-    
+
 }

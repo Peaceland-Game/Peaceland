@@ -149,10 +149,13 @@ public class LockBehaviour : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             angleIndex = ringRotationIndicies[activeIndex];
-            //Debug.Log("rotation left");
             ++angleIndex;
 
-            if (angleIndex >= angles.Count) angleIndex = 0;
+            if (angleIndex >= angles.Count)
+                angleIndex = 0;
+            else if (angleIndex < 0)
+                angleIndex = angles.Count - 1;
+
             ringRotationIndicies[activeIndex] = angleIndex;
 
             rings_active[activeIndex].transform.localRotation = Quaternion.Euler(0, angles[angleIndex], 0);
@@ -160,11 +163,16 @@ public class LockBehaviour : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            // Debug.Log("rotation right");
             angleIndex = ringRotationIndicies[activeIndex];
             --angleIndex;
+
+            if (angleIndex >= angles.Count)
+                angleIndex = 0;
+            else if (angleIndex < 0)
+                angleIndex = angles.Count - 1;
+
             ringRotationIndicies[activeIndex] = angleIndex;
-            if (angleIndex < 0) angleIndex = angles.Count - 1;
+
             rings_active[activeIndex].transform.localRotation = Quaternion.Euler(0, angles[angleIndex], 0);
             rings_inactive[activeIndex].transform.localRotation = Quaternion.Euler(0, angles[angleIndex], 0);
         }
