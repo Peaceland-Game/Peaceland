@@ -10,6 +10,7 @@ public class PlayerSingleton : MonoBehaviour
 
     [SerializeField] private GameObject lockPrefab;
     [SerializeField] private float lockCameraOffsetDist = 1.5f;
+    [SerializeField] private Transform lockAnchor;
 
     public List<GameObject> objects;
 
@@ -71,10 +72,10 @@ public class PlayerSingleton : MonoBehaviour
 
         isLockpicking = true;
         activeLock = door.lockObject;
-        activeLock.transform.parent = firstPersonLookCamera.transform;
-        activeLock.transform.localPosition = -Camera.main.transform.forward * lockCameraOffsetDist;
-        activeLock.transform.localPosition += -lockCamOffset.x * transform.right;
-        activeLock.transform.localPosition += lockCamOffset.y * -transform.up;
+        activeLock.transform.parent = lockAnchor;
+        activeLock.transform.localPosition = Vector3.zero;
+        //activeLock.transform.localPosition += -lockCamOffset.x * transform.right;
+        //activeLock.transform.localPosition += lockCamOffset.y * -transform.up;
         uiScript.ShowLockPickRules();
         //var lockPos = transform.position;// + Camera.main.transform.forward * lockCameraOffsetDist;
         //var lockRotation = Quaternion.Euler(-90, 0, 0);
