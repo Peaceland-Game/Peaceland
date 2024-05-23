@@ -9,6 +9,8 @@ public class SphereCollider : MonoBehaviour
         if (other.gameObject.layer == 3)
         {
             PlayerSingleton.Instance.objects.Add(other.gameObject);
+            PlayerSingleton.Instance.uiScript.ShowKeyIcon();
+            PlayerSingleton.Instance.uiScript.PositionKeyIcon(other.gameObject.transform.position);
         }
     }
 
@@ -17,6 +19,7 @@ public class SphereCollider : MonoBehaviour
         if(other.gameObject.layer == 3) 
         {
             PlayerSingleton.Instance.objects.Remove(other.gameObject);
+            PlayerSingleton.Instance.uiScript.HideKeyIcon();
         }
     }
     // Start is called before the first frame update

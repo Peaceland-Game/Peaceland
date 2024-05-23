@@ -14,6 +14,8 @@ public class PlayerSingleton : MonoBehaviour
 
     public bool isLockpicking = false;
 
+    public InterfaceBehaviour uiScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +32,7 @@ public class PlayerSingleton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (GameObject obj in objects)
-        {
-            
-        }
+        
     }
     public void StartLockPicking(LockBehaviour lockO)
     {
@@ -54,4 +53,6 @@ public class PlayerSingleton : MonoBehaviour
         isLockpicking = false;
       //  Debug.Log("End Lockpicking");
     }
+
+    
 }

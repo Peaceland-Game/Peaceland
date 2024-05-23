@@ -58,13 +58,14 @@ namespace DoorScript
         }
         public void StartLockpicking()
         {
-            if (!locked)
+            if (!locked || !lockObject || !lockParent)
             {
                 OpenDoor();
                 return;
             }
             if (open) return;
-            Debug.Log("Starting lockpick (door)");
+            //Debug.Log("Starting lockpick (door)");
+
             lockParent.SetActive(true);
             lockObject.StartLockPicking();
             
