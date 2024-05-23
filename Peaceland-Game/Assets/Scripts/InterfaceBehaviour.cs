@@ -19,7 +19,7 @@ public class InterfaceBehaviour : MonoBehaviour
 
     public void PositionKeyIcon(Vector3 itemWorldPos)
     {
-        keySprite.transform.localPosition = Camera.main.WorldToScreenPoint(itemWorldPos);
+        //keySprite.transform.localPosition = Camera.main.WorldToScreenPoint(itemWorldPos);
     }
     public void HideKeyIcon()
     {

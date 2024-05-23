@@ -21,7 +21,7 @@ public class ItemHighlighter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject);
+        //Debug.Log(other.gameObject);
         if (other.gameObject.layer == PLAYER_INTERACT_LAYER)
         {
             if (keys[0] && keys[1])
