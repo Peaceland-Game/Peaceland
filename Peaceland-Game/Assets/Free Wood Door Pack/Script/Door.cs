@@ -17,7 +17,7 @@ namespace DoorScript
         public AudioSource asource;
         public AudioClip openDoor, closeDoor;
 
-
+        public bool locked = false;
 
         [SerializeField] LockBehaviour lockObject;
         [SerializeField] GameObject lockParent;
@@ -58,6 +58,11 @@ namespace DoorScript
         }
         public void StartLockpicking()
         {
+            if (!locked)
+            {
+                OpenDoor();
+                return;
+            }
             if (open) return;
             Debug.Log("Starting lockpick (door)");
             lockParent.SetActive(true);

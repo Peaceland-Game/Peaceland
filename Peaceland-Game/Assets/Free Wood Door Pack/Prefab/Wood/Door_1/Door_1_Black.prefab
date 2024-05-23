@@ -222,8 +222,9 @@ MonoBehaviour:
   asource: {fileID: 0}
   openDoor: {fileID: 8300000, guid: 44b63b0db16ce624b97e45ebde0a0971, type: 3}
   closeDoor: {fileID: 8300000, guid: bc37ad25465405a428a26ff0facd9a7b, type: 3}
-  lockObject: {fileID: 0}
-  lockParent: {fileID: 0}
+  locked: 0
+  lockObject: {fileID: 5509232232733585950}
+  lockParent: {fileID: 7081031712713002746}
   state: 1
 --- !u!1 &1831504449878450
 GameObject:
@@ -514,6 +515,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lock_prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 829580035613607776, guid: f0b8ea43dcf031b47861705135885c29,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
