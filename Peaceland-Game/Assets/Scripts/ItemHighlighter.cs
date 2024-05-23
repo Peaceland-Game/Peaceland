@@ -21,14 +21,26 @@ public class ItemHighlighter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject);
         if (other.gameObject.layer == PLAYER_INTERACT_LAYER)
         {
-
+            if (keys[0] && keys[1])
+            {
+                keys[0].SetActive(false);
+                keys[1].SetActive(true);
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        
+        if (other.gameObject.layer == PLAYER_INTERACT_LAYER)
+        {
+            if (keys[0] && keys[1])
+            {
+                keys[0].SetActive(true);
+                keys[1].SetActive(false);
+            }
+        }
     }
 }
