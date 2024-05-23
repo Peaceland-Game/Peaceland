@@ -23,6 +23,7 @@ public class Zoom : MonoBehaviour
 
     void Update()
     {
+        if (PlayerSingleton.Instance.isLockpicking) return;
         // Update the currentZoom and the camera's fieldOfView.
         currentZoom += Input.mouseScrollDelta.y * sensitivity * .05f;
         currentZoom = Mathf.Clamp01(currentZoom);

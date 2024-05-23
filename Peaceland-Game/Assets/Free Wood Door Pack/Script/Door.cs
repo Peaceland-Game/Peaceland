@@ -19,8 +19,8 @@ namespace DoorScript
 
         public bool locked = false;
 
-        [SerializeField] LockBehaviour lockObject;
-        [SerializeField] GameObject lockParent;
+        public LockBehaviour lockObject;
+        public Transform playerPos;
 
         public enum DoorState
         {
@@ -56,9 +56,14 @@ namespace DoorScript
                 asource.Play();
             }
         }
+        public void Unlock()
+        {
+            locked  = false;
+            OpenDoor();
+        }
         public void StartLockpicking()
         {
-            if (!locked || !lockObject || !lockParent)
+            if (!locked || !lockObject)
             {
                 OpenDoor();
                 return;
@@ -66,10 +71,10 @@ namespace DoorScript
             if (open) return;
             //Debug.Log("Starting lockpick (door)");
 
-            lockParent.SetActive(true);
+            lockObject.gameObject.SetActive(true);
             lockObject.StartLockPicking();
             
-            PlayerSingleton.Instance.StartLockPicking(lockObject);
+            PlayerSingleton.Instance.StartLockPicking(this);
 
 
         }

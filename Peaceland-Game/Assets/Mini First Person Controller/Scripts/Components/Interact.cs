@@ -33,7 +33,8 @@ public class Interact : MonoBehaviour
                 else if (obj.CompareTag("Door"))
                 {
                     //obj.GetComponent<Door>().OpenDoor(); return;
-                    obj.GetComponent<Door>().StartLockpicking();
+                    var doorScript = obj.GetComponent<Door>();
+                    doorScript.StartLockpicking();
                     PlayerSingleton.Instance.uiScript.HideKeyIcon();
                     return;
                 }

@@ -12,7 +12,7 @@ public class LockBehaviour : MonoBehaviour
     private
     GameObject[] rings_active = new GameObject[3];
     [SerializeField]
-    private GameObject slider;
+    private GameObject[] slider = new GameObject[2];
     [SerializeField] private Transform parent;
 
     int activeIndex = 0;
@@ -78,6 +78,7 @@ public class LockBehaviour : MonoBehaviour
         }
         if (b == false)
         {
+            StartCoroutine(FlashSlider(1, .25f));
             Debug.Log("locks not aligned");
 
         }
@@ -88,24 +89,58 @@ public class LockBehaviour : MonoBehaviour
         }
 
     }
+    public void CancelLockpick()
+    {
+        isActiveLock = false;
+        gameObject.SetActive(false);
+
+    }
     private IEnumerator MoveSlider()
     {
-        Vector3 startPos = slider.transform.localPosition;
+        Vector3 startPos = slider[0].transform.localPosition;
         float elapsedTime = 0f;
 
         while (elapsedTime < sliderMoveDuration)
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / sliderMoveDuration;
-            slider.transform.localPosition = Vector3.Lerp(startPos, sliderEndPos, t);
+            slider[0].transform.localPosition = Vector3.Lerp(startPos, sliderEndPos, t);
             yield return null;
         }
 
-        slider.transform.position = sliderEndPos;
+        slider[0].transform.position = sliderEndPos;
         PlayerSingleton.Instance.EndLockPiking();
-        door.OpenDoor();
+        door.Unlock();
         gameObject.SetActive(false);
 
+    }
+
+    private IEnumerator FlashSlider(float eventDuration, float flashDuration)
+    {
+        float elapsedTime = 0f;
+        bool isSlider0Active = true;
+
+        slider[0].SetActive(true);
+        slider[1].SetActive(false);
+
+        while (elapsedTime < eventDuration)
+        {
+            float flashTime = 0f;
+            while (flashTime < flashDuration)
+            {
+                flashTime += Time.deltaTime;
+                yield return null;
+            }
+
+            isSlider0Active = !isSlider0Active;
+            slider[0].SetActive(isSlider0Active);
+            slider[1].SetActive(!isSlider0Active);
+
+            elapsedTime += flashDuration;
+        }
+
+        slider[0].SetActive(true);
+        slider[1].SetActive(false);
     }
 
     public void HandlePlayerInteraction()

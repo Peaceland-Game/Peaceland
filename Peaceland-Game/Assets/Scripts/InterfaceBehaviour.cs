@@ -5,6 +5,7 @@ using UnityEngine;
 public class InterfaceBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject keySprite;
+    [SerializeField] private GameObject lockPickRules;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +29,13 @@ public class InterfaceBehaviour : MonoBehaviour
     public void ShowKeyIcon()
     {
         keySprite.SetActive(true);
+    }
+    public void HideLockPickRules()
+    {
+        lockPickRules.SetActive(false);
+    }
+    public void ShowLockPickRules()
+    {
+        lockPickRules.SetActive(true);
     }
 }

@@ -1,3 +1,4 @@
+using DoorScript;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,8 +14,10 @@ public class PlayerSingleton : MonoBehaviour
     public List<GameObject> objects;
 
     public bool isLockpicking = false;
+    private LockBehaviour activeLock;
 
     public InterfaceBehaviour uiScript;
+    public FirstPersonLook firstPersonLookCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -34,23 +37,41 @@ public class PlayerSingleton : MonoBehaviour
     {
         
     }
-    public void StartLockPicking(LockBehaviour lockO)
+    public void StartLockPicking(Door door)
     {
         if (isLockpicking) return;
+
+        transform.position = new Vector3(
+            door.playerPos.position.x,
+            transform.position.y,
+            door.playerPos.position.z);
+       // Debug.Log(transform.position);
+       // Debug.Log(door.transform.position);
+        var lookDir = new Vector3(door.transform.position.x - transform.position.x, 0, door.transform.position.z - transform.position.z);
+       
+
+        transform.localRotation = Quaternion.LookRotation(lookDir, Vector3.up);
+        //firstPersonLookCamera.transform.rotation = Quaternion.identity;
+
         isLockpicking = true;
+        activeLock = door.lockObject;
+        uiScript.ShowLockPickRules();
         //var lockPos = transform.position;// + Camera.main.transform.forward * lockCameraOffsetDist;
         //var lockRotation = Quaternion.Euler(-90, 0, 0);
         //Debug.Log(lockPos +"\n"+ lockRotation);
         //var activeLock = Instantiate(lockPrefab, lockPos, lockRotation);
-    
-        
-       // Debug.Log("Start Lockpicking");
+
+
+        // Debug.Log("Start Lockpicking");
 
     }
     public void EndLockPiking()
     {
         if (!isLockpicking) return;
         isLockpicking = false;
+        uiScript.HideLockPickRules();
+        activeLock.CancelLockpick();
+        activeLock = null;
       //  Debug.Log("End Lockpicking");
     }
 
