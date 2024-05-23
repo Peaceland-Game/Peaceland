@@ -25,6 +25,7 @@ public class Interact : MonoBehaviour
                 if (obj.CompareTag("Item"))
                 {
                     PlayerSingleton.Instance.objects.Remove(obj);
+                    PlayerSingleton.Instance.uiScript.HideKeyIcon();
                     Destroy(obj);
                     return;
                 }
@@ -33,7 +34,7 @@ public class Interact : MonoBehaviour
                 {
                     //obj.GetComponent<Door>().OpenDoor(); return;
                     obj.GetComponent<Door>().StartLockpicking();
-                        
+                    PlayerSingleton.Instance.uiScript.HideKeyIcon();
                     return;
                 }
             }
