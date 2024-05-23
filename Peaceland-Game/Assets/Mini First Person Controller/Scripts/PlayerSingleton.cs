@@ -60,7 +60,7 @@ public class PlayerSingleton : MonoBehaviour
        // Debug.Log(transform.position);
        // Debug.Log(door.transform.position);
         var lookDir = new Vector3(door.transform.position.x - transform.position.x, 0, door.transform.position.z - transform.position.z);
-       
+        rb.velocity = Vector3.zero;
 
         transform.localRotation = Quaternion.LookRotation(lookDir, Vector3.up);
         //firstPersonLookCamera.transform.rotation = Quaternion.identity;
