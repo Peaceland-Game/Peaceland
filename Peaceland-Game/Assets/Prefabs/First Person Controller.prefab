@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920149295939859572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.112, z: -1.738}
+  m_LocalPosition: {x: 0, y: -0.112, z: 1.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,7 +48,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920149295939859572}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1933,7 +1933,7 @@ Transform:
   - {fileID: 5667860588956930621}
   - {fileID: 1352544216890081410}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1962559171986718761
 CapsuleCollider:
@@ -2048,12 +2048,13 @@ MonoBehaviour:
   lockPrefab: {fileID: 8797088779918493403, guid: 2730aff69cdc227468c9dc18cae79ccc,
     type: 3}
   lockCameraOffsetDist: 1.5
+  lockAnchor: {fileID: 5958901375063194157}
   objects: []
   isLockpicking: 0
   uiScript: {fileID: 4679374531140011328}
   firstPersonLookCamera: {fileID: 6648462609822741987}
   NoiseOutput: 0
-  lockCamOffset: {x: -0.018, y: 0.029, z: 0}
+  lockCamOffset: {x: 0.4, y: 0.029, z: 0}
 --- !u!114 &-4624715040588936209
 MonoBehaviour:
   m_ObjectHideFlags: 0
