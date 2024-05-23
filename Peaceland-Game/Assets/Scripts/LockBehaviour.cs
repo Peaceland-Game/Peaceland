@@ -1,23 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DoorScript;
 
 public class LockBehaviour : MonoBehaviour
 {
     [SerializeField]
     private
-    GameObject outerRing, outerRingActive, middleRing, middleRingActive, centerRing, centerRingActive, slider;
+    GameObject[] rings_inactive = new GameObject[3];
+    [SerializeField]
+    private
+    GameObject[] rings_active = new GameObject[3];
+    [SerializeField]
+    private GameObject slider;
     [SerializeField] private Transform parent;
 
-    GameObject activeRing, hiddenActiveRing;
-    [SerializeField] private bool isActiveLock = true;
+    int activeIndex = 0;
+    [SerializeField] private bool isActiveLock = false;
     [SerializeField] private float roationSpeed = 1000;
-    
+
+    private List<float> angles = new(){ 0, 22.5f, 45, 67.5f, 90, 112.5f, 135, 157.5f, 180, 202.5f, 225, 247.5f, 270, 292.5f, 315, 337.5f };
+    private int angleIndex = 0;
+
+    [SerializeField]
+    private int[] ringRotationIndicies = new int[3];
+
+    [SerializeField]
+    private float sliderMoveDuration = 1;
+
+    private Vector3 sliderEndPos = new(0, -0.001296194f, 0);
+
+    [SerializeField] private Door door;
+
     
     // Start is called before the first frame update
     void Start()
     {
-        SetActiveRing(outerRing);
+        
     }
 
     // Update is called once per frame
@@ -31,103 +50,118 @@ public class LockBehaviour : MonoBehaviour
     public void StartLockPicking()
     {
         isActiveLock = true;
-        //Debug.Log($"{name} is active lock");
+        Scramble();
+        Debug.Log($"{name} is active lock");
         
+    }
+    public void Scramble()
+    {
+        var i = new int[3];
+        for (int j = 0; j < 3; j++)
+        {
+            i[j] = Random.Range(0, angles.Count);
+        }
+        for (var j = 0; j < 3; j++)
+        {
+            rings_active[j].transform.localRotation = Quaternion.Euler(0, angles[i[j]], 0);
+            rings_inactive[j].transform.localRotation = Quaternion.Euler(0, angles[i[j]], 0);
+            ringRotationIndicies[j] = i[j];
+        }
+    }
+    public void TryMoveSlider()
+    {
+        var b = true;
+        for (var i = 0; i < 3; i++)
+        {
+            if (ringRotationIndicies[i] != 0) 
+                b = false;
+        }
+        if (b == false)
+        {
+            Debug.Log("locks not aligned");
+
+        }
+        else
+        {
+            StartCoroutine(MoveSlider());
+            Debug.Log("opening");
+        }
+
+    }
+    private IEnumerator MoveSlider()
+    {
+        Vector3 startPos = slider.transform.localPosition;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < sliderMoveDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / sliderMoveDuration;
+            slider.transform.localPosition = Vector3.Lerp(startPos, sliderEndPos, t);
+            yield return null;
+        }
+
+        slider.transform.position = sliderEndPos;
+        PlayerSingleton.Instance.EndLockPiking();
+        door.OpenDoor();
+        gameObject.SetActive(false);
+
     }
 
     public void HandlePlayerInteraction()
     {
         // Rotate the active ring
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
+            angleIndex = ringRotationIndicies[activeIndex];
             //Debug.Log("rotation left");
-            activeRing.transform.Rotate(parent.forward * Time.deltaTime * roationSpeed);
+            ++angleIndex;
+
+            if (angleIndex >= angles.Count) angleIndex = 0;
+            ringRotationIndicies[activeIndex] = angleIndex;
+
+            rings_active[activeIndex].transform.localRotation = Quaternion.Euler(0, angles[angleIndex], 0);
+            rings_inactive[activeIndex].transform.localRotation = Quaternion.Euler(0, angles[angleIndex], 0);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.D))
         {
-           // Debug.Log("rotation right");
-            activeRing.transform.Rotate(parent.forward * Time.deltaTime * -roationSpeed);
+            // Debug.Log("rotation right");
+            angleIndex = ringRotationIndicies[activeIndex];
+            --angleIndex;
+            ringRotationIndicies[activeIndex] = angleIndex;
+            if (angleIndex < 0) angleIndex = angles.Count - 1;
+            rings_active[activeIndex].transform.localRotation = Quaternion.Euler(0, angles[angleIndex], 0);
+            rings_inactive[activeIndex].transform.localRotation = Quaternion.Euler(0, angles[angleIndex], 0);
         }
-        //Debug.Log(parent.forward);
 
         // Change the active ring
-        if (Input.GetKeyDown(KeyCode.Q))
+        else if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (activeRing == outerRing)
-            {
-                SetActiveRing(centerRing);
-            }
-            else if (activeRing == centerRing)
-            {
-                SetActiveRing(middleRing);
-            }
-            else if (activeRing == middleRing)
-            {
-                SetActiveRing(outerRing);
-            }
+            activeIndex--;
+            if (activeIndex < 0) activeIndex = rings_active.Length - 1;
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
-            if (activeRing == outerRing)
-            {
-                SetActiveRing(middleRing);
-            }
-            else if (activeRing == middleRing)
-            {
-                SetActiveRing(centerRing);
-            }
-            else if (activeRing == centerRing)
-            {
-                SetActiveRing(outerRing);
-            }
+            activeIndex++;
+            if (activeIndex >= rings_active.Length) activeIndex = 0;
         }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            TryMoveSlider();
+        }
+        
+        UpdateRingDisplay();
     }
-
-    private void SetActiveRing(GameObject newActiveRing)
+    private void UpdateRingDisplay()
     {
-        // Deactivate the current active ring and match the rotations
-        if (activeRing == outerRing)
+        for (var i = 0; i < rings_active.Length; i++)
         {
-            outerRingActive.transform.rotation = outerRing.transform.rotation;
-            outerRing.SetActive(true);
-            outerRingActive.SetActive(false);
-        }
-        else if (activeRing == middleRing)
-        {
-            middleRingActive.transform.rotation = middleRing.transform.rotation;
-            middleRing.SetActive(true);
-            middleRingActive.SetActive(false);
-        }
-        else if (activeRing == centerRing)
-        {
-            centerRingActive.transform.rotation = centerRing.transform.rotation;
-            centerRing.SetActive(true);
-            centerRingActive.SetActive(false);
-        }
+            var b = i == activeIndex;
 
-        // Activate the new active ring
-        if (newActiveRing == outerRing)
-        {
-            outerRingActive.transform.rotation = outerRing.transform.rotation;
-            outerRing.SetActive(false);
-            outerRingActive.SetActive(true);
+            rings_inactive[i].SetActive(!b);
+            rings_active[i].SetActive(b);
         }
-        else if (newActiveRing == middleRing)
-        {
-            middleRingActive.transform.rotation = middleRing.transform.rotation;
-            middleRing.SetActive(false);
-            middleRingActive.SetActive(true);
-        }
-        else if (newActiveRing == centerRing)
-        {
-            centerRingActive.transform.rotation = centerRing.transform.rotation;
-            centerRing.SetActive(false);
-            centerRingActive.SetActive(true);
-        }
-
-        activeRing = newActiveRing;
     }
-
     public void SetLockAsActive(bool active)
     {
         isActiveLock = active;
