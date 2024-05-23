@@ -19,6 +19,13 @@ public class PlayerSingleton : MonoBehaviour
     public InterfaceBehaviour uiScript;
     public FirstPersonLook firstPersonLookCamera;
 
+    public float NoiseOutput;
+    private Rigidbody rb;
+
+    private Crouch crouchScript;
+    public const float MAX_NOISE_OUTPUT= 9f;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +37,18 @@ public class PlayerSingleton : MonoBehaviour
         {
             Destroy(this);
         }
+        crouchScript = GetComponent<Crouch>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        NoiseOutput = crouchScript.IsCrouched ? rb.velocity.magnitude / 4 : rb.velocity.magnitude;
+        //Debug.Log(NoiseOutput);
+        uiScript.UpdateNoiseBar(NoiseOutput, MAX_NOISE_OUTPUT);
     }
+    
     public void StartLockPicking(Door door)
     {
         if (isLockpicking) return;
