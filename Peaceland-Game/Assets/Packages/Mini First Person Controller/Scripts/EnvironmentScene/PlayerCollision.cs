@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SphereCollider : MonoBehaviour
+public class PlayerCollision : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +17,7 @@ public class SphereCollider : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.layer == 3) 
+        if (other.gameObject.layer == 3)
         {
             PlayerSingleton.Instance.objects.Remove(other.gameObject);
             PlayerSingleton.Instance.uiScript.HideKeyIcon();
@@ -25,12 +26,17 @@ public class SphereCollider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public static explicit operator PlayerCollision(Collider v)
+    {
+        throw new NotImplementedException();
     }
 }
