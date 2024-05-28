@@ -38,7 +38,7 @@ public class ParentSpotting : MonoBehaviour
         var pos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
         var eyePos = new Vector3(eye.transform.forward.x, 0, eye.transform.forward.z);
         var angle = Vector3.Angle(pos, eyePos);
-        //Debug.Log(angle);
+       Debug.Log(angle);
         if (angle <= fov)
         {
             if (Physics.Linecast(eye.transform.position, player.transform.position, out hit, playerLayerMask))
