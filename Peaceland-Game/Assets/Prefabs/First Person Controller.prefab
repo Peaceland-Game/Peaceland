@@ -595,72 +595,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &2072954794526746651
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 611584763981201854}
-  - component: {fileID: 5059161517391506204}
-  - component: {fileID: 2799161771954320544}
-  m_Layer: 6
-  m_Name: InteractSphere
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &611584763981201854
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072954794526746651}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.8539999, z: 0}
-  m_LocalScale: {x: 6.5037737, y: 6.5037737, z: 6.5037737}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 815005013120565366}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &5059161517391506204
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072954794526746651}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2799161771954320544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072954794526746651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea06b5fe79fa19d409ac0a86b9dab069, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2267506178336452259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,6 +1641,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8316674213241090249}
     m_Modifications:
+    - target: {fileID: 2459947206512639077, guid: 0d450794edccb6949bef5af78bb34991,
+        type: 3}
+      propertyPath: uiScript
+      value: 
+      objectReference: {fileID: 4679374531140011328}
+    - target: {fileID: 2459947206512639077, guid: 0d450794edccb6949bef5af78bb34991,
+        type: 3}
+      propertyPath: lockAnchor
+      value: 
+      objectReference: {fileID: 5958901375063194157}
+    - target: {fileID: 2459947206512639077, guid: 0d450794edccb6949bef5af78bb34991,
+        type: 3}
+      propertyPath: firstPersonLookCamera
+      value: 
+      objectReference: {fileID: 6648462609822741987}
     - target: {fileID: 8645776816749018046, guid: 0d450794edccb6949bef5af78bb34991,
         type: 3}
       propertyPath: m_Name
@@ -1767,14 +1716,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2459947206512639077, guid: 0d450794edccb6949bef5af78bb34991, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8984725897337741572, guid: 0d450794edccb6949bef5af78bb34991,
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 43662623487992888, guid: 0d450794edccb6949bef5af78bb34991,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 611584763981201854}
-    m_AddedComponents: []
+      addedObject: {fileID: 5384126356348778844}
   m_SourcePrefab: {fileID: 100100000, guid: 0d450794edccb6949bef5af78bb34991, type: 3}
 --- !u!4 &815005013120565366 stripped
 Transform:
@@ -1782,3 +1732,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8646720126062125426}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8603085613430850890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 43662623487992888, guid: 0d450794edccb6949bef5af78bb34991,
+    type: 3}
+  m_PrefabInstance: {fileID: 8646720126062125426}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5384126356348778844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8603085613430850890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea06b5fe79fa19d409ac0a86b9dab069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
