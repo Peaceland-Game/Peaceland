@@ -29,7 +29,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_LandSound = null;           // the sound played when character touches back on ground.
 
         private Camera m_Camera;
-        private bool m_Jump = true;
+        private bool m_Jump = false;
         private float m_YRotation;
         private Vector2 m_Input = new Vector2();
         private Vector3 m_MoveDir = Vector3.zero;
