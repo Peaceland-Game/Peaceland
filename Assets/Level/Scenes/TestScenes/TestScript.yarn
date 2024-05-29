@@ -1,0 +1,22 @@
+﻿title: Start
+tags:
+---
+<<declare $mentioned_family_guy = false as bool>>
+
+Dog: I'm Brian Dog from Peter Guy
+    -> Brian Griffin from Family Guy?
+        Dog: I have no idea what you're talking about.
+        <<set $mentioned_family_guy = true>>
+    -> Wow that's amazing!
+        Dog: No autographs please.
+        <<set $mentioned_family_guy = false>>
+
+<<if $mentioned_family_guy is true>>
+Dog: Hope you find that Griffin guy or whatever.
+<<else>>
+Dog: Pleasure meeting you.
+<<endif>>
+<<jump Start>>
+===
+
+
