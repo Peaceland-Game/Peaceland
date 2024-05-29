@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0b22f014ec7be40896c70f04417587, type: 3}
   m_Name: GaiaSettings
   m_EditorClassIdentifier: 
-  m_currentController: 1
+  m_currentController: 0
   m_customPlayerObject: {fileID: 0}
   m_customPlayerCamera: {fileID: 0}
   m_instantiateCustomControllers: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
   m_WDHeightsComputeShader: {fileID: 7200000, guid: 3e1385d604d0e8d47b9e2d04c7f07110,
     type: 3}
   m_currentSizeDivisor: 1
-  m_currentPlayerPrefabName: FlyCam
+  m_currentPlayerPrefabName: FPSController
   m_flyCamUI: {fileID: 1987081325453708, guid: c22749c16bfe8aa428f5e54cf7cc6505, type: 3}
   m_currentWaterPrefabName: WaterBasicDaytime
   m_saveCollisionCacheWhenSaving: 0
@@ -303,25 +303,40 @@ MonoBehaviour:
   m_IconProVisible: {fileID: 2800000, guid: 8876b877b7f47e7409f8c59c02af1c69, type: 3}
   m_IconProVisibleDisabled: {fileID: 2800000, guid: d1219bc2466f17043924b6ad78da44ed,
     type: 3}
-  m_biomePresetSelection: 1
+  m_biomePresetSelection: 0
   m_BiomeSpawnersToCreate:
   - m_autoAssignPrototypes: 1
-    m_spawnerSettings: {fileID: 11400000, guid: 5d67dcaf933cf3d4e8edae39bb3951b1,
+    m_spawnerSettings: {fileID: 11400000, guid: 4dda95930422a9f469c0c99505aff15e,
       type: 2}
     m_isActiveInStamper: 1
     m_isActiveInBiome: 1
   - m_autoAssignPrototypes: 0
-    m_spawnerSettings: {fileID: 11400000, guid: 406154f0c85b1544cb4a4c38afe9f190,
+    m_spawnerSettings: {fileID: 11400000, guid: 217233c9205c20e489541b22ca7b7868,
       type: 2}
     m_isActiveInStamper: 0
     m_isActiveInBiome: 1
   - m_autoAssignPrototypes: 0
-    m_spawnerSettings: {fileID: 11400000, guid: 41ed9b207ce1ff347b84fecff54f857e,
+    m_spawnerSettings: {fileID: 11400000, guid: 1c13e8da020868e45a1e6704e198303b,
       type: 2}
     m_isActiveInStamper: 0
     m_isActiveInBiome: 1
   - m_autoAssignPrototypes: 0
-    m_spawnerSettings: {fileID: 11400000, guid: 94bc9871295e8c9479ed334f9c8c01c2,
+    m_spawnerSettings: {fileID: 11400000, guid: 19e5d8869512147439106806e7c45156,
+      type: 2}
+    m_isActiveInStamper: 0
+    m_isActiveInBiome: 1
+  - m_autoAssignPrototypes: 0
+    m_spawnerSettings: {fileID: 11400000, guid: 76f07dd99e8eed643bc6dc110ac3b34f,
+      type: 2}
+    m_isActiveInStamper: 0
+    m_isActiveInBiome: 1
+  - m_autoAssignPrototypes: 0
+    m_spawnerSettings: {fileID: 11400000, guid: 29314e3030f02404ea363aa54072ed20,
+      type: 2}
+    m_isActiveInStamper: 0
+    m_isActiveInBiome: 1
+  - m_autoAssignPrototypes: 0
+    m_spawnerSettings: {fileID: 11400000, guid: 73049ac12c97b4c4d8547330a2b13c8b,
       type: 2}
     m_isActiveInStamper: 0
     m_isActiveInBiome: 1
