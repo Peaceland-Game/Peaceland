@@ -42,6 +42,10 @@ public class PlayerMovement : MonoBehaviour
     private RaycastHit slopeHit; // Information about the slope the player is on
     private bool exitingSlope; // Flag indicating whether the player is exiting a slope
 
+    [Header("Interact")]
+    public float interactSphereRadius = 3.0f;
+    public LayerMask interactPlayerMask;
+
     public Transform orientation; // Orientation of the player
 
     float horizontalInput; // Input for horizontal movement
@@ -130,16 +134,66 @@ public class PlayerMovement : MonoBehaviour
         // Handling interact input
         if (Input.GetKeyDown(interactKey))
         {
-            foreach (GameObject obj in PlayerSingleton.Instance.interactables)
+            //foreach (GameObject obj in PlayerSingleton.Instance.interactables)
+            //{
+            //        PlayerSingleton.Instance.interactables.Remove(obj);
+            //        Destroy(obj);
+            //        return;
+            //}
+            Destroy(GetClosest3DObjectOnLayers(interactPlayerMask));
+        }
+    }
+
+    public GameObject GetClosest3DObjectOnLayers(LayerMask layers)
+    {
+        // Perform the overlap sphere and get the colliders within the specified radius.
+        Collider[] interactableColliders = Physics.OverlapSphere(transform.position, interactSphereRadius, layers);
+
+        return GetClosest3DObjectInColliderArray(interactableColliders);
+    }
+
+    private GameObject GetClosest3DObjectInColliderArray(List<Collider> interactableColliders)
+    {
+        return GetClosest3DObjectInColliderArray(interactableColliders.ToArray());
+    }
+    private GameObject GetClosest3DObjectInColliderArray(Collider[] colliders)
+    {
+        if (colliders.Length == 0)
+            return null;
+        if (colliders.Length == 1)
+            return colliders[0].gameObject;
+        // Initialize variables to keep track of the closest object.
+        GameObject closestObject = null;
+        float smallestorthogonaldistance = float.MaxValue;
+        Ray cameraray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+
+        foreach (var collider in colliders)
+        {
+            // get the closest point on the camera ray to the object's position.
+            Vector3 closestpointonray = cameraray.GetPoint(Vector3.Dot(collider.transform.position - cameraray.origin, cameraray.direction));
+            // calculate the orthogonal distance from the object to the ray.
+            float orthogonaldistance = Vector3.Distance(collider.transform.position, closestpointonray);
+
+            // check if this collider is closer to the camera's forward direction than the previous ones.
+            if (orthogonaldistance < smallestorthogonaldistance)
             {
-                if (obj.CompareTag("InteractItem"))
+                Vector3 viewportpos = Camera.main.WorldToViewportPoint(collider.transform.position);
+
+                // check if the object is within the viewport bounds
+                bool isonscreen = viewportpos.x >= 0 && viewportpos.x <= 1 && viewportpos.y >= 0 && viewportpos.y <= 1;
+
+                //allow picking up items in 90 degree cone in front of camera
+
+                if (isonscreen)
                 {
-                    PlayerSingleton.Instance.interactables.Remove(obj);
-                    Destroy(obj);
-                    return;
+                    smallestorthogonaldistance = orthogonaldistance;
+                    closestObject = collider.gameObject;
                 }
             }
         }
+
+        // return the closest interactable object or null if none was found.
+        return closestObject;
     }
 
     private void StateHandler()
