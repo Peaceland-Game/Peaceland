@@ -172,11 +172,25 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }
-        // Applying force to move the player in the air and not touching a wall
-        else if (!grounded && !touchingWall)
+        // Applying force to move the player in the air
+    else if (!grounded)
+    {
+        // Check if the player is touching a wall
+        if (touchingWall)
         {
+            // Handle wall sliding or stopping movement
+            Vector3 wallNormal = slopeHit.normal; // Normal of the wall the player is touching
+            Vector3 perpendicularDirection = Vector3.ProjectOnPlane(moveDirection, wallNormal); // Move direction perpendicular to the wall
+
+            // Applying force to move the player perpendicular to the wall
+            rb.AddForce(perpendicularDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        }
+        else
+        {
+            // If not touching a wall, apply normal air movement
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
         }
+    }
 
         rb.useGravity = !OnSlope();
     }
