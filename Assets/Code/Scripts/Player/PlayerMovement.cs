@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode jumpKey = KeyCode.Space; // Key used for jumping
     public KeyCode sprintKey = KeyCode.LeftShift; // Key used for sprinting
     public KeyCode crouchKey = KeyCode.LeftControl; // Key used for crouching
+    public KeyCode interactKey = KeyCode.E; // Key used for interacting with specfic objects
 
     [Header("Ground Check")] // Header for organizing ground check variables in the Unity Inspector
     public float playerHeight; // Height of the player
@@ -123,6 +125,20 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(crouchKey))
         {
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+        }
+
+        // Handling interact input
+        if (Input.GetKeyDown(interactKey))
+        {
+            foreach (GameObject obj in PlayerSingleton.Instance.interactables)
+            {
+                if (obj.CompareTag("InteractItem"))
+                {
+                    PlayerSingleton.Instance.interactables.Remove(obj);
+                    Destroy(obj);
+                    return;
+                }
+            }
         }
     }
 
