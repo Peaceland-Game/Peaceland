@@ -27,7 +27,7 @@ public class PlayerCam : MonoBehaviour
 
     private void Update()
     {
-        if(player.state == PlayerMovement.MovementState.talking) 
+        if(player.state == PlayerMovement.MovementState.Talking) 
         {
             return;
         }
@@ -47,5 +47,9 @@ public class PlayerCam : MonoBehaviour
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         // Apply the rotation to the player's orientation (horizontal rotation only)
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+    }
+    public void ZeroRotation()
+    {
+        transform.rotation = Quaternion.identity;
     }
 }
