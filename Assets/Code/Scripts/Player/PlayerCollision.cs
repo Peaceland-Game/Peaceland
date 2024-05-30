@@ -9,7 +9,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (other.gameObject.layer == 3)
         {
-            PlayerSingleton.Instance.interactables.Add(other.gameObject);
+            //PlayerSingleton.Instance.interactables.Add(other.gameObject);
             //PlayerSingleton.Instance.uiScript.ShowKeyIcon();
             //PlayerSingleton.Instance.uiScript.PositionKeyIcon(other.gameObject.transform.position);
         }
@@ -19,7 +19,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (other.gameObject.layer == 3)
         {
-            PlayerSingleton.Instance.interactables.Remove(other.gameObject);
+            //PlayerSingleton.Instance.interactables.Remove(other.gameObject);
             //PlayerSingleton.Instance.uiScript.HideKeyIcon();
         }
     }

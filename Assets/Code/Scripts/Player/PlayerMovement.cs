@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using Yarn.Unity;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -42,9 +42,10 @@ public class PlayerMovement : MonoBehaviour
     private RaycastHit slopeHit; // Information about the slope the player is on
     private bool exitingSlope; // Flag indicating whether the player is exiting a slope
 
-    [Header("Interact")]
-    public float interactSphereRadius = 3.0f;
-    public LayerMask interactPlayerMask;
+    [Header("Interact")] // Header for organizing interact variables in the Unity Inspector
+    public float interactSphereRadius = 3.0f; // Size of the player's interact range
+    public LayerMask interactPlayerMask; // The layer mask which all interactable objects are on
+    public DialogueRunner dialogueRunner;
 
     public Transform orientation; // Orientation of the player
 
@@ -60,7 +61,8 @@ public class PlayerMovement : MonoBehaviour
         walking, // Walking state
         sprinting, // Sprinting state
         crouching, // Crouching state
-        air // Air state
+        air, // Air state
+        talking // Talking state
     }
 
     private void Start()
@@ -134,14 +136,49 @@ public class PlayerMovement : MonoBehaviour
         // Handling interact input
         if (Input.GetKeyDown(interactKey))
         {
-            //foreach (GameObject obj in PlayerSingleton.Instance.interactables)
-            //{
-            //        PlayerSingleton.Instance.interactables.Remove(obj);
-            //        Destroy(obj);
-            //        return;
-            //}
-            Destroy(GetClosest3DObjectOnLayers(interactPlayerMask));
+            var closestObject = GetClosest3DObjectOnLayers(interactPlayerMask);
+
+            if (closestObject.CompareTag("InteractItem")) 
+            {
+                Destroy(closestObject);
+            }
+            else if (closestObject.CompareTag("InteractChar"))
+            {
+                state = MovementState.talking;
+                StartCoroutine(TurnToLookAt(closestObject.transform, 1.0f));
+            }
         }
+    }
+
+    public IEnumerator TurnToLookAt(Transform target, float duration)
+    {
+        // Store the initial rotation of the camera
+        Quaternion initialRotation = transform.rotation;
+        // Calculate the final rotation to look at the target
+        Quaternion finalRotation = Quaternion.LookRotation(target.position - transform.position);
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            // Interpolate between the initial rotation and the final rotation
+            transform.rotation = Quaternion.Slerp(initialRotation, finalRotation, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            // Wait for the next frame
+            yield return null;
+        }
+
+        // Ensure the camera ends at the exact final rotation
+        transform.rotation = finalRotation;
+
+        target.GetComponent<YarnInteractable>().StartConversation();
+        Cursor.lockState = CursorLockMode.None;
+        dialogueRunner.onDialogueComplete.AddListener(StopTalking);
+    }
+
+    public void StopTalking() 
+    {
+        state = MovementState.walking;
     }
 
     public GameObject GetClosest3DObjectOnLayers(LayerMask layers)
@@ -198,6 +235,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
+        if(state == MovementState.talking) 
+        {
+            return;
+        }
+
         // Handling sprinting state
         if (grounded && Input.GetKey(sprintKey))
         {
@@ -225,6 +267,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
+        if (state == MovementState.talking)
+        {
+            return;
+        }
+
         // Calculating move direction based on player orientation and input
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
@@ -291,6 +338,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        if (state == MovementState.talking)
+        {
+            return;
+        }
+
         exitingSlope = true; // Setting exiting slope flag
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z); // Zeroing out vertical velocity
 

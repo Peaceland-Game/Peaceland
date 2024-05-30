@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class PlayerCam : MonoBehaviour
 {
+    [SerializeField]
+    PlayerMovement player;
+
     // Sensitivity variables for mouse movement
     public float sensX;
     public float sensY;
@@ -24,6 +27,11 @@ public class PlayerCam : MonoBehaviour
 
     private void Update()
     {
+        if(player.state == PlayerMovement.MovementState.talking) 
+        {
+            return;
+        }
+
         // Get input from the mouse
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;

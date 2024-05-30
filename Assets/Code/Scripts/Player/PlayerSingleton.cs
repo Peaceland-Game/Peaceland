@@ -6,8 +6,6 @@ public class PlayerSingleton : MonoBehaviour
 {
     public static PlayerSingleton Instance;
 
-    public List<GameObject> interactables;
-
     // Start is called before the first frame update
     void Start()
     {

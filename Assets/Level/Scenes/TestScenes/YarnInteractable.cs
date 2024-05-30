@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Yarn.Unity;
 
@@ -8,7 +9,7 @@ public class YarnInteractable : MonoBehaviour {
     [SerializeField] private string conversationStartNode;
 
     // internal properties not exposed to editor
-    private DialogueRunner dialogueRunner;
+    public DialogueRunner dialogueRunner;
     private Light lightIndicatorObject = null;
     private bool interactable = true;
     private bool isCurrentConversation = false;
@@ -32,7 +33,7 @@ public class YarnInteractable : MonoBehaviour {
         }
     }
 
-    private void StartConversation() {
+    public void StartConversation() {
         Debug.Log($"Started conversation with {name}.");
         isCurrentConversation = true;
         // if (lightIndicatorObject != null) {
