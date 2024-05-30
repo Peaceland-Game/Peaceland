@@ -46,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
     public float interactSphereRadius = 3.0f; // Size of the player's interact range
     public LayerMask interactPlayerMask; // The layer mask which all interactable objects are on
     public DialogueRunner dialogueRunner;
+    public GameObject playerCamHolder;
+    public Transform playerCam;
 
     public Transform orientation; // Orientation of the player
 
@@ -58,11 +60,11 @@ public class PlayerMovement : MonoBehaviour
 
     public MovementState state; // Current movement state of the player
     public enum MovementState {
-        walking, // Walking state
-        sprinting, // Sprinting state
-        crouching, // Crouching state
-        air, // Air state
-        talking // Talking state
+        Walking, // Walking state
+        Sprinting, // Sprinting state
+        Crouching, // Crouching state
+        Air, // Air state
+        Talking // Talking state
     }
 
     private void Start()
@@ -144,7 +146,11 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (closestObject.CompareTag("InteractChar"))
             {
-                state = MovementState.talking;
+                state = MovementState.Talking;
+
+               // var angles = playerCamHolder.transform.rotation.eulerAngles;
+               // transform.SetPositionAndRotation(transform.position, Quaternion.Euler(angles.x, 0, angles.z));
+               // playerCamHolder.transform.localRotation = Quaternion.identity;
                 StartCoroutine(TurnToLookAt(closestObject.transform, 1.0f));
             }
         }
@@ -152,24 +158,24 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator TurnToLookAt(Transform target, float duration)
     {
-        // Store the initial rotation of the camera
-        Quaternion initialRotation = transform.rotation;
+        // Store the initial rotation of the CameraHolder
+        Quaternion initialRotation = playerCamHolder.transform.localRotation;
         // Calculate the final rotation to look at the target
-        Quaternion finalRotation = Quaternion.LookRotation(target.position - transform.position);
+        Quaternion finalRotation = Quaternion.LookRotation(target.position - playerCam.transform.position);
 
         float elapsedTime = 0f;
 
         while (elapsedTime < duration)
         {
             // Interpolate between the initial rotation and the final rotation
-            transform.rotation = Quaternion.Slerp(initialRotation, finalRotation, elapsedTime / duration);
+            playerCamHolder.transform.localRotation = Quaternion.Slerp(initialRotation, finalRotation, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             // Wait for the next frame
             yield return null;
         }
 
         // Ensure the camera ends at the exact final rotation
-        transform.rotation = finalRotation;
+        playerCamHolder.transform.localRotation = finalRotation;
 
         target.GetComponent<YarnInteractable>().StartConversation();
         Cursor.lockState = CursorLockMode.None;
@@ -178,7 +184,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void StopTalking() 
     {
-        state = MovementState.walking;
+        state = MovementState.Walking;
     }
 
     public GameObject GetClosest3DObjectOnLayers(LayerMask layers)
@@ -235,7 +241,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
-        if(state == MovementState.talking) 
+        if(state == MovementState.Talking) 
         {
             return;
         }
@@ -243,31 +249,31 @@ public class PlayerMovement : MonoBehaviour
         // Handling sprinting state
         if (grounded && Input.GetKey(sprintKey))
         {
-            state = MovementState.sprinting;
+            state = MovementState.Sprinting;
             moveSpeed = sprintSpeed;
         }
         // Handling walking state
         else if (grounded)
         {
-            state = MovementState.walking;
+            state = MovementState.Walking;
             moveSpeed = walkSpeed;
         }
         // Handling crouching state
         else if (grounded && Input.GetKey(crouchKey))
         {
-            state = MovementState.crouching;
+            state = MovementState.Crouching;
             moveSpeed = crouchSpeed;
         }
         // Handling air state
         else
         {
-            state = MovementState.air;
+            state = MovementState.Air;
         }
     }
 
     private void MovePlayer()
     {
-        if (state == MovementState.talking)
+        if (state == MovementState.Talking)
         {
             return;
         }
@@ -338,7 +344,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (state == MovementState.talking)
+        if (state == MovementState.Talking)
         {
             return;
         }

@@ -442,6 +442,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationStartNode: InteractTest
   dialogueRunner: {fileID: 1723800623}
+--- !u!4 &581923166 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2512361617784016371, guid: 6d0c334a1b1c3e548bd3742d6229209a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1175899536}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &610210243
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,9 +593,19 @@ PrefabInstance:
       objectReference: {fileID: 1067852338}
     - target: {fileID: 3320224056877828131, guid: 6d0c334a1b1c3e548bd3742d6229209a,
         type: 3}
+      propertyPath: playerCam
+      value: 
+      objectReference: {fileID: 581923166}
+    - target: {fileID: 3320224056877828131, guid: 6d0c334a1b1c3e548bd3742d6229209a,
+        type: 3}
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 1723800623}
+    - target: {fileID: 3320224056877828131, guid: 6d0c334a1b1c3e548bd3742d6229209a,
+        type: 3}
+      propertyPath: playerCamHolder
+      value: 
+      objectReference: {fileID: 1863538132}
     - target: {fileID: 3320224056877828131, guid: 6d0c334a1b1c3e548bd3742d6229209a,
         type: 3}
       propertyPath: interactSphereRadius
@@ -1360,6 +1376,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1863538132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3080894568565005327, guid: 6d0c334a1b1c3e548bd3742d6229209a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1175899536}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7538873152917722460
 PrefabInstance:
   m_ObjectHideFlags: 0
