@@ -1,22 +1,80 @@
 ﻿title: Start
 tags:
 ---
-<<declare $mentioned_family_guy = false as bool>>
-
-Dog: I'm Brian Dog from Peter Guy
-    -> Brian Griffin from Family Guy?
-        Dog: I have no idea what you're talking about.
-        <<set $mentioned_family_guy = true>>
-    -> Wow that's amazing!
-        Dog: No autographs please.
-        <<set $mentioned_family_guy = false>>
-
-<<if $mentioned_family_guy is true>>
-Dog: Hope you find that Griffin guy or whatever.
+<<set $hasCubeInstigation to false>>
+<<set $hasTalkedToCube to false>>
+<<set $hasTalkedToSphere to false>>
+<<set $hasSphereInstigation to false>>
+<<set $cylinderSad to false>>
+Cylinder: Please! Help me settle the argument between these two bums.
+Cylinder: They keep insulting each other and I'm not sure what started it.
+===
+title: Cube
+---
+<<if $hasTalkedToCube is false>>
+<<if $hasSphereInstigation is true>>
+Cube: It was a harmless joke, man! I don't know
+why they're tweaking this much.
+    -> You should still apologize if they didn't find it funny.
+        Cube: Maybe so.
+    -> It wasn't funny at all you should do what Sphere is asking of you.
+        Cube: That's it I'm fighting both of you.  
+        Cylinder: Did NOT ask you to join them.
+            <<set $cylinderSad to true>>
 <<else>>
-Dog: Pleasure meeting you.
+Cube: Tell that troglodyte there's no point to his existence!
+    -> Damn, that cuts deep.
+        Cube: Damn right it does!
+            <<set $hasCubeInstigation to true>>
+    -> Little harsh, don't you think?
+        Cube: Not if you hear what he has to say about me!
+            <<set $hasCubeInstigation to true>>
 <<endif>>
-<<jump Start>>
+<<set $hasTalkedToCube to true>>
+<<endif>>
+===
+title: Sphere
+---
+<<if $hasTalkedToSphere is false>>
+<<if $hasCubeInstigation is true>>
+Sphere: Did you hear what he has to say about me?
+    -> Yeah, and I gotta say he kinda has a point. You know, unlike..
+        Sphere: No way! You should go poke your eye out one of Cube's corners!
+            <<set $cylinderSad to true>>
+    -> Yeah, but what did you have to say about him?
+        Sphere: Yeah after he told me his little "joke" I reminded him that
+        Sphere: his flatass head looks exactly like the cliff his wife jumped off of.
+            -> Holy shit man, you gotta chill. That's way outta line.
+                Sphere: Maybe.
+            -> This sounds like a blood feud, no way I can intervene.
+                Cylinder: You gotta be kidding me.
+                    <<set $cylinderSad to true>>
+<<else>>
+Sphere: Did you hear what he had to say about me?
+    -> No, what did he say about you?
+        Sphere: He asked me if all the King's horses and all the King's men
+        Sphere: had put me back together yet!
+            -> That's not very nice of him.
+                Sphere: Right?? Go tell him to take LTG's advice!
+                    <<set $hasSphereInstigation to true>>
+            -> That's kinda funny I can't even lie.
+                Sphere: Maybe to you! Tell that he isn't welcome on this mortal coil!
+                    <<set $hasSphereInstigation to true>>            
+<<endif>>
+<<set $hasTalkedToSphere to true>>
+<<endif>>
+===
+title: Cylinder
+---
+<<if $hasTalkedToCube is true and $hasTalkedToSphere is true>>
+<<if $cylinderSad is true>>
+Cylinder: Yeah you did not help at all, I'll try and figure something out.
+<<else>>
+Cylinder: Thanks, they seem to have settled down a bit.
+<<endif>>
+<<else>>
+Cylinder: Talk to both of them first!
+<<endif>>
 ===
 
 
