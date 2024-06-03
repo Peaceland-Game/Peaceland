@@ -6,28 +6,28 @@ tags:
 <<set $hasTalkedToSphere to false>>
 <<set $hasSphereInstigation to false>>
 <<set $cylinderSad to false>>
-Cylinder: Please! Help me settle the argument between these two bums.
-Cylinder: They keep insulting each other and I'm not sure what started it.
+Cylinder: Please! Help me settle the argument between these two bums. #line:0e9f11a 
+Cylinder: They keep insulting each other and I'm not sure what started it. #line:0b76b57 
 ===
 title: Cube
 ---
 <<if $hasTalkedToCube is false>>
 <<if $hasSphereInstigation is true>>
-Cube: It was a harmless joke, man! I don't know
-why they're tweaking this much.
-    -> You should still apologize if they didn't find it funny.
-        Cube: Maybe so.
-    -> It wasn't funny at all you should do what Sphere is asking of you.
-        Cube: That's it I'm fighting both of you.  
-        Cylinder: Did NOT ask you to join them.
+Cube: It was a harmless joke, man! I don't know #line:0c4cca0 
+why they're tweaking this much. #line:09c6925 
+    -> You should still apologize if they didn't find it funny. #line:0e18cd6 
+        Cube: Maybe so. #line:0176e79 
+    -> It wasn't funny at all you should do what Sphere is asking of you. #line:0ddd970 
+        Cube: That's it I'm fighting both of you.   #line:09a7243 
+        Cylinder: Did NOT ask you to join them. #line:0bca8c1 
             <<set $cylinderSad to true>>
 <<else>>
-Cube: Tell that troglodyte there's no point to his existence!
-    -> Damn, that cuts deep.
-        Cube: Damn right it does!
+Cube: Tell that troglodyte there's no point to his existence! #line:06837f9 
+    -> Damn, that cuts deep. #line:059df34 
+        Cube: Damn right it does! #line:082a6db 
             <<set $hasCubeInstigation to true>>
-    -> Little harsh, don't you think?
-        Cube: Not if you hear what he has to say about me!
+    -> Little harsh, don't you think? #line:06aed52 
+        Cube: Not if you hear what he has to say about me! #line:0fc70ef 
             <<set $hasCubeInstigation to true>>
 <<endif>>
 <<set $hasTalkedToCube to true>>
@@ -37,28 +37,28 @@ title: Sphere
 ---
 <<if $hasTalkedToSphere is false>>
 <<if $hasCubeInstigation is true>>
-Sphere: Did you hear what he has to say about me?
-    -> Yeah, and I gotta say he kinda has a point. You know, unlike..
-        Sphere: No way! You should go poke your eye out one of Cube's corners!
+Sphere: Did you hear what he has to say about me? #line:0d189c7 
+    -> Yeah, and I gotta say he kinda has a point. You know, unlike.. #line:07c79ba 
+        Sphere: No way! You should go poke your eye out one of Cube's corners! #line:0da3da8 
             <<set $cylinderSad to true>>
-    -> Yeah, but what did you have to say about him?
-        Sphere: Yeah after he told me his little "joke" I reminded him that
-        Sphere: his flatass head looks exactly like the cliff his wife jumped off of.
-            -> Holy shit man, you gotta chill. That's way outta line.
-                Sphere: Maybe.
-            -> This sounds like a blood feud, no way I can intervene.
-                Cylinder: You gotta be kidding me.
+    -> Yeah, but what did you have to say about him? #line:0981ad1 
+        Sphere: Yeah after he told me his little "joke" I reminded him that #line:0316606 
+        Sphere: his flatass head looks exactly like the cliff his wife jumped off of. #line:0ae9e7e 
+            -> Holy shit man, you gotta chill. That's way outta line. #line:09aaacb 
+                Sphere: Maybe. #line:071a645 
+            -> This sounds like a blood feud, no way I can intervene. #line:0783959 
+                Cylinder: You gotta be kidding me. #line:0af798b 
                     <<set $cylinderSad to true>>
 <<else>>
-Sphere: Did you hear what he had to say about me?
-    -> No, what did he say about you?
-        Sphere: He asked me if all the King's horses and all the King's men
-        Sphere: had put me back together yet!
-            -> That's not very nice of him.
-                Sphere: Right?? Go tell him to take LTG's advice!
+Sphere: Did you hear what he had to say about me? #line:0d01bec 
+    -> No, what did he say about you? #line:06ccc2b 
+        Sphere: He asked me if all the King's horses and all the King's men #line:0810ae9 
+        Sphere: had put me back together yet! #line:09b8760 
+            -> That's not very nice of him. #line:05bbdf2 
+                Sphere: Right?? Go tell him to take LTG's advice! #line:0ffe0c2 
                     <<set $hasSphereInstigation to true>>
-            -> That's kinda funny I can't even lie.
-                Sphere: Maybe to you! Tell that he isn't welcome on this mortal coil!
+            -> That's kinda funny I can't even lie. #line:03d8f58 
+                Sphere: Maybe to you! Tell that he isn't welcome on this mortal coil! #line:0ca428d 
                     <<set $hasSphereInstigation to true>>            
 <<endif>>
 <<set $hasTalkedToSphere to true>>
@@ -68,17 +68,17 @@ title: Cylinder
 ---
 <<if $hasTalkedToCube is true and $hasTalkedToSphere is true>>
 <<if $cylinderSad is true>>
-Cylinder: Yeah you did not help at all, I'll try and figure something out.
+Cylinder: Yeah you did not help at all, I'll try and figure something out. #line:0a426f8 
 <<else>>
-Cylinder: Thanks, they seem to have settled down a bit.
+Cylinder: Thanks, they seem to have settled down a bit. #line:0d774e8 
 <<endif>>
 <<else>>
-Cylinder: Talk to both of them first!
+Cylinder: Talk to both of them first! #line:00b868f 
 <<endif>>
 ===
 title: InteractTest
 ---
-Mister: If you can see this, something worked atleast...
+Mister: If you can see this, something worked atleast... #line:0f3129b 
 ===
 
 
