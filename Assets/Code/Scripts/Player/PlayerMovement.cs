@@ -83,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        
         // Checking if the player is grounded
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         // Checking if the player is touching a wall
@@ -109,8 +110,9 @@ public class PlayerMovement : MonoBehaviour
         // Moving the player
         MovePlayer();
     }
-    public void SetTalking()
+    public void OnConversationStart(Transform actor)
     {
+        Debug.Log($"Starting conversation with {actor.name}");
         Cursor.lockState = CursorLockMode.None;
         state = MovementState.Talking;
     }
@@ -193,8 +195,9 @@ public class PlayerMovement : MonoBehaviour
         //dialogueRunner.onDialogueComplete.AddListener(StopTalking);
     }
 
-    public void StopTalking() 
+    public void OnConversationEnd(Transform actor)
     {
+        Debug.Log($"stopped talking to: {actor.name}");
         Cursor.lockState = CursorLockMode.Locked;
         state = MovementState.Walking;
     }
