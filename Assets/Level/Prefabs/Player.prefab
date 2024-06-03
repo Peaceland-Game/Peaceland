@@ -37,7 +37,7 @@ Transform:
   - {fileID: 4714838698777080096}
   - {fileID: 5426723409574739506}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3320224056877828131
 MonoBehaviour:
@@ -366,6 +366,11 @@ PrefabInstance:
       propertyPath: orientation
       value: 
       objectReference: {fileID: 670696426094527479}
+    - target: {fileID: 5765652542502218777, guid: eed6b3b74340ea84984323eb734b9b29,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7380855364356959092, guid: eed6b3b74340ea84984323eb734b9b29,
         type: 3}
       propertyPath: cameraPosition
@@ -434,6 +439,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3118156799043879782}
+    - targetCorrespondingSourceObject: {fileID: 4304676491887413142, guid: eed6b3b74340ea84984323eb734b9b29,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1470675473444817889}
   m_SourcePrefab: {fileID: 100100000, guid: eed6b3b74340ea84984323eb734b9b29, type: 3}
 --- !u!1 &2211896313021027357 stripped
 GameObject:
@@ -449,6 +458,26 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2211896313021027357}
   m_Enabled: 1
+--- !u!114 &1470675473444817889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211896313021027357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57744762d9079934292f57896d8193e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExcludedPropertiesInInspector:
+  - m_Script
+  m_LockStageInInspector: 
+  m_StreamingVersion: 20170927
+  m_Priority: 10
+  m_StandbyUpdate: 2
+  m_LookAt: {fileID: 0}
+  m_BlendHint: 0
 --- !u!4 &2512361617784016371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 563724115323018872, guid: eed6b3b74340ea84984323eb734b9b29,
