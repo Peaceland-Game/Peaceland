@@ -176,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Ensure the camera ends at the exact final rotation
         playerCamHolder.transform.localRotation = finalRotation;
+        playerCamHolder.GetComponent<PlayerCam>().SetYRotation(finalRotation.eulerAngles.y);
 
         target.GetComponent<YarnInteractable>().StartConversation();
         Cursor.lockState = CursorLockMode.None;

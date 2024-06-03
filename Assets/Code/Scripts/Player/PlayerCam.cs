@@ -52,4 +52,9 @@ public class PlayerCam : MonoBehaviour
     {
         transform.rotation = Quaternion.identity;
     }
+
+    public void SetYRotation(float yRotation) 
+    {
+        this.yRotation = yRotation;
+    }
 }
