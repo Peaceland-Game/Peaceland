@@ -442,12 +442,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationStartNode: InteractTest
   dialogueRunner: {fileID: 1723800623}
---- !u!4 &581923166 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2512361617784016371, guid: 6d0c334a1b1c3e548bd3742d6229209a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1175899536}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &610210243
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,18 +560,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1175899536}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1067852338 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3320224056877828131, guid: 6d0c334a1b1c3e548bd3742d6229209a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1175899536}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efc588dbf85184e409b44a07f60a26d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1175899536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -586,50 +568,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 364266253627132868, guid: 6d0c334a1b1c3e548bd3742d6229209a,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1067852338}
-    - target: {fileID: 3320224056877828131, guid: 6d0c334a1b1c3e548bd3742d6229209a,
-        type: 3}
-      propertyPath: playerCam
-      value: 
-      objectReference: {fileID: 581923166}
     - target: {fileID: 3320224056877828131, guid: 6d0c334a1b1c3e548bd3742d6229209a,
         type: 3}
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 1723800623}
-    - target: {fileID: 3320224056877828131, guid: 6d0c334a1b1c3e548bd3742d6229209a,
-        type: 3}
-      propertyPath: playerCamHolder
-      value: 
-      objectReference: {fileID: 1863538132}
-    - target: {fileID: 3320224056877828131, guid: 6d0c334a1b1c3e548bd3742d6229209a,
-        type: 3}
-      propertyPath: interactSphereRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3320224056877828131, guid: 6d0c334a1b1c3e548bd3742d6229209a,
-        type: 3}
-      propertyPath: interactPlayerMask.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 3733119029206320439, guid: 6d0c334a1b1c3e548bd3742d6229209a,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829869866949431215, guid: 6d0c334a1b1c3e548bd3742d6229209a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4734250155958353541, guid: 6d0c334a1b1c3e548bd3742d6229209a,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7402887182303080919, guid: 6d0c334a1b1c3e548bd3742d6229209a,
         type: 3}
@@ -686,13 +633,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8726208253162123468, guid: 6d0c334a1b1c3e548bd3742d6229209a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3829869866949431215, guid: 6d0c334a1b1c3e548bd3742d6229209a, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1376,12 +1317,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1863538132 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3080894568565005327, guid: 6d0c334a1b1c3e548bd3742d6229209a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1175899536}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7538873152917722460
 PrefabInstance:
   m_ObjectHideFlags: 0
