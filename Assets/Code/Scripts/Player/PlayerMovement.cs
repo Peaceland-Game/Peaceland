@@ -67,7 +67,8 @@ public class PlayerMovement : MonoBehaviour
         Sprinting, // Sprinting state
         Crouching, // Crouching state
         Air, // Air state
-        Talking // Talking state
+        Talking, // Talking state
+        InMenu
     }
 
     private void Start()
@@ -256,7 +257,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
-        if(state == MovementState.Talking) 
+        if(state == MovementState.Talking || state == MovementState.InMenu) 
         {
             return;
         }
@@ -288,7 +289,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        if (state == MovementState.Talking)
+        if (state == MovementState.Talking || state == MovementState.InMenu)
         {
             return;
         }
@@ -359,7 +360,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (state == MovementState.Talking)
+        if (state == MovementState.Talking || state == MovementState.InMenu)
         {
             return;
         }
