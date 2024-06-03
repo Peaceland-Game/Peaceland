@@ -25,6 +25,7 @@ public class UserInterface : MonoBehaviour
         var menuActive = !historyMenu.activeInHierarchy;
         historyMenu.SetActive(menuActive);
         Time.timeScale = menuActive ? 0 : 1;
-        Cursor.lockState = menuActive ? CursorLockMode.Locked : CursorLockMode.None;    //not working or timescale makes you not move mouse?
+        Cursor.lockState = menuActive ? CursorLockMode.None : CursorLockMode.Locked;    //not working - cursor stays locked
+        //Cursor.lockState = CursorLockMode.None;
     }
 }
