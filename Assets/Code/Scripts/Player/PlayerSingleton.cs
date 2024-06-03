@@ -8,6 +8,7 @@ public class PlayerSingleton : MonoBehaviour
 {
     public static PlayerSingleton Instance;
     [SerializeField] private Camera playerCamera;
+    
 
     // Start is called before the first frame update
     void Start()

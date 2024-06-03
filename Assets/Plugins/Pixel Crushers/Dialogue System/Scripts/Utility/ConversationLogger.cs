@@ -1,6 +1,9 @@
 ﻿// Copyright (c) Pixel Crushers. All rights reserved.
 
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.Events;
+
 
 namespace PixelCrushers.DialogueSystem
 {
@@ -12,6 +15,9 @@ namespace PixelCrushers.DialogueSystem
     [AddComponentMenu("")] // Use wrapper.
     public class ConversationLogger : MonoBehaviour
     {
+
+        public List<string> dialogueHistory = new();
+        public UnityEvent onDialogueUpdated;
 
         [Tooltip("Log player lines in this color.")]
         public Color playerColor = Color.blue;
@@ -26,11 +32,27 @@ namespace PixelCrushers.DialogueSystem
 
         public void OnConversationLine(Subtitle subtitle)
         {
-            if (subtitle == null | subtitle.formattedText == null | string.IsNullOrEmpty(subtitle.formattedText.text)) return;
+            if (subtitle == null || subtitle.formattedText == null || string.IsNullOrEmpty(subtitle.formattedText.text)) return;
+
             string speakerName = (subtitle.speakerInfo != null && subtitle.speakerInfo.transform != null) ? subtitle.speakerInfo.transform.name : "(null speaker)";
-            Debug.Log(string.Format("<color={0}>{1}: {2}</color>", new object[] { GetActorColor(subtitle), speakerName, subtitle.formattedText.text }));
+            string dialogueLine = string.Format("{0}: {1}", speakerName, subtitle.formattedText.text);
+            dialogueHistory.Add(dialogueLine);
+            onDialogueUpdated.Invoke();
+            Debug.Log(string.Format("<color={0}>{1}</color>", GetActorColor(subtitle), dialogueLine));
+
+
+
+        }
+        private void Awake()
+        {
+            if (onDialogueUpdated == null)
+                onDialogueUpdated = new UnityEvent();
         }
 
+        public List<string> GetDialogueHistory()
+        {
+            return dialogueHistory;
+        }
         public void OnConversationEnd(Transform actor)
         {
             Debug.Log(string.Format("{0}: Ending conversation with {1}", name, GetActorName(actor)));
