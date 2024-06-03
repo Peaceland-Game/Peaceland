@@ -97,7 +97,7 @@ namespace PixelCrushers.DialogueSystem
         /// The key that sends an OnUse message.
         /// </summary>
         [Tooltip("Key that sends an OnUse message.")]
-        public KeyCode useKey = KeyCode.Space;
+        public KeyCode useKey = KeyCode.E;
 
         /// <summary>
         /// The button that sends an OnUse message.

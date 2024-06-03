@@ -45,12 +45,15 @@ public class PlayerMovement : MonoBehaviour
     [Header("Interact")] // Header for organizing interact variables in the Unity Inspector
     public float interactSphereRadius = 3.0f; // Size of the player's interact range
     public LayerMask interactPlayerMask; // The layer mask which all interactable objects are on
-    public DialogueRunner dialogueRunner;
+                                         // public DialogueRunner dialogueRunner;
+
+    [Header("Camera Rotation")]
     public GameObject playerCamHolder;
     public Transform playerCam;
-
     public Transform orientation; // Orientation of the player
 
+
+    [Space(10)]
     float horizontalInput; // Input for horizontal movement
     float verticalInput; // Input for vertical movement
 
@@ -75,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true; // Setting the initial jump state to ready
 
         startYScale = transform.localScale.y; // Storing the initial Y-scale
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
@@ -105,6 +109,12 @@ public class PlayerMovement : MonoBehaviour
         // Moving the player
         MovePlayer();
     }
+    public void SetTalking()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        state = MovementState.Talking;
+    }
+    
 
     private void MyInput()
     {
@@ -178,13 +188,14 @@ public class PlayerMovement : MonoBehaviour
         playerCamHolder.transform.localRotation = finalRotation;
         playerCamHolder.GetComponent<PlayerCam>().SetYRotation(finalRotation.eulerAngles.y);
 
-        target.GetComponent<YarnInteractable>().StartConversation();
-        Cursor.lockState = CursorLockMode.None;
-        dialogueRunner.onDialogueComplete.AddListener(StopTalking);
+      //  target.GetComponent<YarnInteractable>().StartConversation();
+        
+        //dialogueRunner.onDialogueComplete.AddListener(StopTalking);
     }
 
     public void StopTalking() 
     {
+        Cursor.lockState = CursorLockMode.Locked;
         state = MovementState.Walking;
     }
 
@@ -208,7 +219,7 @@ public class PlayerMovement : MonoBehaviour
             return colliders[0].gameObject;
         // Initialize variables to keep track of the closest object.
         GameObject closestObject = null;
-        float smallestorthogonaldistance = float.MaxValue;
+        float smallestOrthogonalDistance = float.MaxValue;
         Ray cameraray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 
         foreach (var collider in colliders)
@@ -219,7 +230,7 @@ public class PlayerMovement : MonoBehaviour
             float orthogonaldistance = Vector3.Distance(collider.transform.position, closestpointonray);
 
             // check if this collider is closer to the camera's forward direction than the previous ones.
-            if (orthogonaldistance < smallestorthogonaldistance)
+            if (orthogonaldistance < smallestOrthogonalDistance)
             {
                 Vector3 viewportpos = Camera.main.WorldToViewportPoint(collider.transform.position);
 
@@ -230,7 +241,7 @@ public class PlayerMovement : MonoBehaviour
 
                 if (isonscreen)
                 {
-                    smallestorthogonaldistance = orthogonaldistance;
+                    smallestOrthogonalDistance = orthogonaldistance;
                     closestObject = collider.gameObject;
                 }
             }
