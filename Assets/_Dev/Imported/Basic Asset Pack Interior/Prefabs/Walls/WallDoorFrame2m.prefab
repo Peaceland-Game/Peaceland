@@ -94,7 +94,8 @@ GameObject:
   - component: {fileID: 4685119051592778364}
   - component: {fileID: 8925386542579491613}
   - component: {fileID: 4024703589138821994}
-  - component: {fileID: 5280554608273896043}
+  - component: {fileID: 5349181167738993923}
+  - component: {fileID: 3887416763311296772}
   m_Layer: 0
   m_Name: WallDoor2m
   m_TagString: Untagged
@@ -167,8 +168,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5280554608273896043
-MeshCollider:
+--- !u!65 &5349181167738993923
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -185,10 +186,30 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2807192081108587437, guid: 071cd515c6307f647b9b65b7a81a61e8, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.5062452, y: 0.09999521, z: 2.9999995}
+  m_Center: {x: 0.2531226, y: 0.049998242, z: 1.5000281}
+--- !u!65 &3887416763311296772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4902338785444280243}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.531989, y: 0.09999521, z: 2.9999995}
+  m_Center: {x: 1.7340055, y: 0.049998004, z: 1.5000205}
 --- !u!1 &5976986699068108571
 GameObject:
   m_ObjectHideFlags: 0
