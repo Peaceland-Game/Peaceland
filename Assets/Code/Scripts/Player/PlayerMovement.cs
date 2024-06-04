@@ -113,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnConversationStart(Transform actor)
     {
-        Debug.Log($"Starting conversation with {actor.name}");
+       // Debug.Log($"Starting conversation with {actor.name}");
         Cursor.lockState = CursorLockMode.None;
         state = MovementState.Talking;
     }
@@ -198,7 +198,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnConversationEnd(Transform actor)
     {
-        Debug.Log($"stopped talking to: {actor.name}");
+       // Debug.Log($"stopped talking to: {actor.name}");
         Cursor.lockState = CursorLockMode.Locked;
         state = MovementState.Walking;
     }
