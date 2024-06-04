@@ -173,6 +173,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // Store the initial rotation of the CameraHolder
         Quaternion initialRotation = playerCamHolder.transform.localRotation;
+
+        
         // Calculate the final rotation to look at the target
         Quaternion finalRotation = Quaternion.LookRotation(target.position - playerCam.transform.position);
 
