@@ -51,9 +51,9 @@ public class PlayerCam : MonoBehaviour
         // Apply the rotation to the camera
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         // Apply the rotation to the player's orientation (horizontal rotation only)
-        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        //orientation.rotation = Quaternion.Euler(0, yRotation, 0);
 
-        //Turn the player model as well
+        //Apply the rotation to the player as well
         playerPrefab.transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
     public void ZeroRotation()
