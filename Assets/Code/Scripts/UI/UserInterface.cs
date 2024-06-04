@@ -14,18 +14,18 @@ public class UserInterface : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            ToggleHistoryMenu();
-        }
+        //if (Input.GetKeyDown(KeyCode.H))
+        //{
+        //    ToggleHistoryMenu();
+        //}
     }
 
-    public void ToggleHistoryMenu()
+    public void ToggleHistoryMenu(PlayerMovement.MovementState state)
     {
         var menuActive = !historyMenu.activeInHierarchy;
         historyMenu.SetActive(menuActive);
+        if (state == PlayerMovement.MovementState.Talking) return;
         Time.timeScale = menuActive ? 0 : 1;
-        Cursor.lockState = menuActive ? CursorLockMode.None : CursorLockMode.Locked;    //not working - cursor stays locked
-        //Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = menuActive ? CursorLockMode.None : CursorLockMode.Locked;
     }
 }
