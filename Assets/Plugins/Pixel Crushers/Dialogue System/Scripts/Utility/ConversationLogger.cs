@@ -36,17 +36,13 @@ namespace PixelCrushers.DialogueSystem
 
             string speakerName = (subtitle.speakerInfo != null && subtitle.speakerInfo.transform != null) ? subtitle.speakerInfo.transform.name : "(null speaker)";
             string dialogueLine = string.Format("{0}: {1}", speakerName, subtitle.formattedText.text);
-            dialogueHistory.Add(dialogueLine);
+            dialogueHistory.Add(string.Format("{0}:\n {1}\n", speakerName, subtitle.formattedText.text));
             onDialogueUpdated.Invoke();
             Debug.Log(string.Format("<color={0}>{1}</color>", GetActorColor(subtitle), dialogueLine));
-
-
-
         }
         private void Awake()
         {
-            if (onDialogueUpdated == null)
-                onDialogueUpdated = new UnityEvent();
+            onDialogueUpdated ??= new UnityEvent();
         }
 
         public List<string> GetDialogueHistory()
