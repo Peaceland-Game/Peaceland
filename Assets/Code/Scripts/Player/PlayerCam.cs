@@ -8,9 +8,9 @@ public class PlayerCam : MonoBehaviour
     PlayerMovement player;
 
     /// <summary>
-    /// game object that hols the player model
+    /// Game object that holds the entire player
     /// </summary>
-    [SerializeField] GameObject playerModel;
+    [SerializeField] GameObject playerPrefab;
 
     // Sensitivity variables for mouse movement
     public float sensX;
@@ -54,7 +54,7 @@ public class PlayerCam : MonoBehaviour
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
 
         //Turn the player model as well
-        playerModel.transform.rotation = Quaternion.Euler(0, yRotation, 0);
+        playerPrefab.transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
     public void ZeroRotation()
     {
