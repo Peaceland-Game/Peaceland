@@ -1,10 +1,14 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScrollToBottom : MonoBehaviour
 {
     public ScrollRect scrollRect;  // Assign the Scroll Rect component in the Inspector
+
+    [SerializeField]
+    private TextMeshProUGUI historyText;
 
     void Start()
     {

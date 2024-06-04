@@ -15,7 +15,7 @@ namespace PixelCrushers.DialogueSystem
     [AddComponentMenu("")] // Use wrapper.
     public class ConversationLogger : MonoBehaviour
     {
-
+        public Dictionary<string, bool> convoIDs = new Dictionary<string, bool>();
         public List<string> dialogueHistory = new();
         public UnityEvent onDialogueUpdated;
 
@@ -27,7 +27,7 @@ namespace PixelCrushers.DialogueSystem
 
         public void OnConversationStart(Transform actor)
         {
-            Debug.Log(string.Format("{0}: Starting conversation with {1}", new object[] { name, GetActorName(actor) }));
+            //Debug.Log(string.Format("{0}: Starting conversation with {1}", new object[] { name, GetActorName(actor) }));
         }
 
         public void OnConversationLine(Subtitle subtitle)
@@ -36,9 +36,13 @@ namespace PixelCrushers.DialogueSystem
 
             string speakerName = (subtitle.speakerInfo != null && subtitle.speakerInfo.transform != null) ? subtitle.speakerInfo.transform.name : "(null speaker)";
             string dialogueLine = string.Format("{0}: {1}", speakerName, subtitle.formattedText.text);
-            dialogueHistory.Add(string.Format("{0}:\n {1}\n", speakerName, subtitle.formattedText.text));
-            onDialogueUpdated.Invoke();
-            Debug.Log(string.Format("<color={0}>{1}</color>", GetActorColor(subtitle), dialogueLine));
+            if (!convoIDs.ContainsKey(dialogueLine)) 
+            {
+                dialogueHistory.Add(string.Format("{0}:\n {1}\n", speakerName, subtitle.formattedText.text));
+                onDialogueUpdated.Invoke();
+                convoIDs[dialogueLine] = true;
+            }
+            //Debug.Log(string.Format("<color={0}>{1}</color>", GetActorColor(subtitle), dialogueLine));
         }
         private void Awake()
         {
@@ -51,7 +55,7 @@ namespace PixelCrushers.DialogueSystem
         }
         public void OnConversationEnd(Transform actor)
         {
-            Debug.Log(string.Format("{0}: Ending conversation with {1}", name, GetActorName(actor)));
+            //Debug.Log(string.Format("{0}: Ending conversation with {1}", name, GetActorName(actor)));
         }
 
         private string GetActorName(Transform actor)
