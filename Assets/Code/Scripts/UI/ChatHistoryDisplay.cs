@@ -29,7 +29,7 @@ public class ChatHistoryDisplay : MonoBehaviour
 
         if (scrollToBottom != null)
         {
-            scrollToBottom.ScrollToBottomInstant();
+
             Debug.Log("scrolling to bottom on text update");
         }
     }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class UserInterface : MonoBehaviour
 {
     [SerializeField] private GameObject historyMenu;
+    public ScrollToBottom scrollToBottom;  // Reference to the ScrollToBottom script
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class UserInterface : MonoBehaviour
     {
         var menuActive = !historyMenu.activeInHierarchy;
         historyMenu.SetActive(menuActive);
+        scrollToBottom.ScrollToBottomInstant();
         if (state == PlayerMovement.MovementState.Talking) return;
         Time.timeScale = menuActive ? 0 : 1;
         Cursor.lockState = menuActive ? CursorLockMode.None : CursorLockMode.Locked;
