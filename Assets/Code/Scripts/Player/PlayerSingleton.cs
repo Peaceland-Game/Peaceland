@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ProceduralWorlds;
+using PixelCrushers.DialogueSystem;
 
 
 public class PlayerSingleton : MonoBehaviour
@@ -41,5 +42,10 @@ public class PlayerSingleton : MonoBehaviour
         {
             userInterface.ToggleHistoryMenu(playerMovement.state);
         }
+    }
+
+    void OnConversationEnd(Transform actor) 
+    {
+
     }
 }
