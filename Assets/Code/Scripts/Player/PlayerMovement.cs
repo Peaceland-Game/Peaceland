@@ -172,9 +172,8 @@ public class PlayerMovement : MonoBehaviour
     public IEnumerator TurnToLookAt(Transform target, float duration)
     {
         // Store the initial rotation of the CameraHolder
-        Quaternion initialRotation = transform.localRotation;
+        Quaternion initialRotation = transform.rotation;
 
-        
         // Calculate the final rotation to look at the target
         Quaternion finalRotation = Quaternion.LookRotation(target.position - transform.position);
 
@@ -183,14 +182,15 @@ public class PlayerMovement : MonoBehaviour
         while (elapsedTime < duration)
         {
             // Interpolate between the initial rotation and the final rotation
-            transform.localRotation = Quaternion.Slerp(initialRotation, finalRotation, elapsedTime / duration);
+            transform.rotation = Quaternion.Slerp(initialRotation, finalRotation, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             // Wait for the next frame
             yield return null;
         }
 
         // Ensure the camera ends at the exact final rotation
-        transform.localRotation = finalRotation;
+        transform.rotation = finalRotation;
+        playerCamHolder.GetComponent<PlayerCam>().SetYRotation(finalRotation.eulerAngles.y);
 
         //target.GetComponent<YarnInteractable>().StartConversation();
         
