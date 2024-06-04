@@ -7,6 +7,11 @@ public class PlayerCam : MonoBehaviour
     [SerializeField]
     PlayerMovement player;
 
+    /// <summary>
+    /// game object that hols the player model
+    /// </summary>
+    [SerializeField] GameObject playerModel;
+
     // Sensitivity variables for mouse movement
     public float sensX;
     public float sensY;
@@ -47,6 +52,9 @@ public class PlayerCam : MonoBehaviour
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         // Apply the rotation to the player's orientation (horizontal rotation only)
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+
+        //Turn the player model as well
+        playerModel.transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
     public void ZeroRotation()
     {
