@@ -34,10 +34,10 @@ public class PlayerCam : MonoBehaviour
 
     private void Update()
     {
-        if(player.state == PlayerMovement.MovementState.Talking) 
-        {
-            return;
-        }
+        //if(player.state == PlayerMovement.MovementState.Talking) 
+        //{
+        //    return;
+        //}
 
         // Get input from the mouse
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;

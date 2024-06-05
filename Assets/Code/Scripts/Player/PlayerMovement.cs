@@ -159,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (closestObject.CompareTag("InteractChar"))
             {
-               // state = MovementState.Talking;
+                state = MovementState.Talking;
 
                // var angles = playerCamHolder.transform.rotation.eulerAngles;
                // transform.SetPositionAndRotation(transform.position, Quaternion.Euler(angles.x, 0, angles.z));
@@ -257,10 +257,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
-        if(state == MovementState.Talking || state == MovementState.InMenu) 
-        {
-            return;
-        }
+        //if(state == MovementState.Talking || state == MovementState.InMenu) 
+        //{
+        //    return;
+        //}
 
         // Handling sprinting state
         if (grounded && Input.GetKey(sprintKey))
@@ -289,10 +289,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        if (state == MovementState.Talking || state == MovementState.InMenu)
-        {
-            return;
-        }
+        //if (state == MovementState.Talking || state == MovementState.InMenu)
+        //{
+        //    return;
+        //}
 
         // Calculating move direction based on player orientation and input
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
