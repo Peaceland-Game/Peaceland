@@ -153,11 +153,7 @@ public class PlayerMovement : MonoBehaviour
         {
             var closestObject = GetClosest3DObjectOnLayers(interactPlayerMask);
 
-            if (closestObject.CompareTag("InteractItem")) 
-            {
-                Destroy(closestObject);
-            }
-            else if (closestObject.CompareTag("InteractChar"))
+            if (closestObject.CompareTag("InteractChar"))
             {
                 state = MovementState.Talking;
 
@@ -165,10 +161,6 @@ public class PlayerMovement : MonoBehaviour
                // transform.SetPositionAndRotation(transform.position, Quaternion.Euler(angles.x, 0, angles.z));
                // playerCamHolder.transform.localRotation = Quaternion.identity;
                 StartCoroutine(TurnToLookAt(closestObject.transform, 1.0f));
-            }
-            else if (closestObject.CompareTag("Door"))
-            {
-
             }
         }
     }

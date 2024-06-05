@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 65161449079294308}
   - component: {fileID: 82379819288447364}
   - component: {fileID: 114024263972142150}
+  - component: {fileID: 7946037081401630036}
   m_Layer: 3
   m_Name: Door
   m_TagString: Door
@@ -221,10 +222,32 @@ MonoBehaviour:
   asource: {fileID: 0}
   openDoor: {fileID: 8300000, guid: 44b63b0db16ce624b97e45ebde0a0971, type: 3}
   closeDoor: {fileID: 8300000, guid: bc37ad25465405a428a26ff0facd9a7b, type: 3}
-  locked: 0
-  lockObject: {fileID: 0}
-  playerPos: {fileID: 0}
   state: 1
+--- !u!114 &7946037081401630036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534469393933210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274b80ab5b659c646ba9338870d14625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_overrideName: 
+  m_overrideUseMessage: 
+  maxUseDistance: 20
+  events:
+    onSelect:
+      m_PersistentCalls:
+        m_Calls: []
+    onDeselect:
+      m_PersistentCalls:
+        m_Calls: []
+    onUse:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1831504449878450
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +279,7 @@ Transform:
   - {fileID: 4429605065566062}
   - {fileID: 4895947811848380}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1875921088058430
 GameObject:

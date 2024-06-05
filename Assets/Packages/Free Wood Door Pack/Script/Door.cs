@@ -56,6 +56,11 @@ namespace DoorScript
                 asource.Play();
             }
         }
+        void OnUse(Transform player)
+        {
+            
+            OpenDoor();
+        }
         public void Unlock()
         {
           //  locked  = false;
