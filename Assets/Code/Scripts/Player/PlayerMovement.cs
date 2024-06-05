@@ -166,6 +166,10 @@ public class PlayerMovement : MonoBehaviour
                // playerCamHolder.transform.localRotation = Quaternion.identity;
                 StartCoroutine(TurnToLookAt(closestObject.transform, 1.0f));
             }
+            else if (closestObject.CompareTag("Door"))
+            {
+
+            }
         }
     }
 
