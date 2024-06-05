@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 1611231525277027481}
   - component: {fileID: 1120950419454151897}
   - component: {fileID: 6331469045570268994}
+  - component: {fileID: 1168225425026154171}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -289,6 +290,24 @@ MonoBehaviour:
       m_Calls: []
   playerColor: {r: 0, g: 0, b: 1, a: 1}
   npcColor: {r: 1, g: 0.44431472, b: 0, a: 1}
+--- !u!114 &1168225425026154171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3733119029206320439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d21b624b49641f45aa7f436001e0df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3320224056877828131}
+  cameraHolder: {fileID: 8726208253162123468}
+  playerPrefab: {fileID: 3733119029206320439}
+  sensX: 4000
+  sensY: 4000
+  orientation: {fileID: 670696426094527479}
 --- !u!1 &5631953505301895886
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,7 +833,7 @@ PrefabInstance:
     - target: {fileID: 7944608937306647993, guid: eed6b3b74340ea84984323eb734b9b29,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.291
       objectReference: {fileID: 0}
     - target: {fileID: 7944608937306647993, guid: eed6b3b74340ea84984323eb734b9b29,
         type: 3}
@@ -856,7 +875,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7380855364356959092, guid: eed6b3b74340ea84984323eb734b9b29, type: 3}
+    - {fileID: 2306214327816443983, guid: eed6b3b74340ea84984323eb734b9b29, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7944608937306647993, guid: eed6b3b74340ea84984323eb734b9b29,

@@ -6,6 +6,8 @@ public class PlayerCam : MonoBehaviour
 {
     [SerializeField]
     PlayerMovement player;
+    [SerializeField]
+    GameObject cameraHolder;
 
     /// <summary>
     /// Game object that holds the entire player
@@ -49,7 +51,7 @@ public class PlayerCam : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         // Apply the rotation to the camera
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        cameraHolder.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         // Apply the rotation to the player's orientation (horizontal rotation only)
         //orientation.rotation = Quaternion.Euler(0, yRotation, 0);
 
@@ -58,7 +60,7 @@ public class PlayerCam : MonoBehaviour
     }
     public void ZeroRotation()
     {
-        transform.rotation = Quaternion.identity;
+        cameraHolder.transform.rotation = Quaternion.identity;
     }
 
     public void SetYRotation(float yRotation) 
