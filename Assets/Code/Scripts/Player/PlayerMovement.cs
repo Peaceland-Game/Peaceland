@@ -113,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnConversationStart(Transform actor)
     {
-       // Debug.Log($"Starting conversation with {actor.name}");
+        Debug.Log($"Starting conversation with {actor.name}");
         Cursor.lockState = CursorLockMode.None;
         state = MovementState.Talking;
     }
@@ -152,16 +152,31 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(interactKey))
         {
             var closestObject = GetClosest3DObjectOnLayers(interactPlayerMask);
-
-            if (closestObject.CompareTag("InteractChar"))
+            Transform whereToLook = null;
+            if (closestObject)
             {
+                if (closestObject.TryGetComponent(out HeadTurnGetter headTurner))
+                {
+                    whereToLook = headTurner.ObjectToLookAt;
+                }
+                else if (closestObject.CompareTag("InteractChar"))
+                {
+                    whereToLook = closestObject.transform;
+                }
+            }
+
+            if (whereToLook)
+            {
+                
                 state = MovementState.Talking;
 
-               // var angles = playerCamHolder.transform.rotation.eulerAngles;
-               // transform.SetPositionAndRotation(transform.position, Quaternion.Euler(angles.x, 0, angles.z));
-               // playerCamHolder.transform.localRotation = Quaternion.identity;
-                StartCoroutine(TurnToLookAt(closestObject.transform, 1.0f));
+                // var angles = playerCamHolder.transform.rotation.eulerAngles;
+                // transform.SetPositionAndRotation(transform.position, Quaternion.Euler(angles.x, 0, angles.z));
+                // playerCamHolder.transform.localRotation = Quaternion.identity;
+                Debug.Log($"Turning to look at {whereToLook.name}");
+                StartCoroutine(TurnToLookAt(whereToLook.transform, 1.0f));
             }
+
         }
     }
 
@@ -194,7 +209,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnConversationEnd(Transform actor)
     {
-       // Debug.Log($"stopped talking to: {actor.name}");
+        Debug.Log($"stopped talking to: {actor.name}");
         Cursor.lockState = CursorLockMode.Locked;
         state = MovementState.Walking;
     }
