@@ -18,9 +18,13 @@ public class InteractTest : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log($"{name} triggered with {other.gameObject.name}");
+
     }
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log($"{name} collided with {collision.gameObject.name}");
+        if (collision.gameObject.layer == LayerReference.PLAYER)
+            GetComponent<Outline>().OutlineColor = Color.yellow;
+
     }
 }

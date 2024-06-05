@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,17 @@ using UnityEngine;
 public class InteractIndicator : MonoBehaviour
 {
     [SerializeField] private GameObject interactIndicator;
+    [SerializeField] private Outline outline;
     // Start is called before the first frame update
     void Start()
     {
-        if (!interactIndicator) Debug.LogWarning("Iteract Indicator missing game object reference");
+        if (!interactIndicator) Debug.LogWarning("Interact Indicator missing game object reference");
+        if (!outline) Debug.LogWarning("Outline Indicator missing game object reference");
+        else
+        {
+            outline.OutlineColor = Color.black;
+        }
+        
     }
 
     // Update is called once per frame
@@ -18,9 +26,17 @@ public class InteractIndicator : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name);
         if (other.gameObject.layer == LayerReference.PLAYER)
         {
-            interactIndicator.SetActive(true);
+            //if (interactIndicator)
+            //{
+            //    interactIndicator.SetActive(true);
+            //}
+            if (outline)
+            {
+                outline.OutlineColor = Color.yellow;
+            }
         }
     }
 
@@ -28,7 +44,15 @@ public class InteractIndicator : MonoBehaviour
     {
         if (other.gameObject.layer == LayerReference.PLAYER)
         {
-            interactIndicator.SetActive(false);
+            //if (!interactIndicator)
+            //{
+            //    interactIndicator.SetActive(false);
+            //}
+            if (outline)
+            {
+                outline.OutlineColor = Color.black;
+            }
         }
     }
+    
 }

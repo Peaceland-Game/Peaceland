@@ -4,6 +4,7 @@ using PixelCrushers.DialogueSystem.UnityGUI;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace PixelCrushers.DialogueSystem
 {
@@ -383,6 +384,7 @@ namespace PixelCrushers.DialogueSystem
             if (usable != null && usable.enabled)
             {
                 SetCurrentUsable(usable);
+                
                 if (!usablesInRange.Contains(usable)) usablesInRange.Add(usable);
                 OnSelectedUsableObject(usable);
                 toldListenersHaveUsable = true;
