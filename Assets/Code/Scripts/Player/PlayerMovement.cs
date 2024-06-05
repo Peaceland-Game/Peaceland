@@ -257,10 +257,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
-        if(state == MovementState.Talking || state == MovementState.InMenu) 
-        {
-            return;
-        }
+        //if(state == MovementState.Talking || state == MovementState.InMenu) 
+        //{
+        //    return;
+        //}
 
         // Handling sprinting state
         if (grounded && Input.GetKey(sprintKey))
@@ -289,10 +289,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        if (state == MovementState.Talking || state == MovementState.InMenu)
-        {
-            return;
-        }
+        //if (state == MovementState.Talking || state == MovementState.InMenu)
+        //{
+        //    return;
+        //}
 
         // Calculating move direction based on player orientation and input
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
