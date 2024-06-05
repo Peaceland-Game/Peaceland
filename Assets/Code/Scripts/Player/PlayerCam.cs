@@ -18,8 +18,8 @@ public class PlayerCam : MonoBehaviour
     public float sensX;
     public float sensY;
 
-    // Reference to the player's orientation
-    public Transform orientation;
+    //// Reference to the player's orientation
+    //public Transform orientation;
 
     // Current rotation values for X and Y axes
     float xRotation;

@@ -159,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (closestObject.CompareTag("InteractChar"))
             {
-                state = MovementState.Talking;
+               // state = MovementState.Talking;
 
                // var angles = playerCamHolder.transform.rotation.eulerAngles;
                // transform.SetPositionAndRotation(transform.position, Quaternion.Euler(angles.x, 0, angles.z));
