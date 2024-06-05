@@ -20,4 +20,9 @@ public class SceneSwapper : MonoBehaviour
     {
         SceneManager.LoadScene("SceneLoader");
     }
+
+    public void EndGame()
+    {
+        Application.Quit();
+    }
 }
