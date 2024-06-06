@@ -3080,6 +3080,6 @@ Shader "EasyRoads3D/ER I Connector Blend"
 	}
 	
 	CustomEditor "UnityEditor.ShaderGraphLitGUI"
-	Fallback "Hidden/InternalErrorShader"
+	Fallback "-1"
 	
 }
