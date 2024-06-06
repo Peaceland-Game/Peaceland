@@ -173,8 +173,8 @@ public class PlayerMovement : MonoBehaviour
                 // var angles = playerCamHolder.transform.rotation.eulerAngles;
                 // transform.SetPositionAndRotation(transform.position, Quaternion.Euler(angles.x, 0, angles.z));
                 // playerCamHolder.transform.localRotation = Quaternion.identity;
-                Debug.Log($"Turning to look at {whereToLook.name}");
-                StartCoroutine(TurnToLookAt(whereToLook.transform, 1.0f));
+                Debug.Log($"Turning to look at? {whereToLook.name}");
+               // StartCoroutine(TurnToLookAt(whereToLook.transform, 1.0f));
             }
 
         }
