@@ -704,7 +704,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: LookAt(DadStepOne, Dad, 0.4);
+        value: 'LookAt(listener, Dad, 0.4);
+
+          Delay(0.8);'
         type: 0
         typeString: 
       conversationID: 2
@@ -718,7 +720,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 1
         destinationConversationID: 2
-        destinationDialogueID: 24
+        destinationDialogueID: 37
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -728,8 +730,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 301.6318
-        y: 379.33932
+        x: 213.10727
+        y: 341.63443
         width: 160
         height: 30
     - id: 2
@@ -759,7 +761,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: LookAt(DadStepOne, Dad, 0.4);
+        value: 'LookAt(listener, Dad, 0.4);
+
+          Delay(0.8);'
         type: 0
         typeString: 
       conversationID: 2
@@ -773,7 +777,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 2
         destinationConversationID: 2
-        destinationDialogueID: 28
+        destinationDialogueID: 38
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -783,8 +787,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 599.675
-        y: 380.16693
+        x: 752.1339
+        y: 345.74072
         width: 160
         height: 30
     - id: 3
@@ -844,8 +848,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 304.10693
-        y: 620.59534
+        x: 209.02502
+        y: 627.1527
         width: 160
         height: 30
     - id: 4
@@ -900,8 +904,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 605.18146
-        y: 622.4233
+        x: 751.083
+        y: 638.8167
         width: 160
         height: 30
     - id: 5
@@ -1972,8 +1976,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 303.31726
-        y: 420.77814
+        x: 208.23535
+        y: 427.3355
         width: 160
         height: 30
     - id: 25
@@ -2003,7 +2007,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: MoveTo(DadStepTwo, Dad, 0.5);
+        value: MoveTo(DadStepTwo, Dad, 0.7);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
@@ -2027,8 +2031,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 302.71722
-        y: 461.75186
+        x: 207.63531
+        y: 468.30923
         width: 160
         height: 30
     - id: 26
@@ -2082,8 +2086,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 302.80127
-        y: 501.3985
+        x: 207.71936
+        y: 507.95587
         width: 160
         height: 30
     - id: 27
@@ -2137,8 +2141,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 303.50546
-        y: 540.17725
+        x: 208.42355
+        y: 546.7346
         width: 160
         height: 30
     - id: 28
@@ -2196,8 +2200,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 597.78424
-        y: 421.81036
+        x: 743.6858
+        y: 438.2038
         width: 160
         height: 30
     - id: 29
@@ -2251,8 +2255,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 595.4408
-        y: 538.53906
+        x: 741.34235
+        y: 554.9325
         width: 160
         height: 30
     - id: 30
@@ -2282,7 +2286,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: MoveTo(DadStepTwo, Dad, 0.5);
+        value: MoveTo(DadStepTwo, Dad, 0.7);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
@@ -2306,8 +2310,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 594.8792
-        y: 461.15256
+        x: 740.78076
+        y: 477.546
         width: 160
         height: 30
     - id: 31
@@ -2361,8 +2365,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 594.7366
-        y: 501.026
+        x: 740.6381
+        y: 517.41943
         width: 160
         height: 30
     - id: 32
@@ -2582,8 +2586,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 303.50543
-        y: 581.222
+        x: 208.42352
+        y: 587.77936
         width: 160
         height: 30
     - id: 36
@@ -2637,13 +2641,123 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 602.0893
-        y: 578.6543
+        x: 747.99084
+        y: 595.0477
+        width: 160
+        height: 30
+    - id: 37
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: LookAt(DadStepOne, Dad, 0.4);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 37
+        destinationConversationID: 2
+        destinationDialogueID: 24
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 209.82858
+        y: 388.35574
+        width: 160
+        height: 30
+    - id: 38
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: LookAt(DadStepOne, Dad, 0.4);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 38
+        destinationConversationID: 2
+        destinationDialogueID: 28
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 742.1305
+        y: 400.60535
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 3.4483032, y: 0}
-    canvasZoom: 0.5800004
+    canvasScrollPosition: {x: 0, y: 25.277771}
+    canvasZoom: 0.52000046
   - id: 3
     fields:
     - title: Title
