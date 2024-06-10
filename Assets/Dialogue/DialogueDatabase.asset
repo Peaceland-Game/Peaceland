@@ -759,7 +759,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: LookAt(listener, Dad, 0.5);
+        value: LookAt(DadStepOne, Dad, 0.4);
         type: 0
         typeString: 
       conversationID: 2
@@ -814,7 +814,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: LookAt(listener, Dad, 0.5);
+        value: 
         type: 0
         typeString: 
       conversationID: 2
@@ -845,7 +845,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 304.10693
-        y: 578.80444
+        y: 620.59534
         width: 160
         height: 30
     - id: 4
@@ -900,8 +900,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 593.2412
-        y: 586.60236
+        x: 605.18146
+        y: 622.4233
         width: 160
         height: 30
     - id: 5
@@ -955,8 +955,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 181.7865
-        y: 634.25507
+        x: 156.41339
+        y: 682.01624
         width: 160
         height: 30
     - id: 6
@@ -1010,8 +1010,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 386.64087
-        y: 633.28424
+        x: 397.08862
+        y: 690.0007
         width: 160
         height: 30
     - id: 7
@@ -1736,7 +1736,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 19
         destinationConversationID: 2
-        destinationDialogueID: 23
+        destinationDialogueID: 34
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1777,7 +1777,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: LookAt(TV_LOD Variant, listener, 0.5);
+        value: Camera(StraightLook, TV_LOD Variant, 0.5);
         type: 0
         typeString: 
       conversationID: 2
@@ -1832,7 +1832,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: LookAt(Orientation, listener, 0.5);
+        value: 'Camera(original, Player, 0.5);
+
+          Delay(0.1);'
         type: 0
         typeString: 
       conversationID: 2
@@ -1850,8 +1852,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 337.12473
-        y: 1466.0795
+        x: 420.70682
+        y: 1481.0048
         width: 160
         height: 30
     - id: 23
@@ -2025,8 +2027,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 304.20975
-        y: 460.2593
+        x: 302.71722
+        y: 461.75186
         width: 160
         height: 30
     - id: 26
@@ -2125,7 +2127,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 27
         destinationConversationID: 2
-        destinationDialogueID: 3
+        destinationDialogueID: 35
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2239,7 +2241,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 29
         destinationConversationID: 2
-        destinationDialogueID: 4
+        destinationDialogueID: 36
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2474,9 +2476,174 @@ MonoBehaviour:
         y: 1413.3466
         width: 160
         height: 30
+    - id: 34
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Camera(PlayerStraight, CameraPos, 0.5);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 34
+        destinationConversationID: 2
+        destinationDialogueID: 23
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 337.8274
+        y: 278.2794
+        width: 160
+        height: 30
+    - id: 35
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: LookAt(listener, Dad, 0.5);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 35
+        destinationConversationID: 2
+        destinationDialogueID: 3
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 303.50543
+        y: 581.222
+        width: 160
+        height: 30
+    - id: 36
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: LookAt(listener, Dad, 0.5);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 36
+        destinationConversationID: 2
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 602.0893
+        y: 578.6543
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 98.43533, y: 0}
-    canvasZoom: 0.7600002
+    canvasScrollPosition: {x: 3.4483032, y: 0}
+    canvasZoom: 0.5800004
   - id: 3
     fields:
     - title: Title
@@ -2782,7 +2949,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(original, listener, 0.5);
+        value: 'Camera(original, listener, 0.5);
+
+          Delay(0.1);'
         type: 0
         typeString: 
       conversationID: 3
@@ -3276,7 +3445,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(original, listener, 0.5);
+        value: 'Camera(original, listener, 0.5);
+
+          Delay(0.1);'
         type: 0
         typeString: 
       conversationID: 3
@@ -3382,7 +3553,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(original, listener, 0.5);
+        value: 'Camera(original, listener, 0.5);
+
+          Delay(0.1);'
         type: 0
         typeString: 
       conversationID: 3
