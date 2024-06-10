@@ -405,6 +405,20 @@ MonoBehaviour:
         of this manually so here we are
       type: 0
       typeString: 
+  - id: 7
+    fields:
+    - title: Name
+      value: WarName
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: Swan Revolution
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   conversations:
   - id: 1
     fields:
@@ -686,7 +700,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: What's the [var=MonumentName]
+        value: What's the [var=MonumentName]?
         type: 0
         typeString: 
       - title: Sequence
@@ -769,8 +783,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 574.3586
-        y: 376.36948
+        x: 599.675
+        y: 380.16693
         width: 160
         height: 30
     - id: 3
@@ -886,8 +900,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 604.6336
-        y: 585.33655
+        x: 593.2412
+        y: 586.60236
         width: 160
         height: 30
     - id: 5
@@ -1080,7 +1094,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: Sometimes, people act in violence because they are angry. These people
-          are dangerous...Look at me. you be safe, ok? Stay away from people like
+          are dangerous... Look at me. you be safe, ok? Stay away from people like
           that. I don't want you to get hurt.
         type: 0
         typeString: 
@@ -1340,7 +1354,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 304.80017
+        x: 302.2685
         y: 1157.314
         width: 160
         height: 30
@@ -1477,8 +1491,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Then it's ok with me. Only one thing...You have to bring me back some
-          Berry Hazard if Cyclo still has any left.
+        value: Then it's ok with me. On one condition...
         type: 0
         typeString: 
       - title: Sequence
@@ -1496,7 +1509,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 15
         destinationConversationID: 2
-        destinationDialogueID: 22
+        destinationDialogueID: 32
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1538,7 +1551,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Tonight, we bring you exclusive details of the vandalism of MONUMENT_NAME.
+        value: Tonight, we bring you exclusive details of the vandalism of [var=MonumentName].
         type: 0
         typeString: 
       - title: Sequence
@@ -1650,7 +1663,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: His arrest has further fueled debate between Azulians and Matollans
-          about who and what should be remembered for their actions during the WAR_NAME.
+          about who and what should be remembered for their actions during the [var=WarName].
         type: 0
         typeString: 
       - title: Sequence
@@ -1734,7 +1747,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 549.66943
-        y: 271.7504
+        y: 273.0162
         width: 160
         height: 30
     - id: 20
@@ -1837,8 +1850,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 389.02344
-        y: 1390.1301
+        x: 337.12473
+        y: 1466.0795
         width: 160
         height: 30
     - id: 23
@@ -1957,8 +1970,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 298.254
-        y: 422.04398
+        x: 303.31726
+        y: 420.77814
         width: 160
         height: 30
     - id: 25
@@ -2012,8 +2025,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 300.41226
-        y: 461.52512
+        x: 304.20975
+        y: 460.2593
         width: 160
         height: 30
     - id: 26
@@ -2067,7 +2080,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 300.26962
+        x: 302.80127
         y: 501.3985
         width: 160
         height: 30
@@ -2122,8 +2135,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 300.97385
-        y: 538.9114
+        x: 303.50546
+        y: 540.17725
         width: 160
         height: 30
     - id: 28
@@ -2181,8 +2194,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 592.72095
-        y: 418.01288
+        x: 597.78424
+        y: 421.81036
         width: 160
         height: 30
     - id: 29
@@ -2350,9 +2363,120 @@ MonoBehaviour:
         y: 501.026
         width: 160
         height: 30
+    - id: 32
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: You have to bring me back some Berry Hazard if Cyclo still has any
+          left.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 32
+        destinationConversationID: 2
+        destinationDialogueID: 33
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 625.01294
+        y: 1370.9417
+        width: 160
+        height: 30
+    - id: 33
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: DON'T BE OUT TOO LATE.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 33
+        destinationConversationID: 2
+        destinationDialogueID: 22
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 621.2156
+        y: 1413.3466
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 310.28052, y: 0}
-    canvasZoom: 0.7900002
+    canvasScrollPosition: {x: 98.43533, y: 0}
+    canvasZoom: 0.7600002
   - id: 3
     fields:
     - title: Title
@@ -2869,7 +2993,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Yes, whatever you say [var=PetName]
+        value: Yes, whatever you say [var=PetName].
         type: 0
         typeString: 
       - title: Sequence
@@ -3281,7 +3405,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 18.032776, y: 0}
+    canvasScrollPosition: {x: 26.229492, y: 59.016357}
     canvasZoom: 0.6100004
   - id: 4
     fields:
