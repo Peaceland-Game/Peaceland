@@ -2023,8 +2023,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 79.45276, y: 0}
-    canvasZoom: 0.6700003
+    canvasScrollPosition: {x: 16.363586, y: 44.38865}
+    canvasZoom: 0.5500004
   - id: 3
     fields:
     - title: Title
@@ -2122,8 +2122,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 438
-        y: 68
+        x: 425.14288
+        y: 107.99997
         width: 160
         height: 30
     - id: 1
@@ -2238,8 +2238,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 174
-        y: 271
+        x: 331.69217
+        y: 255.61539
         width: 160
         height: 30
     - id: 3
@@ -2299,8 +2299,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 203.03296
-        y: 637.6555
+        x: 333.03293
+        y: 466.227
         width: 160
         height: 30
     - id: 4
@@ -2350,8 +2350,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 701
-        y: 272
+        x: 637.5385
+        y: 204.69238
         width: 160
         height: 30
     - id: 5
@@ -2406,8 +2406,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 163
-        y: 329.4375
+        x: 333.60425
+        y: 295.8661
         width: 160
         height: 30
     - id: 6
@@ -2461,8 +2461,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 162
-        y: 407.72418
+        x: 333.4285
+        y: 337.7242
         width: 160
         height: 30
     - id: 7
@@ -2516,8 +2516,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158
-        y: 492
+        x: 332.28564
+        y: 380.57147
         width: 160
         height: 30
     - id: 8
@@ -2571,8 +2571,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 173.67218
-        y: 566.5246
+        x: 335.10068
+        y: 423.66754
         width: 160
         height: 30
     - id: 9
@@ -2626,8 +2626,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 82.147766
-        y: 731.45886
+        x: 217.862
+        y: 515.7446
         width: 160
         height: 30
     - id: 10
@@ -2681,8 +2681,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 298.8199
-        y: 724.26215
+        x: 453.1056
+        y: 517.1193
         width: 160
         height: 30
     - id: 11
@@ -2736,8 +2736,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 298.8199
-        y: 788.26215
+        x: 451.677
+        y: 561.1194
         width: 160
         height: 30
     - id: 12
@@ -2795,8 +2795,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 299.8199
-        y: 866.26215
+        x: 454.10553
+        y: 604.83356
         width: 160
         height: 30
     - id: 13
@@ -2828,7 +2828,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'Camera(original, listener, 0.5);
 
-          Delay(0.1);'
+          Delay(0.1);
+
+          SetEnabled(Usable,
+          false, Mom);'
         type: 0
         typeString: 
       conversationID: 3
@@ -2846,8 +2849,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 305.8199
-        y: 940.26215
+        x: 452.96268
+        y: 648.8336
         width: 160
         height: 30
     - id: 14
@@ -2877,9 +2880,18 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'LookAt(0.3);
+        value: 'SetEnabled(Canvas, false, DialogueCanvas);
 
-          Camera(AdultLookUp, speaker, 0.5);'
+          SetContinueMode(false);
+
+          LookAt(0.3);
+
+          Camera(AdultLookUp,
+          speaker, 0.5);
+
+          SetEnabled(Canvas, true, DialogueCanvas)@0.5;
+
+          SetContinueMode(original)@0.5;'
         type: 0
         typeString: 
       conversationID: 3
@@ -2904,7 +2916,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 425.50006
-        y: 136.75
+        y: 155.32144
         width: 160
         height: 30
     - id: 15
@@ -2936,7 +2948,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'Camera(original, listener, 0.5);
 
-          Delay(0.1);'
+          Delay(0.1);
+
+          SetEnabled(Usable,
+          false, Mom);'
         type: 0
         typeString: 
       conversationID: 3
@@ -2954,13 +2969,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 82.26251
-        y: 819.6389
+        x: 213.69102
+        y: 558.21045
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 58.620667, y: 0}
-    canvasZoom: 0.5800004
+    canvasScrollPosition: {x: 110.872826, y: 5.089752}
+    canvasZoom: 0.7000003
   - id: 4
     fields:
     - title: Title
@@ -3117,8 +3132,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 330
-        y: 190
+        x: 274
+        y: 86
         width: 160
         height: 30
     - id: 2
@@ -3166,8 +3181,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 73
-        y: 189
+        x: 59
+        y: 81
         width: 160
         height: 30
     entryGroups: []
