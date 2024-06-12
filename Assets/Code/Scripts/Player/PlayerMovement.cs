@@ -298,7 +298,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void MovePlayer()
+    public void MovePlayer()
     {
         //if (state == MovementState.Talking || state == MovementState.InMenu)
         //{
