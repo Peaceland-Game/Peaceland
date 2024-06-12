@@ -145,8 +145,118 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
+  - id: 6
+    fields:
+    - title: Name
+      value: Waeli
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Qiayn kid who is taking care of Gryf
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
+  - id: 7
+    fields:
+    - title: Name
+      value: Antoni
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Azulian kid
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
+  - id: 8
+    fields:
+    - title: Name
+      value: Cylo
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Ice cream vendor
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
+  - id: 9
+    fields:
+    - title: Name
+      value: Gryf
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: The sick dog that Waeli is taking care of
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
+  - id: 10
+    fields:
+    - title: Name
+      value: GPK Solider
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: A solider of the Global Peacekeepers
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
   items:
-  - id: 1
+  - id: 8
     fields:
     - title: Name
       value: Talk to Your Parents
@@ -157,7 +267,7 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: Get permission from your parents to go outside.
+      value: Get permission from both of your parents to go outside.
       type: 0
       typeString: CustomFieldType_Text
     - title: Success Description
@@ -184,37 +294,45 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
-  - id: 4
+  - id: 9
     fields:
     - title: Name
       value: TV Time
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: Sit next to Dad to see what is going on.
+      value: Sit next to papa to see what's going on.
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Success Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Failure Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
     - title: Is Item
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
-  - id: 2
+    - title: Trackable
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Track
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+  - id: 10
     fields:
     - title: Name
       value: Little Helper
@@ -252,38 +370,10 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
-    - title: Entry Count
-      value: 2
-      type: 1
-      typeString: CustomFieldType_Number
-    - title: Entry 1 State
-      value: unassigned
-      type: 0
-      typeString: CustomFieldType_QuestState
-    - title: Entry 1
-      value: Grab the towel
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Entry 2 State
-      value: unassigned
-      type: 0
-      typeString: CustomFieldType_QuestState
-    - title: Entry 2
-      value: Wipe the plates mama gives you
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Entry 1 Grab the towel
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Entry 2 Wipe the plates mama gives you
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
-  - id: 3
+  - id: 11
     fields:
     - title: Name
-      value: Cylo Season
+      value: Towel
       type: 0
       typeString: 
     - title: Pictures
@@ -291,21 +381,115 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: Purchase ice cream from Cylo.
+      value: A small hand towel meant for scrubbing.
       type: 0
       typeString: 
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+  - id: 12
+    fields:
+    - title: Name
+      value: Cylo Season
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Get ice cream from Cylo.
+      type: 0
+      typeString: CustomFieldType_Text
     - title: Success Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Failure Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: State
       value: unassigned
       type: 0
-      typeString: 
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Trackable
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Track
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+  - id: 13
+    fields:
+    - title: Name
+      value: Return Home
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: It's getting late... Head back home.
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Trackable
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Track
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+  - id: 14
+    fields:
+    - title: Name
+      value: A Strange Noise
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Find the source of the strange noise.
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
     - title: Is Item
       value: False
       type: 2
@@ -334,48 +518,48 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
-  - id: 3
+  - id: 2
     fields:
     - title: Name
-      value: FatherPermission
+      value: PeaceMeter
       type: 0
-      typeString: 
-    - title: Initial Value
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Description
-      value: Permission of Kalin's father to get ice cream
-      type: 0
-      typeString: 
-  - id: 4
-    fields:
-    - title: Name
-      value: MotherPermission
-      type: 0
-      typeString: 
-    - title: Initial Value
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Description
-      value: 
-      type: 0
-      typeString: 
-  - id: 5
-    fields:
-    - title: Name
-      value: Qip
-      type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Initial Value
       value: 0
       type: 1
       typeString: CustomFieldType_Number
     - title: Description
-      value: Currency of this country
+      value: The effect of the player's actions
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
+  - id: 3
+    fields:
+    - title: Name
+      value: MotherPermission
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: Permission from Mama to go outside.
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 4
+    fields:
+    - title: Name
+      value: FatherPermission
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: Permission from Papa to go outside.
+      type: 0
+      typeString: CustomFieldType_Text
   conversations:
   - id: 1
     fields:
@@ -1975,10 +2159,8 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'SetQuestState("Talk to Your Parents", "success");
 
-        SetQuestState("Cylo
-        Season", "active");
-
-        Variable["Alert"] = "Head outside";'
+        Variable["Alert"]
+        = "Head outside";'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2265,8 +2447,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 6.1224365, y: 299.99976}
-    canvasZoom: 0.4900004
+    canvasScrollPosition: {x: 6.5217285, y: 0}
+    canvasZoom: 0.4600004
   - id: 3
     fields:
     - title: Title
@@ -2858,7 +3040,7 @@ MonoBehaviour:
       - originConversationID: 3
         originDialogueID: 25
         destinationConversationID: 3
-        destinationDialogueID: 32
+        destinationDialogueID: 31
         isConnector: 0
         priority: 2
       conditionsString: Variable["FatherPermission"] == false
@@ -3088,10 +3270,8 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'SetQuestState("Talk to Your Parents", "success");
 
-        SetQuestState("Cylo
-        Season", "active");
-
-        Variable["Alert"] = "Head outside";'
+        Variable["Alert"]
+        = "Head outside";'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3244,12 +3424,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 
+        value: "Remember, don\u2019t cross the river! You know what those awful people
+          would do if they caught you over there!"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: "Remember, don\u2019t cross the river! You know what those awful people
-          would do if they caught you over there!"
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 3
@@ -3273,12 +3453,12 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156.56728
-        y: 627.9127
+        x: 277.61987
+        y: 610.8075
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 210.52626}
     canvasZoom: 0.7600002
   - id: 4
     fields:
@@ -3483,7 +3663,10 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: 'Variable["Alert"] = "Find Cylo";
+
+        SetQuestState("Cylo
+        Season", "active");'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3498,7 +3681,7 @@ MonoBehaviour:
     canvasZoom: 1
   syncInfo:
     syncActors: 1
-    syncItems: 1
+    syncItems: 0
     syncLocations: 0
     syncVariables: 1
     syncActorsDatabase: {fileID: 11400000, guid: 76f4aa327b2d1724b926d527ffbb3d95,
