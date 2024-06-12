@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterVisualController : MonoBehaviour
 {
 
-    [SerializeField] Renderer renderer;
+    [SerializeField] Renderer characterRenderer;
     [SerializeField] float speed;
     [SerializeField] AnimationCurve curve;
 
@@ -15,7 +15,7 @@ public class CharacterVisualController : MonoBehaviour
 
     private void Start()
     {
-        materials = renderer.materials;
+        materials = characterRenderer.materials;
     }
 
     // Update is called once per frame
