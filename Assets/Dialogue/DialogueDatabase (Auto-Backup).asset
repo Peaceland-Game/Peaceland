@@ -2016,7 +2016,12 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'SetQuestState("Talk to Your Parents", "success");
+
+        SetQuestState("Cylo
+        Season", "active");
+
+        Variable["Alert"] = "Head outside";'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2303,7 +2308,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 117.81604, y: 492.38437}
+    canvasScrollPosition: {x: 111.84589, y: 405.81723}
     canvasZoom: 0.6700003
   - id: 3
     fields:
@@ -3124,7 +3129,12 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'SetQuestState("Talk to Your Parents", "success");
+
+        SetQuestState("Cylo
+        Season", "active");
+
+        Variable["Alert"] = "Head outside";'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3311,8 +3321,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 135.15837, y: 53.877136}
-    canvasZoom: 0.8200002
+    canvasScrollPosition: {x: 122.51559, y: 48.125374}
+    canvasZoom: 0.7900002
   - id: 4
     fields:
     - title: Title
@@ -3403,6 +3413,12 @@ MonoBehaviour:
         destinationDialogueID: 2
         isConnector: 0
         priority: 2
+      - originConversationID: 4
+        originDialogueID: 0
+        destinationConversationID: 4
+        destinationDialogueID: 3
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -3462,8 +3478,62 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 157
-        y: 78
+        x: 78
+        y: 87
+        width: 160
+        height: 30
+    - id: 3
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'Fade(stay, 0.5);
+
+          MoveTo(StepOutside, Player)@0.7;
+
+          Fade(unstay,
+          0.5)@1.2;'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 4
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 271
+        y: 88
         width: 160
         height: 30
     entryGroups: []
