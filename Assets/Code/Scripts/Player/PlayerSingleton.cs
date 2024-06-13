@@ -38,10 +38,10 @@ public class PlayerSingleton : MonoBehaviour
 
     void HandleInterfaceInput()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            userInterface.ToggleHistoryMenu(playerMovement.state);
-        }
+       //f (Input.GetKeyDown(KeyCode.H))
+       //
+       //   userInterface.ToggleHistoryMenu(playerMovement.state);
+       //
     }
 
     void OnConversationEnd(Transform actor) 

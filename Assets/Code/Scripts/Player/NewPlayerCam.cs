@@ -23,25 +23,25 @@ public class NewPlayerCam : MonoBehaviour
     float xRotation;
     float yRotation;
 
-    private PlayerControls playerControls;
+    //private PlayerControls playerControls;
     private Vector2 lookInput;
 
     private void Awake()
     {
-        playerControls = new PlayerControls();
+       // playerControls = new PlayerControls();
 
-        playerControls.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
-        playerControls.Player.Look.canceled += ctx => lookInput = Vector2.zero;
+       // playerControls.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
+        //playerControls.Player.Look.canceled += ctx => lookInput = Vector2.zero;
     }
 
     private void OnEnable()
     {
-        playerControls.Enable();
+       // playerControls.Enable();
     }
 
     private void OnDisable()
     {
-        playerControls.Disable();
+       // playerControls.Disable();
     }
 
     private void Start()

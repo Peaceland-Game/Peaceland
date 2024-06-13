@@ -67,10 +67,11 @@ public class NewPlayerMove : MonoBehaviour
         InMenu
     }
 
-    private PlayerControls playerControls;
+    //private PlayerControls playerControls;
 
     private void Awake()
     {
+        /*
         playerControls = new PlayerControls();
 
         playerControls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
@@ -87,16 +88,17 @@ public class NewPlayerMove : MonoBehaviour
 
         playerControls.Player.Interact.performed += ctx => interactInput = true;
         playerControls.Player.Interact.canceled += ctx => interactInput = false;
+        */
     }
 
     private void OnEnable()
     {
-        playerControls.Enable();
+        //playerControls.Enable();
     }
 
     private void OnDisable()
     {
-        playerControls.Disable();
+        //playerControls.Disable();
     }
 
     private void Start()
@@ -262,7 +264,7 @@ public class NewPlayerMove : MonoBehaviour
         }
     }
 
-    private void MovePlayer()
+    public void MovePlayer()
     {
         moveDirection = orientation.forward * moveInput.y + orientation.right * moveInput.x;
 

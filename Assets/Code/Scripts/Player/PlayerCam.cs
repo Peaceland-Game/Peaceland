@@ -40,23 +40,23 @@ public class PlayerCam : MonoBehaviour
         //}
 
         // Get input from the mouse
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
+        //loat mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
+        //float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
         // Update the Y rotation based on mouse X movement
-        yRotation += mouseX;
+       // yRotation += mouseX;
 
         // Update the X rotation based on mouse Y movement and clamp it to avoid flipping
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+      //  xRotation -= mouseY;
+       // xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         // Apply the rotation to the camera
-        cameraHolder.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+       // cameraHolder.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         // Apply the rotation to the player's orientation (horizontal rotation only)
         //orientation.rotation = Quaternion.Euler(0, yRotation, 0);
 
         //Apply the rotation to the player as well
-        playerPrefab.transform.rotation = Quaternion.Euler(0, yRotation, 0);
+       // playerPrefab.transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
     public void ZeroRotation()
     {

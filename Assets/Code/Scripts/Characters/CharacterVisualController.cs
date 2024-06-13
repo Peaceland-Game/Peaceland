@@ -24,7 +24,7 @@ public class CharacterVisualController : MonoBehaviour
         if (activeCoroutines > 0)
             return;
 
-        bool shouldTransition = Input.GetKeyDown(KeyCode.T);
+        bool shouldTransition = false;
 
         if (shouldTransition)
         {
