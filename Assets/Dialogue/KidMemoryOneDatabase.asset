@@ -610,7 +610,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -711,7 +711,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: 
       conversationID: 1
@@ -1012,7 +1012,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: 
       conversationID: 2
@@ -1042,8 +1042,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 173.57681
-        y: 401.89514
+        x: 169.22897
+        y: 414.9386
         width: 160
         height: 30
     - id: 42
@@ -1074,7 +1074,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: 
       conversationID: 2
@@ -1755,7 +1755,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: 
       conversationID: 2
@@ -1923,10 +1923,12 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(PlayerStraight, CameraPos, 0.5)@2.0;
+        value: 'SetContinueMode(false);
 
-          LookAt(Dad,
-          listener, 0.5)@2.5;'
+          Camera(PlayerStraight, CameraPos,
+          0.5)@1.0;
+
+          LookAt(Dad, listener, 0.5)@1.5;'
         type: 0
         typeString: 
       conversationID: 2
@@ -1994,9 +1996,7 @@ MonoBehaviour:
           Camera(StraightLook,
           TV_LOD Variant, 0.5);
 
-          SetEnabled(Canvas, true, DialogueCanvas)@0.5;
-
-          SetContinueMode(original)@0.5;'
+          SetEnabled(Canvas, true, DialogueCanvas)@0.5;'
         type: 0
         typeString: 
       conversationID: 2
@@ -2051,7 +2051,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(original, Player, 0.5);
+        value: 'SetContinueMode(false);
+
+          Camera(original, Player, 0.5);
 
           Delay(0.1);
 
@@ -2469,7 +2471,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 6.5217285, y: 0}
+    canvasScrollPosition: {x: 0, y: 304.34753}
     canvasZoom: 0.4600004
   - id: 3
     fields:
@@ -2599,7 +2601,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(true)@0.5;
         type: 0
         typeString: 
       conversationID: 3
@@ -2776,7 +2778,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(original, listener, 0.5);
+        value: 'SetContinueMode(false);
+
+          Camera(original, listener, 0.5);
 
           Delay(0.1);'
         type: 0
@@ -3334,14 +3338,13 @@ MonoBehaviour:
 
           SetContinueMode(false);
 
-          LookAt(0.3);
+          LookAt(Mom,
+          listener, 0.3);
 
-          Camera(AdultLookUp,
-          speaker, 0.5);
+          Camera(AdultLookUp, speaker, 0.5);
 
-          SetEnabled(Canvas, true, DialogueCanvas)@0.5;
-
-          SetContinueMode(original)@0.5;'
+          SetEnabled(Canvas,
+          true, DialogueCanvas)@0.5;'
         type: 0
         typeString: 
       conversationID: 3
@@ -3396,7 +3399,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(original, listener, 0.5);
+        value: 'SetContinueMode(false);
+
+          Camera(original, listener, 0.5);
 
           Delay(0.1);
 
@@ -3480,8 +3485,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 210.52626}
-    canvasZoom: 0.7600002
+    canvasScrollPosition: {x: 0, y: 73.13431}
+    canvasZoom: 0.6700003
   - id: 4
     fields:
     - title: Title
