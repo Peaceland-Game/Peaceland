@@ -233,7 +233,7 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
-  - id: 10
+  - id: 12
     fields:
     - title: Name
       value: GPK Soldier
@@ -278,7 +278,7 @@ MonoBehaviour:
     alternatePortraits: []
     spritePortraits: []
   items:
-  - id: 1
+  - id: 3
     fields:
     - title: Name
       value: Cylo Season
@@ -316,7 +316,7 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
-  - id: 2
+  - id: 7
     fields:
     - title: Name
       value: A Strange Noise
@@ -394,7 +394,7 @@ MonoBehaviour:
       value: The effect of the player's actions
       type: 0
       typeString: CustomFieldType_Text
-  - id: 4
+  - id: 9
     fields:
     - title: Name
       value: What'sWrong
@@ -408,7 +408,7 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: CustomFieldType_Text
-  - id: 5
+  - id: 10
     fields:
     - title: Name
       value: MeetingGryf
@@ -422,7 +422,7 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: CustomFieldType_Text
-  - id: 6
+  - id: 11
     fields:
     - title: Name
       value: WhyTakeCare
@@ -437,7 +437,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
   conversations:
-  - id: 4
+  - id: 15
     fields:
     - title: Title
       value: Waeli Conversation
@@ -464,7 +464,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -513,7 +513,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -521,10 +521,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 0
-        destinationConversationID: 4
-        destinationDialogueID: 1
+        destinationConversationID: 15
+        destinationDialogueID: 80
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -534,8 +534,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 30
+        x: 1
+        y: 1
         width: 160
         height: 30
     - id: 1
@@ -565,17 +565,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(true)@0.5;
-
-          LookAt(Waeli, listener, 0.3);
-
-          Camera(AdultLookUp,
-          speaker, 0.5);
-
-          SetEnabled(Canvas, true, DialogueCanvas)@0.5;'
+        value: SetContinueMode(true)@0.5;
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -583,9 +576,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 1
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 2
         isConnector: 0
         priority: 2
@@ -630,7 +623,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -638,9 +631,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 2
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 3
         isConnector: 0
         priority: 2
@@ -685,7 +678,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -693,9 +686,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 3
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
@@ -707,7 +700,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 160
-        y: 180
+        y: 181.36987
         width: 160
         height: 30
     - id: 4
@@ -740,7 +733,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -748,15 +741,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 4
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 4
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 6
         isConnector: 0
         priority: 2
@@ -801,7 +794,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -809,9 +802,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 5
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 7
         isConnector: 0
         priority: 2
@@ -856,7 +849,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -864,9 +857,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 6
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 13
         isConnector: 0
         priority: 2
@@ -911,7 +904,7 @@ MonoBehaviour:
         value: SetVariable(PeaceMeter, 1);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -919,9 +912,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 7
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 8
         isConnector: 0
         priority: 2
@@ -966,7 +959,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -974,9 +967,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 8
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 9
         isConnector: 0
         priority: 2
@@ -1021,7 +1014,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1029,9 +1022,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 9
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 10
         isConnector: 0
         priority: 2
@@ -1076,7 +1069,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1084,9 +1077,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 10
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 11
         isConnector: 0
         priority: 2
@@ -1131,7 +1124,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1139,9 +1132,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 11
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 12
         isConnector: 0
         priority: 2
@@ -1186,7 +1179,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1194,10 +1187,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 12
-        destinationConversationID: 4
-        destinationDialogueID: 22
+        destinationConversationID: 15
+        destinationDialogueID: 81
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1242,7 +1235,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1250,9 +1243,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 13
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 14
         isConnector: 0
         priority: 2
@@ -1298,7 +1291,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1306,15 +1299,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 14
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 16
         isConnector: 0
         priority: 2
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 14
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 76
         isConnector: 0
         priority: 2
@@ -1359,7 +1352,7 @@ MonoBehaviour:
         value: SetVariable(PeaceMeter, -1);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1367,9 +1360,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 15
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 17
         isConnector: 0
         priority: 2
@@ -1414,7 +1407,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1422,9 +1415,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 16
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 7
         isConnector: 0
         priority: 2
@@ -1469,7 +1462,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1477,9 +1470,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 17
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 18
         isConnector: 0
         priority: 2
@@ -1524,10 +1517,10 @@ MonoBehaviour:
         value: 'SetEnabled(Canvas, false, DialogueCanvas);
 
           SetEnabled(Canvas,
-          true, DialogueCanvas)@4;'
+          true, DialogueCanvas)@2;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1535,9 +1528,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 18
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
@@ -1582,7 +1575,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1590,9 +1583,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 19
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 20
         isConnector: 0
         priority: 2
@@ -1637,7 +1630,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1645,9 +1638,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 20
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 21
         isConnector: 0
         priority: 2
@@ -1689,13 +1682,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
-
-          SetEnabled(Canvas,
-          true, DialogueCanvas)1;'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1703,10 +1693,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 21
-        destinationConversationID: 4
-        destinationDialogueID: 22
+        destinationConversationID: 15
+        destinationDialogueID: 81
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1716,78 +1706,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 527.75336
-        y: 634.0137
-        width: 160
-        height: 30
-    - id: 22
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 6
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
-
-          SetEnabled(Canvas,
-          true, DialogueCanvas)1;'
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 4
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 4
-        originDialogueID: 22
-        destinationConversationID: 4
-        destinationDialogueID: 23
-        isConnector: 0
-        priority: 2
-      - originConversationID: 4
-        originDialogueID: 22
-        destinationConversationID: 4
-        destinationDialogueID: 24
-        isConnector: 0
-        priority: 2
-      - originConversationID: 4
-        originDialogueID: 22
-        destinationConversationID: 4
-        destinationDialogueID: 25
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 71.36986
-        y: 625
+        x: 349.67123
+        y: 587.43835
         width: 160
         height: 30
     - id: 23
@@ -1817,10 +1737,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetVariable(What'sWrong, true);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1828,13 +1748,13 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 23
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 26
         isConnector: 0
         priority: 2
-      conditionsString: Variable["What'sWrong"] == true
+      conditionsString: Variable["What'sWrong"] == false
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -1872,10 +1792,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetVariable(MeetingGryf, true);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1883,13 +1803,13 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 24
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 30
         isConnector: 0
         priority: 2
-      conditionsString: Variable["MeetingGryf"] == true
+      conditionsString: Variable["MeetingGryf"] == false
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -1927,10 +1847,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetVariable(WhyTakeCare, true);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1938,13 +1858,13 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 25
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 35
         isConnector: 0
         priority: 2
-      conditionsString: Variable["WhyTakeCare"] == true
+      conditionsString: Variable["WhyTakeCare"] == false
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -1982,10 +1902,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetVariable(What'sWrong, true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1993,9 +1913,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 26
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 27
         isConnector: 0
         priority: 2
@@ -2041,7 +1961,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2049,15 +1969,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 27
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 28
         isConnector: 0
         priority: 2
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 27
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 29
         isConnector: 0
         priority: 2
@@ -2095,14 +2015,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 
+        value: ...
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2110,10 +2030,10 @@ MonoBehaviour:
       falseConditionAction: Passthrough
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 28
-        destinationConversationID: 4
-        destinationDialogueID: 22
+        destinationConversationID: 15
+        destinationDialogueID: 81
         isConnector: 0
         priority: 2
       conditionsString: (Variable["What'sWrong"] == false) or (Variable["MeetingGryf"]
@@ -2125,7 +2045,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1
-        y: 1102.2844
+        y: 1099.5447
         width: 160
         height: 30
     - id: 29
@@ -2158,7 +2078,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2166,9 +2086,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 29
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 34
         isConnector: 0
         priority: 2
@@ -2180,7 +2100,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 186.05685
+        x: 187.42673
         y: 1100.9144
         width: 160
         height: 30
@@ -2211,10 +2131,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetVariable(MeetingGryf, true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2222,9 +2142,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 30
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 31
         isConnector: 0
         priority: 2
@@ -2270,7 +2190,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2278,9 +2198,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 31
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 32
         isConnector: 0
         priority: 2
@@ -2324,13 +2244,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
-
-          SetEnabled(Canvas,
-          true, DialogueCanvas)2;'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2338,9 +2255,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 32
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 33
         isConnector: 0
         priority: 2
@@ -2385,7 +2302,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2393,15 +2310,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 33
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 28
         isConnector: 0
         priority: 2
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 33
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 29
         isConnector: 0
         priority: 2
@@ -2447,7 +2364,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2455,9 +2372,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 34
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 45
         isConnector: 0
         priority: 2
@@ -2499,10 +2416,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetVariable(WhyTakeCare, true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2510,9 +2427,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 35
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 36
         isConnector: 0
         priority: 2
@@ -2554,13 +2471,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
-
-          SetEnabled(Canvas,
-          true, DialogueCanvas)1;'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2568,9 +2482,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 36
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 37
         isConnector: 0
         priority: 2
@@ -2615,7 +2529,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2623,9 +2537,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 37
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 38
         isConnector: 0
         priority: 2
@@ -2667,13 +2581,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
-
-          SetEnabled(Canvas,
-          true, DialogueCanvas)1;'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2681,9 +2592,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 38
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 39
         isConnector: 0
         priority: 2
@@ -2725,13 +2636,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
-
-          SetEnabled(Canvas,
-          true, DialogueCanvas)2;'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2739,9 +2647,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 39
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 40
         isConnector: 0
         priority: 2
@@ -2753,7 +2661,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 424.79443
-        y: 923.6301
+        y: 922.26025
         width: 160
         height: 30
     - id: 40
@@ -2786,7 +2694,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2794,9 +2702,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 40
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 41
         isConnector: 0
         priority: 2
@@ -2842,7 +2750,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2850,9 +2758,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 41
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 42
         isConnector: 0
         priority: 2
@@ -2890,7 +2798,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: I guess I'm the only one he has mow. Everyone's too afraid to get
+        value: I guess I'm the only one he has now. Everyone's too afraid to get
           close to a stray dog . . .
         type: 0
         typeString: CustomFieldType_Text
@@ -2898,7 +2806,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2906,9 +2814,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 42
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 43
         isConnector: 0
         priority: 2
@@ -2950,13 +2858,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
-
-          SetEnabled(Canvas,
-          true, DialogueCanvas)2;'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2964,9 +2869,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 43
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 44
         isConnector: 0
         priority: 2
@@ -2978,7 +2883,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 424.79443
-        y: 1123.6301
+        y: 1125
         width: 160
         height: 30
     - id: 44
@@ -3011,7 +2916,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3019,15 +2924,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 44
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 29
         isConnector: 0
         priority: 2
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 44
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 28
         isConnector: 0
         priority: 2
@@ -3073,7 +2978,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3081,9 +2986,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 45
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 46
         isConnector: 0
         priority: 2
@@ -3128,7 +3033,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3136,9 +3041,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 46
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 47
         isConnector: 0
         priority: 2
@@ -3183,7 +3088,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3191,15 +3096,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 47
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 48
         isConnector: 0
         priority: 2
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 47
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 49
         isConnector: 0
         priority: 2
@@ -3210,7 +3115,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 186.05685
+        x: 184.68698
         y: 1300.9146
         width: 160
         height: 30
@@ -3244,7 +3149,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3252,9 +3157,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 48
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 50
         isConnector: 0
         priority: 2
@@ -3265,8 +3170,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 90.8734
-        y: 1362.3069
+        x: 92.243256
+        y: 1360.937
         width: 160
         height: 30
     - id: 49
@@ -3299,7 +3204,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3307,9 +3212,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 49
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 66
         isConnector: 0
         priority: 2
@@ -3354,7 +3259,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3362,9 +3267,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 50
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 51
         isConnector: 0
         priority: 2
@@ -3409,7 +3314,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3417,9 +3322,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 51
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 52
         isConnector: 0
         priority: 2
@@ -3464,7 +3369,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3472,9 +3377,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 52
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 53
         isConnector: 0
         priority: 2
@@ -3520,7 +3425,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3528,9 +3433,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 53
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 54
         isConnector: 0
         priority: 2
@@ -3576,7 +3481,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3584,9 +3489,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 54
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 55
         isConnector: 0
         priority: 2
@@ -3631,7 +3536,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3639,9 +3544,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 55
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 56
         isConnector: 0
         priority: 2
@@ -3687,7 +3592,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3695,9 +3600,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 56
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 57
         isConnector: 0
         priority: 2
@@ -3743,7 +3648,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3751,9 +3656,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 57
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 58
         isConnector: 0
         priority: 2
@@ -3764,8 +3669,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 90.8734
-        y: 1762.3069
+        x: 92.243256
+        y: 1763.6768
         width: 160
         height: 30
     - id: 58
@@ -3798,7 +3703,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3806,9 +3711,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 58
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 59
         isConnector: 0
         priority: 2
@@ -3846,17 +3751,17 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 
+        value: ...
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: 'SetEnabled(Canvas, false, DialogueCanvas);
 
           SetEnabled(Canvas,
-          true, DialogueCanvas)5;'
+          true, DialogueCanvas)@3;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3864,9 +3769,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 59
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 60
         isConnector: 0
         priority: 2
@@ -3912,7 +3817,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3920,9 +3825,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 60
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 61
         isConnector: 0
         priority: 2
@@ -3967,7 +3872,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3975,9 +3880,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 61
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 62
         isConnector: 0
         priority: 2
@@ -4023,7 +3928,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4031,9 +3936,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 62
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 63
         isConnector: 0
         priority: 2
@@ -4079,7 +3984,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4087,9 +3992,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 63
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 64
         isConnector: 0
         priority: 2
@@ -4135,7 +4040,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4143,9 +4048,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 64
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 65
         isConnector: 0
         priority: 2
@@ -4190,20 +4095,14 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 4
-        originDialogueID: 65
-        destinationConversationID: 4
-        destinationDialogueID: 77
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -4245,7 +4144,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4253,9 +4152,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 66
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 67
         isConnector: 0
         priority: 2
@@ -4300,7 +4199,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4308,9 +4207,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 67
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 68
         isConnector: 0
         priority: 2
@@ -4355,7 +4254,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4363,9 +4262,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 68
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 69
         isConnector: 0
         priority: 2
@@ -4411,7 +4310,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4419,15 +4318,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 69
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 71
         isConnector: 0
         priority: 2
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 69
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 72
         isConnector: 0
         priority: 2
@@ -4472,7 +4371,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4480,9 +4379,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 71
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 73
         isConnector: 0
         priority: 2
@@ -4527,7 +4426,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4535,9 +4434,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 72
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 58
         isConnector: 0
         priority: 2
@@ -4549,7 +4448,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 282.25937
-        y: 1611.0411
+        y: 1612.411
         width: 160
         height: 30
     - id: 73
@@ -4582,7 +4481,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4590,9 +4489,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 73
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 74
         isConnector: 0
         priority: 2
@@ -4634,13 +4533,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
-
-          SetEnabled(Canvas,
-          true, DialogueCanvas)2;'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4648,9 +4544,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 74
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 75
         isConnector: 0
         priority: 2
@@ -4662,7 +4558,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 467.06943
-        y: 1711.0411
+        y: 1709.6713
         width: 160
         height: 30
     - id: 75
@@ -4695,20 +4591,14 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 4
-        originDialogueID: 75
-        destinationConversationID: 4
-        destinationDialogueID: 77
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -4750,7 +4640,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4758,9 +4648,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 15
         originDialogueID: 76
-        destinationConversationID: 4
+        destinationConversationID: 15
         destinationDialogueID: 15
         isConnector: 0
         priority: 2
@@ -4775,7 +4665,7 @@ MonoBehaviour:
         y: 332.3232
         width: 160
         height: 30
-    - id: 77
+    - id: 80
       fields:
       - title: Title
         value: 
@@ -4786,11 +4676,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 5
+        value: 6
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 6
+        value: 5
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -4802,10 +4692,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetEnabled(Usable, false, Waeli);
+        value: 'SetContinueMode(false)@0.5;
+
+          Camera(Closeup, Speaker, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4813,16 +4705,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
-        originDialogueID: 77
-        destinationConversationID: 4
-        destinationDialogueID: 78
-        isConnector: 0
-        priority: 2
-      - originConversationID: 4
-        originDialogueID: 77
-        destinationConversationID: 4
-        destinationDialogueID: 79
+      - originConversationID: 15
+        originDialogueID: 80
+        destinationConversationID: 15
+        destinationDialogueID: 1
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4832,11 +4718,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 302.6859
-        y: 2228.849
+        x: 206.4794
+        y: 22.9178
         width: 160
         height: 30
-    - id: 78
+    - id: 81
       fields:
       - title: Title
         value: 
@@ -4847,11 +4733,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 6
+        value: 5
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 5
+        value: 6
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -4859,83 +4745,52 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: +1 on the PeaceMeter
+        value: ...
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 15
       isRoot: 0
       isGroup: 0
       nodeColor: 
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: Variable["PeaceMeter"] > 0
+      outgoingLinks:
+      - originConversationID: 15
+        originDialogueID: 81
+        destinationConversationID: 15
+        destinationDialogueID: 23
+        isConnector: 0
+        priority: 2
+      - originConversationID: 15
+        originDialogueID: 81
+        destinationConversationID: 15
+        destinationDialogueID: 24
+        isConnector: 0
+        priority: 2
+      - originConversationID: 15
+        originDialogueID: 81
+        destinationConversationID: 15
+        destinationDialogueID: 25
+        isConnector: 0
+        priority: 2
+      conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 199.94626
-        y: 2282.9587
-        width: 160
-        height: 30
-    - id: 79
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 6
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: -1 on the PeaceMeter
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 4
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: Variable["PeaceMeter"] < 0
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 390.35712
-        y: 2284.3286
+        x: 71.36986
+        y: 625
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1.369873, y: 628.76733}
+    canvasScrollPosition: {x: 0, y: 1701.5461}
     canvasZoom: 0.73000026
   syncInfo:
     syncActors: 1
