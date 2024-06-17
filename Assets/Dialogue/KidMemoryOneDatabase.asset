@@ -2363,7 +2363,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2.5, y: 504.99957}
+    canvasScrollPosition: {x: 12.5, y: 0}
     canvasZoom: 0.4000004
   - id: 3
     fields:
@@ -2672,7 +2672,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          Camera(original, listener, 0.5);
+          \MoveTo(PlayerAnchor, Player,
+          0.5);
+
+          Camera(original, PlayerCamera, 0.5);
 
           Delay(0.1);'
         type: 0
@@ -3230,13 +3233,15 @@ MonoBehaviour:
 
           SetContinueMode(false);
 
-          LookAt(Mom,
-          listener, 0.3);
+          MoveTo(Player,
+          PlayerAnchor);
 
-          Camera(AdultLookUp, speaker, 0.5);
+          LookAt(Mom, listener, 0.3);
 
-          SetEnabled(Canvas,
-          true, DialogueCanvas)@0.5;'
+          Camera(AdultLookUp,
+          Mom, 0.5);
+
+          SetEnabled(Canvas, true, DialogueCanvas)@0.5;'
         type: 0
         typeString: 
       conversationID: 3
@@ -3293,7 +3298,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          Camera(original, listener, 0.5);
+          MoveTo(PlayerAnchor, Player, 0.5);
+
+          Camera(original,
+          PlayerCamera, 0.5);
 
           Delay(0.1);
 
@@ -3317,7 +3325,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 158.49388
-        y: 691.1102
+        y: 689.61774
         width: 160
         height: 30
     - id: 32
@@ -3377,7 +3385,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 13.432831, y: 274.62674}
+    canvasScrollPosition: {x: 0, y: 132.83575}
     canvasZoom: 0.6700003
   - id: 4
     fields:
