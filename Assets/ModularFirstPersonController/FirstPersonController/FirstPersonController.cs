@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PixelCrushers.DialogueSystem;
 
 #if UNITY_EDITOR
     using UnityEditor;
@@ -27,6 +28,7 @@ public class FirstPersonController : MonoBehaviour
     public bool cameraCanMove = true;
     public float mouseSensitivity = 2f;
     public float maxLookAngle = 50f;
+    private Quaternion cameraRotationHolder;
 
     // Crosshair
     public bool lockCursor = true;
@@ -526,6 +528,9 @@ public class FirstPersonController : MonoBehaviour
             joint.localPosition = new Vector3(Mathf.Lerp(joint.localPosition.x, jointOriginalPos.x, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.y, jointOriginalPos.y, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.z, jointOriginalPos.z, Time.deltaTime * bobSpeed));
         }
     }
+
+    public void OnConversationStart(Transform actor) { cameraRotationHolder = playerCamera.transform.localRotation; playerCanMove = false; cameraCanMove = false; Debug.Log("convo start"); }
+    public void OnConversationEnd(Transform actor) { playerCamera.transform.localRotation = Quaternion.Euler(Vector3.zero); cameraCanMove = true; playerCanMove = true; Debug.Log("convo ended"); }
 }
 
 
