@@ -1942,7 +1942,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          LookAt(SofaDouble, Player, 0.5);
+          MoveTo(PlayerAnchor, Player, 0.5);
+
+          Camera(original,
+          PlayerCamera, 0.5);
 
           Delay(0.1);
 
