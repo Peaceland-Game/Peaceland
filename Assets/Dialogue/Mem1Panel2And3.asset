@@ -816,7 +816,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -876,7 +876,7 @@ MonoBehaviour:
       - originConversationID: 7
         originDialogueID: 0
         destinationConversationID: 7
-        destinationDialogueID: 1
+        destinationDialogueID: 18
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -917,17 +917,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
-
-          SetContinueMode(true)@0.5;
-
-          LookAt(Cylo,
-          listener, 0.3);
-
-          Camera(AdultLookUp, speaker, 0.5);
-
-          SetEnabled(Canvas,
-          true, DialogueCanvas)@0.5;'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 7
@@ -1136,7 +1126,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 80
-        y: 386
+        y: 384.50748
         width: 160
         height: 30
     - id: 5
@@ -1180,7 +1170,7 @@ MonoBehaviour:
       - originConversationID: 7
         originDialogueID: 5
         destinationConversationID: 7
-        destinationDialogueID: 15
+        destinationDialogueID: 14
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1235,7 +1225,7 @@ MonoBehaviour:
       - originConversationID: 7
         originDialogueID: 6
         destinationConversationID: 7
-        destinationDialogueID: 16
+        destinationDialogueID: 14
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1290,7 +1280,7 @@ MonoBehaviour:
       - originConversationID: 7
         originDialogueID: 7
         destinationConversationID: 7
-        destinationDialogueID: 17
+        destinationDialogueID: 14
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1562,7 +1552,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 7
+        originDialogueID: 13
+        destinationConversationID: 7
+        destinationDialogueID: 19
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 'SetQuestState("A Strange Noise", "active");
 
@@ -1600,7 +1596,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Can I get a scoop of Chocolate Overload today?
+        value: Can I get a scoop of [var=IceCreamFlavor] today?
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -1628,11 +1624,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 80
-        y: 436
+        x: 396.41776
+        y: 495.70154
         width: 160
         height: 30
-    - id: 15
+    - id: 18
       fields:
       - title: Title
         value: 
@@ -1655,11 +1651,23 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Can I get a scoop of Vanilla Dream today?
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetEnabled(Canvas, false, DialogueCanvas);
+
+          SetContinueMode(false);
+
+          MoveTo(Player,
+          PlayerAnchor);
+
+          LookAt(Cylo, listener, 0.3);
+
+          Camera(AdultLookUp,
+          speaker, 0.5);
+
+          SetEnabled(Canvas, true, DialogueCanvas)@0.5;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 7
@@ -1671,9 +1679,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 7
-        originDialogueID: 15
+        originDialogueID: 18
         destinationConversationID: 7
-        destinationDialogueID: 9
+        destinationDialogueID: 1
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1683,11 +1691,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 288
-        y: 436
+        x: 393.34576
+        y: 89.405426
         width: 160
         height: 30
-    - id: 16
+    - id: 19
       fields:
       - title: Title
         value: 
@@ -1710,11 +1718,21 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Can I get a scoop of Pax-Tera Pistachio today?
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false);
+
+          MoveTo(PlayerAnchor, Player, 0.5);
+
+          Camera(original,
+          PlayerCamera, 0.5);
+
+          Delay(0.1);
+
+          SetEnabled(Usable,
+          false, Cylo);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 7
@@ -1724,13 +1742,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 7
-        originDialogueID: 16
-        destinationConversationID: 7
-        destinationDialogueID: 9
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -1738,68 +1750,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 496
-        y: 434.36066
-        width: 160
-        height: 30
-    - id: 17
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 8
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: Can I get a scoop of Strawberry Mint Chip today?
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 7
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 7
-        originDialogueID: 17
-        destinationConversationID: 7
-        destinationDialogueID: 9
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 704
-        y: 436
+        x: 401.38812
+        y: 960.6199
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 222.95068}
-    canvasZoom: 0.6100004
+    canvasScrollPosition: {x: 0, y: 198.43738}
+    canvasZoom: 0.64000034
   - id: 8
     fields:
     - title: Title
