@@ -681,7 +681,7 @@ MonoBehaviour:
       - title: Sequence
         value: 'LookAt(Gryf, speaker, 0.7);
 
-          MoveTo(MoveTowardsDog, Player,
+          MoveTo(MoveTowardsDog, PlayerCamera,
           3)@1;'
         type: 0
         typeString: CustomFieldType_Text
@@ -969,7 +969,7 @@ MonoBehaviour:
       - title: Sequence
         value: 'Camera(Mem1Panel4DogClose, Gryf, 0.7);
 
-          LookAt(WaeliConvoStartingPoint,
+          LookAt(Player,
           Gryf, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
@@ -1534,10 +1534,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
+        value: 'SetContinueMode(false);
+
+          SetEnabled(Canvas, false, DialogueCanvas);
 
           SetEnabled(Canvas,
-          true, DialogueCanvas)@2;'
+          true, DialogueCanvas)@4;
+
+          SetContinueMode(true);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -1948,7 +1952,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 70
+        x: 71.36986
         y: 725
         width: 160
         height: 30
@@ -2225,7 +2229,7 @@ MonoBehaviour:
           Camera(Mem1Panel4LookAtSoldiers,
           Waeli, 0.7)@2;
 
-          SetContinueMode(true)@3;'
+          Delay(2)@3;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -2283,7 +2287,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: Camera(Medium, Speaker, 0.7);
+        value: 'Camera(Medium, Speaker, 0.7);
+
+          SetContinueMode(true);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -2541,8 +2547,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 426.1643
-        y: 773.6301
+        x: 423.42456
+        y: 770.89044
         width: 160
         height: 30
     - id: 37
@@ -2931,7 +2937,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 424.79443
-        y: 1125
+        y: 1126.3699
         width: 160
         height: 30
     - id: 44
@@ -3807,10 +3813,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
+        value: 'SetContinueMode(false);
 
-          SetEnabled(Canvas,
-          true, DialogueCanvas)@2;'
+          Delay(4);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -3866,7 +3871,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -4455,8 +4460,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 467.06943
-        y: 1611.0411
+        x: 467.06946
+        y: 1613.7809
         width: 160
         height: 30
     - id: 72
@@ -4555,7 +4560,7 @@ MonoBehaviour:
       - originConversationID: 15
         originDialogueID: 73
         destinationConversationID: 15
-        destinationDialogueID: 74
+        destinationDialogueID: 84
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4597,7 +4602,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -4611,7 +4616,7 @@ MonoBehaviour:
       - originConversationID: 15
         originDialogueID: 74
         destinationConversationID: 15
-        destinationDialogueID: 75
+        destinationDialogueID: 85
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4621,8 +4626,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 468.4393
-        y: 1709.6713
+        x: 465.69955
+        y: 1763.096
         width: 160
         height: 30
     - id: 75
@@ -4652,7 +4657,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -4676,8 +4681,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 467.06943
-        y: 1761.0411
+        x: 462.95987
+        y: 1870.63
         width: 160
         height: 30
     - id: 76
@@ -4831,12 +4836,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'MoveTo(WaeliConvoStartingPoint, Player);
+        value: 'SetContinueMode(false)@0.5;
 
-          SetContinueMode(false)@0.5;
-
-          Camera(Mem1Panel4Dog,
-          Gryf, 0.7);
+          Camera(Mem1Panel4Dog, Gryf,
+          0.7);
 
           LookAt(Gryf, speaker);'
         type: 0
@@ -4855,6 +4858,12 @@ MonoBehaviour:
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
+      - originConversationID: 15
+        originDialogueID: 82
+        destinationConversationID: 15
+        destinationDialogueID: 36
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -4862,8 +4871,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 189.86292
-        y: 20.547947
+        x: 188.49307
+        y: 19.178082
         width: 160
         height: 30
     - id: 83
@@ -4893,7 +4902,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetEnabled(Usable, false, Waeli);
+        value: 'Camera(original, PlayerCamera, 0.5);
+
+          SetEnabled(Usable,
+          false, Waeli);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -4915,8 +4927,122 @@ MonoBehaviour:
         y: 2162.9917
         width: 160
         height: 30
+    - id: 84
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: ...
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">...</font>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetContinueMode(false);
+
+          Delay(2);'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 15
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 15
+        originDialogueID: 84
+        destinationConversationID: 15
+        destinationDialogueID: 74
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 467.06943
+        y: 1711.0411
+        width: 160
+        height: 30
+    - id: 85
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: ...
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">...</font>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetContinueMode(false);
+
+          Delay(4);'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 15
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 15
+        originDialogueID: 85
+        destinationConversationID: 15
+        destinationDialogueID: 75
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 465.69955
+        y: 1813.096
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1683.5598}
+    canvasScrollPosition: {x: 0, y: 119.17743}
     canvasZoom: 0.73000026
   syncInfo:
     syncActors: 1
