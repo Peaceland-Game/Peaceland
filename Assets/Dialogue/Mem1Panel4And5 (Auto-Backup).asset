@@ -534,8 +534,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1
-        y: 2.3698578
+        x: 3.472519
+        y: 11.927742
         width: 160
         height: 30
     - id: 1
@@ -4902,10 +4902,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(original, PlayerCamera, 0.5);
+        value: 'Camera(Medium, Waeli, 0.5);
 
-          SetEnabled(Usable,
-          false, Waeli);'
+          SetEnabled(Usable, false,
+          Waeli);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -4929,7 +4929,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 293.61307
+        x: 292.2432
         y: 2162.9917
         width: 160
         height: 30
@@ -5048,8 +5048,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1591.7839}
-    canvasZoom: 0.73000026
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.9100001
   - id: 16
     fields:
     - title: Title
@@ -5077,7 +5077,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -5178,7 +5178,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Antoni, true);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -5202,7 +5202,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 331
+        x: 328.56097
         y: 84
         width: 160
         height: 30
@@ -5233,7 +5233,21 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false);
+
+          LookAt(Antoni, Player, 0.5);
+
+          LookAt(Antoni,
+          Waeli, 0.5);
+
+          MoveTo(AntoniIntroMove, Antoni, 1.5)@1;
+
+          LookAt(AntoniIntroMove,
+          Player, 1.5)@1;
+
+          LookAt(AntoniIntroMove, Waeli, 1.5)@1;
+
+          SetContinueMode(true)@2.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -5398,7 +5412,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'LookAt(Gryf, Waeli, 0.5);
+
+          LookAt(Gryf, Player, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -5454,7 +5470,17 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false);
+
+          LookAt(Antoni, Player, 0.5);
+
+          LookAt(Antoni,
+          Waeli, 0.5);
+
+          LookAt(Player, Waeli, 0.5)@1.0;
+
+
+          SetContinueMode(true)@1.4;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -10740,8 +10766,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2285.3652}
-    canvasZoom: 0.8200002
+    canvasScrollPosition: {x: 0, y: 124.0506}
+    canvasZoom: 0.7900002
   syncInfo:
     syncActors: 1
     syncItems: 1
