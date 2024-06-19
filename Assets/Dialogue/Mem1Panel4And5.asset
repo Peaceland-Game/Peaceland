@@ -4915,7 +4915,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 15
+        originDialogueID: 83
+        destinationConversationID: 16
+        destinationDialogueID: 0
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -5042,7 +5048,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 76.71396}
+    canvasScrollPosition: {x: 0, y: 1591.7839}
     canvasZoom: 0.73000026
   - id: 16
     fields:
@@ -5680,7 +5686,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetVariable(PeaceMeter, PeaceMeter + 1);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -5698,7 +5704,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["PeaceMeter"] = Variable["PeaceMeter"] + 1;
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6070,7 +6076,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetVariable(PeaceMeter, PeaceMeter - 1);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -6088,7 +6094,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["PeaceMeter"] = Variable["PeaceMeter"] - 1;
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7014,7 +7020,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetVariable(PeaceMeter, PeaceMeter + 1);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -7032,7 +7038,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["PeaceMeter"] = Variable["PeaceMeter"] + 1;
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7456,7 +7462,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetVariable(PeaceMeter, PeaceMeter - 1);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -7474,7 +7480,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["PeaceMeter"] = Variable["PeaceMeter"] - 1;
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -10734,7 +10740,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 2285.3652}
     canvasZoom: 0.8200002
   syncInfo:
     syncActors: 1
