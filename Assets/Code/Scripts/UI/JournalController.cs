@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class JournalController : MonoBehaviour
@@ -8,11 +9,12 @@ public class JournalController : MonoBehaviour
     private Animator animator;
     private int currentPage = 0;
     private readonly int totalPages = 4;
+    private float animSpeed = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
         //remove:
-       // Time.timeScale = 0;
+        //Time.timeScale = 0;
         animator = GetComponent<Animator>();
         ShowPage(currentPage);
     }
@@ -24,24 +26,32 @@ public class JournalController : MonoBehaviour
     }
 
     public void PageForward() {
-        Debug.Log("page forward");
+       
         currentPage++;
-        if (currentPage >  totalPages) currentPage = totalPages; 
+        animator.SetFloat("Speed", animSpeed);
+        animator.SetBool("fwd", true);
+        if (currentPage >  totalPages) currentPage = totalPages;
+        Debug.Log($"{currentPage - 1} to {currentPage}");
 
         var trigger = GetTriggerName(currentPage - 1, currentPage);
         if (!string.IsNullOrEmpty(trigger))
         {
+            Debug.Log($"trigger: {trigger}");
             animator.SetTrigger(trigger);
         }
 
     }
     public void PageBackward() {
-        Debug.Log("page back");
+       
         currentPage--;
+        animator.SetBool("fwd", false);
+        animator.SetFloat("Speed", -animSpeed);
         if (currentPage < 0) currentPage = 0;
+        Debug.Log($"{currentPage + 1} to {currentPage}");
         var trigger = GetTriggerName(currentPage+ 1, currentPage);
         if (!string.IsNullOrEmpty(trigger))
         {
+            Debug.Log($"trigger: {trigger}");
             animator.SetTrigger(trigger);
         }
     }
