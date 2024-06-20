@@ -4828,7 +4828,12 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false)@0.5;
 
-          MoveTo(Player, PlayerAnchor);
+          Fade(stay, 0.5);
+
+          MoveTo(Player,
+          PlayerAnchor);
+
+          MoveTo(PlayerPanel5Start, Player)@0.6;
 
           MoveTo(Gryf,
           GryfAnchor);
@@ -4836,9 +4841,11 @@ MonoBehaviour:
           MoveTo(Waeli, WaeliAnchor);
 
           Camera(Mem1Panel4Dog,
-          Gryf, 0.7);
+          Gryf, 0.7)@0.7;
 
-          LookAt(Gryf, speaker);'
+          LookAt(Gryf, speaker);
+
+          Fade(in, 0.5)@1.0;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -7679,7 +7686,7 @@ MonoBehaviour:
 
           Fade(stay, 0.5);
 
-          MoveTo(PlayerAnchor,
+          MoveTo(PlayerPanel5Start,
           Player)@0.6;
 
           MoveTo(WaeliAnchor, Waeli)@0.6;
@@ -9529,14 +9536,17 @@ MonoBehaviour:
           SetActive(Antoni,
           false)@2.0;
 
-          MoveTo(PlayerAnchor, Player, 0.5)@3.0;
+          Fade(stay, 0.5)@2.5;
 
-          Camera(original,
-          PlayerCamera, 0.5)@3.0;
+          MoveTo(PlayerPanel5Start,
+          Player)@3.0;
 
-          Camera(original, UICamera, 0.5)@3.5;
+          Camera(original, PlayerCamera)@3.2;
 
-          SetContinueMode(true)@3.7;'
+          Fade(in,
+          0.5)@3.5;
+
+          SetContinueMode(true)@4.0;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -10156,17 +10166,7 @@ MonoBehaviour:
           LookAt(AntoniPanel5End, Antoni,
           0.5);
 
-          MoveTo(AntoniPanel5End, Antoni, 3.0)@0.5;
-
-          MoveTo(PlayerAnchor,
-          Player, 0.5)@3.0;
-
-          Camera(original, PlayerCamera, 0.5)@3.0;
-
-          Camera(original,
-          UICamera, 0.5)@3.5;
-
-          SetContinueMode(true)@3.7;'
+          MoveTo(AntoniPanel5End, Antoni, 3.0)@0.5;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -10223,7 +10223,19 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetActive(Antoni, false);
 
-          LookAt(Gryf, Waeli, 0.5);'
+          Fade(stay, 0.5);
+
+          LookAt(Gryf,
+          Waeli)@0.6;
+
+          MoveTo(PlayerPanel5Start, Player)@0.8;
+
+          Camera(original,
+          PlayerCamera)@1.0;
+
+          Fade(in, 0.5)@1.2;
+
+          SetContinueMode(true)@1.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -10894,15 +10906,17 @@ MonoBehaviour:
 
           SetActive(Antoni, false)@2.5;
 
-          MoveTo(PlayerAnchor,
-          Player, 0.5)@3.5;
+          Fade(stay,
+          0.5)@2.5;
 
-          Camera(original, PlayerCamera, 0.5)@3.5;
+          MoveTo(PlayerPanel5Start, Player)@3.0;
 
           Camera(original,
-          UICamera, 0.5)@4.0;
+          PlayerCamera)@3.2;
 
-          SetContinueMode(true)@4.2;'
+          Fade(in, 0.5)@3.3;
+
+          SetContinueMode(true)@3.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -10987,7 +11001,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2989.9998}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.7000003
   syncInfo:
     syncActors: 1
