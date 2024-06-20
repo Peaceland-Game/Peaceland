@@ -4756,6 +4756,9 @@ MonoBehaviour:
       - title: Sequence
         value: 'Camera(Medium, Waeli, 0.7);
 
+          MoveTo(PlayerCamera, UICamera,
+          0.7);
+
           SetContinueMode(false);'
         type: 0
         typeString: CustomFieldType_Text
@@ -5038,7 +5041,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1684.2863}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.7000003
   - id: 16
     fields:
@@ -9531,7 +9534,9 @@ MonoBehaviour:
           Camera(original,
           PlayerCamera, 0.5)@3.0;
 
-          SetContinueMode(true)@3.2;'
+          Camera(original, UICamera, 0.5)@3.5;
+
+          SetContinueMode(true)@3.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -10158,7 +10163,10 @@ MonoBehaviour:
 
           Camera(original, PlayerCamera, 0.5)@3.0;
 
-          SetContinueMode(true)@3.2;'
+          Camera(original,
+          UICamera, 0.5)@3.5;
+
+          SetContinueMode(true)@3.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -10891,7 +10899,10 @@ MonoBehaviour:
 
           Camera(original, PlayerCamera, 0.5)@3.5;
 
-          SetContinueMode(true)@3.7;'
+          Camera(original,
+          UICamera, 0.5)@4.0;
+
+          SetContinueMode(true)@4.2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -10976,7 +10987,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2654.2852}
+    canvasScrollPosition: {x: 0, y: 2989.9998}
     canvasZoom: 0.7000003
   syncInfo:
     syncActors: 1
