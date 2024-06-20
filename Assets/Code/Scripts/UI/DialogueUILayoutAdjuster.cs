@@ -32,8 +32,6 @@ public class DialogueUILayoutAdjuster : MonoBehaviour
             subtitlePanel.sizeDelta = subtitlePanelExpandedSize;
             subtitlePanelText.sizeDelta = subtitlePanelTextExpandedSize;
             
-            //hard coding the values atm should probably figure out a way to not
-            speakerName.anchoredPosition = new Vector2(653, -18);
             // menuPanel.gameObject.SetActive(false);
         }
         else
@@ -43,7 +41,6 @@ public class DialogueUILayoutAdjuster : MonoBehaviour
             subtitlePanel.sizeDelta = subtitlePanelDefaultSize;
             subtitlePanelText.sizeDelta = subtitlePanelTextDefaultSize;
 
-            speakerName.anchoredPosition = new Vector2(353, -18);
           //  menuPanel.gameObject.SetActive(true);
         }
     }
@@ -52,6 +49,6 @@ public class DialogueUILayoutAdjuster : MonoBehaviour
     {
         // Revert to default size when conversation ends
         subtitlePanel.sizeDelta = subtitlePanelDefaultSize;
-        speakerName.anchoredPosition = new Vector2(353, -18);
+        //speakerName.anchoredPosition = new Vector2(75, 43);
     }
 }
