@@ -59,5 +59,6 @@ public class SceneLoader : MonoBehaviour
         {
             Debug.Log($"Scene {sceneName} is already loaded.");
         }
+        Destroy(gameObject);
     }
 }

@@ -13,7 +13,7 @@ public class PlayerSingleton : MonoBehaviour
     //private PlayerMovement playerMovement;
     public bool paused = false;
     private FirstPersonController controller;
-
+    public bool isMouseLocked;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class PlayerSingleton : MonoBehaviour
             Instance = this;
             controller = GetComponent<FirstPersonController>();
             //playerMovement = GetComponent<PlayerMovement>();
-            Gaia.GaiaAPI.SetRuntimePlayerAndCamera(gameObject, playerCamera, true);
+           // Gaia.GaiaAPI.SetRuntimePlayerAndCamera(gameObject, playerCamera, true);
         }
         else
         {
@@ -39,6 +39,7 @@ public class PlayerSingleton : MonoBehaviour
     void Update()
     {
         HandleInterfaceInput();
+        isMouseLocked = Cursor.lockState == CursorLockMode.Locked;
     }
 
     void HandleInterfaceInput()

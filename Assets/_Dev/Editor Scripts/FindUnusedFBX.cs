@@ -1,3 +1,4 @@
+#if (UNITY_EDITOR) 
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
@@ -57,3 +58,4 @@ public class FindUnusedFBX : EditorWindow {
         Debug.Log("Unused FBX Files Count: " + unusedFBXFiles.Count);
     }
 }
+#endif
