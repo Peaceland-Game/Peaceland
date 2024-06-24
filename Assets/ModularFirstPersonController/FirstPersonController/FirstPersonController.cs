@@ -485,6 +485,7 @@ public class FirstPersonController : MonoBehaviour
         {
             transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
             walkSpeed /= speedReduction;
+            this.GetComponent<Selector>().enabled = true;
 
             isCrouched = false;
         }
@@ -494,6 +495,7 @@ public class FirstPersonController : MonoBehaviour
         {
             transform.localScale = new Vector3(originalScale.x, crouchHeight, originalScale.z);
             walkSpeed *= speedReduction;
+            this.GetComponent<Selector>().enabled = false;
 
             isCrouched = true;
         }
