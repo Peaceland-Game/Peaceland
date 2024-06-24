@@ -32,6 +32,7 @@ public class SceneLoader : MonoBehaviour
         if (loadingScreen != null)
         {
             loadingScreen.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
@@ -59,6 +60,6 @@ public class SceneLoader : MonoBehaviour
         {
             Debug.Log($"Scene {sceneName} is already loaded.");
         }
-        Destroy(gameObject);
+        
     }
 }
