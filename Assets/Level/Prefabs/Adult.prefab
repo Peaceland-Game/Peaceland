@@ -176,7 +176,7 @@ Transform:
   - {fileID: 1070896902783999238}
   - {fileID: 8681188175796877151}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5796529908657237093
 MonoBehaviour:
@@ -187,20 +187,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2606143260022349098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab45bd5649522041ba1de58d20653af, type: 3}
+  m_Script: {fileID: 11500000, guid: 68f88611368ea8640bad757daebe2b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterRenderer: {fileID: 5743761698440664639}
-  speed: 0.5
+  renderer: {fileID: 5743761698440664639}
+  speed: 1
   curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
@@ -209,13 +209,16 @@ MonoBehaviour:
       value: 1
       inSlope: 0
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  emotionalState: 0
+  eyes: []
+  eyeSettings: []
 --- !u!136 &9136031627689219233
 CapsuleCollider:
   m_ObjectHideFlags: 0
