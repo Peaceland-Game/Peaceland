@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using ProceduralWorlds;
 using PixelCrushers.DialogueSystem;
-
+using UnityEngine.InputSystem;
 
 public class PlayerSingleton : MonoBehaviour
 {
     public static PlayerSingleton Instance;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private UserInterface userInterface;
-    private PlayerMovement playerMovement;
-    
+    //private PlayerMovement playerMovement;
+    public bool paused = false;
+    private FirstPersonController controller;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +21,16 @@ public class PlayerSingleton : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            controller = GetComponent<FirstPersonController>();
+            //playerMovement = GetComponent<PlayerMovement>();
+            Gaia.GaiaAPI.SetRuntimePlayerAndCamera(gameObject, playerCamera, true);
         }
         else
         {
             Destroy(this);
+
         }
-        playerMovement = GetComponent<PlayerMovement>();    
-        Gaia.GaiaAPI.SetRuntimePlayerAndCamera(gameObject, playerCamera, true);
+        
         //FloraAutomationAPI.SetRenderCamera(newCamera);
 
     }
@@ -38,13 +43,19 @@ public class PlayerSingleton : MonoBehaviour
 
     void HandleInterfaceInput()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            userInterface.ToggleHistoryMenu(playerMovement.state);
+            Debug.Log("escape pressed");
+            
+            paused = !paused;
+            Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
+            userInterface.gameObject.SetActive(paused);
+            controller.enabled = !paused;
+
         }
     }
 
-    void OnConversationEnd(Transform actor) 
+    void OnConversationEnd(Transform actor)
     {
 
     }

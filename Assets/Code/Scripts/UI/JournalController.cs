@@ -9,7 +9,7 @@ public class JournalController : MonoBehaviour
     private Animator animator;
     private int currentPage = 0;
     private readonly int totalPages = 4;
-    public float animSpeed = 1.5f;
+    public float animSpeed = 1f;
     // Start is called before the first frame update
     void Start()
     {
