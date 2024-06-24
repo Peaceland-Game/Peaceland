@@ -31,4 +31,8 @@ public class UserInterface : MonoBehaviour
         Time.timeScale = menuActive ? 0 : 1;
         Cursor.lockState = menuActive ? CursorLockMode.None : CursorLockMode.Locked;
     }
+
+    public void Exit() {
+        Application.Quit();
+    }
 }
