@@ -26,38 +26,38 @@ public class JournalController : MonoBehaviour
 
     }
 
-    public void PageForward()
-    {
+    //public void PageForward()
+    //{
 
-        currentPage++;
-        //  animator.SetFloat("Speed", animSpeed);
-        //  animator.SetBool("fwd", true);
-        if (currentPage > totalPages) currentPage = totalPages;
-        Debug.Log($"{currentPage - 1} to {currentPage}");
+    //    currentPage++;
+    //    //  animator.SetFloat("Speed", animSpeed);
+    //    //  animator.SetBool("fwd", true);
+    //    if (currentPage > totalPages) currentPage = totalPages;
+    //    Debug.Log($"{currentPage - 1} to {currentPage}");
 
-        var trigger = GetTriggerName(currentPage - 1, currentPage);
-        if (!string.IsNullOrEmpty(trigger))
-        {
-            Debug.Log($"trigger: {trigger}");
-            animator.SetTrigger(trigger);
-        }
+    //    var trigger = GetTriggerName(currentPage - 1, currentPage);
+    //    if (!string.IsNullOrEmpty(trigger))
+    //    {
+    //        Debug.Log($"trigger: {trigger}");
+    //        animator.SetTrigger(trigger);
+    //    }
 
-    }
-    public void PageBackward()
-    {
+    //}
+    //public void PageBackward()
+    //{
 
-        currentPage--;
-        //  animator.SetBool("fwd", false);
-        //  animator.SetFloat("Speed", -animSpeed);
-        if (currentPage < 0) currentPage = 0;
-        Debug.Log($"{currentPage + 1} to {currentPage}");
-        var trigger = GetTriggerName(currentPage + 1, currentPage);
-        if (!string.IsNullOrEmpty(trigger))
-        {
-            Debug.Log($"trigger: {trigger}");
-            animator.SetTrigger(trigger);
-        }
-    }
+    //    currentPage--;
+    //    //  animator.SetBool("fwd", false);
+    //    //  animator.SetFloat("Speed", -animSpeed);
+    //    if (currentPage < 0) currentPage = 0;
+    //    Debug.Log($"{currentPage + 1} to {currentPage}");
+    //    var trigger = GetTriggerName(currentPage + 1, currentPage);
+    //    if (!string.IsNullOrEmpty(trigger))
+    //    {
+    //        Debug.Log($"trigger: {trigger}");
+    //        animator.SetTrigger(trigger);
+    //    }
+    //}
     public void HandleTabClick(int tabNumber)
     {
         if (tabNumber < totalPages)
