@@ -2398,7 +2398,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -3583,12 +3583,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Fade(stay, 0.5);
+        value: 'Fade(stay, 0.7);
 
-          MoveTo(StepOutside, Player)@0.7;
+          MoveTo(StepOutside, Player)@0.8;
 
           Fade(unstay,
-          0.5)@1.2;'
+          0.7)@1.2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 4
