@@ -621,14 +621,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(false);
+        value: 'LookAt(Player, Waeli, 0.5);
 
-          LookAt(Player, Waeli, 0.5);
-
-          Camera(Full,
-          Waeli, 0.7)@0.5;
-
-          SetContinueMode(true)@1.3;'
+          Camera(Full, Waeli, 0.7)@0.5;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -684,14 +679,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(false);
+        value: 'LookAt(Gryf, speaker, 0.7);
 
-          LookAt(Gryf, speaker, 0.7);
-
-          MoveTo(MoveTowardsDog,
-          PlayerCamera, 3)@1;
-
-          SetContinueMode(true)@3.1;'
+          MoveTo(MoveTowardsDog, PlayerCamera,
+          3)@1;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -2225,7 +2216,7 @@ MonoBehaviour:
           Camera(Mem1Panel4LookAtSoldiers,
           Waeli, 0.7)@2;
 
-          Delay(2)@2;'
+          Delay(2)@3;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -4837,12 +4828,12 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false)@0.5;
 
-          Fade(stay, 0.7);
+          Fade(stay, 0.5);
 
           MoveTo(Player,
           PlayerAnchor);
 
-          MoveTo(PlayerPanel5Start, Player)@0.8;
+          MoveTo(PlayerPanel5Start, Player)@0.6;
 
           MoveTo(Gryf,
           GryfAnchor);
@@ -4850,11 +4841,11 @@ MonoBehaviour:
           MoveTo(Waeli, WaeliAnchor);
 
           Camera(Mem1Panel4Dog,
-          Gryf, 0.7)@1.0;
+          Gryf, 0.7)@0.7;
 
           LookAt(Gryf, speaker);
 
-          Fade(in, 0.7)@1.8;'
+          Fade(in, 0.5)@1.0;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 15
@@ -4885,7 +4876,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 188.49307
-        y: 17.749523
+        y: 19.178082
         width: 160
         height: 30
     - id: 83
@@ -5057,7 +5048,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 357.1427}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.7000003
   - id: 16
     fields:
@@ -5086,7 +5077,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -7053,7 +7044,21 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false);
+
+          Fade(stay, 0.5);
+
+          MoveTo(PlayerSpeakUp,
+          Waeli)@0.6;
+
+          SetActive(GPKSoldierP5A, false)@0.6;
+
+          SetActive(GPKSoldierP5B,
+          false)@0.6;
+
+          Fade(in, 0.5)@0.8;
+
+          SetContinueMode(true)@1.3;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -7567,26 +7572,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(false);
-
-          SetEnabled(Canvas, false, DialogueCanvas);
-
-          Fade(stay,
-          0.7);
-
-          MoveTo(PlayerSpeakUp, Waeli)@0.8;
-
-          SetActive(GPKSoldierP5A,
-          false)@0.8;
-
-          SetActive(GPKSoldierP5B, false)@0.8;
-
-          Fade(in,
-          0.7)@0.9;
-
-          SetEnabled(Canvas, true, DialogueCanvas)@1.6;
-
-          SetContinueMode(true)@1.7;'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -7698,29 +7684,26 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          SetEnabled(Canvas, false, DialogueCanvas);
+          Fade(stay, 0.5);
 
-          Fade(stay,
-          0.5);
+          MoveTo(PlayerPanel5Start,
+          Player)@0.6;
 
-          MoveTo(PlayerPanel5Start, Player)@0.6;
+          MoveTo(WaeliAnchor, Waeli)@0.6;
 
-          MoveTo(WaeliAnchor,
+          MoveTo(GryfAnchor,
+          Gryf)@0.6;
+
+          LookAt(Waeli, Antoni)@0.6;
+
+          LookAt(Antoni,
           Waeli)@0.6;
 
-          MoveTo(GryfAnchor, Gryf)@0.6;
-
-          LookAt(Waeli,
-          Antoni)@0.6;
-
-          LookAt(Antoni, Waeli)@0.6;
-
-          LookAt(Waeli,
-          Player)@0.7;
+          LookAt(Waeli, Player)@0.7;
 
           Fade(in, 0.5)@0.8;
 
-          Delay(1.3);'
+          SetContinueMode(true)@1.3;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -7775,9 +7758,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(true);
-
-          SetEnabled(Canvas, true, DialogueCanvas);'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -8525,19 +8506,16 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          SetEnabled(Canvas, false, DialogueCanvas);
+          Fade(stay, 0.5);
 
-          Fade(stay,
-          0.7);
+          MoveTo(PlayerGiveRoom,
+          Player)@0.6;
 
-          MoveTo(PlayerGiveRoom, Player)@0.8;
+          LookAt(Gryf, Waeli)@0.6;
 
-          LookAt(Gryf,
-          Waeli)@0.8;
+          Fade(in, 0.5)@0.8;
 
-          Fade(in, 0.7)@0.9;
-
-          Delay(1.8);'
+          SetContinueMode(true)@1.3;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -8605,9 +8583,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(true);
-
-          SetEnabled(Canvas, true, DialogueCanvas);'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -8663,9 +8639,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(true);
-
-          SetEnabled(Canvas, true, DialogueCanvas);'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -8720,9 +8694,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(true);
-
-          SetEnabled(Canvas, true, DialogueCanvas);'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -9564,17 +9536,17 @@ MonoBehaviour:
           SetActive(Antoni,
           false)@2.0;
 
-          Fade(stay, 0.7)@2.5;
+          Fade(stay, 0.5)@2.5;
 
           MoveTo(PlayerPanel5Start,
-          Player)@3.3;
+          Player)@3.0;
 
-          Camera(original, PlayerCamera)@3.5;
+          Camera(original, PlayerCamera)@3.2;
 
           Fade(in,
-          0.7)@3.6;
+          0.5)@3.5;
 
-          SetEnabled(Canvas, true, DialogueCanvas)@4.4;'
+          SetContinueMode(true)@4.0;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -10251,20 +10223,19 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetActive(Antoni, false);
 
-          Fade(stay, 0.7);
+          Fade(stay, 0.5);
 
           LookAt(Gryf,
-          Waeli)@0.8;
+          Waeli)@0.6;
 
-          MoveTo(PlayerPanel5Start, Player)@0.9;
+          MoveTo(PlayerPanel5Start, Player)@0.8;
 
           Camera(original,
-          PlayerCamera)@1.1;
+          PlayerCamera)@1.0;
 
-          Fade(in, 0.7)@1.3;
+          Fade(in, 0.5)@1.2;
 
-          SetEnabled(Canvas,
-          true, DialogueCanvas)@2.1;'
+          SetContinueMode(true)@1.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -10936,17 +10907,16 @@ MonoBehaviour:
           SetActive(Antoni, false)@2.5;
 
           Fade(stay,
-          0.7)@2.5;
+          0.5)@2.5;
 
-          MoveTo(PlayerPanel5Start, Player)@3.3;
+          MoveTo(PlayerPanel5Start, Player)@3.0;
 
           Camera(original,
-          PlayerCamera)@3.5;
+          PlayerCamera)@3.2;
 
-          Fade(in, 0.7)@3.7;
+          Fade(in, 0.5)@3.3;
 
-          SetEnabled(Canvas,
-          true, DialogueCanvas)@4.3;'
+          SetContinueMode(true)@3.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -11031,7 +11001,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2178.5708}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.7000003
   syncInfo:
     syncActors: 1
