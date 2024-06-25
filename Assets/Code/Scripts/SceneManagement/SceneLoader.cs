@@ -32,7 +32,7 @@ public class SceneLoader : MonoBehaviour
         if (loadingScreen != null)
         {
             loadingScreen.SetActive(false);
-            Destroy(gameObject);
+            SceneManager.UnloadSceneAsync("SceneLoader");
         }
     }
 
