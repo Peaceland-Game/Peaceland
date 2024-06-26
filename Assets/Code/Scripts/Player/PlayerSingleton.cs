@@ -50,7 +50,7 @@ public class PlayerSingleton : MonoBehaviour
             
             paused = !paused;
             Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
-            userInterface.gameObject.SetActive(paused);
+            userInterface.TogglePauseMenu();
             controller.enabled = !paused;
 
         }

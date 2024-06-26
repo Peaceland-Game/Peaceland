@@ -5,20 +5,22 @@ public class FogController : MonoBehaviour
 {
     public Transform player;
     public GameObject fogEmitterPrefab;
-    public float fogStartDistance = 5f;
+    public float fogStartDistance = 0f;
     public float maxFogDistance = 20f;
     public float fogDensityIncreaseRate = 2.5f;
     public float maxFogDensity = 50f;
-    public float teleportDistance = 2f;
-    public float emitterSpawnDistance = 5f;
+    public float teleportDistance = 10f;
+    public float emitterSpawnDistance = 3f;
     public int emitterCount = 8;
+    public float fadeDuration = 1f; // Duration of the fade effect
 
-    
+
     private Collider playableArea;
     private List<ParticleSystem> fogEmitters = new List<ParticleSystem>();
     private Quaternion lastValidRotation;
     private Vector3 lastValidPosition;
     private bool isOutsidePlayArea = false;
+    private bool teleportedPlayer = false;
     
 
     void Start()
@@ -51,9 +53,10 @@ public class FogController : MonoBehaviour
                 lastValidRotation = player.rotation;
                 lastValidPosition = playableArea.ClosestPoint(player.position);
             }
+
             float distanceOutside = Vector3.Distance(playableArea.ClosestPoint(player.position), player.position);
 
-            if (distanceOutside > teleportDistance)
+            if (distanceOutside > teleportDistance && !teleportedPlayer)
             {
                 TeleportPlayerBack();
             }
@@ -64,22 +67,21 @@ public class FogController : MonoBehaviour
             }
             else
             {
-
                 DisableFogEmitters();
             }
         }
         else
         {
-            
             isOutsidePlayArea = false;
+            lastValidPosition = player.position;
             DisableFogEmitters();
         }
-        
 
     }
 
     void UpdateFogEmitters()
     {
+        
         Vector3 directionFromCenter = (player.position - playableArea.bounds.center).normalized;
         Vector3 spawnPosition = player.position + directionFromCenter * emitterSpawnDistance;
 
@@ -115,6 +117,9 @@ public class FogController : MonoBehaviour
 
     void TeleportPlayerBack()
     {
+        teleportedPlayer = true;
+        var playerMovementScript = player.GetComponent<FirstPersonController>();
+        playerMovementScript.enabled = false;
         // Calculate the reversed direction
         Vector3 forwardDirection = lastValidRotation * Vector3.forward;
         forwardDirection.y = 0; // Keep only the horizontal component
@@ -123,9 +128,13 @@ public class FogController : MonoBehaviour
         // Create a rotation facing the reversed direction
         Quaternion newRotation = Quaternion.LookRotation(reversedDirection);
 
-        // Apply position and rotation
-        player.position = lastValidPosition;
-        player.rotation = Quaternion.Euler(player.rotation.eulerAngles.x, newRotation.eulerAngles.y, 0);
-        player.Translate(player.forward * teleportDistance);
+        // Use the ScreenFader to fade, teleport, and then fade back
+        ScreenFader.instance.FadeAndTeleport(fadeDuration, () => {
+            // This code runs when the screen is fully faded (black)
+            player.position = lastValidPosition;
+            player.rotation = Quaternion.Euler(player.rotation.eulerAngles.x, newRotation.eulerAngles.y, 0);
+            playerMovementScript.enabled = true;
+            teleportedPlayer = false;
+        });
     }
 }
