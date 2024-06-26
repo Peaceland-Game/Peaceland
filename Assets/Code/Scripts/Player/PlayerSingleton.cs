@@ -16,6 +16,9 @@ public class PlayerSingleton : MonoBehaviour
     private FirstPersonController controller;
     public bool isMouseLocked;
 
+    [SerializeField]
+    private Transform carryPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,5 +71,13 @@ public class PlayerSingleton : MonoBehaviour
     void OnConversationEnd(Transform actor)
     {
 
+    }
+
+    public void PickUpItem(Transform item) 
+    {
+        item.parent = carryPos;
+        item.localPosition = Vector3.zero;
+        item.localRotation = Quaternion.identity;
+        item.localScale = new Vector3(0.75f, 0.75f, 0.75f);
     }
 }
