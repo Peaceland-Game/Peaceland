@@ -14,8 +14,9 @@ public class JournalController : MonoBehaviour
     // Start is called before the first frame update
     public ScreenshotCapture screenshotCapture;
     public List<Texture2D> journalEntries = new List<Texture2D>();
-    public UnityEngine.UI.Image displayImage;
+   
     private int currentEntryIndex = 0;
+    public ArtifactJournalController artifactJournal;
     void Start()
     {
         //remove:
@@ -24,12 +25,7 @@ public class JournalController : MonoBehaviour
         animator.SetFloat("Speed", animSpeed);
         ShowPage(currentPage);
     }
-    public void AddJournalEntry()
-    {
-        Texture2D screenshot = screenshotCapture.CaptureScreenshot();
-        journalEntries.Add(screenshot);
-        //screenshotCapture.SaveScreenshot(screenshot, "JournalEntry_" + journalEntries.Count);
-    }
+    
     public void HandleTabClick(int tabNumber)
     {
         if (tabNumber < totalPages)
@@ -47,6 +43,7 @@ public class JournalController : MonoBehaviour
     public void AddArtifact(string name)
     {
         Debug.Log($"Adding {name} to artifacts");
+        artifactJournal.RevealArtifact(name);
     }
 
     private string GetTriggerName(int fromPage, int toPage)
@@ -90,25 +87,5 @@ public class JournalController : MonoBehaviour
     {
         pages[pageIndex].SetActive(true);
     }
-    public void DisplayNextEntry()
-    {
-        currentEntryIndex = (currentEntryIndex + 1) % journalEntries.Count;
-        DisplayCurrentEntry();
-    }
-
-    public void DisplayPreviousEntry()
-    {
-        currentEntryIndex = (currentEntryIndex - 1 + journalEntries.Count) % journalEntries.Count;
-        DisplayCurrentEntry();
-    }
-
-    private void DisplayCurrentEntry()
-    {
-        if (journalEntries.Count > 0)
-        {
-            displayImage.sprite = Sprite.Create(journalEntries[currentEntryIndex],
-                new Rect(0, 0, journalEntries[currentEntryIndex].width, journalEntries[currentEntryIndex].height),
-                new Vector2(0.5f, 0.5f));
-        }
-    }
+    
 }
