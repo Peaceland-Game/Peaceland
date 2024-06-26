@@ -10,6 +10,7 @@ public class JournalController : MonoBehaviour
     private int currentPage = 0;
     private readonly int totalPages = 4;
     public float animSpeed = 1f;
+    public List<GameObject> pages = new();
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +67,7 @@ public class JournalController : MonoBehaviour
             Debug.Log($"turning from {currentPage} to {tabNumber}");
             if (!string.IsNullOrEmpty(trigger))
             {
+                pages[currentPage].SetActive(false);
                 currentPage = tabNumber;
                 animator.SetTrigger(trigger);
             }
@@ -108,5 +110,9 @@ public class JournalController : MonoBehaviour
         string stateName = "Page" + (pageIndex + 1);
         Debug.Log($"set page: {currentPage}");
         animator.Play(stateName);
+    }
+    public void ActivatePageDisplay(int pageIndex)
+    {
+        pages[pageIndex].SetActive(true);
     }
 }
