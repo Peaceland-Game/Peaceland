@@ -21,9 +21,9 @@ public class UserInterface : MonoBehaviour
         //    ToggleHistoryMenu();
         //}
     }
-    public void TogglePauseMenu()
+    public void TogglePauseMenu(bool isPaused)
     {
-        journal.SetActive(!journal.activeInHierarchy);
+        journal.SetActive(isPaused);
     }
 
     public void ToggleHistoryMenu(PlayerMovement.MovementState state)
