@@ -4126,6 +4126,7 @@ GameObject:
   - component: {fileID: 8369775395223020513}
   - component: {fileID: 4326131120721025709}
   - component: {fileID: 1255887938273110794}
+  - component: {fileID: 4372629721749638153}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -4235,7 +4236,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8369775395223020513}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4372629721749638153}
+        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.StandardUIContinueButtonFastForward,
+          Assembly-CSharp-firstpass
+        m_MethodName: OnFastForward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1255887938273110794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4254,6 +4268,23 @@ MonoBehaviour:
   skipIfBeingClickedBySubmit: 0
   simulateButtonClick: 1
   simulateButtonDownDuration: 0.1
+--- !u!114 &4372629721749638153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946521799879655787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ee3d99442035942b6dd1ede25ff7cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 11424526}
+  typewriterEffect: {fileID: 5087817191446038978}
+  hideContinueButtonOnContinue: 0
+  continueSubtitlePanel: 1
+  continueAlertPanel: 1
 --- !u!1 &3257896198180678745
 GameObject:
   m_ObjectHideFlags: 0
@@ -4536,6 +4567,7 @@ GameObject:
   - component: {fileID: 2112509920792295755}
   - component: {fileID: 6387276245284852049}
   - component: {fileID: 8547669428950632951}
+  - component: {fileID: 5087817191446038978}
   m_Layer: 5
   m_Name: Subtitle Text (TMP)
   m_TagString: Untagged
@@ -4681,6 +4713,49 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &5087817191446038978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050752357088266210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1360375efe462cd4ab520d1661206035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightToLeft: 0
+  charactersPerSecond: 50
+  audioClip: {fileID: 0}
+  alternateAudioClips: []
+  audioSource: {fileID: 0}
+  usePlayOneShot: 0
+  interruptAudioClip: 0
+  stopAudioOnSilentCharacters: 0
+  stopAudioOnPauseCodes: 0
+  silentCharacters: 
+  fullPauseCharacters: 
+  quarterPauseCharacters: 
+  fullPauseDuration: 1
+  quarterPauseDuration: 0.25
+  removeDuplicateTypewriterEffects: 1
+  playOnEnable: 1
+  waitOneFrameBeforeStarting: 0
+  stopOnConversationEnd: 0
+  autoScrollSettings:
+    autoScrollEnabled: 0
+    scrollRect: {fileID: 0}
+    scrollbarEnabler: {fileID: 0}
+  onBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharacter:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5207599182582229662
 GameObject:
   m_ObjectHideFlags: 0
@@ -4693,6 +4768,7 @@ GameObject:
   - component: {fileID: 7058993295836379898}
   - component: {fileID: 3184697828525585473}
   - component: {fileID: 8297664065667318665}
+  - component: {fileID: 2126884809713625524}
   m_Layer: 5
   m_Name: Subtitle Text (TMP)
   m_TagString: Untagged
@@ -4838,6 +4914,49 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &2126884809713625524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207599182582229662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1360375efe462cd4ab520d1661206035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightToLeft: 0
+  charactersPerSecond: 50
+  audioClip: {fileID: 0}
+  alternateAudioClips: []
+  audioSource: {fileID: 0}
+  usePlayOneShot: 0
+  interruptAudioClip: 0
+  stopAudioOnSilentCharacters: 0
+  stopAudioOnPauseCodes: 0
+  silentCharacters: 
+  fullPauseCharacters: 
+  quarterPauseCharacters: 
+  fullPauseDuration: 1
+  quarterPauseDuration: 0.25
+  removeDuplicateTypewriterEffects: 1
+  playOnEnable: 1
+  waitOneFrameBeforeStarting: 0
+  stopOnConversationEnd: 0
+  autoScrollSettings:
+    autoScrollEnabled: 0
+    scrollRect: {fileID: 0}
+    scrollbarEnabler: {fileID: 0}
+  onBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharacter:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5322273086603130514
 GameObject:
   m_ObjectHideFlags: 0
@@ -5466,6 +5585,7 @@ GameObject:
   - component: {fileID: 1730915089928863014}
   - component: {fileID: 3552487246262201150}
   - component: {fileID: 8181095124813000911}
+  - component: {fileID: 7679374945779855481}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -5575,7 +5695,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1730915089928863014}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7679374945779855481}
+        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.StandardUIContinueButtonFastForward,
+          Assembly-CSharp-firstpass
+        m_MethodName: OnFastForward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8181095124813000911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5594,6 +5727,23 @@ MonoBehaviour:
   skipIfBeingClickedBySubmit: 0
   simulateButtonClick: 1
   simulateButtonDownDuration: 0.1
+--- !u!114 &7679374945779855481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452448326477231179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ee3d99442035942b6dd1ede25ff7cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 11424526}
+  typewriterEffect: {fileID: 2126884809713625524}
+  hideContinueButtonOnContinue: 0
+  continueSubtitlePanel: 1
+  continueAlertPanel: 1
 --- !u!1 &8540023052450098807
 GameObject:
   m_ObjectHideFlags: 0
