@@ -17,4 +17,9 @@ public class JournalPlayerRef : MonoBehaviour
     {
         
     }
+
+    public void AddArtifact(GameObject artifact) 
+    {
+        player.AddArtifact(artifact.name);
+    }
 }
