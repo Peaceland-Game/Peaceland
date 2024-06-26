@@ -9,40 +9,53 @@ using UnityEngine.UIElements;
 
 public class Stealth : MonoBehaviour
 {
+    //the player gameObject that the agent wants to seek
+    public GameObject player;
     //the number of rays being cast
     public int numberOfRays;
     //the field of view that the rays cover
     public float fieldOfViewInDegrees;
-
-    //contains every ray
-    Ray[] rays;
-    //contains every ray angle
-    float[] rayAngles;
-
-    //used for collisions
-    RaycastHit hit;
-    //the player gameObject
-    public GameObject player;
+    
     //the maximum distance the agaent can see the player from
     public float detectionDistance;
-
+    
     //when true, the agent detects the player when they get too close
     public bool detectsPlayerWhenClose;
     public float closeDetectDistance;
 
-    //when true, agent uses a largerDetection distance when finding the player
-    //can be used if the agent is alerted
-    public bool toggleLargerDetectionDistance;
+    //agent uses a larger detecttion distance when they can hear the player
     public float largerDetectionDistance;
+    //how long the agent stays alerted when they hear the player
+    public float secondsAgentStaysAlerted;
+    private float currentAlertTime;
 
-    //TEMPORARY indicator and material
-    public GameObject indicator;
-    public Material material;
-       
+    //how long the agent will persue the player after they lose sight of them
+    public float secondsAgentSeeks;
+
+    //wether or not the player was detected
+    [HideInInspector] public bool detectedPlayer;
+    //wether or not the agent can hear the player
+    [HideInInspector] public bool heardPlayer;
+
+    //TEMPORARY indicators and materials
+    public GameObject detectionIndicator;
+    public Material detectMaterial;
+    public GameObject alertIndicator;
+    public Material alertMaterial;
+
+    //contains every ray
+    private Ray[] rays;
+    //contains every ray angle
+    private float[] rayAngles;
+
+    //used for collisions
+    private RaycastHit hit;
+    
     private void Start()
     {
         rays = new Ray[numberOfRays];
         rayAngles = new float[numberOfRays];
+        currentAlertTime = secondsAgentStaysAlerted;
 
         //find the distance between each ray in radians
         float distanceBetweenRays = fieldOfViewInDegrees / numberOfRays * (Mathf.PI / 180);
@@ -73,13 +86,32 @@ public class Stealth : MonoBehaviour
 
     private void Update()
     {
-        //find the angle made by the forward and the axis
+        //reset states
+        detectedPlayer = false;
+        heardPlayer = false;
+        alertMaterial.color = Color.green;
+
+        //the angle made by the forward and the axis
         float angleOfForward = CalculateRayAngle(transform.forward.z, transform.forward.x);
         
         //TEMPORARY set the indicator above the agent's head
-        indicator.transform.position = transform.position + new Vector3(0, 2, 0);
+        detectionIndicator.transform.position = transform.position + new Vector3(0, 2, 0);
+        alertIndicator.transform.position = transform.position + new Vector3(0, 3, 0);
 
-        bool playerIsDetected = false;
+
+        //check if the agent can hear the player
+        if (GetDistance(transform.position, player.transform.position) <= player.GetComponent<PlayerSound>().getCurrentSoundFootprint())
+        {
+            currentAlertTime = 0;
+        }
+        //agent is alerted until time runs out
+        if (currentAlertTime < secondsAgentStaysAlerted)
+        {
+            alertMaterial.color = Color.red;
+            currentAlertTime += Time.deltaTime;
+            heardPlayer = true;
+        }
+
 
         //for each ray
         for (int i = 0; i < numberOfRays; i++)
@@ -92,34 +124,33 @@ public class Stealth : MonoBehaviour
                 rays[i].direction = transform.forward;
             }
 
-
             //detect for any collisions, no more collisions are needed once the player is detected
-            if(!playerIsDetected) 
-            { 
-                if (!toggleLargerDetectionDistance)
+            if(!detectedPlayer) 
+            {
+                //use smaller detection range if they do not hear the player
+                if (!heardPlayer)
                 {
                     if (IsCollidingWithObject(rays[i], player, detectionDistance) == "detected" || IsCollidingWithObject(rays[i], player, detectionDistance) == "out of range")
                     {
-                        playerIsDetected = true;
+                        detectedPlayer = true;
                     }
                 }
+                //use large if they hear the player
                 else
                 {
                     if (IsCollidingWithObject(rays[i], player, largerDetectionDistance) == "detected" || IsCollidingWithObject(rays[i], player, largerDetectionDistance) == "out of range")
                     {
-                        playerIsDetected = true;
+                        detectedPlayer = true;
                     }
                 }
-
             }
         }
 
-        //proximity detection
         //player is detected when they get too close to the agent
         if (GetDistance(transform.position, player.transform.position) <= closeDetectDistance)
         {
-            Debug.Log("too close! agent detected player");
-            material.color = Color.blue;
+            //Debug.Log("too close! agent detected player");
+            detectMaterial.color = Color.blue;
         }
     }
 
@@ -165,8 +196,8 @@ public class Stealth : MonoBehaviour
             //the agent sees a wall
             if (hit.collider.gameObject.layer == 0)
             {
-                Debug.Log("wall");
-                material.color = Color.grey;
+                //Debug.Log("wall");
+                detectMaterial.color = Color.grey;
                 return "wall";
             }
 
@@ -176,22 +207,22 @@ public class Stealth : MonoBehaviour
                 //they were in range, agent sees player
                 if (GetDistance(transform.position, player.transform.position) <= maxDistance)
                 {
-                    Debug.Log("player was seen");
-                    material.color = Color.red;
+                    //Debug.Log("player was seen");
+                    detectMaterial.color = Color.red;
                     return "detected";
                 }
                 //they were out of range, agent does not see player
                 else if (GetDistance(transform.position, player.transform.position) > maxDistance)
                 {
-                    Debug.Log("ray collided with player, but player is out of range");
-                    material.color = Color.yellow;
+                    //Debug.Log("ray collided with player, but player is out of range");
+                    detectMaterial.color = Color.yellow;
                     return "out of range";
                 }
             }
         }
         else
         {
-            material.color = Color.gray;
+            detectMaterial.color = Color.gray;
         }
         return "undetected";
     }
@@ -212,7 +243,8 @@ public class Stealth : MonoBehaviour
         //draw each ray
         for (int i = 0; i < numberOfRays; i++)
         {
-            if (!toggleLargerDetectionDistance)
+            //make the visual refect their current range
+            if (!heardPlayer)
             {
                 Debug.DrawRay(rays[i].origin, rays[i].direction * detectionDistance, Color.cyan);
             }
