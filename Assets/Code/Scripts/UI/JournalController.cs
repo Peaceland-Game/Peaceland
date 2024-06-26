@@ -12,6 +12,10 @@ public class JournalController : MonoBehaviour
     public float animSpeed = 1f;
     public List<GameObject> pages = new();
     // Start is called before the first frame update
+    public ScreenshotCapture screenshotCapture;
+    public List<Texture2D> journalEntries = new List<Texture2D>();
+    public UnityEngine.UI.Image displayImage;
+    private int currentEntryIndex = 0;
     void Start()
     {
         //remove:
@@ -20,45 +24,12 @@ public class JournalController : MonoBehaviour
         animator.SetFloat("Speed", animSpeed);
         ShowPage(currentPage);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void AddJournalEntry()
     {
-
+        Texture2D screenshot = screenshotCapture.CaptureScreenshot();
+        journalEntries.Add(screenshot);
+        //screenshotCapture.SaveScreenshot(screenshot, "JournalEntry_" + journalEntries.Count);
     }
-
-    //public void PageForward()
-    //{
-
-    //    currentPage++;
-    //    //  animator.SetFloat("Speed", animSpeed);
-    //    //  animator.SetBool("fwd", true);
-    //    if (currentPage > totalPages) currentPage = totalPages;
-    //    Debug.Log($"{currentPage - 1} to {currentPage}");
-
-    //    var trigger = GetTriggerName(currentPage - 1, currentPage);
-    //    if (!string.IsNullOrEmpty(trigger))
-    //    {
-    //        Debug.Log($"trigger: {trigger}");
-    //        animator.SetTrigger(trigger);
-    //    }
-
-    //}
-    //public void PageBackward()
-    //{
-
-    //    currentPage--;
-    //    //  animator.SetBool("fwd", false);
-    //    //  animator.SetFloat("Speed", -animSpeed);
-    //    if (currentPage < 0) currentPage = 0;
-    //    Debug.Log($"{currentPage + 1} to {currentPage}");
-    //    var trigger = GetTriggerName(currentPage + 1, currentPage);
-    //    if (!string.IsNullOrEmpty(trigger))
-    //    {
-    //        Debug.Log($"trigger: {trigger}");
-    //        animator.SetTrigger(trigger);
-    //    }
-    //}
     public void HandleTabClick(int tabNumber)
     {
         if (tabNumber < totalPages)
@@ -72,6 +43,10 @@ public class JournalController : MonoBehaviour
                 animator.SetTrigger(trigger);
             }
         }
+    }
+    public void AddArtifact(string name)
+    {
+        Debug.Log($"Adding {name} to artifacts");
     }
 
     private string GetTriggerName(int fromPage, int toPage)
@@ -114,5 +89,26 @@ public class JournalController : MonoBehaviour
     public void ActivatePageDisplay(int pageIndex)
     {
         pages[pageIndex].SetActive(true);
+    }
+    public void DisplayNextEntry()
+    {
+        currentEntryIndex = (currentEntryIndex + 1) % journalEntries.Count;
+        DisplayCurrentEntry();
+    }
+
+    public void DisplayPreviousEntry()
+    {
+        currentEntryIndex = (currentEntryIndex - 1 + journalEntries.Count) % journalEntries.Count;
+        DisplayCurrentEntry();
+    }
+
+    private void DisplayCurrentEntry()
+    {
+        if (journalEntries.Count > 0)
+        {
+            displayImage.sprite = Sprite.Create(journalEntries[currentEntryIndex],
+                new Rect(0, 0, journalEntries[currentEntryIndex].width, journalEntries[currentEntryIndex].height),
+                new Vector2(0.5f, 0.5f));
+        }
     }
 }

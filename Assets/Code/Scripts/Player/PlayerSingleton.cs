@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayerSingleton : MonoBehaviour
 {
     public static PlayerSingleton Instance;
+    public JournalController journal;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private UserInterface userInterface;
     //private PlayerMovement playerMovement;
@@ -54,7 +55,15 @@ public class PlayerSingleton : MonoBehaviour
             controller.enabled = !paused;
 
         }
+        //else if (Keyboard.current.jKey.wasPressedThisFrame)
+        //{
+        //    TakeJournalScreenshot();
+        //}
     }
+    //void TakeJournalScreenshot()
+    //{
+    //    journal.AddJournalEntry();
+    //}
 
     void OnConversationEnd(Transform actor)
     {
