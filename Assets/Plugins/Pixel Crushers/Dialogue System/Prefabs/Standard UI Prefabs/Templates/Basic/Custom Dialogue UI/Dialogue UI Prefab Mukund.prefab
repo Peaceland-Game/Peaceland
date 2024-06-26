@@ -2379,10 +2379,10 @@ RectTransform:
   m_Father: {fileID: 22433532}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2, y: -2}
-  m_SizeDelta: {x: 446, y: 71}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &22239856
 CanvasRenderer:
@@ -4126,6 +4126,7 @@ GameObject:
   - component: {fileID: 8369775395223020513}
   - component: {fileID: 4326131120721025709}
   - component: {fileID: 1255887938273110794}
+  - component: {fileID: 4372629721749638153}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -4235,7 +4236,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8369775395223020513}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4372629721749638153}
+        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.StandardUIContinueButtonFastForward,
+          Assembly-CSharp-firstpass
+        m_MethodName: OnFastForward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1255887938273110794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4254,6 +4268,23 @@ MonoBehaviour:
   skipIfBeingClickedBySubmit: 0
   simulateButtonClick: 1
   simulateButtonDownDuration: 0.1
+--- !u!114 &4372629721749638153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946521799879655787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ee3d99442035942b6dd1ede25ff7cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 11424526}
+  typewriterEffect: {fileID: 5087817191446038978}
+  hideContinueButtonOnContinue: 0
+  continueSubtitlePanel: 1
+  continueAlertPanel: 1
 --- !u!1 &3257896198180678745
 GameObject:
   m_ObjectHideFlags: 0
@@ -4959,10 +4990,10 @@ RectTransform:
   m_Father: {fileID: 22480558}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.009995, y: -21.965}
-  m_SizeDelta: {x: 102.02, y: 27.93}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &441375953046097447
 CanvasRenderer:
@@ -5095,10 +5126,10 @@ RectTransform:
   m_Father: {fileID: 22445010}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 223, y: -19.8}
-  m_SizeDelta: {x: 446, y: 39.6}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1251621046814296701
 CanvasRenderer:
@@ -5554,6 +5585,7 @@ GameObject:
   - component: {fileID: 1730915089928863014}
   - component: {fileID: 3552487246262201150}
   - component: {fileID: 8181095124813000911}
+  - component: {fileID: 7679374945779855481}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -5663,7 +5695,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1730915089928863014}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7679374945779855481}
+        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.StandardUIContinueButtonFastForward,
+          Assembly-CSharp-firstpass
+        m_MethodName: OnFastForward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8181095124813000911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5682,6 +5727,23 @@ MonoBehaviour:
   skipIfBeingClickedBySubmit: 0
   simulateButtonClick: 1
   simulateButtonDownDuration: 0.1
+--- !u!114 &7679374945779855481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452448326477231179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ee3d99442035942b6dd1ede25ff7cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 11424526}
+  typewriterEffect: {fileID: 2126884809713625524}
+  hideContinueButtonOnContinue: 0
+  continueSubtitlePanel: 1
+  continueAlertPanel: 1
 --- !u!1 &8540023052450098807
 GameObject:
   m_ObjectHideFlags: 0
