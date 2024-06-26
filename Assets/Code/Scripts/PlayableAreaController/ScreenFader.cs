@@ -29,7 +29,6 @@ public class ScreenFader : MonoBehaviour
         {
             StopCoroutine(fadeCoroutine);
         }
-        Debug.Log("starting fade");
         fadeCoroutine = StartCoroutine(FadeCoroutine(fadeDuration, onFadeComplete));
     }
 
