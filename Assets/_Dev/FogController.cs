@@ -1,101 +1,131 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class FogController : MonoBehaviour
 {
-    public Transform player; // Reference to the player
-    public ParticleSystem fogParticleSystemPrefab; // Prefab of the fog particle system
-    public Collider playableArea; // The collider that defines the playable area
-    public float maxFogDensity = 100.0f; // Maximum emission rate for the fog
-    public float fogIncreaseRate = 10.0f; // Rate of fog increase based on distance
-    public float minFogLifetime = 0.5f; // Minimum lifetime of fog particles
-    public float maxFogLifetime = 5.0f; // Maximum lifetime of fog particles
-    public float turnAroundDistance = 5.0f; // Distance from the edge at which the player is turned around
-    public int fogEmitterCount = 8; // Number of fog emitters around the edge
+    public Transform player;
+    public GameObject fogEmitterPrefab;
+    public float fogStartDistance = 5f;
+    public float maxFogDistance = 20f;
+    public float fogDensityIncreaseRate = 2.5f;
+    public float maxFogDensity = 50f;
+    public float teleportDistance = 2f;
+    public float emitterSpawnDistance = 5f;
+    public int emitterCount = 8;
 
-    private ParticleSystem[] fogEmitters;
-    private Vector3 initialPlayerPosition;
+    
+    private Collider playableArea;
+    private List<ParticleSystem> fogEmitters = new List<ParticleSystem>();
+    private Quaternion lastValidRotation;
+    private Vector3 lastValidPosition;
+    private bool isOutsidePlayArea = false;
+    
 
     void Start()
     {
-        initialPlayerPosition = player.position;
+        
+        playableArea = GetComponent<SphereCollider>();
+        
 
-        // Initialize fog emitters around the edge of the playable area
-        fogEmitters = new ParticleSystem[fogEmitterCount];
-        for (int i = 0; i < fogEmitterCount; i++)
+        for (int i = 0; i < emitterCount; i++)
         {
-            fogEmitters[i] = Instantiate(fogParticleSystemPrefab);
-            fogEmitters[i].transform.position = GetEdgePosition(i);
-            fogEmitters[i].transform.parent = null;
+            GameObject emitter = Instantiate(fogEmitterPrefab, Vector3.zero, Quaternion.identity);
+            fogEmitters.Add(emitter.GetComponent<ParticleSystem>());
+            emitter.SetActive(false);
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(lastValidPosition, 1f);
     }
 
     void Update()
     {
-        if (playableArea != null && player != null)
+        if (!playableArea.bounds.Contains(player.position))
         {
-            // Calculate distance from the edge
-            float distanceToEdge = Vector3.Distance(player.position, playableArea.ClosestPoint(player.position));
-
-            // Check if the player is within the playable area
-            if (playableArea.bounds.Contains(player.position))
+            if (!isOutsidePlayArea)
             {
-                // Decrease the fog density and clear existing particles
-                SetFogDensity(0);
-                ClearFogEmitters();
+                // Player just exited the play area
+                isOutsidePlayArea = true;
+                lastValidRotation = player.rotation;
+                lastValidPosition = playableArea.ClosestPoint(player.position);
+            }
+            float distanceOutside = Vector3.Distance(playableArea.ClosestPoint(player.position), player.position);
+
+            if (distanceOutside > teleportDistance)
+            {
+                TeleportPlayerBack();
+            }
+            else if (distanceOutside > fogStartDistance)
+            {
+                UpdateFogEmitters();
+                UpdateFogDensity(distanceOutside);
             }
             else
             {
-                // Increase fog density based on distance
-                float fogDensity = Mathf.Clamp((distanceToEdge - turnAroundDistance) * fogIncreaseRate, 0, maxFogDensity);
-                SetFogDensity(fogDensity);
 
-                // Adjust fog particle lifetime based on distance to edge
-                float fogLifetime = Mathf.Lerp(minFogLifetime, maxFogLifetime, distanceToEdge / (playableArea.bounds.extents.magnitude));
-                SetFogLifetime(fogLifetime);
-
-                // Turn the player around if too far
-                if (distanceToEdge <= turnAroundDistance)
-                {
-                    Vector3 directionBack = initialPlayerPosition - player.position;
-                    directionBack.y = 0; // Keep the player level
-                    player.forward = Vector3.Lerp(player.forward, directionBack.normalized, Time.deltaTime * 2.0f);
-                    player.Translate(Vector3.forward * Time.deltaTime * 5.0f); // Push the player back into the playable area
-                }
+                DisableFogEmitters();
             }
         }
+        else
+        {
+            
+            isOutsidePlayArea = false;
+            DisableFogEmitters();
+        }
+        
+
     }
 
-    void SetFogDensity(float density)
+    void UpdateFogEmitters()
     {
-        foreach (var emitter in fogEmitters)
+        Vector3 directionFromCenter = (player.position - playableArea.bounds.center).normalized;
+        Vector3 spawnPosition = player.position + directionFromCenter * emitterSpawnDistance;
+
+        for (int i = 0; i < fogEmitters.Count; i++)
         {
-            var emission = emitter.emission;
-            emission.rateOverTime = density;
+            fogEmitters[i].gameObject.SetActive(true);
+            float angle = (360f / emitterCount) * i;
+            Vector3 rotatedPosition = Quaternion.Euler(0, angle, 0) * (spawnPosition - player.position) + player.position;
+            fogEmitters[i].transform.position = rotatedPosition;
         }
     }
 
-    void SetFogLifetime(float lifetime)
+    void UpdateFogDensity(float distanceOutside)
     {
-        foreach (var emitter in fogEmitters)
+        float fogPercentage = Mathf.Clamp01((distanceOutside - fogStartDistance) / (maxFogDistance - fogStartDistance));
+        float targetDensity = fogPercentage * maxFogDensity;
+
+        foreach (ParticleSystem emitter in fogEmitters)
         {
             var main = emitter.main;
-            main.startLifetime = lifetime;
+            main.startColor = new Color(main.startColor.color.r, main.startColor.color.g, main.startColor.color.b,
+                Mathf.MoveTowards(main.startColor.color.a, targetDensity, fogDensityIncreaseRate * Time.deltaTime));
         }
     }
 
-    void ClearFogEmitters()
+    void DisableFogEmitters()
     {
-        foreach (var emitter in fogEmitters)
+        foreach (ParticleSystem emitter in fogEmitters)
         {
-            emitter.Clear();
+            emitter.gameObject.SetActive(false);
         }
     }
 
-    Vector3 GetEdgePosition(int index)
+    void TeleportPlayerBack()
     {
-        Vector3 center = playableArea.bounds.center;
-        Vector3 extents = playableArea.bounds.extents;
-        float angle = index * Mathf.PI * 2 / fogEmitterCount;
-        return new Vector3(center.x + Mathf.Cos(angle) * extents.x, center.y, center.z + Mathf.Sin(angle) * extents.z);
+        // Calculate the reversed direction
+        Vector3 forwardDirection = lastValidRotation * Vector3.forward;
+        forwardDirection.y = 0; // Keep only the horizontal component
+        Vector3 reversedDirection = -forwardDirection.normalized;
+
+        // Create a rotation facing the reversed direction
+        Quaternion newRotation = Quaternion.LookRotation(reversedDirection);
+
+        // Apply position and rotation
+        player.position = lastValidPosition;
+        player.rotation = Quaternion.Euler(player.rotation.eulerAngles.x, newRotation.eulerAngles.y, 0);
+        player.Translate(player.forward * teleportDistance);
     }
 }
