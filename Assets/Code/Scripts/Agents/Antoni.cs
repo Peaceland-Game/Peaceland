@@ -9,6 +9,8 @@ public class Antoni : CitizenAI
     public SphereCollider minimumMoveDistance;
     public SphereCollider loseAgentDistance;
     public bool IsAiActive = false;
+    public int runWaypoint = 4;
+    
 
     [Header("Turning")]
     public float lookAroundDuration = 3f; // Time spent looking around
@@ -25,7 +27,6 @@ public class Antoni : CitizenAI
     }
     protected override void Update()
     {
-        
         AntoniPathing();
     }
     public void StartAntoni()
@@ -58,6 +59,10 @@ public class Antoni : CitizenAI
         {
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
             {
+                if (currentWaypoint == runWaypoint)
+                {
+                    agent.speed *= 4;
+                }
                 if (turnAroundWaypoints.Contains(currentWaypoint))
                 {
                     if (!isLookingAround)
@@ -93,10 +98,10 @@ public class Antoni : CitizenAI
             }
         }
     }
-    protected void BeginMoveToNextPoint()
-    {
-        GotoNextPoint();
-    }
+    //protected void BeginMoveToNextPoint()
+    //{
+    //    GotoNextPoint();
+    //}
 
     private void OnTriggerExit(Collider other)
     {
