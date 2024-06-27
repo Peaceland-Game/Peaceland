@@ -4,6 +4,7 @@ using UnityEngine;
 using ProceduralWorlds;
 using PixelCrushers.DialogueSystem;
 using UnityEngine.InputSystem;
+using Gaia;
 
 public class PlayerSingleton : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PlayerSingleton : MonoBehaviour
 
     [SerializeField]
     private Transform carryPos;
+
+    private Transform heldItem;
 
     // Start is called before the first frame update
     void Start()
@@ -79,5 +82,23 @@ public class PlayerSingleton : MonoBehaviour
         item.localPosition = Vector3.zero;
         item.localRotation = Quaternion.identity;
         item.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+        heldItem = item;
+    }
+
+    public void DropItem(Transform dropPoint) 
+    {
+        dropPoint.GetComponent<MeshRenderer>().enabled = false;
+        heldItem.parent = dropPoint;
+        heldItem.localPosition = Vector3.zero;
+        heldItem.localRotation = dropPoint.localRotation;
+        heldItem.localScale = dropPoint.localScale;
+    }
+
+    public void ResetItem(Transform resetPos) 
+    {
+        heldItem.parent = resetPos;
+        heldItem.localPosition = Vector3.zero;
+        heldItem.localRotation = resetPos.localRotation;
+        heldItem.localScale = resetPos.localScale;
     }
 }
