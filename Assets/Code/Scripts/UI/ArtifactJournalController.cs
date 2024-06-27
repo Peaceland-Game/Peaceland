@@ -10,6 +10,7 @@ public class ArtifactJournalController : MonoBehaviour
     void Start()
     {
         artifacts = GetComponentsInChildren<ArtifactImage>().ToList();
+        artifacts.ForEach(a => Debug.Log(a.name));
     }
     public void RevealArtifact(string name)
     {
@@ -17,7 +18,7 @@ public class ArtifactJournalController : MonoBehaviour
 
         if (!artifact)
         {
-            throw new System.Exception("Tried to reveal missing artifact");
+            throw new System.Exception($"Tried to reveal missing artifact {name}");
         }
         artifact.RevealArtifact();
     }
