@@ -7,7 +7,9 @@ public class CitizenAI : MonoBehaviour {
     protected int currentWaypoint = 0;
     protected NavMeshAgent agent;
 
-    void Start() {
+
+
+    protected virtual void Start() {
         //waypoints = WaypointParent.GetComponentsInChildren<Transform>();
         agent = GetComponent<NavMeshAgent>();
         if (WaypointParent)
@@ -17,12 +19,13 @@ public class CitizenAI : MonoBehaviour {
         GotoNextPoint();
     }
 
-    protected void GotoNextPoint() {
+    protected void GotoNextPoint()
+    {
         if (waypoints.Length == 0)
             return;
 
-        agent.destination = waypoints[currentWaypoint].position;
         currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
+        agent.destination = waypoints[currentWaypoint].position;
     }
 
     protected virtual void Update() {
