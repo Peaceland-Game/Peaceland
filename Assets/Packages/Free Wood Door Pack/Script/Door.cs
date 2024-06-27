@@ -40,13 +40,20 @@ namespace DoorScript
         void Update()
         {
             transform.localRotation = Quaternion.Slerp(transform.localRotation, target, Time.deltaTime * 5 * smooth);
-            if (Quaternion.Angle(transform.localRotation, target) <= 0.02f) { state = DoorState.NotMoving; }
+            if (Quaternion.Angle(transform.localRotation, target) <= 0.02f) 
+            {
+                var collider = GetComponent<BoxCollider>();
+                collider.enabled = true;
+                state = DoorState.NotMoving; 
+            }
         }
 
         public void OpenDoor()
         {
             if (state == DoorState.NotMoving)
             {
+                var collider = GetComponent<BoxCollider>();
+                collider.enabled = false;
                 state = DoorState.Moving;
                 if (open) { target = Quaternion.Euler(0, DoorCloseAngle, 0); }
                 else { target = Quaternion.Euler(0, DoorOpenAngle, 0); }
@@ -58,7 +65,6 @@ namespace DoorScript
         }
         void OnUse(Transform player)
         {
-            
             OpenDoor();
         }
         public void Unlock()
