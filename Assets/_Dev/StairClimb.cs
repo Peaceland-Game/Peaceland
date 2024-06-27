@@ -1,59 +1,72 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StairClimb : MonoBehaviour
 {
     Rigidbody rigidBody;
-    [SerializeField] GameObject stepRayUpper;
-    [SerializeField] GameObject stepRayLower;
+    [SerializeField] Transform playerBody;
+    [SerializeField] float raycastOriginHeight = 0.5f;
     [SerializeField] float stepHeight = 0.3f;
     [SerializeField] float stepSmooth = 2f;
+    [SerializeField] float raycastDistance = 0.5f;
 
     private void Awake()
     {
-        rigidBody = GetComponent<Rigidbody>();
-
-        stepRayUpper.transform.position = new Vector3(stepRayUpper.transform.position.x, stepHeight, stepRayUpper.transform.position.z);
+        rigidBody = playerBody.GetComponent<Rigidbody>();
     }
-    
+
+    private void OnDrawGizmos()
+    {
+        if (!playerBody) return;
+
+        Gizmos.color = Color.red;
+        Vector3 forward = GetForwardDirection();
+        Vector3 lowerOrigin = playerBody.position + Vector3.up * raycastOriginHeight;
+        Vector3 upperOrigin = lowerOrigin + Vector3.up * stepHeight;
+
+        Gizmos.DrawRay(lowerOrigin, forward * raycastDistance);
+        Gizmos.DrawRay(upperOrigin, forward * raycastDistance);
+    }
+
     private void FixedUpdate()
     {
-        stepClimb();
+        StepClimb();
     }
 
-    void stepClimb()
+    void StepClimb()
     {
-         RaycastHit hitLower;
-        if (Physics.Raycast(stepRayLower.transform.position, transform.TransformDirection(Vector3.forward), out hitLower, 0.1f))
+        Vector3 forward = GetForwardDirection();
+        Vector3 lowerOrigin = playerBody.position + Vector3.up * raycastOriginHeight;
+        Vector3 upperOrigin = lowerOrigin + Vector3.up * stepHeight;
+
+        if (Physics.Raycast(lowerOrigin, forward, out RaycastHit hitLower, raycastDistance))
         {
-            RaycastHit hitUpper;
-            if (!Physics.Raycast(stepRayUpper.transform.position, transform.TransformDirection(Vector3.forward), out hitUpper, 0.2f))
+            if (!Physics.Raycast(upperOrigin, forward, out RaycastHit hitUpper, raycastDistance))
             {
-                rigidBody.position -= new Vector3(0f, -stepSmooth * Time.deltaTime, 0f);
+                rigidBody.position += Vector3.up * stepSmooth * Time.deltaTime;
             }
         }
 
-         RaycastHit hitLower45;
-        if (Physics.Raycast(stepRayLower.transform.position, transform.TransformDirection(1.5f,0,1), out hitLower45, 0.1f))
-        {
+        // Check for 45 degree angles
+        CheckAngle(lowerOrigin, upperOrigin, Quaternion.Euler(0, 45, 0) * forward);
+        CheckAngle(lowerOrigin, upperOrigin, Quaternion.Euler(0, -45, 0) * forward);
+    }
 
-            RaycastHit hitUpper45;
-            if (!Physics.Raycast(stepRayUpper.transform.position, transform.TransformDirection(1.5f,0,1), out hitUpper45, 0.2f))
+    void CheckAngle(Vector3 lowerOrigin, Vector3 upperOrigin, Vector3 direction)
+    {
+        if (Physics.Raycast(lowerOrigin, direction, out RaycastHit hitLower, raycastDistance))
+        {
+            if (!Physics.Raycast(upperOrigin, direction, out RaycastHit hitUpper, raycastDistance))
             {
-                rigidBody.position -= new Vector3(0f, -stepSmooth * Time.deltaTime, 0f);
+                rigidBody.position += Vector3.up * stepSmooth * Time.deltaTime;
             }
         }
+    }
 
-        RaycastHit hitLowerMinus45;
-        if (Physics.Raycast(stepRayLower.transform.position, transform.TransformDirection(-1.5f,0,1), out hitLowerMinus45, 0.1f))
-        {
-
-            RaycastHit hitUpperMinus45;
-            if (!Physics.Raycast(stepRayUpper.transform.position, transform.TransformDirection(-1.5f,0,1), out hitUpperMinus45, 0.2f))
-            {
-                rigidBody.position -= new Vector3(0f, -stepSmooth * Time.deltaTime, 0f);
-            }
-        }
+    Vector3 GetForwardDirection()
+    {
+        // Use camera's forward direction, but ignore pitch
+        Vector3 forward = transform.forward;
+        forward.y = 0;
+        return forward.normalized;
     }
 }
