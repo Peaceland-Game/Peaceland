@@ -5135,7 +5135,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 1892.8562}
     canvasZoom: 0.7000003
   - id: 16
     fields:
@@ -9642,17 +9642,7 @@ MonoBehaviour:
           SetActive(Antoni,
           false)@2.0;
 
-          Fade(stay, 0.7)@2.5;
-
-          MoveTo(PlayerPanel5Start,
-          Player)@3.3;
-
-          Camera(original, PlayerCamera)@3.5;
-
-          Fade(in,
-          0.7)@3.6;
-
-          SetEnabled(Canvas, true, DialogueCanvas)@4.4;'
+          Fade(stay, 0.7)@2.5;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -9662,7 +9652,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 16
+        originDialogueID: 77
+        destinationConversationID: 16
+        destinationDialogueID: 104
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -9671,7 +9667,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 104.55443
-        y: 3325.5713
+        y: 3327
         width: 160
         height: 30
     - id: 79
@@ -10332,17 +10328,7 @@ MonoBehaviour:
           Fade(stay, 0.7);
 
           LookAt(Gryf,
-          Waeli)@0.8;
-
-          MoveTo(PlayerPanel5Start, Player)@0.9;
-
-          Camera(original,
-          PlayerCamera)@1.1;
-
-          Fade(in, 0.7)@1.3;
-
-          SetEnabled(Canvas,
-          true, DialogueCanvas)@2.1;'
+          Waeli)@0.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -10352,7 +10338,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 16
+        originDialogueID: 90
+        destinationConversationID: 16
+        destinationDialogueID: 104
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -11014,17 +11006,7 @@ MonoBehaviour:
           SetActive(Antoni, false)@2.5;
 
           Fade(stay,
-          0.7)@2.5;
-
-          MoveTo(PlayerPanel5Start, Player)@3.3;
-
-          Camera(original,
-          PlayerCamera)@3.5;
-
-          Fade(in, 0.7)@3.7;
-
-          SetEnabled(Canvas,
-          true, DialogueCanvas)@4.3;'
+          0.7)@2.5;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 16
@@ -11034,7 +11016,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 16
+        originDialogueID: 102
+        destinationConversationID: 16
+        destinationDialogueID: 104
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -11108,9 +11096,65 @@ MonoBehaviour:
         y: 438
         width: 160
         height: 30
+    - id: 104
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'LoadLevel(Panel6);
+
+          SetEnabled(Canvas, false, DialogueCanvas);
+
+          Fade(in,
+          0.7)@1.2;
+
+          SetEnabled(Canvas, true, DialogueCanvas)@2.0;'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 16
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 314.31512
+        y: 3445.8445
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2178.5708}
-    canvasZoom: 0.7000003
+    canvasScrollPosition: {x: 65.61662, y: 3125.3506}
+    canvasZoom: 0.8800001
   syncInfo:
     syncActors: 1
     syncItems: 1
