@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class PeacekeeperAI : MonoBehaviour
+public class AntoniStealthAI : MonoBehaviour
 {
     enum State
     {
@@ -11,6 +10,7 @@ public class PeacekeeperAI : MonoBehaviour
         Alert,
         Seek
     }
+
     private State currentState;
 
     //the waypoints the agent tries to move to
@@ -87,7 +87,7 @@ public class PeacekeeperAI : MonoBehaviour
                 //stop pathfinding
                 agent.isStopped = true;
                 agent.velocity = Vector3.zero;
-                
+
                 //rotate around y axis
                 transform.Rotate(0, rotationPerSecond * currentDirection * Time.deltaTime, 0, 0);
 
@@ -119,14 +119,15 @@ public class PeacekeeperAI : MonoBehaviour
 
             //seek the player
             case State.Seek:
-                agent.isStopped = false;
-                    GoToPlayerPoint();
+                agent.isStopped = true;
+                agent.velocity = Vector3.zero;
+                GoToPlayerPoint();
 
                 //seek time increases
                 currentSeekTime += Time.deltaTime;
 
                 //if they see the player again or are within the seek radius, reset the time
-                if (gameObject.GetComponent<Stealth>().detectedPlayer || 
+                if (gameObject.GetComponent<Stealth>().detectedPlayer ||
                     gameObject.GetComponent<Stealth>().distanceToPlayer <= gameObject.GetComponent<Stealth>().alwaysPersueRadius)
                 {
                     currentSeekTime = 0;
@@ -136,7 +137,8 @@ public class PeacekeeperAI : MonoBehaviour
                 if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 {
                     currentState = State.Patrol;
-                }  
+                    GoToNextPoint();
+                }
 
                 //if the agent loses the player after a bit, go on alert
                 if (!gameObject.GetComponent<Stealth>().detectedPlayer && currentSeekTime >= seekTime)

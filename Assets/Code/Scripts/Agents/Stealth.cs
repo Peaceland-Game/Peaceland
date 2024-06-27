@@ -32,10 +32,15 @@ public class Stealth : MonoBehaviour
     //how long the agent will persue the player after they lose sight of them
     public float secondsAgentSeeks;
 
+    //if the player is within this radius while being persued, the agent will not stop persuing
+    public float alwaysPersueRadius;
+
     //wether or not the player was detected
     [HideInInspector] public bool detectedPlayer;
     //wether or not the agent can hear the player
     [HideInInspector] public bool heardPlayer;
+
+    [HideInInspector] public float distanceToPlayer;
 
     //TEMPORARY indicators and materials
     public GameObject detectionIndicator;
@@ -98,9 +103,11 @@ public class Stealth : MonoBehaviour
         detectionIndicator.transform.position = transform.position + new Vector3(0, 2, 0);
         alertIndicator.transform.position = transform.position + new Vector3(0, 3, 0);
 
+        //get distance to player
+        distanceToPlayer = GetDistance(transform.position, player.transform.position);
 
         //check if the agent can hear the player
-        if (GetDistance(transform.position, player.transform.position) <= player.GetComponent<PlayerSound>().getCurrentSoundFootprint())
+        if (distanceToPlayer <= player.GetComponent<PlayerSound>().getCurrentSoundFootprint())
         {
             currentAlertTime = 0;
         }
@@ -117,7 +124,7 @@ public class Stealth : MonoBehaviour
         for (int i = 0; i < numberOfRays; i++)
         {
             //set the ray's new origin and direction
-            rays[i].origin = transform.position;
+            rays[i].origin = new Vector3(transform.position.x, transform.position.y - 0.2f, transform.position.z);
             rays[i].direction = new Vector3(Mathf.Cos(angleOfForward + rayAngles[i]), transform.forward.y, Mathf.Sin(angleOfForward + rayAngles[i])).normalized;
             if (i == 0)
             {
@@ -130,7 +137,7 @@ public class Stealth : MonoBehaviour
                 //use smaller detection range if they do not hear the player
                 if (!heardPlayer)
                 {
-                    if (IsCollidingWithObject(rays[i], player, detectionDistance) == "detected" || IsCollidingWithObject(rays[i], player, detectionDistance) == "out of range")
+                    if (IsCollidingWithObject(rays[i], player, detectionDistance) == "detected")
                     {
                         detectedPlayer = true;
                     }
@@ -138,7 +145,7 @@ public class Stealth : MonoBehaviour
                 //use large if they hear the player
                 else
                 {
-                    if (IsCollidingWithObject(rays[i], player, largerDetectionDistance) == "detected" || IsCollidingWithObject(rays[i], player, largerDetectionDistance) == "out of range")
+                    if (IsCollidingWithObject(rays[i], player, largerDetectionDistance) == "detected")
                     {
                         detectedPlayer = true;
                     }
@@ -233,13 +240,15 @@ public class Stealth : MonoBehaviour
     /// <param name="object1Pos"></param>
     /// <param name="object2Pos"></param>
     /// <returns></returns>
-    private float GetDistance(Vector3 object1Pos, Vector3 object2Pos)
+    public float GetDistance(Vector3 object1Pos, Vector3 object2Pos)
     {
         return Mathf.Sqrt(Mathf.Pow(object2Pos.x - object1Pos.x, 2) + Mathf.Pow(object2Pos.z - object1Pos.z, 2));
     }
 
     private void OnDrawGizmos()
     {
+        if (!Application.isPlaying) return;
+
         //draw each ray
         for (int i = 0; i < numberOfRays; i++)
         {
