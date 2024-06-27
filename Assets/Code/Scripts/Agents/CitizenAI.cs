@@ -17,7 +17,7 @@ public class CitizenAI : MonoBehaviour {
         GotoNextPoint();
     }
 
-    void GotoNextPoint() {
+    protected void GotoNextPoint() {
         if (waypoints.Length == 0)
             return;
 
@@ -25,7 +25,7 @@ public class CitizenAI : MonoBehaviour {
         currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
     }
 
-    void Update() {
+    protected virtual void Update() {
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
             GotoNextPoint();
     }
