@@ -55,7 +55,7 @@ public class CitizenController : MonoBehaviour
                 GameObject citizen = Instantiate(citizenPrefab, hit.position, Quaternion.identity);
               //  citizen.transform.localScale = new Vector3(1, Random.Range(citizenMinHeight, citizenMaxHeight), 1);
                 citizen.GetComponent<NavMeshAgent>().speed = Random.Range(citizenMinSpeed, citizenMaxSpeed);
-                citizen.GetComponent<CitizenAI>().waypoints = ShuffleWaypoints(waypoints);
+                citizen.GetComponent<CitizenAI>().SetWaypoints(WaypointParent, true);
                 citizens.Add(citizen);
             }
             else {
@@ -79,18 +79,11 @@ public class CitizenController : MonoBehaviour
         }
         prevNumCitizens = numberOfCitizens;
     }
-
-    Vector3 GetRandomWaypointLocation() {
+    public Vector3 GetRandomWaypointLocation()
+    {
         return waypoints[Random.Range(0, waypoints.Length)].position;
     }
-    Transform[] ShuffleWaypoints(Transform[] originalWaypoints) {
-        Transform[] shuffledWaypoints = (Transform[])originalWaypoints.Clone();
-        for (int i = 0; i < shuffledWaypoints.Length; i++) {
-            Transform temp = shuffledWaypoints[i];
-            int randomIndex = Random.Range(i, shuffledWaypoints.Length);
-            shuffledWaypoints[i] = shuffledWaypoints[randomIndex];
-            shuffledWaypoints[randomIndex] = temp;
-        }
-        return shuffledWaypoints;
-    }
+
+
+
 }

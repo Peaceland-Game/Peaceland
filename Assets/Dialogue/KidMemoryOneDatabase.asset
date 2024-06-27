@@ -277,6 +277,28 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
+  - id: 13
+    fields:
+    - title: Name
+      value: Hubworld Guy (temp)
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: takes you from hub to memory 1. Is temporary
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
   items:
   - id: 1
     fields:
@@ -392,20 +414,20 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
-  - id: 6
+  - id: 5
     fields:
     - title: Name
-      value: Towel
+      value: Newspaper
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: A small hand towel meant for scrubbing.
+      value: A newspaper detailing the events of Havis v. Pax-Tera.
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Is Item
       value: True
       type: 2
@@ -469,7 +491,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
   conversations:
-  - id: 1
+  - id: 6
     fields:
     - title: Title
       value: Dad Pre-Couch
@@ -545,7 +567,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 1
+      conversationID: 6
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -553,9 +575,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 1
+      - originConversationID: 6
         originDialogueID: 0
-        destinationConversationID: 1
+        destinationConversationID: 6
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
@@ -600,7 +622,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: 
-      conversationID: 1
+      conversationID: 6
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -625,7 +647,7 @@ MonoBehaviour:
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 1
-  - id: 2
+  - id: 7
     fields:
     - title: Title
       value: On The Couch
@@ -701,7 +723,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -709,9 +731,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 0
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 58
         isConnector: 0
         priority: 2
@@ -753,7 +775,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'LookAt(listener, Dad, 0.4);
+        value: 'LookAt(Player, Dad, 0.4);
 
           Delay(0.8);
 
@@ -773,7 +795,7 @@ MonoBehaviour:
           LookAt(speaker, Dad, 0.5)@3.5;'
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -781,9 +803,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 39
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 41
         isConnector: 0
         priority: 2
@@ -825,7 +847,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'LookAt(listener, Dad, 0.4);
+        value: 'LookAt(Player, Dad, 0.4);
 
           Delay(0.8);
 
@@ -845,7 +867,7 @@ MonoBehaviour:
           LookAt(speaker, Dad, 0.5)@3.5;'
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -853,9 +875,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 40
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 42
         isConnector: 0
         priority: 2
@@ -901,7 +923,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -909,15 +931,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 41
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 43
         isConnector: 0
         priority: 2
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 41
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 44
         isConnector: 0
         priority: 2
@@ -963,7 +985,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -971,9 +993,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 42
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 62
         isConnector: 0
         priority: 2
@@ -1018,7 +1040,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1026,9 +1048,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 43
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 45
         isConnector: 0
         priority: 2
@@ -1073,7 +1095,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1081,9 +1103,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 44
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 46
         isConnector: 0
         priority: 2
@@ -1130,7 +1152,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1138,9 +1160,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 45
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 62
         isConnector: 0
         priority: 2
@@ -1187,7 +1209,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1195,9 +1217,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 46
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 62
         isConnector: 0
         priority: 2
@@ -1243,7 +1265,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1251,15 +1273,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 47
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 48
         isConnector: 0
         priority: 2
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 47
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 49
         isConnector: 0
         priority: 2
@@ -1305,7 +1327,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1313,9 +1335,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 48
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 50
         isConnector: 0
         priority: 2
@@ -1361,7 +1383,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1369,9 +1391,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 49
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 51
         isConnector: 0
         priority: 2
@@ -1418,7 +1440,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1426,9 +1448,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 50
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 59
         isConnector: 0
         priority: 2
@@ -1476,7 +1498,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1484,9 +1506,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 51
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 52
         isConnector: 0
         priority: 2
@@ -1531,7 +1553,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1539,9 +1561,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 52
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 53
         isConnector: 0
         priority: 2
@@ -1586,7 +1608,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1594,9 +1616,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 53
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 60
         isConnector: 0
         priority: 2
@@ -1648,7 +1670,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1656,9 +1678,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 54
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 55
         isConnector: 0
         priority: 2
@@ -1704,7 +1726,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1712,9 +1734,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 55
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 56
         isConnector: 0
         priority: 2
@@ -1761,7 +1783,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1769,9 +1791,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 56
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 57
         isConnector: 0
         priority: 2
@@ -1822,7 +1844,7 @@ MonoBehaviour:
           LookAt(Dad, listener, 0.5)@1.5;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1830,15 +1852,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 57
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 39
         isConnector: 0
         priority: 2
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 57
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 40
         isConnector: 0
         priority: 2
@@ -1893,7 +1915,7 @@ MonoBehaviour:
           true, DialogueCanvas)@0.5;'
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1901,9 +1923,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 58
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 54
         isConnector: 0
         priority: 2
@@ -1958,7 +1980,7 @@ MonoBehaviour:
           false, SofaDouble);'
         type: 0
         typeString: 
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2008,7 +2030,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2016,9 +2038,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 60
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 61
         isConnector: 0
         priority: 2
@@ -2063,7 +2085,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2071,9 +2093,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 61
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 59
         isConnector: 0
         priority: 2
@@ -2121,7 +2143,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2129,9 +2151,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 62
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 63
         isConnector: 0
         priority: 2
@@ -2177,7 +2199,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2185,9 +2207,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 63
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 64
         isConnector: 0
         priority: 2
@@ -2233,7 +2255,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2241,9 +2263,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 64
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 65
         isConnector: 0
         priority: 2
@@ -2288,7 +2310,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2296,9 +2318,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 65
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 66
         isConnector: 0
         priority: 2
@@ -2343,7 +2365,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 2
+      conversationID: 7
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2351,9 +2373,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 2
+      - originConversationID: 7
         originDialogueID: 66
-        destinationConversationID: 2
+        destinationConversationID: 7
         destinationDialogueID: 47
         isConnector: 0
         priority: 2
@@ -2369,7 +2391,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 623.7925}
+    canvasScrollPosition: {x: 0, y: 119.99994}
     canvasZoom: 0.7000003
   - id: 3
     fields:
@@ -2584,7 +2606,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158.20235
+        x: 157.10344
         y: 172.66235
         width: 160
         height: 30
@@ -3274,8 +3296,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 253.326
-        y: 76.315735
+        x: 252.22713
+        y: 75.21684
         width: 160
         height: 30
     - id: 31
@@ -3395,8 +3417,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 14.7851925, y: 9.203278}
-    canvasZoom: 0.9100001
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.8800001
   - id: 4
     fields:
     - title: Title
@@ -3583,12 +3605,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Fade(stay, 0.5);
+        value: 'Fade(stay, 0.7);
 
-          MoveTo(StepOutside, Player)@0.7;
+          MoveTo(StepOutside, Player)@0.8;
 
           Fade(unstay,
-          0.5)@1.2;'
+          0.7)@1.2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 4
@@ -3837,7 +3859,7 @@ MonoBehaviour:
       type: 2}
     syncVariablesDatabase: {fileID: 11400000, guid: 76f4aa327b2d1724b926d527ffbb3d95,
       type: 2}
-  templateJson: '{"treatItemsAsQuests":true,"actorFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"IsPlayer","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"itemFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":""},{"title":"Is
+  templateJson: '{"treatItemsAsQuests":true,"actorFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"IsPlayer","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"itemFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Is
     Item","value":"True","type":2,"typeString":"CustomFieldType_Boolean"}],"questFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Success
     Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Failure
     Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"State","value":"unassigned","type":0,"typeString":"CustomFieldType_QuestState"},{"title":"Is

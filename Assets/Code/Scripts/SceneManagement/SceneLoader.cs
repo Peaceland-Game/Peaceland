@@ -9,7 +9,8 @@ public class SceneLoader : MonoBehaviour
     public List<string> sceneNames = new List<string>(); // List of scenes to load
     public GameObject loadingScreen; // Reference to the loading screen GameObject
     public Slider progressBar; // Reference to the loading progress bar (optional)
-
+    public GameObject player;
+    public GameObject loaderCamera;
     void Start()
     {
         StartCoroutine(LoadScenesOneByOne());
@@ -32,6 +33,10 @@ public class SceneLoader : MonoBehaviour
         if (loadingScreen != null)
         {
             loadingScreen.SetActive(false);
+            loaderCamera.SetActive(false);
+            player.SetActive(true);
+
+            Destroy(gameObject);
         }
     }
 
@@ -59,5 +64,6 @@ public class SceneLoader : MonoBehaviour
         {
             Debug.Log($"Scene {sceneName} is already loaded.");
         }
+        
     }
 }

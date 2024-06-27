@@ -4,42 +4,40 @@ using UnityEngine;
 
 public class ItemHighlighter : MonoBehaviour
 {
-    private const int PLAYER_INTERACT_LAYER = 6;
-    [SerializeField]
-    private GameObject interactSprite;
+    //private const int PLAYER_INTERACT_LAYER = 6;
+
+    //[SerializeField]
+    //private GameObject interactSprite;
 
     [SerializeField]
     private Transform playerTransform;
 
-    SpriteRenderer indicateSprite;
+    //SpriteRenderer indicateSprite;
+
+    private Color originalColor;
 
     // Start is called before the first frame update
     void Start()
     {
-        indicateSprite = GetComponent<SpriteRenderer>();
-        indicateSprite.enabled = false;
+        originalColor = GetComponent<Renderer>().material.color;
+        Debug.Log(originalColor);
+        //indicateSprite = GetComponent<SpriteRenderer>();
+        //indicateSprite.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        interactSprite.transform.LookAt(playerTransform);
+        //interactSprite.transform.LookAt(playerTransform);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnSelect()
     {
-        //Debug.Log(other.gameObject);
-        if (other.gameObject.layer == PLAYER_INTERACT_LAYER)
-        {
-            indicateSprite.enabled = true;
-        }
+        GetComponent<Renderer>().material.color = Color.yellow;
     }
 
-    private void OnTriggerExit(Collider other)
+    public void OnDeselect()
     {
-        if (other.gameObject.layer == PLAYER_INTERACT_LAYER)
-        {
-            indicateSprite.enabled = false;
-        }
+        GetComponent<Renderer>().material.color = originalColor;
     }
 }

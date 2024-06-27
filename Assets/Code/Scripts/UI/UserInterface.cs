@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UserInterface : MonoBehaviour
 {
-    [SerializeField] private GameObject historyMenu;
+    [SerializeField] private GameObject journal;
     public ScrollToBottom scrollToBottom;  // Reference to the ScrollToBottom script
 
     // Start is called before the first frame update
@@ -21,14 +21,22 @@ public class UserInterface : MonoBehaviour
         //    ToggleHistoryMenu();
         //}
     }
+    public void TogglePauseMenu(bool isPaused)
+    {
+        journal.SetActive(isPaused);
+    }
 
     public void ToggleHistoryMenu(PlayerMovement.MovementState state)
     {
-        var menuActive = !historyMenu.activeInHierarchy;
-        historyMenu.SetActive(menuActive);
-        scrollToBottom.ScrollToBottomInstant();
-        if (state == PlayerMovement.MovementState.Talking) return;
-        Time.timeScale = menuActive ? 0 : 1;
-        Cursor.lockState = menuActive ? CursorLockMode.None : CursorLockMode.Locked;
+        //var menuActive = !historyMenu.activeInHierarchy;
+        //historyMenu.SetActive(menuActive);
+        //scrollToBottom.ScrollToBottomInstant();
+        //if (state == PlayerMovement.MovementState.Talking) return;
+        //Time.timeScale = menuActive ? 0 : 1;
+        //Cursor.lockState = menuActive ? CursorLockMode.None : CursorLockMode.Locked;
+    }
+
+    public void Exit() {
+        Application.Quit();
     }
 }
