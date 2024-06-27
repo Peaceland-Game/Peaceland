@@ -3,9 +3,9 @@ using UnityEngine.AI;
 
 public class CitizenAI : MonoBehaviour {
     public GameObject WaypointParent;
-    private Transform[] waypoints;
-    private int currentWaypoint = 0;
-    private NavMeshAgent agent;
+    protected Transform[] waypoints;
+    protected int currentWaypoint = 0;
+    protected NavMeshAgent agent;
 
     void Start() {
         //waypoints = WaypointParent.GetComponentsInChildren<Transform>();
