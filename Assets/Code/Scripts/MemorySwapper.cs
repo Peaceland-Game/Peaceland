@@ -37,7 +37,7 @@ public class MemorySwapper : MonoBehaviour
 
     public void SwitchToMemory(double index)
     {
-        var ind = Mathf.Floor((float)index);
+        var ind = (int)Mathf.Floor((float)index);
         if (ind < 0 || ind >= memoryObjects.Count)
         {
             Debug.LogError("Invalid memory index");
