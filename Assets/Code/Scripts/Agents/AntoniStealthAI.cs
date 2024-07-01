@@ -161,7 +161,7 @@ public class AntoniStealthAI : MonoBehaviour
 
             //seek the player
             case State.Seek:
-                
+                Seek();
                 break;
         }
         

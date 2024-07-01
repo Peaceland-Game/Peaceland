@@ -247,6 +247,7 @@ public class Stealth : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.cyan;
         if (!Application.isPlaying) return;
 
         //draw each ray
@@ -255,11 +256,11 @@ public class Stealth : MonoBehaviour
             //make the visual refect their current range
             if (!heardPlayer)
             {
-                Debug.DrawRay(rays[i].origin, rays[i].direction * detectionDistance, Color.cyan);
+                Gizmos.DrawRay(rays[i].origin, rays[i].direction * detectionDistance);
             }
             else
             {
-                Debug.DrawRay(rays[i].origin, rays[i].direction * largerDetectionDistance, Color.cyan);
+                Gizmos.DrawRay(rays[i].origin, rays[i].direction * largerDetectionDistance);
             }
         }
     }
