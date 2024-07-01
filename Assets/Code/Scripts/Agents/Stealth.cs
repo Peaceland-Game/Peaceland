@@ -36,11 +36,11 @@ public class Stealth : MonoBehaviour
     public float alwaysPersueRadius;
 
     //wether or not the player was detected
-    [HideInInspector] public bool detectedPlayer;
+    public bool detectedPlayer;
     //wether or not the agent can hear the player
-    [HideInInspector] public bool heardPlayer;
+    public bool heardPlayer;
 
-    [HideInInspector] public float distanceToPlayer;
+    public float distanceToPlayer;
 
     //TEMPORARY indicators and materials
     public GameObject detectionIndicator;
@@ -201,7 +201,7 @@ public class Stealth : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             //the agent sees a wall
-            if (hit.collider.gameObject.layer == 0)
+            if (hit.collider.gameObject.layer == 6)
             {
                 //Debug.Log("wall");
                 detectMaterial.color = Color.grey;
@@ -209,7 +209,7 @@ public class Stealth : MonoBehaviour
             }
 
             //rays collided with the player
-            if (hit.collider.gameObject.layer == 6)
+            if (hit.collider.gameObject.layer == 15)
             {
                 //they were in range, agent sees player
                 if (GetDistance(transform.position, player.transform.position) <= maxDistance)
@@ -247,6 +247,7 @@ public class Stealth : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.cyan;
         if (!Application.isPlaying) return;
 
         //draw each ray
@@ -255,11 +256,11 @@ public class Stealth : MonoBehaviour
             //make the visual refect their current range
             if (!heardPlayer)
             {
-                Debug.DrawRay(rays[i].origin, rays[i].direction * detectionDistance, Color.cyan);
+                Gizmos.DrawRay(rays[i].origin, rays[i].direction * detectionDistance);
             }
             else
             {
-                Debug.DrawRay(rays[i].origin, rays[i].direction * largerDetectionDistance, Color.cyan);
+                Gizmos.DrawRay(rays[i].origin, rays[i].direction * largerDetectionDistance);
             }
         }
     }

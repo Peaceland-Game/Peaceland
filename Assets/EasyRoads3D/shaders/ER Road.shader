@@ -52,7 +52,7 @@ Shader "EasyRoads3D/ER Road"
 
 		
 		
-		Tags { "RenderPipeline"="UniversalPipeline" "RenderType"="Transparent" "Queue"="Transparent" }
+		Tags {"RenderPipeline"="UniversalPipeline" "RenderType"="Transparent" "Queue"="Transparent+1" }
 		Offset[_OffsetFactor] ,[_OffsetUnit]
 		Cull Back
 		ZWrite On

@@ -47,6 +47,8 @@ public class PlayerSingleton : MonoBehaviour
     {
         HandleInterfaceInput();
         isMouseLocked = Cursor.lockState == CursorLockMode.Locked;
+
+
     }
 
     void HandleInterfaceInput()
