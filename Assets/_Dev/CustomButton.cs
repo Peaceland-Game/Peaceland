@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class CustomButton : Button
 {
@@ -11,15 +12,8 @@ public class CustomButton : Button
         Click
     }
 
-    [System.Serializable]
-    public class ButtonStateImages
-    {
-        public Sprite defaultImage;
-        public Sprite hoverImage;
-        public Sprite clickImage;
-    }
-
-    [SerializeField] private ButtonStateImages stateImages;
+    [SerializeField]
+    private List<Sprite> stateImages = new List<Sprite>(3);
 
     private ButtonState currentState = ButtonState.Default;
     private Image buttonImage;
@@ -37,18 +31,18 @@ public class CustomButton : Button
 
     private void UpdateButtonState()
     {
-        if (buttonImage == null) return;
+        if (buttonImage == null || stateImages.Count < 3) return;
 
         switch (currentState)
         {
             case ButtonState.Default:
-                buttonImage.sprite = stateImages.defaultImage;
+                buttonImage.sprite = stateImages[0];
                 break;
             case ButtonState.Hover:
-                buttonImage.sprite = stateImages.hoverImage;
+                buttonImage.sprite = stateImages[1];
                 break;
             case ButtonState.Click:
-                buttonImage.sprite = stateImages.clickImage;
+                buttonImage.sprite = stateImages[2];
                 break;
         }
     }
