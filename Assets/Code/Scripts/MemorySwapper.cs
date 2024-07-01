@@ -70,7 +70,7 @@ public class MemorySwapper : MonoBehaviour
     void OnEnable()
     {
         // Make the functions available to Lua: (Replace these lines with your own.)
-        Lua.RegisterFunction(nameof(SwitchToMemory), this, SymbolExtensions.GetMethodInfo(() => SwitchToMemory(0)));
+        Lua.RegisterFunction(nameof(SwitchToMemory), this, SymbolExtensions.GetMethodInfo(() => SwitchToMemory((double)0)));
         // Lua.RegisterFunction(nameof(AddOne), this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
     }
 
