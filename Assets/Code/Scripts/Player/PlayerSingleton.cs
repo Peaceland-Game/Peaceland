@@ -81,7 +81,7 @@ public class PlayerSingleton : MonoBehaviour
         item.parent = carryPos;
         item.localPosition = Vector3.zero;
         item.localRotation = Quaternion.identity;
-        item.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+        item.localScale = new Vector3(0.6f, 0.6f, 0.6f);
         heldItem = item;
     }
 
