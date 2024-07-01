@@ -11123,12 +11123,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'LoadLevel(Panel6);
+        value: 'SetEnabled(Canvas, false, DialogueCanvas);
 
-          SetEnabled(Canvas, false, DialogueCanvas);
+          Fade(in, 0.7)@1.2;
 
-          Fade(in,
-          0.7)@1.2;
+          MoveTo(PlayerPanel5Start,
+          Player)@1.4;
 
           SetEnabled(Canvas, true, DialogueCanvas)@2.0;'
         type: 0
@@ -11142,7 +11142,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: SwitchToMemory(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11153,7 +11153,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1184.8298}
+    canvasScrollPosition: {x: 17.142822, y: 2877.686}
     canvasZoom: 0.7000003
   syncInfo:
     syncActors: 1
