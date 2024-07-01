@@ -201,7 +201,7 @@ public class Stealth : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             //the agent sees a wall
-            if (hit.collider.gameObject.layer == 0)
+            if (hit.collider.gameObject.layer == 6)
             {
                 //Debug.Log("wall");
                 detectMaterial.color = Color.grey;
@@ -209,7 +209,7 @@ public class Stealth : MonoBehaviour
             }
 
             //rays collided with the player
-            if (hit.collider.gameObject.layer == 6)
+            if (hit.collider.gameObject.layer == 15)
             {
                 //they were in range, agent sees player
                 if (GetDistance(transform.position, player.transform.position) <= maxDistance)
