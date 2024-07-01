@@ -32,9 +32,15 @@ public class AntoniStealthAI : MonoBehaviour
     private float currentSeekTime;
 
     private Stealth stealthScript;
+    public VisionConeVisualizer visionConeVisualizer;
+    public bool DisplayConeVisualizer = true;
 
     void Start()
     {
+        if (!DisplayConeVisualizer)
+        {
+            visionConeVisualizer.gameObject.SetActive(false);
+        }
         currentState = State.Patrol;
         stealthScript = GetComponent<Stealth>();
         currentSeekTime = stealthScript.secondsAgentSeeks;
@@ -42,7 +48,7 @@ public class AntoniStealthAI : MonoBehaviour
         currentDirection = 1;
         directionTimer = 0;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        GoToNextPoint();
+        //GoToNextPoint();
     }
 
     void GoToNextPoint()
@@ -69,8 +75,9 @@ public class AntoniStealthAI : MonoBehaviour
         //if they spot the player, seek them
         if (stealthScript.detectedPlayer)
         {
-            currentSeekTime = 0;
-            currentState = State.Seek;
+            //currentSeekTime = 0;
+            //currentState = State.Seek;
+            Debug.Log("Player detected");
         }
 
         //if they hear the player, go on alert
@@ -111,8 +118,9 @@ public class AntoniStealthAI : MonoBehaviour
         //if they see the player, seek them
         if (stealthScript.detectedPlayer)
         {
-            currentSeekTime = 0;
-            currentState = State.Seek;
+            //currentSeekTime = 0;
+            //currentState = State.Seek;
+            Debug.Log("Player detected");
         }
     }
     void Seek()
@@ -147,23 +155,23 @@ public class AntoniStealthAI : MonoBehaviour
     void Update()
     {
        // Debug.Log(currentState);
-        switch (currentState)
-        {
-            //move from one waypoint to another
-            case State.Patrol:
-                Patrol();
-                break;
+        //switch (currentState)
+        //{
+        //    //move from one waypoint to another
+        //    case State.Patrol:
+        //        Patrol();
+        //        break;
 
-            //spin around for an amount of time
-            case State.Alert:
-                Alert();
-                break;
+        //    //spin around for an amount of time
+        //    case State.Alert:
+        //        Alert();
+        //        break;
 
-            //seek the player
-            case State.Seek:
-                Seek();
-                break;
-        }
+        //    //seek the player
+        //    case State.Seek:
+        //        Seek();
+        //        break;
+        //}
         
     }
 }
