@@ -60,6 +60,7 @@ public class AntoniStealthAI : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(currentState);
         switch (currentState)
         {
             //move from one waypoint to another
@@ -107,6 +108,8 @@ public class AntoniStealthAI : MonoBehaviour
                 if (!gameObject.GetComponent<Stealth>().heardPlayer)
                 {
                     currentState = State.Patrol;
+                    currentWaypoint--;
+                    GoToNextPoint();
                 }
 
                 //if they see the player, seek them
@@ -147,6 +150,6 @@ public class AntoniStealthAI : MonoBehaviour
                 }
                 break;
         }
-        Debug.Log(currentState);
+        
     }
 }
