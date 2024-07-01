@@ -57,8 +57,12 @@ public class DynamicLightingController : MonoBehaviour
         int nextProfileIndex = (currentProfileIndex + 1) % lightingProfiles.Length;
         TransitionToProfile(nextProfileIndex, 5f); // 5 second transition
     }
-
-    public void TransitionToProfile(int profileIndex, float duration)
+    public void TransitionToProfile(TimeOfDay timeOfDay, float duration)
+    {
+        int profileIndex = (int)timeOfDay;
+        TransitionToProfile(profileIndex, duration);
+    }
+    private void TransitionToProfile(int profileIndex, float duration)
     {
         if (transitionCoroutine != null)
         {
