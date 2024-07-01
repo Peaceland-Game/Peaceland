@@ -2,6 +2,7 @@ using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 
 public enum TimeOfDay
 {
@@ -65,5 +66,21 @@ public class MemorySwapper : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        // Make the functions available to Lua: (Replace these lines with your own.)
+        Lua.RegisterFunction(nameof(SwitchToMemory), this, SymbolExtensions.GetMethodInfo(() => SwitchToMemory(0)));
+       // Lua.RegisterFunction(nameof(AddOne), this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
+    }
+
+    void OnDisable()
+    {
+        if (true)
+        {
+            // Remove the functions from Lua: (Replace these lines with your own.)
+            Lua.UnregisterFunction(nameof(SwitchToMemory));
+         //   Lua.UnregisterFunction(nameof(AddOne));
+        }
+    }
 
 }
