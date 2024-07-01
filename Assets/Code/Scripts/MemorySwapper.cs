@@ -35,9 +35,10 @@ public class MemorySwapper : MonoBehaviour
         }
     }
 
-    public void SwitchToMemory(int index)
+    public void SwitchToMemory(double index)
     {
-        if (index < 0 || index >= memoryObjects.Count)
+        var ind = Mathf.Floor((float)index);
+        if (ind < 0 || ind >= memoryObjects.Count)
         {
             Debug.LogError("Invalid memory index");
             return;
@@ -53,7 +54,7 @@ public class MemorySwapper : MonoBehaviour
         }
 
         // Enable the selected memory object
-        MemoryObjectPair selectedMemory = memoryObjects[index];
+        MemoryObjectPair selectedMemory = memoryObjects[ind];
         if (selectedMemory.memoryObject != null)
         {
             selectedMemory.memoryObject.SetActive(true);
@@ -70,7 +71,7 @@ public class MemorySwapper : MonoBehaviour
     {
         // Make the functions available to Lua: (Replace these lines with your own.)
         Lua.RegisterFunction(nameof(SwitchToMemory), this, SymbolExtensions.GetMethodInfo(() => SwitchToMemory(0)));
-       // Lua.RegisterFunction(nameof(AddOne), this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
+        // Lua.RegisterFunction(nameof(AddOne), this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
     }
 
     void OnDisable()
@@ -79,7 +80,7 @@ public class MemorySwapper : MonoBehaviour
         {
             // Remove the functions from Lua: (Replace these lines with your own.)
             Lua.UnregisterFunction(nameof(SwitchToMemory));
-         //   Lua.UnregisterFunction(nameof(AddOne));
+            //   Lua.UnregisterFunction(nameof(AddOne));
         }
     }
 
