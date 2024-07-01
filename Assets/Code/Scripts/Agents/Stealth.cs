@@ -36,11 +36,11 @@ public class Stealth : MonoBehaviour
     public float alwaysPersueRadius;
 
     //wether or not the player was detected
-    [HideInInspector] public bool detectedPlayer;
+    public bool detectedPlayer;
     //wether or not the agent can hear the player
-    [HideInInspector] public bool heardPlayer;
+    public bool heardPlayer;
 
-    [HideInInspector] public float distanceToPlayer;
+    public float distanceToPlayer;
 
     //TEMPORARY indicators and materials
     public GameObject detectionIndicator;
