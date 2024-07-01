@@ -3269,10 +3269,13 @@ MonoBehaviour:
 
           LookAt(Mom, listener, 0.3);
 
-          Camera(AdultLookUp,
+          Camera(NewModelLookUp,
           Mom, 0.5);
 
-          SetEnabled(Canvas, true, DialogueCanvas)@0.5;'
+          SetEnabled(Canvas, true, DialogueCanvas)@0.5;
+
+          Animation(AdultGeneric_Idle,
+          Mom);'
         type: 0
         typeString: 
       conversationID: 3
