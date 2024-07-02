@@ -4,26 +4,24 @@ using System.Reflection;
 using System;
 
 
-
-
 public class TabController : MonoBehaviour
 {
     public enum TabState { Default, Hovered, Selected }
 
-    [SerializeField] private TabName tabName;
-    private float hoverOffset = 35f;
-    private float moveSpeed = 100f;
+    [SerializeField] protected TabName tabName;
+    protected float hoverOffset = 35f;
+    protected float moveSpeed = 100f;
 
-    private int tabIndex;
-    private RectTransform rectTransform;
-    private Vector2 defaultPosition;
-    private Vector2 hoveredPosition;
-    private Vector2 targetPosition;
-    private TabState currentState = TabState.Default;
+    protected int tabIndex;
+    protected RectTransform rectTransform;
+    protected Vector2 defaultPosition;
+    protected Vector2 hoveredPosition;
+    protected Vector2 targetPosition;
+    protected TabState currentState = TabState.Default;
 
-    private JournalController journalController;
+    protected JournalController journalController;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         tabIndex = TabUtility.GetTabIndex(tabName);
         rectTransform = GetComponent<RectTransform>();
@@ -34,7 +32,7 @@ public class TabController : MonoBehaviour
         journalController = GetComponentInParent<JournalController>();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         rectTransform.anchoredPosition = Vector2.MoveTowards(
             rectTransform.anchoredPosition,
@@ -43,7 +41,7 @@ public class TabController : MonoBehaviour
         );
     }
 
-    public void OnPointerEnter()
+    protected virtual void OnPointerEnter()
     {
         if (currentState != TabState.Selected)
         {
@@ -51,7 +49,7 @@ public class TabController : MonoBehaviour
         }
     }
 
-    public void OnPointerExit()
+    protected virtual void OnPointerExit()
     {
         if (currentState != TabState.Selected)
         {
@@ -59,7 +57,7 @@ public class TabController : MonoBehaviour
         }
     }
 
-    public void OnPointerClick()
+    protected virtual void OnPointerClick()
     {
         journalController.HandleTabClick(tabIndex);
     }

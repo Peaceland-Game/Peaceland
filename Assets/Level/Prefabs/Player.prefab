@@ -522,7 +522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5181608286490911166
 RectTransform:
   m_ObjectHideFlags: 0
@@ -803,12 +803,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1781796700113474754}
+  - {fileID: 5494243332303014978}
   - {fileID: 4876607414323459897}
   - {fileID: 3692125341656915965}
   - {fileID: 6594035387568326484}
   - {fileID: 2919779662273411230}
   - {fileID: 4708850578929655326}
-  - {fileID: 5494243332303014978}
   m_Father: {fileID: 5181608286490911166}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2842,9 +2842,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5494243332303014978}
   - component: {fileID: 8115730726296563378}
+  - component: {fileID: 2235292517704500984}
   m_Layer: 5
   m_Name: TopTabsAnchor
-  m_TagString: Untagged
+  m_TagString: JournalTabManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2866,8 +2867,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -656, y: 463}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -702, y: 469}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8115730726296563378
 MonoBehaviour:
@@ -2895,6 +2896,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2235292517704500984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3600141849936557704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed883b3165430b40ba965496feab13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topTabPrefab: {fileID: 756551847549573352, guid: d722c91d215c3b24eaa61b285305da77,
+    type: 3}
 --- !u!1 &3640620014840567786
 GameObject:
   m_ObjectHideFlags: 0
@@ -4834,7 +4849,7 @@ MonoBehaviour:
   sprintCooldown: 0.5
   sprintFOV: 80
   sprintFOVStepTime: 10
-  useSprintBar: 1
+  useSprintBar: 0
   hideBarWhenFull: 1
   sprintBarBG: {fileID: 8412657788393004918}
   sprintBar: {fileID: 1089930278360714033}
@@ -8289,7 +8304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99279086a9b440448974c905186d4b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tabSprites: []
+  pageName: 2
+  tabSprite: {fileID: 21300000, guid: 761358c662ec0d44f9e823cce6ee5351, type: 3}
+  journalCategories: []
 --- !u!1 &8583923042128004669
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,45 +1,24 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class JournalPageController : MonoBehaviour
 {
-    private List<JournalCategory> categories = new List<JournalCategory>();
-    private List<JournalSubPage> currentSubPages = new List<JournalSubPage>();
-    public List<Sprite> tabSprites = new();
+    public TabName pageName;
+    public Sprite tabSprite;
 
-    private void Awake()
+    public List<JournalCategory> journalCategories = new List<JournalCategory>();
+    private TabManager journalTabManager;
+
+    private void Start()
     {
-        // Populate categories
-        categories.AddRange(GetComponentsInChildren<JournalCategory>());
+        journalTabManager = GameObject.FindGameObjectWithTag("JournalTabManager").GetComponent<TabManager>();
+        journalCategories = GetComponentsInChildren<JournalCategory>().ToList();
+        journalCategories.ForEach(catTab => catTab.PopulateSubPages());
+        Debug.Log(journalCategories);
+        journalTabManager.SpawnCategories(this);
+
     }
 
-    public void SelectCategory(int categoryIndex)
-    {
-        if (categoryIndex >= 0 && categoryIndex < categories.Count)
-        {
-            JournalCategory selectedCategory = categories[categoryIndex];
-            currentSubPages.Clear();
-            currentSubPages.AddRange(selectedCategory.GetComponentsInChildren<JournalSubPage>());
-
-            // Here you would instantiate or update your UI for the sub-pages
-            UpdateSubPageTabs();
-        }
-    }
-
-    private void UpdateSubPageTabs()
-    {
-        // Implement your logic to create or update sub-page tabs
-        // This might involve instantiating prefabs, updating UI elements, etc.
-    }
-
-    public void SelectSubPage(int subPageIndex)
-    {
-        if (subPageIndex >= 0 && subPageIndex < currentSubPages.Count)
-        {
-            JournalSubPage selectedSubPage = currentSubPages[subPageIndex];
-
-            // Implement your logic to show the selected sub-page
-            // This might involve playing animations, enabling/disabling GameObjects, etc.
-        }
-    }
+    public List<JournalCategory> GetJournalCategories() { return journalCategories; }
 }
