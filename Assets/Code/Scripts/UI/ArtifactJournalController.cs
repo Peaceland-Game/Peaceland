@@ -10,7 +10,7 @@ public class ArtifactJournalController : MonoBehaviour
     void Start()
     {
         artifacts = GetComponentsInChildren<ArtifactImage>().ToList();
-        artifacts.ForEach(a => Debug.Log(a.name));
+        //artifacts.ForEach(a => Debug.Log(a.name));
     }
     public void RevealArtifact(string name)
     {
