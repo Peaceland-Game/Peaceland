@@ -469,7 +469,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
     - title: Initial Value
-      value: True
+      value: False
       type: 2
       typeString: CustomFieldType_Boolean
     - title: Description
@@ -483,7 +483,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
     - title: Initial Value
-      value: True
+      value: False
       type: 2
       typeString: CustomFieldType_Boolean
     - title: Description
@@ -2420,7 +2420,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -3279,7 +3279,10 @@ MonoBehaviour:
           Camera(NewModelLookUp,
           Mom, 0.5);
 
-          SetEnabled(Canvas, true, DialogueCanvas)@0.5;'
+          SetEnabled(Canvas, true, DialogueCanvas)@0.5;
+
+          AnimatorTrigger(Mother_WashingDishes,
+          , Idle);'
         type: 0
         typeString: 
       conversationID: 3
