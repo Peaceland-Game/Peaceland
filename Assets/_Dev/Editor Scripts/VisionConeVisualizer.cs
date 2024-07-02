@@ -32,7 +32,7 @@ public class VisionConeVisualizer : MonoBehaviour
     void Update()
     {
         float currentDetectionDistance = stealthScript.heardPlayer ? stealthScript.largerDetectionDistance : stealthScript.detectionDistance;
-        Debug.Log(currentDetectionDistance);
+        //Debug.Log(currentDetectionDistance);
         float angle = stealthScript.fieldOfViewInDegrees * Mathf.Deg2Rad;
 
         vertices[0] = Vector3.zero;
