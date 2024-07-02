@@ -42,12 +42,6 @@ public class Stealth : MonoBehaviour
 
     public float distanceToPlayer;
 
-    //TEMPORARY indicators and materials
-    public GameObject detectionIndicator;
-    public Material detectMaterial;
-    public GameObject alertIndicator;
-    public Material alertMaterial;
-
     //contains every ray
     private Ray[] rays;
     //contains every ray angle
@@ -94,14 +88,9 @@ public class Stealth : MonoBehaviour
         //reset states
         detectedPlayer = false;
         heardPlayer = false;
-        alertMaterial.color = Color.green;
 
         //the angle made by the forward and the axis
         float angleOfForward = CalculateRayAngle(transform.forward.z, transform.forward.x);
-        
-        //TEMPORARY set the indicator above the agent's head
-        detectionIndicator.transform.position = transform.position + new Vector3(0, 2, 0);
-        alertIndicator.transform.position = transform.position + new Vector3(0, 3, 0);
 
         //get distance to player
         distanceToPlayer = GetDistance(transform.position, player.transform.position);
@@ -114,7 +103,6 @@ public class Stealth : MonoBehaviour
         //agent is alerted until time runs out
         if (currentAlertTime < secondsAgentStaysAlerted)
         {
-            alertMaterial.color = Color.red;
             currentAlertTime += Time.deltaTime;
             heardPlayer = true;
         }
@@ -157,7 +145,7 @@ public class Stealth : MonoBehaviour
         if (GetDistance(transform.position, player.transform.position) <= closeDetectDistance)
         {
             //Debug.Log("too close! agent detected player");
-            detectMaterial.color = Color.blue;
+            detectedPlayer = true;
         }
     }
 
@@ -203,8 +191,6 @@ public class Stealth : MonoBehaviour
             //the agent sees a wall
             if (hit.collider.gameObject.layer == 6)
             {
-                //Debug.Log("wall");
-                detectMaterial.color = Color.grey;
                 return "wall";
             }
 
@@ -214,22 +200,14 @@ public class Stealth : MonoBehaviour
                 //they were in range, agent sees player
                 if (GetDistance(transform.position, player.transform.position) <= maxDistance)
                 {
-                    //Debug.Log("player was seen");
-                    detectMaterial.color = Color.red;
                     return "detected";
                 }
                 //they were out of range, agent does not see player
                 else if (GetDistance(transform.position, player.transform.position) > maxDistance)
                 {
-                    //Debug.Log("ray collided with player, but player is out of range");
-                    detectMaterial.color = Color.yellow;
                     return "out of range";
                 }
             }
-        }
-        else
-        {
-            detectMaterial.color = Color.gray;
         }
         return "undetected";
     }
