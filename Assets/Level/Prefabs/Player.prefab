@@ -135,6 +135,55 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &307810455520916821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8350441626178080318}
+  - component: {fileID: 4151184003221374512}
+  m_Layer: 5
+  m_Name: ArtifactCat2Pg1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8350441626178080318
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307810455520916821}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7263615445592419492}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4151184003221374512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307810455520916821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050d7931875403a4e946aa08022568ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &334826256699633827
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +250,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is page 2
+  m_text: Notes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -546,7 +595,7 @@ GameObject:
   - component: {fileID: 3692125341656915965}
   - component: {fileID: 8621603048307816885}
   m_Layer: 5
-  m_Name: Page2
+  m_Name: NotesPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -754,7 +803,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1781796700113474754}
-  - {fileID: 4197238934769305954}
+  - {fileID: 5494243332303014978}
   - {fileID: 4876607414323459897}
   - {fileID: 3692125341656915965}
   - {fileID: 6594035387568326484}
@@ -803,20 +852,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animSpeed: 1
   pages:
-  - {fileID: 8582757999390609771}
   - {fileID: 526932590715060562}
   - {fileID: 7210917955542454012}
+  - {fileID: 8582757999390609771}
   - {fileID: 7923073474235380992}
   - {fileID: 1552666639333691257}
   tabs:
-  - {fileID: 1427140335648656508}
-  - {fileID: 3736185712652787659}
-  - {fileID: 8832350015162692001}
-  - {fileID: 8875306946002789608}
-  - {fileID: 480101124419075703}
-  tabHoverOffset: 10
-  tabAnimationDuration: 0.2
-  screenshotCapture: {fileID: 0}
+  - {fileID: 3163535612279636109}
+  - {fileID: 5035688184368945693}
+  - {fileID: 239102136075351525}
+  - {fileID: 3834066954781683271}
+  - {fileID: 5989314567283012467}
   journalEntries: []
   artifactJournal: {fileID: 2902487372032874643}
 --- !u!222 &4472085347817905803
@@ -923,7 +969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is page 3
+  m_text: Graph
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1058,7 +1104,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is page 4
+  m_text: 'Lore
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1485,7 +1533,7 @@ GameObject:
   - component: {fileID: 4708850578929655326}
   - component: {fileID: 6734818380654629682}
   m_Layer: 5
-  m_Name: Page4 (1)
+  m_Name: SettingsPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1504,6 +1552,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5383607643106183559}
+  - {fileID: 4197238934769305954}
   m_Father: {fileID: 4865169159744463972}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1710,19 +1759,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969237351683275172}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000012251109}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2999069849114988344}
   - {fileID: 5618519364802616475}
-  m_Father: {fileID: 4876607414323459897}
+  m_Father: {fileID: 586519377341956314}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 302, y: -519.5}
+  m_AnchoredPosition: {x: 299.99994, y: -517.5}
   m_SizeDelta: {x: 600, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3971519166140741108
@@ -1881,7 +1930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -78.2}
+  m_AnchoredPosition: {x: -1.5, y: -13.199997}
   m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5391233798708511750
@@ -2103,18 +2152,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2617943470260810419}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.1845, y: 3.025, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000011376031}
+  m_LocalScale: {x: 3.1845002, y: 3.025, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1690886629937348852}
-  m_Father: {fileID: 4865169159744463972}
+  m_Father: {fileID: 4708850578929655326}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 317, y: -301}
+  m_AnchoredPosition: {x: 9.706299, y: -416}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1002608043789744601
@@ -2783,6 +2832,90 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &3600141849936557704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5494243332303014978}
+  - component: {fileID: 8115730726296563378}
+  - component: {fileID: 2235292517704500984}
+  m_Layer: 5
+  m_Name: TopTabsAnchor
+  m_TagString: JournalTabManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5494243332303014978
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3600141849936557704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4865169159744463972}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -702, y: 469}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8115730726296563378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3600141849936557704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &2235292517704500984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3600141849936557704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed883b3165430b40ba965496feab13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topTabPrefab: {fileID: 756551847549573352, guid: d722c91d215c3b24eaa61b285305da77,
+    type: 3}
+  journalPages:
+  - {fileID: 526932590715060562}
+  - {fileID: 7210917955542454012}
+  - {fileID: 8582757999390609771}
+  - {fileID: 7923073474235380992}
+  - {fileID: 1552666639333691257}
 --- !u!1 &3640620014840567786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2807,14 +2940,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3640620014840567786}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000012251109}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 473533815831054975}
   - {fileID: 6976325446556749544}
-  m_Father: {fileID: 4876607414323459897}
+  m_Father: {fileID: 586519377341956314}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -3178,7 +3311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -78.2}
+  m_AnchoredPosition: {x: -1.5, y: -13.199997}
   m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &276318332955262895
@@ -3422,7 +3555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1321980989840284824
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3567,6 +3700,55 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4391740225735131684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1290509355927306908}
+  - component: {fileID: 5602288971408161394}
+  m_Layer: 5
+  m_Name: ArtifactCat1Pg2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1290509355927306908
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391740225735131684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4120491958282990369}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5602288971408161394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391740225735131684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050d7931875403a4e946aa08022568ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4397326534292933526
 GameObject:
   m_ObjectHideFlags: 0
@@ -3591,14 +3773,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4397326534292933526}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000012251109}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7146221480791948596}
   - {fileID: 2056231026844180746}
-  m_Father: {fileID: 4876607414323459897}
+  m_Father: {fileID: 586519377341956314}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -3632,6 +3814,57 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &4423415173378247485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4120491958282990369}
+  - component: {fileID: 4270237079548733321}
+  m_Layer: 5
+  m_Name: ArtifactCat1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &4120491958282990369
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4423415173378247485}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 586519377341956314}
+  - {fileID: 1290509355927306908}
+  m_Father: {fileID: 4876607414323459897}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 52, y: -52}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4270237079548733321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4423415173378247485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2de23a6c51905041a642d943361ae67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4577122309701914793
 GameObject:
   m_ObjectHideFlags: 0
@@ -4622,7 +4855,7 @@ MonoBehaviour:
   sprintCooldown: 0.5
   sprintFOV: 80
   sprintFOVStepTime: 10
-  useSprintBar: 1
+  useSprintBar: 0
   hideBarWhenFull: 1
   sprintBarBG: {fileID: 8412657788393004918}
   sprintBar: {fileID: 1089930278360714033}
@@ -5149,6 +5382,7 @@ GameObject:
   - component: {fileID: 4667326856972251532}
   - component: {fileID: 6898536198225385329}
   - component: {fileID: 3652125628491375481}
+  - component: {fileID: 239102136075351525}
   m_Layer: 5
   m_Name: ArtifactButton
   m_TagString: Untagged
@@ -5260,10 +5494,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1794684249173793452}
-        m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-        m_MethodName: HandleTabClick
-        m_Mode: 3
+      - m_Target: {fileID: 239102136075351525}
+        m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+        m_MethodName: OnPointerClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5289,10 +5523,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1794684249173793452}
-          m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-          m_MethodName: HandleTabHoverEnter
-          m_Mode: 3
+        - m_Target: {fileID: 239102136075351525}
+          m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5305,10 +5539,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1794684249173793452}
-          m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-          m_MethodName: HandleTabHoverExit
-          m_Mode: 3
+        - m_Target: {fileID: 239102136075351525}
+          m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5317,6 +5551,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &239102136075351525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5901204582667700136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709cce8ae4cbfd347945d61afd9dab1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tabName: 2
 --- !u!1 &5941033107399026530
 GameObject:
   m_ObjectHideFlags: 0
@@ -5566,6 +5813,56 @@ MonoBehaviour:
   chatHistoryText: {fileID: 3059710341420164930}
   conversationLogger: {fileID: 0}
   scrollToBottom: {fileID: 8642460803352815147}
+--- !u!1 &6036104020262226270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7263615445592419492}
+  - component: {fileID: 2060711354510255218}
+  m_Layer: 5
+  m_Name: ArtifactCat2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &7263615445592419492
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036104020262226270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8350441626178080318}
+  m_Father: {fileID: 4876607414323459897}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 52, y: -162}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2060711354510255218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036104020262226270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2de23a6c51905041a642d943361ae67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6174395966289147471
 GameObject:
   m_ObjectHideFlags: 0
@@ -6297,7 +6594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6907531261bc44748bef7309cd3c2684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  journal: {fileID: 960378289338957180}
+  journal: {fileID: 469108308917870782}
   scrollToBottom: {fileID: 8642460803352815147}
 --- !u!1 &6934165586258069185
 GameObject:
@@ -6341,7 +6638,7 @@ GameObject:
   - component: {fileID: 6594035387568326484}
   - component: {fileID: 2966621870377534945}
   m_Layer: 5
-  m_Name: Page3
+  m_Name: GraphPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6968,7 +7265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -78.2}
+  m_AnchoredPosition: {x: -1.5, y: -13.199997}
   m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7069290366685417556
@@ -7040,7 +7337,7 @@ GameObject:
   - component: {fileID: 2919779662273411230}
   - component: {fileID: 1821929758524986595}
   m_Layer: 5
-  m_Name: Page4
+  m_Name: LorePage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7106,6 +7403,7 @@ GameObject:
   - component: {fileID: 6291949527994522865}
   - component: {fileID: 8575561560002559465}
   - component: {fileID: 5585062591611505510}
+  - component: {fileID: 3163535612279636109}
   m_Layer: 5
   m_Name: NotesButton
   m_TagString: Untagged
@@ -7217,10 +7515,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1794684249173793452}
-        m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-        m_MethodName: HandleTabClick
-        m_Mode: 3
+      - m_Target: {fileID: 3163535612279636109}
+        m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+        m_MethodName: OnPointerClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7246,10 +7544,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1794684249173793452}
-          m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-          m_MethodName: HandleTabHoverEnter
-          m_Mode: 3
+        - m_Target: {fileID: 3163535612279636109}
+          m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7262,10 +7560,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1794684249173793452}
-          m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-          m_MethodName: HandleTabHoverExit
-          m_Mode: 3
+        - m_Target: {fileID: 3163535612279636109}
+          m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7274,6 +7572,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &3163535612279636109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8124615702206751361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709cce8ae4cbfd347945d61afd9dab1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tabName: 0
 --- !u!1 &8159601063190620064
 GameObject:
   m_ObjectHideFlags: 0
@@ -7287,6 +7598,7 @@ GameObject:
   - component: {fileID: 466405192849373370}
   - component: {fileID: 6760877960291921748}
   - component: {fileID: 4099999844144883294}
+  - component: {fileID: 5989314567283012467}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -7398,10 +7710,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1794684249173793452}
-        m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-        m_MethodName: HandleTabClick
-        m_Mode: 3
+      - m_Target: {fileID: 5989314567283012467}
+        m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+        m_MethodName: OnPointerClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7427,10 +7739,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1794684249173793452}
-          m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-          m_MethodName: HandleTabHoverEnter
-          m_Mode: 3
+        - m_Target: {fileID: 5989314567283012467}
+          m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7443,10 +7755,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1794684249173793452}
-          m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-          m_MethodName: HandleTabHoverExit
-          m_Mode: 3
+        - m_Target: {fileID: 5989314567283012467}
+          m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7455,6 +7767,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &5989314567283012467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8159601063190620064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709cce8ae4cbfd347945d61afd9dab1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tabName: 4
 --- !u!1 &8405409502866171793
 GameObject:
   m_ObjectHideFlags: 0
@@ -7597,17 +7922,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8451677860250679898}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4876607414323459897}
+  m_Father: {fileID: 586519377341956314}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 303.2938, y: -27}
   m_SizeDelta: {x: 602.5876, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3465628114774513042
@@ -7707,6 +8032,86 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &8470610959209061158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 586519377341956314}
+  - component: {fileID: 5813047276312101574}
+  - component: {fileID: 2721185287026667758}
+  m_Layer: 5
+  m_Name: ArtifactCat1Pg1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &586519377341956314
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470610959209061158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8256422100128641524}
+  - {fileID: 1122780023807451923}
+  - {fileID: 8362579642469635023}
+  - {fileID: 5310338752486045107}
+  m_Father: {fileID: 4120491958282990369}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 307.29376, y: -282}
+  m_SizeDelta: {x: 606.5876, y: 607.6176}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5813047276312101574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470610959209061158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 2
+    m_Right: 2
+    m_Top: 2
+    m_Bottom: 2
+  m_ChildAlignment: 0
+  m_Spacing: 10
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &2721185287026667758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470610959209061158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050d7931875403a4e946aa08022568ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8510488750637941132
 GameObject:
   m_ObjectHideFlags: 0
@@ -7849,8 +8254,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4876607414323459897}
-  - component: {fileID: 5182047017647870040}
   - component: {fileID: 2902487372032874643}
+  - component: {fileID: 3435156481799594062}
   m_Layer: 5
   m_Name: ArtifactPage
   m_TagString: Untagged
@@ -7870,10 +8275,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8256422100128641524}
-  - {fileID: 1122780023807451923}
-  - {fileID: 8362579642469635023}
-  - {fileID: 5310338752486045107}
+  - {fileID: 4120491958282990369}
+  - {fileID: 7263615445592419492}
   m_Father: {fileID: 4865169159744463972}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7882,32 +8285,6 @@ RectTransform:
   m_AnchoredPosition: {x: 307.29376, y: 49.191284}
   m_SizeDelta: {x: 606.5876, y: 607.6176}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5182047017647870040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8582757999390609771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 2
-    m_Right: 2
-    m_Top: 2
-    m_Bottom: 2
-  m_ChildAlignment: 0
-  m_Spacing: 10
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!114 &2902487372032874643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7921,6 +8298,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artifacts: []
+--- !u!114 &3435156481799594062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582757999390609771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99279086a9b440448974c905186d4b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageName: 2
+  tabSprite: {fileID: 21300000, guid: 761358c662ec0d44f9e823cce6ee5351, type: 3}
+  journalCategories: []
 --- !u!1 &8583923042128004669
 GameObject:
   m_ObjectHideFlags: 0
@@ -7957,7 +8349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -78.2}
+  m_AnchoredPosition: {x: -1.5, y: -13.199997}
   m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2414472346272497060
@@ -8031,6 +8423,7 @@ GameObject:
   - component: {fileID: 3940443524323208146}
   - component: {fileID: 4481461477349152005}
   - component: {fileID: 875524173882028052}
+  - component: {fileID: 5035688184368945693}
   m_Layer: 5
   m_Name: GraphButton
   m_TagString: Untagged
@@ -8142,10 +8535,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1794684249173793452}
-        m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-        m_MethodName: HandleTabClick
-        m_Mode: 3
+      - m_Target: {fileID: 5035688184368945693}
+        m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+        m_MethodName: OnPointerClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8171,10 +8564,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1794684249173793452}
-          m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-          m_MethodName: HandleTabHoverEnter
-          m_Mode: 3
+        - m_Target: {fileID: 5035688184368945693}
+          m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8187,10 +8580,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1794684249173793452}
-          m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-          m_MethodName: HandleTabHoverExit
-          m_Mode: 3
+        - m_Target: {fileID: 5035688184368945693}
+          m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8199,6 +8592,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &5035688184368945693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8607214734492247795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709cce8ae4cbfd347945d61afd9dab1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tabName: 1
 --- !u!1 &8966101314313994694
 GameObject:
   m_ObjectHideFlags: 0
@@ -8212,6 +8618,7 @@ GameObject:
   - component: {fileID: 4347314091248092589}
   - component: {fileID: 4852671877549266041}
   - component: {fileID: 4809809363785526067}
+  - component: {fileID: 3834066954781683271}
   m_Layer: 5
   m_Name: LoreButton
   m_TagString: Untagged
@@ -8323,10 +8730,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1794684249173793452}
-        m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-        m_MethodName: HandleTabClick
-        m_Mode: 3
+      - m_Target: {fileID: 3834066954781683271}
+        m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+        m_MethodName: OnPointerClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8352,10 +8759,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1794684249173793452}
-          m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-          m_MethodName: HandleTabHoverEnter
-          m_Mode: 3
+        - m_Target: {fileID: 3834066954781683271}
+          m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8368,10 +8775,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1794684249173793452}
-          m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
-          m_MethodName: HandleTabHoverExit
-          m_Mode: 3
+        - m_Target: {fileID: 3834066954781683271}
+          m_TargetAssemblyTypeName: TabController, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8380,6 +8787,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &3834066954781683271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8966101314313994694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709cce8ae4cbfd347945d61afd9dab1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tabName: 3
 --- !u!1 &9075909012513875175
 GameObject:
   m_ObjectHideFlags: 0
@@ -8446,7 +8866,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is page 4
+  m_text: 'Settings
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
