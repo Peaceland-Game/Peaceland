@@ -66,7 +66,8 @@ public class Stealth : MonoBehaviour
             rays[i] = new Ray(transform.position, transform.forward);
 
             //set forward ray angle to 0
-            if (i == 0) { rayAngles[0] = 0; }
+            if (i == 0)
+                rayAngles[0] = 0;
 
             //set a positive angle if the ray being created is positive and vice versa
             else if (currentAngle >= 0)
@@ -97,9 +98,7 @@ public class Stealth : MonoBehaviour
 
         //check if the agent can hear the player
         if (distanceToPlayer <= player.GetComponent<PlayerSound>().getCurrentSoundFootprint())
-        {
             currentAlertTime = 0;
-        }
         //agent is alerted until time runs out
         if (currentAlertTime < secondsAgentStaysAlerted)
         {
@@ -115,9 +114,7 @@ public class Stealth : MonoBehaviour
             rays[i].origin = new Vector3(transform.position.x, transform.position.y - 0.2f, transform.position.z);
             rays[i].direction = new Vector3(Mathf.Cos(angleOfForward + rayAngles[i]), transform.forward.y, Mathf.Sin(angleOfForward + rayAngles[i])).normalized;
             if (i == 0)
-            {
                 rays[i].direction = transform.forward;
-            }
 
             //detect for any collisions, no more collisions are needed once the player is detected
             if(!detectedPlayer) 
@@ -126,17 +123,13 @@ public class Stealth : MonoBehaviour
                 if (!heardPlayer)
                 {
                     if (IsCollidingWithObject(rays[i], player, detectionDistance) == "detected")
-                    {
                         detectedPlayer = true;
-                    }
                 }
                 //use large if they hear the player
                 else
                 {
                     if (IsCollidingWithObject(rays[i], player, largerDetectionDistance) == "detected")
-                    {
                         detectedPlayer = true;
-                    }
                 }
             }
         }
@@ -190,23 +183,17 @@ public class Stealth : MonoBehaviour
         {
             //the agent sees a wall
             if (hit.collider.gameObject.layer == 6)
-            {
                 return "wall";
-            }
 
             //rays collided with the player
             if (hit.collider.gameObject.layer == 15)
             {
                 //they were in range, agent sees player
                 if (GetDistance(transform.position, player.transform.position) <= maxDistance)
-                {
                     return "detected";
-                }
                 //they were out of range, agent does not see player
                 else if (GetDistance(transform.position, player.transform.position) > maxDistance)
-                {
                     return "out of range";
-                }
             }
         }
         return "undetected";
@@ -233,13 +220,9 @@ public class Stealth : MonoBehaviour
         {
             //make the visual refect their current range
             if (!heardPlayer)
-            {
                 Gizmos.DrawRay(rays[i].origin, rays[i].direction * detectionDistance);
-            }
             else
-            {
                 Gizmos.DrawRay(rays[i].origin, rays[i].direction * largerDetectionDistance);
-            }
         }
     }
 }

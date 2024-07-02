@@ -83,6 +83,18 @@ public class AntoniStealthAI : MonoBehaviour
 
         agent.destination = playerPoint.position;
     }
+    void SwitchToWalkHome()
+    {
+        currentState = State.WalkHome;
+        currentWaypoint--;
+        GoToNextPoint();
+    }
+    void SwitchToAlmostSpotted()
+    {
+        currentTimeBeforeNoticed = 0;
+        timer = 0;
+        currentState = State.AlmostSpotted;
+    }
 
     void WalkHome()
     {
@@ -109,17 +121,11 @@ public class AntoniStealthAI : MonoBehaviour
 
         //if they spot the player, seek them
         if (stealthScript.detectedPlayer)
-        {
-            currentTimeBeforeNoticed = 0;
-            timer = 0;
-            currentState = State.AlmostSpotted;
-        }
+            SwitchToAlmostSpotted();
 
         //if they hear the player, go on alert
         if (stealthScript.heardPlayer)
-        {
             currentState = State.Alert;
-        }
     }
     void Alert()
     {
@@ -133,30 +139,18 @@ public class AntoniStealthAI : MonoBehaviour
         //every 1/10th of a second, check if the agent should change direction
         directionTimer += Time.deltaTime;
         if (directionTimer >= 0.1f && (int)(Random.value * 100) <= percentChanceToChangeRotation)
-        {
             currentAlertedRotationDirection *= -1;
-        }
 
         if (directionTimer >= 0.1f)
-        {
             directionTimer = 0;
-        }
 
         //after a bit of no sound, go back on WalkHome
         if (!stealthScript.heardPlayer)
-        {
-            currentState = State.WalkHome;
-            currentWaypoint--;
-            GoToNextPoint();
-        }
+            SwitchToWalkHome();
 
         //if they see the player, seek them
         if (stealthScript.detectedPlayer)
-        {
-            currentTimeBeforeNoticed = 0;
-            timer = 0;
-            currentState = State.AlmostSpotted;
-        }
+            SwitchToAlmostSpotted();
     }
     void AlmostSpotted()
     {
@@ -185,12 +179,8 @@ public class AntoniStealthAI : MonoBehaviour
             currentState = State.Spotted;
 
         //lose them if they did not see them for long enough
-        if(currentTimeBeforeNoticed <= 0)
-        {
-            currentState = State.WalkHome;
-            currentWaypoint--;
-            GoToNextPoint();
-        }
+        if (currentTimeBeforeNoticed <= 0)
+            SwitchToWalkHome();
     }
     void Spotted()
     {
@@ -203,6 +193,7 @@ public class AntoniStealthAI : MonoBehaviour
         {
             //currentState = State.Alert;
         }
+            
     }
     void TurnAround()
     {
@@ -216,25 +207,15 @@ public class AntoniStealthAI : MonoBehaviour
             transform.Rotate(0, 120 * Time.deltaTime, 0, 0);
         //once they have rotated enough, wait an amount of time
         else
-        {
-            currentState = State.WalkHome;
-            GoToNextPoint();
-        }
-            
+            SwitchToWalkHome();
 
         //if they hear the player, go on alert
         if (stealthScript.heardPlayer)
-        {
             currentState = State.Alert;
-        }
 
         //if they see the player, seek them
         if (stealthScript.detectedPlayer)
-        {
-            currentTimeBeforeNoticed = 0;
-            timer = 0;
-            currentState = State.AlmostSpotted;
-        }
+            SwitchToAlmostSpotted();
     }
     void Update()
     {
