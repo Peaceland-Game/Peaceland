@@ -207,7 +207,11 @@ public class AntoniStealthAI : MonoBehaviour
             transform.Rotate(0, 120 * Time.deltaTime, 0, 0);
         //once they have rotated enough, wait an amount of time
         else
+        {
+            currentWaypoint++;
             SwitchToWalkHome();
+        }
+            
 
         //if they hear the player, go on alert
         if (stealthScript.heardPlayer)
@@ -241,7 +245,7 @@ public class AntoniStealthAI : MonoBehaviour
                 AlmostSpotted();
                 break;
 
-            //seek the player
+            //player was spotted, the "caught" event can run
             case State.Spotted:
                 stateMaterial.color = Color.red;
                 Spotted();
