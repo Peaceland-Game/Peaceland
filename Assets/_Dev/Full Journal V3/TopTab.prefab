@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1646989380657362473}
   - component: {fileID: 6971911468344868030}
   - component: {fileID: 687889183941605695}
-  - component: {fileID: 2731006862828266093}
   m_Layer: 5
   m_Name: TopTab
   m_TagString: Untagged
@@ -126,8 +125,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TabController, Assembly-CSharp
-        m_MethodName: OnPointerClick
+        m_TargetAssemblyTypeName: TopTabController, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -155,8 +154,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TabController, Assembly-CSharp
-          m_MethodName: OnPointerEnter
+          m_TargetAssemblyTypeName: TopTabController, Assembly-CSharp
+          m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -171,8 +170,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: TabController, Assembly-CSharp
-          m_MethodName: OnPointerExit
+          m_TargetAssemblyTypeName: TopTabController, Assembly-CSharp
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -182,19 +181,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &2731006862828266093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756551847549573352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dc9f67a33073847aa3a3814c357b3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabName: 2
 --- !u!1 &4583653738646088677
 GameObject:
   m_ObjectHideFlags: 0

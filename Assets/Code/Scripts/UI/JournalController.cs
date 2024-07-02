@@ -5,7 +5,7 @@ using UnityEngine;
 public class JournalController : MonoBehaviour
 {
     private Animator animator;
-    private int currentPage = 0;
+    private int currentPage = 4;
     private readonly int totalPages = 5;
     public float animSpeed = 1f;
     public List<GameObject> pages = new List<GameObject>();

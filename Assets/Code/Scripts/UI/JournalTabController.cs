@@ -9,7 +9,7 @@ public class TabController : MonoBehaviour
     public enum TabState { Default, Hovered, Selected }
 
     [SerializeField] protected TabName tabName;
-    protected float hoverOffset = 35f;
+    protected float hoverOffset = 25f;
     protected float moveSpeed = 100f;
 
     protected int tabIndex;
@@ -26,10 +26,11 @@ public class TabController : MonoBehaviour
         tabIndex = TabUtility.GetTabIndex(tabName);
         rectTransform = GetComponent<RectTransform>();
         defaultPosition = rectTransform.anchoredPosition;
-        hoveredPosition = defaultPosition + Vector2.left * hoverOffset;
+        hoveredPosition = defaultPosition + Vector2.left * (hoverOffset * (tabIndex == 4 ? -1 : 1));
+        
         targetPosition = defaultPosition;
 
-        journalController = GetComponentInParent<JournalController>();
+        journalController = FindFirstObjectByType<JournalController>();
     }
 
     protected virtual void Update()
