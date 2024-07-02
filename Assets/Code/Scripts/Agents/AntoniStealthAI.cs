@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class AntoniStealthAI : MonoBehaviour
 {
@@ -44,6 +45,12 @@ public class AntoniStealthAI : MonoBehaviour
     //how long the agent will look at the player before triggering an event
     public float timeBeforeAgentNoticesPlayer;
     private float currentTimeBeforeNoticed;
+    private float timer;
+
+    //TEMPORARY MATERIAL dinicating state
+    public GameObject stateIndicator;
+    public Material stateMaterial;
+
 
     void Start()
     {
@@ -104,6 +111,7 @@ public class AntoniStealthAI : MonoBehaviour
         if (stealthScript.detectedPlayer)
         {
             currentTimeBeforeNoticed = 0;
+            timer = 0;
             currentState = State.AlmostSpotted;
         }
 
@@ -146,6 +154,7 @@ public class AntoniStealthAI : MonoBehaviour
         if (stealthScript.detectedPlayer)
         {
             currentTimeBeforeNoticed = 0;
+            timer = 0;
             currentState = State.AlmostSpotted;
         }
     }
@@ -154,16 +163,27 @@ public class AntoniStealthAI : MonoBehaviour
         agent.isStopped = false;
         agent.velocity = Vector3.zero;
         GoToPlayerPoint();
+        Debug.Log(currentTimeBeforeNoticed);
         
         //if they continue to detect the player, get closer to spotting them
         if (stealthScript.detectedPlayer)
+        {
             currentTimeBeforeNoticed += Time.deltaTime;
+            timer = 0;
+        }
+            
         //if they are not detecting them, get closer to being alerted
-        else if (!stealthScript.detectedPlayer && currentTimeBeforeNoticed > 0)
-            currentTimeBeforeNoticed -= Time.deltaTime;
+        if (!stealthScript.detectedPlayer && timer < 0.5)
+            timer += Time.deltaTime;
+            
+
+        else if (!stealthScript.detectedPlayer && timer >= 0.5)
+            currentTimeBeforeNoticed -= Time.deltaTime;   
+
         //spot them if they detected them for long enough
         if (currentTimeBeforeNoticed > timeBeforeAgentNoticesPlayer)
             currentState = State.Spotted;
+
         //lose them if they did not see them for long enough
         if(currentTimeBeforeNoticed <= 0)
         {
@@ -181,7 +201,7 @@ public class AntoniStealthAI : MonoBehaviour
         //if the agent loses the player , go on alert
         if (!stealthScript.detectedPlayer)
         {
-            currentState = State.Alert;
+            //currentState = State.Alert;
         }
     }
     void TurnAround()
@@ -192,8 +212,8 @@ public class AntoniStealthAI : MonoBehaviour
 
         //rotate around y axis until they have turned 180 degrees
         currentTurnAroundTimer += Time.deltaTime;
-        if (currentTurnAroundTimer <= 1)
-            transform.Rotate(0, 180 * Time.deltaTime, 0, 0);
+        if (currentTurnAroundTimer <= 1.3)
+            transform.Rotate(0, 120 * Time.deltaTime, 0, 0);
         //once they have rotated enough, wait an amount of time
         else
         {
@@ -212,36 +232,43 @@ public class AntoniStealthAI : MonoBehaviour
         if (stealthScript.detectedPlayer)
         {
             currentTimeBeforeNoticed = 0;
+            timer = 0;
             currentState = State.AlmostSpotted;
         }
     }
     void Update()
     {
         Debug.Log(currentState);
+        stateIndicator.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         switch (currentState)
         {
             //move from one waypoint to another
             case State.WalkHome:
+                stateMaterial.color = Color.green;
                 WalkHome();
                 break;
 
             //spin around for an amount of time
             case State.Alert:
+                stateMaterial.color = Color.yellow;
                 Alert();
                 break;
 
             //look at the player, but do not act (player can run)
             case State.AlmostSpotted:
+                stateMaterial.color = new Color(1, 0.6f, 0);//orange
                 AlmostSpotted();
                 break;
 
             //seek the player
             case State.Spotted:
+                stateMaterial.color = Color.red;
                 Spotted();
                 break;
 
             //turn 180 degrees
             case State.TurnAround:
+                stateMaterial.color = Color.blue;
                 TurnAround();
                 break;
         }
