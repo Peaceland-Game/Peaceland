@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// Script to create and initialize a large amount of citizen AIs to populate the city
+/// </summary>
 public class CitizenController : MonoBehaviour
 {
 
     [Range(20, 1000)]
-    public int numberOfCitizens = 100;
-    public GameObject citizenPrefab;
-    public GameObject WaypointParent;
-    private Transform[] waypoints;
+    public int numberOfCitizens = 100;  //the number of citizens to spawn
+    public GameObject citizenPrefab;    //reference to citizen prefab
+    public GameObject WaypointParent;   //The parent waypoint object to pass to the citizens
+    private Transform[] waypoints;      //Array of waypoint transforms used to spawn the citizens
 
     [Header("Citizen Properties")]
     //[Range(1f, 1.6f)]
@@ -19,13 +22,13 @@ public class CitizenController : MonoBehaviour
     //public float citizenMaxHeight = 2.0f;
 
     [Range(1f,2f)]
-    public float citizenMinSpeed = 1.5f;
+    public float citizenMinSpeed = 1.5f;    //citizen minimum speed
     [Range(2f, 4f)]
-    public float citizenMaxSpeed = 3f;
+    public float citizenMaxSpeed = 3f;      //citizen maximum speed
 
-    private List<GameObject> citizens = new();
+    private List<GameObject> citizens = new();  //holds a reference to each created citizen
 
-    private int prevNumCitizens = 100;
+    private int prevNumCitizens = 100;          //holds the previous number of spawned citizens, used to spawn/remove citizens during runtime if changing inspector slider
 
 
     // Start is called before the first frame update

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Depricated A specialized CitizenAI that also contains logic for stopping at certain waypoints and looking around
+/// </summary>
 public class Antoni : CitizenAI
 {
+    
     public GameObject player;
     public List<int> turnAroundWaypoints = new(){ 1, 2 };
     public SphereCollider minimumMoveDistance;
