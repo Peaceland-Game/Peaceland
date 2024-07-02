@@ -2391,8 +2391,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1.4285889, y: 764.28546}
-    canvasZoom: 0.7000003
+    canvasScrollPosition: {x: 1.098938, y: 0}
+    canvasZoom: 0.9100001
   - id: 3
     fields:
     - title: Title
@@ -2420,7 +2420,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -2551,7 +2551,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 255.76018
+        x: 256.70355
         y: 119.60942
         width: 160
         height: 30
@@ -2606,7 +2606,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 157.10344
+        x: 158.99023
         y: 172.66235
         width: 160
         height: 30
@@ -2759,6 +2759,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: 
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -2774,14 +2778,17 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: SetQuestState("Little Helper", "success");
+      userScript: 'SetQuestState("Little Helper", "success");
+
+        ChangeEmotionalState(1,
+        Actor["Mama"].Name);'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160.11443
-        y: 212.91289
+        x: 159.17102
+        y: 213.85628
         width: 160
         height: 30
     - id: 22
@@ -2836,8 +2843,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.93867
-        y: 254.77083
+        x: 162.81006
+        y: 253.59435
         width: 160
         height: 30
     - id: 23
@@ -3420,8 +3427,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.8800001
+    canvasScrollPosition: {x: 12.941162, y: 51.76468}
+    canvasZoom: 0.85000014
   - id: 4
     fields:
     - title: Title
