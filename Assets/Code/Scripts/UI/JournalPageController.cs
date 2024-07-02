@@ -12,13 +12,18 @@ public class JournalPageController : MonoBehaviour
 
     private void Start()
     {
+        
+
+    }
+    private void OnEnable()
+    {
         journalTabManager = GameObject.FindGameObjectWithTag("JournalTabManager").GetComponent<TabManager>();
         journalCategories = GetComponentsInChildren<JournalCategory>().ToList();
         journalCategories.ForEach(catTab => catTab.PopulateSubPages());
-        Debug.Log(journalCategories);
+        journalCategories.ForEach(cat => Debug.Log(cat.name));
         journalTabManager.SpawnCategories(this);
-
     }
+
 
     public List<JournalCategory> GetJournalCategories() { return journalCategories; }
 }

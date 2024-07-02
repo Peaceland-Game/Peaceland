@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TabManager : MonoBehaviour
 {
     public GameObject topTabPrefab;
-    List<List<JournalElement>> journalElements = new List<List<JournalElement>>();
+    [SerializeField] List<GameObject> journalPages;
     public void SpawnCategories(JournalPageController journalPage)
     {
         journalPage.GetJournalCategories().ForEach(category =>
