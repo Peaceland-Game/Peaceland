@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AntoniStealthAI : MonoBehaviour
 {
     enum State
     {
-        Patrol,
+        WalkHome,
         Alert,
-        Seek
+        Spotted,
+        TurnAround
     }
 
     private State currentState;
@@ -25,9 +27,11 @@ public class AntoniStealthAI : MonoBehaviour
     public float percentChanceToChangeRotation;
     private float directionTimer;
 
+    //the waypoint the agent is currently traveling towards
     private int currentWaypoint = 0;
     private UnityEngine.AI.NavMeshAgent agent;
 
+    //controls how long the agent seeks the player after they are spotted
     private float seekTime;
     private float currentSeekTime;
 
@@ -35,30 +39,36 @@ public class AntoniStealthAI : MonoBehaviour
     public VisionConeVisualizer visionConeVisualizer;
     public bool DisplayConeVisualizer = true;
 
+    //the waypoints that the agent will turn around at
+    public int[] turnAroundWaypoints;
+    private float currentTurnAroundTimer;
+
     void Start()
     {
         if (!DisplayConeVisualizer)
         {
             visionConeVisualizer.gameObject.SetActive(false);
         }
-        currentState = State.Patrol;
+        currentState = State.WalkHome;
         stealthScript = GetComponent<Stealth>();
         currentSeekTime = stealthScript.secondsAgentSeeks;
         seekTime = currentSeekTime;
         currentDirection = 1;
         directionTimer = 0;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        //GoToNextPoint();
     }
 
+    //the agent walks to a new waypoint
     void GoToNextPoint()
     {
         if (waypoints.Length == 0)
             return;
-
+        
         agent.destination = waypoints[currentWaypoint].position;
         currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
     }
+
+    //the agent goes to the player
     void GoToPlayerPoint()
     {
         if (waypoints.Length == 0)
@@ -66,17 +76,35 @@ public class AntoniStealthAI : MonoBehaviour
 
         agent.destination = playerPoint.position;
     }
-    void Patrol()
+
+    void WalkHome()
     {
         agent.isStopped = false;
+        //if the agent reaches a waypoint
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        {
+            //check if it is a turnaround waypoint
+            foreach (int i in turnAroundWaypoints)
+            {
+                if (currentWaypoint == i)
+                {
+                    //set y degrees
+                    currentTurnAroundTimer = 0;
+                    currentState = State.TurnAround;
+                    return;
+                }
+            }
+                
+            //if not, pathfind to next point
             GoToNextPoint();
+        }
+            
 
         //if they spot the player, seek them
         if (stealthScript.detectedPlayer)
         {
-            //currentSeekTime = 0;
-            //currentState = State.Seek;
+            currentSeekTime = 0;
+            currentState = State.Spotted;
             Debug.Log("Player detected");
         }
 
@@ -107,10 +135,10 @@ public class AntoniStealthAI : MonoBehaviour
             directionTimer = 0;
         }
 
-        //after a bit of no sound, go back on patrol
+        //after a bit of no sound, go back on WalkHome
         if (!stealthScript.heardPlayer)
         {
-            currentState = State.Patrol;
+            currentState = State.WalkHome;
             currentWaypoint--;
             GoToNextPoint();
         }
@@ -118,12 +146,12 @@ public class AntoniStealthAI : MonoBehaviour
         //if they see the player, seek them
         if (stealthScript.detectedPlayer)
         {
-            //currentSeekTime = 0;
-            //currentState = State.Seek;
+            currentSeekTime = 0;
+            currentState = State.Spotted;
             Debug.Log("Player detected");
         }
     }
-    void Seek()
+    void Spotted()
     {
         agent.isStopped = false;
         agent.velocity = Vector3.zero;
@@ -142,7 +170,7 @@ public class AntoniStealthAI : MonoBehaviour
         //if the agent catches the player, FOR NOW, go back to patrol
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
-            currentState = State.Patrol;
+            currentState = State.WalkHome;
             GoToNextPoint();
         }
 
@@ -152,26 +180,64 @@ public class AntoniStealthAI : MonoBehaviour
             currentState = State.Alert;
         }
     }
+    void TurnAround()
+    {
+        //stop pathfinding
+        agent.isStopped = true;
+        agent.velocity = Vector3.zero;
+
+        //rotate around y axis until they have turned 180 degrees
+        currentTurnAroundTimer += Time.deltaTime;
+        if (currentTurnAroundTimer <= 1)
+            transform.Rotate(0, 180 * Time.deltaTime, 0, 0);
+        //once they have rotated enough, wait an amount of time
+        else
+        {
+            Debug.Log("done rotating");
+            currentState = State.WalkHome;
+            GoToNextPoint();
+        }
+            
+
+        //if they hear the player, go on alert
+        if (stealthScript.heardPlayer)
+        {
+            currentState = State.Alert;
+        }
+
+        //if they see the player, seek them
+        if (stealthScript.detectedPlayer)
+        {
+            currentSeekTime = 0;
+            currentState = State.Spotted;
+            Debug.Log("Player detected");
+        }
+    }
     void Update()
     {
-       // Debug.Log(currentState);
-        //switch (currentState)
-        //{
-        //    //move from one waypoint to another
-        //    case State.Patrol:
-        //        Patrol();
-        //        break;
+        Debug.Log(currentState);
+        switch (currentState)
+        {
+            //move from one waypoint to another
+            case State.WalkHome:
+                WalkHome();
+                break;
 
-        //    //spin around for an amount of time
-        //    case State.Alert:
-        //        Alert();
-        //        break;
+            //spin around for an amount of time
+            case State.Alert:
+                Alert();
+                break;
 
-        //    //seek the player
-        //    case State.Seek:
-        //        Seek();
-        //        break;
-        //}
-        
+            //seek the player
+            case State.Spotted:
+                Spotted();
+                break;
+
+            //turn 180 degrees
+            case State.TurnAround:
+                TurnAround();
+                break;
+        }
+
     }
 }
