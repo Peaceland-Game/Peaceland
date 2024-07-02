@@ -1,91 +1,86 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 
-public class JournalController : MonoBehaviour
-{
+public class JournalController : MonoBehaviour {
     private Animator animator;
     private int currentPage = 0;
-    private readonly int totalPages = 4;
+    private readonly int totalPages = 5; // Updated to 5 pages
     public float animSpeed = 1f;
-    public List<GameObject> pages = new();
-    // Start is called before the first frame update
+    public List<GameObject> pages = new List<GameObject>();
+    public List<Transform> tabs = new List<Transform>();
+    public float tabHoverOffset = 10f; // Adjust this value to control how much tabs pop out
+    public float tabAnimationDuration = 0.2f;
+
     public ScreenshotCapture screenshotCapture;
     public List<Texture2D> journalEntries = new List<Texture2D>();
-   
     private int currentEntryIndex = 0;
     public ArtifactJournalController artifactJournal;
-    void Start()
-    {
-        //remove:
-        //Time.timeScale = 0;
+
+    private static int SETTINGS_TAB = 4;
+
+    void Start() {
         animator = GetComponent<Animator>();
-        animator.SetFloat("Speed", animSpeed);
-        ShowPage(currentPage);
+      //  animator.SetFloat("Speed", animSpeed);
+     //   ShowPage(currentPage);
     }
-    
-    public void HandleTabClick(int tabNumber)
-    {
-        if (tabNumber < totalPages)
-        {
-            var trigger = GetTriggerName(currentPage, tabNumber);
-            Debug.Log($"turning from {currentPage} to {tabNumber}");
-            if (!string.IsNullOrEmpty(trigger))
-            {
-                pages[currentPage].SetActive(false);
-                currentPage = tabNumber;
-                animator.SetTrigger(trigger);
-            }
+
+    public void HandleTabHoverEnter(int tabIndex) {
+        HandleTabHover(tabIndex, true);
+    }
+    public void HandleTabHoverExit(int tabIndex) {
+        HandleTabHover(tabIndex, false);
+    }   
+    private void HandleTabHover(int tabIndex, bool isEnter) {
+        if (isEnter) {
+            StartCoroutine(AnimateTabHover(tabIndex, tabs[tabIndex], true));
+        }
+        else {
+            StartCoroutine(AnimateTabHover(tabIndex, tabs[tabIndex], false));
         }
     }
-    public void AddArtifact(string name)
-    {
+
+    private IEnumerator AnimateTabHover(int index, Transform tab, bool isEnter) {
+        Vector3 startPos = tab.localPosition;
+        //
+        var tabDirection = isEnter ? Vector3.left : Vector3.right;
+        tabDirection = index == SETTINGS_TAB ? -tabDirection : tabDirection;
+        Vector3 endPos = startPos + tabDirection * tabHoverOffset;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < tabAnimationDuration) {
+            tab.localPosition = Vector3.Lerp(startPos, endPos, elapsedTime / tabAnimationDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        tab.localPosition = endPos;
+    }
+
+    public void HandleTabClick(int tabNumber) {
+        if (tabNumber < totalPages && tabNumber != currentPage) {
+            pages[currentPage].SetActive(false);
+            string animationTrigger = (tabNumber > currentPage) ? "MultiFwd" : "MultiBck";
+            animator.SetTrigger(animationTrigger);
+            currentPage = tabNumber;
+            StartCoroutine(ActivatePageAfterAnimation(tabNumber));
+        }
+    }
+
+    private IEnumerator ActivatePageAfterAnimation(int pageIndex) {
+        // Wait for the animation to complete
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        pages[pageIndex].SetActive(true);
+    }
+
+    public void AddArtifact(string name) {
         Debug.Log($"Adding {name} to artifacts");
         artifactJournal.RevealArtifact(name);
     }
 
-    private string GetTriggerName(int fromPage, int toPage)
-    {
-        if (fromPage == 0 && toPage == 1)
-            return "1To2";
-        else if (fromPage == 1 && toPage == 2)
-            return "2To3";
-        else if (fromPage == 2 && toPage == 3)
-            return "3To4";
-        else if (fromPage == 1 && toPage == 0)
-            return "2To1";
-        else if (fromPage == 2 && toPage == 1)
-            return "3To2";
-        else if (fromPage == 3 && toPage == 2)
-            return "4To3";
-        else if (fromPage == 0 && toPage == 2)
-            return "1To3";
-        else if (fromPage == 0 && toPage == 3)
-            return "1To4";
-        else if (fromPage == 1 && toPage == 3)
-            return "2To4";
-        else if (fromPage == 2 && toPage == 0)
-            return "3To1";
-        else if (fromPage == 3 && toPage == 1)
-            return "4To2";
-        else if (fromPage == 3 && toPage == 0)
-            return "4To1";
-
-        return "";
-    }
-
-    private void ShowPage(int pageIndex)
-    {
-        // Ensure the correct static page sprite is shown after animation
-        string stateName = "Page" + (pageIndex + 1);
-        Debug.Log($"set page: {currentPage}");
-        animator.Play(stateName);
-    }
-    public void ActivatePageDisplay(int pageIndex)
-    {
-        pages[pageIndex].SetActive(true);
-    }
-    
+    //private void ShowPage(int pageIndex) {
+    //    string stateName = "Page" + (pageIndex + 1);
+    //    Debug.Log($"set page: {currentPage}");
+    //    animator.Play(stateName);
+    //}
 }
