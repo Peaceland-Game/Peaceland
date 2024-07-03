@@ -26,7 +26,6 @@ public class NewspaperMovement : MonoBehaviour
         if (movementComplete && (Keyboard.current.enterKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame))
         {
             authorizationForm.SetActive(true);
-            this.gameObject.SetActive(false);
         }
     }
 
