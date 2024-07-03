@@ -645,7 +645,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 18}
     canvasZoom: 1
   - id: 7
     fields:
@@ -944,7 +944,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); -- ANGRY
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1000,14 +1000,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); -- ANGRY
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 446.24716
-        y: 421.72247
+        y: 422.82135
         width: 160
         height: 30
     - id: 43
@@ -1230,7 +1230,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 250.18036
+        x: 249.11652
         y: 525.09827
         width: 160
         height: 30
@@ -1574,8 +1574,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 394.16843
-        y: 1022.0735
+        x: 395.23224
+        y: 1019.9459
         width: 160
         height: 30
     - id: 53
@@ -2164,7 +2164,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 289.55148
+        x: 288.48767
         y: 623.3436
         width: 160
         height: 30
@@ -2214,7 +2214,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(0, Actor["Mama"].Name); -- CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2391,8 +2391,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1.098938, y: 0}
-    canvasZoom: 0.9100001
+    canvasScrollPosition: {x: 58.393646, y: 121.27658}
+    canvasZoom: 0.94000006
   - id: 3
     fields:
     - title: Title
@@ -2780,8 +2780,8 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'SetQuestState("Little Helper", "success");
 
-        ChangeEmotionalState(1,
-        Actor["Mama"].Name);'
+        ChangeEmotionalState(5,
+        Actor["Mama"].Name); -- JOYFUL'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2837,14 +2837,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: CurrentQuestState("Little Helper") == "success"
-      userScript: 
+      userScript: ChangeEmotionalState(0, Actor["Mama"].Name); -- CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 162.81006
-        y: 253.59435
+        y: 254.7307
         width: 160
         height: 30
     - id: 23
@@ -2898,8 +2898,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158.79582
-        y: 297.61804
+        x: 157.65945
+        y: 296.4817
         width: 160
         height: 30
     - id: 24
@@ -3064,8 +3064,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 279.61578
-        y: 434.1656
+        x: 280.75217
+        y: 435.30194
         width: 160
         height: 30
     - id: 27
@@ -3282,7 +3282,9 @@ MonoBehaviour:
           SetEnabled(Canvas, true, DialogueCanvas)@0.5;
 
           AnimatorTrigger(Mother_WashingDishes,
-          , Idle);'
+          , Idle);
+
+          ChangeEmotionalState(0, Actor["Mama"].Name); // CONTENT'
         type: 0
         typeString: 
       conversationID: 3
@@ -3427,8 +3429,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 12.941162, y: 51.76468}
-    canvasZoom: 0.85000014
+    canvasScrollPosition: {x: 121.21269, y: 0}
+    canvasZoom: 0.8800001
   - id: 4
     fields:
     - title: Title

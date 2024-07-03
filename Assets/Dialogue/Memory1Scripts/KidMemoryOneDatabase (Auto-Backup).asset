@@ -469,7 +469,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
     - title: Initial Value
-      value: True
+      value: False
       type: 2
       typeString: CustomFieldType_Boolean
     - title: Description
@@ -483,7 +483,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
     - title: Initial Value
-      value: True
+      value: False
       type: 2
       typeString: CustomFieldType_Boolean
     - title: Description
@@ -944,7 +944,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); // ANGRY
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1000,14 +1000,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); // ANGRY
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 446.24716
-        y: 421.72247
+        y: 422.82135
         width: 160
         height: 30
     - id: 43
@@ -2164,7 +2164,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 289.55148
+        x: 288.48767
         y: 623.3436
         width: 160
         height: 30
@@ -2214,7 +2214,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(0, Actor["Mama"].Name); // CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2391,8 +2391,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1.098938, y: 0}
-    canvasZoom: 0.9100001
+    canvasScrollPosition: {x: 0.9468689, y: 263.29202}
+    canvasZoom: 0.94000006
   - id: 3
     fields:
     - title: Title
@@ -2780,8 +2780,8 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'SetQuestState("Little Helper", "success");
 
-        ChangeEmotionalState(1,
-        [Actor]);'
+        ChangeEmotionalState(5,
+        Actor["Mama"].Name); // JOYFUL'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2837,14 +2837,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: CurrentQuestState("Little Helper") == "success"
-      userScript: 
+      userScript: ChangeEmotionalState(0, Actor["Mama"].Name); // CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161.63359
-        y: 254.77083
+        x: 162.81006
+        y: 253.59435
         width: 160
         height: 30
     - id: 23
@@ -2898,8 +2898,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158.79582
-        y: 297.61804
+        x: 157.65945
+        y: 296.4817
         width: 160
         height: 30
     - id: 24
@@ -3281,8 +3281,10 @@ MonoBehaviour:
 
           SetEnabled(Canvas, true, DialogueCanvas)@0.5;
 
-          Animation(AdultGeneric_Idle,
-          Mom);'
+          AnimatorTrigger(Mother_WashingDishes,
+          , Idle);
+
+          ChangeEmotionalState(0, Actor["Mama"].Name); // CONTENT'
         type: 0
         typeString: 
       conversationID: 3
@@ -3427,8 +3429,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 55.303604, y: 261.3636}
+    canvasZoom: 0.8800001
   - id: 4
     fields:
     - title: Title
