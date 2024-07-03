@@ -1017,7 +1017,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(4, Actor["Waeli"].Name); -- PLEASED
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2089,7 +2089,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(5, Actor["Waeli"].Name); -- SAD
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2147,7 +2147,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: (Variable["What'sWrong"] == false) or (Variable["MeetingGryf"]
         == false) or (Variable["WhyTakeCare"] == false)
-      userScript: 
+      userScript: ChangeEmotionalState(0, Actor["Waeli"].Name); -- CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2203,7 +2203,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: (Variable["What'sWrong"] == true) and (Variable["MeetingGryf"]
         == true) and (Variable["WhyTakeCare"] == true)
-      userScript: 
+      userScript: ChangeEmotionalState(0, Actor["Waeli"].Name); -- CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3065,7 +3065,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(0, Actor["Waeli"].Name); -- CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5135,8 +5135,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1485.713}
-    canvasZoom: 0.7000003
+    canvasScrollPosition: {x: 75.47171, y: 1159.1421}
+    canvasZoom: 1.06
   - id: 16
     fields:
     - title: Title
@@ -5283,7 +5283,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'ChangeEmotionalState(6, "Antoni"); -- ANGRY
+
+        ChangeEmotionalState(2,
+        "Waeli"); -- STUNNED'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5358,7 +5361,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 331
+        x: 330.17355
         y: 134
         width: 160
         height: 30
@@ -5599,7 +5602,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(0, "Waeli"); -- CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6213,13 +6216,16 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["PeaceMeter"] = Variable["PeaceMeter"] - 1;
+      userScript: 'Variable["PeaceMeter"] = Variable["PeaceMeter"] - 1;
+
+        ChangeEmotionalState(6,
+        "Waeli"); -- ANGRY'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 519.5317
+        x: 520.37915
         y: 438.26587
         width: 160
         height: 30
@@ -6395,7 +6401,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(6, "Waeli"); -- ANGRY
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6570,7 +6576,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(0, "Waeli"); -- CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7204,7 +7210,12 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["PeaceMeter"] = Variable["PeaceMeter"] + 1;
+      userScript: 'Variable["PeaceMeter"] = Variable["PeaceMeter"] + 1;
+
+        ChangeEmotionalState(0,
+        "Waeli"); -- CONTENT
+
+        ChangeEmotionalState(0, "Antoni"); -- CONTENT'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7682,7 +7693,12 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["PeaceMeter"] = Variable["PeaceMeter"] - 1;
+      userScript: 'Variable["PeaceMeter"] = Variable["PeaceMeter"] - 1;
+
+        ChangeEmotionalState(0,
+        "Waeli"); -- CONTENT
+
+        ChangeEmotionalState(0, "Antoni"); -- CONTENT'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11153,8 +11169,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 17.142822, y: 2877.686}
-    canvasZoom: 0.7000003
+    canvasScrollPosition: {x: 104.26933, y: 2376.3528}
+    canvasZoom: 0.97
   syncInfo:
     syncActors: 1
     syncItems: 1
