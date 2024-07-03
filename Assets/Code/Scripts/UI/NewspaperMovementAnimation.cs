@@ -14,8 +14,7 @@ public class NewspaperMovement : MonoBehaviour
     public float duration = 1f;
     public float delayBetweenMoves = 1f;
 
-    private int moveCounter = 0;
-    private bool isMoving = false;
+    private bool movementComplete = false;
 
     void Start()
     {
@@ -24,7 +23,7 @@ public class NewspaperMovement : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.enterKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame)
+        if (movementComplete && (Keyboard.current.enterKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame))
         {
             authorizationForm.SetActive(true);
             this.gameObject.SetActive(false);
@@ -40,6 +39,8 @@ public class NewspaperMovement : MonoBehaviour
         yield return new WaitForSeconds(delayBetweenMoves);
 
         yield return StartCoroutine(MoveObject(newspaper3, targetTransform3));
+
+        movementComplete = true;
     }
 
     private IEnumerator MoveObject(GameObject newspaper, Transform targetTransform)
@@ -50,7 +51,7 @@ public class NewspaperMovement : MonoBehaviour
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
-            float t = elapsedTime / duration;
+            float t = Mathf.Clamp01(elapsedTime / duration);
             newspaper.transform.position = Vector3.Lerp(startPosition, targetTransform.position, t);
             yield return null;
         }
