@@ -3,8 +3,11 @@ using UnityEngine.Rendering;
 using System.Collections;
 using UnityEngine.InputSystem;
 
+[ExecuteAlways]
 public class DynamicLightingController : MonoBehaviour
 {
+
+    
     public Light directionalLight;
     public LightingProfile[] lightingProfiles;
 
@@ -25,13 +28,13 @@ public class DynamicLightingController : MonoBehaviour
     {
         HandleDayChangeInput();
         //// Check if the test profile should be applied
-        //if (applyTestProfile)
-        //{
-        //    applyTestProfile = false; // Reset the flag
-        //    ApplyProfile(lightingProfiles[testProfileIndex]);
-        //    currentProfileIndex = testProfileIndex;
-        //    Debug.Log($"Applied profile: {lightingProfiles[testProfileIndex].name}");
-        //}
+        if (applyTestProfile)
+        {
+            applyTestProfile = false; // Reset the flag
+            ApplyProfile(lightingProfiles[testProfileIndex]);
+            currentProfileIndex = testProfileIndex;
+            Debug.Log($"Applied profile: {lightingProfiles[testProfileIndex].name}");
+        }
     }
     private void HandleDayChangeInput()
     {
