@@ -39,7 +39,6 @@ public class CharacterVisualController : MonoBehaviour
     [SerializeField] AnimationCurve changeCurve;
 
 
-
     private Vector2 currentTimes = new Vector2();
 
     // If currently in the process of changing then hold onto next
@@ -64,7 +63,7 @@ public class CharacterVisualController : MonoBehaviour
         Vector2 dir = currentDirction.normalized;
         currentTimes = currentTimes + Time.deltaTime * currentTimeScale * dir;
 
-        
+
         // Pass in manual material properties 
         for (int i = 0; i < bodies.Count; i++)
         {
