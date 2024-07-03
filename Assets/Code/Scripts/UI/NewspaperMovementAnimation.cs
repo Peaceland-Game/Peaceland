@@ -18,7 +18,6 @@ public class NewspaperMovement : MonoBehaviour
 
     void Start()
     {
-        PlayerSingleton.Instance.DisableMovement();
         StartCoroutine(MoveNewspapersSequentially());
     }
 
