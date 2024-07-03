@@ -345,7 +345,7 @@ Transform:
   - {fileID: 1070896902783999238}
   - {fileID: 8681188175796877151}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5796529908657237093
 MonoBehaviour:
@@ -359,35 +359,297 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f88611368ea8640bad757daebe2b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 5743761698440664639}
-  speed: 1
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   emotionalState: 0
   eyes: []
   eyeSettings: []
+  isTalking: 0
+  mouths: []
+  mouthSettings: []
+  currentTimeScale: 0
+  currentDirction: {x: 0, y: 0}
+  patterns:
+  - state: 0
+    timeScale: 0.1
+    patternDir: {x: 0, y: -1}
+    patternAttributes:
+      colors: []
+      vectors:
+      - name: _SimpleCenter
+        vector: {x: -0.009315327, y: 0.045173816, z: 0}
+      - name: _SimpleSize
+        vector: {x: 0.8366008, y: 0.95222616, z: 0}
+      - name: _VoronoiCenter
+        vector: {x: 0.08723605, y: 0.27423444, z: 0}
+      - name: _VoronoiSize
+        vector: {x: 0.53890955, y: 0.2571872, z: 0}
+      floats:
+      - name: _SimpleGradientThresholdA
+        value: 0.18205263
+      - name: _SimpleGradientThresholdB
+        value: 0.6646328
+      - name: _Rescale
+        value: 0.10086186
+      - name: _AngleOffset
+        value: 34.9154
+      - name: _VoronoiGradientThresholdA
+        value: 0.44096196
+      - name: _VoronoiGradientThresholdB
+        value: 0.7765193
+      - name: _DisplacementScale
+        value: 0.017242922
+      - name: _VertexAngleOffset
+        value: 7.0390925
+      ranges:
+      - name: _NoiseType
+        range:
+          min: 0
+          max: 1
+          value: 1
+      texs: []
+      ints: []
+  - state: 1
+    timeScale: 0.1
+    patternDir: {x: 0, y: -1}
+    patternAttributes:
+      colors: []
+      vectors:
+      - name: _SimpleCenter
+        vector: {x: -0.009315327, y: -0.11, z: 0}
+      - name: _SimpleSize
+        vector: {x: 0.8366008, y: 0.95222616, z: 0}
+      - name: _VoronoiCenter
+        vector: {x: 0, y: 0, z: 0}
+      - name: _VoronoiSize
+        vector: {x: 0.25, y: 0.25, z: 0}
+      floats:
+      - name: _SimpleGradientThresholdA
+        value: 0.18205263
+      - name: _SimpleGradientThresholdB
+        value: 0.6646328
+      - name: _Rescale
+        value: 0.5
+      - name: _AngleOffset
+        value: 34.9154
+      - name: _VoronoiGradientThresholdA
+        value: 0.44096196
+      - name: _VoronoiGradientThresholdB
+        value: 0.7765193
+      - name: _DisplacementScale
+        value: 0.017242922
+      - name: _VertexAngleOffset
+        value: 7.0390925
+      ranges:
+      - name: _NoiseType
+        range:
+          min: 0
+          max: 1
+          value: 1
+      texs: []
+      ints: []
+  - state: 2
+    timeScale: 0.1
+    patternDir: {x: 0, y: -1}
+    patternAttributes:
+      colors: []
+      vectors:
+      - name: _SimpleCenter
+        vector: {x: -0.009315327, y: -0.11, z: 0}
+      - name: _SimpleSize
+        vector: {x: 0.8366008, y: 0.95222616, z: 0}
+      - name: _VoronoiCenter
+        vector: {x: 0, y: 0, z: 0}
+      - name: _VoronoiSize
+        vector: {x: 0.6, y: 0.45, z: 0}
+      floats:
+      - name: _SimpleGradientThresholdA
+        value: 0.18205263
+      - name: _SimpleGradientThresholdB
+        value: 0.6646328
+      - name: _Rescale
+        value: 0.01
+      - name: _AngleOffset
+        value: 34.9154
+      - name: _VoronoiGradientThresholdA
+        value: 0.44096196
+      - name: _VoronoiGradientThresholdB
+        value: 0.7765193
+      - name: _DisplacementScale
+        value: 0.017242922
+      - name: _VertexAngleOffset
+        value: 7.0390925
+      ranges:
+      - name: _NoiseType
+        range:
+          min: 0
+          max: 1
+          value: 1
+      texs: []
+      ints: []
+  - state: 3
+    timeScale: 0.1
+    patternDir: {x: 0, y: -1}
+    patternAttributes:
+      colors: []
+      vectors:
+      - name: _SimpleCenter
+        vector: {x: -0.009315327, y: -0.11, z: 0}
+      - name: _SimpleSize
+        vector: {x: 0.8366008, y: 0.95222616, z: 0}
+      - name: _VoronoiCenter
+        vector: {x: 0.08723605, y: -0.11, z: 0}
+      - name: _VoronoiSize
+        vector: {x: 0.53890955, y: 0.2571872, z: 0}
+      floats:
+      - name: _SimpleGradientThresholdA
+        value: 0.18205263
+      - name: _SimpleGradientThresholdB
+        value: 0.6646328
+      - name: _Rescale
+        value: 0.10086186
+      - name: _AngleOffset
+        value: 34.9154
+      - name: _VoronoiGradientThresholdA
+        value: 0.44096196
+      - name: _VoronoiGradientThresholdB
+        value: 0.7765193
+      - name: _DisplacementScale
+        value: 0.017242922
+      - name: _VertexAngleOffset
+        value: 7.0390925
+      ranges:
+      - name: _NoiseType
+        range:
+          min: 0
+          max: 1
+          value: 1
+      texs: []
+      ints: []
+  - state: 4
+    timeScale: 0.1
+    patternDir: {x: 0, y: -1}
+    patternAttributes:
+      colors: []
+      vectors:
+      - name: _SimpleCenter
+        vector: {x: -0.009315327, y: -0.11, z: 0}
+      - name: _SimpleSize
+        vector: {x: 0.8366008, y: 0.95222616, z: 0}
+      - name: _VoronoiCenter
+        vector: {x: 0.08723605, y: -0.11, z: 0}
+      - name: _VoronoiSize
+        vector: {x: 0.53890955, y: 0.2571872, z: 0}
+      floats:
+      - name: _SimpleGradientThresholdA
+        value: 0.18205263
+      - name: _SimpleGradientThresholdB
+        value: 0.6646328
+      - name: _Rescale
+        value: 0.10086186
+      - name: _AngleOffset
+        value: 34.9154
+      - name: _VoronoiGradientThresholdA
+        value: 0.44096196
+      - name: _VoronoiGradientThresholdB
+        value: 0.7765193
+      - name: _DisplacementScale
+        value: 0.017242922
+      - name: _VertexAngleOffset
+        value: 7.0390925
+      ranges:
+      - name: _NoiseType
+        range:
+          min: 0
+          max: 1
+          value: 1
+      texs: []
+      ints: []
+  - state: 5
+    timeScale: 0.1
+    patternDir: {x: 0, y: -1}
+    patternAttributes:
+      colors: []
+      vectors:
+      - name: _SimpleCenter
+        vector: {x: -0.009315327, y: -0.11, z: 0}
+      - name: _SimpleSize
+        vector: {x: 0.8366008, y: 0.95222616, z: 0}
+      - name: _VoronoiCenter
+        vector: {x: 0.08723605, y: -0.11, z: 0}
+      - name: _VoronoiSize
+        vector: {x: 0.53890955, y: 0.2571872, z: 0}
+      floats:
+      - name: _SimpleGradientThresholdA
+        value: 0.18205263
+      - name: _SimpleGradientThresholdB
+        value: 0.6646328
+      - name: _Rescale
+        value: 0.10086186
+      - name: _AngleOffset
+        value: 34.9154
+      - name: _VoronoiGradientThresholdA
+        value: 0.44096196
+      - name: _VoronoiGradientThresholdB
+        value: 0.7765193
+      - name: _DisplacementScale
+        value: 0.017242922
+      - name: _VertexAngleOffset
+        value: 7.0390925
+      ranges:
+      - name: _NoiseType
+        range:
+          min: 0
+          max: 1
+          value: 1
+      texs: []
+      ints: []
+  - state: 6
+    timeScale: 0.1
+    patternDir: {x: 0, y: -1}
+    patternAttributes:
+      colors: []
+      vectors:
+      - name: _SimpleCenter
+        vector: {x: -0.009315327, y: -0.11, z: 0}
+      - name: _SimpleSize
+        vector: {x: 0.8366008, y: 0.95222616, z: 0}
+      - name: _VoronoiCenter
+        vector: {x: 0, y: 0.1, z: 0}
+      - name: _VoronoiSize
+        vector: {x: 0.75, y: 0.5, z: 0}
+      floats:
+      - name: _SimpleGradientThresholdA
+        value: 0.18205263
+      - name: _SimpleGradientThresholdB
+        value: 0.6646328
+      - name: _Rescale
+        value: 0.10086186
+      - name: _AngleOffset
+        value: 34.9154
+      - name: _VoronoiGradientThresholdA
+        value: 0.4
+      - name: _VoronoiGradientThresholdB
+        value: 0.45
+      - name: _DisplacementScale
+        value: 0.017242922
+      - name: _VertexAngleOffset
+        value: 7.0390925
+      ranges:
+      - name: _NoiseType
+        range:
+          min: 0
+          max: 1
+          value: 0.9
+      texs: []
+      ints: []
+  bodies:
+  - {fileID: 5743761698440664639}
+  changeTime: 0
+  changeCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!136 &9136031627689219233
 CapsuleCollider:
   m_ObjectHideFlags: 0
