@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,42 +12,18 @@ public class NewspaperMovement : MonoBehaviour
     [SerializeField] private GameObject newspaper3;
     [SerializeField] private GameObject authorizationForm;
     public float duration = 1f;
+    public float delayBetweenMoves = 1f;
 
-    private int moveCounter;
+    private int moveCounter = 0;
+    private bool isMoving = false;
 
-    private Vector3 startPosition;
-
-    private float elapsedTime = 0f;
-
-    // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(MoveNewspapersSequentially());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (moveCounter < 3)
-        {
-            switch (moveCounter)
-            {
-                case 0:
-                    MoveObject(newspaper1, targetTransform1);
-                    break;
-
-                case 1:
-                    MoveObject(newspaper2, targetTransform2);
-                    break;
-
-                case 2:
-                    MoveObject(newspaper3 , targetTransform3);
-                    break;
-            }
-        }
-
-
-
         if (Keyboard.current.enterKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame)
         {
             authorizationForm.SetActive(true);
@@ -56,26 +31,30 @@ public class NewspaperMovement : MonoBehaviour
         }
     }
 
-    public void MoveObject(GameObject newspaper, Transform transform)
+    private IEnumerator MoveNewspapersSequentially()
     {
-        if (elapsedTime < duration)
+        yield return StartCoroutine(MoveObject(newspaper1, targetTransform1));
+        yield return new WaitForSeconds(delayBetweenMoves);
+
+        yield return StartCoroutine(MoveObject(newspaper2, targetTransform2));
+        yield return new WaitForSeconds(delayBetweenMoves);
+
+        yield return StartCoroutine(MoveObject(newspaper3, targetTransform3));
+    }
+
+    private IEnumerator MoveObject(GameObject newspaper, Transform targetTransform)
+    {
+        Vector3 startPosition = newspaper.transform.position;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
-
-            // Smoothly interpolate position
-            newspaper.transform.position = Vector3.Lerp(startPosition, transform.position, t);
+            newspaper.transform.position = Vector3.Lerp(startPosition, targetTransform.position, t);
+            yield return null;
         }
 
-        // Ensure final position and scale are exact
-        newspaper.transform.position = transform.position;
-
-        StartCoroutine(Delay());
-    }
-
-    private IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(1);
-        moveCounter++;
+        newspaper.transform.position = targetTransform.position;
     }
 }
