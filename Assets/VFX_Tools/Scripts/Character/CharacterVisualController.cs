@@ -40,7 +40,7 @@ public class CharacterVisualController : MonoBehaviour
 
 
 
-    private Vector2 currentTimes;
+    private Vector2 currentTimes = new Vector2();
 
     // If currently in the process of changing then hold onto next
     // Overwrites this if multiple changes are requested 
@@ -62,8 +62,9 @@ public class CharacterVisualController : MonoBehaviour
     void Update()
     {
         Vector2 dir = currentDirction.normalized;
-        currentTimes += Time.deltaTime * currentTimeScale * dir;
+        currentTimes = currentTimes + Time.deltaTime * currentTimeScale * dir;
 
+        
         // Pass in manual material properties 
         for (int i = 0; i < bodies.Count; i++)
         {
