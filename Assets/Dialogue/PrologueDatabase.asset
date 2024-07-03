@@ -234,7 +234,7 @@ MonoBehaviour:
       - originConversationID: 1
         originDialogueID: 0
         destinationConversationID: 1
-        destinationDialogueID: 1
+        destinationDialogueID: 31
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1918,9 +1918,67 @@ MonoBehaviour:
         y: 889.12976
         width: 160
         height: 30
+    - id: 31
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'LookAt(Journalist, Tour Guide);
+
+          MoveTo(Tour Guide, Journalist,
+          2);'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 31
+        destinationConversationID: 1
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 937.04865
+        y: 83.27869
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 353.25766, y: 264.0518}
-    canvasZoom: 0.85000014
+    canvasScrollPosition: {x: 439.02362, y: 0}
+    canvasZoom: 0.9100001
   - id: 2
     fields:
     - title: Title
