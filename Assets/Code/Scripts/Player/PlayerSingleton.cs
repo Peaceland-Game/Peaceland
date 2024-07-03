@@ -16,10 +16,10 @@ public class PlayerSingleton : MonoBehaviour
     public bool paused = false;
     private FirstPersonController controller;
     public bool isMouseLocked;
-
+    public Selector selector;
+    public bool playerInMemorySelection = false;
     [SerializeField]
     private Transform carryPos;
-
     private Transform heldItem;
 
     // Start is called before the first frame update
@@ -42,6 +42,7 @@ public class PlayerSingleton : MonoBehaviour
 
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -53,23 +54,43 @@ public class PlayerSingleton : MonoBehaviour
     public void DisableMovement()
     {
         controller.enabled = false;
+        selector.enabled = false;
+
+
     }
     public void EnableMovement()
     {
         controller.enabled = true;
+        selector.enabled = true;
+    }
+    public void SelectMemoryString()
+    {
+        DisableMovement();
+        playerInMemorySelection = true;
+        userInterface.ToggleMemorySelectUI(true);
+    }
+    public void DeselectMemory()
+    {
+        EnableMovement();
+        playerInMemorySelection = false;
+        userInterface.ToggleMemorySelectUI(false);
     }
 
     void HandleInterfaceInput()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (!playerInMemorySelection)
         {
-            Debug.Log("escape pressed");
-            
-            paused = !paused;
-            Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
-            userInterface.TogglePauseMenu(paused);
-            controller.enabled = !paused;
+            Debug.Log("player not in memory select");
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                Debug.Log("escape pressed");
 
+                paused = !paused;
+                Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
+                userInterface.TogglePauseMenu(paused);
+                controller.enabled = !paused;
+
+            }
         }
         //else if (Keyboard.current.jKey.wasPressedThisFrame)
         //{

@@ -6,7 +6,7 @@ public class UserInterface : MonoBehaviour
 {
     [SerializeField] private GameObject journal;
     public ScrollToBottom scrollToBottom;  // Reference to the ScrollToBottom script
-
+    public GameObject memorySelectUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,5 +38,9 @@ public class UserInterface : MonoBehaviour
 
     public void Exit() {
         Application.Quit();
+    }
+    public void ToggleMemorySelectUI(bool active)
+    {
+        memorySelectUI.SetActive(active);
     }
 }

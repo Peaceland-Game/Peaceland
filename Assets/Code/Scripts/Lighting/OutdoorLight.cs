@@ -34,12 +34,12 @@ public class OutdoorLight : MonoBehaviour
         // Assuming the profile name contains "Night" for night profiles
         if (profile.name.Contains("Night"))
         {
-            Debug.Log($"Turning on {name}");
+           // Debug.Log($"Turning on {name}");
             lightComponent.intensity = nightIntensity;
         }
         else
         {
-            Debug.Log($"Turning off {name}");
+           // Debug.Log($"Turning off {name}");
             lightComponent.intensity = dayIntensity;
         }
     }
