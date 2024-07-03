@@ -50,6 +50,14 @@ public class PlayerSingleton : MonoBehaviour
 
 
     }
+    public void DisableMovement()
+    {
+        controller.enabled = false;
+    }
+    public void EnableMovement()
+    {
+        controller.enabled = true;
+    }
 
     void HandleInterfaceInput()
     {
