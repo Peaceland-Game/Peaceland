@@ -20,7 +20,7 @@ public class ScreenFader : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Debug.Log("screen fader awake");
+        //Debug.Log("screen fader awake");
         fadeImage = GetComponent<Image>();
     }
 

@@ -16,22 +16,22 @@ public class FogController : MonoBehaviour
     public float fadeDuration = 1f; // Duration of the fade effect
 
 
-    private List<SphereCollider> playableArea = new();
+    private List<Collider> playableArea = new();
     private List<ParticleSystem> fogEmitters = new List<ParticleSystem>();
     private Quaternion lastValidRotation;
     private Vector3 lastValidPosition;
     private bool isOutsidePlayArea = false;
     private bool teleportedPlayer = false;
 
-    private SphereCollider lastContainer = null;
+    private Collider lastContainer = null;
 
     
 
     void Start()
     {
 
-        playableArea = GetComponentsInChildren<SphereCollider>().ToList();
-        
+        playableArea = GetComponentsInChildren<Collider>().ToList();
+        Debug.Log(playableArea.Count);
 
         for (int i = 0; i < emitterCount; i++)
         {
@@ -52,7 +52,7 @@ public class FogController : MonoBehaviour
         {
             if (coll && coll.bounds.Contains(player.position))
             {
-              //  Debug.Log($"player inside container: {coll.gameObject.name}");
+               // Debug.Log($"player inside container: {coll.gameObject.name}");
                 lastContainer = coll;
                 return true;
             }
@@ -63,7 +63,7 @@ public class FogController : MonoBehaviour
     void Update()
     {
         bool playerInBounds = CheckPlayerBounds();
-        //Debug.Log(playerInBounds);
+       // Debug.Log(playerInBounds);
         if (playerInBounds)
         {
             isOutsidePlayArea = false;
