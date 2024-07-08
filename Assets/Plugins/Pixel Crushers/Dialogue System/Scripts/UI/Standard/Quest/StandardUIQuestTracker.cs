@@ -233,6 +233,7 @@ namespace PixelCrushers.DialogueSystem
 
         protected virtual void AddQuestTrack(string quest)
         {
+            Debug.Log(quest);
             if (container == null || questTrackTemplate == null) return;
 
             var heading = GetQuestHeading(quest);
@@ -277,6 +278,8 @@ namespace PixelCrushers.DialogueSystem
 
         protected virtual void SetupQuestTrackInstance(StandardUIQuestTrackTemplate questTrack, string quest, string heading)
         {
+          //  Debug.Log(quest);
+          //  Debug.Log(heading);
             if (questTrack == null) return;
             questTrack.Initialize();
             var questState = QuestLog.GetQuestState(quest);

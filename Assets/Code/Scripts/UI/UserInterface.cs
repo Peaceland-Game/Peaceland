@@ -7,6 +7,7 @@ public class UserInterface : MonoBehaviour
     [SerializeField] private GameObject journal;
     public ScrollToBottom scrollToBottom;  // Reference to the ScrollToBottom script
     public GameObject memorySelectUI;
+    [SerializeField] GameObject loadScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,17 @@ public class UserInterface : MonoBehaviour
         //if (state == PlayerMovement.MovementState.Talking) return;
         //Time.timeScale = menuActive ? 0 : 1;
         //Cursor.lockState = menuActive ? CursorLockMode.None : CursorLockMode.Locked;
+    }
+    public void EnableLoadScreen()
+    {
+        if (!loadScreen.activeInHierarchy)
+        {
+            loadScreen.SetActive(true);
+        }
+    }
+    public void DisableLoadScreen()
+    {
+        loadScreen.SetActive(false);
     }
 
     public void Exit() {

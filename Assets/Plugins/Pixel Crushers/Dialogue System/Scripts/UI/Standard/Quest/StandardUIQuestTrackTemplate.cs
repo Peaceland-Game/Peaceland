@@ -79,6 +79,7 @@ namespace PixelCrushers.DialogueSystem
 
         public virtual void AddEntryDescription(string text, QuestState entryState)
         {
+            Debug.Log("add entry description");
             if (entryContainer == null)
             {
                 // No container, so make entryDescription a big multi-line string:

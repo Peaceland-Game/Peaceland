@@ -16,18 +16,30 @@ public struct MemoryObjectPair
     public GameObject memoryObject;
     public TimeOfDay timeOfDay;
 }
+
+
 public class MemorySwapper : MonoBehaviour
 {
 
     public static MemorySwapper Instance;
     public DynamicLightingController lightingController;
     public List<MemoryObjectPair> memoryObjects = new List<MemoryObjectPair>();
+    public bool LoadMemoryOnStart = true;
+    public int MemoryIndex = 0;
+    [SerializeField] private UserInterface userInterface;
+    public 
 
     void Start()
     {
         if (!Instance)
         {
             Instance = this;
+            if (LoadMemoryOnStart)
+                SwitchToMemory(MemoryIndex);
+            if (!userInterface)
+            {
+                userInterface = GameObject.FindWithTag("UI").GetComponent<UserInterface>();
+            }
         }
         else
         {
@@ -37,6 +49,7 @@ public class MemorySwapper : MonoBehaviour
 
     public void SwitchToMemory(double index)
     {
+        userInterface.EnableLoadScreen();
         var ind = (int)Mathf.Floor((float)index);
         if (ind < 0 || ind >= memoryObjects.Count)
         {
@@ -63,8 +76,9 @@ public class MemorySwapper : MonoBehaviour
         // Change the lighting profile
         if (lightingController != null)
         {
-            lightingController.TransitionToProfile(selectedMemory.timeOfDay, 2f); // 2 second transition
+            lightingController.TransitionToProfile(selectedMemory.timeOfDay, 2f, userInterface); // 2 second transition
         }
+        
     }
 
     void OnEnable()

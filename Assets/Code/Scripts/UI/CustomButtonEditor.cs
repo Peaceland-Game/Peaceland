@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 
+#if (UNITY_EDITOR)
 namespace UnityEditor.UI
 {
     [CustomEditor(typeof(CustomButton), true)]
@@ -29,3 +30,4 @@ namespace UnityEditor.UI
         }
     }
 }
+#endif

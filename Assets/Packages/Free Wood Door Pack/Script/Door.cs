@@ -17,10 +17,12 @@ namespace DoorScript
         public AudioSource asource;
         public AudioClip openDoor, closeDoor;
 
-       // public bool locked = false;
+        public bool unlockOnUse = true;
+
+        // public bool locked = false;
 
         //public LockBehaviour lockObject;
-      //  public Transform playerPos;
+        //  public Transform playerPos;
 
         public enum DoorState
         {
@@ -50,10 +52,10 @@ namespace DoorScript
 
         public void OpenDoor()
         {
+            if (!unlockOnUse) return;
             if (state == DoorState.NotMoving)
             {
-                var collider = GetComponent<BoxCollider>();
-                //collider.enabled = false;
+                DisableColliderOnOpen();
                 state = DoorState.Moving;
                 if (open) { target = Quaternion.Euler(0, DoorCloseAngle, 0); }
                 else { target = Quaternion.Euler(0, DoorOpenAngle, 0); }
@@ -62,6 +64,14 @@ namespace DoorScript
                 asource.clip = open ? openDoor : closeDoor;
                 asource.Play();
             }
+        }
+        void DisableColliderOnOpen()
+        {
+            
+
+            var collider = GetComponent<BoxCollider>();
+            collider.enabled = false;
+           // Debug.Log($"disabled {name} collider");
         }
         void OnUse(Transform player)
         {
@@ -72,6 +82,10 @@ namespace DoorScript
           //  locked  = false;
             OpenDoor();
         }
+
+
+
+
         //public void StartLockpicking()
         //{
         //    if (!locked || !lockObject)
