@@ -26,55 +26,55 @@ public class DynamicLightingController : MonoBehaviour
     }
     private void Update()
     {
-        HandleDayChangeInput();
+        //HandleDayChangeInput();
         //// Check if the test profile should be applied
         if (applyTestProfile)
         {
             applyTestProfile = false; // Reset the flag
-            ApplyProfile(lightingProfiles[testProfileIndex]);
+            ApplyProfile(lightingProfiles[testProfileIndex], GameObject.FindWithTag("UI").GetComponent<UserInterface>());
             currentProfileIndex = testProfileIndex;
             Debug.Log($"Applied profile: {lightingProfiles[testProfileIndex].name}");
         }
     }
-    private void HandleDayChangeInput()
-    {
-        if (Keyboard.current.digit1Key.wasPressedThisFrame)
-        {
-            Debug.Log("Transitioning to Day");
-            TransitionToProfile(0, 5);
-        }
-        else if (Keyboard.current.digit2Key.wasPressedThisFrame)
-        {
-            Debug.Log("Transitioning to Evening");
-            TransitionToProfile(1, 5);
-        }
-        else if (Keyboard.current.digit3Key.wasPressedThisFrame)
-        {
-            Debug.Log("Transitioning to Night");
-            TransitionToProfile(2, 5);
-        }
-    }
+    //private void HandleDayChangeInput()
+    //{
+    //    if (Keyboard.current.digit1Key.wasPressedThisFrame)
+    //    {
+    //        Debug.Log("Transitioning to Day");
+    //        TransitionToProfile(0, 5);
+    //    }
+    //    else if (Keyboard.current.digit2Key.wasPressedThisFrame)
+    //    {
+    //        Debug.Log("Transitioning to Evening");
+    //        TransitionToProfile(1, 5);
+    //    }
+    //    else if (Keyboard.current.digit3Key.wasPressedThisFrame)
+    //    {
+    //        Debug.Log("Transitioning to Night");
+    //        TransitionToProfile(2, 5);
+    //    }
+    //}
 
-    public void TransitionToNextProfile()
+    public void TransitionToNextProfile(UserInterface userInterface)
     {
         int nextProfileIndex = (currentProfileIndex + 1) % lightingProfiles.Length;
-        TransitionToProfile(nextProfileIndex, 5f); // 5 second transition
+        TransitionToProfile(nextProfileIndex, 5f, userInterface); // 5 second transition
     }
-    public void TransitionToProfile(TimeOfDay timeOfDay, float duration)
+    public void TransitionToProfile(TimeOfDay timeOfDay, float duration, UserInterface userInterface)
     {
         int profileIndex = (int)timeOfDay;
-        TransitionToProfile(profileIndex, duration);
+        TransitionToProfile(profileIndex, duration, userInterface);
     }
-    private void TransitionToProfile(int profileIndex, float duration)
+    private void TransitionToProfile(int profileIndex, float duration, UserInterface userInterface)
     {
         if (transitionCoroutine != null)
         {
             StopCoroutine(transitionCoroutine);
         }
-        transitionCoroutine = StartCoroutine(TransitionCoroutine(profileIndex, duration));
+        transitionCoroutine = StartCoroutine(TransitionCoroutine(profileIndex, duration, userInterface));
     }
 
-    private IEnumerator TransitionCoroutine(int targetProfileIndex, float duration)
+    private IEnumerator TransitionCoroutine(int targetProfileIndex, float duration, UserInterface userInterface)
     {
         Debug.Log($"Starting transition from profile {currentProfileIndex} to {targetProfileIndex}");
         LightingProfile startProfile = lightingProfiles[currentProfileIndex];
@@ -89,10 +89,11 @@ public class DynamicLightingController : MonoBehaviour
             yield return null;
         }
 
-        ApplyProfile(targetProfile);
+        ApplyProfile(targetProfile, userInterface);
         int oldProfileIndex = currentProfileIndex;
         currentProfileIndex = targetProfileIndex;
         Debug.Log($"Transition complete. Current profile is now {currentProfileIndex}");
+
 
         // Raise the event
         RaiseLightingProfileChangedEvent(startProfile, targetProfile, currentProfileIndex);
@@ -138,7 +139,7 @@ public class DynamicLightingController : MonoBehaviour
         // Note: Unity doesn't have a built-in way to set fog gradient, you might need to use a custom shader for this
     }
 
-    private void ApplyProfile(LightingProfile profile)
+    private void ApplyProfile(LightingProfile profile, UserInterface userInterface)
     {
         // Apply all settings directly without interpolation
         // Skybox
@@ -174,6 +175,8 @@ public class DynamicLightingController : MonoBehaviour
         RenderSettings.fogDensity = profile.fogDensity;
         RenderSettings.fogStartDistance = profile.fogHeight;
 
+
+        userInterface.DisableLoadScreen();
         // Post-processing
         // You'll need to implement a way to switch between volume profiles if you're using URP or HDRP
     }
