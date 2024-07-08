@@ -3,37 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// Controls a single memory string of memory photos
+/// </summary>
 public class MemoryString : MonoBehaviour
 {
-    public List<MemoryTreePhoto> photos = new();
-   // [HideInInspector] public List<Transform> cameraAnchors = new();
-   // private List<Canvas> photoDescriptions = new();
-
-  //  public List<bool> memoriesCompleted = new();
-
-   
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log(photos.Count);
-        //photos.ForEach(photo =>
-        //{
-        //    cameraAnchors.Add(photo.GetComponentInChildren<CameraAnchor>().transform);
-        //    photoDescriptions.Add(photo.GetComponentInChildren<Canvas>());
-        //    memoriesCompleted.Add(false);
-        //});
-
-
-    }
+    public List<MemoryTreePhoto> photos = new();    //list of all of the memory photos
+    
+    /// <summary>
+    /// Set the photo as active by showing the description
+    /// </summary>
+    /// <param name="activePhoto">The photo to activate</param>
     public void SelectPhoto(MemoryTreePhoto activePhoto)
     {
         activePhoto.ToggleDescription(true);
     }
+    /// <summary>
+    /// Deselect photo by hiding description 
+    /// </summary>
+    /// <param name="activePhoto">photo description to hide</param>
     public void DeselectPhoto(MemoryTreePhoto activePhoto)
     {
         activePhoto.ToggleDescription(false);
     }
     
+    /// <summary>
+    /// Gets the active photo by finding the first uncompleted memory
+    /// </summary>
+    /// <returns>A reference to the first photo that is not marked as completed</returns>
     public MemoryTreePhoto GetActivePhoto()
     {
 
@@ -45,17 +42,6 @@ public class MemoryString : MonoBehaviour
 
         return null;
     }
-
-    //public bool StringCompleted()
-    //{
-    //    for (int i = 0; i < photos.Count; i++)
-    //    {
-    //        if (!memoriesCompleted[i]) return false;
-    //    }
-    //    return true;
-
-    //}
-    
 
 
 }

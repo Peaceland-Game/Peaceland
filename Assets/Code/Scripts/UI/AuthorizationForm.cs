@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Represents the form the player must sign at the beginning of the game
+/// </summary>
 public class AuthorizationForm : MonoBehaviour
 {
     /// <summary>

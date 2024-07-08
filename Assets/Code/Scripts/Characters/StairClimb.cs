@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Helps the rigid body controller move up stairs
+/// </summary>
 public class StairClimb : MonoBehaviour
 {
     Rigidbody rigidBody;
@@ -14,6 +16,9 @@ public class StairClimb : MonoBehaviour
         rigidBody = playerBody.GetComponent<Rigidbody>();
     }
 
+    /// <summary>
+    /// Draws rays to help position step height game objects
+    /// </summary>
     private void OnDrawGizmos()
     {
         if (!playerBody) return;
@@ -32,6 +37,9 @@ public class StairClimb : MonoBehaviour
         StepClimb();
     }
 
+    /// <summary>
+    /// Moves the rigid body up if the forward raycasts detect a step
+    /// </summary>
     void StepClimb()
     {
         Vector3 forward = GetForwardDirection();
@@ -51,6 +59,12 @@ public class StairClimb : MonoBehaviour
         CheckAngle(lowerOrigin, upperOrigin, Quaternion.Euler(0, -45, 0) * forward);
     }
 
+    /// <summary>
+    /// check for step in the given direction 
+    /// </summary>
+    /// <param name="lowerOrigin">foot position</param>
+    /// <param name="upperOrigin">highest step position</param>
+    /// <param name="direction">direction to send the raycast</param>
     void CheckAngle(Vector3 lowerOrigin, Vector3 upperOrigin, Vector3 direction)
     {
         if (Physics.Raycast(lowerOrigin, direction, out RaycastHit hitLower, raycastDistance))
@@ -61,7 +75,10 @@ public class StairClimb : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// get a x/z direction vector of the forward direction of the player
+    /// </summary>
+    /// <returns></returns>
     Vector3 GetForwardDirection()
     {
         // Use camera's forward direction, but ignore pitch

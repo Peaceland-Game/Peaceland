@@ -9,7 +9,7 @@ public class SceneLoader : MonoBehaviour
     public List<string> sceneNames = new List<string>(); // List of scenes to load
     public GameObject loadingScreen; // Reference to the loading screen GameObject
     public Slider progressBar; // Reference to the loading progress bar (optional)
-    public GameObject player;
+    public GameObject player; 
     public GameObject loaderCamera;
     void Start()
     {
