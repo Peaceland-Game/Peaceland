@@ -27,7 +27,7 @@ public class MemorySwapper : MonoBehaviour
     public bool LoadMemoryOnStart = true;
     public int MemoryIndex = 0;
     [SerializeField] private UserInterface userInterface;
-    public 
+    
 
     void Start()
     {
@@ -71,6 +71,7 @@ public class MemorySwapper : MonoBehaviour
         if (selectedMemory.memoryObject != null)
         {
             selectedMemory.memoryObject.SetActive(true);
+            
         }
 
         // Change the lighting profile
