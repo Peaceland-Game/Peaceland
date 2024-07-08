@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class FogController : MonoBehaviour
 {
@@ -15,18 +16,21 @@ public class FogController : MonoBehaviour
     public float fadeDuration = 1f; // Duration of the fade effect
 
 
-    private Collider playableArea;
+    private List<SphereCollider> playableArea = new();
     private List<ParticleSystem> fogEmitters = new List<ParticleSystem>();
     private Quaternion lastValidRotation;
     private Vector3 lastValidPosition;
     private bool isOutsidePlayArea = false;
     private bool teleportedPlayer = false;
+
+    private SphereCollider lastContainer = null;
+
     
 
     void Start()
     {
-        
-        playableArea = GetComponent<SphereCollider>();
+
+        playableArea = GetComponentsInChildren<SphereCollider>().ToList();
         
 
         for (int i = 0; i < emitterCount; i++)
@@ -41,20 +45,42 @@ public class FogController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(lastValidPosition, 1f);
     }
+    bool CheckPlayerBounds()
+    {
+       // Debug.Log(player.position);
+        foreach (var coll in playableArea)
+        {
+            if (coll && coll.bounds.Contains(player.position))
+            {
+              //  Debug.Log($"player inside container: {coll.gameObject.name}");
+                lastContainer = coll;
+                return true;
+            }
+        }
+        return false;
+    }
 
     void Update()
     {
-        if (!playableArea.bounds.Contains(player.position))
+        bool playerInBounds = CheckPlayerBounds();
+        //Debug.Log(playerInBounds);
+        if (playerInBounds)
+        {
+            isOutsidePlayArea = false;
+            lastValidPosition = player.position;
+            DisableFogEmitters();
+        }
+        else
         {
             if (!isOutsidePlayArea)
             {
                 // Player just exited the play area
                 isOutsidePlayArea = true;
                 lastValidRotation = player.rotation;
-                lastValidPosition = playableArea.ClosestPoint(player.position);
+                lastValidPosition = GetClosestPointOnColliders(player.position);
             }
 
-            float distanceOutside = Vector3.Distance(playableArea.ClosestPoint(player.position), player.position);
+            float distanceOutside = Vector3.Distance(GetClosestPointOnColliders(player.position), player.position);
 
             if (distanceOutside > teleportDistance && !teleportedPlayer)
             {
@@ -70,19 +96,31 @@ public class FogController : MonoBehaviour
                 DisableFogEmitters();
             }
         }
-        else
+    }
+    Vector3 GetClosestPointOnColliders(Vector3 position)
+    {
+        Vector3 closestPoint = Vector3.zero;
+        float closestDistance = float.MaxValue;
+
+        foreach (var coll in playableArea)
         {
-            isOutsidePlayArea = false;
-            lastValidPosition = player.position;
-            DisableFogEmitters();
+            Vector3 point = coll.ClosestPoint(position);
+            float distance = Vector3.Distance(position, point);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestPoint = point;
+            }
         }
 
+        return closestPoint;
     }
 
     void UpdateFogEmitters()
     {
-        
-        Vector3 directionFromCenter = (player.position - playableArea.bounds.center).normalized;
+        if (!lastContainer) return;
+
+        Vector3 directionFromCenter = (player.position - lastContainer.bounds.center).normalized;
         Vector3 spawnPosition = player.position + directionFromCenter * emitterSpawnDistance;
 
         for (int i = 0; i < fogEmitters.Count; i++)
@@ -120,18 +158,14 @@ public class FogController : MonoBehaviour
         teleportedPlayer = true;
         var playerMovementScript = player.GetComponent<FirstPersonController>();
         playerMovementScript.enabled = false;
-        // Calculate the reversed direction
-        Vector3 forwardDirection = lastValidRotation * Vector3.forward;
-        forwardDirection.y = 0; // Keep only the horizontal component
-        Vector3 reversedDirection = -forwardDirection.normalized;
 
-        // Create a rotation facing the reversed direction
+        Vector3 forwardDirection = lastValidRotation * Vector3.forward;
+        forwardDirection.y = 0;
+        Vector3 reversedDirection = -forwardDirection.normalized;
         Quaternion newRotation = Quaternion.LookRotation(reversedDirection);
 
-        // Use the ScreenFader to fade, teleport, and then fade back
         ScreenFader.instance.FadeAndTeleport(fadeDuration, () => {
-            // This code runs when the screen is fully faded (black)
-            player.position = lastValidPosition;
+            player.position = GetClosestPointOnColliders(player.position);
             player.rotation = Quaternion.Euler(player.rotation.eulerAngles.x, newRotation.eulerAngles.y, 0);
             playerMovementScript.enabled = true;
             teleportedPlayer = false;
