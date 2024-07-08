@@ -39,7 +39,7 @@ public class FirstPersonController : MonoBehaviour
     // Internal Variables
     private float yaw = 0.0f;
     private float pitch = 0.0f;
-    private Image crosshairObject;
+   // private Image crosshairObject;
 
     #region Camera Zoom Variables
 
@@ -137,7 +137,7 @@ public class FirstPersonController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        crosshairObject = GetComponentInChildren<Image>();
+       // crosshairObject = GetComponentInChildren<Image>();
 
         // Set internal variables
         playerCamera.fieldOfView = fov;
@@ -158,15 +158,15 @@ public class FirstPersonController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        if(crosshair)
-        {
-            crosshairObject.sprite = crosshairImage;
-            crosshairObject.color = crosshairColor;
-        }
-        else
-        {
-            crosshairObject.gameObject.SetActive(false);
-        }
+        //if(crosshair)
+        //{
+        //    crosshairObject.sprite = crosshairImage;
+        //    crosshairObject.color = crosshairColor;
+        //}
+        //else
+        //{
+        //    crosshairObject.gameObject.SetActive(false);
+        //}
 
         #region Sprint Bar
 

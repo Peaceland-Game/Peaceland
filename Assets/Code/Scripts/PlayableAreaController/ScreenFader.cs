@@ -11,6 +11,7 @@ public class ScreenFader : MonoBehaviour
 
     private void Awake()
     {
+        
         if (instance == null)
         {
             instance = this;
@@ -19,7 +20,7 @@ public class ScreenFader : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        Debug.Log("screen fader awake");
         fadeImage = GetComponent<Image>();
     }
 
