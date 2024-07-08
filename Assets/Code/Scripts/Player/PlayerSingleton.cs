@@ -21,6 +21,7 @@ public class PlayerSingleton : MonoBehaviour
     [SerializeField]
     private Transform carryPos;
     private Transform heldItem;
+  // public bool playerInHub = false;
 
     // Start is called before the first frame update
     void Start()
@@ -80,10 +81,10 @@ public class PlayerSingleton : MonoBehaviour
     {
         if (!playerInMemorySelection)
         {
-            Debug.Log("player not in memory select");
+           // Debug.Log("player not in memory select");
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
-                Debug.Log("escape pressed");
+             //   Debug.Log("escape pressed");
 
                 paused = !paused;
                 Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
