@@ -550,6 +550,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: CustomFieldType_Text
+  - id: 15
+    fields:
+    - title: Name
+      value: SpokeToWaeli
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: if the player has already spoken to waeli once
+      type: 0
+      typeString: CustomFieldType_Text
   conversations:
   - id: 27
     fields:
@@ -4991,7 +5005,7 @@ MonoBehaviour:
         destinationDialogueID: 36
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["SpokeToWaeli"] == false
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -5029,10 +5043,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(Medium, Waeli, 0.5);
-
-          SetEnabled(Usable, false,
-          Waeli);'
+        value: Camera(Medium, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -5050,7 +5061,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["SpokeToWaeli"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5171,8 +5182,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 75.47171, y: 1159.1421}
-    canvasZoom: 1.06
+    canvasScrollPosition: {x: 14.754028, y: 0}
+    canvasZoom: 0.6100004
   - id: 28
     fields:
     - title: Title
