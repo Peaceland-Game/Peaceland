@@ -14,12 +14,6 @@ public class DialogueSkipper : MonoBehaviour
 
     private FieldInfo[] fields;
 
-    //void Start()
-    //{
-
-    //    // Get all public instance fields of this class
-
-    //}
 #if (UNITY_EDITOR)
     public void Skip()
     {
