@@ -71,7 +71,7 @@ namespace DoorScript
 
             var collider = GetComponent<BoxCollider>();
             collider.enabled = false;
-            Debug.Log($"disabled {name} collider");
+           // Debug.Log($"disabled {name} collider");
         }
         void OnUse(Transform player)
         {
