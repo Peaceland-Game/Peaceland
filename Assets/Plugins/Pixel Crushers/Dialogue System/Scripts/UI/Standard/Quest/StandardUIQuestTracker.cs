@@ -233,7 +233,7 @@ namespace PixelCrushers.DialogueSystem
 
         protected virtual void AddQuestTrack(string quest)
         {
-            Debug.Log(quest);
+          //  Debug.Log(quest);
             if (container == null || questTrackTemplate == null) return;
 
             var heading = GetQuestHeading(quest);

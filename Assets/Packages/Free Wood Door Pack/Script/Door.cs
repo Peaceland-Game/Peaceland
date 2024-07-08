@@ -55,7 +55,7 @@ namespace DoorScript
             if (!unlockOnUse) return;
             if (state == DoorState.NotMoving)
             {
-                DisableColliderOnOpen();
+              //  DisableColliderOnOpen();
                 state = DoorState.Moving;
                 if (open) { target = Quaternion.Euler(0, DoorCloseAngle, 0); }
                 else { target = Quaternion.Euler(0, DoorOpenAngle, 0); }
@@ -70,7 +70,7 @@ namespace DoorScript
             
 
             var collider = GetComponent<BoxCollider>();
-            collider.enabled = false;
+            //collider.enabled = false;
            // Debug.Log($"disabled {name} collider");
         }
         void OnUse(Transform player)

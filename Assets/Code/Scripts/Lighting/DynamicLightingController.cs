@@ -18,6 +18,7 @@ public class DynamicLightingController : MonoBehaviour
     [SerializeField] private int testProfileIndex = 0;
     [SerializeField] private bool applyTestProfile = false;
     public event System.EventHandler<LightingProfileChangedEventArgs> OnLightingProfileChanged;
+    [SerializeField] private DialogueSkipper dialogueSkipper;
 
     // Method to trigger the event
     protected virtual void RaiseLightingProfileChangedEvent(LightingProfile oldProfile, LightingProfile newProfile, int newProfileIndex)
@@ -85,6 +86,10 @@ public class DynamicLightingController : MonoBehaviour
         {
             float t = elapsedTime / duration;
             InterpolateLightingSettings(startProfile, targetProfile, t);
+
+            // Update the loading progress
+            userInterface.UpdateLoadingProgress(t);
+
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -94,6 +99,12 @@ public class DynamicLightingController : MonoBehaviour
         currentProfileIndex = targetProfileIndex;
         Debug.Log($"Transition complete. Current profile is now {currentProfileIndex}");
 
+        // Ensure the loading progress is set to 100% at the end
+        userInterface.UpdateLoadingProgress(1f);
+        if (dialogueSkipper)
+        {
+            dialogueSkipper.Skip();
+        }
 
         // Raise the event
         RaiseLightingProfileChangedEvent(startProfile, targetProfile, currentProfileIndex);

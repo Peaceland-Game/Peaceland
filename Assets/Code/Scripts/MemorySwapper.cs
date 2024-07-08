@@ -27,7 +27,7 @@ public class MemorySwapper : MonoBehaviour
     public bool LoadMemoryOnStart = true;
     public int MemoryIndex = 0;
     [SerializeField] private UserInterface userInterface;
-    public 
+    
 
     void Start()
     {
@@ -71,12 +71,13 @@ public class MemorySwapper : MonoBehaviour
         if (selectedMemory.memoryObject != null)
         {
             selectedMemory.memoryObject.SetActive(true);
+            
         }
 
         // Change the lighting profile
         if (lightingController != null)
         {
-            lightingController.TransitionToProfile(selectedMemory.timeOfDay, 2f, userInterface); // 2 second transition
+            lightingController.TransitionToProfile(selectedMemory.timeOfDay, 1f, userInterface); // 1 second transition
         }
         
     }
