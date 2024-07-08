@@ -8,6 +8,7 @@ public class UserInterface : MonoBehaviour
     public ScrollToBottom scrollToBottom;  // Reference to the ScrollToBottom script
     public GameObject memorySelectUI;
     [SerializeField] GameObject loadScreen;
+    [SerializeField] private UnityEngine.UI.Slider loadingSlider;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +47,13 @@ public class UserInterface : MonoBehaviour
     public void DisableLoadScreen()
     {
         loadScreen.SetActive(false);
+    }
+    public void UpdateLoadingProgress(float progress)
+    {
+        if (loadingSlider != null)
+        {
+            loadingSlider.value = progress;
+        }
     }
 
     public void Exit() {

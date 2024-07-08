@@ -76,7 +76,7 @@ public class MemorySwapper : MonoBehaviour
         // Change the lighting profile
         if (lightingController != null)
         {
-            lightingController.TransitionToProfile(selectedMemory.timeOfDay, 2f, userInterface); // 2 second transition
+            lightingController.TransitionToProfile(selectedMemory.timeOfDay, 1f, userInterface); // 1 second transition
         }
         
     }

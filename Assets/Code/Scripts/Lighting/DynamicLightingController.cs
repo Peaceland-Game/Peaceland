@@ -85,6 +85,10 @@ public class DynamicLightingController : MonoBehaviour
         {
             float t = elapsedTime / duration;
             InterpolateLightingSettings(startProfile, targetProfile, t);
+
+            // Update the loading progress
+            userInterface.UpdateLoadingProgress(t);
+
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -94,6 +98,8 @@ public class DynamicLightingController : MonoBehaviour
         currentProfileIndex = targetProfileIndex;
         Debug.Log($"Transition complete. Current profile is now {currentProfileIndex}");
 
+        // Ensure the loading progress is set to 100% at the end
+        userInterface.UpdateLoadingProgress(1f);
 
         // Raise the event
         RaiseLightingProfileChangedEvent(startProfile, targetProfile, currentProfileIndex);
