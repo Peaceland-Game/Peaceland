@@ -705,7 +705,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4098262084254365962}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SKELETON
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2002,7 +2002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5863429218560485275}
   - component: {fileID: 7782374314726239279}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Character_FullControlRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2454,11 +2454,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7749066083794920656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.051, z: 0}
+  m_LocalPosition: {x: 0, y: 1.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8296885021010634926}
+  - {fileID: 5631876878488334031}
   - {fileID: 3160092228915490122}
   - {fileID: 2473142450601281425}
   - {fileID: 9139258583274367625}
@@ -2619,7 +2619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a613cfdc994b04799a7fc39959b1ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBody: {fileID: 0}
+  playerBody: {fileID: 7634586761640925721}
   raycastOriginHeight: -0.55
   stepHeight: 0.6
   stepSmooth: 2
@@ -2836,9 +2836,9 @@ GameObject:
   - component: {fileID: 1972776913729042244}
   - component: {fileID: 3935887509442386056}
   - component: {fileID: 3272614998225275217}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ChildPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2852,14 +2852,14 @@ Transform:
   m_GameObject: {fileID: 8411154095936243601}
   m_LocalRotation: {x: 0, y: -0.29213804, z: 0, w: 0.9563762}
   m_LocalPosition: {x: 103.98575, y: 78.91329, z: -109.063515}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4585463905256356060}
   - {fileID: 5863429218560485275}
   - {fileID: 4098262084254365962}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -33.972, z: 0}
 --- !u!114 &3331003125086830276
 MonoBehaviour:
@@ -3248,8 +3248,8 @@ MonoBehaviour:
   fov: 60
   invertCamera: 0
   cameraCanMove: 1
-  mouseSensitivity: 5
-  maxLookAngle: 50
+  mouseSensitivity: 4
+  maxLookAngle: 60
   lockCursor: 1
   crosshair: 0
   crosshairImage: {fileID: 21300000, guid: be4ce60e2c9768c44b9b10b9c5258045, type: 3}
@@ -3260,21 +3260,21 @@ MonoBehaviour:
   zoomFOV: 30
   zoomStepTime: 5
   playerCanMove: 1
-  walkSpeed: 5
+  walkSpeed: 4
   maxVelocityChange: 10
   isWalking: 0
   enableSprint: 1
   unlimitedSprint: 1
   sprintKey: 304
-  sprintSpeed: 7
+  sprintSpeed: 6
   sprintDuration: 5
   sprintCooldown: 0.5
   sprintFOV: 80
   sprintFOVStepTime: 10
   useSprintBar: 0
   hideBarWhenFull: 1
-  sprintBarBG: {fileID: 0}
-  sprintBar: {fileID: 0}
+  sprintBarBG: {fileID: 5660375212323829651}
+  sprintBar: {fileID: 2411069979753704589}
   sprintBarWidthPercent: 0.3
   sprintBarHeightPercent: 0.02
   isSprinting: 0
@@ -3289,7 +3289,7 @@ MonoBehaviour:
   speedReduction: 0.5
   isCrouched: 0
   enableHeadBob: 0
-  joint: {fileID: 0}
+  joint: {fileID: 4585463905256356060}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
 --- !u!114 &7592722891230304391
@@ -3304,12 +3304,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a40cbc58a577f4898627fdc85f41cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  journal: {fileID: 0}
-  playerCamera: {fileID: 0}
-  userInterface: {fileID: 0}
+  journal: {fileID: 7001964894120365270}
+  playerCamera: {fileID: 8399943754383458449}
+  userInterface: {fileID: 1616029728581687308}
   paused: 0
   isMouseLocked: 0
-  selector: {fileID: 0}
+  selector: {fileID: 3272614998225275217}
   playerInMemorySelection: 0
   carryPos: {fileID: 5478027059847262173}
 --- !u!114 &5698506891786743422
@@ -3483,7 +3483,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   distanceFrom: 0
-  maxSelectionDistance: 4
+  maxSelectionDistance: 2
   runRaycasts: 1
   raycastAll: 0
   useDefaultGUI: 1
@@ -3503,7 +3503,7 @@ MonoBehaviour:
   useButton: Fire2
   m_defaultUseMessage: E to interact
   broadcastToChildren: 1
-  actorTransform: {fileID: 0}
+  actorTransform: {fileID: 7634586761640925721}
   tooFarMessage: Too Far!
   onSelectedUsable:
     m_PersistentCalls:
@@ -3609,7 +3609,7 @@ RectTransform:
   m_Children:
   - {fileID: 4679131654348027711}
   - {fileID: 3079287000763339665}
-  m_Father: {fileID: 8296885021010634926}
+  m_Father: {fileID: 5631876878488334031}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3996,9 +3996,33 @@ PrefabInstance:
       addedObject: {fileID: 8570335634945697864}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 566add958da87d94b986b30039e87a8e, type: 3}
---- !u!224 &8296885021010634926 stripped
+--- !u!114 &1616029728581687308 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 118201760817477548, guid: 566add958da87d94b986b30039e87a8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1715490588176740256}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6907531261bc44748bef7309cd3c2684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &5631876878488334031 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6478102296252416367, guid: 566add958da87d94b986b30039e87a8e,
     type: 3}
   m_PrefabInstance: {fileID: 1715490588176740256}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7001964894120365270 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8567355437555393398, guid: 566add958da87d94b986b30039e87a8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1715490588176740256}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93dc0b55a52b34645a11504a42c68929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
