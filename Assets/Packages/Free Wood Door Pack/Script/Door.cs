@@ -53,7 +53,7 @@ namespace DoorScript
             if (state == DoorState.NotMoving)
             {
                 var collider = GetComponent<BoxCollider>();
-                collider.enabled = false;
+                //collider.enabled = false;
                 state = DoorState.Moving;
                 if (open) { target = Quaternion.Euler(0, DoorCloseAngle, 0); }
                 else { target = Quaternion.Euler(0, DoorOpenAngle, 0); }
