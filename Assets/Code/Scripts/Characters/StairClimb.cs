@@ -8,8 +8,8 @@ public class StairClimb : MonoBehaviour
     [SerializeField] Transform playerBody;
     [SerializeField] float raycastOriginHeight = 0.5f;
     [SerializeField] float stepHeight = 0.3f;
-    [SerializeField] float stepSmooth = 2f;
-    [SerializeField] float raycastDistance = 0.5f;
+    [SerializeField] float stepSmooth = 0.3f;
+    [SerializeField] float raycastDistance = 2f;
 
     private void Awake()
     {
@@ -43,14 +43,23 @@ public class StairClimb : MonoBehaviour
     void StepClimb()
     {
         Vector3 forward = GetForwardDirection();
+        Vector3 backward = GetBackwardDirection();
         Vector3 lowerOrigin = playerBody.position + Vector3.up * raycastOriginHeight;
         Vector3 upperOrigin = lowerOrigin + Vector3.up * stepHeight;
 
-        if (Physics.Raycast(lowerOrigin, forward, out RaycastHit hitLower, raycastDistance))
+        if (Physics.Raycast(lowerOrigin, forward, out RaycastHit hitLowerFront, raycastDistance))
         {
-            if (!Physics.Raycast(upperOrigin, forward, out RaycastHit hitUpper, raycastDistance))
+            if (!Physics.Raycast(upperOrigin, forward, out RaycastHit hitUpperFront, raycastDistance))
             {
-                rigidBody.position += Vector3.up * stepSmooth * Time.deltaTime;
+                rigidBody.position += Vector3.up * stepSmooth * Time.deltaTime / 2;
+            }
+        }
+
+        if (Physics.Raycast(lowerOrigin, backward, out RaycastHit hitLowerBack, raycastDistance))
+        {
+            if (!Physics.Raycast(upperOrigin, backward, out RaycastHit hitUpperBack, raycastDistance))
+            {
+                rigidBody.position += Vector3.up * stepSmooth * Time.deltaTime / 2;
             }
         }
 
@@ -85,5 +94,13 @@ public class StairClimb : MonoBehaviour
         Vector3 forward = transform.forward;
         forward.y = 0;
         return forward.normalized;
+    }
+
+    Vector3 GetBackwardDirection()
+    {
+        Vector3 backward = transform.forward;
+        backward.y = 0;
+        backward.x *= -1;
+        return backward.normalized;
     }
 }
