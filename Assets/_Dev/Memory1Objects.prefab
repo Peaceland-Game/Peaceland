@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 3291412582151690837}
   - component: {fileID: 267796260921989481}
   - component: {fileID: 763357560833243933}
+  - component: {fileID: 8147323208648310393}
   - component: {fileID: 8282620342459829902}
   - component: {fileID: 155143595588324091}
   m_Layer: 0
@@ -410,6 +411,144 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8147323208648310393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125361686431593148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 32
+  condition:
+    luaConditions: []
+    questConditions: []
+    acceptedTags: []
+    acceptedGameObjects: []
+    luaWizardIndex: -1
+    lastEvaluationValue: 0
+  setQuestState: 1
+  questName: 
+  questState: 0
+  setQuestEntryState: 0
+  questEntryNumber: 1
+  questEntryState: 0
+  setAnotherQuestEntryState: 0
+  anotherQuestEntryNumber: 1
+  anotherQuestEntryState: 0
+  luaCode: 
+  sequence: SetVariable(BoxPlaced, true);
+  sequenceSpeaker: {fileID: 0}
+  sequenceListener: {fileID: 0}
+  waitOneFrameOnStartOrEnable: 1
+  alertMessage: Return to the man
+  textTable: {fileID: 0}
+  alertDuration: 0
+  sendMessages: []
+  barkSource: 0
+  barkConversation: 
+  barkEntryID: -1
+  barkEntryTitle: 
+  barkText: 
+  barkTextSequence: 
+  barker: {fileID: 0}
+  barkTarget: {fileID: 0}
+  barkOrder: 0
+  allowBarksDuringConversations: 0
+  skipBarkIfNoValidEntries: 0
+  cacheBarkLines: 0
+  conversation: 
+  conversationConversant: {fileID: 0}
+  conversationActor: {fileID: 0}
+  startConversationEntryID: -1
+  startConversationEntryTitle: 
+  overrideDialogueUI: {fileID: 0}
+  exclusive: 0
+  replace: 0
+  queue: 0
+  skipIfNoValidEntries: 0
+  preventRestartOnSameFrameEnded: 0
+  stopConversationOnTriggerExit: 0
+  marginToAllowTriggerExit: 0.2
+  stopConversationIfTooFar: 0
+  maxConversationDistance: 5
+  monitorConversationDistanceFrequency: 1
+  showCursorDuringConversation: 0
+  pauseGameDuringConversation: 0
+  setActiveActions: []
+  setEnabledActions: []
+  setAnimatorStateActions: []
+  onExecute:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerSingleton, Assembly-CSharp
+        m_MethodName: DropItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4082072953797290224}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 155143595588324091}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8864624447320005124}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1214109810584824493}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  useConversationTitlePicker: 1
+  useBarkTitlePicker: 1
+  useQuestNamePicker: 1
+  selectedDatabase: {fileID: 11400000, guid: 7ace66aa51c7d81468a035546125ec40, type: 2}
 --- !u!114 &8282620342459829902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,6 +786,7 @@ Transform:
   - {fileID: 5191811661304974982}
   - {fileID: 6440520875580396785}
   - {fileID: 4082072953797290224}
+  - {fileID: 478301639680654054}
   m_Father: {fileID: 7712038067871497235}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1239,7 +1379,7 @@ Transform:
   - {fileID: 203759367711159337}
   - {fileID: 5036058019873725888}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8423052842305486290
 GameObject:
@@ -1391,7 +1531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_overrideName: 
-  m_overrideUseMessage: 
+  m_overrideUseMessage: E to Pickup
   maxUseDistance: 5
   events:
     onSelect:
@@ -1427,9 +1567,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-          m_MethodName: set_enabled
+        - m_Target: {fileID: 2125361686431593148}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1439,9 +1579,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
+        - m_Target: {fileID: 1214109810584824493}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2627,6 +2767,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5743761698440664639, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47f220816bb4f0e40b5f2b9d124423f1, type: 2}
     - target: {fileID: 7474541861274447595, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
       propertyPath: conversation
@@ -4458,7 +4603,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7b83016b04000e14895c73c3e3ec4529,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 79.493
+      value: 79.613
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b83016b04000e14895c73c3e3ec4529,
         type: 3}
@@ -5842,7 +5987,7 @@ PrefabInstance:
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.862
+      value: -2.143
       objectReference: {fileID: 0}
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
@@ -6997,7 +7142,7 @@ PrefabInstance:
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6000016
+      value: -1.794
       objectReference: {fileID: 0}
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
@@ -7308,7 +7453,7 @@ PrefabInstance:
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.902
+      value: -2.122
       objectReference: {fileID: 0}
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
@@ -8017,7 +8162,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7b83016b04000e14895c73c3e3ec4529,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 79.804
+      value: 79.89001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b83016b04000e14895c73c3e3ec4529,
         type: 3}
@@ -8087,6 +8232,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606143260022349098, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3433439912273352000, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
@@ -8241,12 +8391,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7b83016b04000e14895c73c3e3ec4529,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.52
+      value: 18.546001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b83016b04000e14895c73c3e3ec4529,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 79.7
+      value: 79.918
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b83016b04000e14895c73c3e3ec4529,
         type: 3}
@@ -8340,7 +8490,7 @@ PrefabInstance:
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.844
+      value: -2.064001
       objectReference: {fileID: 0}
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
@@ -8644,7 +8794,7 @@ PrefabInstance:
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.59
+      value: -1.811
       objectReference: {fileID: 0}
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
@@ -9219,6 +9369,189 @@ MonoBehaviour:
   useBarkTitlePicker: 1
   useQuestNamePicker: 1
   selectedDatabase: {fileID: 11400000, guid: 7ace66aa51c7d81468a035546125ec40, type: 2}
+--- !u!1001 &7088118612166299261
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2043513704794224907}
+    m_Modifications:
+    - target: {fileID: 6940279198847105890, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: m_Name
+      value: QuestTrigger (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940279198847105890, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -142.33401
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 29.299995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 118.70004
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6940279198847105890, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3716389189645917975}
+  m_SourcePrefab: {fileID: 100100000, guid: 097e98a190bd84049a025541dd775656, type: 3}
+--- !u!1 &148299361410987295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6940279198847105890, guid: 097e98a190bd84049a025541dd775656,
+    type: 3}
+  m_PrefabInstance: {fileID: 7088118612166299261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3716389189645917975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148299361410987295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 8
+  condition:
+    luaConditions: []
+    questConditions: []
+    acceptedTags:
+    - Player
+    acceptedGameObjects: []
+    luaWizardIndex: -1
+    lastEvaluationValue: 0
+  setQuestState: 1
+  questName: Trash Collector
+  questState: 2
+  setQuestEntryState: 0
+  questEntryNumber: 1
+  questEntryState: 0
+  setAnotherQuestEntryState: 0
+  anotherQuestEntryNumber: 1
+  anotherQuestEntryState: 0
+  luaCode: 
+  sequence: 
+  sequenceSpeaker: {fileID: 0}
+  sequenceListener: {fileID: 0}
+  waitOneFrameOnStartOrEnable: 1
+  alertMessage: Pick up trash
+  textTable: {fileID: 0}
+  alertDuration: 0
+  sendMessages: []
+  barkSource: 0
+  barkConversation: 
+  barkEntryID: -1
+  barkEntryTitle: 
+  barkText: 
+  barkTextSequence: 
+  barker: {fileID: 0}
+  barkTarget: {fileID: 0}
+  barkOrder: 0
+  allowBarksDuringConversations: 0
+  skipBarkIfNoValidEntries: 0
+  cacheBarkLines: 0
+  conversation: 
+  conversationConversant: {fileID: 0}
+  conversationActor: {fileID: 0}
+  startConversationEntryID: -1
+  startConversationEntryTitle: 
+  overrideDialogueUI: {fileID: 0}
+  exclusive: 0
+  replace: 0
+  queue: 0
+  skipIfNoValidEntries: 0
+  preventRestartOnSameFrameEnded: 0
+  stopConversationOnTriggerExit: 0
+  marginToAllowTriggerExit: 0.2
+  stopConversationIfTooFar: 0
+  maxConversationDistance: 5
+  monitorConversationDistanceFrequency: 1
+  showCursorDuringConversation: 0
+  pauseGameDuringConversation: 0
+  setActiveActions:
+  - condition:
+      luaConditions: []
+      questConditions: []
+      acceptedTags: []
+      acceptedGameObjects: []
+      luaWizardIndex: 0
+      lastEvaluationValue: 0
+    target: {fileID: 478301639680654054}
+    state: 1
+  setEnabledActions: []
+  setAnimatorStateActions: []
+  onExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  useConversationTitlePicker: 1
+  useBarkTitlePicker: 1
+  useQuestNamePicker: 1
+  selectedDatabase: {fileID: 11400000, guid: 8bfdccfa3ceaa6145bcf2e8e54b2ee9b, type: 2}
+--- !u!4 &478301639680654054 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+    type: 3}
+  m_PrefabInstance: {fileID: 7088118612166299261}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7203894645314285649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9538,7 +9871,7 @@ PrefabInstance:
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.358
+      value: 17.384
       objectReference: {fileID: 0}
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
@@ -9663,7 +9996,7 @@ PrefabInstance:
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.558
+      value: -1.802
       objectReference: {fileID: 0}
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
@@ -10369,7 +10702,7 @@ PrefabInstance:
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.678
+      value: -1.906
       objectReference: {fileID: 0}
     - target: {fileID: 5428564115755399969, guid: f7e9d2b19fc4c0141a5e35870aa5c2a2,
         type: 3}
@@ -11371,7 +11704,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7b83016b04000e14895c73c3e3ec4529,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 79.7
+      value: 79.894
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b83016b04000e14895c73c3e3ec4529,
         type: 3}
@@ -11450,7 +11783,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7b83016b04000e14895c73c3e3ec4529,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 79.7
+      value: 79.822
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b83016b04000e14895c73c3e3ec4529,
         type: 3}
