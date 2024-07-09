@@ -124,7 +124,9 @@ public class MemorySelector : MonoBehaviour
 
         // Set the parent after reaching the final position
         cameraTransform.SetParent(targetAnchor);
+        cameraTransform.localPosition = Vector3.zero;
 
+        PlayerSingleton.Instance.playerInMemorySelection = enableMemorySelect;
         //if exiting out of the memory string, enable player movement at end
         if (!enableMemorySelect)
         {

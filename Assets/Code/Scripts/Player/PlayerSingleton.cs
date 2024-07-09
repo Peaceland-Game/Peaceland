@@ -67,7 +67,7 @@ public class PlayerSingleton : MonoBehaviour
     public void SelectMemoryString()
     {
         DisableMovement();
-        playerInMemorySelection = true;
+        
         userInterface.ToggleMemorySelectUI(true);
     }
     public void DeselectMemory()
