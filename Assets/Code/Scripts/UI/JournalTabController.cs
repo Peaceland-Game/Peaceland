@@ -62,10 +62,11 @@ public class TabController : MonoBehaviour
     /// <summary>
     /// Pass the tab index to the journal controller's tab click handler to change the page 
     /// </summary>
-    protected virtual void OnPointerClick()
-    {
-        tablet.HandleTabClick(tabIndex);
-    }
+    //protected virtual void OnPointerClick()
+    //{
+    //    Debug.Log($"Clicked on tab {name}");
+    //    //tablet.HandleTabClick(tabIndex);
+    //}
 
     ///// <summary>
     ///// Set the state of the tab

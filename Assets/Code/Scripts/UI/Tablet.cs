@@ -39,6 +39,7 @@ public class Tablet : MonoBehaviour
         totalPages = apps.Count;
         hiddenPosition = tabs.transform.localPosition;
         shownPositionVector = hiddenPosition + Vector3.right * shownPosition;
+
     }
 
     void Update()
@@ -109,6 +110,15 @@ public class Tablet : MonoBehaviour
 
 
         }
+    }
+    public void HandleTabClick(TabName tabName)
+    {
+        HandleTabClick(TabUtility.GetTabIndex(tabName));
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
 }
