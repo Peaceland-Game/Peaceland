@@ -6,10 +6,10 @@ public class StairClimb : MonoBehaviour
 {
     Rigidbody rigidBody;
     [SerializeField] Transform playerBody;
-    [SerializeField] float raycastOriginHeight = 0.5f;
-    [SerializeField] float stepHeight = 0.3f;
-    [SerializeField] float stepSmooth = 0.3f;
-    [SerializeField] float raycastDistance = 2f;
+    [SerializeField] float raycastOriginHeight;
+    [SerializeField] float stepHeight;
+    [SerializeField] float stepSmooth;
+    [SerializeField] float raycastDistance;
 
     private void Awake()
     {
@@ -101,6 +101,7 @@ public class StairClimb : MonoBehaviour
         Vector3 backward = transform.forward;
         backward.y = 0;
         backward.x *= -1;
+        backward.z *= -1;
         return backward.normalized;
     }
 }
