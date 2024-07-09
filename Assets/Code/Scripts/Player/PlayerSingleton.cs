@@ -88,7 +88,7 @@ public class PlayerSingleton : MonoBehaviour
                 TogglePauseMenu();
 
             }
-            else if(Keyboard.current.eKey.wasPressedThisFrame)
+            else if(Keyboard.current.qKey.wasPressedThisFrame)
             {
                 ToggleJournal();
             }
