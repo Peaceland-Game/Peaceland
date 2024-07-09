@@ -9,7 +9,7 @@ public class DialogueSkipper : MonoBehaviour
 {
     public bool MotherPermission = false;
     public bool FatherPermission = false;
-
+    public bool HeardDog = false;
     
 
     private FieldInfo[] fields;

@@ -470,6 +470,18 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: 
+    - title: Entry 1
+      value: Go to Cylo's and get some ice cream.
+      type: 0
+      typeString: 
   - id: 7
     fields:
     - title: Name
@@ -508,6 +520,68 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: 
+    - title: Entry 1
+      value: Investigate the noise by the bridge.
+      type: 0
+      typeString: 
+  - id: 9
+    fields:
+    - title: Name
+      value: Box Mover
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Help the struggling man get his box to its destination.
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Trackable
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Track
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: 
+    - title: Entry 1
+      value: Help the struggling man get his box to its destination.
+      type: 0
+      typeString: 
   - id: 8
     fields:
     - title: Name
@@ -612,8 +686,36 @@ MonoBehaviour:
       value: Check if the player started Panel 3.
       type: 0
       typeString: CustomFieldType_Text
+  - id: 10
+    fields:
+    - title: Name
+      value: BoxPlaced
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 11
+    fields:
+    - title: Name
+      value: NewFlavorKnowledge
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   conversations:
-  - id: 13
+  - id: 18
     fields:
     - title: Title
       value: GPKChatter
@@ -689,7 +791,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 13
+      conversationID: 18
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -697,15 +799,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 13
+      - originConversationID: 18
         originDialogueID: 0
-        destinationConversationID: 13
+        destinationConversationID: 18
         destinationDialogueID: 15
         isConnector: 0
         priority: 2
-      - originConversationID: 13
+      - originConversationID: 18
         originDialogueID: 0
-        destinationConversationID: 13
+        destinationConversationID: 18
         destinationDialogueID: 16
         isConnector: 0
         priority: 2
@@ -750,7 +852,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 13
+      conversationID: 18
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -799,7 +901,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 13
+      conversationID: 18
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -819,9 +921,9 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 84.2422, y: 0}
-    canvasZoom: 0.9100001
-  - id: 14
+    canvasScrollPosition: {x: 131.62263, y: 0}
+    canvasZoom: 1
+  - id: 19
     fields:
     - title: Title
       value: Cylo Conversation
@@ -897,7 +999,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -905,9 +1007,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 0
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 18
         isConnector: 0
         priority: 2
@@ -952,7 +1054,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -960,14 +1062,14 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 1
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 2
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(5, Actor["Cylo"].Name); -- JOYFUL
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1008,7 +1110,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1016,9 +1118,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 2
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 3
         isConnector: 0
         priority: 2
@@ -1063,7 +1165,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1071,32 +1173,38 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 3
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 3
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 3
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 6
         isConnector: 0
         priority: 2
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 3
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 7
         isConnector: 0
         priority: 2
+      - originConversationID: 19
+        originDialogueID: 3
+        destinationConversationID: 19
+        destinationDialogueID: 20
+        isConnector: 0
+        priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(0, Actor["Cylo"].Name); -- CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1136,7 +1244,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1144,9 +1252,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 4
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 14
         isConnector: 0
         priority: 2
@@ -1191,7 +1299,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1199,9 +1307,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 5
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 14
         isConnector: 0
         priority: 2
@@ -1246,7 +1354,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1254,9 +1362,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 6
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 14
         isConnector: 0
         priority: 2
@@ -1301,7 +1409,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1309,9 +1417,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 7
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 14
         isConnector: 0
         priority: 2
@@ -1356,7 +1464,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1364,14 +1472,14 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 9
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 10
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: SetQuestState("Cylo Season", "success");
+      userScript: ChangeEmotionalState(4, Actor["Cylo"].Name); -- PLEASED
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1411,7 +1519,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1419,14 +1527,14 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 10
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 11
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: SetQuestState("Cylo Season", "success");
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1467,7 +1575,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1475,14 +1583,14 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 11
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 12
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(0, Actor["Dad"].Name); -- CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1522,7 +1630,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1530,9 +1638,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 12
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 13
         isConnector: 0
         priority: 2
@@ -1577,7 +1685,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1585,9 +1693,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 13
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
@@ -1632,7 +1740,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1640,9 +1748,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 14
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 9
         isConnector: 0
         priority: 2
@@ -1699,7 +1807,7 @@ MonoBehaviour:
           SetEnabled(Canvas, true, DialogueCanvas)@0.5;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1707,9 +1815,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 14
+      - originConversationID: 19
         originDialogueID: 18
-        destinationConversationID: 14
+        destinationConversationID: 19
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
@@ -1781,7 +1889,7 @@ MonoBehaviour:
           SetEnabled(BoxCollider, true, DogTrigger);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 14
+      conversationID: 19
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1800,10 +1908,232 @@ MonoBehaviour:
         y: 634.0575
         width: 160
         height: 30
+    - id: 20
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: What about your newest flavor?
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 19
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 20
+        destinationConversationID: 19
+        destinationDialogueID: 21
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["NewFlavorKnowledge"] == true
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 916.9997
+        y: 283.25003
+        width: 160
+        height: 30
+    - id: 21
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: ... How do you know of that?
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 19
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 21
+        destinationConversationID: 19
+        destinationDialogueID: 22
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 916.9997
+        y: 333.25003
+        width: 160
+        height: 30
+    - id: 22
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Well, let's just say I have a... interesting history. I wanted to
+          convey that through this flavor I've been perfecting for 30 years.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 19
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 22
+        destinationConversationID: 19
+        destinationDialogueID: 23
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 916.9997
+        y: 383.25003
+        width: 160
+        height: 30
+    - id: 23
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: I guess if you know about, then I guess it couldn't hurt to have you
+          as a first taste tester!
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 19
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 23
+        destinationConversationID: 19
+        destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 916.9997
+        y: 433.25003
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 4.687439, y: 0}
-    canvasZoom: 0.64000034
-  - id: 15
+    canvasScrollPosition: {x: 140.50581, y: 0}
+    canvasZoom: 0.8800001
+  - id: 20
     fields:
     - title: Title
       value: Bridge Interaction
@@ -1879,7 +2209,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 15
+      conversationID: 20
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1887,15 +2217,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 15
+      - originConversationID: 20
         originDialogueID: 0
-        destinationConversationID: 15
+        destinationConversationID: 20
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
-      - originConversationID: 15
+      - originConversationID: 20
         originDialogueID: 0
-        destinationConversationID: 15
+        destinationConversationID: 20
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
@@ -1940,7 +2270,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 15
+      conversationID: 20
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1948,9 +2278,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 15
+      - originConversationID: 20
         originDialogueID: 1
-        destinationConversationID: 15
+        destinationConversationID: 20
         destinationDialogueID: 2
         isConnector: 0
         priority: 2
@@ -1995,7 +2325,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 15
+      conversationID: 20
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2003,9 +2333,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 15
+      - originConversationID: 20
         originDialogueID: 2
-        destinationConversationID: 15
+        destinationConversationID: 20
         destinationDialogueID: 3
         isConnector: 0
         priority: 2
@@ -2057,7 +2387,7 @@ MonoBehaviour:
           Fade(in, 0.5)@0.8;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 15
+      conversationID: 20
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2123,7 +2453,7 @@ MonoBehaviour:
           SetEnabled(Canvas, true, DialogueCanvas)@7.0;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 15
+      conversationID: 20
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2143,9 +2473,9 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 10, y: 0}
     canvasZoom: 1
-  - id: 16
+  - id: 21
     fields:
     - title: Title
       value: DogQuestInteraction
@@ -2221,7 +2551,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 16
+      conversationID: 21
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2229,9 +2559,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 16
+      - originConversationID: 21
         originDialogueID: 0
-        destinationConversationID: 16
+        destinationConversationID: 21
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
@@ -2276,7 +2606,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 16
+      conversationID: 21
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2284,9 +2614,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 16
+      - originConversationID: 21
         originDialogueID: 1
-        destinationConversationID: 16
+        destinationConversationID: 21
         destinationDialogueID: 2
         isConnector: 0
         priority: 2
@@ -2331,7 +2661,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 16
+      conversationID: 21
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2359,7 +2689,7 @@ MonoBehaviour:
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 1
-  - id: 17
+  - id: 22
     fields:
     - title: Title
       value: Struggle Man Quest
@@ -2370,11 +2700,11 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
     - title: Actor
-      value: 1
+      value: 16
       type: 5
       typeString: CustomFieldType_Actor
     - title: Conversant
-      value: 2
+      value: 1
       type: 5
       typeString: CustomFieldType_Actor
     overrideSettings:
@@ -2386,7 +2716,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -2416,11 +2746,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 16
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -2435,7 +2765,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 17
+      conversationID: 22
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2443,10 +2773,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 17
+      - originConversationID: 22
         originDialogueID: 0
-        destinationConversationID: 17
-        destinationDialogueID: 1
+        destinationConversationID: 22
+        destinationDialogueID: 5
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2487,10 +2817,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 17
+      conversationID: 22
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2498,10 +2828,16 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 17
+      - originConversationID: 22
         originDialogueID: 1
-        destinationConversationID: 17
+        destinationConversationID: 22
         destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      - originConversationID: 22
+        originDialogueID: 1
+        destinationConversationID: 22
+        destinationDialogueID: 3
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2511,8 +2847,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 78
+        x: 49
+        y: 136
         width: 160
         height: 30
     - id: 2
@@ -2538,14 +2874,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 
+        value: Sure, what's going on?
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 17
+      conversationID: 22
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2553,10 +2889,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 17
+      - originConversationID: 22
         originDialogueID: 2
-        destinationConversationID: 17
-        destinationDialogueID: 3
+        destinationConversationID: 22
+        destinationDialogueID: 6
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2566,11 +2902,115 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 103
-        y: 128
+        x: 49
+        y: 186
         width: 160
         height: 30
     - id: 3
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 16
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Can't, I'm busy.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 22
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 22
+        originDialogueID: 3
+        destinationConversationID: 22
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 241
+        y: 134
+        width: 160
+        height: 30
+    - id: 4
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 16
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Ooh... my poor knees...
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: LookAt(Bystander1, speaker, 0.5);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 22
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 241
+        y: 184
+        width: 160
+        height: 30
+    - id: 5
       fields:
       - title: Title
         value: 
@@ -2597,10 +3037,140 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
+        value: 'SetContinueMode(false);
+
+          Fade(stay, 0.7);
+
+          MoveTo(StruggleManQuest,
+          Player)@0.8;
+
+          LookAt(Player, speaker, 0.5)@1.0;
+
+          Fade(in,
+          0.7)@1.1;'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 22
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 22
+        originDialogueID: 5
+        destinationConversationID: 22
+        destinationDialogueID: 8
+        isConnector: 0
+        priority: 2
+      - originConversationID: 22
+        originDialogueID: 5
+        destinationConversationID: 22
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 160
+        height: 30
+    - id: 6
+      fields:
+      - title: Title
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 17
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 16
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: I need to get this crate over to the bridge, but these knees of mine
+          have been acting up again.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 22
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 22
+        originDialogueID: 6
+        destinationConversationID: 22
+        destinationDialogueID: 7
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 49
+        y: 236
+        width: 160
+        height: 30
+    - id: 7
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 16
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: If you could help me get this crate over there, I'll reward you.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetEnabled(Usable, false, speaker);
+
+          SetEnabled(Usable,
+          true, Crate);'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 22
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2609,14 +3179,120 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: SetQuestState("Box Mover", "active");
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 316
-        y: 136
+        x: 50
+        y: 287
+        width: 160
+        height: 30
+    - id: 8
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 16
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Thank you so much for that. I'll let you in on a secret. You know
+          Cylo, right?
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetContinueMode(true);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 22
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 22
+        originDialogueID: 8
+        destinationConversationID: 22
+        destinationDialogueID: 9
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["BoxPlaced"] == true
+      userScript: SetQuestState("Box Mover", "success");
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 466
+        y: 98
+        width: 160
+        height: 30
+    - id: 9
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 16
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: I hear he's been working on a new flavor as of late. Just ask him
+          about it and I'm sure he'll understnad.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetEnabled(Usable, false, speaker);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 22
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: Variable["NewFlavorKnowledge"] = true
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 466
+        y: 148
         width: 160
         height: 30
     entryGroups: []
@@ -2633,7 +3309,7 @@ MonoBehaviour:
     syncLocationsDatabase: {fileID: 0}
     syncVariablesDatabase: {fileID: 11400000, guid: 76f4aa327b2d1724b926d527ffbb3d95,
       type: 2}
-  templateJson: '{"treatItemsAsQuests":true,"actorFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"IsPlayer","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"itemFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":""},{"title":"Is
+  templateJson: '{"treatItemsAsQuests":true,"actorFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"IsPlayer","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"itemFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Is
     Item","value":"True","type":2,"typeString":"CustomFieldType_Boolean"}],"questFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Success
     Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Failure
     Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"State","value":"unassigned","type":0,"typeString":"CustomFieldType_QuestState"},{"title":"Is
