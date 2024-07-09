@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UserInterface : MonoBehaviour
 {
+    [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject journal;
     public ScrollToBottom scrollToBottom;  // Reference to the ScrollToBottom script
     public GameObject memorySelectUI;
@@ -24,6 +25,11 @@ public class UserInterface : MonoBehaviour
         //}
     }
     public void TogglePauseMenu(bool isPaused)
+    {
+        pauseMenu.SetActive(isPaused);
+    }
+
+    public void ToggleJournal(bool isPaused)
     {
         journal.SetActive(isPaused);
     }
