@@ -9,7 +9,7 @@ using Gaia;
 public class PlayerSingleton : MonoBehaviour
 {
     public static PlayerSingleton Instance;
-    public JournalController journal;
+    public Tablet tablet;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private UserInterface userInterface;
     //private PlayerMovement playerMovement;
@@ -85,13 +85,14 @@ public class PlayerSingleton : MonoBehaviour
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
                 //   Debug.Log("escape pressed");
-                TogglePauseMenu();
+                //TogglePauseMenu();
+                ToggleJournal();
 
             }
-            else if(Keyboard.current.qKey.wasPressedThisFrame)
-            {
-                ToggleJournal();
-            }
+            //else if(Keyboard.current.qKey.wasPressedThisFrame)
+            //{
+            //    ToggleJournal();
+            //}
         }
         //else if (Keyboard.current.jKey.wasPressedThisFrame)
         //{

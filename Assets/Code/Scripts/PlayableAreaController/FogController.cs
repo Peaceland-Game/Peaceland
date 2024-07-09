@@ -220,7 +220,7 @@ public class FogController : MonoBehaviour
 
         //call Screen Fade script to show gray screen fade
         //second argument is an Action that updates player position, rotation, enables player controls, and clears teleport flag
-        ScreenFader.instance.FadeAndTeleport(fadeDuration, () => {
+        ScreenFader.Instance.FadeAndTeleport(fadeDuration, () => {
             
             player.position = GetClosestPointOnColliders(player.position);
             player.rotation = Quaternion.Euler(player.rotation.eulerAngles.x, newRotation.eulerAngles.y, 0);
