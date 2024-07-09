@@ -52,9 +52,11 @@ public class CharacterVisualController : MonoBehaviour
 
     private void Start()
     {
-        UpdatePattern();
-        UpdateEyes();
-        UpdateMouth();
+        //UpdatePattern();
+
+        // TODO: Implement updating eyes and mouth 
+        //UpdateEyes(); 
+        //UpdateMouth();
     }
 
     void Update()
@@ -63,31 +65,32 @@ public class CharacterVisualController : MonoBehaviour
         currentTimes = currentTimes + Time.deltaTime * currentTimeScale * dir;
 
 
-        // Pass in manual material properties 
-        for (int i = 0; i < bodies.Count; i++)
+        if(Application.isPlaying)
         {
-            Renderer renderer = bodies[i];
-            renderer.sharedMaterial.SetVector("_Times", currentTimes);
+            // Pass in manual material properties 
+            for (int i = 0; i < bodies.Count; i++)
+            {
+                Renderer renderer = bodies[i];
+                renderer.sharedMaterial.SetVector("_Times", currentTimes);
+            }
         }
-
+        
         ManageVisuals();
-
     }
 
     private void ManageVisuals()
     {
         // State changes 
-        if (emotionalState == holdState)
+        if (emotionalState != holdState)
         {
-            return;
+            UpdatePattern();
+            
+            // TODO: Implement updating eyes and mouth 
+            //UpdateEyes();
+            //UpdateMouth();
+
+            holdState = emotionalState;
         }
-
-        UpdatePattern();
-        UpdateEyes();
-        UpdateMouth();
-
-
-        holdState = emotionalState;
     }
 
     public void UpdateEyes()
@@ -134,6 +137,7 @@ public class CharacterVisualController : MonoBehaviour
             Debug.LogError("No bodies to apply to");
             return;
         }
+        
 
         // Check if alreay shifting 
         if (isPatternChanging)
@@ -144,7 +148,7 @@ public class CharacterVisualController : MonoBehaviour
             isHolding = true;
             return;
         }
-
+        
         // Start shift to next pattern 
         patternCoroutine = StartCoroutine(ChangePatternCo(holdState, emotionalState));
     }
@@ -181,7 +185,7 @@ public class CharacterVisualController : MonoBehaviour
             // Update timescale and dir 
             currentTimeScale = Mathf.Lerp(currProps.timeScale, nextProps.timeScale, lerp);
             currentDirction = Vector2.Lerp(currProps.patternDir, nextProps.patternDir, lerp);
-
+            
             for(int i = 0; i < bodies.Count; i++)
             {
                 interpolated.LoadAttributesIntoPattern(bodies[i], bodies[i].sharedMaterial.shader);
@@ -327,7 +331,7 @@ public class CharacterVisualController : MonoBehaviour
         {
             // Call the generic methods for loading shader properties for the material
             //ShaderPropertyEdit.GeneratePropertyHelpers(patternAttributes, shader);
-            ShaderPropertyEdit.LoadIntoMaterial(Application.isEditor ? bodyRenderer.sharedMaterial : bodyRenderer.material, patternAttributes);
+            ShaderPropertyEdit.LoadIntoMaterial(!Application.isPlaying ? bodyRenderer.sharedMaterial : bodyRenderer.material, patternAttributes);
         }
     }
 
