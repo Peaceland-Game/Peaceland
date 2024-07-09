@@ -655,6 +655,12 @@ MonoBehaviour:
         destinationDialogueID: 82
         isConnector: 0
         priority: 2
+      - originConversationID: 27
+        originDialogueID: 0
+        destinationConversationID: 27
+        destinationDialogueID: 86
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -4302,7 +4308,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 90.8734
-        y: 2162.307
+        y: 2159.9814
         width: 160
         height: 30
     - id: 66
@@ -5181,9 +5187,58 @@ MonoBehaviour:
         y: 1813.096
         width: 160
         height: 30
+    - id: 86
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Want to hang around Gryf a bit longer?
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: Variable["SpokeToWaeli"] == true
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 719.75085
+        y: 47.974266
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 14.754028, y: 0}
-    canvasZoom: 0.6100004
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.46000046
   - id: 28
     fields:
     - title: Title
@@ -11216,8 +11271,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 104.26933, y: 2376.3528}
-    canvasZoom: 0.97
+    canvasScrollPosition: {x: 65.99182, y: 2357.7073}
+    canvasZoom: 0.7900002
   syncInfo:
     syncActors: 1
     syncItems: 1
