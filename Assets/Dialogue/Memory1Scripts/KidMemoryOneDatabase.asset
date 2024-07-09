@@ -400,60 +400,6 @@ MonoBehaviour:
       value: Sit next to papa to see what's going on.
       type: 0
       typeString: 
-  - id: 2
-    fields:
-    - title: Name
-      value: Little Helper
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Pictures
-      value: '[]'
-      type: 3
-      typeString: CustomFieldType_Files
-    - title: Description
-      value: Help mama with the dishes.
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Success Description
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Failure Description
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: State
-      value: unassigned
-      type: 0
-      typeString: CustomFieldType_QuestState
-    - title: Is Item
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Trackable
-      value: True
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Track
-      value: True
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Abandonable
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Entry Count
-      value: 1
-      type: 1
-      typeString: CustomFieldType_Number
-    - title: Entry 1 State
-      value: unassigned
-      type: 0
-      typeString: 
-    - title: Entry 1
-      value: Help mama with the dishes.
-      type: 0
-      typeString: 
   - id: 5
     fields:
     - title: Name
@@ -472,6 +418,106 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+  - id: 6
+    fields:
+    - title: Name
+      value: Trash Collector
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Pick up the trash
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 2
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 1
+      value: Pick up the trash. [var=TrashPickedUp]/5
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Trackable
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Track
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry 2 State
+      value: unassigned
+      type: 0
+      typeString: 
+    - title: Entry 2
+      value: Talk to Mom
+      type: 0
+      typeString: 
+  - id: 7
+    fields:
+    - title: Name
+      value: Report to Mama
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Tell mama you're done picking up the trash
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: 
+    - title: Entry 1
+      value: Tell mama you're done picking up the trash
+      type: 0
+      typeString: 
   locations: []
   variables:
   - id: 1
@@ -528,6 +574,20 @@ MonoBehaviour:
       typeString: CustomFieldType_Boolean
     - title: Description
       value: Permission from Papa to go outside.
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 5
+    fields:
+    - title: Name
+      value: TrashPickedUp
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: Number of trash picked up
       type: 0
       typeString: CustomFieldType_Text
   conversations:
@@ -2474,7 +2534,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -2606,7 +2666,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: SetQuestState("Little Helper", "active")
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2635,11 +2695,11 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: Can I help you with the dishes?
+        value: How can I help Mama?
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Can I help you with the dishes?</font>
+        value: <font="RythmusRegular SDF">How can I help Mama?</font>
         type: 0
         typeString: 
       - title: Sequence
@@ -2808,13 +2868,13 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: "Awww you\u2019re so sweet! Here, grab that towel and dry these off
-          as I hand them to you."
+        value: "Awww you\u2019re so sweet! Take out the trash for me while I do the
+          dishes."
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "<font=\"RythmusRegular SDF\">Awww you\u2019re so sweet! Here, grab
-          that towel and dry these off as I hand them to you.</font>"
+        value: "<font=\"RythmusRegular SDF\">Awww you\u2019re so sweet! Take out
+          the trash for me while I do the dishes.</font>"
         type: 0
         typeString: 
       - title: Sequence
@@ -2839,8 +2899,14 @@ MonoBehaviour:
         destinationDialogueID: 22
         isConnector: 0
         priority: 2
+      - originConversationID: 10
+        originDialogueID: 21
+        destinationConversationID: 10
+        destinationDialogueID: 33
+        isConnector: 0
+        priority: 2
       conditionsString: 
-      userScript: 'SetQuestState("Little Helper", "success");
+      userScript: 'SetQuestState("Trash Collector", "active");
 
         ChangeEmotionalState(5,
         Actor["Mama"].Name); -- JOYFUL'
@@ -2898,8 +2964,11 @@ MonoBehaviour:
         destinationDialogueID: 23
         isConnector: 0
         priority: 2
-      conditionsString: CurrentQuestState("Little Helper") == "success"
-      userScript: ChangeEmotionalState(0, Actor["Mama"].Name); -- CONTENT
+      conditionsString: Variable["TrashPickedUp"] >= 5
+      userScript: 'ChangeEmotionalState(0, Actor["Mama"].Name); -- CONTENT;
+
+        SetQuestState("Trash
+        Collector", "success")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3420,8 +3489,64 @@ MonoBehaviour:
         y: 610.8075
         width: 160
         height: 30
+    - id: 33
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetContinueMode(false);
+
+          MoveTo(PlayerAnchor, Player, 0.5);
+
+          Camera(original,
+          PlayerCamera, 0.5);
+
+          Delay(0.1);'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 10
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: Variable["TrashPickedUp"] < 5
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 423.9437
+        y: 235.44717
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 386.36353}
+    canvasScrollPosition: {x: 0, y: 19.318115}
     canvasZoom: 0.8800001
   - id: 11
     fields:

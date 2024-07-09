@@ -84,13 +84,13 @@ public class PlayerSingleton : MonoBehaviour
            // Debug.Log("player not in memory select");
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
-             //   Debug.Log("escape pressed");
+                //   Debug.Log("escape pressed");
+                TogglePauseMenu();
 
-                paused = !paused;
-                Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
-                userInterface.TogglePauseMenu(paused);
-                controller.enabled = !paused;
-
+            }
+            else if(Keyboard.current.qKey.wasPressedThisFrame)
+            {
+                ToggleJournal();
             }
         }
         //else if (Keyboard.current.jKey.wasPressedThisFrame)
@@ -102,6 +102,30 @@ public class PlayerSingleton : MonoBehaviour
     //{
     //    journal.AddJournalEntry();
     //}
+
+
+    public void ToggleJournal()
+    {
+        TogglePause();
+        userInterface.ToggleJournal(paused);
+    }
+
+    public void TogglePauseMenu()
+    {
+        TogglePause();
+        userInterface.TogglePauseMenu(paused);
+    }
+
+    /// <summary>
+    /// Toggles whether in UI or first person mode 
+    /// </summary>
+    private void TogglePause()
+    {
+        paused = !paused;
+        Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
+        controller.enabled = !paused;
+
+    }
 
     void OnConversationEnd(Transform actor)
     {

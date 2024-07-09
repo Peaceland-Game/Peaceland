@@ -338,6 +338,18 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 1
+      value: Get permission from both of your parents to go outside.
+      type: 0
+      typeString: CustomFieldType_Text
   - id: 4
     fields:
     - title: Name
@@ -376,6 +388,18 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: 
+    - title: Entry 1
+      value: Sit next to papa to see what's going on.
+      type: 0
+      typeString: 
   - id: 2
     fields:
     - title: Name
@@ -414,6 +438,22 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Abandonable
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: unassigned
+      type: 0
+      typeString: 
+    - title: Entry 1
+      value: Help mama with the dishes.
+      type: 0
+      typeString: 
   - id: 5
     fields:
     - title: Name
@@ -432,6 +472,106 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+  - id: 6
+    fields:
+    - title: Name
+      value: Trash Collector
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Pick up the trash
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 2
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Entry 1
+      value: Pick up the trash. [var=TrashPickedUp]/5
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Trackable
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Track
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry 2 State
+      value: unassigned
+      type: 0
+      typeString: 
+    - title: Entry 2
+      value: Talk to Mom
+      type: 0
+      typeString: 
+  - id: 7
+    fields:
+    - title: Name
+      value: Report to Mama
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Tell mama you're done picking up the trash
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: 
+    - title: Entry 1
+      value: Tell mama you're done picking up the trash
+      type: 0
+      typeString: 
   locations: []
   variables:
   - id: 1
@@ -490,8 +630,22 @@ MonoBehaviour:
       value: Permission from Papa to go outside.
       type: 0
       typeString: CustomFieldType_Text
+  - id: 5
+    fields:
+    - title: Name
+      value: TrashPickedUp
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: Number of trash picked up
+      type: 0
+      typeString: CustomFieldType_Text
   conversations:
-  - id: 6
+  - id: 8
     fields:
     - title: Title
       value: Dad Pre-Couch
@@ -567,7 +721,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 6
+      conversationID: 8
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -575,9 +729,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 6
+      - originConversationID: 8
         originDialogueID: 0
-        destinationConversationID: 6
+        destinationConversationID: 8
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
@@ -622,7 +776,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: 
-      conversationID: 6
+      conversationID: 8
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -645,9 +799,9 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 18}
     canvasZoom: 1
-  - id: 7
+  - id: 9
     fields:
     - title: Title
       value: On The Couch
@@ -698,11 +852,11 @@ MonoBehaviour:
       - title: Title
         value: START
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -714,16 +868,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: None()
         type: 0
-        typeString: 
-      conversationID: 7
+        typeString: CustomFieldType_Text
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -731,9 +885,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 0
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 58
         isConnector: 0
         priority: 2
@@ -767,7 +921,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: What's the memorial?
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -795,7 +949,7 @@ MonoBehaviour:
           LookAt(speaker, Dad, 0.5)@3.5;'
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -803,9 +957,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 39
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 41
         isConnector: 0
         priority: 2
@@ -839,7 +993,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: What's happening?
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -867,7 +1021,7 @@ MonoBehaviour:
           LookAt(speaker, Dad, 0.5)@3.5;'
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -875,9 +1029,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 40
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 42
         isConnector: 0
         priority: 2
@@ -911,7 +1065,8 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: "It\u2019s a statue that our people built to honor the brave and fallen
+          soldiers who fought in the war."
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -923,7 +1078,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -931,20 +1086,20 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 41
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 43
         isConnector: 0
         priority: 2
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 41
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 44
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); // ANGRY
+      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); -- ANGRY
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -973,7 +1128,8 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: "Since when did you get so sneaky, huh? ... It\u2019s just angry people
+          lashing out about the war."
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -985,7 +1141,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -993,14 +1149,14 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 42
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 62
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); // ANGRY
+      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); -- ANGRY
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1029,7 +1185,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Who were the soldiers?
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1040,7 +1196,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1048,9 +1204,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 43
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 45
         isConnector: 0
         priority: 2
@@ -1084,7 +1240,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Why did they destroy the statue?
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1095,7 +1251,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1103,9 +1259,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 44
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 46
         isConnector: 0
         priority: 2
@@ -1139,7 +1295,9 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: "When did you get so curious, huh?  They were our country\u2019s heroes
+          and they fought against the awful people who are so dangerous for us to
+          be around."
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1152,7 +1310,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1160,9 +1318,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 45
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 62
         isConnector: 0
         priority: 2
@@ -1196,7 +1354,8 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: "Sometimes, people act in violence because they are angry about everything
+          that happened during the war. These people are dangerous\u2026"
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1209,7 +1368,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1217,9 +1376,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 46
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 62
         isConnector: 0
         priority: 2
@@ -1230,7 +1389,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 250.18036
+        x: 249.11652
         y: 525.09827
         width: 160
         height: 30
@@ -1253,7 +1412,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Good. Now, get out of here and stop worrying about all that stuff.
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1265,7 +1424,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1273,15 +1432,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 47
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 48
         isConnector: 0
         priority: 2
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 47
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 49
         isConnector: 0
         priority: 2
@@ -1315,7 +1474,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: "Wait, one more thing. Can I go get ice cream from Cylo\u2019s?"
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1327,7 +1486,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1335,9 +1494,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 48
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 50
         isConnector: 0
         priority: 2
@@ -1371,7 +1530,8 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: One more thing. Mama told me to ask you if it was ok for me to get
+          ice cream.
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1383,7 +1543,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1391,9 +1551,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 49
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 51
         isConnector: 0
         priority: 2
@@ -1427,7 +1587,8 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: "If it's ok with your Mama it\u2019s ok with me. Go ask her. And see
+          if she needs help with the dishes first, huh?"
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1440,7 +1601,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1448,9 +1609,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 50
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 59
         isConnector: 0
         priority: 2
@@ -1487,7 +1648,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Is it ok with her?
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1498,7 +1659,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1506,9 +1667,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 51
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 52
         isConnector: 0
         priority: 2
@@ -1542,7 +1703,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Yep! I just asked.
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1553,7 +1714,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1561,9 +1722,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 52
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 53
         isConnector: 0
         priority: 2
@@ -1574,8 +1735,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 394.16843
-        y: 1022.0735
+        x: 395.23224
+        y: 1019.9459
         width: 160
         height: 30
     - id: 53
@@ -1597,7 +1758,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: 'Then it''s ok with me. On one condition... '
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1608,7 +1769,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1616,9 +1777,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 53
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 60
         isConnector: 0
         priority: 2
@@ -1657,7 +1818,9 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Tonight, we bring you exclusive details on the vandalism of a  peace
+          memorial honoring the great heroes who sacrificed their lives for us in
+          the war.
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -1670,7 +1833,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1678,9 +1841,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 54
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 55
         isConnector: 0
         priority: 2
@@ -1714,7 +1877,8 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: The suspect that defaced the monument has been identified as an individual
+          that goes by Leoni Havis.
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1726,7 +1890,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1734,9 +1898,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 55
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 56
         isConnector: 0
         priority: 2
@@ -1770,7 +1934,9 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: His arrest has further fueled debate between Azulians and Matollans
+          over this blatant act of terrorism about who and what should be remembered
+          for their actions during the Swan Revolution.
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1783,7 +1949,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1791,9 +1957,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 56
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 57
         isConnector: 0
         priority: 2
@@ -1827,7 +1993,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Havis will stand trial in the coming weeks. More on this at 10.
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -1844,7 +2010,7 @@ MonoBehaviour:
           LookAt(Dad, listener, 0.5)@1.5;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1852,15 +2018,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 57
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 39
         isConnector: 0
         priority: 2
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 57
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 40
         isConnector: 0
         priority: 2
@@ -1915,7 +2081,7 @@ MonoBehaviour:
           true, DialogueCanvas)@0.5;'
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1923,9 +2089,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 58
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 54
         isConnector: 0
         priority: 2
@@ -1980,7 +2146,7 @@ MonoBehaviour:
           false, SofaDouble);'
         type: 0
         typeString: 
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2018,7 +2184,8 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: You have to bring me back some Berry Hazard if Cylo still has any
+          left.
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -2030,7 +2197,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2038,9 +2205,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 60
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 61
         isConnector: 0
         priority: 2
@@ -2074,7 +2241,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Don't be out too late!
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -2085,7 +2252,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2093,9 +2260,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 61
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 59
         isConnector: 0
         priority: 2
@@ -2132,7 +2299,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Hey... Look at me.
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -2143,7 +2310,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2151,9 +2318,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 62
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 63
         isConnector: 0
         priority: 2
@@ -2187,7 +2354,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: "You have to be safe out there, ok? What\u2019s our rule?"
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -2199,7 +2366,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2207,14 +2374,14 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 63
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 64
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ChangeEmotionalState(0, Actor["Mama"].Name); // CONTENT
+      userScript: ChangeEmotionalState(0, Actor["Mama"].Name); -- CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2243,7 +2410,8 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Stay on this side of the river and stay away from the people I don't
+          know.
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -2255,7 +2423,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2263,9 +2431,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 64
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 65
         isConnector: 0
         priority: 2
@@ -2299,7 +2467,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Why?
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -2310,7 +2478,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2318,9 +2486,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 65
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 66
         isConnector: 0
         priority: 2
@@ -2354,7 +2522,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Because they will hurt me or take me.
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -2365,7 +2533,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 7
+      conversationID: 9
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2373,9 +2541,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 7
+      - originConversationID: 9
         originDialogueID: 66
-        destinationConversationID: 7
+        destinationConversationID: 9
         destinationDialogueID: 47
         isConnector: 0
         priority: 2
@@ -2391,9 +2559,9 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0.9468689, y: 263.29202}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.94000006
-  - id: 3
+  - id: 10
     fields:
     - title: Title
       value: Mom Conversation
@@ -2420,7 +2588,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -2469,7 +2637,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2477,10 +2645,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 0
-        destinationConversationID: 3
-        destinationDialogueID: 30
+        destinationConversationID: 10
+        destinationDialogueID: 17
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2491,7 +2659,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 254.73682
-        y: 30
+        y: 65.22728
         width: 160
         height: 30
     - id: 17
@@ -2513,7 +2681,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Hi little one, what do you need?
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -2521,10 +2689,17 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SetContinueMode(true)@0.5;
+        value: 'MoveTo(Player, PlayerAnchor);
+
+          LookAt(Mama, listener, 0.3);
+
+          Camera(NewModelLookUp,
+          Mama, 0.5);
+
+          Delay(2);'
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2532,15 +2707,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 17
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 18
         isConnector: 0
         priority: 2
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 17
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 20
         isConnector: 0
         priority: 2
@@ -2574,7 +2749,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Can I help you with the dishes?
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -2585,7 +2760,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2593,9 +2768,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 18
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 21
         isConnector: 0
         priority: 2
@@ -2629,7 +2804,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Hey Mama? Can I go get some ice cream from Cylo?
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -2641,7 +2816,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2649,15 +2824,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 19
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 25
         isConnector: 0
         priority: 2
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 19
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 26
         isConnector: 0
         priority: 2
@@ -2691,25 +2866,25 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: '[Go talk to someone else]'
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '[Go talk to someone else]'
+        value: <font="RythmusRegular SDF">[Go talk to someone else]</font>
         type: 0
         typeString: 
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          \MoveTo(PlayerAnchor, Player,
-          0.5);
+          MoveTo(PlayerAnchor, Player, 0.5);
 
-          Camera(original, PlayerCamera, 0.5);
+          Camera(original,
+          PlayerCamera, 0.5);
 
           Delay(0.1);'
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2747,7 +2922,8 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: "Awww you\u2019re so sweet! Here, grab that towel and dry these off
+          as I hand them to you."
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -2756,14 +2932,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: 
       - title: EventGuid
         value: 
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2771,9 +2947,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 21
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 22
         isConnector: 0
         priority: 2
@@ -2781,7 +2957,7 @@ MonoBehaviour:
       userScript: 'SetQuestState("Little Helper", "success");
 
         ChangeEmotionalState(5,
-        Actor["Mama"].Name); // JOYFUL'
+        Actor["Mama"].Name); -- JOYFUL'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2810,7 +2986,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: All done! So much faster with my little helper.
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -2819,10 +2995,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AnimatorTrigger(Idle, , Mother_WashingDishes);
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2830,21 +3006,21 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 22
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 23
         isConnector: 0
         priority: 2
       conditionsString: CurrentQuestState("Little Helper") == "success"
-      userScript: ChangeEmotionalState(0, Actor["Mama"].Name); // CONTENT
+      userScript: ChangeEmotionalState(0, Actor["Mama"].Name); -- CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 162.81006
-        y: 253.59435
+        y: 254.7307
         width: 160
         height: 30
     - id: 23
@@ -2866,7 +3042,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Mama, I'm not that little anymore
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -2877,7 +3053,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2885,9 +3061,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 23
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 24
         isConnector: 0
         priority: 2
@@ -2921,7 +3097,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Mama, I'm not that little anymore
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -2932,7 +3108,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2940,9 +3116,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 24
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
@@ -2976,7 +3152,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Sure Kalin, as long as your father says it's ok
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -2988,7 +3164,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2996,9 +3172,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 25
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 31
         isConnector: 0
         priority: 2
@@ -3032,7 +3208,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Well, what did your father say?
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -3043,7 +3219,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3051,9 +3227,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 26
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 27
         isConnector: 0
         priority: 2
@@ -3064,8 +3240,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 279.61578
-        y: 434.1656
+        x: 280.75217
+        y: 435.30194
         width: 160
         height: 30
     - id: 27
@@ -3087,7 +3263,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: He said I could!
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -3098,7 +3274,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3106,9 +3282,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 27
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 28
         isConnector: 0
         priority: 2
@@ -3142,7 +3318,8 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: I expect to see you back here in 20 minutes <i>with change</i>. Tell
+          Cylo I said hi!
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -3154,7 +3331,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3162,9 +3339,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 28
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 29
         isConnector: 0
         priority: 2
@@ -3201,7 +3378,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Thank you!
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -3212,7 +3389,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3220,9 +3397,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 29
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 32
         isConnector: 0
         priority: 2
@@ -3238,78 +3415,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 279.47284
         y: 565.8799
-        width: 160
-        height: 30
-    - id: 30
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
-
-          SetContinueMode(false);
-
-          MoveTo(Player,
-          PlayerAnchor);
-
-          LookAt(Mom, listener, 0.3);
-
-          Camera(NewModelLookUp,
-          Mom, 0.5);
-
-          SetEnabled(Canvas, true, DialogueCanvas)@0.5;
-
-          AnimatorTrigger(Mother_WashingDishes,
-          , Idle);
-
-          ChangeEmotionalState(0, Actor["Mama"].Name); // CONTENT'
-        type: 0
-        typeString: 
-      conversationID: 3
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 3
-        originDialogueID: 30
-        destinationConversationID: 3
-        destinationDialogueID: 17
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 252.22713
-        y: 75.21684
         width: 160
         height: 30
     - id: 31
@@ -3349,10 +3454,10 @@ MonoBehaviour:
           Delay(0.1);
 
           SetEnabled(Usable,
-          false, Mom);'
+          false, Mama);'
         type: 0
         typeString: 
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3390,7 +3495,8 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: "Remember, don\u2019t cross the river! You know what those awful people
+          would do if they caught you over there!<b> And stay away from strays!"
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -3403,7 +3509,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 3
+      conversationID: 10
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3411,9 +3517,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 3
+      - originConversationID: 10
         originDialogueID: 32
-        destinationConversationID: 3
+        destinationConversationID: 10
         destinationDialogueID: 31
         isConnector: 0
         priority: 2
@@ -3429,9 +3535,9 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 55.303604, y: 261.3636}
+    canvasScrollPosition: {x: 0, y: 386.36353}
     canvasZoom: 0.8800001
-  - id: 4
+  - id: 11
     fields:
     - title: Title
       value: Door Interaction
@@ -3507,7 +3613,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 4
+      conversationID: 11
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3515,15 +3621,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 4
+      - originConversationID: 11
         originDialogueID: 0
-        destinationConversationID: 4
+        destinationConversationID: 11
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
-      - originConversationID: 4
+      - originConversationID: 11
         originDialogueID: 0
-        destinationConversationID: 4
+        destinationConversationID: 11
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
@@ -3543,11 +3649,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 5
         type: 5
@@ -3559,16 +3665,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: '[I''ll get in big trouble if I leave without asking.]'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
-      conversationID: 4
+        typeString: CustomFieldType_Text
+      conversationID: 11
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3625,7 +3731,7 @@ MonoBehaviour:
           0.7)@1.2;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 4
+      conversationID: 11
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3650,7 +3756,7 @@ MonoBehaviour:
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 1
-  - id: 5
+  - id: 12
     fields:
     - title: Title
       value: Bark Test
@@ -3726,7 +3832,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 5
+      conversationID: 12
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3734,15 +3840,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 5
+      - originConversationID: 12
         originDialogueID: 0
-        destinationConversationID: 5
+        destinationConversationID: 12
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
-      - originConversationID: 5
+      - originConversationID: 12
         originDialogueID: 0
-        destinationConversationID: 5
+        destinationConversationID: 12
         destinationDialogueID: 2
         isConnector: 0
         priority: 2
@@ -3787,7 +3893,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 5
+      conversationID: 12
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3836,7 +3942,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 5
+      conversationID: 12
       isRoot: 0
       isGroup: 0
       nodeColor: 
