@@ -14,7 +14,6 @@ using PixelCrushers.DialogueSystem;
  * Last updated 7/1/24
  */
 
-[ExecuteAlways]
 public class CharacterVisualController : MonoBehaviour
 {
     [Header("Overall Visuals")]
