@@ -668,20 +668,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 398571349}
     m_Modifications:
-    - target: {fileID: 20855033514226770, guid: bfa974a01b4cbd94eb18f3e7956f9aca,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
     - target: {fileID: 1634816630977604858, guid: bfa974a01b4cbd94eb18f3e7956f9aca,
         type: 3}
       propertyPath: m_Name
       value: WallDoor2m (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1634816630977604858, guid: bfa974a01b4cbd94eb18f3e7956f9aca,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2160559851638519360, guid: bfa974a01b4cbd94eb18f3e7956f9aca,
         type: 3}
@@ -738,37 +728,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3736380380243043896, guid: bfa974a01b4cbd94eb18f3e7956f9aca,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6825328977708969489, guid: bfa974a01b4cbd94eb18f3e7956f9aca,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7719438966550771464, guid: bfa974a01b4cbd94eb18f3e7956f9aca,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7720021874663910688, guid: bfa974a01b4cbd94eb18f3e7956f9aca,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 7720064092414754988, guid: bfa974a01b4cbd94eb18f3e7956f9aca,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7720140875076025468, guid: bfa974a01b4cbd94eb18f3e7956f9aca,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3736380380243043896, guid: bfa974a01b4cbd94eb18f3e7956f9aca, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1184,7 +1145,7 @@ MonoBehaviour:
   increment: 1
   min: 0
   max: 100
-  alertMessage: '[var=TrashPickedUp]/5'
+  alertMessage: 
   alertDuration: 0
   condition:
     luaConditions: []
@@ -1195,7 +1156,20 @@ MonoBehaviour:
     lastEvaluationValue: 0
   onIncrement:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1686934037}
+        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemTrigger,
+          Assembly-CSharp-firstpass
+        m_MethodName: OnUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!64 &182999247
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4089,7 +4063,7 @@ MonoBehaviour:
   increment: 1
   min: 0
   max: 100
-  alertMessage: '[var=TrashPickedUp]/5'
+  alertMessage: 
   alertDuration: 0
   condition:
     luaConditions: []
@@ -4100,7 +4074,20 @@ MonoBehaviour:
     lastEvaluationValue: 0
   onIncrement:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1686934037}
+        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemTrigger,
+          Assembly-CSharp-firstpass
+        m_MethodName: OnUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!64 &658178203
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4304,7 +4291,7 @@ MonoBehaviour:
   increment: 1
   min: 0
   max: 100
-  alertMessage: '[var=TrashPickedUp]/5'
+  alertMessage: 
   alertDuration: 0
   condition:
     luaConditions: []
@@ -4315,7 +4302,20 @@ MonoBehaviour:
     lastEvaluationValue: 0
   onIncrement:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1686934037}
+        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemTrigger,
+          Assembly-CSharp-firstpass
+        m_MethodName: OnUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!64 &683039486
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4843,7 +4843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &745308915
 Transform:
   m_ObjectHideFlags: 0
@@ -7165,7 +7165,7 @@ MonoBehaviour:
   increment: 1
   min: 0
   max: 100
-  alertMessage: '[var=TrashPickedUp]/5'
+  alertMessage: 
   alertDuration: 0
   condition:
     luaConditions: []
@@ -7176,7 +7176,20 @@ MonoBehaviour:
     lastEvaluationValue: 0
   onIncrement:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1686934037}
+        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemTrigger,
+          Assembly-CSharp-firstpass
+        m_MethodName: OnUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1199944674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9524,7 +9537,7 @@ MonoBehaviour:
   increment: 1
   min: 0
   max: 100
-  alertMessage: '[var=TrashPickedUp]/5'
+  alertMessage: 
   alertDuration: 0
   condition:
     luaConditions: []
@@ -10079,7 +10092,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1686934038}
   - component: {fileID: 1686934037}
-  - component: {fileID: 1686934039}
   m_Layer: 0
   m_Name: Trash
   m_TagString: Untagged
@@ -10102,26 +10114,21 @@ MonoBehaviour:
   trigger: 32
   condition:
     luaConditions:
-    - Variable["TrashPickedUp"] >= 4
-    questConditions:
-    - questName: Trash Collector
-      questState: 2
-      checkQuestEntry: 0
-      entryNumber: 0
-      questEntryState: 0
+    - Variable["TrashPickedUp"] >= 5
+    questConditions: []
     acceptedTags: []
     acceptedGameObjects: []
     luaWizardIndex: -1
     lastEvaluationValue: 0
-  setQuestState: 1
+  setQuestState: 0
   questName: Trash Collector
-  questState: 4
-  setQuestEntryState: 0
+  questState: 2
+  setQuestEntryState: 1
   questEntryNumber: 1
-  questEntryState: 0
-  setAnotherQuestEntryState: 0
-  anotherQuestEntryNumber: 1
-  anotherQuestEntryState: 0
+  questEntryState: 4
+  setAnotherQuestEntryState: 1
+  anotherQuestEntryNumber: 2
+  anotherQuestEntryState: 2
   luaCode: 
   sequence: 
   sequenceSpeaker: {fileID: 0}
@@ -10192,37 +10199,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1686934039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686934036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cedf348ece7ef64aa74cb295e8ed71c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frequency: 0.02
-  once: 1
-  observeGameObject: {fileID: 1686934036}
-  condition:
-    luaConditions:
-    - Variable["TrashPickedUp"] >= 5
-    questConditions: []
-    acceptedTags: []
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  questName: Trash Collector
-  questState: 4
-  luaCode: 
-  sequence: 
-  alertMessage: picked up da trash
-  textTable: {fileID: 0}
-  sendMessages: []
-  useQuestNamePicker: 1
 --- !u!1001 &1688579405
 PrefabInstance:
   m_ObjectHideFlags: 0
