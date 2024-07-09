@@ -101,11 +101,12 @@ public class DynamicLightingController : MonoBehaviour
 
         // Ensure the loading progress is set to 100% at the end
         userInterface.UpdateLoadingProgress(1f);
+#if (UNITY_EDITOR)
         if (dialogueSkipper)
         {
             dialogueSkipper.Skip();
         }
-
+#endif
         // Raise the event
         RaiseLightingProfileChangedEvent(startProfile, targetProfile, currentProfileIndex);
     }
