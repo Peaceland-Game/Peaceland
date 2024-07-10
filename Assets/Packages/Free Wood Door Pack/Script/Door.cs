@@ -11,7 +11,7 @@ namespace DoorScript
 
     public class Door : MonoBehaviour
     {
-        private Camera player;
+        private GameObject player;
         public bool open;
         public float smooth = 1.0f;
         float DoorOpenAngle = -90.0f;
@@ -39,7 +39,7 @@ namespace DoorScript
         void Start()
         {
             asource = GetComponent<AudioSource>();
-            player = FindAnyObjectByType<Camera>();
+            player = GameObject.FindWithTag("Player");
         }
 
         // Update is called once per frame
@@ -75,7 +75,8 @@ namespace DoorScript
 
         void OnUse(Transform player)
         {
-            DetermineSide();
+            if (unlockOnUse)
+                DetermineSide();
         }
         public void Unlock()
         {

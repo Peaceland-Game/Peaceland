@@ -158,4 +158,27 @@ public class PlayerSingleton : MonoBehaviour
         heldItem.localRotation = resetPos.localRotation;
         heldItem.localScale = resetPos.localScale;
     }
+
+    public void StopPlayer() 
+    {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
+
+    void OnEnable()
+    {
+        // Make the functions available to Lua: (Replace these lines with your own.)
+        Lua.RegisterFunction(nameof(StopPlayer), this, SymbolExtensions.GetMethodInfo(() => StopPlayer()));
+        // Lua.RegisterFunction(nameof(AddOne), this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
+    }
+    /*
+    void OnDisable()
+    {
+        if (true)
+        {
+            // Remove the functions from Lua: (Replace these lines with your own.)
+            Lua.UnregisterFunction(nameof(StopPlayer));
+            //   Lua.UnregisterFunction(nameof(AddOne));
+        }
+    }
+    */
 }
