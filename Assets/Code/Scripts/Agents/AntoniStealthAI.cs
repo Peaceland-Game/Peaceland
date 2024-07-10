@@ -222,7 +222,7 @@ public class AntoniStealthAI : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(currentState);
+        //Debug.Log(currentState);
         stateIndicator.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         switch (currentState)
         {

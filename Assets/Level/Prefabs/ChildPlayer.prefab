@@ -2852,6 +2852,7 @@ GameObject:
   - component: {fileID: 3935887509442386056}
   - component: {fileID: 3272614998225275217}
   - component: {fileID: 7338456132888364412}
+  - component: {fileID: 5619740749639599599}
   m_Layer: 15
   m_Name: ChildPlayer
   m_TagString: Player
@@ -3550,6 +3551,22 @@ MonoBehaviour:
   stepLayerMask:
     serializedVersion: 2
     m_Bits: 20425
+--- !u!114 &5619740749639599599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8411154095936243601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77988f7c7268f645857595151c3a729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstPersonController: {fileID: 1269763368526715042}
+  sprintSoundRadius: 14
+  walkSoundRadius: 8
+  crouchSoundRadius: 4
 --- !u!1 &8449050890457778490
 GameObject:
   m_ObjectHideFlags: 0
