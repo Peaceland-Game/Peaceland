@@ -55,7 +55,7 @@ public class StairClimb : MonoBehaviour
         {
             if (!Physics.Raycast(upperOrigin, forward, out RaycastHit hitUpper, raycastDistance, stepLayerMask))
             {
-                Debug.LogWarning($"Detected step by hitting object {hitLower.collider.name}");
+               // Debug.LogWarning($"Detected step by hitting object {hitLower.collider.name}");
                 rigidBody.position += Vector3.up * stepSmooth * Time.deltaTime;
             }
         }
