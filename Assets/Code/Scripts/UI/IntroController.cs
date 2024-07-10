@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.Drawing.Text;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.ProBuilder.Shapes;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class IntroController : MonoBehaviour
@@ -19,6 +21,8 @@ public class IntroController : MonoBehaviour
     public TextMeshProUGUI pickUpTabletPrompt;
 
     public GameObject tablet;
+
+    private bool waitForPlayer = false;
     
     // Player stuff
     public Camera playerCam;
@@ -39,7 +43,13 @@ public class IntroController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (waitForPlayer)
+        {
+            if (Keyboard.current.eKey.wasPressedThisFrame)
+            {
+                SceneManager.LoadScene("HubWorld2");
+            }
+        }
     }
 
     /// <summary>
@@ -175,6 +185,8 @@ public class IntroController : MonoBehaviour
     public void TakeTabletPrompt()
     {
         StartCoroutine(fadeInOutText(pickUpTabletPrompt, 0.5f, 3, 1337, true, false));
+        waitForPlayer = true;
+
     }
 
     public void EndScene()
