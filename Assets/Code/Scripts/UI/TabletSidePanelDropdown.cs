@@ -16,7 +16,6 @@ public class TabletSidePanelDropdown : MonoBehaviour
         {
             dropdownButtons[i].SetActive(false);
         }
-        button.onClick.AddListener(ToggleDropDownButtons);
     }
 
     // Update is called once per frame
