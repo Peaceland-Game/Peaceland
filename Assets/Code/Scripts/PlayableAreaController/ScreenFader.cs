@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ScreenFader : MonoBehaviour
 {
-    public static ScreenFader instance;
+    public static ScreenFader Instance;
 
     private Image fadeImage;
     private Coroutine fadeCoroutine;
@@ -12,9 +12,9 @@ public class ScreenFader : MonoBehaviour
     private void Awake()
     {
         
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {

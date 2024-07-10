@@ -19,7 +19,7 @@ public class CameraOpenDoor : MonoBehaviour {
 				if (hit.transform.GetComponent<DoorScript.Door> ()) {
 				text.SetActive (true);
 				if (Input.GetKeyDown(KeyCode.E))
-					hit.transform.GetComponent<DoorScript.Door> ().OpenDoor();
+					hit.transform.GetComponent<DoorScript.Door> ().DetermineSide();
 			}else{
 				text.SetActive (false);
 			}

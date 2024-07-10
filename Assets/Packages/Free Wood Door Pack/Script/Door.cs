@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace DoorScript
 {
@@ -9,6 +11,7 @@ namespace DoorScript
 
     public class Door : MonoBehaviour
     {
+        private GameObject player;
         public bool open;
         public float smooth = 1.0f;
         float DoorOpenAngle = -90.0f;
@@ -36,6 +39,7 @@ namespace DoorScript
         void Start()
         {
             asource = GetComponent<AudioSource>();
+            player = GameObject.FindWithTag("Player");
         }
 
         // Update is called once per frame
@@ -50,7 +54,7 @@ namespace DoorScript
             }
         }
 
-        public void OpenDoor()
+        public void OpenDoor(int direction)
         {
             if (!unlockOnUse) return;
             if (state == DoorState.NotMoving)
@@ -58,30 +62,48 @@ namespace DoorScript
               //  DisableColliderOnOpen();
                 state = DoorState.Moving;
                 if (open) { target = Quaternion.Euler(0, DoorCloseAngle, 0); }
-                else { target = Quaternion.Euler(0, DoorOpenAngle, 0); }
+                else
+                {
+                    target = Quaternion.Euler(0, DoorOpenAngle * direction, 0);
+                }
 
                 open = !open;
                 asource.clip = open ? openDoor : closeDoor;
                 asource.Play();
             }
         }
-        void DisableColliderOnOpen()
-        {
-            
 
-            var collider = GetComponent<BoxCollider>();
-            //collider.enabled = false;
-           // Debug.Log($"disabled {name} collider");
-        }
         void OnUse(Transform player)
         {
-            OpenDoor();
+            if (unlockOnUse)
+                DetermineSide();
         }
         public void Unlock()
         {
           //  locked  = false;
-            OpenDoor();
+            DetermineSide();
         }
+
+
+        public void DetermineSide()
+        {
+
+            Vector3 directionToTarget = player.transform.position - transform.position;
+            Vector3 forwardDirection = transform.forward;
+
+            float dotProductForward = Vector3.Dot(directionToTarget.normalized, forwardDirection);
+
+            if (dotProductForward > 0)
+            {
+                OpenDoor(1);
+            }
+            else
+            {
+                OpenDoor(-1);
+            }
+        }
+
+
 
 
 
@@ -98,7 +120,7 @@ namespace DoorScript
 
         //    lockObject.gameObject.SetActive(true);
         //    lockObject.StartLockPicking();
-            
+
         //    PlayerSingleton.Instance.StartLockPicking(this);
 
 

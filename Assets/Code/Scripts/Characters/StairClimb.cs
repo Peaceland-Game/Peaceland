@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cinemachine.Utility;
+using UnityEngine;
 /// <summary>
 /// Helps the rigid body controller move up stairs
 /// </summary>
@@ -6,10 +7,12 @@ public class StairClimb : MonoBehaviour
 {
     Rigidbody rigidBody;
     [SerializeField] Transform playerBody;
+    [SerializeField] Transform lowerOrigin;
     [SerializeField] float raycastOriginHeight = 0.5f;
     [SerializeField] float stepHeight = 0.3f;
     [SerializeField] float stepSmooth = 2f;
     [SerializeField] float raycastDistance = 0.5f;
+    [SerializeField] LayerMask stepLayerMask;
 
     private void Awake()
     {
@@ -25,10 +28,12 @@ public class StairClimb : MonoBehaviour
 
         Gizmos.color = Color.red;
         Vector3 forward = GetForwardDirection();
-        Vector3 lowerOrigin = playerBody.position + Vector3.up * raycastOriginHeight;
-        Vector3 upperOrigin = lowerOrigin + Vector3.up * stepHeight;
+        Vector3 lower = lowerOrigin.position; 
+        Vector3 upperOrigin = lower + Vector3.up * stepHeight;
 
-        Gizmos.DrawRay(lowerOrigin, forward * raycastDistance);
+        Gizmos.DrawRay(lower, forward * raycastDistance);
+
+        Gizmos.color = Color.blue;
         Gizmos.DrawRay(upperOrigin, forward * raycastDistance);
     }
 
@@ -43,20 +48,21 @@ public class StairClimb : MonoBehaviour
     void StepClimb()
     {
         Vector3 forward = GetForwardDirection();
-        Vector3 lowerOrigin = playerBody.position + Vector3.up * raycastOriginHeight;
-        Vector3 upperOrigin = lowerOrigin + Vector3.up * stepHeight;
+        Vector3 lower = lowerOrigin.position;
+        Vector3 upperOrigin = lower + Vector3.up * stepHeight;
 
-        if (Physics.Raycast(lowerOrigin, forward, out RaycastHit hitLower, raycastDistance))
+        if (Physics.Raycast(lower, forward, out RaycastHit hitLower, raycastDistance, stepLayerMask))
         {
-            if (!Physics.Raycast(upperOrigin, forward, out RaycastHit hitUpper, raycastDistance))
+            if (!Physics.Raycast(upperOrigin, forward, out RaycastHit hitUpper, raycastDistance, stepLayerMask))
             {
+               // Debug.LogWarning($"Detected step by hitting object {hitLower.collider.name}");
                 rigidBody.position += Vector3.up * stepSmooth * Time.deltaTime;
             }
         }
 
         // Check for 45 degree angles
-        CheckAngle(lowerOrigin, upperOrigin, Quaternion.Euler(0, 45, 0) * forward);
-        CheckAngle(lowerOrigin, upperOrigin, Quaternion.Euler(0, -45, 0) * forward);
+       // CheckAngle(lower, upperOrigin, Quaternion.Euler(0, 45, 0) * forward);
+      //  CheckAngle(lower, upperOrigin, Quaternion.Euler(0, -45, 0) * forward);
     }
 
     /// <summary>

@@ -9,23 +9,23 @@ using System;
 /// </summary>
 public class TabController : MonoBehaviour
 {   
-    /// <summary>
-    /// Three states that a tab can be in used to determine movement
-    /// </summary>
-    public enum TabState { Default, Hovered, Selected }
+    ///// <summary>
+    ///// Three states that a tab can be in used to determine movement
+    ///// </summary>
+    //public enum TabState { Default, Hovered, Selected }
 
     [SerializeField] protected TabName tabName; //the reference to the tab name instance
-    protected float hoverOffset = 25f;  //how far to move the tab on hover/select
-    protected float moveSpeed = 100f;   //how fast to move the tab on hover
+    //protected float hoverOffset = 25f;  //how far to move the tab on hover/select
+    //protected float moveSpeed = 100f;   //how fast to move the tab on hover
 
     protected int tabIndex;         //tab index [0-total journal pages)
-    protected RectTransform rectTransform;  //reference to the transform of the ui component
-    protected Vector2 defaultPosition;      //unselected position
-    protected Vector2 hoveredPosition;      //selected/hover position
-    protected Vector2 targetPosition;       //position the tab is attempting to move towards
-    protected TabState currentState = TabState.Default; //holds current states of the tab
+  //  protected RectTransform rectTransform;  //reference to the transform of the ui component
+  //  protected Vector2 defaultPosition;      //unselected position
+  //  protected Vector2 hoveredPosition;      //selected/hover position
+   // protected Vector2 targetPosition;       //position the tab is attempting to move towards
+  //  protected TabState currentState = TabState.Default; //holds current states of the tab
 
-    protected JournalController journalController;  //reference to the journal controller object
+    protected Tablet tablet;  //reference to the journal controller object
 
     /// <summary>
     /// set the tab index by the tab name, init transform and position
@@ -33,82 +33,68 @@ public class TabController : MonoBehaviour
     protected virtual void Awake()
     {
         tabIndex = TabUtility.GetTabIndex(tabName);
-        rectTransform = GetComponent<RectTransform>();
-        defaultPosition = rectTransform.anchoredPosition;
-        hoveredPosition = defaultPosition + Vector2.left * (hoverOffset * (tabIndex == 4 ? -1 : 1));
-        
-        targetPosition = defaultPosition;
+       
 
-        journalController = FindFirstObjectByType<JournalController>();
+        tablet = FindFirstObjectByType<Tablet>();
     }
 
-    /// <summary>
-    /// moves the tab towards the target position over time
-    /// </summary>
-    protected virtual void Update()
-    {
-        rectTransform.anchoredPosition = Vector2.MoveTowards(
-            rectTransform.anchoredPosition,
-            targetPosition,
-            moveSpeed * Time.deltaTime
-        );
-    }
-    /// <summary>
-    /// On mouseover event, sets the tab to hovered state if it is not the selected tab
-    /// </summary>
-    protected virtual void OnPointerEnter()
-    {
-        if (currentState != TabState.Selected)
-        {
-            SetState(TabState.Hovered);
-        }
-    }
-    /// <summary>
-    /// pointer exit event, on hovers the tab if it is not the selected tab
-    /// </summary>
-    protected virtual void OnPointerExit()
-    {
-        if (currentState != TabState.Selected)
-        {
-            SetState(TabState.Default);
-        }
-    }
+    ///// <summary>
+    ///// On mouseover event, sets the tab to hovered state if it is not the selected tab
+    ///// </summary>
+    //protected virtual void OnPointerEnter()
+    //{
+    //    if (currentState != TabState.Selected)
+    //    {
+    //        SetState(TabState.Hovered);
+    //    }
+    //}
+    ///// <summary>
+    ///// pointer exit event, on hovers the tab if it is not the selected tab
+    ///// </summary>
+    //protected virtual void OnPointerExit()
+    //{
+    //    if (currentState != TabState.Selected)
+    //    {
+    //        SetState(TabState.Default);
+    //    }
+    //}
 
     /// <summary>
     /// Pass the tab index to the journal controller's tab click handler to change the page 
     /// </summary>
-    protected virtual void OnPointerClick()
-    {
-        journalController.HandleTabClick(tabIndex);
-    }
+    //protected virtual void OnPointerClick()
+    //{
+    //    Debug.Log($"Clicked on tab {name}");
+    //    //tablet.HandleTabClick(tabIndex);
+    //}
 
-    /// <summary>
-    /// Set the state of the tab
-    /// </summary>
-    /// <param name="newState">the tabstate name to set the state to</param>
-    public void SetState(TabState newState)
-    {
-        currentState = newState;
-        switch (currentState)
-        {
-            case TabState.Default:
-                targetPosition = defaultPosition;
-                break;
-            case TabState.Hovered:
-            case TabState.Selected:
-                targetPosition = hoveredPosition;
-                break;
-        }
-    }
+    ///// <summary>
+    ///// Set the state of the tab
+    ///// </summary>
+    ///// <param name="newState">the tabstate name to set the state to</param>
+    //public void SetState(TabState newState)
+    //{
+    //    currentState = newState;
+    //    switch (currentState)
+    //    {
+    //        case TabState.Default:
+    //            targetPosition = defaultPosition;
+    //            break;
+    //        case TabState.Hovered:
+    //        case TabState.Selected:
+    //            targetPosition = hoveredPosition;
+    //            break;
+    //    }
+    //}
 
-    /// <summary>
-    /// Set the tab to selected
-    /// </summary>
-    /// <param name="isSelected">If true, set the tab as selected, othewise set default</param>
-    public void SetSelected(bool isSelected)
-    {
-        SetState(isSelected ? TabState.Selected : TabState.Default);
-    }
+    ///// <summary>
+    ///// Set the tab to selected
+    ///// </summary>
+    ///// <param name="isSelected">If true, set the tab as selected, othewise set default</param>
+    //public void SetSelected(bool isSelected)
+    //{
+    //    SetState(isSelected ? TabState.Selected : TabState.Default);
+    //}
 }
 
 /// <summary>
@@ -132,7 +118,9 @@ public enum TabName
     [TabIndex(1)] Graph,
     [TabIndex(2)] Artifacts,
     [TabIndex(3)] Lore,
-    [TabIndex(4)] Settings
+    [TabIndex(4)] Map,
+    [TabIndex(5)] Settings
+
 }
 /// <summary>
 /// Utility class to convert tab name to an index

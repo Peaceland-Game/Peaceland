@@ -310,7 +310,7 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: 
+      value: Npc for background chatter
       type: 0
       typeString: CustomFieldType_Text
     - title: IsPlayer
@@ -332,7 +332,7 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: 
+      value: Npc for background chatter
       type: 0
       typeString: CustomFieldType_Text
     - title: IsPlayer
@@ -354,7 +354,7 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: 
+      value: Npc for background chatter
       type: 0
       typeString: CustomFieldType_Text
     - title: IsPlayer
@@ -376,7 +376,7 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: 
+      value: Npc for background chatter
       type: 0
       typeString: CustomFieldType_Text
     - title: IsPlayer
@@ -398,7 +398,7 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: 
+      value: Npc for background chatter
       type: 0
       typeString: CustomFieldType_Text
     - title: IsPlayer
@@ -420,7 +420,29 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: 
+      value: Npc for background chatter
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
+  - id: 20
+    fields:
+    - title: Name
+      value: Vendor
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Npc for background chatter
       type: 0
       typeString: CustomFieldType_Text
     - title: IsPlayer
@@ -1162,7 +1184,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'AnimatorController(Anim_Controllers/SpecificAnims, Cylo);
+
+          AnimatorTrigger(ShakeNo,
+          Cylo);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 19
@@ -1461,7 +1486,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'AnimatorController(Anim_Controllers/Story1Mem1Anims, Cylo);
+
+          AnimatorTrigger(Cylo_IceCreamScoop,
+          Cylo);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 19
@@ -1516,7 +1544,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: AnimatorTrigger(Cylo_ReturnToIdle, Cylo, Cylo_IceCreamScoop);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 19
@@ -1623,7 +1651,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Yeah you're probably right ... Bye Cylo, have a good night!
+        value: Yeah, you're probably right ... Bye Cylo, have a good night!
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -1801,7 +1829,7 @@ MonoBehaviour:
 
           LookAt(Cylo, listener, 0.3);
 
-          Camera(AdultLookUp,
+          Camera(FurtherBackLookUp,
           speaker, 0.5);
 
           SetEnabled(Canvas, true, DialogueCanvas)@0.5;'
@@ -1822,7 +1850,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: StopPlayer()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2102,7 +2130,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'AnimatorController(Anim_Controllers/SpecificAnims, Cylo);
+
+          AnimatorTrigger(ShakeNo,
+          Cylo);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 19
@@ -2131,7 +2162,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 140.50581, y: 0}
+    canvasScrollPosition: {x: 281.4149, y: 70.454575}
     canvasZoom: 0.8800001
   - id: 20
     fields:
@@ -2285,7 +2316,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: StopPlayer()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2462,7 +2493,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: Variable["HeardDog"] == true;
-      userScript: 
+      userScript: StopPlayer()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2603,7 +2634,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 'SetContinueMode(false);
+
+          LookAt(bridge1 (1), Player, 0.6)@0.3;
+
+          LookAt(SideWalk_VendorCart
+          (2), Player, 0.6)@1.0;
+
+          SetContinueMode(true)@1.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 21
@@ -2617,17 +2655,17 @@ MonoBehaviour:
       - originConversationID: 21
         originDialogueID: 1
         destinationConversationID: 21
-        destinationDialogueID: 2
+        destinationDialogueID: 3
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: StopPlayer()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159
+        x: 157.96907
         y: 79
         width: 160
         height: 30
@@ -2682,13 +2720,68 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158
-        y: 132
+        x: 159.03093
+        y: 181.48456
+        width: 160
+        height: 30
+    - id: 3
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 11
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: '*BARK* *bark*'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: LookAt(Waeli, Player, 0.7);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 21
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 21
+        originDialogueID: 3
+        destinationConversationID: 21
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 157.96907
+        y: 129
         width: 160
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasZoom: 0.97
   - id: 22
     fields:
     - title: Title

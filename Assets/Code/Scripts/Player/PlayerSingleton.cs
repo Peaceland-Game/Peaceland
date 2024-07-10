@@ -4,12 +4,16 @@ using UnityEngine;
 using ProceduralWorlds;
 using PixelCrushers.DialogueSystem;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 using Gaia;
+
+[System.Serializable]
+public class MoneyCollectedEvent : UnityEvent { }
 
 public class PlayerSingleton : MonoBehaviour
 {
     public static PlayerSingleton Instance;
-    public JournalController journal;
+    public Tablet tablet;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private UserInterface userInterface;
     //private PlayerMovement playerMovement;
@@ -21,7 +25,8 @@ public class PlayerSingleton : MonoBehaviour
     [SerializeField]
     private Transform carryPos;
     private Transform heldItem;
-  // public bool playerInHub = false;
+    public MoneyCollectedEvent onMoneyCollected = new MoneyCollectedEvent();
+    // public bool playerInHub = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,10 @@ public class PlayerSingleton : MonoBehaviour
         {
             Instance = this;
             controller = GetComponent<FirstPersonController>();
+            if (userInterface)
+            {
+                userInterface.RegisterEventListener();
+            }
             //playerMovement = GetComponent<PlayerMovement>();
            // Gaia.GaiaAPI.SetRuntimePlayerAndCamera(gameObject, playerCamera, true);
         }
@@ -84,14 +93,15 @@ public class PlayerSingleton : MonoBehaviour
            // Debug.Log("player not in memory select");
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
-             //   Debug.Log("escape pressed");
-
-                paused = !paused;
-                Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
-                userInterface.TogglePauseMenu(paused);
-                controller.enabled = !paused;
+                //   Debug.Log("escape pressed");
+                //TogglePauseMenu();
+                ToggleJournal();
 
             }
+            //else if(Keyboard.current.qKey.wasPressedThisFrame)
+            //{
+            //    ToggleJournal();
+            //}
         }
         //else if (Keyboard.current.jKey.wasPressedThisFrame)
         //{
@@ -102,6 +112,48 @@ public class PlayerSingleton : MonoBehaviour
     //{
     //    journal.AddJournalEntry();
     //}
+
+
+    public void ToggleJournal()
+    {
+        TogglePause();
+        userInterface.ToggleJournal(paused);
+    }
+
+    public void TogglePauseMenu()
+    {
+        TogglePause();
+        userInterface.TogglePauseMenu(paused);
+    }
+
+    /// <summary>
+    /// Toggles whether in UI or first person mode 
+    /// </summary>
+    private void TogglePause()
+    {
+        paused = !paused;
+        Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
+        controller.enabled = !paused;
+
+    }
+    public void AddMoney(int amt)
+    {
+        
+        var money = DialogueLua.GetVariable("PlayerMoney").asInt;
+        money += amt;
+        DialogueLua.SetVariable("PlayerMoney", money);
+
+        onMoneyCollected.Invoke();
+
+    }
+    public bool SubtractMoney(int amt)
+    {
+        var money = DialogueLua.GetVariable("PlayerMoney").asInt;
+        if (amt > money) return false;
+        DialogueLua.SetVariable("PlayerMoney", money - amt);
+        onMoneyCollected.Invoke();
+        return true;
+    }
 
     void OnConversationEnd(Transform actor)
     {
@@ -133,4 +185,27 @@ public class PlayerSingleton : MonoBehaviour
         heldItem.localRotation = resetPos.localRotation;
         heldItem.localScale = resetPos.localScale;
     }
+
+    public void StopPlayer() 
+    {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
+
+    void OnEnable()
+    {
+        // Make the functions available to Lua: (Replace these lines with your own.)
+        Lua.RegisterFunction(nameof(StopPlayer), this, SymbolExtensions.GetMethodInfo(() => StopPlayer()));
+        // Lua.RegisterFunction(nameof(AddOne), this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
+    }
+    /*
+    void OnDisable()
+    {
+        if (true)
+        {
+            // Remove the functions from Lua: (Replace these lines with your own.)
+            Lua.UnregisterFunction(nameof(StopPlayer));
+            //   Lua.UnregisterFunction(nameof(AddOne));
+        }
+    }
+    */
 }

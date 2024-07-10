@@ -32,7 +32,7 @@ Transform:
   - {fileID: 6152148582466651053}
   - {fileID: 4357464508977606124}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8437637156904192338
 MonoBehaviour:
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 5968106216759762889}
   - component: {fileID: 128059911823327023}
   - component: {fileID: 8602540157816483776}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Uniform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,17 +264,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 26cd9e2139ad31842a0f6cf68eee07a6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -339.125
+      value: -329.555
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26cd9e2139ad31842a0f6cf68eee07a6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 87.345
+      value: 87.065
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26cd9e2139ad31842a0f6cf68eee07a6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -168.746
+      value: -165.747
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26cd9e2139ad31842a0f6cf68eee07a6,
         type: 3}
@@ -321,6 +321,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Newspaper
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 26cd9e2139ad31842a0f6cf68eee07a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -363,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_overrideName: 
-  m_overrideUseMessage: 
+  m_overrideUseMessage: E to Pickup
   maxUseDistance: 20
   events:
     onSelect:
@@ -411,18 +416,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 8437637156904192338}
-          m_TargetAssemblyTypeName: JournalPlayerRef, Assembly-CSharp
-          m_MethodName: AddArtifact
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6785519629384636695}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!65 &6844862900438544011
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -442,8 +435,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 100.00009, y: 11.468558, z: 94.84429}
-  m_Center: {x: -0.0000040681884, y: -49.368736, z: -2.5778842}
+  m_Size: {x: 100.00009, y: 11.679644, z: 94.84429}
+  m_Center: {x: -0.000003273057, y: -21.677572, z: -2.5778847}
 --- !u!114 &5367886950806578500
 MonoBehaviour:
   m_ObjectHideFlags: 0

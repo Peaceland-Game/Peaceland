@@ -1,19 +1,28 @@
+using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UserInterface : MonoBehaviour
 {
+    [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject journal;
     public ScrollToBottom scrollToBottom;  // Reference to the ScrollToBottom script
     public GameObject memorySelectUI;
     [SerializeField] GameObject loadScreen;
     [SerializeField] private UnityEngine.UI.Slider loadingSlider;
+    [SerializeField] private TextMeshProUGUI moneyText;
     // Start is called before the first frame update
     void Start()
     {
         
     }
+    public void RegisterEventListener()
+    {
+        PlayerSingleton.Instance.onMoneyCollected.AddListener(UpdateMoneyUI);
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -25,7 +34,16 @@ public class UserInterface : MonoBehaviour
     }
     public void TogglePauseMenu(bool isPaused)
     {
+        pauseMenu.SetActive(isPaused);
+    }
+
+    public void ToggleJournal(bool isPaused)
+    {
         journal.SetActive(isPaused);
+    }
+    void UpdateMoneyUI()
+    {
+        moneyText.text = "Money: " + DialogueLua.GetVariable("PlayerMoney").asInt;
     }
 
     public void ToggleHistoryMenu(PlayerMovement.MovementState state)

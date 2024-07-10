@@ -1311,7 +1311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &369746166052998438
 Transform:
   m_ObjectHideFlags: 0
@@ -1319,8 +1319,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2833432215776448637}
-  m_LocalRotation: {x: 0, y: -0.29213804, z: 0, w: 0.9563762}
-  m_LocalPosition: {x: 105.622, y: 78.91329, z: -108.55}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1329,7 +1329,7 @@ Transform:
   - {fileID: 4829462984756670769}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -33.972, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4650554363828648843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1738,8 +1738,6 @@ MonoBehaviour:
   sprintSpeed: 7
   sprintDuration: 5
   sprintCooldown: 0.5
-  sprintFOV: 80
-  sprintFOVStepTime: 10
   useSprintBar: 0
   hideBarWhenFull: 1
   sprintBarBG: {fileID: 0}
@@ -1773,7 +1771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a40cbc58a577f4898627fdc85f41cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  journal: {fileID: 1644980459720827247}
+  tablet: {fileID: 0}
   playerCamera: {fileID: 5518115683167006873}
   userInterface: {fileID: 7030847460906350005}
   paused: 0
@@ -3996,18 +3994,6 @@ PrefabInstance:
       addedObject: {fileID: 7398372947939047576}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 566add958da87d94b986b30039e87a8e, type: 3}
---- !u!114 &1644980459720827247 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8567355437555393398, guid: 566add958da87d94b986b30039e87a8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 6931454771033162265}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93dc0b55a52b34645a11504a42c68929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &4167992207973466998 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6478102296252416367, guid: 566add958da87d94b986b30039e87a8e,

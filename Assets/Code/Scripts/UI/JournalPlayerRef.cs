@@ -9,7 +9,7 @@ using UnityEngine;
 /// </summary>
 public class JournalPlayerRef : MonoBehaviour
 {
-    public JournalController player;
+    public Tablet player;
 
     /// <summary>
     /// pass the artifact's name to the player journal controller
