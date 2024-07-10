@@ -2534,7 +2534,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -2662,6 +2662,12 @@ MonoBehaviour:
       - originConversationID: 10
         originDialogueID: 17
         destinationConversationID: 10
+        destinationDialogueID: 34
+        isConnector: 0
+        priority: 2
+      - originConversationID: 10
+        originDialogueID: 17
+        destinationConversationID: 10
         destinationDialogueID: 20
         isConnector: 0
         priority: 2
@@ -2727,7 +2733,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158.99023
+        x: 156.7175
         y: 172.66235
         width: 160
         height: 30
@@ -2789,8 +2795,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.5431
-        y: 383.2735
+        x: 158.40674
+        y: 504.8644
         width: 160
         height: 30
     - id: 20
@@ -2896,12 +2902,6 @@ MonoBehaviour:
       - originConversationID: 10
         originDialogueID: 21
         destinationConversationID: 10
-        destinationDialogueID: 22
-        isConnector: 0
-        priority: 2
-      - originConversationID: 10
-        originDialogueID: 21
-        destinationConversationID: 10
         destinationDialogueID: 33
         isConnector: 0
         priority: 2
@@ -2947,7 +2947,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AnimatorTrigger(Idle, , Mother_WashingDishes);
+        value: 'AnimatorTrigger(Idle, , Mother_WashingDishes);
+
+          SetContinueMode(true);'
         type: 0
         typeString: 
       conversationID: 10
@@ -2964,7 +2966,7 @@ MonoBehaviour:
         destinationDialogueID: 23
         isConnector: 0
         priority: 2
-      conditionsString: Variable["TrashPickedUp"] >= 5
+      conditionsString: 
       userScript: 'ChangeEmotionalState(0, Actor["Mama"].Name); -- CONTENT;
 
         SetQuestState("Trash
@@ -2974,8 +2976,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 162.81006
-        y: 254.7307
+        x: 142.35553
+        y: 325.1852
         width: 160
         height: 30
     - id: 23
@@ -3029,8 +3031,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 157.65945
-        y: 296.4817
+        x: 156.52309
+        y: 418.0726
         width: 160
         height: 30
     - id: 24
@@ -3084,8 +3086,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161.61086
-        y: 340.7141
+        x: 160.47449
+        y: 462.30502
         width: 160
         height: 30
     - id: 25
@@ -3140,8 +3142,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 89.15787
-        y: 432.79095
+        x: 88.0215
+        y: 554.3816
         width: 160
         height: 30
     - id: 26
@@ -3195,8 +3197,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 280.75217
-        y: 435.30194
+        x: 279.61578
+        y: 556.8926
         width: 160
         height: 30
     - id: 27
@@ -3250,8 +3252,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 278.1872
-        y: 478.16565
+        x: 277.05078
+        y: 599.7562
         width: 160
         height: 30
     - id: 28
@@ -3310,8 +3312,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 280.61572
-        y: 521.87976
+        x: 279.4793
+        y: 643.47034
         width: 160
         height: 30
     - id: 29
@@ -3368,8 +3370,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 279.47284
-        y: 565.8799
+        x: 278.33643
+        y: 687.47046
         width: 160
         height: 30
     - id: 31
@@ -3427,8 +3429,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158.49388
-        y: 689.61774
+        x: 157.35751
+        y: 811.20825
         width: 160
         height: 30
     - id: 32
@@ -3485,8 +3487,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 277.61987
-        y: 610.8075
+        x: 276.48346
+        y: 732.3981
         width: 160
         height: 30
     - id: 33
@@ -3541,13 +3543,68 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 423.9437
-        y: 235.44717
+        x: 11.443726
+        y: 267.26535
+        width: 160
+        height: 30
+    - id: 34
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: I've taken out the trash, ma
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 10
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 10
+        originDialogueID: 34
+        destinationConversationID: 10
+        destinationDialogueID: 22
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["TrashPickedUp"] >= 5
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 403.29446
+        y: 242.3367
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 19.318115}
-    canvasZoom: 0.8800001
+    canvasScrollPosition: {x: 63.658363, y: 39.78367}
+    canvasZoom: 1.03
   - id: 11
     fields:
     - title: Title
