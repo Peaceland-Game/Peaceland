@@ -71,7 +71,7 @@ public class CharacterVisualController : MonoBehaviour
             for (int i = 0; i < bodies.Count; i++)
             {
                 Renderer renderer = bodies[i];
-                renderer.sharedMaterial.SetVector("_Times", currentTimes);
+                renderer.material.SetVector("_Times", currentTimes);
             }
         }
         
