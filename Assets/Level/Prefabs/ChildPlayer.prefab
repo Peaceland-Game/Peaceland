@@ -2178,7 +2178,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2853,6 +2853,7 @@ GameObject:
   - component: {fileID: 3272614998225275217}
   - component: {fileID: 7338456132888364412}
   - component: {fileID: 5619740749639599599}
+  - component: {fileID: 3448781703432341359}
   m_Layer: 15
   m_Name: ChildPlayer
   m_TagString: Player
@@ -3567,6 +3568,22 @@ MonoBehaviour:
   sprintSoundRadius: 14
   walkSoundRadius: 8
   crouchSoundRadius: 4
+--- !u!114 &3448781703432341359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8411154095936243601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77988f7c7268f645857595151c3a729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstPersonController: {fileID: 1269763368526715042}
+  sprintSoundRadius: 14
+  walkSoundRadius: 8
+  crouchSoundRadius: 4
 --- !u!1 &8449050890457778490
 GameObject:
   m_ObjectHideFlags: 0
@@ -3843,7 +3860,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4142,6 +4159,16 @@ PrefabInstance:
     - target: {fileID: 7542133948533278637, guid: 566add958da87d94b986b30039e87a8e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744794868689184424, guid: 566add958da87d94b986b30039e87a8e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980791055475648236, guid: 566add958da87d94b986b30039e87a8e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9064790724566218150, guid: 566add958da87d94b986b30039e87a8e,

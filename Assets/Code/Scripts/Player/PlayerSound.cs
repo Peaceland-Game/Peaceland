@@ -27,7 +27,7 @@ public class PlayerSound : MonoBehaviour
             return sprintSoundRadius;
         }
         //player makes normal sound when walking
-        else if (firstPersonController.isWalking && !firstPersonController.isCrouched)
+        else if ((firstPersonController.isWalking && !firstPersonController.isCrouched) || firstPersonController.isGrounded)
         {
             currentRadius = walkSoundRadius;
             return walkSoundRadius;
