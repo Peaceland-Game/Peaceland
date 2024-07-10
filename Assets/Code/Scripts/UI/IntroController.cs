@@ -15,7 +15,6 @@ public class IntroController : MonoBehaviour
     public TextMeshProUGUI buzz1;
     public TextMeshProUGUI buzz2;
     public Button wakeUpButton;
-    public TextMeshProUGUI goToComputerText;
     public Button goToComputerButton;
     public TextMeshProUGUI pickUpTabletPrompt;
 
@@ -31,7 +30,6 @@ public class IntroController : MonoBehaviour
         buzz1.gameObject.SetActive(false);
         buzz2.gameObject.SetActive(false);
         wakeUpButton.gameObject.SetActive(false);
-        goToComputerText.gameObject.SetActive(false);
         goToComputerButton.gameObject.SetActive(false);
         pickUpTabletPrompt.gameObject.SetActive(false);
 
@@ -96,10 +94,9 @@ public class IntroController : MonoBehaviour
         // Execute the teleport action
         onFadeComplete?.Invoke();
 
-        // Tell the player to go to their computer
-        StartCoroutine(fadeInOutText(goToComputerText, 1, 3, 1, true, true));
+        // Wait as the player "wakes up"
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
 
         goToComputerButton.gameObject.SetActive(true);
     }
