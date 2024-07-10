@@ -691,7 +691,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: Bark!
+        value: '*growl* Bark!'
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -3603,7 +3603,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">Well... my Da said I was old enough to
+        value: <font="Aretha - Light SDF">Well... my dad said I was old enough to
           support the family. Instead of school, I go with him to work.</font>
         type: 0
         typeString: CustomFieldType_Text
@@ -3659,8 +3659,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">Lucky! I wish I didn't have to go to school.
-          It's so boring... I bet you never get bored at work.</font>
+        value: <font="Aretha - Light SDF">[ Lucky! ] I wish I didn't have to go to
+          school. It's so boring... I bet you never get bored at work.</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -3772,7 +3772,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: <font="Aretha - Light SDF">I wanna never have homework. Maybe I should
-          tall my Da I'm old enough to support our family.</font>
+          tall my dad I'm old enough to support our family.</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -4976,7 +4976,7 @@ MonoBehaviour:
           MoveTo(Player,
           PlayerAnchor);
 
-          MoveTo(PlayerPanel5Start, Player)@0.8;
+          MoveTo(PlayerPanel5Start, Player)@1.2;
 
           MoveTo(Gryf,
           GryfAnchor);
@@ -4984,11 +4984,11 @@ MonoBehaviour:
           MoveTo(Waeli, WaeliAnchor);
 
           Camera(Mem1Panel4Dog,
-          Gryf, 0.7)@1.0;
+          Gryf, 0.7)@1.4;
 
           LookAt(Gryf, speaker);
 
-          Fade(in, 0.7)@1.8;'
+          Fade(in, 0.7)@2.2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -5005,14 +5005,8 @@ MonoBehaviour:
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
-      - originConversationID: 27
-        originDialogueID: 82
-        destinationConversationID: 27
-        destinationDialogueID: 36
-        isConnector: 0
-        priority: 2
       conditionsString: Variable["SpokeToWaeli"] == false
-      userScript: 
+      userScript: StopPlayer()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5049,7 +5043,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: Camera(Medium, Waeli, 0.5);
+        value: Camera(PlayerStraight, Player, 0.5);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -5237,8 +5231,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 571.0533}
-    canvasZoom: 0.85000014
+    canvasScrollPosition: {x: 1.2195129, y: 1821.1833}
+    canvasZoom: 0.8200002
   - id: 28
     fields:
     - title: Title
@@ -5902,7 +5896,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "He didn\u2019t bite me when I pet him, he seems nice."
+        value: He seems nice.
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -6354,7 +6348,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: You should take a step back too! Feral dogs are unpredictable!
+        value: You should take a step back too! Wild dogs are unpredictable!
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -6711,7 +6705,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "Give that here! You shouldn\u2019t have that thing!"
+        value: "Give that here! You shouldn\u2019t have that thing! Next time, I\u2019ll
+          tell your parents about the taser."
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -7350,7 +7345,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "That doesn\u2019t answer my question. Is he a pet. Or not."
+        value: "That doesn\u2019t answer my question. Is he a pet? Or not?"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -7765,7 +7760,7 @@ MonoBehaviour:
           Fade(stay,
           0.7);
 
-          MoveTo(PlayerSpeakUp, Waeli)@0.8;
+          MoveTo(WaeliSpeakUp, Waeli)@0.8;
 
           SetActive(GPKSoldierP5A,
           false)@0.8;
@@ -7914,9 +7909,9 @@ MonoBehaviour:
           LookAt(Waeli,
           Player)@0.7;
 
-          Fade(in, 0.5)@0.8;
+          Fade(in, 0.5)@1.0;
 
-          Delay(1.3);'
+          Delay(1.7);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -11243,12 +11238,13 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetEnabled(Canvas, false, DialogueCanvas);
 
+          MoveTo(PlayerPanel5Start,
+          Player);
+
           Fade(in, 0.7)@1.2;
 
-          MoveTo(PlayerPanel5Start,
-          Player)@1.4;
-
-          SetEnabled(Canvas, true, DialogueCanvas)@2.0;'
+          SetEnabled(Canvas, true,
+          DialogueCanvas)@2.0;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -11271,8 +11267,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 65.99182, y: 2357.7073}
-    canvasZoom: 0.7900002
+    canvasScrollPosition: {x: 0, y: 1035.1553}
+    canvasZoom: 0.73000026
   syncInfo:
     syncActors: 1
     syncItems: 1

@@ -2035,7 +2035,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: StopPlayer()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2613,7 +2613,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 7, y: 1015}
+    canvasScrollPosition: {x: 17, y: 0}
     canvasZoom: 1
   - id: 10
     fields:
@@ -2785,7 +2785,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: StopPlayer()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3923,7 +3923,7 @@ MonoBehaviour:
 
         Variable["MotherPermission"]
         == false'
-      userScript: 
+      userScript: StopPlayer()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3980,7 +3980,9 @@ MonoBehaviour:
       userScript: 'Variable["Alert"] = "Find Cylo";
 
         SetQuestState("Cylo
-        Season", "active");'
+        Season", "active");
+
+        StopPlayer()'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
