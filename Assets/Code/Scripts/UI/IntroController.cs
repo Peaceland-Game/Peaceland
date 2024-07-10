@@ -17,7 +17,7 @@ public class IntroController : MonoBehaviour
     public Button wakeUpButton;
     public TextMeshProUGUI goToComputerText;
     public Button goToComputerButton;
-    public Button takeTabletButton;
+    public TextMeshProUGUI pickUpTabletPrompt;
 
     public GameObject tablet;
     
@@ -33,7 +33,7 @@ public class IntroController : MonoBehaviour
         wakeUpButton.gameObject.SetActive(false);
         goToComputerText.gameObject.SetActive(false);
         goToComputerButton.gameObject.SetActive(false);
-        takeTabletButton.gameObject.SetActive(false);
+        pickUpTabletPrompt.gameObject.SetActive(false);
 
         StartCoroutine(Wait());
     }
@@ -175,9 +175,9 @@ public class IntroController : MonoBehaviour
         StartCoroutine(FadeCoroutine(1, () => { }));
     }
 
-    public void TakeTablet()
+    public void TakeTabletPrompt()
     {
-        tablet.gameObject.SetActive(false);
+        StartCoroutine(fadeInOutText(pickUpTabletPrompt, 0.5f, 3, 1337, true, false));
     }
 
     public void EndScene()
