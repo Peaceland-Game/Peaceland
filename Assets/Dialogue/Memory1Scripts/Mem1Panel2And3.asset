@@ -652,6 +652,20 @@ MonoBehaviour:
       value: The effect of the player's actions
       type: 0
       typeString: CustomFieldType_Text
+  - id: 3
+    fields:
+    - title: Name
+      value: PlayerMoney
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   - id: 6
     fields:
     - title: Name
@@ -972,7 +986,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -3164,7 +3178,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: StopPlayer();
       onExecute:
         m_PersistentCalls:
           m_Calls: []
