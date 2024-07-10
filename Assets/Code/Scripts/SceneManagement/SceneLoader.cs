@@ -18,11 +18,11 @@ public class SceneLoader : MonoBehaviour
 
     IEnumerator LoadScenesOneByOne()
     {
-        // Show loading screen
-        if (loadingScreen != null)
-        {
-            loadingScreen.SetActive(true);
-        }
+        //// Show loading screen
+        //if (loadingScreen != null)
+        //{
+        //    loadingScreen.SetActive(true);
+        //}
 
         foreach (string sceneName in sceneNames)
         {
@@ -36,7 +36,7 @@ public class SceneLoader : MonoBehaviour
             loaderCamera.SetActive(false);
             player.SetActive(true);
 
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 
