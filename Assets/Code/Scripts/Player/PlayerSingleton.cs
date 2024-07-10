@@ -4,7 +4,11 @@ using UnityEngine;
 using ProceduralWorlds;
 using PixelCrushers.DialogueSystem;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 using Gaia;
+
+[System.Serializable]
+public class MoneyCollectedEvent : UnityEvent { }
 
 public class PlayerSingleton : MonoBehaviour
 {
@@ -21,7 +25,8 @@ public class PlayerSingleton : MonoBehaviour
     [SerializeField]
     private Transform carryPos;
     private Transform heldItem;
-  // public bool playerInHub = false;
+    public MoneyCollectedEvent onMoneyCollected = new MoneyCollectedEvent();
+    // public bool playerInHub = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,10 @@ public class PlayerSingleton : MonoBehaviour
         {
             Instance = this;
             controller = GetComponent<FirstPersonController>();
+            if (userInterface)
+            {
+                userInterface.RegisterEventListener();
+            }
             //playerMovement = GetComponent<PlayerMovement>();
            // Gaia.GaiaAPI.SetRuntimePlayerAndCamera(gameObject, playerCamera, true);
         }
@@ -126,6 +135,24 @@ public class PlayerSingleton : MonoBehaviour
         Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
         controller.enabled = !paused;
 
+    }
+    public void AddMoney(int amt)
+    {
+        
+        var money = DialogueLua.GetVariable("PlayerMoney").asInt;
+        money += amt;
+        DialogueLua.SetVariable("PlayerMoney", money);
+
+        onMoneyCollected.Invoke();
+
+    }
+    public bool SubtractMoney(int amt)
+    {
+        var money = DialogueLua.GetVariable("PlayerMoney").asInt;
+        if (amt > money) return false;
+        DialogueLua.SetVariable("PlayerMoney", money - amt);
+        onMoneyCollected.Invoke();
+        return true;
     }
 
     void OnConversationEnd(Transform actor)
