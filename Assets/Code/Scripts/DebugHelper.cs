@@ -5,6 +5,7 @@ using UnityEngine;
 public class DebugHelper : MonoBehaviour
 {
     [SerializeField] GameObject freeCam;
+    [SerializeField] List<TeleportPoint> TeleportPoints;
 
     private GameObject player;
     private GameObject freeCamObj;
@@ -45,5 +46,12 @@ public class DebugHelper : MonoBehaviour
                 Destroy(freeCamObj);
             }
         }
+    }
+
+    [System.Serializable]
+    private class TeleportPoint
+    {
+        [SerializeField] public string key;
+        [SerializeField] public Transform point;
     }
 }
