@@ -1648,7 +1648,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Yeah you're probably right ... Bye Cylo, have a good night!
+        value: Yeah, you're probably right ... Bye Cylo, have a good night!
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -2156,7 +2156,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 140.50581, y: 0}
+    canvasScrollPosition: {x: 150.73308, y: 238.63638}
     canvasZoom: 0.8800001
   - id: 20
     fields:
@@ -2628,7 +2628,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 'SetContinueMode(false);
+
+          LookAt(bridge1 (1), Player, 0.6)@0.3;
+
+          LookAt(SideWalk_VendorCart
+          (2), Player, 0.6)@1.0;
+
+          SetContinueMode(true)@1.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 21
@@ -2642,7 +2649,7 @@ MonoBehaviour:
       - originConversationID: 21
         originDialogueID: 1
         destinationConversationID: 21
-        destinationDialogueID: 2
+        destinationDialogueID: 3
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2652,7 +2659,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159
+        x: 157.96907
         y: 79
         width: 160
         height: 30
@@ -2707,13 +2714,68 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158
-        y: 132
+        x: 159.03093
+        y: 181.48456
+        width: 160
+        height: 30
+    - id: 3
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 11
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: '*BARK* *bark*'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: LookAt(Waeli, Player, 0.7);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 21
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 21
+        originDialogueID: 3
+        destinationConversationID: 21
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 157.96907
+        y: 129
         width: 160
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasZoom: 0.97
   - id: 22
     fields:
     - title: Title
