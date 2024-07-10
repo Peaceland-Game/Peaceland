@@ -240,7 +240,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -341,7 +341,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Fade(stay, 0.1);
+        value: 'MoveTo(CameraConversationLoc, Player, 0.8);
 
           Delay(2);'
         type: 0
@@ -398,7 +398,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: 
       conversationID: 34
@@ -449,11 +449,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 
+        value: My editor is calling... I should probably answer.
         type: 0
         typeString: 
       - title: Sequence
-        value: Fade(in, 1.0);
+        value: 
         type: 0
         typeString: 
       conversationID: 34
@@ -509,7 +509,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 
         type: 0
         typeString: 
       conversationID: 34
@@ -1332,7 +1332,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: Delay(4);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 34
@@ -1342,16 +1342,34 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: (Variable["RemindMe"] == true) and (Variable["StoryAbout"]
+      outgoingLinks:
+      - originConversationID: 34
+        originDialogueID: 20
+        destinationConversationID: 34
+        destinationDialogueID: 25
+        isConnector: 0
+        priority: 2
+      conditionsString: (Variable["RemindMe"] == true) and (Variable["WhyMemories"]
         == true) and (Variable["WhyMe"] == true)
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11500000, guid: e3304ec5b64792c4081be1d3a9a63d6c, type: 3}
+            m_TargetAssemblyTypeName: UnityEditor.MonoScript, UnityEditor.CoreModule
+            m_MethodName: 
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 337.93533
+        x: 339.57468
         y: 857.5849
         width: 160
         height: 30
@@ -1552,9 +1570,64 @@ MonoBehaviour:
         y: 451
         width: 160
         height: 30
+    - id: 25
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 21
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'MoveTo(CameraTabletLookLoc, Player, 0.8);
+
+          SetContinueMode(false);'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 34
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 338.68842
+        y: 929.1798
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 19.998367, y: 197.64703}
-    canvasZoom: 0.85000014
+    canvasScrollPosition: {x: 39.34424, y: 39.34424}
+    canvasZoom: 0.6100004
   syncInfo:
     syncActors: 0
     syncItems: 0
