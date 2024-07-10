@@ -59,8 +59,8 @@ public class FogController : MonoBehaviour
     
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(lastValidPosition, 1f);
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawSphere(lastValidPosition, 1f);
     }
     /// <summary>
     /// Checks the player position against the playable area (defined by the playableArea collider list)
