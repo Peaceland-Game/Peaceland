@@ -21,7 +21,7 @@ public class PlayerSound : MonoBehaviour
     {
         
         //player makes a lot of sound when running
-        if ((firstPersonController.isSprinting && firstPersonController.isWalking))
+        if (firstPersonController.isSprinting && firstPersonController.isWalking)
         {
             currentRadius = sprintSoundRadius;
             return sprintSoundRadius;

@@ -91,7 +91,7 @@ public class AntoniStealthAI : MonoBehaviour
     }
     void SwitchToAlmostSpotted()
     {
-        currentTimeBeforeNoticed = 0;
+        currentTimeBeforeNoticed = 0.1f;
         timer = 0;
         currentState = State.AlmostSpotted;
     }
@@ -157,7 +157,6 @@ public class AntoniStealthAI : MonoBehaviour
         agent.isStopped = false;
         agent.velocity = Vector3.zero;
         GoToPlayerPoint();
-        Debug.Log(currentTimeBeforeNoticed);
         
         //if they continue to detect the player, get closer to spotting them
         if (stealthScript.detectedPlayer)
@@ -172,10 +171,10 @@ public class AntoniStealthAI : MonoBehaviour
             
 
         else if (!stealthScript.detectedPlayer && timer >= 0.5)
-            currentTimeBeforeNoticed -= Time.deltaTime;   
+            currentTimeBeforeNoticed -= Time.deltaTime/4;   
 
         //spot them if they detected them for long enough
-        if (currentTimeBeforeNoticed > timeBeforeAgentNoticesPlayer)
+        if (currentTimeBeforeNoticed > timeBeforeAgentNoticesPlayer + 0.1f)
             currentState = State.Spotted;
 
         //lose them if they did not see them for long enough
@@ -203,7 +202,7 @@ public class AntoniStealthAI : MonoBehaviour
 
         //rotate around y axis until they have turned 180 degrees
         currentTurnAroundTimer += Time.deltaTime;
-        if (currentTurnAroundTimer <= 1.3)
+        if (currentTurnAroundTimer <= 1.5)
             transform.Rotate(0, 120 * Time.deltaTime, 0, 0);
         //once they have rotated enough, wait an amount of time
         else

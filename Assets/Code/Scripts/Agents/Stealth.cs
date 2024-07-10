@@ -42,14 +42,13 @@ public class Stealth : MonoBehaviour
 
     public float distanceToPlayer;
 
+    public LayerMask rayLayerMask;
+
     //contains every ray
     private Ray[] rays;
     //contains every ray angle
     private float[] rayAngles;
 
-    //used for collisions
-    private RaycastHit hit;
-    
     private void Start()
     {
         rays = new Ray[numberOfRays];
@@ -111,7 +110,7 @@ public class Stealth : MonoBehaviour
         for (int i = 0; i < numberOfRays; i++)
         {
             //set the ray's new origin and direction
-            rays[i].origin = new Vector3(transform.position.x, transform.position.y - 0.2f, transform.position.z);
+            rays[i].origin = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             rays[i].direction = new Vector3(Mathf.Cos(angleOfForward + rayAngles[i]), transform.forward.y, Mathf.Sin(angleOfForward + rayAngles[i])).normalized;
             if (i == 0)
                 rays[i].direction = transform.forward;
@@ -123,7 +122,11 @@ public class Stealth : MonoBehaviour
                 if (!heardPlayer)
                 {
                     if (IsCollidingWithObject(rays[i], player, detectionDistance) == "detected")
+                    {
                         detectedPlayer = true;
+                    }
+                        
+                    
                 }
                 //use large if they hear the player
                 else
@@ -179,10 +182,11 @@ public class Stealth : MonoBehaviour
     /// <returns>a string shpwing what object the ray collided with</returns>
     private string IsCollidingWithObject(Ray ray, GameObject player, float maxDistance)
     {
-        if (Physics.Raycast(ray, out hit))
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, maxDistance, rayLayerMask))
         {
             //the agent sees a wall
-            if (hit.collider.gameObject.layer == 6)
+            if (hit.collider.gameObject.layer == 7)
                 return "wall";
 
             //rays collided with the player
