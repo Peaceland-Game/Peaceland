@@ -27,6 +27,7 @@ public class MemorySwapper : MonoBehaviour
     public bool LoadMemoryOnStart = true;
     public int MemoryIndex = 0;
     [SerializeField] private UserInterface userInterface;
+    [SerializeField] private FirstPersonController playerController;
     
 
     void Start()
@@ -50,6 +51,8 @@ public class MemorySwapper : MonoBehaviour
     public void SwitchToMemory(double index)
     {
         userInterface.EnableLoadScreen();
+        playerController.enabled = false;
+
         var ind = (int)Mathf.Floor((float)index);
         if (ind < 0 || ind >= memoryObjects.Count)
         {
@@ -77,7 +80,7 @@ public class MemorySwapper : MonoBehaviour
         // Change the lighting profile
         if (lightingController != null)
         {
-            lightingController.TransitionToProfile(selectedMemory.timeOfDay, 1f, userInterface); // 1 second transition
+            lightingController.TransitionToProfile(selectedMemory.timeOfDay, 1f, userInterface, () => { playerController.enabled = true; }); // 1 second transition
         }
         
     }

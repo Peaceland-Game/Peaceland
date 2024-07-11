@@ -2920,7 +2920,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Hey, do you mind lending me a hand?
+        value: Hey Kalin! Would you mind lending me a hand?
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -3091,7 +3091,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Ooh... my poor knees...
+        value: Oh, no worries... my poor knees...
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -3213,8 +3213,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: I need to get this crate over to the bridge, but these knees of mine
-          have been acting up again.
+        value: I need to get this crate over by the bridge, but my knees have been
+          acting up again.
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -3269,7 +3269,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: If you could help me get this crate over there, I'll reward you.
+        value: "If you can get this over there, I\u2019ll reward you."
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -3321,8 +3321,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Thank you so much for that. I'll let you in on a secret. You know
-          Cylo, right?
+        value: "Thanks! I could never have done that myself. Here\u2019s your reward,
+          as promised."
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -3365,11 +3365,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 16
+        value: 5
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 1
+        value: 16
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -3377,8 +3377,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: I hear he's been working on a new flavor as of late. Just ask him
-          about it and I'm sure he'll understand.
+        value: "You don\u2019t need to do that! I\u2019m happy to help."
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -3392,7 +3391,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 22
+        originDialogueID: 9
+        destinationConversationID: 22
+        destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: Variable["NewFlavorKnowledge"] = true
       onExecute:
@@ -3402,6 +3407,110 @@ MonoBehaviour:
         serializedVersion: 2
         x: 466
         y: 148
+        width: 160
+        height: 30
+    - id: 10
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 16
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: No no, I insist! Go get yourself some ice cream for a job well done!
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 22
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 22
+        originDialogueID: 10
+        destinationConversationID: 22
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 466
+        y: 198
+        width: 160
+        height: 30
+    - id: 11
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 16
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Thank you!
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 22
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 466
+        y: 248
         width: 160
         height: 30
     entryGroups: []
