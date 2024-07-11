@@ -34,12 +34,12 @@ public class DisableQuestHudOnConversationStart : MonoBehaviour
 
     public void OnConversationStart()
     {
-        Debug.Log("Disabling Quest Hud During conversation");
+        //Debug.Log("Disabling Quest Hud During conversation");
         Hud.SetActive(false);
     }
     public void OnConversationEnd()
     {
-        Debug.Log("Enabling quest hud");
+     //   Debug.Log("Enabling quest hud");
         Hud.SetActive(true);
     }
 }
