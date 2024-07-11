@@ -1,4 +1,6 @@
 ﻿using Cinemachine.Utility;
+using EasyRoads3Dv3;
+using UnityEditor.EditorTools;
 using UnityEngine;
 /// <summary>
 /// Helps the rigid body controller move up stairs
@@ -35,6 +37,7 @@ public class StairClimb : MonoBehaviour
 
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(upperOrigin, forward * raycastDistance);
+        Gizmos.DrawRay(lower, Vector3.down * raycastDistance);
     }
 
     private void FixedUpdate()
@@ -59,10 +62,31 @@ public class StairClimb : MonoBehaviour
                 rigidBody.position += Vector3.up * stepSmooth * Time.deltaTime;
             }
         }
+        /*
+        if (Physics.Raycast(lower, Vector3.down, out hitLower, raycastDistance))
+        {
+            if (hitLower.collider.gameObject.layer == 6)
+            {
+                float normalizedX = playerBody.position.x / hitLower.collider.GetComponent<Terrain>().terrainData.size.x;
+                float normalizedY = playerBody.position.z / hitLower.collider.GetComponent<Terrain>().terrainData.size.z;
+                float steepness = hitLower.collider.GetComponent<Terrain>().terrainData.GetSteepness(normalizedX, normalizedY);
+                
+                if (steepness > 10.0f)
+                {
+                    Debug.Log(steepness + "   steep");
+                    rigidBody.position -= 1 * Vector3.up * stepSmooth * Time.deltaTime;
+                }
+                else
+                {
+                    Debug.Log(steepness + "    not steep");
+                }
+            }
+        }
+        */
 
         // Check for 45 degree angles
-       // CheckAngle(lower, upperOrigin, Quaternion.Euler(0, 45, 0) * forward);
-      //  CheckAngle(lower, upperOrigin, Quaternion.Euler(0, -45, 0) * forward);
+        // CheckAngle(lower, upperOrigin, Quaternion.Euler(0, 45, 0) * forward);
+        //  CheckAngle(lower, upperOrigin, Quaternion.Euler(0, -45, 0) * forward);
     }
 
     /// <summary>
@@ -77,6 +101,7 @@ public class StairClimb : MonoBehaviour
         {
             if (!Physics.Raycast(upperOrigin, direction, out RaycastHit hitUpper, raycastDistance))
             {
+                Debug.Log("climb stairs");
                 rigidBody.position += Vector3.up * stepSmooth * Time.deltaTime;
             }
         }
