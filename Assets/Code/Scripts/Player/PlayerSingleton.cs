@@ -23,8 +23,7 @@ public class PlayerSingleton : MonoBehaviour
     public bool isMouseLocked;
     [SerializeField] private Selector selector;
     public bool playerInMemorySelection = false;
-    [SerializeField] private Transform carryPos;
-    [SerializeField] private Transform heldItem;
+    
     public MoneyCollectedEvent onMoneyCollected = new MoneyCollectedEvent();
 
     public GameObject playerObject;
@@ -79,7 +78,6 @@ public class PlayerSingleton : MonoBehaviour
                 userInterface.RegisterEventListener();
                 controller = playerRef.controller;
                 tablet = playerRef.tablet;
-                carryPos = playerRef.carryPos;
             }
             else
             {
@@ -229,31 +227,9 @@ public class PlayerSingleton : MonoBehaviour
 
     }
 
-    public void PickUpItem(Transform item)
-    {
-        item.parent = carryPos;
-        item.localPosition = Vector3.zero;
-        item.localRotation = Quaternion.identity;
-        item.localScale = new Vector3(0.6f, 0.6f, 0.6f);
-        heldItem = item;
-    }
+    
 
-    public void DropItem(Transform dropPoint)
-    {
-        dropPoint.GetComponent<MeshRenderer>().enabled = false;
-        heldItem.parent = dropPoint;
-        heldItem.localPosition = Vector3.zero;
-        heldItem.localRotation = dropPoint.localRotation;
-        heldItem.localScale = dropPoint.localScale;
-    }
-
-    public void ResetItem(Transform resetPos)
-    {
-        heldItem.parent = resetPos;
-        heldItem.localPosition = Vector3.zero;
-        heldItem.localRotation = resetPos.localRotation;
-        heldItem.localScale = resetPos.localScale;
-    }
+    
 
     public void StopPlayer()
     {

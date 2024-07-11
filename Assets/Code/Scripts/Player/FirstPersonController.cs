@@ -56,7 +56,7 @@ public class FirstPersonController : MonoBehaviour
     public bool playerCanMove = true;
     public float walkSpeed = 5f;
 
-    public float movementResponsiveness = 15f;
+   // public float movementResponsiveness = 15f;
     public float gravity = -9.81f;
 
     // Internal Variables
@@ -91,6 +91,14 @@ public class FirstPersonController : MonoBehaviour
     private float sprintCooldownReset;
 
     #endregion
+
+    #region Pickup
+    [SerializeField] private Transform carryPos;
+    [SerializeField] private Transform heldItem;
+    #endregion
+
+
+
 
     #region Jump
 
@@ -146,6 +154,35 @@ public class FirstPersonController : MonoBehaviour
             sprintCooldownReset = sprintCooldown;
         }
     }
+
+    #region Pickup functions
+
+    public void PickUpItem(Transform item)
+    {
+        item.parent = carryPos;
+        item.localPosition = Vector3.zero;
+        item.localRotation = Quaternion.identity;
+        item.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        heldItem = item;
+    }
+
+    public void DropItem(Transform dropPoint)
+    {
+        dropPoint.GetComponent<MeshRenderer>().enabled = false;
+        heldItem.parent = dropPoint;
+        heldItem.localPosition = Vector3.zero;
+        heldItem.localRotation = dropPoint.localRotation;
+        heldItem.localScale = dropPoint.localScale;
+    }
+    public void ResetItem(Transform resetPos)
+    {
+        heldItem.parent = resetPos;
+        heldItem.localPosition = Vector3.zero;
+        heldItem.localRotation = resetPos.localRotation;
+        heldItem.localScale = resetPos.localScale;
+    }
+
+    #endregion
 
     void Start()
     {
@@ -552,7 +589,7 @@ public class FirstPersonControllerEditor : Editor
         GUI.enabled = true;
 
 
-        fpc.movementResponsiveness = EditorGUILayout.Slider(new GUIContent("Movement Responsiveness", "Determines how quickly the controller responds when starting or stopping movement. Higher values are more responsive"), fpc.movementResponsiveness, 5f, 30f);
+       // fpc.movementResponsiveness = EditorGUILayout.Slider(new GUIContent("Movement Responsiveness", "Determines how quickly the controller responds when starting or stopping movement. Higher values are more responsive"), fpc.movementResponsiveness, 5f, 30f);
 
         EditorGUILayout.Space();
 

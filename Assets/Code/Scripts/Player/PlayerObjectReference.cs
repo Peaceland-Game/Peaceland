@@ -9,6 +9,6 @@ public class PlayerObjectReference : MonoBehaviour
     public UserInterface userInterface;
     public FirstPersonController controller;
     public Selector selector;
-    public Transform carryPos;
+   // public Transform carryPos;
     //private Transform heldItem;
 }
