@@ -55,7 +55,7 @@ public class CharacterVisualController : MonoBehaviour
         //UpdatePattern();
 
         // TODO: Implement updating eyes and mouth 
-        //UpdateEyes(); 
+        UpdateEyes(); 
         //UpdateMouth();
     }
 
@@ -86,7 +86,7 @@ public class CharacterVisualController : MonoBehaviour
             UpdatePattern();
             
             // TODO: Implement updating eyes and mouth 
-            //UpdateEyes();
+            UpdateEyes();
             //UpdateMouth();
 
             holdState = emotionalState;
