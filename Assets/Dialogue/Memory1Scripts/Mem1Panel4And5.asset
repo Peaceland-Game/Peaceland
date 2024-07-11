@@ -837,7 +837,7 @@ MonoBehaviour:
           LookAt(Gryf, Waeli, 0.7);
 
           MoveTo(MoveTowardsDog,
-          PlayerCamera, 3)@1;
+          Player, 3)@1;
 
           SetContinueMode(true)@3.1;'
         type: 0
@@ -2368,12 +2368,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(false);
-
-          Camera(Mem1Panel4LookAtSoldiers,
-          Waeli, 0.7)@2;
-
-          Delay(2)@2;'
+        value: Camera(Mem1Panel4LookAtSoldiers, Waeli, 0.7)@2;
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -5245,7 +5240,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2.127655, y: 1774.4696}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.94000006
   - id: 28
     fields:
@@ -5274,7 +5269,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
