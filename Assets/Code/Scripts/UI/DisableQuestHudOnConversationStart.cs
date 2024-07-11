@@ -6,7 +6,7 @@ using System;
 
 public class DisableQuestHudOnConversationStart : MonoBehaviour
 {
-    public GameObject Hud;
+    private GameObject Hud;
     // Start is called before the first frame update
     void Start()
     {
