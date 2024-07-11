@@ -205,6 +205,7 @@ public class IntroController : MonoBehaviour
 
     public void TakeTabletPrompt()
     {
+        Debug.Log("trying");
         StartCoroutine(fadeInOutText(pickUpTabletPrompt, 0.5f, 3, 1337, true, false));
         waitForPlayer = true;
 
