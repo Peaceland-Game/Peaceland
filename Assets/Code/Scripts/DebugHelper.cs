@@ -1,38 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DebugHelper : MonoBehaviour
 {
+    [Header("Free Cam")]
     [SerializeField] GameObject freeCam;
-    [SerializeField] List<TeleportPoint> TeleportPoints;
+    [Header("Console")]
+    [SerializeField] GameObject debugCanvas;
+    [SerializeField] TMP_InputField inputField;
+    [SerializeField] TextMeshProUGUI logHistoryTextMesh;
+    [Space]
+    [SerializeField] List<TeleportPoint> teleportPoints;
 
     private GameObject player;
     private GameObject freeCamObj;
-    private bool inDebugMode = false;
+    private bool inDebugCamMode = false;
+    private bool consoleIsActive = false;
 
     private void Awake()
     {
-        player = GameObject.FindObjectOfType<FirstPersonController>().gameObject;
+        player = GameObject.FindObjectOfType<FirstPersonController>()?.gameObject;
     }
 
 
     void Update()
     {
-        ToggleDebugMode();
+        // Toggles 
+        ToggleDebugCamMode();
+        ToggleDebugConsoleMode();
+
+        // Runtime logic 
+        DebugConsole();
+    }
+
+    /// <summary>
+    /// Toggle whether the debug console is active or not 
+    /// </summary>
+    private void ToggleDebugConsoleMode()
+    {
+        if(Input.GetKeyUp(KeyCode.Tab))
+        {
+            consoleIsActive = true;
+            inputField.ActivateInputField();
+            inputField.Select();
+        }
+
+        debugCanvas.SetActive(consoleIsActive);
     }
 
     /// <summary>
     /// Whether or not to set as free cam 
     /// </summary>
-    private void ToggleDebugMode()
+    private void ToggleDebugCamMode()
     {
+        // Freeze cam toggleable 
+        if (consoleIsActive)
+            return;
+
         if (Input.GetKeyDown(KeyCode.G))
         {
-            inDebugMode = !inDebugMode;
-            player.SetActive(!inDebugMode);
+            inDebugCamMode = !inDebugCamMode;
+            player.SetActive(!inDebugCamMode);
 
-            if (inDebugMode)
+            if (inDebugCamMode)
             {
                 // Spawn free cam 
                 freeCamObj = Instantiate(freeCam, player.transform.position, player.transform.rotation);
@@ -46,6 +78,80 @@ public class DebugHelper : MonoBehaviour
                 Destroy(freeCamObj);
             }
         }
+    }
+
+    /// <summary>
+    /// Logic that allows the user to ultilize several basic 
+    /// commands to help in debugging 
+    /// </summary>
+    private void DebugConsole()
+    {
+        if (!consoleIsActive)
+            return;
+
+        if(Input.GetKeyUp(KeyCode.Return))
+        {
+
+            string[] commands = inputField.text.Split();
+            string outputText = "   ";
+
+            if (commands.Length <= 0)
+                return;
+
+            switch(commands[0].ToLower()) // Primary command 
+            {
+                case "clear":
+                    logHistoryTextMesh.text = "";
+                    outputText += "Console cleared";
+                    break;
+                case "tp":
+                    outputText += Teleport(commands);
+                    break;
+                case "close":
+                    consoleIsActive = false;
+                    outputText += "Closing console";
+                    break;
+                case "help":
+                    outputText += "clear, tp, close";
+                    break;
+                default:
+                    outputText += "Invalid Command";
+                    break;
+            }
+            
+            // Printing 
+            logHistoryTextMesh.text += "\n" + inputField.text.ToLower();
+            logHistoryTextMesh.text += "\n" + outputText;
+
+
+            // Cleaup 
+            inputField.text = "";
+        }
+    }
+
+    /// <summary>
+    /// Attempts to teleport the player to the given location 
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    private string Teleport(string[] input)
+    {
+        if (input.Length < 2)
+            return "Invalid location";
+
+        string target = input[1].ToLower();
+
+        // TODO: Make this not a brute force implementation 
+        for (int i = 0; i < teleportPoints.Count; i++)
+        {
+            if(target == teleportPoints[i].key.ToLower())
+            {
+                player.transform.position = teleportPoints[i].point.position;
+                return "Teleported to " + target;
+            }
+        }
+
+        return "Invalid location";
     }
 
     [System.Serializable]
