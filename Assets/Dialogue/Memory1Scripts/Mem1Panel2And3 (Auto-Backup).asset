@@ -504,7 +504,7 @@ MonoBehaviour:
       value: Go to Cylo's and get some ice cream.
       type: 0
       typeString: 
-  - id: 7
+  - id: 10
     fields:
     - title: Name
       value: A Strange Noise
@@ -650,6 +650,20 @@ MonoBehaviour:
       typeString: CustomFieldType_Number
     - title: Description
       value: The effect of the player's actions
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 3
+    fields:
+    - title: Name
+      value: PlayerMoney
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
       type: 0
       typeString: CustomFieldType_Text
   - id: 6
@@ -1706,7 +1720,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: See ya kid! Say hi to your parents for me!
+        value: See ya, kid! Say hi to your parents for me!
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -2162,7 +2176,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 281.4149, y: 70.454575}
+    canvasScrollPosition: {x: 173.86389, y: 299.99994}
     canvasZoom: 0.8800001
   - id: 20
     fields:
@@ -2504,7 +2518,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 10, y: 0}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 1
   - id: 21
     fields:
@@ -3139,8 +3153,10 @@ MonoBehaviour:
 
           LookAt(Player, speaker, 0.5)@1.0;
 
-          Fade(in,
-          0.7)@1.1;'
+          LookAt(speaker,
+          Player)@0.9;
+
+          Fade(in, 0.7)@1.1;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 22
@@ -3164,7 +3180,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: StopPlayer();
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3362,7 +3378,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: I hear he's been working on a new flavor as of late. Just ask him
-          about it and I'm sure he'll understnad.
+          about it and I'm sure he'll understand.
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
