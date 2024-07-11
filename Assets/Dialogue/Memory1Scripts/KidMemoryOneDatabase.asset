@@ -3074,9 +3074,13 @@ MonoBehaviour:
 
           AnimatorTrigger(LeftTurn, Mama, Idle)@0.5;
 
-          AnimatorTrigger(Idle,
-          Mama, LeftTurn)@1;
+          AnimatorPlayWait(LeftTurn,
+          Mama, 0.3)@1;
 
+          AnimatorTrigger(Idle, Mama, LeftTurn)@1.5;
+
+          LookAt(Player,
+          Mama, 0.5)@1.1;
 
           SetContinueMode(true);'
         type: 0
