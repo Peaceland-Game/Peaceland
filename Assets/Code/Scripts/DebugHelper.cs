@@ -40,6 +40,9 @@ public class DebugHelper : MonoBehaviour
     /// </summary>
     private void ToggleDebugConsoleMode()
     {
+        if (inDebugCamMode)
+            return;
+
         if(Input.GetKeyUp(KeyCode.Tab))
         {
             consoleIsActive = true;
@@ -112,7 +115,10 @@ public class DebugHelper : MonoBehaviour
                     outputText += "Closing console";
                     break;
                 case "help":
-                    outputText += "clear, tp, close";
+                    outputText += "clear, tp, close, swap";
+                    break;
+                case "swap":
+                    outputText += Swap(commands);
                     break;
                 default:
                     outputText += "Invalid Command";
@@ -152,6 +158,24 @@ public class DebugHelper : MonoBehaviour
         }
 
         return "Invalid location";
+    }
+
+    /// <summary>
+    /// Attempts to swap currently active memory 
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    private string Swap(string[] input)
+    {
+        if (input.Length < 2)
+            return "Invalid Memory";
+
+        int level = int.Parse(input[1].ToLower());
+
+        MemorySwapper memory = GameObject.FindObjectOfType<MemorySwapper>();
+        memory?.SwitchToMemory(level);
+
+        return "Loading Memory";
     }
 
     [System.Serializable]

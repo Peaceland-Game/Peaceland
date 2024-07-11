@@ -155,7 +155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934371846146164994}
   m_LocalRotation: {x: -0, y: -0.036529243, z: -0, w: -0.99933267}
-  m_LocalPosition: {x: 411.8035, y: -0.27600145, z: 90.305885}
+  m_LocalPosition: {x: 411.8035, y: -0.8739929, z: 90.305885}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -640,7 +640,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerSingleton, Assembly-CSharp
+        m_TargetAssemblyTypeName: FirstPersonController, Assembly-CSharp
         m_MethodName: DropItem
         m_Mode: 2
         m_Arguments:
@@ -1133,7 +1133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4346945008688751303}
   m_LocalRotation: {x: 0, y: -0.09454274, z: 0, w: 0.9955208}
-  m_LocalPosition: {x: 412.0864, y: -0.8739929, z: 90.0819}
+  m_LocalPosition: {x: 412.0864, y: -0.98, z: 90.0819}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1823,14 +1823,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6342260835053008829}
-  m_LocalRotation: {x: -0, y: -0.036529243, z: -0, w: -0.99933267}
-  m_LocalPosition: {x: 411.8035, y: 0.051, z: 90.305885}
+  m_LocalRotation: {x: -0, y: 0.12843807, z: -0, w: -0.9917175}
+  m_LocalPosition: {x: 412.108, y: -0.86, z: 90.389}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1981096865737337692}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 272, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 345.241, z: 0}
 --- !u!1 &6513369459931311270
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,7 +2115,7 @@ Transform:
   - {fileID: 1707731397643082164}
   - {fileID: 5431226566788965810}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8204660549188488645
 GameObject:
@@ -2312,7 +2312,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: PlayerSingleton, Assembly-CSharp
+          m_TargetAssemblyTypeName: FirstPersonController, Assembly-CSharp
           m_MethodName: PickUpItem
           m_Mode: 2
           m_Arguments:
@@ -6042,8 +6042,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}
+      propertyPath: setEnabledActions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
       propertyPath: showCursorDuringConversation
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}
@@ -6067,8 +6072,18 @@ PrefabInstance:
       objectReference: {fileID: 5191811661304974982}
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}
-      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.size
+      propertyPath: setEnabledActions.Array.data[0].state
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: setEnabledActions.Array.data[0].target
+      value: 
+      objectReference: {fileID: 5877789441998745293}
+    - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}
@@ -6225,6 +6240,12 @@ MonoBehaviour:
 --- !u!4 &5191811661304974982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+    type: 3}
+  m_PrefabInstance: {fileID: 3238175743782910493}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5877789441998745293 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 9034878316344448208, guid: 097e98a190bd84049a025541dd775656,
     type: 3}
   m_PrefabInstance: {fileID: 3238175743782910493}
   m_PrefabAsset: {fileID: 0}
@@ -7526,7 +7547,7 @@ PrefabInstance:
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}
       propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: PlayerSingleton, Assembly-CSharp
+      value: FirstPersonController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}
@@ -11327,8 +11348,8 @@ MonoBehaviour:
     luaWizardIndex: -1
     lastEvaluationValue: 0
   setQuestState: 1
-  questName: 
-  questState: 2
+  questName: Box Mover
+  questState: 8
   setQuestEntryState: 0
   questEntryNumber: 1
   questEntryState: 0
@@ -11372,27 +11393,46 @@ MonoBehaviour:
   stopConversationIfTooFar: 0
   maxConversationDistance: 5
   monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 1
+  showCursorDuringConversation: 0
   pauseGameDuringConversation: 0
   setActiveActions:
   - condition:
-      luaConditions: []
+      luaConditions:
+      - Variable["HeardDog"] == true
       questConditions: []
       acceptedTags: []
       acceptedGameObjects: []
       luaWizardIndex: 0
       lastEvaluationValue: 0
-    target: {fileID: 42878926159276361}
+    target: {fileID: 8632162117452375108}
     state: 1
   setEnabledActions: []
   setAnimatorStateActions: []
   onExecute:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1803490775747709186}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   useConversationTitlePicker: 1
   useBarkTitlePicker: 1
   useQuestNamePicker: 1
   selectedDatabase: {fileID: 11400000, guid: 6c702cc98ad583b408ecc5ed02bddb46, type: 2}
+--- !u!65 &1803490775747709186 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 9034878316344448208, guid: 097e98a190bd84049a025541dd775656,
+    type: 3}
+  m_PrefabInstance: {fileID: 7234219968587750866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7655077084489536121
 PrefabInstance:
   m_ObjectHideFlags: 0
