@@ -3099,14 +3099,17 @@ MonoBehaviour:
       userScript: 'ChangeEmotionalState(0, Actor["Mama"].Name); -- CONTENT;
 
         SetQuestState("Trash
-        Collector", "success")'
+        Collector", "success");
+
+        Variable["PlayerMoney"] = Variable["PlayerMoney"]
+        + 10'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 142.35553
-        y: 325.1852
+        x: 143.532
+        y: 327.58118
         width: 160
         height: 30
     - id: 23
@@ -3787,8 +3790,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 54.368896}
-    canvasZoom: 1.03
+    canvasScrollPosition: {x: 32.16874, y: 41.152405}
+    canvasZoom: 0.85000014
   - id: 11
     fields:
     - title: Title
