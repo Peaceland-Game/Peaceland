@@ -6,56 +6,102 @@ using PixelCrushers.DialogueSystem;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using Gaia;
+using UnityEngine.SceneManagement;
 
-[System.Serializable]
+
 public class MoneyCollectedEvent : UnityEvent { }
 
 public class PlayerSingleton : MonoBehaviour
 {
     public static PlayerSingleton Instance;
-    public Tablet tablet;
-    [SerializeField] private Camera playerCamera;
+    [SerializeField] private Tablet tablet;
+    // private Camera playerCamera;
     [SerializeField] private UserInterface userInterface;
     //private PlayerMovement playerMovement;
     public bool paused = false;
-    private FirstPersonController controller;
+    [SerializeField] private FirstPersonController controller;
     public bool isMouseLocked;
-    public Selector selector;
+    [SerializeField] private Selector selector;
     public bool playerInMemorySelection = false;
-    [SerializeField]
-    private Transform carryPos;
-    private Transform heldItem;
+    [SerializeField] private Transform carryPos;
+    [SerializeField] private Transform heldItem;
     public MoneyCollectedEvent onMoneyCollected = new MoneyCollectedEvent();
+
+    public GameObject playerObject;
+
     // public bool playerInHub = false;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            controller = GetComponent<FirstPersonController>();
-            if (userInterface)
-            {
-                userInterface.RegisterEventListener();
-            }
-            //playerMovement = GetComponent<PlayerMovement>();
-           // Gaia.GaiaAPI.SetRuntimePlayerAndCamera(gameObject, playerCamera, true);
+            DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
-            Destroy(this);
-
+            Destroy(gameObject);
         }
-        
-        //FloraAutomationAPI.SetRenderCamera(newCamera);
+    }
+    // Start is called before the first frame update
+    //void Start()
+    //{
+    //    if (Instance == null)
+    //    {
+    //        Instance = this;
+    //        DontDestroyOnLoad(gameObject);
+    //        SceneManager.sceneLoaded += OnSceneLoaded;
+
+    //        //playerMovement = GetComponent<PlayerMovement>();
+    //       // Gaia.GaiaAPI.SetRuntimePlayerAndCamera(gameObject, playerCamera, true);
+    //    }
+    //    else
+    //    {
+    //        Destroy(this);
+
+    //    }
+
+    //    //FloraAutomationAPI.SetRenderCamera(newCamera);
+
+    //}
+
+    public void FindPlayerInScene()
+    {
+        if (!playerObject)
+        {
+            Debug.Log("Found new player object, redoing references");
+            playerObject = GameObject.FindWithTag("Player");
+            if (playerObject)
+            {
+                var playerRef = playerObject.GetComponent<PlayerObjectReference>();
+                userInterface = playerRef.userInterface;
+                userInterface.RegisterEventListener();
+                controller = playerRef.controller;
+                tablet = playerRef.tablet;
+                carryPos = playerRef.carryPos;
+            }
+            else
+            {
+                throw new System.Exception("Player is missing!");
+            }
+        }
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        FindPlayerInScene();
 
     }
+
 
 
     // Update is called once per frame
     void Update()
     {
+        if (playerObject == null)
+        {
+
+        }
         HandleInterfaceInput();
         isMouseLocked = Cursor.lockState == CursorLockMode.Locked;
 
@@ -63,6 +109,17 @@ public class PlayerSingleton : MonoBehaviour
     }
     public void DisableMovement()
     {
+        if (playerObject)
+        {
+            if (!selector)
+            {
+                selector = playerObject.GetComponent<Selector>();
+            }
+            if (!controller)
+            {
+                controller = playerObject.GetComponent<FirstPersonController>();
+            }
+        }
         controller.enabled = false;
         selector.enabled = false;
 
@@ -70,13 +127,25 @@ public class PlayerSingleton : MonoBehaviour
     }
     public void EnableMovement()
     {
+        if (playerObject)
+        {
+            if (!selector)
+            {
+                selector = playerObject.GetComponent<Selector>();
+            }
+            if (!controller)
+            {
+                controller = playerObject.GetComponent<FirstPersonController>();
+            }
+        }
+        Cursor.lockState = CursorLockMode.Locked;
         controller.enabled = true;
         selector.enabled = true;
     }
     public void SelectMemoryString()
     {
         DisableMovement();
-        
+
         userInterface.ToggleMemorySelectUI(true);
     }
     public void DeselectMemory()
@@ -90,7 +159,7 @@ public class PlayerSingleton : MonoBehaviour
     {
         if (!playerInMemorySelection)
         {
-           // Debug.Log("player not in memory select");
+            // Debug.Log("player not in memory select");
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
                 //   Debug.Log("escape pressed");
@@ -138,7 +207,7 @@ public class PlayerSingleton : MonoBehaviour
     }
     public void AddMoney(int amt)
     {
-        
+
         var money = DialogueLua.GetVariable("PlayerMoney").asInt;
         money += amt;
         DialogueLua.SetVariable("PlayerMoney", money);
@@ -160,7 +229,7 @@ public class PlayerSingleton : MonoBehaviour
 
     }
 
-    public void PickUpItem(Transform item) 
+    public void PickUpItem(Transform item)
     {
         item.parent = carryPos;
         item.localPosition = Vector3.zero;
@@ -169,7 +238,7 @@ public class PlayerSingleton : MonoBehaviour
         heldItem = item;
     }
 
-    public void DropItem(Transform dropPoint) 
+    public void DropItem(Transform dropPoint)
     {
         dropPoint.GetComponent<MeshRenderer>().enabled = false;
         heldItem.parent = dropPoint;
@@ -178,7 +247,7 @@ public class PlayerSingleton : MonoBehaviour
         heldItem.localScale = dropPoint.localScale;
     }
 
-    public void ResetItem(Transform resetPos) 
+    public void ResetItem(Transform resetPos)
     {
         heldItem.parent = resetPos;
         heldItem.localPosition = Vector3.zero;
@@ -186,9 +255,9 @@ public class PlayerSingleton : MonoBehaviour
         heldItem.localScale = resetPos.localScale;
     }
 
-    public void StopPlayer() 
+    public void StopPlayer()
     {
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        playerObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     void OnEnable()
