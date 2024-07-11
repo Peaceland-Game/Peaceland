@@ -2848,7 +2848,6 @@ GameObject:
   - component: {fileID: 1972776913729042244}
   - component: {fileID: 3935887509442386056}
   - component: {fileID: 3272614998225275217}
-  - component: {fileID: 7338456132888364412}
   - component: {fileID: 5619740749639599599}
   - component: {fileID: 2926214815128971482}
   - component: {fileID: 324790845255169080}
@@ -3471,7 +3470,6 @@ MonoBehaviour:
   zoomStepTime: 5
   playerCanMove: 1
   walkSpeed: 4
-  movementResponsiveness: 15
   gravity: -9.81
   isWalking: 0
   enableSprint: 1
@@ -3487,6 +3485,8 @@ MonoBehaviour:
   sprintBarWidthPercent: 0.3
   sprintBarHeightPercent: 0.02
   isSprinting: 0
+  carryPos: {fileID: 5478027059847262173}
+  heldItem: {fileID: 0}
   enableJump: 0
   jumpKey: 32
   jumpPower: 5
@@ -3686,27 +3686,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   debug: 0
---- !u!114 &7338456132888364412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8411154095936243601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23a613cfdc994b04799a7fc39959b1ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerBody: {fileID: 7634586761640925721}
-  lowerOrigin: {fileID: 8571854586007319137}
-  raycastOriginHeight: -0.55
-  stepHeight: 0.28
-  stepSmooth: 2
-  raycastDistance: 0.5
-  stepLayerMask:
-    serializedVersion: 2
-    m_Bits: 20425
 --- !u!114 &5619740749639599599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3739,7 +3718,6 @@ MonoBehaviour:
   userInterface: {fileID: 1616029728581687308}
   controller: {fileID: 1269763368526715042}
   selector: {fileID: 3272614998225275217}
-  carryPos: {fileID: 5478027059847262173}
 --- !u!143 &324790845255169080
 CharacterController:
   m_ObjectHideFlags: 0
