@@ -576,6 +576,20 @@ MonoBehaviour:
       value: Permission from Mama to go outside.
       type: 0
       typeString: CustomFieldType_Text
+  - id: 6
+    fields:
+    - title: Name
+      value: FatherPermission
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: Permission from Father to go
+      type: 0
+      typeString: CustomFieldType_Text
   - id: 5
     fields:
     - title: Name
@@ -1020,7 +1034,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 
         type: 0
         typeString: 
       conversationID: 9
@@ -1249,7 +1263,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: 
       conversationID: 9
@@ -1305,7 +1319,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: 
       conversationID: 9
@@ -1555,10 +1569,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'Variable["PlayerMoney"] = true;
+      userScript: 'Variable["FatherPermission"] = true;
 
-        SetQuestState("TV Time",
-        "success")'
+        SetQuestState("TV
+        Time", "success")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2011,8 +2025,8 @@ MonoBehaviour:
 
           SetContinueMode(false);
 
-          MoveTo(Player,
-          PlayerAnchor);
+          MoveTo(PlayerAtCouch,
+          Player);
 
           Camera(StraightLook, TV_LOD Variant, 0.5);
 
@@ -2075,9 +2089,6 @@ MonoBehaviour:
         value: 'SetContinueMode(false);
 
           MoveTo(PlayerAnchor, Player, 0.5);
-
-          Camera(original,
-          PlayerCamera, 0.5);
 
           Delay(0.1);
 
@@ -2613,7 +2624,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 977.63257}
+    canvasScrollPosition: {x: 0, y: 901.3164}
     canvasZoom: 0.7600002
   - id: 10
     fields:
@@ -2642,7 +2653,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -3249,7 +3260,7 @@ MonoBehaviour:
         destinationDialogueID: 35
         isConnector: 0
         priority: 2
-      conditionsString: Variable["PlayerMoney"] == false
+      conditionsString: Variable["FatherPermission"] == false
       userScript: Variable["MotherPermission"] = true
       onExecute:
         m_PersistentCalls:
@@ -3304,7 +3315,7 @@ MonoBehaviour:
         destinationDialogueID: 27
         isConnector: 0
         priority: 2
-      conditionsString: Variable["PlayerMoney"] == true
+      conditionsString: Variable["FatherPermission"] == true
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -3772,7 +3783,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 427.18402}
+    canvasScrollPosition: {x: 0, y: 54.368896}
     canvasZoom: 1.03
   - id: 11
     fields:
@@ -3919,7 +3930,7 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks: []
-      conditionsString: 'Variable["PlayerMoney"] == false or
+      conditionsString: 'Variable["FatherPermission"] == false or
 
         Variable["MotherPermission"]
         == false'
