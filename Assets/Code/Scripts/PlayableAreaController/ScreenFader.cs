@@ -35,6 +35,7 @@ public class ScreenFader : MonoBehaviour
 
     private IEnumerator FadeCoroutine(float duration, System.Action onFadeComplete)
     {
+        fadeImage.enabled = true;
         // Fade to opaque
         float elapsedTime = 0f;
         while (elapsedTime < duration / 2)
@@ -59,5 +60,6 @@ public class ScreenFader : MonoBehaviour
         }
 
         fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0f);
+        fadeImage.enabled = false;
     }
 }
