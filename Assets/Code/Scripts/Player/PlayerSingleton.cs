@@ -257,7 +257,7 @@ public class PlayerSingleton : MonoBehaviour
 
     public void StopPlayer()
     {
-        playerObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        controller.StopPlayer();
     }
 
     void OnEnable()

@@ -2842,8 +2842,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7634586761640925721}
   - component: {fileID: 3331003125086830276}
-  - component: {fileID: 1832736337792705413}
-  - component: {fileID: 8495209874463430600}
   - component: {fileID: 1269763368526715042}
   - component: {fileID: 5698506891786743422}
   - component: {fileID: 192272780493137934}
@@ -2853,6 +2851,7 @@ GameObject:
   - component: {fileID: 7338456132888364412}
   - component: {fileID: 5619740749639599599}
   - component: {fileID: 2926214815128971482}
+  - component: {fileID: 324790845255169080}
   m_Layer: 15
   m_Name: ChildPlayer
   m_TagString: Player
@@ -3199,56 +3198,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!136 &1832736337792705413
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8411154095936243601}
-  m_Material: {fileID: 13400000, guid: 0df18ba3ed900ef49905fb2ae722fed2, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Height: 1.9
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
---- !u!54 &8495209874463430600
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8411154095936243601}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!114 &1269763368526715042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3278,7 +3227,7 @@ MonoBehaviour:
   zoomStepTime: 5
   playerCanMove: 1
   walkSpeed: 4
-  maxVelocityChange: 10
+  gravity: -9.81
   isWalking: 0
   enableSprint: 1
   unlimitedSprint: 1
@@ -3546,6 +3495,32 @@ MonoBehaviour:
   controller: {fileID: 1269763368526715042}
   selector: {fileID: 3272614998225275217}
   carryPos: {fileID: 5478027059847262173}
+--- !u!143 &324790845255169080
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8411154095936243601}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.3
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.95, z: 0}
 --- !u!1 &8449050890457778490
 GameObject:
   m_ObjectHideFlags: 0
