@@ -640,7 +640,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerSingleton, Assembly-CSharp
+        m_TargetAssemblyTypeName: FirstPersonController, Assembly-CSharp
         m_MethodName: DropItem
         m_Mode: 2
         m_Arguments:
@@ -2115,7 +2115,7 @@ Transform:
   - {fileID: 1707731397643082164}
   - {fileID: 5431226566788965810}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8204660549188488645
 GameObject:
@@ -2312,7 +2312,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: PlayerSingleton, Assembly-CSharp
+          m_TargetAssemblyTypeName: FirstPersonController, Assembly-CSharp
           m_MethodName: PickUpItem
           m_Mode: 2
           m_Arguments:
@@ -6042,8 +6042,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}
+      propertyPath: setEnabledActions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
       propertyPath: showCursorDuringConversation
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}
@@ -6067,8 +6072,18 @@ PrefabInstance:
       objectReference: {fileID: 5191811661304974982}
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}
-      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.size
+      propertyPath: setEnabledActions.Array.data[0].state
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: setEnabledActions.Array.data[0].target
+      value: 
+      objectReference: {fileID: 5877789441998745293}
+    - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}
@@ -6225,6 +6240,12 @@ MonoBehaviour:
 --- !u!4 &5191811661304974982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7277054608464622747, guid: 097e98a190bd84049a025541dd775656,
+    type: 3}
+  m_PrefabInstance: {fileID: 3238175743782910493}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5877789441998745293 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 9034878316344448208, guid: 097e98a190bd84049a025541dd775656,
     type: 3}
   m_PrefabInstance: {fileID: 3238175743782910493}
   m_PrefabAsset: {fileID: 0}
@@ -7526,7 +7547,7 @@ PrefabInstance:
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}
       propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: PlayerSingleton, Assembly-CSharp
+      value: FirstPersonController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}

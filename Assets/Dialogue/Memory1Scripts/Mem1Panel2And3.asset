@@ -3153,8 +3153,10 @@ MonoBehaviour:
 
           LookAt(Player, speaker, 0.5)@1.0;
 
-          Fade(in,
-          0.7)@1.1;'
+          LookAt(speaker,
+          Player)@0.9;
+
+          Fade(in, 0.7)@1.1;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 22
@@ -3403,7 +3405,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 51}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 1
   syncInfo:
     syncActors: 1
