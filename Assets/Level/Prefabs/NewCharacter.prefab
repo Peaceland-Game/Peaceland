@@ -471,7 +471,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2a78b9bc5f37c24c95b0c4f6304f774, type: 2}
+  - {fileID: -876546973899608171, guid: b3890c52e26326f4690fa5e053bb84f3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -660,7 +660,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2a78b9bc5f37c24c95b0c4f6304f774, type: 2}
+  - {fileID: -876546973899608171, guid: b3890c52e26326f4690fa5e053bb84f3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1078,7 +1078,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2a78b9bc5f37c24c95b0c4f6304f774, type: 2}
+  - {fileID: -876546973899608171, guid: b3890c52e26326f4690fa5e053bb84f3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1259,7 +1259,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2a78b9bc5f37c24c95b0c4f6304f774, type: 2}
+  - {fileID: -876546973899608171, guid: b3890c52e26326f4690fa5e053bb84f3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1384,7 +1384,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2a78b9bc5f37c24c95b0c4f6304f774, type: 2}
+  - {fileID: -876546973899608171, guid: b3890c52e26326f4690fa5e053bb84f3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1587,7 +1587,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2a78b9bc5f37c24c95b0c4f6304f774, type: 2}
+  - {fileID: -876546973899608171, guid: b3890c52e26326f4690fa5e053bb84f3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1717,7 +1717,7 @@ Transform:
   - {fileID: 5479380974516041437}
   - {fileID: 6196475686651695538}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3191160181840580020
 MonoBehaviour:
@@ -1735,20 +1735,246 @@ MonoBehaviour:
   eyes:
   - {fileID: 1847430564069926229}
   - {fileID: 2679367319375325265}
+  - {fileID: 177080877475737060}
+  - {fileID: 1419667195355005353}
+  - {fileID: 5236000029772381418}
+  - {fileID: 3245507755661358170}
   eyeSettings:
   - state: 0
     eyeAttributes:
-      colors: []
-      vectors: []
-      floats: []
+      colors:
+      - name: _EyeColor
+        color: {r: 0.6627451, g: 0.6784314, b: 0.35686275, a: 1}
+      - name: _OutlineColor
+        color: {r: 0.33333334, g: 0.34117648, b: 0.34901962, a: 1}
+      vectors:
+      - name: _EyeCenter
+        vector: {x: 0, y: 0, z: 0}
+      - name: _EyeSize
+        vector: {x: 0.08, y: 0.11, z: 0}
+      - name: _OutlineSize
+        vector: {x: 0.09, y: 0.12, z: 0}
+      - name: _WobbleScale
+        vector: {x: 0.1, y: 0.5, z: 0}
+      - name: _CutoutCenter
+        vector: {x: -0.01, y: -0.09, z: 0}
+      - name: _CutoutCenterOffset
+        vector: {x: 1, y: 1, z: 1}
+      floats:
+      - name: _Smoothness
+        value: 0
+      - name: _EmissionMultiplier
+        value: 0.2
+      - name: _WobbleSpeed
+        value: 0.5
+      - name: _WobbleDistance
+        value: 0.1
+      - name: _CutoutRange
+        value: 0
       ranges: []
       texs: []
       ints: []
-  - state: 0
+  - state: 1
     eyeAttributes:
-      colors: []
-      vectors: []
-      floats: []
+      colors:
+      - name: _EyeColor
+        color: {r: 0.6627451, g: 0.6784314, b: 0.35686275, a: 1}
+      - name: _OutlineColor
+        color: {r: 0.33333334, g: 0.34117648, b: 0.34901962, a: 1}
+      vectors:
+      - name: _EyeCenter
+        vector: {x: 0, y: 0, z: 0}
+      - name: _EyeSize
+        vector: {x: 0.08, y: 0.02, z: 0}
+      - name: _OutlineSize
+        vector: {x: 0.09, y: 0.04, z: 0}
+      - name: _WobbleScale
+        vector: {x: 0.1, y: 0.5, z: 0}
+      - name: _CutoutCenter
+        vector: {x: -0.01, y: -0.09, z: 0}
+      - name: _CutoutCenterOffset
+        vector: {x: 1, y: 1, z: 1}
+      floats:
+      - name: _Smoothness
+        value: 0
+      - name: _EmissionMultiplier
+        value: 0.2
+      - name: _WobbleSpeed
+        value: 0.3
+      - name: _WobbleDistance
+        value: 0.05
+      - name: _CutoutRange
+        value: 0
+      ranges: []
+      texs: []
+      ints: []
+  - state: 2
+    eyeAttributes:
+      colors:
+      - name: _EyeColor
+        color: {r: 0.6627451, g: 0.6784314, b: 0.35686275, a: 1}
+      - name: _OutlineColor
+        color: {r: 0.33333334, g: 0.34117648, b: 0.34901962, a: 1}
+      vectors:
+      - name: _EyeCenter
+        vector: {x: 0, y: 0, z: 0}
+      - name: _EyeSize
+        vector: {x: 0.03, y: 0.03, z: 0}
+      - name: _OutlineSize
+        vector: {x: 0.04, y: 0.04, z: 0}
+      - name: _WobbleScale
+        vector: {x: 0.1, y: 0.5, z: 0}
+      - name: _CutoutCenter
+        vector: {x: 0, y: 0, z: 0}
+      - name: _CutoutCenterOffset
+        vector: {x: 1, y: 1, z: 1}
+      floats:
+      - name: _Smoothness
+        value: 0
+      - name: _EmissionMultiplier
+        value: 0.2
+      - name: _WobbleSpeed
+        value: 0.3
+      - name: _WobbleDistance
+        value: 0.05
+      - name: _CutoutRange
+        value: 0
+      ranges: []
+      texs: []
+      ints: []
+  - state: 3
+    eyeAttributes:
+      colors:
+      - name: _EyeColor
+        color: {r: 0.6627451, g: 0.6784314, b: 0.35686275, a: 1}
+      - name: _OutlineColor
+        color: {r: 0.33333334, g: 0.34117648, b: 0.34901962, a: 1}
+      vectors:
+      - name: _EyeCenter
+        vector: {x: 0, y: 0, z: 0}
+      - name: _EyeSize
+        vector: {x: 0.09, y: 0.09, z: 0}
+      - name: _OutlineSize
+        vector: {x: 0.1, y: 0.1, z: 0}
+      - name: _WobbleScale
+        vector: {x: 0.1, y: 0.5, z: 0}
+      - name: _CutoutCenter
+        vector: {x: 0, y: 0.12, z: 0}
+      - name: _CutoutCenterOffset
+        vector: {x: 1, y: 1, z: 1}
+      floats:
+      - name: _Smoothness
+        value: 0
+      - name: _EmissionMultiplier
+        value: 0.2
+      - name: _WobbleSpeed
+        value: 0.4
+      - name: _WobbleDistance
+        value: 0.05
+      - name: _CutoutRange
+        value: 0.13
+      ranges: []
+      texs: []
+      ints: []
+  - state: 4
+    eyeAttributes:
+      colors:
+      - name: _EyeColor
+        color: {r: 0.6627451, g: 0.6784314, b: 0.35686275, a: 1}
+      - name: _OutlineColor
+        color: {r: 0.33333334, g: 0.34117648, b: 0.34901962, a: 1}
+      vectors:
+      - name: _EyeCenter
+        vector: {x: 0, y: 0, z: 0}
+      - name: _EyeSize
+        vector: {x: 0.08, y: 0.1, z: 0}
+      - name: _OutlineSize
+        vector: {x: 0.09, y: 0.11, z: 0}
+      - name: _WobbleScale
+        vector: {x: 0.1, y: 0.5, z: 0}
+      - name: _CutoutCenter
+        vector: {x: 0, y: -0.07, z: 0}
+      - name: _CutoutCenterOffset
+        vector: {x: 1, y: 1, z: 1}
+      floats:
+      - name: _Smoothness
+        value: 0
+      - name: _EmissionMultiplier
+        value: 0.2
+      - name: _WobbleSpeed
+        value: 0.5
+      - name: _WobbleDistance
+        value: 0.1
+      - name: _CutoutRange
+        value: 0.07
+      ranges: []
+      texs: []
+      ints: []
+  - state: 5
+    eyeAttributes:
+      colors:
+      - name: _EyeColor
+        color: {r: 0.6627451, g: 0.6784314, b: 0.35686275, a: 1}
+      - name: _OutlineColor
+        color: {r: 0.33333334, g: 0.34117648, b: 0.34901962, a: 1}
+      vectors:
+      - name: _EyeCenter
+        vector: {x: 0, y: 0, z: 0}
+      - name: _EyeSize
+        vector: {x: 0.1, y: 0.09, z: 0}
+      - name: _OutlineSize
+        vector: {x: 0.11, y: 0.095, z: 0}
+      - name: _WobbleScale
+        vector: {x: 0.1, y: 0.5, z: 0}
+      - name: _CutoutCenter
+        vector: {x: 0, y: -0.09, z: 0}
+      - name: _CutoutCenterOffset
+        vector: {x: 1, y: 1, z: 1}
+      floats:
+      - name: _Smoothness
+        value: 0
+      - name: _EmissionMultiplier
+        value: 0.2
+      - name: _WobbleSpeed
+        value: 0.7
+      - name: _WobbleDistance
+        value: 0.05
+      - name: _CutoutRange
+        value: 0.13
+      ranges: []
+      texs: []
+      ints: []
+  - state: 6
+    eyeAttributes:
+      colors:
+      - name: _EyeColor
+        color: {r: 0.6627451, g: 0.6784314, b: 0.35686275, a: 1}
+      - name: _OutlineColor
+        color: {r: 0.33333334, g: 0.34117648, b: 0.34901962, a: 1}
+      vectors:
+      - name: _EyeCenter
+        vector: {x: 0, y: 0, z: 0}
+      - name: _EyeSize
+        vector: {x: 0.1, y: 0.09, z: 0}
+      - name: _OutlineSize
+        vector: {x: 0.11, y: 0.095, z: 0}
+      - name: _WobbleScale
+        vector: {x: 1, y: 1.5, z: 0}
+      - name: _CutoutCenter
+        vector: {x: 0.07, y: 0.12, z: 0}
+      - name: _CutoutCenterOffset
+        vector: {x: 1, y: 1, z: 1}
+      floats:
+      - name: _Smoothness
+        value: 0
+      - name: _EmissionMultiplier
+        value: 0.2
+      - name: _WobbleSpeed
+        value: 5
+      - name: _WobbleDistance
+        value: 0.02
+      - name: _CutoutRange
+        value: 0.13
       ranges: []
       texs: []
       ints: []
