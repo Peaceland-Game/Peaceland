@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5856251340062216838
+--- !u!1 &1109167105322185425
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6464620937228597521}
-  - component: {fileID: 5109067448475051262}
-  - component: {fileID: 108943093667638065}
+  - component: {fileID: 965318436732252599}
+  - component: {fileID: 299151702970055441}
+  - component: {fileID: 904394662307888206}
   m_Layer: 0
   m_Name: PlayerSingleton
   m_TagString: Untagged
@@ -18,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6464620937228597521
+--- !u!4 &965318436732252599
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5856251340062216838}
+  m_GameObject: {fileID: 1109167105322185425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.29, y: 1.396, z: -6.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -33,13 +33,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5109067448475051262
+--- !u!114 &299151702970055441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5856251340062216838}
+  m_GameObject: {fileID: 1109167105322185425}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31a40cbc58a577f4898627fdc85f41cb, type: 3}
@@ -55,13 +55,13 @@ MonoBehaviour:
   carryPos: {fileID: 0}
   heldItem: {fileID: 0}
   playerObject: {fileID: 0}
---- !u!114 &108943093667638065
+--- !u!114 &904394662307888206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5856251340062216838}
+  m_GameObject: {fileID: 1109167105322185425}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 245dd980996496347b8a9322f8005a3a, type: 3}
@@ -78,7 +78,7 @@ MonoBehaviour:
       acceptedGameObjects: []
       luaWizardIndex: 0
       lastEvaluationValue: 0
-    target: {fileID: 5109067448475051262}
+    target: {fileID: 299151702970055441}
     state: 1
   waitOneFrameOnStart: 0
   onEnd:
@@ -89,6 +89,6 @@ MonoBehaviour:
       acceptedGameObjects: []
       luaWizardIndex: 0
       lastEvaluationValue: 0
-    target: {fileID: 5109067448475051262}
+    target: {fileID: 299151702970055441}
     state: 0
   waitOneFrameOnEnd: 0
