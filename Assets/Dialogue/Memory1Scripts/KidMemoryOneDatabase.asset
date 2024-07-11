@@ -2756,15 +2756,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'MoveTo(Player, PlayerAnchor);
 
-          AnimatorTrigger(Idle, ,
-          Mother_WashingDishes);
+          LookAt(Mama, player, 0.3);
 
-          LookAt(Mama, listener, 0.3);
-
-          LookAt(listener,
-          Mama, 0.3);
-
-          Camera(NewModelLookUp, Mama, 0.5)@0.4;
+          Camera(NewModelLookLeft,
+          Mama, 0.5)@0.3;
 
           Delay(2);'
         type: 0
@@ -2850,7 +2845,7 @@ MonoBehaviour:
         destinationDialogueID: 21
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["TrashPickedUp"] ~= 5
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -3040,7 +3035,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.17102
+        x: 157.22926
         y: 213.85628
         width: 160
         height: 30
@@ -3072,7 +3067,16 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'AnimatorTrigger(Idle, , Mother_WashingDishes);
+        value: 'AnimatorPlay(Idle, Mama, 0.5);
+
+          AnimatorController(Anim_Controllers/BasicAnims,
+          Mama)@0.5;
+
+          AnimatorTrigger(LeftTurn, Mama, Idle)@0.5;
+
+          AnimatorTrigger(Idle,
+          Mama, LeftTurn)@1;
+
 
           SetContinueMode(true);'
         type: 0
