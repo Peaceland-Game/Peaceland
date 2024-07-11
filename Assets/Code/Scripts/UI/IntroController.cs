@@ -61,6 +61,12 @@ public class IntroController : MonoBehaviour
                 SceneManager.LoadScene("HubWorld2");
             }
         }
+        if (Keyboard.current.f1Key.wasPressedThisFrame)
+        {
+            if (selectorUI)
+                selectorUI.SetActive(true);
+            SceneManager.LoadScene("HubWorld2");
+        }
     }
     IEnumerator WaitThen(float seconds, Action action)
     {
