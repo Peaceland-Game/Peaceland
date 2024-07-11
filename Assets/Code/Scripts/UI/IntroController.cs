@@ -80,7 +80,7 @@ public class IntroController : MonoBehaviour
     IEnumerator Wait(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-
+        //lols
         StartCoroutine(fadeInOutText(buzz1, 1, seconds, 69, true, false));
 
         yield return new WaitForSeconds(seconds);
