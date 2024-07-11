@@ -23,7 +23,7 @@ public class IntroController : MonoBehaviour
     public GameObject tablet;
 
     private bool waitForPlayer = false;
-    
+    private GameObject selectorUI;
     // Player stuff
     public Camera playerCam;
 
@@ -37,7 +37,16 @@ public class IntroController : MonoBehaviour
         goToComputerButton.gameObject.SetActive(false);
         pickUpTabletPrompt.gameObject.SetActive(false);
 
-        StartCoroutine(Wait());
+        StartCoroutine(WaitThen(0.01f, () =>
+        {
+            selectorUI = GameObject.FindWithTag("StandardUISelector");
+            if (selectorUI)
+            {
+                selectorUI.SetActive(false);
+            }
+        }));
+
+        StartCoroutine(Wait(2));
     }
 
     // Update is called once per frame
@@ -47,26 +56,32 @@ public class IntroController : MonoBehaviour
         {
             if (Keyboard.current.eKey.wasPressedThisFrame)
             {
+                if (selectorUI)
+                    selectorUI.SetActive(true);
                 SceneManager.LoadScene("HubWorld2");
             }
         }
     }
-
+    IEnumerator WaitThen(float seconds, Action action)
+    {
+        yield return new WaitForSeconds(seconds);
+        action();
+    }
     /// <summary>
     /// Waits a few seconds
     /// </summary>
     /// <returns> nothing...? </returns>
-    IEnumerator Wait()
+    IEnumerator Wait(float seconds)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(seconds);
 
-        StartCoroutine(fadeInOutText(buzz1, 1, 2, 69, true, false));
+        StartCoroutine(fadeInOutText(buzz1, 1, seconds, 69, true, false));
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(seconds);
 
-        StartCoroutine(fadeInOutText(buzz2, 1, 2, 420, true, false));
+        StartCoroutine(fadeInOutText(buzz2, 1, seconds, 420, true, false));
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(seconds);
 
         wakeUpButton.gameObject.SetActive(true);
     }
@@ -123,7 +138,7 @@ public class IntroController : MonoBehaviour
     /// <returns></returns>
     private IEnumerator fadeInOutText(TextMeshProUGUI textBox, float fadeInTime, float solidDuration, float fadeOutTime, bool fadeIn, bool fadeOut)
     {
-        if(fadeIn)
+        if (fadeIn)
         {
             textBox.gameObject.SetActive(true);
 
@@ -141,7 +156,7 @@ public class IntroController : MonoBehaviour
 
         yield return new WaitForSeconds(solidDuration);
 
-        if(fadeOut)
+        if (fadeOut)
         {
             // Fade back to transparent
             float elapsedTime = 0f;
