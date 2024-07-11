@@ -548,6 +548,20 @@ MonoBehaviour:
       value: The effect of the player's actions
       type: 0
       typeString: CustomFieldType_Text
+  - id: 3
+    fields:
+    - title: Name
+      value: PlayerMoney
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   - id: 4
     fields:
     - title: Name
@@ -562,7 +576,7 @@ MonoBehaviour:
       value: Permission from Mama to go outside.
       type: 0
       typeString: CustomFieldType_Text
-  - id: 3
+  - id: 6
     fields:
     - title: Name
       value: FatherPermission
@@ -573,7 +587,7 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     - title: Description
-      value: Permission from Papa to go outside.
+      value: Permission from Father to go
       type: 0
       typeString: CustomFieldType_Text
   - id: 5
@@ -1020,7 +1034,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 
         type: 0
         typeString: 
       conversationID: 9
@@ -1249,7 +1263,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: 
       conversationID: 9
@@ -1305,7 +1319,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: 
       conversationID: 9
@@ -1531,7 +1545,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "<font=\"RythmusRegular SDF\">If it's ok with your Mama it\u2019s
+        value: "<font=\"RythmusRegular SDF\">If it's ok with your Mama, it\u2019s
           ok with me. Go ask her. And see if she needs help with the dishes first,
           huh?</font>"
         type: 0
@@ -1723,10 +1737,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'Variable["FatherPermission"] = true;
+      userScript: 'Variable["PlayerMoney"] = true;
 
-        Variable["Qip"]
-        = Variable["Qip"] + 10;
+        Variable["Qip"] = Variable["Qip"]
+        + 10;
 
         SetQuestState("TV Time", "success")'
       onExecute:
@@ -2011,8 +2025,8 @@ MonoBehaviour:
 
           SetContinueMode(false);
 
-          MoveTo(Player,
-          PlayerAnchor);
+          MoveTo(PlayerAtCouch,
+          Player);
 
           Camera(StraightLook, TV_LOD Variant, 0.5);
 
@@ -2075,9 +2089,6 @@ MonoBehaviour:
         value: 'SetContinueMode(false);
 
           MoveTo(PlayerAnchor, Player, 0.5);
-
-          Camera(original,
-          PlayerCamera, 0.5);
 
           Delay(0.1);
 
@@ -2613,8 +2624,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 674.99963}
-    canvasZoom: 0.64000034
+    canvasScrollPosition: {x: 0, y: 901.3164}
+    canvasZoom: 0.7600002
   - id: 10
     fields:
     - title: Title
@@ -2993,7 +3004,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: "<font=\"RythmusRegular SDF\">Awww you\u2019re so sweet! I only have
-          a few dishes left but if you could gather all the trash for me that would
+          a few dishes left, but if you could gather all the trash for me that would
           be great.</font>"
         type: 0
         typeString: 
@@ -3172,7 +3183,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Yes, whatever you say little one.</font>
+        value: <font="RythmusRegular SDF">Yes, whatever you say, little one.</font>
         type: 0
         typeString: 
       - title: Sequence
@@ -3772,7 +3783,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0.9708557, y: 0}
+    canvasScrollPosition: {x: 0, y: 54.368896}
     canvasZoom: 1.03
   - id: 11
     fields:
