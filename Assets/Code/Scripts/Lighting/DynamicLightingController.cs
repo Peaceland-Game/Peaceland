@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using System.Collections;
 using UnityEngine.InputSystem;
+using System;
 
 [ExecuteAlways]
 public class DynamicLightingController : MonoBehaviour
@@ -56,26 +57,26 @@ public class DynamicLightingController : MonoBehaviour
     //    }
     //}
 
-    public void TransitionToNextProfile(UserInterface userInterface)
+    public void TransitionToNextProfile(UserInterface userInterface, Action action)
     {
         int nextProfileIndex = (currentProfileIndex + 1) % lightingProfiles.Length;
-        TransitionToProfile(nextProfileIndex, 5f, userInterface); // 5 second transition
+        TransitionToProfile(nextProfileIndex, 5f, userInterface, action); // 5 second transition
     }
-    public void TransitionToProfile(TimeOfDay timeOfDay, float duration, UserInterface userInterface)
+    public void TransitionToProfile(TimeOfDay timeOfDay, float duration, UserInterface userInterface, Action action)
     {
         int profileIndex = (int)timeOfDay;
-        TransitionToProfile(profileIndex, duration, userInterface);
+        TransitionToProfile(profileIndex, duration, userInterface, action);
     }
-    private void TransitionToProfile(int profileIndex, float duration, UserInterface userInterface)
+    private void TransitionToProfile(int profileIndex, float duration, UserInterface userInterface, Action action)
     {
         if (transitionCoroutine != null)
         {
             StopCoroutine(transitionCoroutine);
         }
-        transitionCoroutine = StartCoroutine(TransitionCoroutine(profileIndex, duration, userInterface));
+        transitionCoroutine = StartCoroutine(TransitionCoroutine(profileIndex, duration, userInterface, action));
     }
 
-    private IEnumerator TransitionCoroutine(int targetProfileIndex, float duration, UserInterface userInterface)
+    private IEnumerator TransitionCoroutine(int targetProfileIndex, float duration, UserInterface userInterface, Action action)
     {
         Debug.Log($"Starting transition from profile {currentProfileIndex} to {targetProfileIndex}");
         LightingProfile startProfile = lightingProfiles[currentProfileIndex];
@@ -108,6 +109,7 @@ public class DynamicLightingController : MonoBehaviour
         }
 #endif
         // Raise the event
+        action();   //run the passed action at the end of the coroutine, this is currently used to reenable player movement - passed in from MemorySwapper.cs
         RaiseLightingProfileChangedEvent(startProfile, targetProfile, currentProfileIndex);
     }
 
