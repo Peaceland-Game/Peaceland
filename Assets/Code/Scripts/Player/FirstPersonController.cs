@@ -93,8 +93,8 @@ public class FirstPersonController : MonoBehaviour
     #endregion
 
     #region Pickup
-    [SerializeField] private Transform carryPos;
-    [SerializeField] private Transform heldItem;
+    public Transform carryPos;
+    public Transform heldItem;
     #endregion
 
 
@@ -160,6 +160,7 @@ public class FirstPersonController : MonoBehaviour
     public void PickUpItem(Transform item)
     {
         item.parent = carryPos;
+        item.GetComponent<BoxCollider>().enabled = false;
         item.localPosition = Vector3.zero;
         item.localRotation = Quaternion.identity;
         item.localScale = new Vector3(0.6f, 0.6f, 0.6f);
@@ -170,6 +171,7 @@ public class FirstPersonController : MonoBehaviour
     {
         dropPoint.GetComponent<MeshRenderer>().enabled = false;
         heldItem.parent = dropPoint;
+        heldItem.GetComponent<BoxCollider>().enabled = true;
         heldItem.localPosition = Vector3.zero;
         heldItem.localRotation = dropPoint.localRotation;
         heldItem.localScale = dropPoint.localScale;
@@ -177,6 +179,7 @@ public class FirstPersonController : MonoBehaviour
     public void ResetItem(Transform resetPos)
     {
         heldItem.parent = resetPos;
+        heldItem.GetComponent<BoxCollider>().enabled = true;
         heldItem.localPosition = Vector3.zero;
         heldItem.localRotation = resetPos.localRotation;
         heldItem.localScale = resetPos.localScale;
@@ -588,8 +591,10 @@ public class FirstPersonControllerEditor : Editor
         fpc.walkSpeed = EditorGUILayout.Slider(new GUIContent("Walk Speed", "Determines how fast the player will move while walking."), fpc.walkSpeed, .1f, fpc.sprintSpeed);
         GUI.enabled = true;
 
+        fpc.carryPos = EditorGUILayout.ObjectField(new GUIContent("Carry Pos", "The position of carried items."), fpc.carryPos, typeof(Transform), true) as Transform;
 
-       // fpc.movementResponsiveness = EditorGUILayout.Slider(new GUIContent("Movement Responsiveness", "Determines how quickly the controller responds when starting or stopping movement. Higher values are more responsive"), fpc.movementResponsiveness, 5f, 30f);
+
+        // fpc.movementResponsiveness = EditorGUILayout.Slider(new GUIContent("Movement Responsiveness", "Determines how quickly the controller responds when starting or stopping movement. Higher values are more responsive"), fpc.movementResponsiveness, 5f, 30f);
 
         EditorGUILayout.Space();
 
