@@ -69,7 +69,7 @@ public class PlayerSingleton : MonoBehaviour
     {
         if (!playerObject)
         {
-            Debug.Log("Found new player object, redoing references");
+          //  Debug.Log("Found new player object, redoing references");
             playerObject = GameObject.FindWithTag("Player");
             if (playerObject)
             {

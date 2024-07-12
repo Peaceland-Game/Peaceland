@@ -40,10 +40,10 @@ public class UserInterface : MonoBehaviour
     void Update()
     {
         // Check for mouse click
-        //if (Input.GetMouseButtonDown(0)) // 0 is left click, 1 is right click, 2 is middle click
-        //{
-        //    DetectUIClick();
-        //}
+        if (Input.GetMouseButtonDown(0)) // 0 is left click, 1 is right click, 2 is middle click
+        {
+            DetectUIClick();
+        }
     }
     void DetectUIClick()
     {

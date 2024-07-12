@@ -48,6 +48,10 @@ public class MemorySwapper : MonoBehaviour
         }
     }
 
+    public bool HasLevel(int index) {
+        return index >= 0 && index < memoryObjects.Count;
+    }
+
     public void SwitchToMemory(double index)
     {
         userInterface.EnableLoadScreen();
