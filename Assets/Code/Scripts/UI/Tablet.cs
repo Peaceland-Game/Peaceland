@@ -19,10 +19,10 @@ public class Tablet : MonoBehaviour
     public TextMeshProUGUI buttonText;
 
     private float moveSpeed = 300f; // Speed of the movement
-    private float shownPosition = 150f; // The 'shown' position in local space
+    //private float shownPosition = 150f; // The 'shown' position in local space
 
-    private Vector3 hiddenPosition;
-    private Vector3 shownPositionVector;
+    private Vector3 hiddenPosition = new(-857, 450,0);
+    private Vector3 shownPosition = new(-712,450,0);
 
     [Header("Pages")]
     public List<GameObject> apps = new();
@@ -38,7 +38,7 @@ public class Tablet : MonoBehaviour
     {
         totalPages = apps.Count;
         hiddenPosition = tabs.transform.localPosition;
-        shownPositionVector = hiddenPosition + Vector3.right * shownPosition;
+       
 
     }
 
