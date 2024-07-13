@@ -21,8 +21,8 @@ public class Tablet : MonoBehaviour
     private float moveSpeed = 300f; // Speed of the movement
     //private float shownPosition = 150f; // The 'shown' position in local space
 
-    private Vector3 hiddenPosition = new(-857, 450,0);
-    private Vector3 shownPosition = new(-712,450,0);
+    private Vector3 hiddenPosition = new(-1033, 529, 0);
+    private Vector3 shownPosition = new(-878, 529, 0);
 
     [Header("Pages")]
     public List<GameObject> apps = new();
@@ -37,7 +37,7 @@ public class Tablet : MonoBehaviour
     void Start()
     {
         totalPages = apps.Count;
-        hiddenPosition = tabs.transform.localPosition;
+        
        
 
     }
@@ -62,7 +62,7 @@ public class Tablet : MonoBehaviour
 
     private void MoveTabs()
     {
-        Vector3 targetPosition = (targetState == SidebarState.Shown) ? shownPositionVector : hiddenPosition;
+        Vector3 targetPosition = (targetState == SidebarState.Shown) ? shownPosition : hiddenPosition;
         tabs.transform.localPosition = Vector3.MoveTowards(tabs.transform.localPosition, targetPosition, moveSpeed * Time.deltaTime);
 
         if (Vector3.Distance(tabs.transform.localPosition, targetPosition) < 0.01f)
@@ -94,7 +94,7 @@ public class Tablet : MonoBehaviour
     /// Handle's the player clicking on a tab by changing the page
     /// </summary>
     /// <param name="tabNumber">The tab number that was clicked on [0-totalPages)</param>
-    public void HandleTabClick(int tabNumber)
+    private void HandleTabClick(int tabNumber, bool fromHomePage = false)
     {
         if (tabNumber < totalPages && tabNumber != currentPage)
         {
@@ -106,15 +106,20 @@ public class Tablet : MonoBehaviour
 
             apps[currentPage].SetActive(true);
 
-            ToggleSidebar();
+            if (!fromHomePage)
+                ToggleSidebar();
 
 
         }
     }
-    public void HandleTabClick(TabName tabName)
-    {
-        HandleTabClick(TabUtility.GetTabIndex(tabName));
+    public void HandleHomeButtonClick(int tabNumber) {
+        HandleTabClick(tabNumber, true);
     }
+    public void HandleTabClick(int tabNumber) {
+        HandleTabClick(tabNumber, false);
+    }
+    
+    
 
     public void ExitGame()
     {

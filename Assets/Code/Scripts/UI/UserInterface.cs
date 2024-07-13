@@ -20,7 +20,7 @@ public class UserInterface : MonoBehaviour
 
     private GraphicRaycaster raycaster;
     private EventSystem eventSystem;
-
+    public bool CheckMouseClicks = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,10 +39,12 @@ public class UserInterface : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check for mouse click
-        if (Input.GetMouseButtonDown(0)) // 0 is left click, 1 is right click, 2 is middle click
-        {
-            DetectUIClick();
+        if (CheckMouseClicks) {
+            // Check for mouse click
+            if (Input.GetMouseButtonDown(0)) // 0 is left click, 1 is right click, 2 is middle click
+            {
+                DetectUIClick();
+            }
         }
     }
     void DetectUIClick()

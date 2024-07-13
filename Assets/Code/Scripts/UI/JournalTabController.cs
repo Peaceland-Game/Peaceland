@@ -114,12 +114,13 @@ public class TabIndexAttribute : Attribute
 /// </summary>
 public enum TabName
 {
-    [TabIndex(0)] Notes,
-    [TabIndex(1)] Graph,
-    [TabIndex(2)] Artifacts,
-    [TabIndex(3)] Lore,
-    [TabIndex(4)] Map,
-    [TabIndex(5)] Settings
+    [TabIndex(0)] Home,
+    [TabIndex(1)] Notes,
+    [TabIndex(2)] Graph,
+    [TabIndex(3)] Artifacts,
+    [TabIndex(4)] Lore,
+    [TabIndex(5)] Map,
+    [TabIndex(6)] Settings
 
 }
 /// <summary>
