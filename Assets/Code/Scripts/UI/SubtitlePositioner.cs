@@ -13,13 +13,8 @@ public class SubtitlePositioner : MonoBehaviour
     [SerializeField] Vector3 dialogueBoxDefaultSca;
     [SerializeField] Vector3 dialogueBoxChoiceSca;
 
-    private RectTransform rect;
     private float lerp = 0.0f;
 
-    private void Awake()
-    {
-        rect = this.GetComponent<RectTransform>();
-    }
 
     void Update()
     {
