@@ -1,5 +1,6 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class TabletSidePanelDropdown : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] Button button;
     [SerializeField] List<GameObject> dropdownButtons;
+    [SerializeField] TextMeshProUGUI arrowText;
     bool currentlyActive;
     void Start()
     {
@@ -27,6 +29,11 @@ public class TabletSidePanelDropdown : MonoBehaviour
     public void ToggleDropDownButtons()
     {
         currentlyActive = !currentlyActive;
+        if (currentlyActive)
+        {
+            arrowText.text = "▲";
+        }
+        else arrowText.text = "▼";
         for(int i = 0; i < dropdownButtons.Count; i++) 
         {
             dropdownButtons[i].SetActive(currentlyActive);
