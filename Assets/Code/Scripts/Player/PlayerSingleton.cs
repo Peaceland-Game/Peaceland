@@ -205,13 +205,11 @@ public class PlayerSingleton : MonoBehaviour
     }
     public void AddMoney(double amt)
     {
-
         var money = DialogueLua.GetVariable("PlayerMoney").asInt;
         money += (int)amt;
         DialogueLua.SetVariable("PlayerMoney", money);
 
         onMoneyCollected.Invoke();
-
     }
     public void ForceSubtractMoney(double amt)
     {
