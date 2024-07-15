@@ -11,6 +11,8 @@ public class SceneLoader : MonoBehaviour
     public Slider progressBar; // Reference to the loading progress bar (optional)
     public GameObject player; 
     public GameObject loaderCamera;
+    public string mainSceneName = "TerrainCreation";
+    public string sceneLoaderSceneName = "SceneLoader";
     void Start()
     {
         StartCoroutine(LoadScenesOneByOne());
@@ -32,11 +34,12 @@ public class SceneLoader : MonoBehaviour
         // Hide loading screen
         if (loadingScreen != null)
         {
-           // loadingScreen.SetActive(false);
+            loadingScreen.SetActive(false);
             loaderCamera.SetActive(false);
-            player.SetActive(true);
+            // player.SetActive(true);
 
-            Destroy(transform.parent.gameObject);
+            SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName(sceneLoaderSceneName));
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(mainSceneName));
         }
     }
 
