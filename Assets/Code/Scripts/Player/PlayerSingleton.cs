@@ -203,27 +203,27 @@ public class PlayerSingleton : MonoBehaviour
         controller.enabled = !paused;
 
     }
-    public void AddMoney(int amt)
+    public void AddMoney(double amt)
     {
 
         var money = DialogueLua.GetVariable("PlayerMoney").asInt;
-        money += amt;
+        money += (int)amt;
         DialogueLua.SetVariable("PlayerMoney", money);
 
         onMoneyCollected.Invoke();
 
     }
-    public void SubtractMoney2(int amt)
+    public void ForceSubtractMoney(double amt)
     {
         var money = DialogueLua.GetVariable("PlayerMoney").asInt;
-        DialogueLua.SetVariable("PlayerMoney", money - amt);
+        DialogueLua.SetVariable("PlayerMoney", money - (int)amt);
         onMoneyCollected.Invoke();
     }
-    public bool SubtractMoney(int amt)
+    public bool SubtractMoney(double amt)
     {
         var money = DialogueLua.GetVariable("PlayerMoney").asInt;
         if (amt > money) return false;
-        DialogueLua.SetVariable("PlayerMoney", money - amt);
+        DialogueLua.SetVariable("PlayerMoney", money - (int)amt);
         onMoneyCollected.Invoke();
         return true;
     }
@@ -232,6 +232,8 @@ public class PlayerSingleton : MonoBehaviour
     {
 
     }
+
+    
 
     
 
@@ -246,6 +248,9 @@ public class PlayerSingleton : MonoBehaviour
     {
         // Make the functions available to Lua: (Replace these lines with your own.)
         Lua.RegisterFunction(nameof(StopPlayer), this, SymbolExtensions.GetMethodInfo(() => StopPlayer()));
+        Lua.RegisterFunction(nameof(AddMoney), this, SymbolExtensions.GetMethodInfo(() => AddMoney(0)));
+        Lua.RegisterFunction(nameof(ForceSubtractMoney), this, SymbolExtensions.GetMethodInfo(() => ForceSubtractMoney(0)));
+        Lua.RegisterFunction(nameof(SubtractMoney), this, SymbolExtensions.GetMethodInfo(() => SubtractMoney(0)));
         // Lua.RegisterFunction(nameof(AddOne), this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
     }
     /*
