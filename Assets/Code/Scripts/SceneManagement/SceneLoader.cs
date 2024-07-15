@@ -32,7 +32,7 @@ public class SceneLoader : MonoBehaviour
         // Hide loading screen
         if (loadingScreen != null)
         {
-            loadingScreen.SetActive(false);
+           // loadingScreen.SetActive(false);
             loaderCamera.SetActive(false);
             player.SetActive(true);
 

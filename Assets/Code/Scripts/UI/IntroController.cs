@@ -124,8 +124,9 @@ public class IntroController : MonoBehaviour
             float t = elapsedTime / wakeUpDuration;
 
             // Move and rotate camera
-            playerCam.transform.position = Vector3.Lerp(initialPosition, CameraConversationLoc.position, t);
-            playerCam.transform.rotation = Quaternion.Slerp(initialRotation, CameraConversationLoc.rotation, t);
+            playerCam.transform.SetPositionAndRotation(
+                Vector3.Lerp(initialPosition, CameraConversationLoc.position, t), 
+                Quaternion.Slerp(initialRotation, CameraConversationLoc.rotation, t));
 
             // Close eyelids
             float eyeCloseT = Mathf.Sin(t * Mathf.PI * 0.5f); // Ease out

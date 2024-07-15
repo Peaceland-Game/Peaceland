@@ -22,4 +22,9 @@ public class Artifact : MonoBehaviour
     {
         
     }
+
+    void OnUse()
+    {
+        transform.parent.GetComponent<JournalPlayerRef>().AddArtifact(this, hasImageToDisplay);
+    }
 }
