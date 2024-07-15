@@ -87,13 +87,11 @@ public class ArtifactJournalController : MonoBehaviour
         artifact.HideArtifact();
     }
 
-    public void ChangeArtifactGroup(int index)
+    public void ChangeArtifactGroup(ArtifactGroup target)
     {
-        ArtifactGroup newGroup = artifactGroups[index];
-
         foreach(ArtifactGroup ag in artifactGroups)
         {
-            if(ag != newGroup)
+            if(ag != target)
             {
                 ag.Hide();
             }
