@@ -26,6 +26,8 @@ public class PlayerSingleton : MonoBehaviour
     
     public MoneyCollectedEvent onMoneyCollected = new MoneyCollectedEvent();
 
+    public Dictionary<string, double> karmaPoints = new();
+
     public GameObject playerObject;
 
     // public bool playerInHub = false;
@@ -64,6 +66,17 @@ public class PlayerSingleton : MonoBehaviour
     //    //FloraAutomationAPI.SetRenderCamera(newCamera);
 
     //}
+    public void AddTheme(string theme, double amt)
+    {
+        karmaPoints[theme] = karmaPoints.TryGetValue(theme, out double existingValue)
+            ? existingValue + amt
+            : amt;
+    }
+
+    public double GetThemeKarma(string theme)
+    {
+        return karmaPoints[theme];
+    }
 
     public void FindPlayerInScene()
     {
@@ -205,11 +218,13 @@ public class PlayerSingleton : MonoBehaviour
     }
     public void AddMoney(double amt)
     {
+
         var money = DialogueLua.GetVariable("PlayerMoney").asInt;
         money += (int)amt;
         DialogueLua.SetVariable("PlayerMoney", money);
 
         onMoneyCollected.Invoke();
+
     }
     public void ForceSubtractMoney(double amt)
     {
@@ -249,6 +264,8 @@ public class PlayerSingleton : MonoBehaviour
         Lua.RegisterFunction(nameof(AddMoney), this, SymbolExtensions.GetMethodInfo(() => AddMoney(0)));
         Lua.RegisterFunction(nameof(ForceSubtractMoney), this, SymbolExtensions.GetMethodInfo(() => ForceSubtractMoney(0)));
         Lua.RegisterFunction(nameof(SubtractMoney), this, SymbolExtensions.GetMethodInfo(() => SubtractMoney(0)));
+        Lua.RegisterFunction(nameof(AddTheme), this, SymbolExtensions.GetMethodInfo(() => AddTheme("", 0)));
+        Lua.RegisterFunction(nameof(GetThemeKarma), this, SymbolExtensions.GetMethodInfo(() => GetThemeKarma("")));
         // Lua.RegisterFunction(nameof(AddOne), this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
     }
     /*
