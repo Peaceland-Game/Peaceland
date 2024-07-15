@@ -59,6 +59,10 @@ public class Tablet : MonoBehaviour
             UpdateButtonText();
         }
     }
+    public void ToggleTablet()
+    {
+        PlayerSingleton.Instance.ToggleJournal();
+    }
 
     private void MoveTabs()
     {
