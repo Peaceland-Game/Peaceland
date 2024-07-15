@@ -118,19 +118,7 @@ public class DebugHelper : MonoBehaviour {
         }
     }
 
-    public string CenterOnCell(string id)
-    {
-        var (foundCell, cellCenter) = cellController.GetCellCenter(id);
-        if (!foundCell)
-        {
-            return "Cell Not Found";
-        }
-        else
-        {
-            TeleportPlayerTo(cellCenter);
-            return $"Teleported player to {cellCenter}";
-        }
-    }
+    
     private void TeleportPlayerTo(Vector3 position)
     {
         if (player != null)
@@ -230,6 +218,33 @@ public class DebugHelper : MonoBehaviour {
         }
     }
 
+    //--------------------------------------------------------------------------------------------------------------------------------------------//
+    //
+    //
+    //
+    //                                          Console Commands
+    //
+    //
+    //
+    //--------------------------------------------------------------------------------------------------------------------------------------------//
+    public string AddMoney(int amt)
+    {
+        PlayerSingleton.Instance.AddMoney(amt);
+        return $"Added {amt} to player money";
+    }
+    public string CenterOnCell(string id)
+    {
+        var (foundCell, cellCenter) = cellController.GetCellCenter(id);
+        if (!foundCell)
+        {
+            return "Cell Not Found";
+        }
+        else
+        {
+            TeleportPlayerTo(cellCenter);
+            return $"Teleported player to {cellCenter}";
+        }
+    }
     /// <summary>
     /// Attempts to teleport the player to the given location 
     /// </summary>
