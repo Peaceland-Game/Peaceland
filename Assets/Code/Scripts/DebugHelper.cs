@@ -18,6 +18,8 @@ public class DebugHelper : MonoBehaviour {
     [SerializeField]
     private Dictionary<string, string> commandAliases = new();
 
+    private CellController cellController;
+
     private GameObject player;
     private GameObject freeCamObj;
     private bool inDebugCamMode = false;
@@ -25,8 +27,12 @@ public class DebugHelper : MonoBehaviour {
 
     private void Awake() {
         player = GameObject.FindObjectOfType<FirstPersonController>()?.gameObject;
+        cellController = FindObjectOfType<CellController>();
+        if (!cellController) throw new Exception("Missing Cell Controller");
+
         commandAliases["tp"] = "Teleport";
         commandAliases["tfc"] = "ToggleFreeCam";
+        commandAliases["coc"] = "CenterOnCell";
     }
 
 
@@ -39,21 +45,23 @@ public class DebugHelper : MonoBehaviour {
         DebugConsoleLogic();
     }
 
-    /// <summary>
-    /// Toggle whether the debug console is active or not 
-    /// </summary>
-    private void ToggleDebugConsoleMode() {
-        if (inDebugCamMode)
-            return;
 
-        if (Input.GetKeyUp(KeyCode.Tab)) {
-            consoleIsActive = true;
-            inputField.ActivateInputField();
-            inputField.Select();
-        }
 
-        debugCanvas.SetActive(consoleIsActive);
-    }
+    ///// <summary>
+    ///// Toggle whether the debug console is active or not 
+    ///// </summary>
+    //private void ToggleDebugConsoleMode() {
+    //    if (inDebugCamMode)
+    //        return;
+
+    //    if (Input.GetKeyUp(KeyCode.Tab)) {
+    //        consoleIsActive = true;
+    //        inputField.ActivateInputField();
+    //        inputField.Select();
+    //    }
+
+    //    debugCanvas.SetActive(consoleIsActive);
+    //}
 
     private void HandleToggleDebugConsole() {
         if (Keyboard.current.backquoteKey.wasPressedThisFrame) {
@@ -110,18 +118,21 @@ public class DebugHelper : MonoBehaviour {
         }
     }
 
-    ///// <summary>
-    ///// Whether or not to set as free cam 
-    ///// </summary>
-    //private void ToggleDebugCamMode() {
-    //    // Freeze cam toggleable 
-    //    if (consoleIsActive)
-    //        return;
+    
+    private void TeleportPlayerTo(Vector3 position)
+    {
+        if (player != null)
+        {
+            player.transform.position = position;
+        }
+        else
+        {
+            
+            Debug.LogWarning("Player object not found for teleportation.");
+        }
+    }
 
-    //    if (Input.GetKeyDown(KeyCode.G)) {
 
-    //    }
-    //}
 
     /// <summary>
     /// Logic that allows the user to ultilize several basic 
@@ -207,28 +218,80 @@ public class DebugHelper : MonoBehaviour {
         }
     }
 
+    //--------------------------------------------------------------------------------------------------------------------------------------------//
+    //
+    //
+    //
+    //                                          Console Commands
+    //
+    //
+    //
+    //--------------------------------------------------------------------------------------------------------------------------------------------//
+    public string AddMoney(int amt)
+    {
+        PlayerSingleton.Instance.AddMoney(amt);
+        return $"Added {amt} to player money";
+    }
+    public string CenterOnCell(string id)
+    {
+        var (foundCell, cellCenter) = cellController.GetCellCenter(id);
+        if (!foundCell)
+        {
+            return "Cell Not Found";
+        }
+        else
+        {
+            TeleportPlayerTo(cellCenter);
+            return $"Teleported player to {cellCenter}";
+        }
+    }
     /// <summary>
     /// Attempts to teleport the player to the given location 
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    private string Teleport(string input) {
+    private string Teleport(string input)
+    {
         if (input.Length < 2)
             return "Invalid location";
 
-
-
         string target = input.ToLower();
 
-        // TODO: Make this not a brute force implementation 
-        for (int i = 0; i < teleportPoints.Count; i++) {
-            if (target == teleportPoints[i].key.ToLower()) {
-                player.transform.position = teleportPoints[i].point.position;
-                return "Teleported to " + target;
+        // Check predefined teleport points
+        for (int i = 0; i < teleportPoints.Count; i++)
+        {
+            if (target == teleportPoints[i].key.ToLower())
+            {
+                TeleportPlayerTo(teleportPoints[i].point.position);
+                return $"Teleported to {target}";
             }
         }
 
+        // If not found in predefined points, try to parse as Vector3
+        if (TryParseVector3(input, out Vector3 position))
+        {
+            TeleportPlayerTo(position);
+            return $"Teleported to {position}";
+        }
+
         return "Invalid location";
+    }
+    private bool TryParseVector3(string input, out Vector3 result)
+    {
+        result = Vector3.zero;
+        string[] components = input.Split(',');
+        if (components.Length != 3)
+            return false;
+
+        if (float.TryParse(components[0], out float x) &&
+            float.TryParse(components[1], out float y) &&
+            float.TryParse(components[2], out float z))
+        {
+            result = new Vector3(x, y, z);
+            return true;
+        }
+
+        return false;
     }
     private void ToggleFreeCam() {
         inDebugCamMode = !inDebugCamMode;
