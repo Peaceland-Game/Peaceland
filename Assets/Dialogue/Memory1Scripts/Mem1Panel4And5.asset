@@ -713,7 +713,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true)@0.5;
+        value: 'LookAt(Player, Gryf, 0.5);
+
+          SetContinueMode(true)@0.5;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -836,8 +838,10 @@ MonoBehaviour:
 
           LookAt(Gryf, Waeli, 0.7);
 
-          MoveTo(MoveTowardsDog,
-          Player, 3)@1;
+          LookAt(Waeli,
+          Gryf, 0.7);
+
+          MoveTo(MoveTowardsDog, Player, 3)@1;
 
           SetContinueMode(true)@4.2;'
         type: 0
@@ -1401,7 +1405,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: <font="Aretha - Light SDF">I don't know ... my mama told me to stay
-          away from dogs. She said they are dangerous. I don't think it's a good
+          away from strays. She said they are dangerous. I don't think it's a good
           idea.</font>
         type: 0
         typeString: CustomFieldType_Text
@@ -1458,8 +1462,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">He wouldn't harm a soul. You sure you don't
-          wanna give him a couple scratches?</font>
+        value: "<font=\"Aretha - Light SDF\">Oh my mom says the same thing, but Gryf
+          isn\u2019t like that. He wouldn't harm a soul.</font>"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -1477,13 +1481,7 @@ MonoBehaviour:
       - originConversationID: 27
         originDialogueID: 14
         destinationConversationID: 27
-        destinationDialogueID: 16
-        isConnector: 0
-        priority: 2
-      - originConversationID: 27
-        originDialogueID: 14
-        destinationConversationID: 27
-        destinationDialogueID: 76
+        destinationDialogueID: 87
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1494,7 +1492,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 526.38354
-        y: 283.58902
+        y: 282.45267
         width: 160
         height: 30
     - id: 15
@@ -1550,8 +1548,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 527.75336
-        y: 384.01385
+        x: 525.4806
+        y: 424.92294
         width: 160
         height: 30
     - id: 16
@@ -1605,8 +1603,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 344.19177
-        y: 287.0137
+        x: 286.2372
+        y: 366.55917
         width: 160
         height: 30
     - id: 17
@@ -1660,8 +1658,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 527.75336
-        y: 434.01385
+        x: 525.4806
+        y: 474.92294
         width: 160
         height: 30
     - id: 18
@@ -1715,8 +1713,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 526.3834
-        y: 484.01385
+        x: 524.11066
+        y: 524.92285
         width: 160
         height: 30
     - id: 19
@@ -1770,8 +1768,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 526.3835
-        y: 532.6438
+        x: 524.1107
+        y: 573.5526
         width: 160
         height: 30
     - id: 20
@@ -1825,8 +1823,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 527.75336
-        y: 584.0137
+        x: 525.4806
+        y: 624.9225
         width: 160
         height: 30
     - id: 21
@@ -1880,8 +1878,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 349.67123
-        y: 587.43835
+        x: 347.39847
+        y: 628.34717
         width: 160
         height: 30
     - id: 23
@@ -2129,9 +2127,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">Gryf's an old dog. I haven't known him
-          too long but he's been sick since the day we met. He's a gentle dog and
-          would never hurt anyone.</font>
+        value: "<font=\"Aretha - Light SDF\">Gryf's an old dog. I haven\u2019t known
+          him for too long but he\u2019s been sick since the day we met, he was getting
+          sicker by the day till I started to help.</font>"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -2149,13 +2147,7 @@ MonoBehaviour:
       - originConversationID: 27
         originDialogueID: 27
         destinationConversationID: 27
-        destinationDialogueID: 29
-        isConnector: 0
-        priority: 2
-      - originConversationID: 27
-        originDialogueID: 27
-        destinationConversationID: 27
-        destinationDialogueID: 28
+        destinationDialogueID: 88
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2363,14 +2355,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">I found him here. I like to visit because
-          it's pretty and not many people are around. Except for those guys.</font>
+        value: "<font=\"Aretha - Light SDF\">I found him here. I like to visit because
+          it's pretty and not many people are around. Plus there\u2019s really good
+          ice cream over there!</font>"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          LookAt(GPKSoldier6, Waeli, 0.8)@2;
+          LookAt(Cylo, Waeli, 0.8)@2;
 
           SetContinueMode(true)@3.0;'
         type: 0
@@ -2424,7 +2417,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: <font="Aretha - Light SDF">One night, I came by the park and he was
-          laying under the tree. He looked pretty beat up. It took me a few tries
+          lying under the tree. He looked pretty beat up. It took me a few tries
           to get close without Gryf barking at the top of his lungs. You really scared
           me, didn't you boy?</font>
         type: 0
@@ -2543,9 +2536,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">I've never been here before. My mama says
-          it's dangerous. But I wanted to see the dog...It's been a while since I've
-          seen one.</font>
+        value: <font="Aretha - Light SDF">I've never been here at night before. My
+          mama says it's dangerous, but I heard some noises and wanted to see what
+          was happening..</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -2620,7 +2613,7 @@ MonoBehaviour:
       - originConversationID: 27
         originDialogueID: 35
         destinationConversationID: 27
-        destinationDialogueID: 36
+        destinationDialogueID: 42
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2688,8 +2681,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 423.42456
-        y: 770.89044
+        x: 425.9562
+        y: 827.8524
         width: 160
         height: 30
     - id: 37
@@ -2743,8 +2736,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 424.79443
-        y: 823.6301
+        x: 427.32608
+        y: 880.5921
         width: 160
         height: 30
     - id: 38
@@ -2798,8 +2791,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 424.79443
-        y: 873.6301
+        x: 427.32608
+        y: 930.5921
         width: 160
         height: 30
     - id: 39
@@ -2860,8 +2853,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 426.16428
-        y: 923.6301
+        x: 428.69592
+        y: 980.5921
         width: 160
         height: 30
     - id: 40
@@ -2915,8 +2908,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 424.79443
-        y: 973.6301
+        x: 427.32608
+        y: 1030.5923
         width: 160
         height: 30
     - id: 41
@@ -2943,7 +2936,8 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: <font="Aretha - Light SDF">He already knew "sit" and "shake" when
-          I found him. I think he used to be a pet.</font>
+          I found him. I think he used to be a pet, so someone must have abandoned
+          him.</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -2961,7 +2955,7 @@ MonoBehaviour:
       - originConversationID: 27
         originDialogueID: 41
         destinationConversationID: 27
-        destinationDialogueID: 42
+        destinationDialogueID: 43
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2971,8 +2965,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 424.79443
-        y: 1023.6301
+        x: 427.32608
+        y: 1080.5928
         width: 160
         height: 30
     - id: 42
@@ -3017,7 +3011,7 @@ MonoBehaviour:
       - originConversationID: 27
         originDialogueID: 42
         destinationConversationID: 27
-        destinationDialogueID: 43
+        destinationDialogueID: 36
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3027,8 +3021,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 424.79443
-        y: 1073.6301
+        x: 426.06027
+        y: 781.2251
         width: 160
         height: 30
     - id: 43
@@ -3054,7 +3048,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">But now we have each other. Right Gryf?</font>
+        value: <font="Aretha - Light SDF">But now he has me looking out for him.
+          Right Gryf?</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -3176,7 +3171,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false);
+
+          LookAt(GPKSoldier6, Waeli, 0.8)@2;
+
+          SetContinueMode(true)@3.0;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -3231,7 +3230,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: LookAt(Player, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -3458,8 +3457,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">Nice! Where do you live, what school do
-          you go to?</font>
+        value: "<font=\"Aretha - Light SDF\">Oh, what school do you go to?\r</font>"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -3625,7 +3623,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: <font="Aretha - Light SDF">Well... my dad said I was old enough to
-          support the family. Instead of school, I go with him to work.</font>
+          start helping my family. Instead of school, I go with him to work.</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -3680,8 +3678,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">[ Lucky! ] I wish I didn't have to go to
-          school. It's so boring... I bet you never get bored at work.</font>
+        value: <font="Aretha - Light SDF">Lucky! I wish I didn't have to go to school.
+          It's so boring... I bet you never get bored at work.</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -3905,7 +3903,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">I guess.</font>
+        value: <font="Aretha - Light SDF">I guess you're right.</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -4017,8 +4015,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">It's getting dark. My mama will be mad
-          at me if I stay out late, so I should go home.</font>
+        value: "<font=\"Aretha - Light SDF\">It\u2019s getting dark. My mama will
+          be mad if I stay out late, so I better get home soon.</font>"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -4073,7 +4071,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">Ok...</font>
+        value: "<font=\"Aretha - Light SDF\">Ok\u2026I should probably stay with
+          Gryf for a little bit longer.</font>"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -4124,12 +4123,11 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: ...I know! Cylo's ice cream stand
+        value: Do you need any help?
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">...I know! Cylo's ice cream stand should
-          still be open. Wanna go get something there?</font>
+        value: <font="Aretha - Light SDF">Do you need any help?</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -4180,13 +4178,11 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: That sounds fun, but uh...
+        value: I should...
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">That sounds fun, but uh... I've only been
-          with Gryf for a couple minutes today and he's still pretty hungry. I need
-          to stay here a bit longer.</font>
+        value: <font="Aretha - Light SDF">I should be...</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -4211,7 +4207,7 @@ MonoBehaviour:
       - originConversationID: 27
         originDialogueID: 63
         destinationConversationID: 27
-        destinationDialogueID: 64
+        destinationDialogueID: 83
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4223,118 +4219,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 89.50354
         y: 2060.9373
-        width: 160
-        height: 30
-    - id: 64
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 6
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: That's fine! I'll sit with you while you finish feeding him, and we
-          can go back together!
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="Aretha - Light SDF">That's fine! I'll sit with you while you
-          finish feeding him, and we can go back together!</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 27
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 27
-        originDialogueID: 64
-        destinationConversationID: 27
-        destinationDialogueID: 65
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 90.8734
-        y: 2112.307
-        width: 160
-        height: 30
-    - id: 65
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 6
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Uh...
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="Aretha - Light SDF">Uhh...</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 27
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 27
-        originDialogueID: 65
-        destinationConversationID: 27
-        destinationDialogueID: 83
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 90.8734
-        y: 2159.9814
         width: 160
         height: 30
     - id: 66
@@ -4360,8 +4244,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Nice! Where do you live, what school do
-          you go to?</font>
+        value: <font="RythmusRegular SDF">Oh, what school do you go to?</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -4416,7 +4299,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Uhh . . . I do not go to school.</font>
+        value: <font="RythmusRegular SDF">Uhh. . . I do not. . . go to school.</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -4471,7 +4354,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Oh, um... that's cool, I guess. Why not?</font>
+        value: <font="RythmusRegular SDF">Oh, um. That's cool, I guess. Why not?</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -4526,8 +4409,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="RythmusRegular SDF">I used to, a while ago. But I had to move
-          a lot, so I never went back... it is good that you go to school.</font>
+        value: <font="RythmusRegular SDF">I did- before. But I move a lot, so I...
+          stopped. It is good... that you... go to school.</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -4864,7 +4747,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">No</font>
+        value: <font="Aretha - Light SDF">I shouldn't.</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -4892,8 +4775,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 525.11774
-        y: 332.3232
+        x: 522.845
+        y: 373.2323
         width: 160
         height: 30
     - id: 81
@@ -5265,9 +5148,132 @@ MonoBehaviour:
         y: 47.974266
         width: 160
         height: 30
+    - id: 87
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 11
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: You sure you don't wanna give him a couple scratches?
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 27
+        originDialogueID: 87
+        destinationConversationID: 27
+        destinationDialogueID: 16
+        isConnector: 0
+        priority: 2
+      - originConversationID: 27
+        originDialogueID: 87
+        destinationConversationID: 27
+        destinationDialogueID: 76
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 526.38354
+        y: 325.63452
+        width: 160
+        height: 30
+    - id: 88
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: "He\u2019s a gentle dog and would never hurt anyone."
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "<font=\"Aretha - Light SDF\">He\u2019s a gentle dog and would never
+          hurt anyone.</font>"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 27
+        originDialogueID: 88
+        destinationConversationID: 27
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
+      - originConversationID: 27
+        originDialogueID: 88
+        destinationConversationID: 27
+        destinationDialogueID: 28
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 70
+        y: 825
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 919.0167}
-    canvasZoom: 0.6100004
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.7600002
   - id: 28
     fields:
     - title: Title
@@ -7508,7 +7514,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Yes! You know how dangerous strays are around here. Does Gryf really
-          look feral to you?
+          look wild to you?
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -8655,7 +8661,7 @@ MonoBehaviour:
       - title: Sequence
         value: 'Delay(1.5);
 
-          LookAt(GPKSoldier2, Player, 0.5);'
+          LookAt(GPKSoldier2, Antoni, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -8777,7 +8783,10 @@ MonoBehaviour:
           LookAt(Antoni,
           Player)@0.9;
 
-          LookAt(Gryf, Waeli)@0.8;
+          LookAt(Gryf, Antoni)@0.9;
+
+          LookAt(Gryf,
+          Waeli)@0.8;
 
           Fade(in, 0.7)@1.0;
 
@@ -9470,7 +9479,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: LookAt(Waeli, Player, 0.5);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -9916,7 +9925,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: ...
+        value: . . .
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -10605,7 +10614,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "I\u2019ll\u2026 come back to visit Gryf again sometime, if that\u2019s
-          okay?"
+          okay."
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -11327,8 +11336,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 12.820732, y: 2923.902}
-    canvasZoom: 0.85000014
+    canvasScrollPosition: {x: 0, y: 2923.758}
+    canvasZoom: 0.7900002
   syncInfo:
     syncActors: 1
     syncItems: 1

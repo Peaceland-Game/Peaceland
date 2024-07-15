@@ -350,7 +350,7 @@ MonoBehaviour:
       value: Go to Cylo's and get some ice cream.
       type: 0
       typeString: 
-  - id: 7
+  - id: 10
     fields:
     - title: Name
       value: A Strange Noise
@@ -506,6 +506,20 @@ MonoBehaviour:
       typeString: CustomFieldType_Number
     - title: Description
       value: The effect of the player's actions
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 3
+    fields:
+    - title: Name
+      value: PlayerMoney
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
       type: 0
       typeString: CustomFieldType_Text
   - id: 12
@@ -699,7 +713,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true)@0.5;
+        value: 'LookAt(Player, Gryf, 0.5);
+
+          SetContinueMode(true)@0.5;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -787,7 +803,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 160
-        y: 130
+        y: 131.06383
         width: 160
         height: 30
     - id: 3
@@ -820,12 +836,14 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          LookAt(Gryf, speaker, 0.7);
+          LookAt(Gryf, Waeli, 0.7);
 
-          MoveTo(MoveTowardsDog,
-          PlayerCamera, 3)@1;
+          LookAt(Waeli,
+          Gryf, 0.7);
 
-          SetContinueMode(true)@3.1;'
+          MoveTo(MoveTowardsDog, Player, 3)@1;
+
+          SetContinueMode(true)@4.2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -1223,7 +1241,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(Medium, Speaker, 0.7);
+        value: 'Camera(Medium, Waeli, 0.7);
 
           LookAt(Waeli, Gryf, 1);'
         type: 0
@@ -1387,7 +1405,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: <font="Aretha - Light SDF">I don't know ... my mama told me to stay
-          away from dogs. She said they are dangerous. I don't think it's a good
+          away from strays. She said they are dangerous. I don't think it's a good
           idea.</font>
         type: 0
         typeString: CustomFieldType_Text
@@ -1444,8 +1462,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">He wouldn't harm a soul. You sure you don't
-          wanna give him a couple scratches?</font>
+        value: "<font=\"Aretha - Light SDF\">Oh my mom says the same thing, but Gryf
+          isn\u2019t like that. He wouldn't harm a soul.</font>"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -1463,13 +1481,7 @@ MonoBehaviour:
       - originConversationID: 27
         originDialogueID: 14
         destinationConversationID: 27
-        destinationDialogueID: 16
-        isConnector: 0
-        priority: 2
-      - originConversationID: 27
-        originDialogueID: 14
-        destinationConversationID: 27
-        destinationDialogueID: 76
+        destinationDialogueID: 87
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1480,7 +1492,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 526.38354
-        y: 283.58902
+        y: 282.45267
         width: 160
         height: 30
     - id: 15
@@ -1536,8 +1548,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 527.75336
-        y: 384.01385
+        x: 525.4806
+        y: 424.92294
         width: 160
         height: 30
     - id: 16
@@ -1591,8 +1603,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 344.19177
-        y: 287.0137
+        x: 286.2372
+        y: 366.55917
         width: 160
         height: 30
     - id: 17
@@ -1646,8 +1658,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 527.75336
-        y: 434.01385
+        x: 525.4806
+        y: 474.92294
         width: 160
         height: 30
     - id: 18
@@ -1701,8 +1713,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 526.3834
-        y: 484.01385
+        x: 524.11066
+        y: 524.92285
         width: 160
         height: 30
     - id: 19
@@ -1756,8 +1768,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 526.3835
-        y: 532.6438
+        x: 524.1107
+        y: 573.5526
         width: 160
         height: 30
     - id: 20
@@ -1811,8 +1823,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 527.75336
-        y: 584.0137
+        x: 525.4806
+        y: 624.9225
         width: 160
         height: 30
     - id: 21
@@ -1866,8 +1878,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 349.67123
-        y: 587.43835
+        x: 347.39847
+        y: 628.34717
         width: 160
         height: 30
     - id: 23
@@ -2356,10 +2368,9 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          Camera(Mem1Panel4LookAtSoldiers,
-          Waeli, 0.7)@2;
+          LookAt(GPKSoldier6, Waeli, 0.8)@2;
 
-          Delay(2)@2;'
+          SetContinueMode(true)@3.0;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -2377,7 +2388,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(0, Actor["Waeli"].Name); -- CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2417,9 +2428,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(Medium, Speaker, 0.7);
-
-          SetContinueMode(true);'
+        value: LookAt(Player, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -2642,7 +2651,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: Here watch this. Gryf, sit!
+        value: Here, watch this. Gryf, sit!
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -2818,9 +2827,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'LookAt(Player, Waeli, 0.5);
+        value: 'SetContinueMode(false);
 
-          Camera(Medium, Waeli, 1)@0.6;'
+          LookAt(Player, Waeli, 0.5);
+
+          Camera(Medium,
+          Waeli, 1)@0.6;
+
+          SetContinueMode(true)@1.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -3156,7 +3170,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: <font="Aretha - Light SDF">Dangerous? That's just something parents
           say to scare their kids into listening . . . you came from that side of
-          the river right?</font>
+          the river, right?</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -3270,7 +3284,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(false);
+        value: 'SetContinueMode(false);
+
+          Camera(PlayerStraight, Player,
+          0.5);
+
+          LookAt(Waeli, Player, 0.7)@0.6;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -4169,9 +4188,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'LookAt(Gryf, Waeli, 0.5)@1;
+        value: 'SetContinueMode(false);
 
-          LookAt(Player, Waeli, 0.5)@2;'
+          LookAt(Gryf, Waeli, 0.5)@1;
+
+          LookAt(Player,
+          Waeli, 0.5)@2;
+
+          SetContinueMode(true)@2.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -4732,7 +4756,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -4787,7 +4811,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -4811,8 +4835,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 462.95987
-        y: 1870.63
+        x: 469.20987
+        y: 1869.0675
         width: 160
         height: 30
     - id: 76
@@ -4838,7 +4862,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">No</font>
+        value: <font="Aretha - Light SDF">I shouldn't.</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -4866,8 +4890,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 525.11774
-        y: 332.3232
+        x: 522.845
+        y: 373.2323
         width: 160
         height: 30
     - id: 81
@@ -4973,10 +4997,10 @@ MonoBehaviour:
 
           Fade(stay, 0.7);
 
-          MoveTo(Player,
-          PlayerAnchor);
+          MoveTo(PlayerPanel4Start,
+          Player)@1.2;
 
-          MoveTo(PlayerPanel5Start, Player)@1.2;
+          MoveTo(Player, PlayerAnchor)@1.3;
 
           MoveTo(Gryf,
           GryfAnchor);
@@ -5012,8 +5036,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 188.49307
-        y: 17.749523
+        x: 189.5569
+        y: 18.81335
         width: 160
         height: 30
     - id: 83
@@ -5043,7 +5067,16 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: Camera(PlayerStraight, Player, 0.5);
+        value: 'SetContinueMode(false);
+
+          SetActive(Antoni, true);
+
+          MoveTo(AntoniIntroMove,
+          Antoni, 0.9);
+
+          LookAt(Waeli, Antoni, 0.6)@1.0;
+
+          SetContinueMode(true)@1.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -5230,9 +5263,70 @@ MonoBehaviour:
         y: 47.974266
         width: 160
         height: 30
+    - id: 87
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 11
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: You sure you don't wanna give him a couple scratches?
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 27
+        originDialogueID: 87
+        destinationConversationID: 27
+        destinationDialogueID: 16
+        isConnector: 0
+        priority: 2
+      - originConversationID: 27
+        originDialogueID: 87
+        destinationConversationID: 27
+        destinationDialogueID: 76
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 526.38354
+        y: 325.63452
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.8200002
+    canvasScrollPosition: {x: 9.090912, y: 593.18164}
+    canvasZoom: 0.8800001
   - id: 28
     fields:
     - title: Title
@@ -5361,7 +5455,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetActive(Antoni, true);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -5421,19 +5515,22 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          LookAt(Antoni, Player, 0.5);
+          LookAt(Antoni, Player, 0.7);
 
           LookAt(Antoni,
-          Waeli, 0.5);
+          Waeli, 0.7);
 
-          MoveTo(AntoniIntroMove, Antoni, 1.5)@1;
+          MoveTo(AntoniTowardsDog, Antoni, 2.0)@1;
 
-          LookAt(AntoniIntroMove,
-          Player, 1.5)@1;
+          LookAt(AntoniTowardsDog,
+          Waeli, 2.0)@1;
 
-          LookAt(AntoniIntroMove, Waeli, 1.5)@1;
+          LookAt(AntoniTowardsDog, Player, 2.0)@1;
 
-          SetContinueMode(true)@2.7;'
+          LookAt(Waeli,
+          Antoni, 0.5)@3.2;
+
+          SetContinueMode(true)@3.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -5598,9 +5695,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'LookAt(Gryf, Waeli, 0.5);
+        value: 'LookAt(Antoni, Gryf, 0.5);
 
-          LookAt(Gryf, Player, 0.5);'
+          LookAt(Gryf, Waeli, 0.5);
+
+          LookAt(Gryf,
+          Player, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -5663,12 +5763,12 @@ MonoBehaviour:
           LookAt(Antoni,
           Waeli, 0.5);
 
-          LookAt(Player, Waeli, 0.5)@1.0;
+          LookAt(Player, Waeli, 0.5)@1.5;
 
           LookAt(Waeli,
-          Player, 0.5)@1.5;
+          Player, 0.5)@2.1;
 
-          SetContinueMode(true)@1.9;'
+          SetContinueMode(true)@2.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -5704,7 +5804,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 331
+        x: 327.5909
         y: 334
         width: 160
         height: 30
@@ -5845,7 +5945,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: MoveTo(PlayerStepBackDog, Player, 1.5);
+        value: 'MoveTo(PlayerStepBackDog, Player, 1.5);
+
+          LookAt(PlayerStepBackDog,
+          Waeli, 1.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -5957,9 +6060,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'LookAt(Antoni, Waeli, 0.5);
-
-          LookAt(Waeli, Player, 0.5);'
+        value: LookAt(Antoni, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -6183,7 +6284,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: LookAt(Waeli, Antoni, 0.5);
+        value: 'LookAt(Waeli, Antoni, 0.5);
+
+          LookAt(Antoni, Player, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -6352,7 +6455,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: LookAt(Waeli, Antoni, 0.5);
+        value: 'LookAt(Waeli, Antoni, 0.5);
+
+          LookAt(Antoni, Player, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -6712,8 +6817,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'LookAt(Antoni, GPKSoldierP5B, 0.5);
 
-          MoveTo(GPKBGrabTaser,
-          GPKSoldierP5B, 1.0);'
+          LookAt(Antoni, Player,
+          1.0);
+
+          MoveTo(GPKBGrabTaser, GPKSoldierP5B, 1.0);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -6769,7 +6876,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: MoveTo(GPKBAnchor, GPKSoldierP5B, 1.0);
+        value: 'MoveTo(GPKBAnchor, GPKSoldierP5B, 1.0);
+
+          LookAt(GPKBAnchor,
+          Player, 1.0);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -7113,9 +7223,9 @@ MonoBehaviour:
           MoveTo(WaeliGPKTalk,
           Waeli, 1.0)@1.0;
 
-          LookAt(Waeli, GPKSoldierP5B, 0.5)@1.0;
+          LookAt(WaeliGPKTalk, GPKSoldierP5B, 0.5)@1.0;
 
-          LookAt(Waeli,
+          LookAt(WaeliGPKTalk,
           GPKSoldierP5A, 0.5)@1.0;
 
           SetContinueMode(true)@1.7;'
@@ -7641,7 +7751,7 @@ MonoBehaviour:
         value: "SetContinueMode(false);\nLookAt(GPKSoldierReturn, GPKSoldierP5A,
           0.5); \nLookAt(GPKSoldierReturn, GPKSoldierP5B, 0.5);\nMoveTo(GPKSoldierReturn,
           GPKSoldierP5A, 1.5)@0.7;\nMoveTo(GPKSoldierReturn, GPKSoldierP5B, 1.5)@1.2;\nSetActive(GPKSoldierP5A,
-          false)@1.7;\nSetActive(GPKSoldierP5B, false)@2.2;\nSetContinueMode(true)@2.2;"
+          false)@1.7;\nSetActive(GPKSoldierP5B, false)@2.2;\nSetContinueMode(true)@2.4;"
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -7894,7 +8004,7 @@ MonoBehaviour:
           Fade(stay,
           0.5);
 
-          MoveTo(PlayerPanel5Start, Player)@0.6;
+          MoveTo(PlayerPanel4Start, Player)@0.6;
 
           MoveTo(WaeliAnchor,
           Waeli)@0.6;
@@ -8025,18 +8135,18 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          MoveTo(PlayerGiveRoom, Player,
-          1.0)@0.8;
+          MoveTo(AntoniToPetGryf, Antoni,
+          0.5)@1.5;
 
-          MoveTo(AntoniTowardsDog, Antoni, 1.0)@1.5;
-
-          LookAt(Gryf,
-          Antoni, 0.5)@2.5;
-
-          LookAt(Antoni, Gryf, 0.5)@2.5;
+          LookAt(Gryf, Antoni, 0.5)@2.5;
 
           LookAt(Antoni,
-          Waeli, 0.5)@2.5;
+          Gryf, 0.5)@2.5;
+
+          LookAt(Antoni, Waeli, 0.5)@2.5;
+
+          LookAt(Antoni,
+          Player, 0.5)@2.5;
 
           Delay(1)@2.5;
 
@@ -8721,14 +8831,16 @@ MonoBehaviour:
           Fade(stay,
           0.7);
 
-          MoveTo(PlayerGiveRoom, Player)@0.8;
+          MoveTo(PlayerPanel4Start, Player)@0.8;
 
-          LookAt(Gryf,
-          Waeli)@0.8;
+          LookAt(Antoni,
+          Player)@0.9;
 
-          Fade(in, 0.7)@0.9;
+          LookAt(Gryf, Waeli)@0.8;
 
-          Delay(1.8);'
+          Fade(in, 0.7)@1.0;
+
+          Delay(1.9);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -9350,7 +9462,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 
+        value: '*whimper*'
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -9359,7 +9471,9 @@ MonoBehaviour:
           LookAt(Gryf, Antoni, 0.5);
 
           LookAt(Gryf,
-          Player, 0.5);'
+          Player, 0.5);
+
+          LookAt(Waeli, Gryf, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -9466,7 +9580,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "Well I don\u2019t have to be the only one who takes care of Gryf\u2026"
+        value: "Well, I don\u2019t have to be the only one who takes care of Gryf\u2026"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -9971,7 +10085,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 
+        value: '*whimper*'
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -9980,7 +10094,9 @@ MonoBehaviour:
           LookAt(Gryf, Antoni, 0.5);
 
           LookAt(Gryf,
-          Player, 0.5);'
+          Player, 0.5);
+
+          LookAt(Waeli, Gryf, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -10719,7 +10835,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'Delay(2);
 
-          MoveTo(AntoniIntroMove, Antoni, 1.5)@0.5;'
+          MoveTo(AntoniTowardsDog, Antoni, 1.5)@0.5;
+
+          LookAt(Waeli,
+          Gryf, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -11111,15 +11230,15 @@ MonoBehaviour:
           LookAt(Antoni,
           Player, 0.5)@0.2;
 
-          LookAt(AntoniPanel5End, Antoni, 0.5)@0.7;
+          LookAt(AntoniPanel5End, Antoni, 0.5)@1.5;
 
           MoveTo(AntoniPanel5End,
-          Antoni, 3.0)@1.3;
+          Antoni, 3.0)@2.1;
 
-          SetActive(Antoni, false)@2.5;
+          SetActive(Antoni, false)@2.8;
 
           Fade(stay,
-          0.7)@2.5;'
+          0.7)@2.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -11267,8 +11386,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1035.1553}
-    canvasZoom: 0.73000026
+    canvasScrollPosition: {x: 12.820732, y: 2923.902}
+    canvasZoom: 0.85000014
   syncInfo:
     syncActors: 1
     syncItems: 1
