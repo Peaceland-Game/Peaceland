@@ -35,7 +35,8 @@ public class DynamicLightingController : MonoBehaviour
             applyTestProfile = false; // Reset the flag
             ApplyProfile(lightingProfiles[testProfileIndex], GameObject.FindWithTag("UI").GetComponent<UserInterface>());
             currentProfileIndex = testProfileIndex;
-            Debug.Log($"Applied profile: {lightingProfiles[testProfileIndex].name}");
+            Debug.Log($"Applied test profile: {lightingProfiles[testProfileIndex].name}");
+            //Debug.Log(applyTestProfile);
         }
     }
     //private void HandleDayChangeInput()
@@ -189,7 +190,7 @@ public class DynamicLightingController : MonoBehaviour
         RenderSettings.fogDensity = profile.fogDensity;
         RenderSettings.fogStartDistance = profile.fogHeight;
 
-
+        //Debug.Log("Finished transition re enable loadscreen");
         userInterface.DisableLoadScreen();
         // Post-processing
         // You'll need to implement a way to switch between volume profiles if you're using URP or HDRP

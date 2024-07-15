@@ -114,11 +114,13 @@ public class UserInterface : MonoBehaviour
     {
         if (!loadScreen.activeInHierarchy)
         {
+           // Debug.Log("Enable loadscreen");
             loadScreen.SetActive(true);
         }
     }
     public void DisableLoadScreen()
     {
+       // Debug.Log("Disable loadscreen");
         loadScreen.SetActive(false);
     }
     public void UpdateLoadingProgress(float progress)

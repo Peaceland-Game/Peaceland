@@ -27,10 +27,7 @@ public class CellController : MonoBehaviour
     {
         cells.Clear();
         ScanChildren(transform, "");
-        cells.ForEach(cell =>
-        {
-            Debug.Log($"{cell.id},{cell.cellName}");
-        });
+       
     }
 
     void ScanChildren(Transform parent, string parentName)
