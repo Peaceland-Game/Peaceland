@@ -5295,7 +5295,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -8774,12 +8774,14 @@ MonoBehaviour:
 
           MoveTo(PlayerPanel4Start, Player)@0.8;
 
-          LookAt(Gryf,
-          Waeli)@0.8;
+          LookAt(Antoni,
+          Player)@0.9;
 
-          Fade(in, 0.7)@0.9;
+          LookAt(Gryf, Waeli)@0.8;
 
-          Delay(1.8);'
+          Fade(in, 0.7)@1.0;
+
+          Delay(1.9);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -9401,7 +9403,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 
+        value: '*whimper*'
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -9410,7 +9412,9 @@ MonoBehaviour:
           LookAt(Gryf, Antoni, 0.5);
 
           LookAt(Gryf,
-          Player, 0.5);'
+          Player, 0.5);
+
+          LookAt(Waeli, Gryf, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -10022,7 +10026,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 
+        value: '*whimper*'
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -10031,7 +10035,9 @@ MonoBehaviour:
           LookAt(Gryf, Antoni, 0.5);
 
           LookAt(Gryf,
-          Player, 0.5);'
+          Player, 0.5);
+
+          LookAt(Waeli, Gryf, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -10770,7 +10776,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'Delay(2);
 
-          MoveTo(AntoniIntroMove, Antoni, 1.5)@0.5;'
+          MoveTo(AntoniTowardsDog, Antoni, 1.5)@0.5;
+
+          LookAt(Waeli,
+          Gryf, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -11162,15 +11171,15 @@ MonoBehaviour:
           LookAt(Antoni,
           Player, 0.5)@0.2;
 
-          LookAt(AntoniPanel5End, Antoni, 0.5)@0.7;
+          LookAt(AntoniPanel5End, Antoni, 0.5)@1.5;
 
           MoveTo(AntoniPanel5End,
-          Antoni, 3.0)@1.3;
+          Antoni, 3.0)@2.1;
 
-          SetActive(Antoni, false)@2.5;
+          SetActive(Antoni, false)@2.8;
 
           Fade(stay,
-          0.7)@2.5;'
+          0.7)@2.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -11318,8 +11327,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 10.227295, y: 2277.2717}
-    canvasZoom: 0.8800001
+    canvasScrollPosition: {x: 12.820732, y: 2923.902}
+    canvasZoom: 0.85000014
   syncInfo:
     syncActors: 1
     syncItems: 1
