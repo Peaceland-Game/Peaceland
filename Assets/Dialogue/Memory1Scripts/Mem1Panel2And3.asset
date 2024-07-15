@@ -1233,6 +1233,12 @@ MonoBehaviour:
       - originConversationID: 19
         originDialogueID: 3
         destinationConversationID: 19
+        destinationDialogueID: 7
+        isConnector: 0
+        priority: 2
+      - originConversationID: 19
+        originDialogueID: 3
+        destinationConversationID: 19
         destinationDialogueID: 20
         isConnector: 0
         priority: 2
@@ -1243,7 +1249,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 389.00894
+        x: 390.4375
         y: 225.43753
         width: 160
         height: 30
@@ -1298,8 +1304,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 189.1071
-        y: 284.10574
+        x: 86.25
+        y: 279.82004
         width: 160
         height: 30
     - id: 5
@@ -1353,8 +1359,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 392.61237
-        y: 284.16968
+        x: 295.46954
+        y: 281.31256
         width: 160
         height: 30
     - id: 6
@@ -1408,8 +1414,63 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 622.24994
-        y: 282.53036
+        x: 502.25
+        y: 279.67322
+        width: 160
+        height: 30
+    - id: 7
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Strawberry Mint Chip
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 19
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 19
+        originDialogueID: 7
+        destinationConversationID: 19
+        destinationDialogueID: 14
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: Variable["IceCreamFlavor"] = "Strawberry Mint Chip";
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 710.25
+        y: 281.31256
         width: 160
         height: 30
     - id: 9
@@ -1445,10 +1506,6 @@ MonoBehaviour:
           Cylo);'
         type: 0
         typeString: CustomFieldType_Text
-      - title: EventGuid
-        value: c681ba81-ed61-4a60-a92c-1e8cb75a2f46
-        type: 0
-        typeString: 
       conversationID: 19
       isRoot: 0
       isGroup: 0
@@ -1470,7 +1527,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 405.41895
+        x: 404.2826
         y: 404.46112
         width: 160
         height: 30
@@ -1725,10 +1782,6 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      - title: EventGuid
-        value: 8fca5168-f94f-45dc-8d4c-560528f894c2
-        type: 0
-        typeString: 
       conversationID: 19
       isRoot: 0
       isGroup: 0
@@ -1743,8 +1796,8 @@ MonoBehaviour:
         destinationDialogueID: 9
         isConnector: 0
         priority: 2
-      conditionsString: 
-      userScript: 
+      conditionsString: Variable["PlayerMoney"] >= 10
+      userScript: Variable["PlayerMoney"] = Variable["PlayerMoney"] - 10
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2123,8 +2176,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 22.18475}
-    canvasZoom: 0.7000003
+    canvasScrollPosition: {x: 78.04877, y: 213.52652}
+    canvasZoom: 0.8200002
   - id: 20
     fields:
     - title: Title
@@ -3276,10 +3329,6 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      - title: EventGuid
-        value: 82f34705-98a6-4d91-b299-4d1f2b042ea2
-        type: 0
-        typeString: 
       conversationID: 22
       isRoot: 0
       isGroup: 0
@@ -3295,13 +3344,16 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["BoxPlaced"] == true
-      userScript: SetQuestState("Box Mover", "success");
+      userScript: 'SetQuestState("Box Mover", "success");
+
+        Variable["PlayerMoney"]
+        = Variable["PlayerMoney"] + 10'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 467
+        x: 466
         y: 98
         width: 160
         height: 30
@@ -3466,7 +3518,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.8800001
+    canvasZoom: 1
   syncInfo:
     syncActors: 1
     syncItems: 0
