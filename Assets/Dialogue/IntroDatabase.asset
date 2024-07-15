@@ -240,7 +240,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -300,7 +300,7 @@ MonoBehaviour:
       - originConversationID: 34
         originDialogueID: 0
         destinationConversationID: 34
-        destinationDialogueID: 2
+        destinationDialogueID: 4
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -310,8 +310,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 335.40973
-        y: 30
+        x: 717.49915
+        y: 100.149254
         width: 160
         height: 30
     - id: 2
@@ -453,7 +453,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(false);
         type: 0
         typeString: 
       conversationID: 34
@@ -477,8 +477,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 335.40973
-        y: 180
+        x: 333.9172
+        y: 178.50748
         width: 160
         height: 30
     - id: 5
@@ -1683,7 +1683,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 468.65662}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.67000014
   syncInfo:
     syncActors: 0
