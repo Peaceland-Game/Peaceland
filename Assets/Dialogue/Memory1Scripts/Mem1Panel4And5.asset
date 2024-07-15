@@ -6758,8 +6758,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'LookAt(Antoni, GPKSoldierP5B, 0.5);
 
-          MoveTo(GPKBGrabTaser,
-          GPKSoldierP5B, 1.0);'
+          LookAt(Antoni, Player,
+          1.0);
+
+          MoveTo(GPKBGrabTaser, GPKSoldierP5B, 1.0);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -6815,7 +6817,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: MoveTo(GPKBAnchor, GPKSoldierP5B, 1.0);
+        value: 'MoveTo(GPKBAnchor, GPKSoldierP5B, 1.0);
+
+          LookAt(GPKBAnchor,
+          Player, 1.0);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -7159,9 +7164,9 @@ MonoBehaviour:
           MoveTo(WaeliGPKTalk,
           Waeli, 1.0)@1.0;
 
-          LookAt(Waeli, GPKSoldierP5B, 0.5)@1.0;
+          LookAt(WaeliGPKTalk, GPKSoldierP5B, 0.5)@1.0;
 
-          LookAt(Waeli,
+          LookAt(WaeliGPKTalk,
           GPKSoldierP5A, 0.5)@1.0;
 
           SetContinueMode(true)@1.7;'
@@ -7687,7 +7692,7 @@ MonoBehaviour:
         value: "SetContinueMode(false);\nLookAt(GPKSoldierReturn, GPKSoldierP5A,
           0.5); \nLookAt(GPKSoldierReturn, GPKSoldierP5B, 0.5);\nMoveTo(GPKSoldierReturn,
           GPKSoldierP5A, 1.5)@0.7;\nMoveTo(GPKSoldierReturn, GPKSoldierP5B, 1.5)@1.2;\nSetActive(GPKSoldierP5A,
-          false)@1.7;\nSetActive(GPKSoldierP5B, false)@2.2;\nSetContinueMode(true)@2.2;"
+          false)@1.7;\nSetActive(GPKSoldierP5B, false)@2.2;\nSetContinueMode(true)@2.4;"
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -7940,7 +7945,7 @@ MonoBehaviour:
           Fade(stay,
           0.5);
 
-          MoveTo(PlayerPanel5Start, Player)@0.6;
+          MoveTo(PlayerPanel4Start, Player)@0.6;
 
           MoveTo(WaeliAnchor,
           Waeli)@0.6;
@@ -8071,18 +8076,18 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          MoveTo(PlayerGiveRoom, Player,
-          1.0)@0.8;
+          MoveTo(AntoniToPetGryf, Antoni,
+          0.5)@1.5;
 
-          MoveTo(AntoniTowardsDog, Antoni, 1.0)@1.5;
-
-          LookAt(Gryf,
-          Antoni, 0.5)@2.5;
-
-          LookAt(Antoni, Gryf, 0.5)@2.5;
+          LookAt(Gryf, Antoni, 0.5)@2.5;
 
           LookAt(Antoni,
-          Waeli, 0.5)@2.5;
+          Gryf, 0.5)@2.5;
+
+          LookAt(Antoni, Waeli, 0.5)@2.5;
+
+          LookAt(Antoni,
+          Player, 0.5)@2.5;
 
           Delay(1)@2.5;
 
@@ -8767,7 +8772,7 @@ MonoBehaviour:
           Fade(stay,
           0.7);
 
-          MoveTo(PlayerGiveRoom, Player)@0.8;
+          MoveTo(PlayerPanel4Start, Player)@0.8;
 
           LookAt(Gryf,
           Waeli)@0.8;
@@ -11313,7 +11318,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 54.545532, y: 372.72723}
+    canvasScrollPosition: {x: 10.227295, y: 2277.2717}
     canvasZoom: 0.8800001
   syncInfo:
     syncActors: 1
