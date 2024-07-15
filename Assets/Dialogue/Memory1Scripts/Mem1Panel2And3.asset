@@ -1233,17 +1233,11 @@ MonoBehaviour:
       - originConversationID: 19
         originDialogueID: 3
         destinationConversationID: 19
-        destinationDialogueID: 7
-        isConnector: 0
-        priority: 2
-      - originConversationID: 19
-        originDialogueID: 3
-        destinationConversationID: 19
         destinationDialogueID: 20
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ChangeEmotionalState(0, Actor["Cylo"].Name); -- CONTENT
+      userScript: ChangeEmotionalState(0, Actor["Cylo"].Name); -- CONTENT;
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1416,61 +1410,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 502.25
         y: 279.67322
-        width: 160
-        height: 30
-    - id: 7
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 8
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: Strawberry Mint Chip
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 19
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 19
-        originDialogueID: 7
-        destinationConversationID: 19
-        destinationDialogueID: 14
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: Variable["IceCreamFlavor"] = "Strawberry Mint Chip";
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 710.25
-        y: 281.31256
         width: 160
         height: 30
     - id: 9
@@ -2010,15 +1949,15 @@ MonoBehaviour:
         destinationDialogueID: 23
         isConnector: 0
         priority: 2
-      conditionsString: Variable["NewFlavorKnowledge"] == true
+      conditionsString: Variable["NewFlavorKnowledge"] == true;
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 918.2192
-        y: 283.25003
+        x: 710.3245
+        y: 280.61847
         width: 160
         height: 30
     - id: 21
@@ -2072,8 +2011,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 918.21924
-        y: 333.25003
+        x: 709.0088
+        y: 330.61847
         width: 160
         height: 30
     - id: 22
@@ -2128,8 +2067,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 916.9997
-        y: 383.25003
+        x: 707.78925
+        y: 380.61847
         width: 160
         height: 30
     - id: 23
@@ -2191,13 +2130,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 918.21924
-        y: 447.88416
+        x: 709.0088
+        y: 443.9368
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 303.65848, y: 139.13629}
-    canvasZoom: 0.8200002
+    canvasScrollPosition: {x: 0, y: 87.925385}
+    canvasZoom: 0.7000003
   - id: 20
     fields:
     - title: Title
@@ -3206,8 +3145,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 80
+        x: 161
+        y: 82
         width: 160
         height: 30
     - id: 6
@@ -3376,7 +3315,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 466
+        x: 467
         y: 98
         width: 160
         height: 30
@@ -3480,7 +3419,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["NewFlavorKnowledge"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
