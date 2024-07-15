@@ -2230,7 +2230,7 @@ Transform:
   - {fileID: 1707731397643082164}
   - {fileID: 5431226566788965810}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8204660549188488645
 GameObject:
@@ -12001,11 +12001,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5375179759482864597, guid: 431ebfc857fa49e49823397be94494f8,
         type: 3}
-      propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3024408898037375359}
-    - target: {fileID: 5375179759482864597, guid: 431ebfc857fa49e49823397be94494f8,
-        type: 3}
       propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -12096,15 +12091,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8960951548864136882, guid: 431ebfc857fa49e49823397be94494f8,
         type: 3}
       insertIndex: 4
-      addedObject: {fileID: 5571278344125666820}
-    - targetCorrespondingSourceObject: {fileID: 8960951548864136882, guid: 431ebfc857fa49e49823397be94494f8,
-        type: 3}
-      insertIndex: 5
       addedObject: {fileID: 2934922174826906015}
     - targetCorrespondingSourceObject: {fileID: 8960951548864136882, guid: 431ebfc857fa49e49823397be94494f8,
         type: 3}
-      insertIndex: 9
-      addedObject: {fileID: 3024408898037375359}
+      insertIndex: -1
+      addedObject: {fileID: 9149012497588995786}
   m_SourcePrefab: {fileID: 100100000, guid: 431ebfc857fa49e49823397be94494f8, type: 3}
 --- !u!4 &341488641062791888 stripped
 Transform:
@@ -12118,85 +12109,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8335414436451333848}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5571278344125666820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1150360400639864938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: 8
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags:
-    - Player
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  setQuestState: 1
-  questName: 
-  questState: 0
-  setQuestEntryState: 0
-  questEntryNumber: 1
-  questEntryState: 0
-  setAnotherQuestEntryState: 0
-  anotherQuestEntryNumber: 1
-  anotherQuestEntryState: 0
-  luaCode: 
-  sequence: 
-  sequenceSpeaker: {fileID: 0}
-  sequenceListener: {fileID: 0}
-  waitOneFrameOnStartOrEnable: 1
-  alertMessage: 
-  textTable: {fileID: 0}
-  alertDuration: 0
-  sendMessages: []
-  barkSource: 2
-  barkConversation: 
-  barkEntryID: -1
-  barkEntryTitle: 
-  barkText: Can you help me lift this? My knees haven't been the same since the war.
-  barkTextSequence: 
-  barker: {fileID: 0}
-  barkTarget: {fileID: 0}
-  barkOrder: 0
-  allowBarksDuringConversations: 0
-  skipBarkIfNoValidEntries: 0
-  cacheBarkLines: 0
-  conversation: 
-  conversationConversant: {fileID: 0}
-  conversationActor: {fileID: 0}
-  startConversationEntryID: -1
-  startConversationEntryTitle: 
-  overrideDialogueUI: {fileID: 0}
-  exclusive: 0
-  replace: 0
-  queue: 0
-  skipIfNoValidEntries: 1
-  preventRestartOnSameFrameEnded: 0
-  stopConversationOnTriggerExit: 0
-  marginToAllowTriggerExit: 0.2
-  stopConversationIfTooFar: 0
-  maxConversationDistance: 5
-  monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 1
-  pauseGameDuringConversation: 0
-  setActiveActions: []
-  setEnabledActions: []
-  setAnimatorStateActions: []
-  onExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  useConversationTitlePicker: 1
-  useBarkTitlePicker: 1
-  useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 7ace66aa51c7d81468a035546125ec40, type: 2}
 --- !u!114 &2934922174826906015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12271,7 +12183,7 @@ MonoBehaviour:
   onExecute:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5571278344125666820}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -12287,7 +12199,7 @@ MonoBehaviour:
   useBarkTitlePicker: 1
   useQuestNamePicker: 1
   selectedDatabase: {fileID: 11400000, guid: 7ace66aa51c7d81468a035546125ec40, type: 2}
---- !u!65 &3024408898037375359
+--- !u!65 &9149012497588995786
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12306,8 +12218,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8, y: 2, z: 8}
-  m_Center: {x: -3, y: 1, z: 3.5}
+  m_Size: {x: 1, y: 1.9417953, z: 1}
+  m_Center: {x: -0, y: 0.9435463, z: 0}
 --- !u!114 &2013307892228037891 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7520417195690961883, guid: 431ebfc857fa49e49823397be94494f8,
