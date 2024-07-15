@@ -5261,7 +5261,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1768.7498}
+    canvasScrollPosition: {x: 0, y: 1659.3748}
     canvasZoom: 0.64000034
   - id: 28
     fields:
@@ -5456,14 +5456,17 @@ MonoBehaviour:
           LookAt(Antoni,
           Waeli, 0.7);
 
-          MoveTo(AntoniIntroMove, Antoni, 1.5)@1;
+          MoveTo(AntoniTowardsDog, Antoni, 2.0)@1;
 
-          LookAt(AntoniIntroMove,
-          Player, 1.5)@1;
+          LookAt(AntoniTowardsDog,
+          Waeli, 2.0)@1;
 
-          LookAt(AntoniIntroMove, Waeli, 1.5)@1;
+          LookAt(AntoniTowardsDog, Player, 2.0)@1;
 
-          SetContinueMode(true)@2.7;'
+          LookAt(Waeli,
+          Antoni, 0.5)@3.2;
+
+          SetContinueMode(true)@3.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -5734,7 +5737,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 331
+        x: 327.5909
         y: 334
         width: 160
         height: 30
@@ -11297,7 +11300,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 3.4091187, y: 0}
+    canvasScrollPosition: {x: 22.727356, y: 185.22725}
     canvasZoom: 0.8800001
   syncInfo:
     syncActors: 1
