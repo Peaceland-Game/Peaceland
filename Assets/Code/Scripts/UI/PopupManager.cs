@@ -12,11 +12,28 @@ public class PopupManager : MonoBehaviour
 
     void Start()
     {
-        popups = GetComponents<TextMeshProUGUI>().ToList();
+        popups = GetComponentsInChildren<TextMeshProUGUI>().ToList();
 
+        // Get the karma popup
         foreach (TextMeshProUGUI p in popups)
         {
-            p.gameObject.SetActive(false);
+            if (p.name == "KarmaPopup")
+            {
+                karmaPopup = p;
+                break;
+            }
+        }
+
+        // Set popups to inactive
+        foreach (TextMeshProUGUI p in popups)
+        {
+            // for testing. Remove this if you remove the test buttons (or don't)
+            if (p.name != "TestButtonGainKarma" && p.name != "TestButtonLoseKarma")
+            {
+                p.gameObject.SetActive(false);
+            }
+
+            //p.gameObject.SetActive(false);
         }
     }
 
@@ -32,6 +49,7 @@ public class PopupManager : MonoBehaviour
     /// <param name="value"> the change in karma. Use a positive number to add karma, or a negative number to take it away </param>
     public void CreateKarmaPopup(int value)
     {
+        // Check if karma is being gained or lost, and adjusting the text accordingly
         if(value > 0)
         {
             karmaPopup.color = Color.green;
@@ -47,40 +65,89 @@ public class PopupManager : MonoBehaviour
             // wait why did I do this
         }
 
-        karmaPopup.color = new Color(karmaPopup.color.r, karmaPopup.color.g, karmaPopup.color.b, 0);
-        karmaPopup.gameObject.SetActive(true);
-
-        StartCoroutine(FadeInOutKarmaPopup());
+        StartCoroutine(FadeInOutPopup(karmaPopup, 1, 3, 1));
+        StartCoroutine(MoveAndHold(karmaPopup, 0.1f, 0, 3, 2, true));
     }
 
-    public IEnumerator FadeInOutKarmaPopup()
+    /// <summary>
+    /// Fades a popup in and out
+    /// </summary>
+    /// <param name="popup"> the popup to fade </param>
+    /// <param name="fadeInTime"> time fading in </param>
+    /// <param name="holdTime"> time staying solid </param>
+    /// <param name="fadeOutTime"> time fading out </param>
+    /// <returns> what? </returns>
+    public IEnumerator FadeInOutPopup(TextMeshProUGUI popup, float fadeInTime, float holdTime, float fadeOutTime)
     {
+        popup.color = new Color(popup.color.r, popup.color.g, popup.color.b, 0);
+        popup.gameObject.SetActive(true);
+        
         float timer = 0f;
 
-        while(timer < 1f)
+        // Fade in
+        while(timer < fadeInTime)
         {
             timer += Time.deltaTime;
 
-            float alpha = timer / 1f;
-            karmaPopup.color = new Color(karmaPopup.color.r, karmaPopup.color.g, karmaPopup.color.b, alpha);
+            float alpha = timer / fadeInTime;
+            popup.color = new Color(popup.color.r, popup.color.g, popup.color.b, alpha);
             
             yield return null;
         }
 
-        yield return new WaitForSeconds(3);
+        // Hold
+        yield return new WaitForSeconds(holdTime);
 
         timer = 0f;
 
-        while (timer < 1f)
+        // Fade out
+        while (timer < fadeOutTime)
         {
             timer += Time.deltaTime;
 
-            float alpha = 1 - (timer / 1f);
-            karmaPopup.color = new Color(karmaPopup.color.r, karmaPopup.color.g, karmaPopup.color.b, alpha);
+            float alpha = 1 - (timer / fadeOutTime);
+            popup.color = new Color(popup.color.r, popup.color.g, popup.color.b, alpha);
 
             yield return null;
         }
 
-        karmaPopup.gameObject.SetActive(false);
+        // Return to inactive state
+        popup.gameObject.SetActive(false);
+    }
+
+    public IEnumerator MovePopup(TextMeshProUGUI popup, float verticalMove, float horizontalMove, float time, bool resetPos)
+    {
+        Vector3 startPos = popup.transform.position;
+        
+        float timer = 0f;
+
+        while (timer < time)
+        {
+            timer += Time.deltaTime;
+
+            float moveFraction = timer / time;
+            popup.transform.Translate(new Vector3((horizontalMove * moveFraction), (verticalMove * moveFraction), 0));
+
+            yield return null;
+        }
+
+        if(resetPos)
+        {
+            popup.transform.position = startPos;
+        }
+    }
+
+    public IEnumerator MoveAndHold(TextMeshProUGUI popup, float verticalMove, float horizontalMove, float moveTime, float holdTime, bool resetPos)
+    {
+        Vector3 startPos = popup.transform.position;
+
+        StartCoroutine(MovePopup(popup, verticalMove, horizontalMove, moveTime, false));
+
+        yield return new WaitForSeconds(holdTime);
+
+        if(resetPos)
+        {
+            popup.transform.position = startPos;
+        }
     }
 }
