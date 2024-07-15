@@ -889,24 +889,30 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'LookAt(Player, Dad, 0.4);
+        value: 'AnimatorTrigger(Father_SitTurnToPlayer, Dad);
 
-          Delay(0.8);
+          AnimatorTrigger(Father_UseTVRemote,
+          Dad, Father_SitTurnToPlayer)@1.5;
 
-          LookAt(DadStepOne,
-          Dad, 0.4)@1.0;
+          SetActive(TV Remote, false)@4;
 
-          MoveTo(DadStepOne, Dad, 0.4)@1.4;
+          MoveTo(DadSitUp1,
+          Dad, 0.5)@3.6;
 
-          MoveTo(DadStepTwo,
-          Dad, 0.7)@1.8;
+          MoveTo(DadSitUp3, Dad, 0.5)@5;
 
-          MoveTo(DadStepThree, Dad, 0.5)@2.5;
+          MoveTo(DadSitUp3,
+          Dad, 0.5)@5.5;
 
-          LookAt(Dad,
-          speaker, 0.5)@3.0;
+          LookAt(Dad, Player, 0.5)@6;
 
-          LookAt(speaker, Dad, 0.5)@3.5;'
+          LookAt(Player,
+          Dad, 0.5)@6;
+
+          AnimatorTrigger(Father_DisappointedHeadShake, Dad)@6;
+
+          AnimatorTrigger(Idle,
+          Dad, Father_DisappointedHeadShake)@8.5;'
         type: 0
         typeString: 
       conversationID: 9
@@ -961,24 +967,30 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'LookAt(Player, Dad, 0.4);
+        value: 'AnimatorTrigger(Father_SitTurnToPlayer, Dad);
 
-          Delay(0.8);
+          AnimatorTrigger(Father_UseTVRemote,
+          Dad, Father_SitTurnToPlayer)@1.5;
 
-          LookAt(DadStepOne,
-          Dad, 0.4)@1.0;
+          SetActive(TV Remote, false)@4;
 
-          MoveTo(DadStepOne, Dad, 0.4)@1.4;
+          MoveTo(DadSitUp1,
+          Dad, 0.7)@3.6;
 
-          MoveTo(DadStepTwo,
-          Dad, 0.7)@1.8;
+          MoveTo(DadSitUp3, Dad, 0.5)@5;
 
-          MoveTo(DadStepThree, Dad, 0.5)@2.5;
+          MoveTo(DadSitUp3,
+          Dad, 0.5)@5.5;
 
-          LookAt(Dad,
-          speaker, 0.5)@3.0;
+          LookAt(Dad, Player, 0.5)@6;
 
-          LookAt(speaker, Dad, 0.5)@3.5;'
+          LookAt(Player,
+          Dad, 0.5)@6;
+
+          AnimatorTrigger(Father_DisappointedHeadShake, Dad)@6;
+
+          AnimatorTrigger(Idle,
+          Dad, Father_DisappointedHeadShake)@8.5;'
         type: 0
         typeString: 
       conversationID: 9
@@ -2025,13 +2037,13 @@ MonoBehaviour:
 
           SetContinueMode(false);
 
-          MoveTo(PlayerAtCouch,
-          Player);
+          MoveTo(PlayerAnchor,
+          Player, 0.5);
 
-          Camera(StraightLook, TV_LOD Variant, 0.5);
+          Camera(StraightLook, TV_LOD Variant, 0.5)@0.5;
 
           SetEnabled(Canvas,
-          true, DialogueCanvas)@0.5;'
+          true, DialogueCanvas)@1;'
         type: 0
         typeString: 
       conversationID: 9
@@ -2056,7 +2068,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 338.95938
-        y: 95.50006
+        y: 94.18428
         width: 160
         height: 30
     - id: 59
@@ -2624,7 +2636,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 884.21106}
+    canvasScrollPosition: {x: 0, y: 60.526993}
     canvasZoom: 0.7600002
   - id: 10
     fields:
