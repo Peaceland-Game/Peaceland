@@ -21,13 +21,15 @@ public class SidePanelToggle : MonoBehaviour
     private float moveSpeed = 300f; // Speed of the movement
     //private float shownPosition = 150f; // The 'shown' position in local space
 
-    private Vector3 hiddenPosition = new(1010, 33, 0);
-    private Vector3 shownPosition = new(803, 33, 0);
+    private Vector3 hiddenPosition = new(1070.481f, 0, 0);
+    private Vector3 shownPosition = new(767, 0, 0);
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Debug.Log($"{transform.localPosition}");
+        //Debug.Log($"{hiddenPosition}");
+        //Debug.Log($"{shownPosition}");
     }
 
     public void TogglePanel()
