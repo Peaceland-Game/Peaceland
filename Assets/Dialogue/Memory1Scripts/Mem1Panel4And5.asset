@@ -801,7 +801,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 160
-        y: 130
+        y: 131.06383
         width: 160
         height: 30
     - id: 3
@@ -837,9 +837,9 @@ MonoBehaviour:
           LookAt(Gryf, Waeli, 0.7);
 
           MoveTo(MoveTowardsDog,
-          PlayerCamera, 3)@1;
+          Player, 3)@1;
 
-          SetContinueMode(true)@3.1;'
+          SetContinueMode(true)@4.2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -2368,7 +2368,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: Camera(Mem1Panel4LookAtSoldiers, Waeli, 0.7)@2;
+        value: 'SetContinueMode(false);
+
+          LookAt(GPKSoldier6, Waeli, 0.8)@2;
+
+          SetContinueMode(true)@3.0;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -2386,7 +2390,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(0, Actor["Waeli"].Name); -- CONTENT
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2426,9 +2430,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(Medium, Waeli, 0.7);
-
-          SetContinueMode(true);'
+        value: LookAt(Player, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -2827,9 +2829,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'LookAt(Player, Waeli, 0.5);
+        value: 'SetContinueMode(false);
 
-          Camera(Medium, Waeli, 1)@0.6;'
+          LookAt(Player, Waeli, 0.5);
+
+          Camera(Medium,
+          Waeli, 1)@0.6;
+
+          SetContinueMode(true)@1.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -4178,9 +4185,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'LookAt(Gryf, Waeli, 0.5)@1;
+        value: 'SetContinueMode(false);
 
-          LookAt(Player, Waeli, 0.5)@2;'
+          LookAt(Gryf, Waeli, 0.5)@1;
+
+          LookAt(Player,
+          Waeli, 0.5)@2;
+
+          SetContinueMode(true)@2.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -4820,8 +4832,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 462.95987
-        y: 1870.63
+        x: 469.20987
+        y: 1869.0675
         width: 160
         height: 30
     - id: 76
@@ -5052,7 +5064,16 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: Camera(PlayerStraight, Player, 0.5);
+        value: 'SetContinueMode(false);
+
+          SetActive(Antoni, true);
+
+          MoveTo(AntoniIntroMove,
+          Antoni, 0.9);
+
+          LookAt(Waeli, Antoni, 0.6)@1.0;
+
+          SetContinueMode(true)@1.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -5240,8 +5261,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.94000006
+    canvasScrollPosition: {x: 0, y: 1768.7498}
+    canvasZoom: 0.64000034
   - id: 28
     fields:
     - title: Title
@@ -5370,7 +5391,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetActive(Antoni, true);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 28
@@ -5430,10 +5451,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          LookAt(Antoni, Player, 0.5);
+          LookAt(Antoni, Player, 0.7);
 
           LookAt(Antoni,
-          Waeli, 0.5);
+          Waeli, 0.7);
 
           MoveTo(AntoniIntroMove, Antoni, 1.5)@1;
 
@@ -11276,7 +11297,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 3.4091187, y: 0}
     canvasZoom: 0.8800001
   syncInfo:
     syncActors: 1
