@@ -2914,8 +2914,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158.40674
-        y: 504.8644
+        x: 159.62625
+        y: 503.64487
         width: 160
         height: 30
     - id: 20
@@ -3107,13 +3107,15 @@ MonoBehaviour:
       userScript: 'ChangeEmotionalState(0, Actor["Mama"].Name); -- CONTENT;
 
         SetQuestState("Trash
-        Collector", "success");'
+        Collector", "success");
+
+        AddMoney(10);'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 143.532
+        x: 138.65395
         y: 327.58118
         width: 160
         height: 30
@@ -3122,11 +3124,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 5
         type: 5
@@ -3138,15 +3140,15 @@ MonoBehaviour:
       - title: Menu Text
         value: Mama, I'm not that little anymore
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: <font="RythmusRegular SDF">Mama, I'm not that little anymore.</font>
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 10
       isRoot: 0
       isGroup: 0
@@ -3507,7 +3509,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 278.33643
+        x: 279.55594
         y: 687.47046
         width: 160
         height: 30
@@ -3624,7 +3626,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 276.48346
+        x: 277.70297
         y: 732.3981
         width: 160
         height: 30
@@ -3714,6 +3716,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: a7468a01-3aeb-40d1-a65f-28b8164826d8
+        type: 0
+        typeString: 
       conversationID: 10
       isRoot: 0
       isGroup: 0
@@ -3795,8 +3801,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 32.16874, y: 41.152405}
-    canvasZoom: 0.85000014
+    canvasScrollPosition: {x: 48.434746, y: 13.700424}
+    canvasZoom: 0.7900002
   - id: 11
     fields:
     - title: Title
