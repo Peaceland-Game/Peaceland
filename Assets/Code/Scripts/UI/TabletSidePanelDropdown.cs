@@ -10,10 +10,12 @@ public class TabletSidePanelDropdown : MonoBehaviour
     [SerializeField] Button button;
     [SerializeField] List<GameObject> dropdownButtons;
     [SerializeField] TextMeshProUGUI arrowText;
+    [SerializeField] Image dropDownImage;
     bool currentlyActive;
     void Start()
     {
         currentlyActive = false;
+        dropDownImage.enabled = currentlyActive;
         for (int i = 0; i < dropdownButtons.Count; i++)
         {
             dropdownButtons[i].SetActive(false);
@@ -38,5 +40,6 @@ public class TabletSidePanelDropdown : MonoBehaviour
         {
             dropdownButtons[i].SetActive(currentlyActive);
         }
+        dropDownImage.enabled = currentlyActive;
     }
 }
