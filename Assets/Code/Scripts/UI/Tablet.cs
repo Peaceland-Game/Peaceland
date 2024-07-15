@@ -112,6 +112,10 @@ public class Tablet : MonoBehaviour
 
         }
     }
+    public void ToggleTablet()
+    {
+        PlayerSingleton.Instance.ToggleJournal();
+    }
     public void HandleHomeButtonClick(int tabNumber) {
         HandleTabClick(tabNumber, true);
     }
