@@ -115,12 +115,23 @@ public class PopupManager : MonoBehaviour
         popup.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Moves a popup
+    /// </summary>
+    /// <param name="popup"> the popup to move </param>
+    /// <param name="verticalMove"> how the popup should move on the y axis </param>
+    /// <param name="horizontalMove"> how the popup should move on the x axis </param>
+    /// <param name="time"> the time to spend moving </param>
+    /// <param name="resetPos"> whether the popup should reset its position at the end of its move </param>
+    /// <returns></returns>
     public IEnumerator MovePopup(TextMeshProUGUI popup, float verticalMove, float horizontalMove, float time, bool resetPos)
     {
+        // Get the start position
         Vector3 startPos = popup.transform.position;
         
         float timer = 0f;
 
+        // Move based on elapsed time
         while (timer < time)
         {
             timer += Time.deltaTime;
@@ -131,21 +142,36 @@ public class PopupManager : MonoBehaviour
             yield return null;
         }
 
+        // Reset position if necessary
         if(resetPos)
         {
             popup.transform.position = startPos;
         }
     }
 
+    /// <summary>
+    /// Moves a popup, and then holds position for a duration
+    /// </summary>
+    /// <param name="popup"> the popup to move </param>
+    /// <param name="verticalMove"> how the popup should move on the y axis </param>
+    /// <param name="horizontalMove"> how the popup should move on the x axis </param>
+    /// <param name="moveTime"> the time to spend moving </param>
+    /// <param name="holdTime"> the time to spend holding the final position </param>
+    /// <param name="resetPos"> whether the popup should reset its position at the end of its move </param>
+    /// <returns></returns>
     public IEnumerator MoveAndHold(TextMeshProUGUI popup, float verticalMove, float horizontalMove, float moveTime, float holdTime, bool resetPos)
     {
+        // Get the start position
         Vector3 startPos = popup.transform.position;
 
-        StartCoroutine(MovePopup(popup, verticalMove, horizontalMove, moveTime, false));
+        // Move
+        yield return StartCoroutine(MovePopup(popup, verticalMove, horizontalMove, moveTime, false));
 
+        // Hold
         yield return new WaitForSeconds(holdTime);
 
-        if(resetPos)
+        // Reset position if necessary
+        if (resetPos)
         {
             popup.transform.position = startPos;
         }
