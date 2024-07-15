@@ -15,8 +15,8 @@ public class JournalPlayerRef : MonoBehaviour
     /// pass the artifact's name to the player journal controller
     /// </summary>
     /// <param name="artifact">The game object artifact, name should match the artifact name in the journal</param>
-    public void AddArtifact(GameObject artifact) 
+    public void AddArtifact(Artifact artifact, bool showPopup = true) 
     {
-        player.AddArtifact(artifact.name);
+        player.AddArtifact(artifact.name, showPopup);
     }
 }
