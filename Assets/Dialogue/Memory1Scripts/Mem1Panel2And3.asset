@@ -1359,7 +1359,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 294.25
+        x: 295.46954
         y: 281.31256
         width: 160
         height: 30
@@ -1527,7 +1527,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 404.2826
+        x: 405.41895
         y: 404.46112
         width: 160
         height: 30
@@ -1797,13 +1797,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["PlayerMoney"] = Variable["PlayerMoney"] - 10
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 404.23026
+        x: 406.66928
         y: 361.32663
         width: 160
         height: 30
@@ -2176,8 +2176,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 173.86389, y: 299.99994}
-    canvasZoom: 0.8800001
+    canvasScrollPosition: {x: 0, y: 22.18475}
+    canvasZoom: 0.7000003
   - id: 20
     fields:
     - title: Title
@@ -3344,7 +3344,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["BoxPlaced"] == true
-      userScript: SetQuestState("Box Mover", "success");
+      userScript: 'SetQuestState("Box Mover", "success");
+
+        Variable["PlayerMoney"]
+        = Variable["PlayerMoney"] + 10'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
