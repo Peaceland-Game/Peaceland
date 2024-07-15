@@ -1,35 +1,58 @@
-using PixelCrushers.DialogueSystem;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing.Text;
-using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.ProBuilder.Shapes;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class IntroController : MonoBehaviour
 {
-    // UI stuff
+    [Header("UI Elements")]
     public Image fadeImage;
     public TextMeshProUGUI buzz1;
     public TextMeshProUGUI buzz2;
     public Button wakeUpButton;
     public Button goToComputerButton;
     public TextMeshProUGUI pickUpTabletPrompt;
+    
 
+    [Header("Other References")]
     public GameObject tablet;
+    public Camera playerCam;
+    public Transform CameraConversationLoc;
+
+    [Header("Wake up sequence")]
+    public Image topEyelid;
+    public Image bottomEyelid;
+    public float eyeOpenSpeed = 1f;
+    public float wakeUpDuration = 2f;
 
     private bool waitForPlayer = false;
     private GameObject selectorUI;
-    // Player stuff
-    public Camera playerCam;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        InitializeUI();
+        
+        StartCoroutine(IntroSequence());
+    }
+
+    private void Update()
+    {
+        if (waitForPlayer && Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            LoadHubWorld();
+        }
+        if (Keyboard.current.f1Key.wasPressedThisFrame)
+        {
+            LoadHubWorld();
+        }
+    }
+
+    private void InitializeUI()
+    {
+        topEyelid.gameObject.SetActive(false);
+        bottomEyelid.gameObject.SetActive(false);
         fadeImage.gameObject.SetActive(true);
         buzz1.gameObject.SetActive(false);
         buzz2.gameObject.SetActive(false);
@@ -40,179 +63,196 @@ public class IntroController : MonoBehaviour
         StartCoroutine(WaitThen(0.01f, () =>
         {
             selectorUI = GameObject.FindWithTag("StandardUISelector");
-            if (selectorUI)
-            {
-                selectorUI.SetActive(false);
-            }
+            if (selectorUI) selectorUI.SetActive(false);
         }));
-
-        StartCoroutine(Wait(2));
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator IntroSequence()
     {
-        if (waitForPlayer)
-        {
-            if (Keyboard.current.eKey.wasPressedThisFrame)
-            {
-                if (selectorUI)
-                    selectorUI.SetActive(true);
-                SceneManager.LoadScene("HubWorld2");
-            }
-        }
-        if (Keyboard.current.f1Key.wasPressedThisFrame)
-        {
-            if (selectorUI)
-                selectorUI.SetActive(true);
-            SceneManager.LoadScene("HubWorld2");
-        }
-    }
-    IEnumerator WaitThen(float seconds, Action action)
-    {
-        yield return new WaitForSeconds(seconds);
-        action();
-    }
-    /// <summary>
-    /// Waits a few seconds
-    /// </summary>
-    /// <returns> nothing...? </returns>
-    IEnumerator Wait(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        //lols
-        StartCoroutine(fadeInOutText(buzz1, 1, seconds, 69, true, false));
+        yield return new WaitForSeconds(2);
 
-        yield return new WaitForSeconds(seconds);
+        yield return StartCoroutine(FadeText(buzz1, 1, 2, false));
+        yield return StartCoroutine(FadeText(buzz2, 1, 2, false));
 
-        StartCoroutine(fadeInOutText(buzz2, 1, seconds, 420, true, false));
-
-        yield return new WaitForSeconds(seconds);
 
         wakeUpButton.gameObject.SetActive(true);
     }
 
-    /// <summary>
-    /// Fade out the black screen
-    /// </summary>
-    /// <param name="duration"> duration of the fade </param>
-    /// <param name="onFadeComplete"> irrelevant (probably) </param>
-    /// <returns> uh </returns>
-    private IEnumerator FadeCoroutine(float duration, System.Action onFadeComplete)
+    public void WakeUp()
+    {
+        Debug.Log("start wakeup");
+        StartCoroutine(WakeUpSequence());
+    }
+
+    private IEnumerator WakeUpSequence()
     {
         wakeUpButton.gameObject.SetActive(false);
 
-        // Fade back to transparent
+        // Ensure eyelids are fully open at the start
+        topEyelid.rectTransform.anchoredPosition = new Vector2(0, -Screen.height * 0.5f);
+        bottomEyelid.rectTransform.anchoredPosition = new Vector2(0, Screen.height * 0.5f);
+        topEyelid.gameObject.SetActive(true);
+        bottomEyelid.gameObject.SetActive(true);
+
+        // Fade from black if needed
+        yield return StartCoroutine(FadeImage(fadeImage, 1f, true));
+        fadeImage.gameObject.SetActive(false);
+
+        // Slight delay before "blinking"
+        yield return new WaitForSeconds(0.5f);
+
+        Vector3 initialPosition = playerCam.transform.position;
+        Quaternion initialRotation = playerCam.transform.rotation;
+
+        // First eye closing (partial)
+        yield return StartCoroutine(PartialEyeClose(0.5f, 0.6f));
+
+        // Brief pause
+        yield return new WaitForSeconds(0.4f);
+
+        // Open eyes again
+        yield return StartCoroutine(OpenEyes(0.4f));
+
+        // Another brief pause
+        yield return new WaitForSeconds(0.7f);
+
+        // Final eye closing and camera movement
         float elapsedTime = 0f;
-        while (elapsedTime < duration)
+        while (elapsedTime < wakeUpDuration)
         {
             elapsedTime += Time.deltaTime;
-            float alpha = 1f - Mathf.Clamp01(elapsedTime / duration);
-            fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, alpha);
-            buzz1.color = new Color(buzz1.color.r, buzz1.color.g, buzz1.color.b, alpha);
-            buzz2.color = new Color(buzz2.color.r, buzz2.color.g, buzz2.color.b, alpha);
+            float t = elapsedTime / wakeUpDuration;
+
+            // Move and rotate camera
+            playerCam.transform.position = Vector3.Lerp(initialPosition, CameraConversationLoc.position, t);
+            playerCam.transform.rotation = Quaternion.Slerp(initialRotation, CameraConversationLoc.rotation, t);
+
+            // Close eyelids
+            float eyeCloseT = Mathf.Sin(t * Mathf.PI * 0.5f); // Ease out
+            topEyelid.rectTransform.anchoredPosition = new Vector2(0, Mathf.Lerp(-Screen.height * 0.5f, 0, eyeCloseT));
+            bottomEyelid.rectTransform.anchoredPosition = new Vector2(0, Mathf.Lerp(Screen.height * 0.5f, 0, eyeCloseT));
+
             yield return null;
         }
 
-        fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0f);
-        buzz1.color = new Color(buzz1.color.r, buzz1.color.g, buzz1.color.b, 0f);
-        buzz2.color = new Color(buzz2.color.r, buzz2.color.g, buzz2.color.b, 0f);
+        // Ensure eyelids are fully closed
+        topEyelid.rectTransform.anchoredPosition = Vector2.zero;
+        bottomEyelid.rectTransform.anchoredPosition = Vector2.zero;
 
-        fadeImage.gameObject.SetActive(false);
-        buzz1.gameObject.SetActive(false);
-        buzz2.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
 
-        // Execute the teleport action
-        onFadeComplete?.Invoke();
+        // Hide eyelids
+        topEyelid.gameObject.SetActive(false);
+        bottomEyelid.gameObject.SetActive(false);
 
-        // Wait as the player "wakes up"
-
-        yield return new WaitForSeconds(3);
+        // Start the dialogue
+        // StartDialogue();
 
         goToComputerButton.gameObject.SetActive(true);
     }
 
-    /// <summary>
-    /// Fades a text box in and/or out
-    /// </summary>
-    /// <param name="textBox"> the text box to fade </param>
-    /// <param name="fadeInTime"> the duration of the fade in </param>
-    /// <param name="solidDuration"> the duration that the text stays solid </param>
-    /// <param name="fadeOutTime"> the duration of the fade out </param>
-    /// <param name="fadeIn"> whether the text should fade in </param>
-    /// <param name="fadeOut"> whether the text should fade out </param>
-    /// <returns></returns>
-    private IEnumerator fadeInOutText(TextMeshProUGUI textBox, float fadeInTime, float solidDuration, float fadeOutTime, bool fadeIn, bool fadeOut)
+    private IEnumerator PartialEyeClose(float duration, float closeAmount)
     {
-        if (fadeIn)
-        {
-            textBox.gameObject.SetActive(true);
-
-            // Fade to opaque
-            float elapsedTime = 0f;
-
-            while (elapsedTime < fadeInTime)
-            {
-                elapsedTime += Time.deltaTime;
-                float alpha = Mathf.Clamp01(elapsedTime / fadeInTime);
-                textBox.color = new Color(textBox.color.r, textBox.color.g, textBox.color.b, alpha);
-                yield return null;
-            }
-        }
-
-        yield return new WaitForSeconds(solidDuration);
-
-        if (fadeOut)
-        {
-            // Fade back to transparent
-            float elapsedTime = 0f;
-
-            while (elapsedTime < fadeOutTime)
-            {
-                elapsedTime += Time.deltaTime;
-                float alpha = 1f - Mathf.Clamp01(elapsedTime / fadeOutTime);
-                textBox.color = new Color(textBox.color.r, textBox.color.g, textBox.color.b, alpha);
-                yield return null;
-            }
-
-            textBox.gameObject.SetActive(false);
-        }
-    }
-
-    private IEnumerator fadeOut()
-    {
-        fadeImage.gameObject.SetActive(true);
-
-        // Fade to opaque
         float elapsedTime = 0f;
+        float startTopPos = -Screen.height * 0.5f;
+        float startBottomPos = Screen.height * 0.5f;
+        float targetTopPos = -Screen.height * 0.5f * (1 - closeAmount);
+        float targetBottomPos = Screen.height * 0.5f * (1 - closeAmount);
 
-        while (elapsedTime < 4)
+        while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
-            float alpha = Mathf.Clamp01(elapsedTime / 4);
-            fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, alpha);
+            float t = elapsedTime / duration;
+            float eyeCloseT = Mathf.Sin(t * Mathf.PI * 0.5f); // Ease out
+
+            topEyelid.rectTransform.anchoredPosition = new Vector2(0, Mathf.Lerp(startTopPos, targetTopPos, eyeCloseT));
+            bottomEyelid.rectTransform.anchoredPosition = new Vector2(0, Mathf.Lerp(startBottomPos, targetBottomPos, eyeCloseT));
+
             yield return null;
         }
     }
 
-    /// <summary>
-    /// If only it was so easy
-    /// </summary>
-    public void WakeUp()
+    private IEnumerator OpenEyes(float duration)
     {
-        StartCoroutine(FadeCoroutine(1, () => { }));
+        float elapsedTime = 0f;
+        Vector2 topStart = topEyelid.rectTransform.anchoredPosition;
+        Vector2 bottomStart = bottomEyelid.rectTransform.anchoredPosition;
+        Vector2 topEnd = new Vector2(0, -Screen.height * 0.5f);
+        Vector2 bottomEnd = new Vector2(0, Screen.height * 0.5f);
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration;
+            float eyeOpenT = Mathf.Sin(t * Mathf.PI * 0.5f); // Ease out
+
+            topEyelid.rectTransform.anchoredPosition = Vector2.Lerp(topStart, topEnd, eyeOpenT);
+            bottomEyelid.rectTransform.anchoredPosition = Vector2.Lerp(bottomStart, bottomEnd, eyeOpenT);
+
+            yield return null;
+        }
+
+        topEyelid.rectTransform.anchoredPosition = topEnd;
+        bottomEyelid.rectTransform.anchoredPosition = bottomEnd;
     }
 
     public void TakeTabletPrompt()
     {
-        Debug.Log("trying");
-        StartCoroutine(fadeInOutText(pickUpTabletPrompt, 0.5f, 3, 1337, true, false));
+        StartCoroutine(FadeText(pickUpTabletPrompt, 0.5f, 3, false));
         waitForPlayer = true;
-
     }
 
     public void EndScene()
     {
-        StartCoroutine(fadeOut());
+        StartCoroutine(FadeImage(fadeImage, 4, false));
+    }
+
+    private IEnumerator FadeImage(Image image, float duration, bool fadeOut)
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = fadeOut ? 1 - (elapsedTime / duration) : elapsedTime / duration;
+            image.color = new Color(image.color.r, image.color.g, image.color.b, alpha);
+            yield return null;
+        }
+        image.gameObject.SetActive(!fadeOut);
+    }
+
+    private IEnumerator FadeText(TextMeshProUGUI text, float fadeDuration, float displayDuration, bool fadeOut)
+    {
+        text.gameObject.SetActive(true);
+        yield return StartCoroutine(FadeTextAlpha(text, fadeDuration, !fadeOut));
+        yield return new WaitForSeconds(displayDuration);
+        if (fadeOut)
+        {
+            yield return StartCoroutine(FadeTextAlpha(text, fadeDuration, false));
+            text.gameObject.SetActive(false);
+        }
+    }
+
+    private IEnumerator FadeTextAlpha(TextMeshProUGUI text, float duration, bool fadeIn)
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = fadeIn ? elapsedTime / duration : 1 - (elapsedTime / duration);
+            text.color = new Color(text.color.r, text.color.g, text.color.b, alpha);
+            yield return null;
+        }
+    }
+
+    private IEnumerator WaitThen(float seconds, System.Action action)
+    {
+        yield return new WaitForSeconds(seconds);
+        action();
+    }
+
+    private void LoadHubWorld()
+    {
+        if (selectorUI) selectorUI.SetActive(true);
+        SceneManager.LoadScene("HubWorld2");
     }
 }
