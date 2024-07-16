@@ -2662,11 +2662,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 1
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 4
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -3414,10 +3414,8 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          MoveTo(PlayerAnchor, Player, 0.5);
-
-          Camera(original,
-          PlayerCamera, 0.5);
+          Camera(original, PlayerCamera,
+          0.5);
 
           Delay(0.1);'
         type: 0
