@@ -138,6 +138,12 @@ public class DynamicLightingController : MonoBehaviour
         RaiseLightingProfileChangedEvent(startProfile, targetProfile, currentProfileIndex);// Raise the event saying the lighting changed
     }
 
+    /// <summary>
+    /// Handles the transition of the skybox and directional light
+    /// </summary>
+    /// <param name="start">The start lighting profile</param>
+    /// <param name="target">The target lighting profile</param>
+    /// <param name="t">How far a long in the transition we are, passed in as a parameter from the coroutine</param>
     private void InterpolateLightingSettings(LightingProfile start, LightingProfile target, float t)
     {
         // Skybox settings
@@ -175,9 +181,9 @@ public class DynamicLightingController : MonoBehaviour
         RenderSettings.fogColor = Color.Lerp(start.fogColor, target.fogColor, t);
         RenderSettings.fogDensity = Mathf.Lerp(start.fogDensity, target.fogDensity, t);
         RenderSettings.fogStartDistance = Mathf.Lerp(start.fogHeight, target.fogHeight, t);
-        // Note: Unity doesn't have a built-in way to set fog gradient, you might need to use a custom shader for this
     }
 
+    
     private void ApplyProfile(LightingProfile profile, UserInterface userInterface)
     {
         // Apply all settings directly without interpolation

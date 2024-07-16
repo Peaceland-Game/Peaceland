@@ -35,7 +35,7 @@ MonoBehaviour:
     underline: 0
   baseID: 1
   actors:
-  - id: 27
+  - id: 20
     fields:
     - title: Name
       value: Journalist
@@ -123,7 +123,7 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
-  - id: 28
+  - id: 23
     fields:
     - title: Name
       value: Tablet
@@ -162,7 +162,7 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
-  - id: 20
+  - id: 15
     fields:
     - title: Name
       value: AskedHowManyHung
@@ -176,7 +176,7 @@ MonoBehaviour:
       value: Main brach sec 1 choice 1
       type: 0
       typeString: CustomFieldType_Text
-  - id: 21
+  - id: 16
     fields:
     - title: Name
       value: YouPutAnything
@@ -191,7 +191,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
   conversations:
-  - id: 35
+  - id: 37
     fields:
     - title: Title
       value: At the Memory Tree
@@ -248,7 +248,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -267,7 +267,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -275,9 +275,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 0
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 31
         isConnector: 0
         priority: 2
@@ -307,7 +307,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -322,7 +322,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -330,9 +330,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 1
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 2
         isConnector: 0
         priority: 2
@@ -362,7 +362,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -378,7 +378,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -386,9 +386,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 2
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 3
         isConnector: 0
         priority: 2
@@ -418,7 +418,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -433,7 +433,7 @@ MonoBehaviour:
         value: SetContinueMode(false);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -441,10 +441,16 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 3
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      - originConversationID: 37
+        originDialogueID: 3
+        destinationConversationID: 37
+        destinationDialogueID: 38
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -469,7 +475,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -488,7 +494,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -496,9 +502,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 4
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 9
         isConnector: 0
         priority: 2
@@ -509,8 +515,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 935.6241
-        y: 304.54037
+        x: 934.3581
+        y: 300.74292
         width: 160
         height: 30
     - id: 9
@@ -528,7 +534,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -543,7 +549,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -551,9 +557,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 9
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 37
         isConnector: 0
         priority: 2
@@ -583,7 +589,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -599,7 +605,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -607,9 +613,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 10
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 11
         isConnector: 0
         priority: 2
@@ -639,7 +645,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -655,7 +661,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -663,9 +669,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 11
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 12
         isConnector: 0
         priority: 2
@@ -695,7 +701,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -711,7 +717,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -719,9 +725,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 12
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 13
         isConnector: 0
         priority: 2
@@ -751,7 +757,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -767,7 +773,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -775,9 +781,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 13
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 14
         isConnector: 0
         priority: 2
@@ -807,7 +813,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -823,7 +829,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -831,9 +837,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 14
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 15
         isConnector: 0
         priority: 2
@@ -863,7 +869,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -879,7 +885,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -887,21 +893,21 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 15
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 16
         isConnector: 0
         priority: 2
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 15
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 17
         isConnector: 0
         priority: 2
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 15
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 18
         isConnector: 0
         priority: 2
@@ -927,7 +933,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -946,7 +952,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -954,9 +960,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 16
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
@@ -982,7 +988,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -1001,7 +1007,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1009,9 +1015,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 17
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 24
         isConnector: 0
         priority: 2
@@ -1037,7 +1043,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -1056,7 +1062,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1064,9 +1070,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 18
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 30
         isConnector: 0
         priority: 2
@@ -1096,7 +1102,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1115,7 +1121,7 @@ MonoBehaviour:
           1);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1123,9 +1129,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 19
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 20
         isConnector: 0
         priority: 2
@@ -1155,7 +1161,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1171,7 +1177,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1179,9 +1185,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 20
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 21
         isConnector: 0
         priority: 2
@@ -1211,7 +1217,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1227,7 +1233,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1235,9 +1241,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 21
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 22
         isConnector: 0
         priority: 2
@@ -1267,7 +1273,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1282,7 +1288,7 @@ MonoBehaviour:
         value: LookAt(NewAdult (4), Tour Guide, 1);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1290,21 +1296,21 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 22
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 16
         isConnector: 0
         priority: 2
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 22
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 17
         isConnector: 0
         priority: 2
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 22
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 18
         isConnector: 0
         priority: 2
@@ -1334,7 +1340,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1352,7 +1358,7 @@ MonoBehaviour:
           1);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1360,9 +1366,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 24
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 25
         isConnector: 0
         priority: 2
@@ -1392,7 +1398,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1408,7 +1414,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1416,9 +1422,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 25
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 26
         isConnector: 0
         priority: 2
@@ -1448,7 +1454,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1463,7 +1469,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1471,9 +1477,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 26
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 27
         isConnector: 0
         priority: 2
@@ -1503,7 +1509,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1519,7 +1525,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1527,9 +1533,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 27
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 28
         isConnector: 0
         priority: 2
@@ -1574,7 +1580,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1582,9 +1588,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 28
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 29
         isConnector: 0
         priority: 2
@@ -1614,7 +1620,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1629,7 +1635,7 @@ MonoBehaviour:
         value: LookAt(NewAdult (4), Tour Guide, 1);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1637,21 +1643,21 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 29
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 16
         isConnector: 0
         priority: 2
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 29
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 17
         isConnector: 0
         priority: 2
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 29
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 18
         isConnector: 0
         priority: 2
@@ -1681,7 +1687,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1697,7 +1703,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1705,9 +1711,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 30
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 33
         isConnector: 0
         priority: 2
@@ -1755,7 +1761,7 @@ MonoBehaviour:
           Tour Guide, 1);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1763,9 +1769,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 31
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
@@ -1791,7 +1797,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 28
+        value: 23
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -1810,7 +1816,7 @@ MonoBehaviour:
         value: SetEnabled(Usable, false, Tour Guide);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1818,9 +1824,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 33
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 34
         isConnector: 0
         priority: 2
@@ -1831,8 +1837,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1176.0852
-        y: 978.0205
+        x: 1537.3093
+        y: 739.2452
         width: 160
         height: 30
     - id: 34
@@ -1865,7 +1871,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1873,9 +1879,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 34
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 35
         isConnector: 0
         priority: 2
@@ -1886,8 +1892,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1176.0852
-        y: 1028.0205
+        x: 1537.3093
+        y: 789.2452
         width: 160
         height: 30
     - id: 35
@@ -1920,7 +1926,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1928,9 +1934,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 35
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 36
         isConnector: 0
         priority: 2
@@ -1941,8 +1947,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1176.0852
-        y: 1078.0198
+        x: 1537.3093
+        y: 839.2444
         width: 160
         height: 30
     - id: 36
@@ -1976,7 +1982,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1991,8 +1997,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1176.0852
-        y: 1128.0198
+        x: 1537.3093
+        y: 889.2443
         width: 160
         height: 30
     - id: 37
@@ -2010,7 +2016,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 27
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -2035,7 +2041,7 @@ MonoBehaviour:
           Fade(in, 0.7)@2.4;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 35
+      conversationID: 37
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2043,9 +2049,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 35
+      - originConversationID: 37
         originDialogueID: 37
-        destinationConversationID: 35
+        destinationConversationID: 37
         destinationDialogueID: 10
         isConnector: 0
         priority: 2
@@ -2060,9 +2066,119 @@ MonoBehaviour:
         y: 404.54037
         width: 160
         height: 30
+    - id: 38
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 20
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 24
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: I'm good. Thanks for the offer.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 37
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 37
+        originDialogueID: 38
+        destinationConversationID: 37
+        destinationDialogueID: 39
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1130.9854
+        y: 274.69644
+        width: 160
+        height: 30
+    - id: 39
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 24
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 20
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Ok, have a good time here!
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetContinueMode(true);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 37
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 37
+        originDialogueID: 39
+        destinationConversationID: 37
+        destinationDialogueID: 33
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1130.9854
+        y: 324.69644
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 607.49805, y: 643.03766}
-    canvasZoom: 0.7900002
+    canvasScrollPosition: {x: 593.4943, y: 134.53418}
+    canvasZoom: 0.64000034
   - id: 36
     fields:
     - title: Title

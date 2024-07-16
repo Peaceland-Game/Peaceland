@@ -94,7 +94,8 @@ public class PlayerSingleton : MonoBehaviour
     {
         if (!playerObject)
         {
-          //  Debug.Log("Found new player object, redoing references");
+            playerInMemorySelection = false;
+            //  Debug.Log("Found new player object, redoing references");
             playerObject = GameObject.FindWithTag("Player");
             if (playerObject)
             {
@@ -183,41 +184,27 @@ public class PlayerSingleton : MonoBehaviour
     {
         if (!playerInMemorySelection)
         {
-            // Debug.Log("player not in memory select");
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
-                //   Debug.Log("escape pressed");
-                //TogglePauseMenu();
                 ToggleJournal();
-
             }
-            //else if(Keyboard.current.qKey.wasPressedThisFrame)
-            //{
-            //    ToggleJournal();
-            //}
         }
-        //else if (Keyboard.current.jKey.wasPressedThisFrame)
-        //{
-        //    TakeJournalScreenshot();
-        //}
     }
-    //void TakeJournalScreenshot()
-    //{
-    //    journal.AddJournalEntry();
-    //}
+    
 
 
     public void ToggleJournal()
     {
         TogglePause();
+        Debug.Log("toggle pause");
         userInterface.ToggleJournal(paused);
     }
 
-    public void TogglePauseMenu()
-    {
-        TogglePause();
-        userInterface.TogglePauseMenu(paused);
-    }
+    //public void TogglePauseMenu()
+    //{
+    //    TogglePause();
+    //    userInterface.TogglePauseMenu(paused);
+    //}
 
     /// <summary>
     /// Toggles whether in UI or first person mode 
