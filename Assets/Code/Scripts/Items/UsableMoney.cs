@@ -12,6 +12,11 @@ public class UsableMoney : UsableWithOutline
     {
         PlayerSingleton.Instance.AddMoney(value);
         
+        if (PlayerSingleton.Instance.GetMoney == 5)
+        {
+            PlayerSingleton.Instance.AddTheme("Curiosity", 2);
+        }
+
         Destroy(gameObject);
     }
 }
