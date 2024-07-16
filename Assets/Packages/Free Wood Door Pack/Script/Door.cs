@@ -87,7 +87,7 @@ namespace DoorScript
 
         public void DetermineSide()
         {
-
+            if (!player) player = PlayerSingleton.Instance.playerObject;
             Vector3 directionToTarget = player.transform.position - transform.position;
             Vector3 forwardDirection = transform.forward;
 

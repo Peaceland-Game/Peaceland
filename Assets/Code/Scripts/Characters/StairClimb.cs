@@ -1,6 +1,4 @@
-﻿using Cinemachine.Utility;
-using EasyRoads3Dv3;
-using UnityEditor.EditorTools;
+﻿
 using UnityEngine;
 /// <summary>
 /// Helps the rigid body controller move up stairs

@@ -622,6 +622,56 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+  - id: 11
+    fields:
+    - title: Name
+      value: Go Home
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Return to your apartment.
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: 
+    - title: Entry 1
+      value: Return to your apartment.
+      type: 0
+      typeString: 
+    - title: Trackable
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Track
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
   locations: []
   variables:
   - id: 1
@@ -1691,7 +1741,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: SetQuestState("Go Home", "active")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2129,7 +2179,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 188.0528, y: 168.22806}
+    canvasScrollPosition: {x: 28.961914, y: 130.72806}
     canvasZoom: 0.8800001
   - id: 20
     fields:
@@ -2683,7 +2733,9 @@ MonoBehaviour:
         = "Investigate the noise by the bridge";
 
         Variable["HeardDog"] =
-        true;'
+        true;
+
+        SetQuestState("Go Home", "success")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []

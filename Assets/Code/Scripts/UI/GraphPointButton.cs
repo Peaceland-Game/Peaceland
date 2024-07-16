@@ -8,7 +8,8 @@ public class GraphPointButton : MonoBehaviour {
 
     private void Start() {
         // Add this button to the list of graph points
-        TabletGraphController.Instance.graphPoints.Add(this);
+        if (TabletGraphController.Instance)
+            TabletGraphController.Instance.graphPoints.Add(this);
 
         // Add a listener to the button
         GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => {
