@@ -1745,7 +1745,7 @@ MonoBehaviour:
         destinationDialogueID: 9
         isConnector: 0
         priority: 2
-      conditionsString: Variable["PlayerMoney"] >= 10
+      conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -1943,12 +1943,6 @@ MonoBehaviour:
         destinationDialogueID: 21
         isConnector: 0
         priority: 2
-      - originConversationID: 19
-        originDialogueID: 20
-        destinationConversationID: 19
-        destinationDialogueID: 23
-        isConnector: 0
-        priority: 2
       conditionsString: Variable["NewFlavorKnowledge"] == true;
       userScript: 
       onExecute:
@@ -2012,7 +2006,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 709.0088
-        y: 330.61847
+        y: 329.1899
         width: 160
         height: 30
     - id: 22
@@ -2067,8 +2061,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 707.78925
-        y: 380.61847
+        x: 711.3606
+        y: 388.60544
         width: 160
         height: 30
     - id: 23
@@ -2124,7 +2118,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: SubtractMonsy(12);
+      userScript: SubtractMoney(12);
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2135,8 +2129,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 87.925385}
-    canvasZoom: 0.7000003
+    canvasScrollPosition: {x: 188.0528, y: 168.22806}
+    canvasZoom: 0.8800001
   - id: 20
     fields:
     - title: Title
