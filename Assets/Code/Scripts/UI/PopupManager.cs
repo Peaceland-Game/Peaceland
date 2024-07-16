@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PopupManager : MonoBehaviour
 {
-    [SerializeField] public List<TextMeshProUGUI> popups;
+    private List<TextMeshProUGUI> textPopups;
+    private List<Image> imagePopups;
 
     [SerializeField] public TextMeshProUGUI karmaPopup;
+    [SerializeField] public Image controlsImage;
+
 
     void Start()
     {
-        popups = GetComponentsInChildren<TextMeshProUGUI>().ToList();
+        textPopups = GetComponentsInChildren<TextMeshProUGUI>().ToList();
+        imagePopups = GetComponentsInChildren<Image>().ToList();
 
         // Get the karma popup
-        foreach (TextMeshProUGUI p in popups)
+        foreach (TextMeshProUGUI p in textPopups)
         {
             if (p.name == "KarmaPopup")
             {
@@ -24,8 +29,18 @@ public class PopupManager : MonoBehaviour
             }
         }
 
+        // Get the controls popup
+        foreach (Image p in imagePopups)
+        {
+            if (p.name == "ControlsPopup")
+            {
+                controlsImage = p;
+                break;
+            }
+        }
+
         // Set popups to inactive
-        foreach (TextMeshProUGUI p in popups)
+        foreach (TextMeshProUGUI p in textPopups)
         {
             // for testing. Remove this if you remove the test buttons (or don't)
             if (p.name != "TestButtonGainKarma" && p.name != "TestButtonLoseKarma")
@@ -34,6 +49,11 @@ public class PopupManager : MonoBehaviour
             }
 
             //p.gameObject.SetActive(false);
+        }
+
+        foreach (Image i in imagePopups)
+        {
+            i.gameObject.SetActive(false);
         }
     }
 
@@ -49,7 +69,7 @@ public class PopupManager : MonoBehaviour
     /// <param name="value"> the change in karma. Use a positive number to add karma, or a negative number to take it away </param>
     public void CreateKarmaPopup(int value)
     {
-        // Check if karma is being gained or lost, and adjusting the text accordingly
+        // Check if karma is being gained or lost, and adjust the text accordingly
         if(value > 0)
         {
             karmaPopup.color = Color.green;
@@ -67,6 +87,14 @@ public class PopupManager : MonoBehaviour
 
         StartCoroutine(FadeInOutPopup(karmaPopup, 1, 3, 1));
         StartCoroutine(MoveAndHold(karmaPopup, 0.1f, 0, 3, 2, true));
+    }
+
+    /// <summary>
+    /// Shows the controls. Probably temporary if we want to let the player choose when to dismiss the popup
+    /// </summary>
+    public void ShowControlsPopup()
+    {
+        StartCoroutine(FadeInOutPopup(controlsImage, 0.5f, 5, 0.5f));
     }
 
     /// <summary>
@@ -92,6 +120,52 @@ public class PopupManager : MonoBehaviour
             float alpha = timer / fadeInTime;
             popup.color = new Color(popup.color.r, popup.color.g, popup.color.b, alpha);
             
+            yield return null;
+        }
+
+        // Hold
+        yield return new WaitForSeconds(holdTime);
+
+        timer = 0f;
+
+        // Fade out
+        while (timer < fadeOutTime)
+        {
+            timer += Time.deltaTime;
+
+            float alpha = 1 - (timer / fadeOutTime);
+            popup.color = new Color(popup.color.r, popup.color.g, popup.color.b, alpha);
+
+            yield return null;
+        }
+
+        // Return to inactive state
+        popup.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// Fades a popup in and out
+    /// </summary>
+    /// <param name="popup"> the popup to fade </param>
+    /// <param name="fadeInTime"> time fading in </param>
+    /// <param name="holdTime"> time staying solid </param>
+    /// <param name="fadeOutTime"> time fading out </param>
+    /// <returns> what? </returns>
+    public IEnumerator FadeInOutPopup(Image popup, float fadeInTime, float holdTime, float fadeOutTime)
+    {
+        popup.color = new Color(popup.color.r, popup.color.g, popup.color.b, 0);
+        popup.gameObject.SetActive(true);
+
+        float timer = 0f;
+
+        // Fade in
+        while (timer < fadeInTime)
+        {
+            timer += Time.deltaTime;
+
+            float alpha = timer / fadeInTime;
+            popup.color = new Color(popup.color.r, popup.color.g, popup.color.b, alpha);
+
             yield return null;
         }
 
