@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,6 +17,7 @@ public class TabletTutorial : MonoBehaviour {
     private int tutorialStep = -1;
     public GameObject skipButton;
     public GameObject contButon;
+    private const string LOAD_SCENE_NAME = "HubWorld2";
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,7 @@ public class TabletTutorial : MonoBehaviour {
     {
         if (waitForPlayer) {
             if (Input.GetKeyDown(KeyCode.Escape)) {
-                SceneManager.LoadScene("HubWorld2");
+                SceneManager.LoadScene(LOAD_SCENE_NAME);
             }
         }
     }
@@ -98,6 +100,10 @@ public class TabletTutorial : MonoBehaviour {
     }
     public void StopWaitForPlayer() {
         waitForPlayer = false;
+    }
+    public void SkipTutorial()
+    {
+        SceneManager.LoadScene(LOAD_SCENE_NAME);
     }
 
 
