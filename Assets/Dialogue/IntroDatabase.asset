@@ -240,7 +240,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -453,7 +453,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SetContinueMode(false);
+        value: (SetContinueMode(true);
         type: 0
         typeString: 
       conversationID: 34
@@ -509,7 +509,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(false);
         type: 0
         typeString: 
       conversationID: 34
@@ -682,7 +682,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: 
       conversationID: 34
@@ -902,7 +902,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetVariable(RemindMe, true);
+        value: 'SetVariable(RemindMe, true);
+
+          SetContinueMode(true);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 34
@@ -1089,7 +1091,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetVariable(WhyMemories, true);
+        value: 'SetVariable(WhyMemories, true);
+
+          SetContinueMode(true);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 34
@@ -1218,7 +1222,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetVariable(WhyMe, true);
+        value: 'SetVariable(WhyMe, true);
+
+          SetContinueMode(true);'
         type: 0
         typeString: CustomFieldType_Text
       - title: Response Menu Sequence
@@ -1476,7 +1482,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetContinueMode(false);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 34
@@ -1629,7 +1635,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2.7397156, y: 532.5482}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.7300001
   syncInfo:
     syncActors: 0

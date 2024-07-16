@@ -496,6 +496,7 @@ public class FirstPersonController : MonoBehaviour
     public void OnConversationEnd(Transform actor)
     {
         playerCamera.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        playerCamera.transform.localPosition = Vector3.zero;
         cameraCanMove = true; playerCanMove = true;
     }
 }
