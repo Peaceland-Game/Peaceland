@@ -30,8 +30,8 @@ public class Tablet : MonoBehaviour
     private int totalPages = 0;
 
     public ArtifactJournalController artifactJournal;
-
-    
+    public GameObject artifactPopup;
+    public TextMeshProUGUI artifactName;
 
 
     void Start()
@@ -97,10 +97,23 @@ public class Tablet : MonoBehaviour
         else
         {
             //show popup
-
+            ShowArtifactPopup(name);
             //then add
             artifactJournal.RevealArtifact(name);
         }
+    }
+
+    public void ShowArtifactPopup(string name)
+    {
+        artifactName.text = name;
+        artifactPopup.SetActive(true);
+        StartCoroutine(WaitPopup());
+        artifactPopup.SetActive(false);
+    }
+
+    public IEnumerator WaitPopup()
+    {
+        yield return new WaitForSeconds(1.5f);
     }
 
     /// <summary>
