@@ -34,7 +34,8 @@ public class ArtifactJournalController : MonoBehaviour
 
         if (!artifact)
         {
-            throw new System.Exception($"Tried to reveal missing artifact {name}");
+            //throw new System.Exception($"Tried to reveal missing artifact {name}");
+            return;
         }
         artifact.RevealArtifact();
     }
