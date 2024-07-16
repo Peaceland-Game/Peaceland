@@ -384,6 +384,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 282031179459998335}
   m_SourcePrefab: {fileID: 100100000, guid: 26cd9e2139ad31842a0f6cf68eee07a6, type: 3}
+--- !u!23 &4984357061749307586 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 26cd9e2139ad31842a0f6cf68eee07a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5974706565098529862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6152148582466651053 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26cd9e2139ad31842a0f6cf68eee07a6,
@@ -457,9 +463,9 @@ MonoBehaviour:
             m_StringArgument: Newspaper
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 6785519629384636695}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
+        - m_Target: {fileID: 5817031809235406068}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -474,6 +480,18 @@ MonoBehaviour:
             Assembly-CSharp-firstpass
           m_MethodName: OnUse
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4984357061749307586}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -548,7 +566,7 @@ MonoBehaviour:
   stopConversationIfTooFar: 0
   maxConversationDistance: 5
   monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 0
+  showCursorDuringConversation: 1
   pauseGameDuringConversation: 0
   setActiveActions: []
   setEnabledActions: []
