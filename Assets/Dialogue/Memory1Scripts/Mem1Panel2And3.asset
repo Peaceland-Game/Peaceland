@@ -2061,7 +2061,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddTheme("Respect", 1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2466,7 +2466,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: Variable["HeardDog"] == true;
-      userScript: StopPlayer()
+      userScript: 'StopPlayer();
+
+        AddTheme("Bravery", 2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2962,7 +2964,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddTheme("Kindness", 2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3017,7 +3019,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddTheme("Apathy", -2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3054,7 +3056,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: LookAt(Bystander1, speaker, 0.5);
+        value: 'LookAt(Bystander1, speaker, 0.5);
+
+          SetEnabled(Usable, false,
+          speaker);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 22
