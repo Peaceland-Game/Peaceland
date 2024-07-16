@@ -10,11 +10,11 @@ using UnityEngine.UI;
 /// </summary>
 public class ArtifactJournalController : MonoBehaviour
 {
-    
+
     public List<ArtifactImage> artifacts = new();   //list of all artifacts in the memory
 
     public List<ArtifactGroup> artifactGroups = new();
-    
+
     void Start()
     {
         //get the artifact image components on the child objects
@@ -30,8 +30,14 @@ public class ArtifactJournalController : MonoBehaviour
     /// <exception cref="System.Exception">Thrown when the name of the artifact does not match the scene object</exception>
     public void RevealArtifact(string name)
     {
-        var artifact = artifacts.FirstOrDefault(artifact => artifact.artifactName.ToLower() == name.ToLower());
+        Debug.Log(artifacts.Count);
+        var artifact = artifacts.FirstOrDefault(artifact =>
+        {
+            var n = artifact.artifactName.ToLower();
+            Debug.Log(n);
+            return n == name.ToLower();
 
+        });
 
         if (!artifact)
         {
@@ -53,7 +59,8 @@ public class ArtifactJournalController : MonoBehaviour
 
         if (!artifact)
         {
-            throw new System.Exception($"Tried to reveal missing artifact");
+            Debug.LogError($"Tried to reveal missing artifact {name}");
+            return;
         }
         artifact.RevealArtifact();
     }
@@ -69,7 +76,8 @@ public class ArtifactJournalController : MonoBehaviour
 
         if (!artifact)
         {
-            throw new System.Exception($"Tried to hide missing artifact {name}");
+            Debug.LogError($"Tried to hide missing artifact {name}");
+            return;
         }
         artifact.HideArtifact();
     }
@@ -85,16 +93,17 @@ public class ArtifactJournalController : MonoBehaviour
 
         if (!artifact)
         {
-            throw new System.Exception($"Tried to hide missing artifact");
+            Debug.LogError($"Tried to hide missing artifact {name}");
+            return;
         }
         artifact.HideArtifact();
     }
 
     public void ChangeArtifactGroup(ArtifactGroup target)
     {
-        foreach(ArtifactGroup ag in artifactGroups)
+        foreach (ArtifactGroup ag in artifactGroups)
         {
-            if(ag != target)
+            if (ag != target)
             {
                 ag.Hide();
             }
