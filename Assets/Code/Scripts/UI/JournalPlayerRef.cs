@@ -27,7 +27,7 @@ public class JournalPlayerRef : MonoBehaviour
     /// <param name="artifact">The game object artifact, name should match the artifact name in the journal</param>
     public void AddArtifact(Artifact artifact, bool showPopup = true) 
     {
-        Debug.Log("Add Artifact method called");
+      //  Debug.Log("Add Artifact method called");
         var popup = Instantiate(artifactPopupPrefab);
         popup.GetComponent<ArtifactPopup>().UpdateArtifactName(artifact.artifactName);
         player.AddArtifact(artifact.artifactName, showPopup);
@@ -35,7 +35,7 @@ public class JournalPlayerRef : MonoBehaviour
 
     public void AddArtifact(string name)
     {
-        Debug.Log("Add Artifact string method called");
+       // Debug.Log("Add Artifact string method called");
         var popup = Instantiate(artifactPopupPrefab);
         popup.GetComponent<ArtifactPopup>().UpdateArtifactName(name);
         player.AddArtifact(name, true);

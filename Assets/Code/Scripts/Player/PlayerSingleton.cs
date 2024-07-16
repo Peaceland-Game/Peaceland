@@ -32,6 +32,8 @@ public class PlayerSingleton : MonoBehaviour
 
     public GameObject playerObject;
 
+    
+
     [Header("Karma Points")]
     [SerializeField] private double nuetralMaxKarma = 8;
 

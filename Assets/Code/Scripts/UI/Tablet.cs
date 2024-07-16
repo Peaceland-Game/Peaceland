@@ -38,6 +38,11 @@ public class Tablet : MonoBehaviour
     {
         totalPages = apps.Count;
         
+        for (int x = 1; x < apps.Count; x++)
+        {
+            apps[x].SetActive(false);
+        }
+        gameObject.SetActive(false);
        
 
     }

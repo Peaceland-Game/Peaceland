@@ -1087,7 +1087,9 @@ MonoBehaviour:
       userScript: 'Variable["FatherPermission"] = true;
 
         SetQuestState("TV
-        Time", "success")'
+        Time", "success")
+
+        AddTheme("Kindness", 2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2589,11 +2591,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: CustomFieldType_Text
+        typeString: 
       - title: Description
         value: 
         type: 0
-        typeString: CustomFieldType_Text
+        typeString: 
       - title: Actor
         value: 3
         type: 5
@@ -2605,11 +2607,11 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: CustomFieldType_Text
+        typeString: 
       - title: Dialogue Text
         value: 
         type: 0
-        typeString: CustomFieldType_Text
+        typeString: 
       - title: Sequence
         value: 'SetEnabled(Canvas, false, DialogueCanvas);
 
@@ -2618,12 +2620,12 @@ MonoBehaviour:
           MoveTo(PlayerAnchor,
           Player, 0.5);
 
-          Camera(RightLook, House_TV, 0.5)@0.5;
+          Camera(StraightLook, TV_LOD Variant, 0.5)@0.5;
 
           SetEnabled(Canvas,
           true, DialogueCanvas)@1;'
         type: 0
-        typeString: CustomFieldType_Text
+        typeString: 
       conversationID: 9
       isRoot: 0
       isGroup: 0
@@ -2708,7 +2710,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 19.855682, y: 61.538452}
+    canvasScrollPosition: {x: 17.582397, y: 777.3392}
     canvasZoom: 0.9100001
   - id: 10
     fields:
@@ -2797,13 +2799,7 @@ MonoBehaviour:
       - originConversationID: 10
         originDialogueID: 0
         destinationConversationID: 10
-        destinationDialogueID: 39
-        isConnector: 0
-        priority: 2
-      - originConversationID: 10
-        originDialogueID: 0
-        destinationConversationID: 10
-        destinationDialogueID: 53
+        destinationDialogueID: 56
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2813,8 +2809,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 254.73682
-        y: 65.22728
+        x: 186.38239
+        y: 33.58171
         width: 160
         height: 30
     - id: 39
@@ -2844,14 +2840,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(true);
-
-          MoveTo(Player, PlayerAnchor);
-
-          LookAt(Mama,
-          player, 0.3);
-
-          Camera(NewModelLookLeft, Mama, 0.5)@0.3;'
+        value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 10
@@ -2868,15 +2857,15 @@ MonoBehaviour:
         destinationDialogueID: 51
         isConnector: 0
         priority: 2
-      conditionsString: Variable["TrashPickedUp"] ~= 5
+      conditionsString: CurrentQuestState("Trash Collector") == "unassigned"
       userScript: StopPlayer()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 61.08451
-        y: 134.29634
+        x: 18.046555
+        y: 133.03053
         width: 160
         height: 30
     - id: 40
@@ -2930,8 +2919,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 302.1698
-        y: 186.69858
+        x: 384.44824
+        y: 203.15427
         width: 160
         height: 30
     - id: 41
@@ -2991,8 +2980,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 302.59174
-        y: 239.16629
+        x: 384.87018
+        y: 255.62198
         width: 160
         height: 30
     - id: 42
@@ -3041,14 +3030,17 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["FatherPermission"] == false
-      userScript: Variable["MotherPermission"] = true
+      userScript: 'Variable["MotherPermission"] = true;
+
+        AddTheme("Kindness",
+        2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 213.66818
-        y: 346.53696
+        x: 294.68082
+        y: 336.41037
         width: 160
         height: 30
     - id: 43
@@ -3102,8 +3094,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 405.26245
-        y: 349.04794
+        x: 486.2751
+        y: 338.92136
         width: 160
         height: 30
     - id: 44
@@ -3157,8 +3149,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 402.69745
-        y: 391.9116
+        x: 483.71008
+        y: 381.785
         width: 160
         height: 30
     - id: 45
@@ -3217,8 +3209,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 405.12598
-        y: 435.62592
+        x: 486.1386
+        y: 425.49933
         width: 160
         height: 30
     - id: 46
@@ -3275,8 +3267,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 403.9831
-        y: 479.6262
+        x: 484.99573
+        y: 469.4996
         width: 160
         height: 30
     - id: 47
@@ -3308,15 +3300,12 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          MoveTo(PlayerAnchor, Player, 0.5);
-
-          Camera(original,
-          PlayerCamera, 0.5);
+          Camera(original, PlayerCamera,
+          0.5);
 
           Delay(0.1);
 
-          SetEnabled(Usable,
-          false, Mama);'
+          SetEnabled(Usable, false, Mama);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 10
@@ -3334,8 +3323,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 283.0042
-        y: 603.3639
+        x: 374.14343
+        y: 570.45264
         width: 160
         height: 30
     - id: 48
@@ -3392,8 +3381,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 402.13013
-        y: 524.55347
+        x: 483.14276
+        y: 514.427
         width: 160
         height: 30
     - id: 49
@@ -3448,8 +3437,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 51.2081
-        y: 285.30304
+        x: 8.170143
+        y: 284.03723
         width: 160
         height: 30
     - id: 50
@@ -3503,8 +3492,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 213.66818
-        y: 396.537
+        x: 294.68082
+        y: 386.4104
         width: 160
         height: 30
     - id: 51
@@ -3558,8 +3547,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 58.820946
-        y: 182.94115
+        x: 15.7829895
+        y: 181.67534
         width: 160
         height: 30
     - id: 52
@@ -3607,6 +3596,12 @@ MonoBehaviour:
         destinationDialogueID: 49
         isConnector: 0
         priority: 2
+      - originConversationID: 10
+        originDialogueID: 52
+        destinationConversationID: 10
+        destinationDialogueID: 57
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: SetQuestState("Trash Collector", "active");
       onExecute:
@@ -3614,8 +3609,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 52.93859
-        y: 232.94116
+        x: 9.900635
+        y: 231.67535
         width: 160
         height: 30
     - id: 53
@@ -3683,7 +3678,8 @@ MonoBehaviour:
         destinationDialogueID: 40
         isConnector: 0
         priority: 2
-      conditionsString: Variable["TrashPickedUp"] == 5
+      conditionsString: Variable["TrashPickedUp"] == 5 and (CurrentQuestState("Trash
+        Collector") == "active")
       userScript: 'ChangeEmotionalState(0, Actor["Mama"].Name); -- CONTENT;
 
         SetQuestState("Trash
@@ -3693,8 +3689,131 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 307.62103
-        y: 133.26497
+        x: 388.63367
+        y: 149.72066
+        width: 160
+        height: 30
+    - id: 56
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetContinueMode(false);
+
+          MoveTo(TalkToMom, Player, 0.5);
+
+          LookAt(Mama,
+          player, 0.3);
+
+          Camera(NewModelLookLeft, Mama, 0.5)@0.3;'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 10
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 10
+        originDialogueID: 56
+        destinationConversationID: 10
+        destinationDialogueID: 39
+        isConnector: 0
+        priority: 2
+      - originConversationID: 10
+        originDialogueID: 56
+        destinationConversationID: 10
+        destinationDialogueID: 53
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 183.29106
+        y: 87.34177
+        width: 160
+        height: 30
+    - id: 57
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: I already did that Mama.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">I already did that Mama.</font>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 10
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 10
+        originDialogueID: 57
+        destinationConversationID: 10
+        destinationDialogueID: 53
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["TrashPickedUp"] == 5
+      userScript: AddTheme("Kindness", 3)
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 192.17905
+        y: 201.92853
         width: 160
         height: 30
     entryGroups: []
@@ -4124,6 +4243,367 @@ MonoBehaviour:
         serializedVersion: 2
         x: 266
         y: 89
+        width: 160
+        height: 30
+    entryGroups: []
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 1
+  - id: 13
+    fields:
+    - title: Title
+      value: Newspaper Interaction
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Actor
+      value: 1
+      type: 5
+      typeString: CustomFieldType_Actor
+    - title: Conversant
+      value: 2
+      type: 5
+      typeString: CustomFieldType_Actor
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      skipPCSubtitleAfterResponseMenu: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      includeInvalidEntries: 0
+      responseTimeout: 0
+      emTagForOldResponses: 0
+      emTagForInvalidResponses: 0
+      cancelSubtitle:
+        key: 27
+        buttonName: 
+      cancelConversation:
+        key: 27
+        buttonName: 
+    nodeColor: 
+    dialogueEntries:
+    - id: 0
+      fields:
+      - title: Title
+        value: START
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: None()
+        type: 0
+        typeString: 
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 0
+        destinationConversationID: 13
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 161
+        y: 30
+        width: 160
+        height: 30
+    - id: 1
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Well, look at you reading the paper!
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Well, look at you reading the paper!</font>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: AddTheme("Curiosity", 2)
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 161
+        y: 80
+        width: 160
+        height: 30
+    entryGroups: []
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 1
+  - id: 14
+    fields:
+    - title: Title
+      value: Collecting Money
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Actor
+      value: 1
+      type: 5
+      typeString: CustomFieldType_Actor
+    - title: Conversant
+      value: 11
+      type: 5
+      typeString: CustomFieldType_Actor
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      skipPCSubtitleAfterResponseMenu: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      includeInvalidEntries: 0
+      responseTimeout: 0
+      emTagForOldResponses: 0
+      emTagForInvalidResponses: 0
+      cancelSubtitle:
+        key: 27
+        buttonName: 
+      cancelConversation:
+        key: 27
+        buttonName: 
+    nodeColor: 
+    dialogueEntries:
+    - id: 0
+      fields:
+      - title: Title
+        value: START
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 11
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: None()
+        type: 0
+        typeString: 
+      conversationID: 14
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 14
+        originDialogueID: 0
+        destinationConversationID: 14
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      - originConversationID: 14
+        originDialogueID: 0
+        destinationConversationID: 14
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 160
+        y: 30
+        width: 160
+        height: 30
+    - id: 1
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 11
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: E
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 14
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: Variable["PlayerMoney"] < 5
+      userScript: Variable["PlayerMoney"] = Variable["PlayerMoney"] + 1
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 83
+        y: 95
+        width: 160
+        height: 30
+    - id: 2
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 11
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Unga Bunga it's curiosity time
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 14
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: Variable["PlayerMoney"] >= 5
+      userScript: AddTheme("Curiosity", 2)
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 280
+        y: 94
         width: 160
         height: 30
     entryGroups: []
