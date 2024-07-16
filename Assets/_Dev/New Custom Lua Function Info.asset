@@ -12,7 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dbbc84c70300ba489dc1fe1961516ec, type: 3}
   m_Name: New Custom Lua Function Info
   m_EditorClassIdentifier: 
-  conditionFunctions: []
+  conditionFunctions:
+  - functionName: HasPositiveKarma
+    parameters: 
+    returnValue: 1
+  - functionName: HasNegativeKarma
+    parameters: 
+    returnValue: 1
+  - functionName: HasNeutralKarma
+    parameters: 
+    returnValue: 1
+  - functionName: GetKarmaClass
+    parameters: 
+    returnValue: 3
+  - functionName: GetTotalKarma
+    parameters: 
+    returnValue: 2
   scriptFunctions:
   - functionName: SwitchToMemory
     parameters: 01000000
@@ -44,15 +59,3 @@ MonoBehaviour:
   - functionName: GetTotalKarma
     parameters: 
     returnValue: 2
-  - functionName: GetKarmaClass
-    parameters: 
-    returnValue: 3
-  - functionName: HasNeutralKarma
-    parameters: 
-    returnValue: 1
-  - functionName: HasNegativeKarma
-    parameters: 
-    returnValue: 1
-  - functionName: HasPositiveKarma
-    parameters: 
-    returnValue: 1
