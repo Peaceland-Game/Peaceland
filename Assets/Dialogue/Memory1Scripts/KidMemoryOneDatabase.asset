@@ -788,7 +788,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -1972,7 +1972,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'AnimatorController(Anim_Controllers/SpecifcAnims, Dad);
+        value: 'AnimatorController(Anim_Controllers/SpecificAnims, Dad);
 
           AnimatorTrigger(ShakeNo,
           Dad);
@@ -2033,7 +2033,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'AnimatorController(Anim_Controllers/SpecifcAnims, Dad);
+        value: 'AnimatorController(Anim_Controllers/SpecificAnims, Dad);
 
           AnimatorTrigger(ShakeNo,
           Dad);
@@ -2093,7 +2093,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: AnimatorControllers(Anim_Controllers/Story1Mem1Anims, Dad);
+        value: AnimatorControllers(Anim_Controller/Story1Mem1Anims, Dad);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 38
@@ -2617,7 +2617,7 @@ MonoBehaviour:
 
           SetContinueMode(false);
 
-          MoveTo(PlayerAnchor,
+          MoveTo(PlayerAtCouch,
           Player, 0.5);
 
           Camera(RightLook, House_TV, 0.5)@0.5;
@@ -2710,8 +2710,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 24.175842, y: 1068.1317}
-    canvasZoom: 0.9100001
+    canvasScrollPosition: {x: 14.473694, y: 314.47357}
+    canvasZoom: 0.7600002
   - id: 39
     fields:
     - title: Title
@@ -3652,7 +3652,9 @@ MonoBehaviour:
           AnimatorTrigger(Idle, Mama, LeftTurn)@1.5;
 
           LookAt(Mama,
-          player, 0.3);'
+          player, 0.3);
+
+          AddMoney(10);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 39
@@ -3808,7 +3810,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 102.53165}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.7900002
   - id: 40
     fields:
