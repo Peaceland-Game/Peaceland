@@ -46,8 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719aef74243e8d140a9c7fef220dea1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  artifacts: []
   player: {fileID: 0}
   artifactPopupPrefab: {fileID: 5674327093192027363, guid: 05c08c76950c6c74b97a6f4b66e82a48,
+    type: 3}
+  imagePopupPrefab: {fileID: 1022370631628623658, guid: 8e95648def79a1345a0a52a5b14f7bb0,
     type: 3}
 --- !u!1 &6988504650735243616
 GameObject:
@@ -440,7 +443,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 8437637156904192338}
           m_TargetAssemblyTypeName: JournalPlayerRef, Assembly-CSharp
-          m_MethodName: AddArtifact
+          m_MethodName: AddArtifactWithImage
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

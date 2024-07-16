@@ -11,7 +11,7 @@ public class Artifact : MonoBehaviour
 
     //don't need this for artifact splash
     [SerializeField]
-    Sprite artifactImageToDisplay;
+    public Sprite artifactImageToDisplay;
 
     // Start is called before the first frame update
     void Start()

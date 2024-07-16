@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Simple passthrough reference object for the artifacts to access the player
@@ -10,8 +11,16 @@ using UnityEngine;
 /// </summary>
 public class JournalPlayerRef : MonoBehaviour
 {
+    public List<Artifact> artifacts = new List<Artifact>();
     public Tablet player;
     public GameObject artifactPopupPrefab;
+    public GameObject imagePopupPrefab;
+
+    private void Start()
+    {
+        artifacts = GetComponentsInChildren<Artifact>().ToList();
+    }
+
     /// <summary>
     /// pass the artifact's name to the player journal controller
     /// </summary>
@@ -32,5 +41,13 @@ public class JournalPlayerRef : MonoBehaviour
         player.AddArtifact(name, true);
         //var artifact = transform.GetComponentsInChildren<Artifact>().ToList().FirstOrDefault(artifact => artifact.artifactName == name);
         //Destroy(artifact.gameObject);
+    }
+
+    public void AddArtifactWithImage(string name)
+    {
+        AddArtifact(name);
+        var imagePopup = Instantiate(imagePopupPrefab);
+        var artifact = artifacts.FirstOrDefault(artifact => artifact.artifactName == name);
+        imagePopup.GetComponentInChildren<Image>().sprite = artifact.artifactImageToDisplay;
     }
 }
