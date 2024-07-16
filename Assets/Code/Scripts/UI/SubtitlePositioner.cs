@@ -6,6 +6,7 @@ public class SubtitlePositioner : MonoBehaviour
 {
     [SerializeField] Transform buttonsParent;
 
+    [SerializeField] float speed = 1.0f;
     [SerializeField] AnimationCurve transitionPosCurve;
     [SerializeField] Vector3 dialogueBoxDefaultPos;
     [SerializeField] Vector3 dialogueBoxChoicePos;
@@ -42,11 +43,11 @@ public class SubtitlePositioner : MonoBehaviour
         {
             if (buttonsParent.GetChild(i).gameObject.activeInHierarchy)
             {
-                lerp = Mathf.Clamp01(lerp + Time.deltaTime);
+                lerp = Mathf.Clamp01(lerp + Time.deltaTime * speed);
                 return;
             }
         }
 
-        lerp = Mathf.Clamp01(lerp - Time.deltaTime);
+        lerp = Mathf.Clamp01(lerp - Time.deltaTime * speed);
     }
 }
