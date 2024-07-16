@@ -4,31 +4,42 @@ using System.Collections;
 using UnityEngine.InputSystem;
 using System;
 
+/// <summary>
+/// Handles changing outdoor lighting between different profiles
+/// used to change the time of day during a scene
+/// </summary>
 [ExecuteAlways]
 public class DynamicLightingController : MonoBehaviour
 {
 
     
-    public Light directionalLight;
-    public LightingProfile[] lightingProfiles;
-
-    public int currentProfileIndex = 0;
-    private Coroutine transitionCoroutine;
+    public Light directionalLight;                      //reference to the directional light in the scene
+    public LightingProfile[] lightingProfiles;          //Array of all lighting profiles, these are scriptable 
+    public int currentProfileIndex = 0;                 //hold the value for the current profile
+    private Coroutine transitionCoroutine;              //refrence to the transition coroutine
 
     [Header("Inspector Testing")]
-    [SerializeField] private int testProfileIndex = 0;
-    [SerializeField] private bool applyTestProfile = false;
-    public event System.EventHandler<LightingProfileChangedEventArgs> OnLightingProfileChanged;
-    [SerializeField] private DialogueSkipper dialogueSkipper;
+    [SerializeField] private int testProfileIndex = 0;      //used to apply a test profile in the Editor not during runtime
+    [SerializeField] private bool applyTestProfile = false; //flag to apply the test profile or not
 
-    // Method to trigger the event
+    public event System.EventHandler<LightingProfileChangedEventArgs> OnLightingProfileChanged; //Event to raise when changing the lighting
+    [SerializeField] private DialogueSkipper dialogueSkipper;                                   //reference to the dialogue skipper component used for editor testing
+
+    /// <summary>
+    /// Triggers a lighting profile change event for other scripts to hook in to
+    /// </summary>
+    /// <param name="oldProfile">The lighting profile object we are changing from</param>
+    /// <param name="newProfile">The lighting profile object we are changing to</param>
+    /// <param name="newProfileIndex">The integer index of the new profile</param>
     protected virtual void RaiseLightingProfileChangedEvent(LightingProfile oldProfile, LightingProfile newProfile, int newProfileIndex)
     {
         OnLightingProfileChanged?.Invoke(this, new LightingProfileChangedEventArgs(oldProfile, newProfile, newProfileIndex));
     }
+    /// <summary>
+    /// Handles listening for and applying a test profile in the editor
+    /// </summary>
     private void Update()
     {
-        //HandleDayChangeInput();
         //// Check if the test profile should be applied
         if (applyTestProfile)
         {
@@ -36,38 +47,38 @@ public class DynamicLightingController : MonoBehaviour
             ApplyProfile(lightingProfiles[testProfileIndex], GameObject.FindWithTag("UI").GetComponent<UserInterface>());
             currentProfileIndex = testProfileIndex;
             Debug.Log($"Applied test profile: {lightingProfiles[testProfileIndex].name}");
-            //Debug.Log(applyTestProfile);
+            
         }
     }
-    //private void HandleDayChangeInput()
-    //{
-    //    if (Keyboard.current.digit1Key.wasPressedThisFrame)
-    //    {
-    //        Debug.Log("Transitioning to Day");
-    //        TransitionToProfile(0, 5);
-    //    }
-    //    else if (Keyboard.current.digit2Key.wasPressedThisFrame)
-    //    {
-    //        Debug.Log("Transitioning to Evening");
-    //        TransitionToProfile(1, 5);
-    //    }
-    //    else if (Keyboard.current.digit3Key.wasPressedThisFrame)
-    //    {
-    //        Debug.Log("Transitioning to Night");
-    //        TransitionToProfile(2, 5);
-    //    }
-    //}
-
+    /// <summary>
+    /// Handles Transitioning to the next profile (up 1 from the current profile index)
+    /// </summary>
+    /// <param name="userInterface">A reference to the userInterface script used to display a load screen</param>
+    /// <param name="action">A runnable used to perform an action after the transition is over</param>
     public void TransitionToNextProfile(UserInterface userInterface, Action action)
     {
         int nextProfileIndex = (currentProfileIndex + 1) % lightingProfiles.Length;
         TransitionToProfile(nextProfileIndex, 5f, userInterface, action); // 5 second transition
     }
+    /// <summary>
+    /// Handles transitioning to a specific profile via the Time of day enum type
+    /// </summary>
+    /// <param name="timeOfDay">The TimeOfDay enum type for time of day usually like Day/Evening/Night</param>
+    /// <param name="duration">how long the transition should take in seconds</param>
+    /// <param name="userInterface">A reference to the userInterface script used to display a load screen</param>
+    /// <param name="action">A runnable used to perform an action after the transition is over</param>
     public void TransitionToProfile(TimeOfDay timeOfDay, float duration, UserInterface userInterface, Action action)
     {
         int profileIndex = (int)timeOfDay;
         TransitionToProfile(profileIndex, duration, userInterface, action);
     }
+    /// <summary>
+    /// Handles transitioning to a specific profile via the index number
+    /// </summary>
+    /// <param name="profileIndex">integer index to transition the lighting to</param>
+    /// <param name="duration">how long the transition should take in seconds</param>
+    /// <param name="userInterface">A reference to the userInterface script used to display a load screen</param>
+    /// <param name="action">A runnable used to perform an action after the transition is over</param>
     private void TransitionToProfile(int profileIndex, float duration, UserInterface userInterface, Action action)
     {
         if (transitionCoroutine != null)
@@ -77,13 +88,23 @@ public class DynamicLightingController : MonoBehaviour
         transitionCoroutine = StartCoroutine(TransitionCoroutine(profileIndex, duration, userInterface, action));
     }
 
+    /// <summary>
+    /// Handles transitioning to a new lighting profile over a set duration
+    /// </summary>
+    /// <param name="profileIndex">integer index to transition the lighting to</param>
+    /// <param name="duration">how long the transition should take in seconds</param>
+    /// <param name="userInterface">A reference to the userInterface script used to display a load screen</param>
+    /// <param name="action">A runnable used to perform an action after the transition is over</param>
+    /// <returns></returns>
     private IEnumerator TransitionCoroutine(int targetProfileIndex, float duration, UserInterface userInterface, Action action)
     {
         Debug.Log($"Starting transition from profile {currentProfileIndex} to {targetProfileIndex}");
+        //get start and target profiles
         LightingProfile startProfile = lightingProfiles[currentProfileIndex];
         LightingProfile targetProfile = lightingProfiles[targetProfileIndex];
         float elapsedTime = 0f;
 
+        //interoplate the lighting settings over the duration and update the load bar
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
@@ -96,6 +117,7 @@ public class DynamicLightingController : MonoBehaviour
             yield return null;
         }
 
+        //apply the pofile when finished
         ApplyProfile(targetProfile, userInterface);
         int oldProfileIndex = currentProfileIndex;
         currentProfileIndex = targetProfileIndex;
@@ -103,15 +125,17 @@ public class DynamicLightingController : MonoBehaviour
 
         // Ensure the loading progress is set to 100% at the end
         userInterface.UpdateLoadingProgress(1f);
+
+
 #if (UNITY_EDITOR)
         if (dialogueSkipper)
         {
-            dialogueSkipper.Skip();
+            dialogueSkipper.Skip(); //used to skip early dialogue choices to make testing easier
         }
 #endif
-        // Raise the event
+        
         action();   //run the passed action at the end of the coroutine, this is currently used to reenable player movement - passed in from MemorySwapper.cs
-        RaiseLightingProfileChangedEvent(startProfile, targetProfile, currentProfileIndex);
+        RaiseLightingProfileChangedEvent(startProfile, targetProfile, currentProfileIndex);// Raise the event saying the lighting changed
     }
 
     private void InterpolateLightingSettings(LightingProfile start, LightingProfile target, float t)
