@@ -27,6 +27,12 @@ public class IntroController : MonoBehaviour
     public float eyeOpenSpeed = 1f;
     public float wakeUpDuration = 2f;
 
+    [Header("Tablet tutorial")]
+    public Transform tabletPickupLoc;
+    public GameObject tutorialPrefab;
+    private GameObject tabletTutorialInstance;
+    public Tablet playerTablet;
+
     private bool waitForPlayer = false;
     private GameObject selectorUI;
 
@@ -41,13 +47,50 @@ public class IntroController : MonoBehaviour
     {
         if (waitForPlayer && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            LoadHubWorld();
+            StartTabletTutorial();
         }
         if (Keyboard.current.f1Key.wasPressedThisFrame)
         {
             LoadHubWorld();
         }
+        if (Keyboard.current.f2Key.wasPressedThisFrame) {
+            
+            StartTabletTutorial();
+        }
     }
+
+    private void StartTabletTutorial() {
+        pickUpTabletPrompt.gameObject.SetActive(false);
+        StartCoroutine(MoveToTarget(1, () => {
+            playerTablet.gameObject.SetActive(true);
+            tabletTutorialInstance = Instantiate(tutorialPrefab, playerTablet.transform);
+        }));
+    }
+
+    private IEnumerator MoveToTarget(float duration, System.Action action) {
+        transform.GetPositionAndRotation(
+            out Vector3 startPosition, 
+            out Quaternion startRotation);
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration) {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / duration);
+
+            // Smoothly interpolate position
+            // Smoothly interpolate rotation
+            transform.SetPositionAndRotation(
+                Vector3.Lerp(startPosition, tabletPickupLoc.position, t), 
+                Quaternion.Slerp(startRotation, tabletPickupLoc.rotation, t));
+
+            yield return null;
+        }
+
+        // Ensure final position and rotation exactly match the target
+        transform.SetPositionAndRotation(tabletPickupLoc.position, tabletPickupLoc.rotation);
+        action();
+    }
+
 
     private void InitializeUI()
     {
@@ -80,7 +123,7 @@ public class IntroController : MonoBehaviour
 
     public void WakeUp()
     {
-        Debug.Log("start wakeup");
+      //  Debug.Log("start wakeup");
         StartCoroutine(WakeUpSequence());
     }
 
