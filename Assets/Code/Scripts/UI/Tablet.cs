@@ -97,19 +97,19 @@ public class Tablet : MonoBehaviour
         else
         {
             //show popup
-            ShowArtifactPopup(name);
+            //ShowArtifactPopup(name);
             //then add
             artifactJournal.RevealArtifact(name);
         }
     }
 
-    public void ShowArtifactPopup(string name)
-    {
-        artifactName.text = name;
-        artifactPopup.SetActive(true);
-        StartCoroutine(WaitPopup());
-        artifactPopup.SetActive(false);
-    }
+    //public void ShowArtifactPopup(string name)
+    //{
+    //    artifactName.text = name;
+    //    artifactPopup.SetActive(true);
+    //    StartCoroutine(WaitPopup());
+    //    artifactPopup.SetActive(false);
+    //}
 
     public IEnumerator WaitPopup()
     {
