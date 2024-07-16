@@ -87,7 +87,7 @@ public class Tablet : MonoBehaviour
     /// <summary>
     /// Passes the name of the artifact to reveal to the artifact journal controller
     /// </summary>
-    /// <param name="name">The name of the artifact to reveal, should match the game object's name in Unity</param>
+    /// <param name="name">The name of the artifact to reveal</param>
     public void AddArtifact(string name, bool showPopup)
     {
         Debug.Log($"Adding {name} to artifacts");
@@ -97,7 +97,9 @@ public class Tablet : MonoBehaviour
         else
         {
             //show popup
+
             //then add
+            artifactJournal.RevealArtifact(name);
         }
     }
 

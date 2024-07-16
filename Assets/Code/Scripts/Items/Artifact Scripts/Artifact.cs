@@ -7,7 +7,9 @@ public class Artifact : MonoBehaviour
 
     [SerializeField]
     bool hasImageToDisplay;
+    public string artifactName;
 
+    //don't need this for artifact splash
     [SerializeField]
     Sprite artifactImageToDisplay;
 
