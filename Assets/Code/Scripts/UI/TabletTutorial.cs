@@ -5,29 +5,32 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Handles the tablet onboarding experience
+/// </summary>
 public class TabletTutorial : MonoBehaviour {
-    //public GameObject tablet;
-    //public GameObject tutorialPrefab;
     [SerializeField]
-    private TextMeshProUGUI tutorialText;
+    private TextMeshProUGUI tutorialText;           //reference to the text mesh in the scene
     [SerializeField]
-    private List<Transform> homePageButtons;
-    private bool waitForPlayer = false;
-    private GameObject tutorialInstance;
-    private int tutorialStep = -1;
-    public GameObject skipButton;
-    public GameObject contButon;
-    private const string LOAD_SCENE_NAME = "HubWorld2";
-    // Start is called before the first frame update
+    private List<Transform> homePageButtons;        //list of the home button graphics to turn on or off during the tutorial
+    private bool waitForPlayer = false;             //if we are at a point where we need to wait for the player set flag here
+    private int tutorialStep = -1;                  //holds the current tutorial step
+    public GameObject skipButton;                   //reference to the skip tutorial button in the scene
+    public GameObject contButon;                    //reference to the continue button
+    private const string LOAD_SCENE_NAME = "HubWorld2";     //the scene that will load after the tutorial is finished 
+    
+    /// <summary>
+    /// begin the tutorial
+    /// </summary>
     void Start()
     {
         ProgressTutorial();
 
-        
-      //  homePageButtons.ForEach(homePageButtons => homePageButtons.gameObject.SetActive(false));
     }
-
-    // Update is called once per frame
+    
+    /// <summary>
+    /// Used to continuously check for player input to end the tutorial
+    /// </summary>
     void Update()
     {
         if (waitForPlayer) {
@@ -36,14 +39,18 @@ public class TabletTutorial : MonoBehaviour {
             }
         }
     }
+    /// <summary>
+    /// Add one to tutrial step and update objects and text
+    /// </summary>
     public void ProgressTutorial() {
         tutorialStep++;
 
         UpdateTutorialObjects();
         UpdateTutorialText();
-
-
     }
+    /// <summary>
+    /// Updates the tutorial game objects based on which step of the tutorial the player is on
+    /// </summary>
     public void UpdateTutorialObjects() {
 
         switch (tutorialStep) {
@@ -68,6 +75,9 @@ public class TabletTutorial : MonoBehaviour {
         }
 
     }
+    /// <summary>
+    /// Updates the tutorial text based on which step the player is on
+    /// </summary>
     public void UpdateTutorialText() {
         string text = "";
         switch (tutorialStep) {
@@ -98,9 +108,15 @@ public class TabletTutorial : MonoBehaviour {
 
         tutorialText.text = text;
     }
+    /// <summary>
+    /// clear player waiting flag
+    /// </summary>
     public void StopWaitForPlayer() {
         waitForPlayer = false;
     }
+    /// <summary>
+    /// force load of the next scene to skip the tutorial
+    /// </summary>
     public void SkipTutorial()
     {
         SceneManager.LoadScene(LOAD_SCENE_NAME);

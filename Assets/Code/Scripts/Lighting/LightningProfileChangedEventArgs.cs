@@ -1,3 +1,6 @@
+/// <summary>
+/// Custom event for raising when the lighting changes in the scene
+/// </summary>
 public class LightingProfileChangedEventArgs : System.EventArgs
 {
     public LightingProfile OldProfile { get; private set; }

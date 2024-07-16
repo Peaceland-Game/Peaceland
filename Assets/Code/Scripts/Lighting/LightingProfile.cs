@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
+/// <summary>
+/// Holds lighting information in a scriptable object that can be used to change the lighting during runtime
+/// </summary>
 [CreateAssetMenu(fileName = "New Lighting Profile", menuName = "Lighting/Gaia Lighting Profile")]
 public class LightingProfile : ScriptableObject
 {
@@ -64,7 +67,7 @@ public class LightingProfile : ScriptableObject
 
     public Color GetSunColor()
     {
-        if (useKelvin)
+        if (useKelvin)  
         {
             // Map Kelvin value to gradient
             float t = Mathf.InverseLerp(1000f, 20000f, kelvin);

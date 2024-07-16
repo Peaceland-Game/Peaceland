@@ -8,39 +8,40 @@ using UnityEngine.Events;
 using Gaia;
 using UnityEngine.SceneManagement;
 
-
+/// <summary>
+/// Custom event to raise when the player collects money, listened for in the ui script
+/// </summary>
 public class MoneyCollectedEvent : UnityEvent { }
 
+/// <summary>
+/// Handles various player functions such as toggling pause menu, picking up money, and storing karma information
+/// </summary>
 public class PlayerSingleton : MonoBehaviour
 {
-    public static PlayerSingleton Instance;
-    [SerializeField] private Tablet tablet;
-    // private Camera playerCamera;
-    [SerializeField] private UserInterface userInterface;
-    //private PlayerMovement playerMovement;
-    public bool paused = false;
-    [SerializeField] private FirstPersonController controller;
-    public bool isMouseLocked;
-    [SerializeField] private Selector selector;
-    public bool playerInMemorySelection = false;
+    public static PlayerSingleton Instance;                     //singleton
+    [SerializeField] private Tablet tablet;                     //reference to the tablet on the user interface
+    [SerializeField] private UserInterface userInterface;       //reference to the user interface object
+   
+    [SerializeField] private FirstPersonController controller;  //refrence to player movement controller
+    
+    [SerializeField] private Selector selector;                 //reference to the player's selector component
+
+    public bool playerInMemorySelection = false;                //flag is the player is the memory selection, this is only used in the hub world
+    public bool paused = false;                                 //flag if game is paused
+    public bool isMouseLocked;                                  //flag if the mouse is locked to the screen or not
+
+    public MoneyCollectedEvent onMoneyCollected = new MoneyCollectedEvent();    //create event
+    public GameObject playerObject;                                             //reference to the player parent object in the scene
 
     
-    
-    public MoneyCollectedEvent onMoneyCollected = new MoneyCollectedEvent();
-
-    public Dictionary<string, double> karmaPoints = new();
-
-    public GameObject playerObject;
-
     public int GetMoney
     {
         get { return DialogueLua.GetVariable("PlayerMoney").asInt; }
     }
 
-
-
     [Header("Karma Points")]
     [SerializeField] private double nuetralMaxKarma = 8;
+    public Dictionary<string, double> karmaPoints = new();                      //holds karma information
 
     // public bool playerInHub = false;
 
