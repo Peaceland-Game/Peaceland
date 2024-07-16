@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Used as a static reference for Unity layers in code instead of having to remember the int layer number
+/// </summary>
 public class LayerReference : MonoBehaviour
 {
     public static int INTERACTABLE = 3;

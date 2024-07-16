@@ -236,6 +236,11 @@ public class PlayerSingleton : MonoBehaviour
         money += (int)amt;
         DialogueLua.SetVariable("PlayerMoney", money);
 
+        if (GetMoney == 5)
+        {
+            AddTheme("Curiosity", 2);
+        }
+
         onMoneyCollected.Invoke();
 
     }

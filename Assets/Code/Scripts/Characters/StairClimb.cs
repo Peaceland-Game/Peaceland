@@ -2,6 +2,8 @@
 using UnityEngine;
 /// <summary>
 /// Helps the rigid body controller move up stairs
+/// Depracated. 
+/// Replaced with Unity Character controller
 /// </summary>
 public class StairClimb : MonoBehaviour
 {

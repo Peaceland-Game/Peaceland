@@ -1,13 +1,16 @@
 using UnityEngine;
 
+/// <summary>
+/// Simple class to show a red sphere gizmo at the objects location
+/// </summary>
 public class Waypoint : MonoBehaviour {
     void OnDrawGizmos() {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 2f);
+        Gizmos.DrawWireSphere(transform.position, 2f);
     }
 
     void OnDrawGizmosSelected() {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, 4f);
+        Gizmos.DrawSphere(transform.position, 4f);
     }
 }

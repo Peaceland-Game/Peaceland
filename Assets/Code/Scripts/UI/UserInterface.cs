@@ -101,7 +101,7 @@ public class UserInterface : MonoBehaviour
         moneyText.text = "Money: " + DialogueLua.GetVariable("PlayerMoney").asInt;
     }
 
-    public void ToggleHistoryMenu(PlayerMovement.MovementState state)
+    public void ToggleHistoryMenu()
     {
         //var menuActive = !historyMenu.activeInHierarchy;
         //historyMenu.SetActive(menuActive);
