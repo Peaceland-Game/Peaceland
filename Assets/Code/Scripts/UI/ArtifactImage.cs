@@ -18,6 +18,7 @@ public class ArtifactImage : MonoBehaviour
     [SerializeField] private Sprite revealedTextBox; //the revealed (green) text box
     [SerializeField] private TextMeshProUGUI imageTitle; //reference to the GUI text object for the artifact's title
     [SerializeField] private TextMeshProUGUI imageDescription; //reference to the GUI text object for the artifact's description
+    public string artifactName;
     public bool revealed = false; //bool indicating if the object is shown or not
     
     /// <summary>

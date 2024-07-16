@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  artifactPopupPrefab: {fileID: 5674327093192027363, guid: 05c08c76950c6c74b97a6f4b66e82a48,
+    type: 3}
 --- !u!1 &6988504650735243616
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +63,7 @@ GameObject:
   - component: {fileID: 5968106216759762889}
   - component: {fileID: 128059911823327023}
   - component: {fileID: 8602540157816483776}
+  - component: {fileID: 4340331768543566084}
   m_Layer: 3
   m_Name: Uniform
   m_TagString: Untagged
@@ -206,13 +209,25 @@ MonoBehaviour:
         - m_Target: {fileID: 8437637156904192338}
           m_TargetAssemblyTypeName: JournalPlayerRef, Assembly-CSharp
           m_MethodName: AddArtifact
-          m_Mode: 2
+          m_Mode: 5
           m_Arguments:
-            m_ObjectArgument: {fileID: 6988504650735243616}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: Uniform
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 6988504650735243616}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Uniform
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &8602540157816483776
@@ -233,6 +248,21 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &4340331768543566084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988504650735243616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6fa56e00400da4b90eb9f358f33647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasImageToDisplay: 0
+  artifactName: Uniform
+  artifactImageToDisplay: {fileID: 0}
 --- !u!1001 &5974706565098529862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -342,6 +372,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5367886950806578500}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 26cd9e2139ad31842a0f6cf68eee07a6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 282031179459998335}
   m_SourcePrefab: {fileID: 100100000, guid: 26cd9e2139ad31842a0f6cf68eee07a6, type: 3}
 --- !u!4 &6152148582466651053 stripped
 Transform:
@@ -404,6 +438,18 @@ MonoBehaviour:
     onUse:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 8437637156904192338}
+          m_TargetAssemblyTypeName: JournalPlayerRef, Assembly-CSharp
+          m_MethodName: AddArtifact
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Newspaper
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 6785519629384636695}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
@@ -455,3 +501,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &282031179459998335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6785519629384636695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6fa56e00400da4b90eb9f358f33647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasImageToDisplay: 1
+  artifactName: Newspaper
+  artifactImageToDisplay: {fileID: 21300000, guid: ee402a60e87c7c74bb964b0b1417f09d,
+    type: 3}

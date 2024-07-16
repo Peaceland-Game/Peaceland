@@ -30,11 +30,13 @@ public class ArtifactJournalController : MonoBehaviour
     /// <exception cref="System.Exception">Thrown when the name of the artifact does not match the scene object</exception>
     public void RevealArtifact(string name)
     {
-        var artifact = artifacts.FirstOrDefault(artifact => artifact.gameObject.name == name);
+        var artifact = artifacts.FirstOrDefault(artifact => artifact.artifactName.ToLower() == name.ToLower());
+
 
         if (!artifact)
         {
             //throw new System.Exception($"Tried to reveal missing artifact {name}");
+            Debug.LogError($"Tried to reveal missing artifact {name}");
             return;
         }
         artifact.RevealArtifact();
