@@ -63,7 +63,7 @@ public class MemorySelector : MonoBehaviour
     /// </summary>
     void LoadMemory()
     {
-        SceneManager.LoadScene("TerrainCreation");
+        SceneManager.LoadScene("SceneLoader");
     }
 
     /// <summary>
