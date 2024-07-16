@@ -7,9 +7,11 @@ public class Artifact : MonoBehaviour
 
     [SerializeField]
     bool hasImageToDisplay;
+    public string artifactName;
 
+    //don't need this for artifact splash
     [SerializeField]
-    Sprite artifactImageToDisplay;
+    public Sprite artifactImageToDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +25,8 @@ public class Artifact : MonoBehaviour
         
     }
 
-    void OnUse()
-    {
-        transform.parent.GetComponent<JournalPlayerRef>().AddArtifact(this, hasImageToDisplay);
-    }
+    //void OnUse()
+    //{
+    //    transform.parent.GetComponent<JournalPlayerRef>().AddArtifact(this, hasImageToDisplay);
+    //}
 }

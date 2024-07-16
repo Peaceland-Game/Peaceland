@@ -23,12 +23,17 @@ public class PlayerSingleton : MonoBehaviour
     public bool isMouseLocked;
     [SerializeField] private Selector selector;
     public bool playerInMemorySelection = false;
+
+    
     
     public MoneyCollectedEvent onMoneyCollected = new MoneyCollectedEvent();
 
     public Dictionary<string, double> karmaPoints = new();
 
     public GameObject playerObject;
+
+    [Header("Karma Points")]
+    [SerializeField] private double nuetralMaxKarma = 8;
 
     // public bool playerInHub = false;
 
@@ -247,7 +252,37 @@ public class PlayerSingleton : MonoBehaviour
     }
 
     
+    public double GetTotalKarma()
+    {
+        double totalKarma = 0; 
+        foreach(var val in karmaPoints.Values)
+        {
+            totalKarma += val;
+        }
+        return totalKarma;
+    }
 
+    public bool HasPositiveKarma()
+    {
+        return GetTotalKarma() > nuetralMaxKarma;
+    }
+    public bool HasNegativeKarma()
+    {
+        return GetTotalKarma() < -nuetralMaxKarma;
+    }
+    public bool HasNeutralKarma()
+    {
+        return !HasNegativeKarma() && !HasPositiveKarma();
+    }
+
+    public string GetKarmaClass()
+    {
+        if (HasPositiveKarma()) return "Positive";
+        if (HasNegativeKarma()) return "Negative";
+        return "Nuetral";
+    }
+    
+    
     
 
     
@@ -266,6 +301,11 @@ public class PlayerSingleton : MonoBehaviour
         Lua.RegisterFunction(nameof(SubtractMoney), this, SymbolExtensions.GetMethodInfo(() => SubtractMoney(0)));
         Lua.RegisterFunction(nameof(AddTheme), this, SymbolExtensions.GetMethodInfo(() => AddTheme("", 0)));
         Lua.RegisterFunction(nameof(GetThemeKarma), this, SymbolExtensions.GetMethodInfo(() => GetThemeKarma("")));
+        Lua.RegisterFunction(nameof(GetTotalKarma), this, SymbolExtensions.GetMethodInfo(() => GetTotalKarma()));
+        Lua.RegisterFunction(nameof(GetKarmaClass), this, SymbolExtensions.GetMethodInfo(() => GetKarmaClass()));
+        Lua.RegisterFunction(nameof(HasNeutralKarma), this, SymbolExtensions.GetMethodInfo(() => HasNeutralKarma()));
+        Lua.RegisterFunction(nameof(HasNegativeKarma), this, SymbolExtensions.GetMethodInfo(() => HasNegativeKarma()));
+        Lua.RegisterFunction(nameof(HasPositiveKarma), this, SymbolExtensions.GetMethodInfo(() => HasPositiveKarma()));
         // Lua.RegisterFunction(nameof(AddOne), this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
     }
     /*

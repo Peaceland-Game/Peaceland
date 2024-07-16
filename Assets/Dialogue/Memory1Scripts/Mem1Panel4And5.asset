@@ -1071,9 +1071,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetVariable(PeaceMeter, 1);
-
-          SetContinueMode(true);'
+        value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -1091,7 +1089,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ChangeEmotionalState(4, Actor["Waeli"].Name); -- PLEASED
+      userScript: 'ChangeEmotionalState(4, Actor["Waeli"].Name); -- PLEASED;
+
+        AddTheme("Trust",
+        3)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1428,7 +1429,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddTheme("Suspicion", -3)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1522,9 +1523,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetVariable(PeaceMeter, -1);
-
-          SetContinueMode(true);'
+        value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 27
@@ -1542,7 +1541,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddTheme("Fear", -3)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3479,7 +3478,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddTheme("Suspicion", -3)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4266,7 +4265,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddTheme("Trust", 2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4548,7 +4547,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddTheme("Suspicion", -3)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4603,7 +4602,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddTheme("Apathy", -5)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5272,8 +5271,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.7600002
+    canvasScrollPosition: {x: 13.698639, y: 1337.2635}
+    canvasZoom: 0.73000026
   - id: 28
     fields:
     - title: Title
@@ -5970,7 +5969,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["PeaceMeter"] = Variable["PeaceMeter"] + 1;
+      userScript: AddTheme("Loyalty", 3)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6362,10 +6361,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'Variable["PeaceMeter"] = Variable["PeaceMeter"] - 1;
+      userScript: 'ChangeEmotionalState(6, "Waeli"); -- ANGRY;
 
-        ChangeEmotionalState(6,
-        "Waeli"); -- ANGRY'
+        AddTheme("Fear",
+        -5)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7364,12 +7363,12 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'Variable["PeaceMeter"] = Variable["PeaceMeter"] + 1;
+      userScript: 'ChangeEmotionalState(0, "Waeli"); -- CONTENT
 
         ChangeEmotionalState(0,
-        "Waeli"); -- CONTENT
+        "Antoni"); -- CONTENT;
 
-        ChangeEmotionalState(0, "Antoni"); -- CONTENT'
+        AddTheme("Bravery", 3)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7847,12 +7846,12 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'Variable["PeaceMeter"] = Variable["PeaceMeter"] - 1;
+      userScript: 'ChangeEmotionalState(0, "Waeli"); -- CONTENT
 
         ChangeEmotionalState(0,
-        "Waeli"); -- CONTENT
+        "Antoni"); -- CONTENT;
 
-        ChangeEmotionalState(0, "Antoni"); -- CONTENT'
+        AddTheme("Fear", -5)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8878,7 +8877,7 @@ MonoBehaviour:
         destinationDialogueID: 63
         isConnector: 0
         priority: 2
-      conditionsString: Variable["PeaceMeter"] > 0;
+      conditionsString: HasPositiveKarma()  == true
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -8886,7 +8885,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 107.29416
-        y: 2577
+        y: 2578.2659
         width: 160
         height: 30
     - id: 61
@@ -8936,7 +8935,7 @@ MonoBehaviour:
         destinationDialogueID: 79
         isConnector: 0
         priority: 2
-      conditionsString: Variable["PeaceMeter"] == 0;
+      conditionsString: HasNeutralKarma()  == true
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -8993,7 +8992,7 @@ MonoBehaviour:
         destinationDialogueID: 91
         isConnector: 0
         priority: 2
-      conditionsString: Variable["PeaceMeter"] < 0;
+      conditionsString: HasNegativeKarma()  == true
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -11269,7 +11268,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddTheme("Apathy", -5)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11337,7 +11336,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2.5315552, y: 0}
+    canvasScrollPosition: {x: 0, y: 2324.0496}
     canvasZoom: 0.7900002
   syncInfo:
     syncActors: 1

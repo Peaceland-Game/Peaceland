@@ -9,35 +9,63 @@ using UnityEngine.UI;
 /// </summary>
 public class ArtifactImage : MonoBehaviour
 {
-    [SerializeField] private Image artifactImage;   //reference to the UI image game object
-    [SerializeField] private Sprite silhouetteImage;    //"hidden" artifact silhoutte
-    [SerializeField] private Sprite revealedImage;      //the revealed artifact image
-    [SerializeField] private TextMeshProUGUI imageText; //reference to the GUI text object
-    public bool revealed = false;               //bool indicating if the object is shown or not
+    [SerializeField] private Image artifactImage; //reference to the UI image game object for the artifact's appearance
+    [SerializeField] private Sprite silhouetteImage; //"hidden" artifact silhoutte
+    [SerializeField] private Sprite revealedImage; //the revealed artifact image
+
+    [SerializeField] private Image textBox; //reference to the UI image game object for the artifact's title and description box
+    [SerializeField] private Sprite darkTextBox; //the hidden (black) text box
+    [SerializeField] private Sprite revealedTextBox; //the revealed (green) text box
+    [SerializeField] private TextMeshProUGUI imageTitle; //reference to the GUI text object for the artifact's title
+    [SerializeField] private TextMeshProUGUI imageDescription; //reference to the GUI text object for the artifact's description
+    public string artifactName;
+    public bool revealed = false; //bool indicating if the object is shown or not
     
     /// <summary>
-    /// Set the sprite image to hidden 
+    /// Set the sprite image to the correct state
     /// </summary>
     void Start()
     {
         if (revealed)
         {
             artifactImage.sprite = revealedImage;
-            imageText.text = gameObject.name;
+            textBox.sprite = revealedTextBox;
+            imageTitle.gameObject.SetActive(true);
+            imageDescription.gameObject.SetActive(true);
         }
-        else 
+        else
+        {
             artifactImage.sprite = silhouetteImage;
+            textBox.sprite = darkTextBox;
+            imageTitle.gameObject.SetActive(false);
+            imageDescription.gameObject.SetActive(false);
+        }
     }
 
     /// <summary>
-    /// Reveal the artifact by setting the image to shown and setting the text to the game object's name
-    /// this should match the name of the artifact
+    /// Reveal the artifact by setting the image and text box to shown and enabling the text
     /// </summary>
     public void RevealArtifact()
     {
         revealed = true;
+
         artifactImage.sprite = revealedImage;
-        imageText.text = gameObject.name;
+        textBox.sprite = revealedTextBox;
+        imageTitle.gameObject.SetActive(true);
+        imageDescription.gameObject.SetActive(true);
+    }
+
+    /// <summary>
+    /// Hey, you never know
+    /// </summary>
+    public void HideArtifact()
+    {
+        revealed = false;
+
+        artifactImage.sprite = silhouetteImage;
+        textBox.sprite = darkTextBox;
+        imageTitle.gameObject.SetActive(false);
+        imageDescription.gameObject.SetActive(false);
     }
 
 }
