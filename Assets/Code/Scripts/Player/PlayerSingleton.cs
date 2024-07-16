@@ -32,7 +32,12 @@ public class PlayerSingleton : MonoBehaviour
 
     public GameObject playerObject;
 
-    
+    public int GetMoney
+    {
+        get { return DialogueLua.GetVariable("PlayerMoney").asInt; }
+    }
+
+
 
     [Header("Karma Points")]
     [SerializeField] private double nuetralMaxKarma = 8;

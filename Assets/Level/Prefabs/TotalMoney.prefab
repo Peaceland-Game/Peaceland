@@ -24532,18 +24532,13 @@ PrefabInstance:
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2338591085710037882}
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -24572,15 +24567,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2734171137607012623, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 7578284641550821285}
-    - targetCorrespondingSourceObject: {fileID: 2734171137607012623, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1934455289687446652}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ac28681b284784a88d042116f5224c, type: 3}
 --- !u!1 &3171597817719304523 stripped
 GameObject:
@@ -24588,126 +24575,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 716773007147737156}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7578284641550821285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3171597817719304523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: 32
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags: []
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  setQuestState: 1
-  questName: 
-  questState: 0
-  setQuestEntryState: 0
-  questEntryNumber: 1
-  questEntryState: 0
-  setAnotherQuestEntryState: 0
-  anotherQuestEntryNumber: 1
-  anotherQuestEntryState: 0
-  luaCode: 
-  sequence: 
-  sequenceSpeaker: {fileID: 0}
-  sequenceListener: {fileID: 0}
-  waitOneFrameOnStartOrEnable: 1
-  alertMessage: 
-  textTable: {fileID: 0}
-  alertDuration: 0
-  sendMessages: []
-  barkSource: 0
-  barkConversation: 
-  barkEntryID: -1
-  barkEntryTitle: 
-  barkText: 
-  barkTextSequence: 
-  barker: {fileID: 0}
-  barkTarget: {fileID: 0}
-  barkOrder: 0
-  allowBarksDuringConversations: 0
-  skipBarkIfNoValidEntries: 0
-  cacheBarkLines: 0
-  conversation: Collecting Money
-  conversationConversant: {fileID: 0}
-  conversationActor: {fileID: 0}
-  startConversationEntryID: -1
-  startConversationEntryTitle: 
-  overrideDialogueUI: {fileID: 0}
-  exclusive: 0
-  replace: 0
-  queue: 0
-  skipIfNoValidEntries: 0
-  preventRestartOnSameFrameEnded: 0
-  stopConversationOnTriggerExit: 0
-  marginToAllowTriggerExit: 0.2
-  stopConversationIfTooFar: 0
-  maxConversationDistance: 5
-  monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 0
-  pauseGameDuringConversation: 0
-  setActiveActions: []
-  setEnabledActions: []
-  setAnimatorStateActions: []
-  onExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  useConversationTitlePicker: 1
-  useBarkTitlePicker: 1
-  useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 8bfdccfa3ceaa6145bcf2e8e54b2ee9b, type: 2}
---- !u!114 &1934455289687446652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3171597817719304523}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b871c74662c23945bf35b97caee462a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  incrementOn: 0
-  variable: PlayerMoney
-  increment: 1
-  min: 0
-  max: 100
-  alertMessage: 
-  alertDuration: 0
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags: []
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  onIncrement:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7578284641550821285}
-        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemTrigger,
-          Assembly-CSharp-firstpass
-        m_MethodName: OnUse
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &7621653053010086086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6933274388792944770, guid: a2ac28681b284784a88d042116f5224c,
@@ -24790,18 +24657,13 @@ PrefabInstance:
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2338591085710037882}
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -24830,15 +24692,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2734171137607012623, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 8308087201978599173}
-    - targetCorrespondingSourceObject: {fileID: 2734171137607012623, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8768712967776998754}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ac28681b284784a88d042116f5224c, type: 3}
 --- !u!1 &3552970616049163726 stripped
 GameObject:
@@ -24846,126 +24700,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1494937630565190849}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8308087201978599173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3552970616049163726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: 32
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags: []
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  setQuestState: 1
-  questName: 
-  questState: 0
-  setQuestEntryState: 0
-  questEntryNumber: 1
-  questEntryState: 0
-  setAnotherQuestEntryState: 0
-  anotherQuestEntryNumber: 1
-  anotherQuestEntryState: 0
-  luaCode: 
-  sequence: 
-  sequenceSpeaker: {fileID: 0}
-  sequenceListener: {fileID: 0}
-  waitOneFrameOnStartOrEnable: 1
-  alertMessage: 
-  textTable: {fileID: 0}
-  alertDuration: 0
-  sendMessages: []
-  barkSource: 0
-  barkConversation: 
-  barkEntryID: -1
-  barkEntryTitle: 
-  barkText: 
-  barkTextSequence: 
-  barker: {fileID: 0}
-  barkTarget: {fileID: 0}
-  barkOrder: 0
-  allowBarksDuringConversations: 0
-  skipBarkIfNoValidEntries: 0
-  cacheBarkLines: 0
-  conversation: Collecting Money
-  conversationConversant: {fileID: 0}
-  conversationActor: {fileID: 0}
-  startConversationEntryID: -1
-  startConversationEntryTitle: 
-  overrideDialogueUI: {fileID: 0}
-  exclusive: 0
-  replace: 0
-  queue: 0
-  skipIfNoValidEntries: 0
-  preventRestartOnSameFrameEnded: 0
-  stopConversationOnTriggerExit: 0
-  marginToAllowTriggerExit: 0.2
-  stopConversationIfTooFar: 0
-  maxConversationDistance: 5
-  monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 0
-  pauseGameDuringConversation: 0
-  setActiveActions: []
-  setEnabledActions: []
-  setAnimatorStateActions: []
-  onExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  useConversationTitlePicker: 1
-  useBarkTitlePicker: 1
-  useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 8bfdccfa3ceaa6145bcf2e8e54b2ee9b, type: 2}
---- !u!114 &8768712967776998754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3552970616049163726}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b871c74662c23945bf35b97caee462a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  incrementOn: 0
-  variable: PlayerMoney
-  increment: 1
-  min: 0
-  max: 100
-  alertMessage: 
-  alertDuration: 0
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags: []
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  onIncrement:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8308087201978599173}
-        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemTrigger,
-          Assembly-CSharp-firstpass
-        m_MethodName: OnUse
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &8397213878272058435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6933274388792944770, guid: a2ac28681b284784a88d042116f5224c,
@@ -25048,18 +24782,13 @@ PrefabInstance:
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2338591085710037882}
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -25088,15 +24817,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2734171137607012623, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 5699725789998149011}
-    - targetCorrespondingSourceObject: {fileID: 2734171137607012623, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 410637394220657252}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ac28681b284784a88d042116f5224c, type: 3}
 --- !u!4 &2629628116747685354 stripped
 Transform:
@@ -25110,126 +24831,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4920640558494459240}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5699725789998149011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7041407350816650343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: 32
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags: []
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  setQuestState: 1
-  questName: 
-  questState: 0
-  setQuestEntryState: 0
-  questEntryNumber: 1
-  questEntryState: 0
-  setAnotherQuestEntryState: 0
-  anotherQuestEntryNumber: 1
-  anotherQuestEntryState: 0
-  luaCode: 
-  sequence: 
-  sequenceSpeaker: {fileID: 0}
-  sequenceListener: {fileID: 0}
-  waitOneFrameOnStartOrEnable: 1
-  alertMessage: 
-  textTable: {fileID: 0}
-  alertDuration: 0
-  sendMessages: []
-  barkSource: 0
-  barkConversation: 
-  barkEntryID: -1
-  barkEntryTitle: 
-  barkText: 
-  barkTextSequence: 
-  barker: {fileID: 0}
-  barkTarget: {fileID: 0}
-  barkOrder: 0
-  allowBarksDuringConversations: 0
-  skipBarkIfNoValidEntries: 0
-  cacheBarkLines: 0
-  conversation: Collecting Money
-  conversationConversant: {fileID: 0}
-  conversationActor: {fileID: 0}
-  startConversationEntryID: -1
-  startConversationEntryTitle: 
-  overrideDialogueUI: {fileID: 0}
-  exclusive: 0
-  replace: 0
-  queue: 0
-  skipIfNoValidEntries: 0
-  preventRestartOnSameFrameEnded: 0
-  stopConversationOnTriggerExit: 0
-  marginToAllowTriggerExit: 0.2
-  stopConversationIfTooFar: 0
-  maxConversationDistance: 5
-  monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 0
-  pauseGameDuringConversation: 0
-  setActiveActions: []
-  setEnabledActions: []
-  setAnimatorStateActions: []
-  onExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  useConversationTitlePicker: 1
-  useBarkTitlePicker: 1
-  useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 8bfdccfa3ceaa6145bcf2e8e54b2ee9b, type: 2}
---- !u!114 &410637394220657252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7041407350816650343}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b871c74662c23945bf35b97caee462a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  incrementOn: 0
-  variable: PlayerMoney
-  increment: 1
-  min: 0
-  max: 100
-  alertMessage: 
-  alertDuration: 0
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags: []
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  onIncrement:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5699725789998149011}
-        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemTrigger,
-          Assembly-CSharp-firstpass
-        m_MethodName: OnUse
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &5011329037653773703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25306,18 +24907,13 @@ PrefabInstance:
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2338591085710037882}
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -25346,15 +24942,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2734171137607012623, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 1128632109220559072}
-    - targetCorrespondingSourceObject: {fileID: 2734171137607012623, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3708515968347664978}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ac28681b284784a88d042116f5224c, type: 3}
 --- !u!4 &2719085005445080325 stripped
 Transform:
@@ -25368,126 +24956,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5011329037653773703}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1128632109220559072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6951986745785523336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: 32
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags: []
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  setQuestState: 1
-  questName: 
-  questState: 0
-  setQuestEntryState: 0
-  questEntryNumber: 1
-  questEntryState: 0
-  setAnotherQuestEntryState: 0
-  anotherQuestEntryNumber: 1
-  anotherQuestEntryState: 0
-  luaCode: 
-  sequence: 
-  sequenceSpeaker: {fileID: 0}
-  sequenceListener: {fileID: 0}
-  waitOneFrameOnStartOrEnable: 1
-  alertMessage: 
-  textTable: {fileID: 0}
-  alertDuration: 0
-  sendMessages: []
-  barkSource: 0
-  barkConversation: 
-  barkEntryID: -1
-  barkEntryTitle: 
-  barkText: 
-  barkTextSequence: 
-  barker: {fileID: 0}
-  barkTarget: {fileID: 0}
-  barkOrder: 0
-  allowBarksDuringConversations: 0
-  skipBarkIfNoValidEntries: 0
-  cacheBarkLines: 0
-  conversation: Collecting Money
-  conversationConversant: {fileID: 0}
-  conversationActor: {fileID: 0}
-  startConversationEntryID: -1
-  startConversationEntryTitle: 
-  overrideDialogueUI: {fileID: 0}
-  exclusive: 0
-  replace: 0
-  queue: 0
-  skipIfNoValidEntries: 0
-  preventRestartOnSameFrameEnded: 0
-  stopConversationOnTriggerExit: 0
-  marginToAllowTriggerExit: 0.2
-  stopConversationIfTooFar: 0
-  maxConversationDistance: 5
-  monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 0
-  pauseGameDuringConversation: 0
-  setActiveActions: []
-  setEnabledActions: []
-  setAnimatorStateActions: []
-  onExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  useConversationTitlePicker: 1
-  useBarkTitlePicker: 1
-  useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 8bfdccfa3ceaa6145bcf2e8e54b2ee9b, type: 2}
---- !u!114 &3708515968347664978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6951986745785523336}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b871c74662c23945bf35b97caee462a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  incrementOn: 0
-  variable: PlayerMoney
-  increment: 1
-  min: 0
-  max: 100
-  alertMessage: 
-  alertDuration: 0
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags: []
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  onIncrement:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1128632109220559072}
-        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemTrigger,
-          Assembly-CSharp-firstpass
-        m_MethodName: OnUse
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &7939495491918667418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25564,18 +25032,13 @@ PrefabInstance:
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2338591085710037882}
     - target: {fileID: 7154038904874948463, guid: a2ac28681b284784a88d042116f5224c,
         type: 3}
       propertyPath: events.onUse.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -25604,15 +25067,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2734171137607012623, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 2338591085710037882}
-    - targetCorrespondingSourceObject: {fileID: 2734171137607012623, guid: a2ac28681b284784a88d042116f5224c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 356055924203398400}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ac28681b284784a88d042116f5224c, type: 3}
 --- !u!4 &1015897372933338648 stripped
 Transform:
@@ -25626,123 +25081,3 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7939495491918667418}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2338591085710037882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5467223972419571605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: 32
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags: []
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  setQuestState: 1
-  questName: 
-  questState: 0
-  setQuestEntryState: 0
-  questEntryNumber: 1
-  questEntryState: 0
-  setAnotherQuestEntryState: 0
-  anotherQuestEntryNumber: 1
-  anotherQuestEntryState: 0
-  luaCode: 
-  sequence: 
-  sequenceSpeaker: {fileID: 0}
-  sequenceListener: {fileID: 0}
-  waitOneFrameOnStartOrEnable: 1
-  alertMessage: 
-  textTable: {fileID: 0}
-  alertDuration: 0
-  sendMessages: []
-  barkSource: 0
-  barkConversation: 
-  barkEntryID: -1
-  barkEntryTitle: 
-  barkText: 
-  barkTextSequence: 
-  barker: {fileID: 0}
-  barkTarget: {fileID: 0}
-  barkOrder: 0
-  allowBarksDuringConversations: 0
-  skipBarkIfNoValidEntries: 0
-  cacheBarkLines: 0
-  conversation: Collecting Money
-  conversationConversant: {fileID: 0}
-  conversationActor: {fileID: 0}
-  startConversationEntryID: -1
-  startConversationEntryTitle: 
-  overrideDialogueUI: {fileID: 0}
-  exclusive: 0
-  replace: 0
-  queue: 0
-  skipIfNoValidEntries: 0
-  preventRestartOnSameFrameEnded: 0
-  stopConversationOnTriggerExit: 0
-  marginToAllowTriggerExit: 0.2
-  stopConversationIfTooFar: 0
-  maxConversationDistance: 5
-  monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 0
-  pauseGameDuringConversation: 0
-  setActiveActions: []
-  setEnabledActions: []
-  setAnimatorStateActions: []
-  onExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  useConversationTitlePicker: 1
-  useBarkTitlePicker: 1
-  useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 8bfdccfa3ceaa6145bcf2e8e54b2ee9b, type: 2}
---- !u!114 &356055924203398400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5467223972419571605}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b871c74662c23945bf35b97caee462a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  incrementOn: 0
-  variable: PlayerMoney
-  increment: 1
-  min: 0
-  max: 100
-  alertMessage: 
-  alertDuration: 0
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags: []
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  onIncrement:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2338591085710037882}
-        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemTrigger,
-          Assembly-CSharp-firstpass
-        m_MethodName: OnUse
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
