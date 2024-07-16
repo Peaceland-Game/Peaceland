@@ -271,7 +271,7 @@ public class CharacterVisualController : MonoBehaviour
             // Call the generic methods for loading shader properties for the material
             //ShaderPropertyEdit.GeneratePropertyHelpers(eyeAttributes, shader);
             eyeAttributes.GeneratePropertyHelpers();
-            ShaderPropertyEdit.LoadIntoMaterial(Application.isEditor ? eyeRenderer.sharedMaterial : eyeRenderer.material, eyeAttributes);
+            ShaderPropertyEdit.LoadIntoMaterial(eyeRenderer.material, eyeAttributes);
 
             // Update a specific property that the eyes have that allow the
             // cutout portion to be properly mirrored for left / right eyes.
