@@ -80,7 +80,7 @@ public class MapDisplay : MonoBehaviour, IScrollHandler {
 
     }
     private void UpdatePlayerPosition() {
-        
+        if (!player) return;
         playerMarker.anchoredPosition = WorldToMapLoc(player.position);
         float angle = Mathf.Atan2(player.forward.x, player.forward.z) * Mathf.Rad2Deg;
         playerMarker.rotation = Quaternion.Euler(0, 0, -angle); ;

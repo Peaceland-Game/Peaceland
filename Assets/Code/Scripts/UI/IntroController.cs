@@ -48,6 +48,7 @@ public class IntroController : MonoBehaviour
         if (waitForPlayer && Keyboard.current.eKey.wasPressedThisFrame)
         {
             StartTabletTutorial();
+            
         }
         if (Keyboard.current.f1Key.wasPressedThisFrame)
         {
@@ -60,20 +61,19 @@ public class IntroController : MonoBehaviour
     }
 
     private void StartTabletTutorial() {
+        waitForPlayer = false;
         pickUpTabletPrompt.gameObject.SetActive(false);
-        StartCoroutine(MoveToTarget(1, () => {
-            playerTablet.gameObject.SetActive(true);
-            tabletTutorialInstance = Instantiate(tutorialPrefab, playerTablet.transform);
-        }));
+        StartCoroutine(MoveToTarget(tablet.transform, 1f));
     }
 
-    private IEnumerator MoveToTarget(float duration, System.Action action) {
+    private IEnumerator MoveToTarget(Transform transform, float duration) {
         transform.GetPositionAndRotation(
             out Vector3 startPosition, 
             out Quaternion startRotation);
         float elapsedTime = 0f;
 
         while (elapsedTime < duration) {
+            
             elapsedTime += Time.deltaTime;
             float t = Mathf.Clamp01(elapsedTime / duration);
 
@@ -88,7 +88,9 @@ public class IntroController : MonoBehaviour
 
         // Ensure final position and rotation exactly match the target
         transform.SetPositionAndRotation(tabletPickupLoc.position, tabletPickupLoc.rotation);
-        action();
+        Debug.Log("show tablet");
+        playerTablet.gameObject.SetActive(true);
+        tabletTutorialInstance = Instantiate(tutorialPrefab, playerTablet.transform);
     }
 
 

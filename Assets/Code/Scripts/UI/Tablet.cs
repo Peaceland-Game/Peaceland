@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Tablet : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class Tablet : MonoBehaviour
     private SidebarState targetState;
     public GameObject tabs;
     public TextMeshProUGUI buttonText;
+
+    private const string INTRO_SCENE_NAME = "IntroSequence";
 
     private float moveSpeed = 300f; // Speed of the movement
     //private float shownPosition = 150f; // The 'shown' position in local space
@@ -42,7 +45,10 @@ public class Tablet : MonoBehaviour
         {
             apps[x].SetActive(false);
         }
-        gameObject.SetActive(false);
+
+        var introScene = SceneManager.GetActiveScene().name == INTRO_SCENE_NAME;
+        if (!introScene)
+            gameObject.SetActive(false);
        
 
     }
@@ -156,5 +162,7 @@ public class Tablet : MonoBehaviour
     {
         Application.Quit();
     }
+
+    
 
 }
