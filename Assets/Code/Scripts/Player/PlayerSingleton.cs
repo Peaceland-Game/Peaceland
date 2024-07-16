@@ -106,7 +106,8 @@ public class PlayerSingleton : MonoBehaviour
             }
             else
             {
-                throw new System.Exception("Player is missing!");
+                Debug.LogWarning("Player is missing");
+                return;
             }
         }
     }
