@@ -18,6 +18,7 @@ public class MemoryParticleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!cam) return;
         float disSqr = Vector3.SqrMagnitude(this.transform.position - cam.transform.position);
         
         if(disSqr > thresholdRange)

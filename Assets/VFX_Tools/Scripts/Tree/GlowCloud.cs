@@ -20,6 +20,7 @@ public class GlowCloud : MonoBehaviour
 
     void Update()
     {
+        if (!cam) return;
         float disSqr = Vector3.SqrMagnitude(this.transform.position - cam.transform.position);
         float lerp = Mathf.InverseLerp(disRange.x, disRange.y, disSqr);
 
