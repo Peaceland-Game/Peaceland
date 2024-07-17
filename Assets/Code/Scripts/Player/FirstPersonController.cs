@@ -492,12 +492,20 @@ public class FirstPersonController : MonoBehaviour
     {
         cameraRotationHolder = playerCamera.transform.localRotation;
         playerCanMove = false; cameraCanMove = false;
+        SetPitchAndYaw();
     }
     public void OnConversationEnd(Transform actor)
     {
-        playerCamera.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        
         playerCamera.transform.localPosition = Vector3.zero;
-        cameraCanMove = true; playerCanMove = true;
+        SetPitchAndYaw();
+        cameraCanMove = true;
+        playerCanMove = true;
+    }
+    public void SetPitchAndYaw(float pitch = 0, float yaw = 0)
+    {
+        this.pitch = pitch; 
+        this.yaw = yaw;
     }
 }
 
