@@ -956,8 +956,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: The Swan Revolution broke out after the nation of Azulia declared
-          its independence from Matolla. It was a brutal war and after many losses,
-          Matolla was eventually forced to withdraw its troops.
+          its independence from Matolla.
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -975,7 +974,7 @@ MonoBehaviour:
       - originConversationID: 35
         originDialogueID: 14
         destinationConversationID: 35
-        destinationDialogueID: 15
+        destinationDialogueID: 27
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1058,8 +1057,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 135.66263
-        y: 684.5086
+        x: 109.21916
+        y: 759.851
         width: 160
         height: 30
     - id: 16
@@ -1117,8 +1116,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 341.67447
-        y: 581.052
+        x: 337.56488
+        y: 589.2712
         width: 160
         height: 30
     - id: 18
@@ -1322,7 +1321,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 339.49414
-        y: 800.8414
+        y: 754.26605
         width: 160
         height: 30
     - id: 21
@@ -1600,9 +1599,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "Your flight to Pax-Tera leaves in an hour. When you get there, be
-          sure to check out the Pax-Tera Peace Park. It could help you with your
-          stories, and don't forget your tablet!\r"
+        value: 'Your flight to Pax-Tera leaves in an hour. When you get there, be
+          sure to check out the Pax-Tera Peace Park. '
         type: 0
         typeString: 
       - title: Sequence
@@ -1620,7 +1618,7 @@ MonoBehaviour:
       - originConversationID: 35
         originDialogueID: 26
         destinationConversationID: 35
-        destinationDialogueID: 25
+        destinationDialogueID: 28
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1631,7 +1629,118 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 343.25494
-        y: 853.29407
+        y: 817.6776
+        width: 160
+        height: 30
+    - id: 27
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 21
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: It was a brutal war and after many losses, Matolla was eventually
+          forced to withdraw its troops.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 35
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 35
+        originDialogueID: 27
+        destinationConversationID: 35
+        destinationDialogueID: 15
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 80.45204
+        y: 692.17377
+        width: 160
+        height: 30
+    - id: 28
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 21
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "It could help you with your stories, and don't forget your tablet!\r"
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 35
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 35
+        originDialogueID: 28
+        destinationConversationID: 35
+        destinationDialogueID: 25
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 341.88507
+        y: 873.15704
         width: 160
         height: 30
     entryGroups: []
