@@ -30,7 +30,7 @@ public class ArtifactJournalController : MonoBehaviour
     /// <exception cref="System.Exception">Thrown when the name of the artifact does not match the scene object</exception>
     public void RevealArtifact(string name)
     {
-        Debug.Log(artifacts.Count);
+        if (artifacts.Count == 0) artifacts = GetComponentsInChildren<ArtifactImage>().ToList();
         var artifact = artifacts.FirstOrDefault(artifact =>
         {
             var n = artifact.artifactName.ToLower();
