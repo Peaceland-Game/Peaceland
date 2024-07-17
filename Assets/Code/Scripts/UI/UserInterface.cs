@@ -21,6 +21,7 @@ public class UserInterface : MonoBehaviour
     private GraphicRaycaster raycaster;
     private EventSystem eventSystem;
     public bool CheckMouseClicks = false;
+    public GameObject reticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -90,11 +91,13 @@ public class UserInterface : MonoBehaviour
     public void TogglePauseMenu(bool isPaused)
     {
         pauseMenu.SetActive(isPaused);
+        reticle.SetActive(!isPaused);
     }
 
     public void ToggleJournal(bool isPaused)
     {
         journal.SetActive(isPaused);
+        reticle.SetActive(!isPaused);
     }
     void UpdateMoneyUI()
     {
