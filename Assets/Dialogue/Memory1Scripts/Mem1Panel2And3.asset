@@ -2155,7 +2155,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 44
+        originDialogueID: 23
+        destinationConversationID: 44
+        destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
       conditionsString: Variable["PlayerMoney"] >= 12
       userScript: 'SubtractMoney(12);
 
@@ -2402,8 +2408,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 10.0396805, y: 261.64377}
-    canvasZoom: 0.73000026
+    canvasScrollPosition: {x: 111.53697, y: 177.94418}
+    canvasZoom: 0.8200002
   - id: 45
     fields:
     - title: Title
