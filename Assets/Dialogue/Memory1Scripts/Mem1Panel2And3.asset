@@ -1140,6 +1140,12 @@ MonoBehaviour:
       - originConversationID: 44
         originDialogueID: 0
         destinationConversationID: 44
+        destinationDialogueID: 28
+        isConnector: 0
+        priority: 2
+      - originConversationID: 44
+        originDialogueID: 0
+        destinationConversationID: 44
         destinationDialogueID: 18
         isConnector: 0
         priority: 2
@@ -1790,7 +1796,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 407.63812
+        x: 408.85764
         y: 632.19525
         width: 160
         height: 30
@@ -1952,25 +1958,23 @@ MonoBehaviour:
 
           Delay(0.1);
 
-          SetEnabled(Usable,
-          false, Cylo);
-
-          SetActive(Bystander4, false);
-
-          SetActive(Bystander5,
+          SetActive(Bystander4,
           false);
 
-          SetActive(Vendor1, false);
+          SetActive(Bystander5, false);
 
-          SetActive(Vendor2,
+          SetActive(Vendor1,
           false);
 
-          SetActive(Vendor3, false);
+          SetActive(Vendor2, false);
 
-          SetActive(Vendor4,
+          SetActive(Vendor3,
           false);
 
-          SetEnabled(BoxCollider, true, DogTrigger);'
+          SetActive(Vendor4, false);
+
+          SetEnabled(BoxCollider,
+          true, DogTrigger);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 44
@@ -1982,7 +1986,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["GotIceCream"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2165,14 +2169,14 @@ MonoBehaviour:
       conditionsString: Variable["PlayerMoney"] >= 12
       userScript: 'SubtractMoney(12);
 
-        AddTheme("Kindness", 1)'
+        AddArtifact("IceCream");'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 611.28156
-        y: 430.30048
+        y: 428.98474
         width: 160
         height: 30
     - id: 24
@@ -2407,9 +2411,58 @@ MonoBehaviour:
         y: 541.7122
         width: 160
         height: 30
+    - id: 28
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Enjoy the ice cream, Kalin!
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 44
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: Variable["GotIceCream"] == true
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 608.65326
+        y: 40.713448
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 111.53697, y: 177.94418}
-    canvasZoom: 0.8200002
+    canvasScrollPosition: {x: 8.456165, y: 0}
+    canvasZoom: 0.7600002
   - id: 45
     fields:
     - title: Title
