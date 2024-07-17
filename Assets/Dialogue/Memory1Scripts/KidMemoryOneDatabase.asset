@@ -788,7 +788,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -1692,7 +1692,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
+        value: 'Camera(original);
+
+          SetEnabled(Canvas, false, DialogueCanvas);
 
           SetContinueMode(false);
 
@@ -2623,7 +2625,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'SetContinueMode(false);
+        value: '
+
+          SetContinueMode(false);
 
           AnimatorController(Anim_Controllers/BasicAnims,
           Dad);
@@ -2643,9 +2647,66 @@ MonoBehaviour:
           Delay(1)@4.5;
 
           SetEnabled(Usable,
-          false, SofaDouble)@4.5;'
+          false, SofaDouble)@4.5;
+
+          Camera(CameraTracker, Dad, 0.5)@4.5;'
         type: 0
         typeString: 
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 130
+        destinationConversationID: 38
+        destinationDialogueID: 131
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 278.03275
+        y: 1368.2257
+        width: 160
+        height: 30
+    - id: 131
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 38
       isRoot: 0
       isGroup: 0
@@ -2661,13 +2722,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 232.70805
-        y: 1335.3687
+        x: 255.17563
+        y: 1513.9401
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 855.2632}
-    canvasZoom: 0.7600002
+    canvasScrollPosition: {x: 0, y: 939.9999}
+    canvasZoom: 0.7000003
   - id: 39
     fields:
     - title: Title
@@ -3334,7 +3395,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 483.14276
+        x: 481.96625
         y: 514.427
         width: 160
         height: 30
@@ -3822,8 +3883,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 34.02304}
-    canvasZoom: 0.73000026
+    canvasScrollPosition: {x: 39.484177, y: 0}
+    canvasZoom: 0.85000014
   - id: 40
     fields:
     - title: Title
