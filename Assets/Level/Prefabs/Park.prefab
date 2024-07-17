@@ -121,7 +121,7 @@ Transform:
   - {fileID: 6163210887780901448}
   - {fileID: 1982119877282769175}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 22.478, z: 0}
 --- !u!1 &2480221127522929402
 GameObject:
@@ -4753,7 +4753,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: be902c676789ac94f9017f65be692ee8,
         type: 3}
       propertyPath: m_Name
-      value: Park_PeaceMemorial_PLACEHOLDER
+      value: PeaceMemorial
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4763,6 +4763,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5983434454375018086}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be902c676789ac94f9017f65be692ee8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1655366082530785237}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be902c676789ac94f9017f65be692ee8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2925614198984445759}
   m_SourcePrefab: {fileID: 100100000, guid: be902c676789ac94f9017f65be692ee8, type: 3}
 --- !u!1 &1209840104657286061 stripped
 GameObject:
@@ -4793,6 +4801,97 @@ CapsuleCollider:
   m_Height: 6
   m_Direction: 1
   m_Center: {x: -0.5, y: 3, z: -1.5}
+--- !u!114 &1655366082530785237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209840104657286061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274b80ab5b659c646ba9338870d14625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_overrideName: 
+  m_overrideUseMessage: E to Investigate
+  maxUseDistance: 500
+  events:
+    onSelect:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2925614198984445759}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    onDeselect:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2925614198984445759}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onUse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: JournalPlayerRef, Assembly-CSharp
+          m_MethodName: AddArtifact
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Memorial
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1655366082530785237}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &2925614198984445759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209840104657286061}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0.9372549, g: 1, b: 0, a: 1}
+  outlineWidth: 4.5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &1982119877282769175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be902c676789ac94f9017f65be692ee8,
