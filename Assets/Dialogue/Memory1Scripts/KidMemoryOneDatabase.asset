@@ -788,7 +788,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -2182,10 +2182,8 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'Variable["PlayerMoney"] = true;
 
-        Variable["PlayerMoney"]
-        = Variable["PlayerMoney"] + 10;
-
-        SetQuestState("TV Time", "success");
+        SetQuestState("TV Time",
+        "success");
 
         AddMoney(10)'
       onExecute:
@@ -3160,9 +3158,6 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'Variable["MotherPermission"] = true;
 
-        Variable["PlayerMoney"]
-        = Variable["PlayerMoney"] + 10;
-
         AddMoney(10)'
       onExecute:
         m_PersistentCalls:
@@ -3170,7 +3165,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 486.1386
-        y: 425.49933
+        y: 426.8692
         width: 160
         height: 30
     - id: 46
@@ -3592,7 +3587,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(true);
+        value: 'SetContinueMode(false);
 
           MoveTo(Player, PlayerAnchor);
 
@@ -3612,7 +3607,9 @@ MonoBehaviour:
           AnimatorTrigger(Idle, Mama, LeftTurn)@1.5;
 
           LookAt(Mama,
-          player, 0.3);'
+          player, 0.3);
+
+          SetContinueMode(true)@2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 39
@@ -3701,6 +3698,12 @@ MonoBehaviour:
         destinationDialogueID: 53
         isConnector: 0
         priority: 2
+      - originConversationID: 39
+        originDialogueID: 56
+        destinationConversationID: 39
+        destinationDialogueID: 58
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -3767,8 +3770,59 @@ MonoBehaviour:
         y: 201.92853
         width: 160
         height: 30
+    - id: 58
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Almost there Kay, you have [var=TrashPickedUp] pieces out of 5 so
+          far
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Almost there Kay, you have [var=TrashPickedUp]
+          pieces out of 5 so far.</font>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetContinueMode(true);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 39
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 186.03078
+        y: 149.67053
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 80.59837}
+    canvasScrollPosition: {x: 0, y: 34.02304}
     canvasZoom: 0.73000026
   - id: 40
     fields:
