@@ -43,8 +43,10 @@ public class PlayerSingleton : MonoBehaviour
     [SerializeField] private double nuetralMaxKarma = 8;
     public Dictionary<string, double> karmaPoints = new();                      //holds karma information
 
-    // public bool playerInHub = false;
 
+    /// <summary>
+    /// register singleton and onSceneLoaded event listener
+    /// </summary>
     void Awake()
     {
         if (Instance == null)
@@ -58,27 +60,11 @@ public class PlayerSingleton : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    // Start is called before the first frame update
-    //void Start()
-    //{
-    //    if (Instance == null)
-    //    {
-    //        Instance = this;
-    //        DontDestroyOnLoad(gameObject);
-    //        SceneManager.sceneLoaded += OnSceneLoaded;
-
-    //        //playerMovement = GetComponent<PlayerMovement>();
-    //       // Gaia.GaiaAPI.SetRuntimePlayerAndCamera(gameObject, playerCamera, true);
-    //    }
-    //    else
-    //    {
-    //        Destroy(this);
-
-    //    }
-
-    //    //FloraAutomationAPI.SetRenderCamera(newCamera);
-
-    //}
+    /// <summary>
+    /// Add a theme to the dictionary
+    /// </summary>
+    /// <param name="theme">The key, or theme that should be added</param>
+    /// <param name="amt">The amount of karma pertaining to that theme/key</param>
     public void AddTheme(string theme, double amt)
     {
         karmaPoints[theme] = karmaPoints.TryGetValue(theme, out double existingValue)
@@ -86,8 +72,17 @@ public class PlayerSingleton : MonoBehaviour
             : amt;
     }
 
+    /// <summary>
+    /// Get the amount of karma for a specific theme
+    /// </summary>
+    /// <param name="theme">The theme/key to check</param>
+    /// <returns></returns>
     public double GetThemeKarma(string theme)
     {
+        if (karmaPoints.TryGetValue(theme, out double val))
+        {
+
+        }
         return karmaPoints[theme];
     }
 
