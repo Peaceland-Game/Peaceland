@@ -788,7 +788,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -896,13 +896,8 @@ MonoBehaviour:
 
           SetActive(TV Remote, false)@4.5;
 
-          MoveTo(DadSitUp1,
-          Dad, 0.6)@4.3;
-
-          MoveTo(DadSitUp2, Dad, 0.5)@5;
-
-          MoveTo(DadSitUp3,
-          Dad, 0.5)@6;
+          MoveTo(DadSitUp,
+          Dad, 1)@5;
 
           LookAt(Dad, Player, 0.5)@6.5;
 
@@ -912,7 +907,7 @@ MonoBehaviour:
           AnimatorTrigger(Father_DisappointedHeadShake,
           Dad)@6.5;
 
-          AnimatorTrigger(Idle, Dad, Father_DisappointedHeadShake)@9;'
+          AnimatorTrigger(Idle, Dad, Father_DisappointedHeadShake)@9.5;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 38
@@ -930,7 +925,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ChangeEmotionalState(2, Actor["Dad"].Name); -- STUNNED;
+      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); -- ANGRY
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -974,13 +969,8 @@ MonoBehaviour:
 
           SetActive(TV Remote, false)@4.5;
 
-          MoveTo(DadSitUp1,
-          Dad, 0.6)@4.3;
-
-          MoveTo(DadSitUp2, Dad, 0.5)@5;
-
-          MoveTo(DadSitUp3,
-          Dad, 0.5)@6;
+          MoveTo(DadSitUp,
+          Dad, 1)@5;
 
           LookAt(Dad, Player, 0.5)@6.5;
 
@@ -990,7 +980,7 @@ MonoBehaviour:
           AnimatorTrigger(Father_DisappointedHeadShake,
           Dad)@6.5;
 
-          AnimatorTrigger(Idle, Dad, Father_DisappointedHeadShake)@9;'
+          AnimatorTrigger(Idle, Dad, Father_DisappointedHeadShake)@9.5;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 38
@@ -1008,7 +998,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ChangeEmotionalState(2, Actor["Dad"].Name); -- STUNNED;
+      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); -- ANGRY
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1070,7 +1060,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); -- ANGRY
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1128,7 +1118,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); -- ANGRY
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1726,7 +1716,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 342.14474
+        x: 340.82895
         y: 98.68419
         width: 160
         height: 30
@@ -2297,12 +2287,6 @@ MonoBehaviour:
         destinationDialogueID: 130
         isConnector: 0
         priority: 2
-      - originConversationID: 38
-        originDialogueID: 124
-        destinationConversationID: 38
-        destinationDialogueID: 117
-        isConnector: 0
-        priority: 2
       conditionsString: 
       userScript: 'Variable["FatherPermission"] = true
 
@@ -2633,12 +2617,15 @@ MonoBehaviour:
           AnimatorTrigger(RightTurn,
           Dad, Idle)@0.5;
 
-          LookAt(DadTurnToSit, Dad, 1)@0.5;
+          LookAt(DadTurnToSit, Dad, 0.6)@0.5;
 
-          MoveTo(DadSitUp1,
-          Dad, 1)@1.5;
+          MoveTo(DadSit,
+          Dad, 0.5)@2.1;
 
-          AnimatorTrigger(StandToSit, Dad, RightTurn)@2;
+          MoveTo(DadSitDown, Dad, 0.4)@3;
+
+          AnimatorTrigger(StandToSit,
+          Dad, RightTurn)@2;
 
           Delay(1)@4.5;
 
@@ -2666,7 +2653,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 855.2632}
+    canvasScrollPosition: {x: 0, y: 1005.47974}
     canvasZoom: 0.7600002
   - id: 39
     fields:
