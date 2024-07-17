@@ -3,6 +3,9 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Unity.VisualScripting;
+using System.Linq;
 
 public class Tablet : MonoBehaviour
 {
@@ -18,6 +21,8 @@ public class Tablet : MonoBehaviour
     private SidebarState targetState;
     public GameObject tabs;
     public TextMeshProUGUI buttonText;
+
+    private List<Button> sideTabButtons = new();
 
     private const string INTRO_SCENE_NAME = "IntroSequence";
 
@@ -50,6 +55,13 @@ public class Tablet : MonoBehaviour
         if (!introScene)
             gameObject.SetActive(false);
        
+        //get the tab buttons
+        sideTabButtons = tabs.GetComponentsInChildren<Button>().ToList();
+
+        //hardcode remove the tab swap button this is not a good idea and will break if the hide/show tab button is moved from being the first child
+        //of the tabs parent object
+        sideTabButtons.RemoveAt(0);
+        ToggleTabButtons(false);
 
     }
 
@@ -68,6 +80,12 @@ public class Tablet : MonoBehaviour
             targetState = (currentState == SidebarState.Hidden) ? SidebarState.Shown : SidebarState.Hidden;
             currentState = SidebarState.Moving;
             UpdateButtonText();
+
+            if (targetState == SidebarState.Hidden)
+            {
+                ToggleTabButtons(false);
+            }
+
         }
     }
     public void ToggleTablet()
@@ -84,7 +102,18 @@ public class Tablet : MonoBehaviour
         {
             tabs.transform.localPosition = targetPosition;
             currentState = targetState;
+
+            //toggle buttons on or off if the tab is shown or not
+            if (currentState == SidebarState.Shown)
+            {
+                ToggleTabButtons(true);
+            }
         }
+    }
+
+    private void ToggleTabButtons(bool enabled)
+    {
+        sideTabButtons.ForEach(button => button.enabled = enabled);
     }
 
     private void UpdateButtonText()
