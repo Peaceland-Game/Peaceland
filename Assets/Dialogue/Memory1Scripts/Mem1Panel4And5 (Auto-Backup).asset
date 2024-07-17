@@ -468,6 +468,56 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+  - id: 15
+    fields:
+    - title: Name
+      value: Go Home
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: Return to your apartment.
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Entry Count
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Entry 1 State
+      value: active
+      type: 0
+      typeString: 
+    - title: Entry 1
+      value: Return to your apartment.
+      type: 0
+      typeString: 
+    - title: Trackable
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Track
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
   locations:
   - id: 1
     fields:
@@ -579,7 +629,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
   conversations:
-  - id: 27
+  - id: 29
     fields:
     - title: Title
       value: Waeli Conversation
@@ -655,7 +705,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -663,15 +713,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 0
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 82
         isConnector: 0
         priority: 2
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 0
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 86
         isConnector: 0
         priority: 2
@@ -718,7 +768,7 @@ MonoBehaviour:
           SetContinueMode(true)@0.5;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -726,9 +776,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 1
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 2
         isConnector: 0
         priority: 2
@@ -781,7 +831,7 @@ MonoBehaviour:
           SetContinueMode(true)@1.3;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -789,9 +839,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 2
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 3
         isConnector: 0
         priority: 2
@@ -846,7 +896,7 @@ MonoBehaviour:
           SetContinueMode(true)@4.2;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -854,9 +904,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 3
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
@@ -903,7 +953,7 @@ MonoBehaviour:
           SetContinueMode(false);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -911,15 +961,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 4
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 4
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 6
         isConnector: 0
         priority: 2
@@ -961,10 +1011,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -972,10 +1022,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 5
-        destinationConversationID: 27
-        destinationDialogueID: 7
+        destinationConversationID: 29
+        destinationDialogueID: 8
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1019,7 +1069,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1027,9 +1077,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 6
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 13
         isConnector: 0
         priority: 2
@@ -1042,64 +1092,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 348.30136
         y: 231.53427
-        width: 160
-        height: 30
-    - id: 7
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 6
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Uh, sure...
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="Aretha - Light SDF">Uh, sure...</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: SetContinueMode(true);
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 27
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 27
-        originDialogueID: 7
-        destinationConversationID: 27
-        destinationDialogueID: 8
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 'ChangeEmotionalState(4, Actor["Waeli"].Name); -- PLEASED;
-
-        AddTheme("Trust",
-        3)'
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 70
-        y: 323.63013
         width: 160
         height: 30
     - id: 8
@@ -1135,7 +1127,7 @@ MonoBehaviour:
           Gryf, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1143,14 +1135,14 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 8
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 9
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(5, Actor["Waeli"].Name); -- HAPPY
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1190,7 +1182,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1198,9 +1190,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 9
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 10
         isConnector: 0
         priority: 2
@@ -1247,7 +1239,7 @@ MonoBehaviour:
           LookAt(Waeli, Gryf, 1);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1255,9 +1247,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 10
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 11
         isConnector: 0
         priority: 2
@@ -1302,7 +1294,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1310,9 +1302,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 11
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 12
         isConnector: 0
         priority: 2
@@ -1357,7 +1349,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1365,9 +1357,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 12
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 81
         isConnector: 0
         priority: 2
@@ -1414,7 +1406,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1422,9 +1414,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 13
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 14
         isConnector: 0
         priority: 2
@@ -1471,7 +1463,7 @@ MonoBehaviour:
         value: SetContinueMode(false);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1479,9 +1471,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 14
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 87
         isConnector: 0
         priority: 2
@@ -1526,7 +1518,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1534,14 +1526,14 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 15
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 17
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Fear", -3)
+      userScript: AddTheme("Suspicion", -2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1578,10 +1570,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1589,10 +1581,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 16
-        destinationConversationID: 27
-        destinationDialogueID: 7
+        destinationConversationID: 29
+        destinationDialogueID: 8
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1636,7 +1628,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1644,9 +1636,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 17
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 18
         isConnector: 0
         priority: 2
@@ -1691,7 +1683,7 @@ MonoBehaviour:
         value: Delay(2);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1699,9 +1691,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 18
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
@@ -1746,7 +1738,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1754,9 +1746,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 19
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 20
         isConnector: 0
         priority: 2
@@ -1801,7 +1793,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1809,9 +1801,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 20
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 21
         isConnector: 0
         priority: 2
@@ -1856,7 +1848,7 @@ MonoBehaviour:
         value: Camera(Mem1Panel4Dog, Gryf, 0.7);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1864,9 +1856,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 21
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 81
         isConnector: 0
         priority: 2
@@ -1911,7 +1903,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1919,10 +1911,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 23
-        destinationConversationID: 27
-        destinationDialogueID: 26
+        destinationConversationID: 29
+        destinationDialogueID: 27
         isConnector: 0
         priority: 2
       conditionsString: Variable["What'sWrong"] == false
@@ -1966,7 +1958,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -1974,10 +1966,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 24
-        destinationConversationID: 27
-        destinationDialogueID: 30
+        destinationConversationID: 29
+        destinationDialogueID: 31
         isConnector: 0
         priority: 2
       conditionsString: Variable["MeetingGryf"] == false
@@ -2021,7 +2013,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2029,10 +2021,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 25
-        destinationConversationID: 27
-        destinationDialogueID: 35
+        destinationConversationID: 29
+        destinationDialogueID: 42
         isConnector: 0
         priority: 2
       conditionsString: Variable["WhyTakeCare"] == false
@@ -2044,63 +2036,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 424.79443
         y: 673.6301
-        width: 160
-        height: 30
-    - id: 26
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 6
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: What's wrong with him?
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="Aretha - Light SDF">What's wrong with him?</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 'SetVariable(What''sWrong, true);
-
-          SetContinueMode(true);'
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 27
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 27
-        originDialogueID: 26
-        destinationConversationID: 27
-        destinationDialogueID: 27
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 71.36986
-        y: 725
         width: 160
         height: 30
     - id: 27
@@ -2132,10 +2067,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetVariable(What''sWrong, true);
+
+          SetContinueMode(true);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2143,9 +2080,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 27
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 88
         isConnector: 0
         priority: 2
@@ -2156,66 +2093,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 70
-        y: 775
-        width: 160
-        height: 30
-    - id: 28
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 6
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: ...
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="Aretha - Light SDF">...</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 'LookAt(Player, Waeli, 0.7);
-
-          SetContinueMode(false);'
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 27
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Passthrough
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 27
-        originDialogueID: 28
-        destinationConversationID: 27
-        destinationDialogueID: 81
-        isConnector: 0
-        priority: 2
-      conditionsString: (Variable["What'sWrong"] == false) or (Variable["MeetingGryf"]
-        == false) or (Variable["WhyTakeCare"] == false)
-      userScript: ChangeEmotionalState(0, Actor["Waeli"].Name); -- CONTENT
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 1
-        y: 1099.5447
+        x: 68.63013
+        y: 724.31506
         width: 160
         height: 30
     - id: 29
@@ -2248,7 +2127,7 @@ MonoBehaviour:
         value: LookAt(Player, Waeli, 0.7);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2256,10 +2135,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 29
-        destinationConversationID: 27
-        destinationDialogueID: 34
+        destinationConversationID: 29
+        destinationDialogueID: 89
         isConnector: 0
         priority: 2
       conditionsString: (Variable["What'sWrong"] == true) and (Variable["MeetingGryf"]
@@ -2272,63 +2151,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 187.42673
         y: 1100.9144
-        width: 160
-        height: 30
-    - id: 30
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 6
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Where did you find him?
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="Aretha - Light SDF">Where did you find him?</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 'SetVariable(MeetingGryf, true);
-
-          SetContinueMode(true);'
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 27
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 27
-        originDialogueID: 30
-        destinationConversationID: 27
-        destinationDialogueID: 31
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 249.45197
-        y: 724.99994
         width: 160
         height: 30
     - id: 31
@@ -2367,7 +2189,7 @@ MonoBehaviour:
           SetContinueMode(true)@3.0;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2375,9 +2197,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 31
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 32
         isConnector: 0
         priority: 2
@@ -2388,8 +2210,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 249.45197
-        y: 774.99994
+        x: 248.08209
+        y: 724.315
         width: 160
         height: 30
     - id: 32
@@ -2425,7 +2247,7 @@ MonoBehaviour:
         value: LookAt(Player, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2433,9 +2255,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 32
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 33
         isConnector: 0
         priority: 2
@@ -2446,8 +2268,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 249.452
-        y: 820.8904
+        x: 248.08212
+        y: 770.20544
         width: 160
         height: 30
     - id: 33
@@ -2481,7 +2303,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2489,16 +2311,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 33
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 29
-        isConnector: 0
-        priority: 2
-      - originConversationID: 27
-        originDialogueID: 33
-        destinationConversationID: 27
-        destinationDialogueID: 28
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2508,8 +2324,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 249.452
-        y: 872.26025
+        x: 248.08212
+        y: 821.5753
         width: 160
         height: 30
     - id: 34
@@ -2535,16 +2351,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">I've never been here at night before. My
-          mama says it's dangerous, but I heard some noises and wanted to see what
-          was happening..</font>
+        value: <font="Aretha - Light SDF">My mama says it's dangerous, but I heard
+          some noises and wanted to see what was happening..</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2552,9 +2367,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 34
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 45
         isConnector: 0
         priority: 2
@@ -2566,64 +2381,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 186.05685
-        y: 1150.9146
-        width: 160
-        height: 30
-    - id: 35
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 6
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Why are you taking care of him anyways?
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="Aretha - Light SDF">Why are you taking care of him anyways?</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 'SetVariable(WhyTakeCare, true);
-
-          SetContinueMode(true);'
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 27
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 27
-        originDialogueID: 35
-        destinationConversationID: 27
-        destinationDialogueID: 42
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 424.79443
-        y: 722.26025
+        y: 1186.0497
         width: 160
         height: 30
     - id: 36
@@ -2659,7 +2417,7 @@ MonoBehaviour:
           0.7);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2667,9 +2425,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 36
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 37
         isConnector: 0
         priority: 2
@@ -2680,8 +2438,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 425.9562
-        y: 827.8524
+        x: 424.58633
+        y: 766.20856
         width: 160
         height: 30
     - id: 37
@@ -2714,7 +2472,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2722,9 +2480,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 37
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 38
         isConnector: 0
         priority: 2
@@ -2735,8 +2493,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 427.32608
-        y: 880.5921
+        x: 425.9562
+        y: 818.94824
         width: 160
         height: 30
     - id: 38
@@ -2769,7 +2527,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2777,9 +2535,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 38
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 39
         isConnector: 0
         priority: 2
@@ -2790,8 +2548,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 427.32608
-        y: 930.5921
+        x: 425.9562
+        y: 868.94824
         width: 160
         height: 30
     - id: 39
@@ -2831,7 +2589,7 @@ MonoBehaviour:
           SetContinueMode(true)@1.7;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2839,9 +2597,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 39
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 40
         isConnector: 0
         priority: 2
@@ -2852,8 +2610,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 428.69592
-        y: 980.5921
+        x: 427.32605
+        y: 918.94824
         width: 160
         height: 30
     - id: 40
@@ -2886,7 +2644,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2894,9 +2652,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 40
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 41
         isConnector: 0
         priority: 2
@@ -2907,8 +2665,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 427.32608
-        y: 1030.5923
+        x: 425.9562
+        y: 968.94836
         width: 160
         height: 30
     - id: 41
@@ -2943,7 +2701,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -2951,9 +2709,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 41
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 43
         isConnector: 0
         priority: 2
@@ -2964,8 +2722,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 427.32608
-        y: 1080.5928
+        x: 425.9562
+        y: 1018.9485
         width: 160
         height: 30
     - id: 42
@@ -2996,10 +2754,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetVariable(WhyTakeCare, true);
+
+          SetContinueMode(true);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3007,9 +2767,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 42
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 36
         isConnector: 0
         priority: 2
@@ -3020,8 +2780,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 426.06027
-        y: 781.2251
+        x: 424.6904
+        y: 719.58124
         width: 160
         height: 30
     - id: 43
@@ -3055,7 +2815,7 @@ MonoBehaviour:
         value: LookAt(Gryf, Waeli, 0.5)@0.5;
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3063,9 +2823,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 43
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 44
         isConnector: 0
         priority: 2
@@ -3076,8 +2836,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 424.79443
-        y: 1126.3699
+        x: 423.42456
+        y: 1064.7256
         width: 160
         height: 30
     - id: 44
@@ -3110,7 +2870,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3118,16 +2878,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 44
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 29
-        isConnector: 0
-        priority: 2
-      - originConversationID: 27
-        originDialogueID: 44
-        destinationConversationID: 27
-        destinationDialogueID: 28
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3137,8 +2891,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 424.79443
-        y: 1173.6301
+        x: 423.42456
+        y: 1111.9858
         width: 160
         height: 30
     - id: 45
@@ -3177,7 +2931,7 @@ MonoBehaviour:
           SetContinueMode(true)@3.0;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3185,9 +2939,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 45
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 46
         isConnector: 0
         priority: 2
@@ -3199,7 +2953,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 186.05685
-        y: 1200.9146
+        y: 1236.0497
         width: 160
         height: 30
     - id: 46
@@ -3213,7 +2967,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 5
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -3232,7 +2986,7 @@ MonoBehaviour:
         value: LookAt(Player, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3240,9 +2994,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 46
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 47
         isConnector: 0
         priority: 2
@@ -3254,7 +3008,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 186.05685
-        y: 1250.9146
+        y: 1286.0497
         width: 160
         height: 30
     - id: 47
@@ -3292,7 +3046,7 @@ MonoBehaviour:
           LookAt(Waeli, Player, 0.7)@0.6;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3300,15 +3054,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 47
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 48
         isConnector: 0
         priority: 2
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 47
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 49
         isConnector: 0
         priority: 2
@@ -3320,7 +3074,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 184.68698
-        y: 1300.9146
+        y: 1336.0497
         width: 160
         height: 30
     - id: 48
@@ -3353,7 +3107,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3361,9 +3115,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 48
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 50
         isConnector: 0
         priority: 2
@@ -3375,7 +3129,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 92.243256
-        y: 1360.937
+        y: 1396.0721
         width: 160
         height: 30
     - id: 49
@@ -3408,7 +3162,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3416,9 +3170,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 49
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 66
         isConnector: 0
         priority: 2
@@ -3430,7 +3184,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 282.25937
-        y: 1361.0411
+        y: 1396.1763
         width: 160
         height: 30
     - id: 50
@@ -3452,7 +3206,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: Nice! Where do you live, what school do you go to?
+        value: Oh, what school do you go to?
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -3463,7 +3217,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3471,21 +3225,21 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 50
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 51
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Suspicion", -3)
+      userScript: AddTheme("Suspicion", -2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 90.8734
-        y: 1412.3069
+        y: 1447.442
         width: 160
         height: 30
     - id: 51
@@ -3518,7 +3272,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3526,9 +3280,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 51
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 52
         isConnector: 0
         priority: 2
@@ -3540,7 +3294,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 90.8734
-        y: 1462.3069
+        y: 1497.442
         width: 160
         height: 30
     - id: 52
@@ -3554,7 +3308,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 5
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -3573,7 +3327,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3581,9 +3335,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 52
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 53
         isConnector: 0
         priority: 2
@@ -3595,7 +3349,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 90.8734
-        y: 1512.3069
+        y: 1547.442
         width: 160
         height: 30
     - id: 53
@@ -3629,7 +3383,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3637,10 +3391,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 53
-        destinationConversationID: 27
-        destinationDialogueID: 54
+        destinationConversationID: 29
+        destinationDialogueID: 90
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3651,7 +3405,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 90.8734
-        y: 1562.3069
+        y: 1597.442
         width: 160
         height: 30
     - id: 54
@@ -3673,19 +3427,19 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: Lucky! I wish I didn't have to go to school.
+        value: I wish I didn't have to go to school.
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">Lucky! I wish I didn't have to go to school.
-          It's so boring... I bet you never get bored at work.</font>
+        value: <font="Aretha - Light SDF">I wish I didn't have to go to school. It's
+          so boring... I bet you never get bored at work.</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3693,9 +3447,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 54
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 55
         isConnector: 0
         priority: 2
@@ -3707,7 +3461,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 90.8734
-        y: 1612.3069
+        y: 1692.7545
         width: 160
         height: 30
     - id: 55
@@ -3741,7 +3495,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3749,10 +3503,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 55
-        destinationConversationID: 27
-        destinationDialogueID: 56
+        destinationConversationID: 29
+        destinationDialogueID: 91
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3763,7 +3517,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 90.8734
-        y: 1662.3069
+        y: 1742.7545
         width: 160
         height: 30
     - id: 56
@@ -3785,19 +3539,19 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: I wanna never have homework.
+        value: Maybe I should tall my dad I'm old enough to support our family
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">I wanna never have homework. Maybe I should
-          tall my dad I'm old enough to support our family.</font>
+        value: <font="Aretha - Light SDF">Maybe I should tall my dad I'm old enough
+          to support our family.</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3805,9 +3559,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 56
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 57
         isConnector: 0
         priority: 2
@@ -3819,7 +3573,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 90.8734
-        y: 1712.3069
+        y: 1838.517
         width: 160
         height: 30
     - id: 57
@@ -3854,7 +3608,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3862,9 +3616,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 57
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 58
         isConnector: 0
         priority: 2
@@ -3876,7 +3630,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 92.243256
-        y: 1763.6768
+        y: 1882.9303
         width: 160
         height: 30
     - id: 58
@@ -3898,7 +3652,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: I guess.
+        value: I guess
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -3909,7 +3663,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3917,9 +3671,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 58
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 59
         isConnector: 0
         priority: 2
@@ -3931,7 +3685,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 90.8734
-        y: 1812.3069
+        y: 1931.5604
         width: 160
         height: 30
     - id: 59
@@ -3966,7 +3720,7 @@ MonoBehaviour:
           Delay(2);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -3974,9 +3728,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 59
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 60
         isConnector: 0
         priority: 2
@@ -3988,7 +3742,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 90.8734
-        y: 1862.3069
+        y: 1981.5604
         width: 160
         height: 30
     - id: 60
@@ -4022,7 +3776,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4030,9 +3784,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 60
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 61
         isConnector: 0
         priority: 2
@@ -4044,7 +3798,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 90.8734
-        y: 1912.3069
+        y: 2031.5604
         width: 160
         height: 30
     - id: 61
@@ -4078,7 +3832,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4086,9 +3840,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 61
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 62
         isConnector: 0
         priority: 2
@@ -4100,7 +3854,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 90.8734
-        y: 1962.3069
+        y: 2081.5605
         width: 160
         height: 30
     - id: 62
@@ -4114,7 +3868,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 5
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -4126,14 +3880,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: <font="Aretha - Light SDF">Do you need any help?</font>
+        value: <font="Aretha - Light SDF">Do you need any help before I go?</font>
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4141,9 +3895,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 62
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 63
         isConnector: 0
         priority: 2
@@ -4155,7 +3909,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 90.8734
-        y: 2012.3069
+        y: 2131.5605
         width: 160
         height: 30
     - id: 63
@@ -4190,12 +3944,10 @@ MonoBehaviour:
           LookAt(Gryf, Waeli, 0.5)@1;
 
           LookAt(Player,
-          Waeli, 0.5)@2;
-
-          SetContinueMode(true)@2.7;'
+          Waeli, 0.5)@2;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4203,9 +3955,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 63
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 83
         isConnector: 0
         priority: 2
@@ -4217,7 +3969,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 89.50354
-        y: 2060.9373
+        y: 2180.191
         width: 160
         height: 30
     - id: 66
@@ -4250,7 +4002,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4258,21 +4010,21 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 66
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 67
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Trust", 2)
+      userScript: AddTheme("Trust", 4)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 282.25937
-        y: 1411.0411
+        y: 1446.1763
         width: 160
         height: 30
     - id: 67
@@ -4305,7 +4057,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4313,9 +4065,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 67
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 68
         isConnector: 0
         priority: 2
@@ -4327,7 +4079,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 282.25937
-        y: 1461.0411
+        y: 1496.1763
         width: 160
         height: 30
     - id: 68
@@ -4341,7 +4093,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 5
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -4360,7 +4112,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4368,9 +4120,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 68
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 69
         isConnector: 0
         priority: 2
@@ -4382,7 +4134,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 282.25937
-        y: 1511.0411
+        y: 1546.1763
         width: 160
         height: 30
     - id: 69
@@ -4416,7 +4168,7 @@ MonoBehaviour:
         value: SetContinueMode(false);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4424,15 +4176,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 69
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 72
         isConnector: 0
         priority: 2
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 69
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 71
         isConnector: 0
         priority: 2
@@ -4444,7 +4196,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 282.25937
-        y: 1561.0411
+        y: 1596.1763
         width: 160
         height: 30
     - id: 71
@@ -4477,7 +4229,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4485,9 +4237,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 71
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 73
         isConnector: 0
         priority: 2
@@ -4499,7 +4251,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 467.06946
-        y: 1613.7809
+        y: 1648.916
         width: 160
         height: 30
     - id: 72
@@ -4532,7 +4284,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4540,21 +4292,21 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 72
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 58
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Suspicion", -3)
+      userScript: AddTheme("Suspicion", -2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 282.25937
-        y: 1612.411
+        y: 1647.5461
         width: 160
         height: 30
     - id: 73
@@ -4587,7 +4339,7 @@ MonoBehaviour:
         value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4595,9 +4347,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 73
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 84
         isConnector: 0
         priority: 2
@@ -4609,7 +4361,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 467.06943
-        y: 1661.0411
+        y: 1696.1763
         width: 160
         height: 30
     - id: 74
@@ -4623,7 +4375,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 5
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -4643,7 +4395,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4651,9 +4403,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 74
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 85
         isConnector: 0
         priority: 2
@@ -4665,7 +4417,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 465.69955
-        y: 1763.096
+        y: 1798.2311
         width: 160
         height: 30
     - id: 75
@@ -4698,7 +4450,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4706,9 +4458,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 75
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 83
         isConnector: 0
         priority: 2
@@ -4720,7 +4472,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 469.20987
-        y: 1869.0675
+        y: 1904.2026
         width: 160
         height: 30
     - id: 76
@@ -4753,7 +4505,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4761,9 +4513,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 76
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 15
         isConnector: 0
         priority: 2
@@ -4813,7 +4565,7 @@ MonoBehaviour:
           SetContinueMode(false);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4821,21 +4573,21 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 81
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 23
         isConnector: 0
         priority: 2
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 81
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 24
         isConnector: 0
         priority: 2
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 81
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 25
         isConnector: 0
         priority: 2
@@ -4899,7 +4651,7 @@ MonoBehaviour:
           Fade(in, 0.7)@2.2;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4907,9 +4659,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 82
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
@@ -4958,12 +4710,10 @@ MonoBehaviour:
           MoveTo(AntoniIntroMove,
           Antoni, 0.9);
 
-          LookAt(Waeli, Antoni, 0.6)@1.0;
-
-          SetContinueMode(true)@1.7;'
+          LookAt(Waeli, Antoni, 0.6)@1.0;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -4971,9 +4721,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 83
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 0
         isConnector: 0
         priority: 2
@@ -4985,7 +4735,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 292.2432
-        y: 2162.9917
+        y: 2198.1265
         width: 160
         height: 30
     - id: 84
@@ -5018,7 +4768,7 @@ MonoBehaviour:
         value: Delay(2);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5026,9 +4776,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 84
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 74
         isConnector: 0
         priority: 2
@@ -5040,7 +4790,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 467.06943
-        y: 1711.0411
+        y: 1746.1763
         width: 160
         height: 30
     - id: 85
@@ -5073,7 +4823,7 @@ MonoBehaviour:
         value: Delay(2);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5081,9 +4831,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 85
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 75
         isConnector: 0
         priority: 2
@@ -5095,7 +4845,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 465.69955
-        y: 1813.096
+        y: 1848.2311
         width: 160
         height: 30
     - id: 86
@@ -5128,7 +4878,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5177,7 +4927,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5185,15 +4935,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 87
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 16
         isConnector: 0
         priority: 2
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 87
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 76
         isConnector: 0
         priority: 2
@@ -5239,7 +4989,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 27
+      conversationID: 29
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5247,16 +4997,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 27
+      - originConversationID: 29
         originDialogueID: 88
-        destinationConversationID: 27
+        destinationConversationID: 29
         destinationDialogueID: 29
-        isConnector: 0
-        priority: 2
-      - originConversationID: 27
-        originDialogueID: 88
-        destinationConversationID: 27
-        destinationDialogueID: 28
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -5266,14 +5010,179 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 70
-        y: 825
+        x: 68.63013
+        y: 774.31506
+        width: 160
+        height: 30
+    - id: 89
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: I've never been here at night before.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 29
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 29
+        originDialogueID: 89
+        destinationConversationID: 29
+        destinationDialogueID: 34
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 186.32782
+        y: 1143.2222
+        width: 160
+        height: 30
+    - id: 90
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Lucky!
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 29
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 29
+        originDialogueID: 90
+        destinationConversationID: 29
+        destinationDialogueID: 54
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 90.8734
+        y: 1647.442
+        width: 160
+        height: 30
+    - id: 91
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 'I wanna never have homework. '
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 29
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 29
+        originDialogueID: 91
+        destinationConversationID: 29
+        destinationDialogueID: 56
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 90.8734
+        y: 1792.7545
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 13.698639, y: 1337.2635}
-    canvasZoom: 0.73000026
-  - id: 28
+    canvasScrollPosition: {x: 8.235321, y: 1750.5958}
+    canvasZoom: 0.85000014
+  - id: 48
     fields:
     - title: Title
       value: Panel 5 Conversation
@@ -5300,7 +5209,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -5349,7 +5258,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5357,9 +5266,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 0
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
@@ -5401,10 +5310,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5412,9 +5321,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 1
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 3
         isConnector: 0
         priority: 2
@@ -5479,7 +5388,7 @@ MonoBehaviour:
           SetContinueMode(true)@3.7;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5487,9 +5396,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 3
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 4
         isConnector: 0
         priority: 2
@@ -5534,7 +5443,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5542,9 +5451,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 4
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
@@ -5589,7 +5498,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5597,9 +5506,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 5
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 6
         isConnector: 0
         priority: 2
@@ -5649,7 +5558,7 @@ MonoBehaviour:
           Player, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5657,9 +5566,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 6
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 7
         isConnector: 0
         priority: 2
@@ -5717,7 +5626,7 @@ MonoBehaviour:
           SetContinueMode(true)@2.8;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5725,21 +5634,21 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 7
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 8
         isConnector: 0
         priority: 2
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 7
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 9
         isConnector: 0
         priority: 2
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 7
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 10
         isConnector: 0
         priority: 2
@@ -5784,7 +5693,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5792,9 +5701,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 8
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 11
         isConnector: 0
         priority: 2
@@ -5839,7 +5748,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5847,9 +5756,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 9
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 103
         isConnector: 0
         priority: 2
@@ -5897,7 +5806,7 @@ MonoBehaviour:
           Waeli, 1.5);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5905,9 +5814,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 10
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 18
         isConnector: 0
         priority: 2
@@ -5945,7 +5854,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: He seems nice.
+        value: He seems like a good dog.
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -5954,7 +5863,7 @@ MonoBehaviour:
           LookAt(Player, Antoni, 0.5)@0.3;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -5962,14 +5871,14 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 11
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 12
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Loyalty", 3)
+      userScript: AddTheme("Trust", 5)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6002,14 +5911,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: You should try petting him too!
+        value: You should try petting him!
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: LookAt(Antoni, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6017,9 +5926,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 12
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 13
         isConnector: 0
         priority: 2
@@ -6065,7 +5974,7 @@ MonoBehaviour:
         value: LookAt(Waeli, Antoni, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6073,9 +5982,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 13
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 14
         isConnector: 0
         priority: 2
@@ -6121,7 +6030,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6129,9 +6038,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 14
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 21
         isConnector: 0
         priority: 2
@@ -6177,7 +6086,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6185,9 +6094,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 15
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 16
         isConnector: 0
         priority: 2
@@ -6235,7 +6144,7 @@ MonoBehaviour:
           LookAt(Antoni, Player, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6243,9 +6152,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 16
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 17
         isConnector: 0
         priority: 2
@@ -6291,7 +6200,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6299,9 +6208,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 17
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 21
         isConnector: 0
         priority: 2
@@ -6346,7 +6255,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6354,9 +6263,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 18
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 19
         isConnector: 0
         priority: 2
@@ -6406,7 +6315,7 @@ MonoBehaviour:
           LookAt(Antoni, Player, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6414,9 +6323,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 19
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 20
         isConnector: 0
         priority: 2
@@ -6461,7 +6370,7 @@ MonoBehaviour:
         value: LookAt(Antoni, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6469,9 +6378,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 20
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 21
         isConnector: 0
         priority: 2
@@ -6533,7 +6442,7 @@ MonoBehaviour:
           SetContinueMode(true)@1.7;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6541,9 +6450,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 21
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 22
         isConnector: 0
         priority: 2
@@ -6597,7 +6506,7 @@ MonoBehaviour:
           SetContinueMode(true)@1.5;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6605,9 +6514,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 22
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 23
         isConnector: 0
         priority: 2
@@ -6653,7 +6562,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6661,9 +6570,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 23
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 24
         isConnector: 0
         priority: 2
@@ -6708,7 +6617,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6716,9 +6625,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 24
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 25
         isConnector: 0
         priority: 2
@@ -6769,7 +6678,7 @@ MonoBehaviour:
           MoveTo(GPKBGrabTaser, GPKSoldierP5B, 1.0);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6777,9 +6686,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 25
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 26
         isConnector: 0
         priority: 2
@@ -6828,7 +6737,7 @@ MonoBehaviour:
           Player, 1.0);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6836,9 +6745,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 26
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 27
         isConnector: 0
         priority: 2
@@ -6883,7 +6792,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6891,9 +6800,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 27
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 28
         isConnector: 0
         priority: 2
@@ -6931,7 +6840,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: '*whimper*'
+        value: '*bark* *bark*'
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -6941,7 +6850,7 @@ MonoBehaviour:
           0.5);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -6949,9 +6858,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 28
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 29
         isConnector: 0
         priority: 2
@@ -6993,10 +6902,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: LookAt(Waeli, GPKSoldierP5B, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7004,9 +6913,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 29
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 30
         isConnector: 0
         priority: 2
@@ -7051,7 +6960,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7059,9 +6968,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 30
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 31
         isConnector: 0
         priority: 2
@@ -7107,7 +7016,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7115,9 +7024,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 31
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 32
         isConnector: 0
         priority: 2
@@ -7177,7 +7086,7 @@ MonoBehaviour:
           SetContinueMode(true)@1.7;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7185,15 +7094,15 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 32
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 33
         isConnector: 0
         priority: 2
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 32
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 34
         isConnector: 0
         priority: 2
@@ -7238,7 +7147,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7246,9 +7155,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 33
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 35
         isConnector: 0
         priority: 2
@@ -7293,7 +7202,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7301,9 +7210,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 34
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 43
         isConnector: 0
         priority: 2
@@ -7348,7 +7257,7 @@ MonoBehaviour:
         value: MoveTo(PlayerSpeakUp, Player, 1.0);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7356,9 +7265,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 35
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 36
         isConnector: 0
         priority: 2
@@ -7368,7 +7277,7 @@ MonoBehaviour:
         ChangeEmotionalState(0,
         "Antoni"); -- CONTENT;
 
-        AddTheme("Bravery", 3)'
+        AddTheme("Bravery", 5)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7408,7 +7317,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7416,10 +7325,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 36
-        destinationConversationID: 28
-        destinationDialogueID: 37
+        destinationConversationID: 48
+        destinationDialogueID: 105
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -7456,15 +7365,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "Waeli has been taking care of Gryf forever. He\u2019s an old dog
-          now, though, and strangers make him nervous."
+        value: "He\u2019s an old dog now, though, and strangers make him nervous."
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: LookAt(Player, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7472,9 +7380,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 37
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 38
         isConnector: 0
         priority: 2
@@ -7485,8 +7393,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 201
-        y: 1448
+        x: 202.31583
+        y: 1500.6313
         width: 160
         height: 30
     - id: 38
@@ -7520,7 +7428,7 @@ MonoBehaviour:
         value: MoveTo(WaeliGPKTalk, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7528,9 +7436,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 38
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 39
         isConnector: 0
         priority: 2
@@ -7541,8 +7449,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 202
-        y: 1499
+        x: 203.31583
+        y: 1551.6313
         width: 160
         height: 30
     - id: 39
@@ -7587,7 +7495,7 @@ MonoBehaviour:
           SetContinueMode(true)@2.0;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7595,9 +7503,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 39
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 40
         isConnector: 0
         priority: 2
@@ -7608,8 +7516,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 202
-        y: 1549
+        x: 203.31583
+        y: 1601.6313
         width: 160
         height: 30
     - id: 40
@@ -7642,7 +7550,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7650,9 +7558,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 40
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 41
         isConnector: 0
         priority: 2
@@ -7663,8 +7571,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 202
-        y: 1599
+        x: 203.31583
+        y: 1651.6313
         width: 160
         height: 30
     - id: 41
@@ -7700,7 +7608,7 @@ MonoBehaviour:
           false)@1.7;\nSetActive(GPKSoldierP5B, false)@2.2;\nSetContinueMode(true)@2.4;"
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7708,9 +7616,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 41
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 42
         isConnector: 0
         priority: 2
@@ -7721,8 +7629,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 202
-        y: 1649
+        x: 203.31583
+        y: 1701.6313
         width: 160
         height: 30
     - id: 42
@@ -7757,7 +7665,7 @@ MonoBehaviour:
           LookAt(Player, Waeli, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7765,9 +7673,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 42
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 45
         isConnector: 0
         priority: 2
@@ -7778,8 +7686,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 202
-        y: 1697.6301
+        x: 203.31583
+        y: 1750.2615
         width: 160
         height: 30
     - id: 43
@@ -7831,7 +7739,7 @@ MonoBehaviour:
           SetContinueMode(true)@1.7;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7839,9 +7747,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 43
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 44
         isConnector: 0
         priority: 2
@@ -7891,7 +7799,7 @@ MonoBehaviour:
         value: LookAt(Player, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7899,9 +7807,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 44
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 45
         isConnector: 0
         priority: 2
@@ -7970,7 +7878,7 @@ MonoBehaviour:
           Delay(1.7);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -7978,9 +7886,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 45
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 46
         isConnector: 0
         priority: 2
@@ -7991,8 +7899,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 320.2353
-        y: 1768.1765
+        x: 321.55112
+        y: 1820.8079
         width: 160
         height: 30
     - id: 46
@@ -8018,8 +7926,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "See, Gryf didn\u2019t cause any problems. I promise he\u2019s not
-          dangerous."
+        value: "See, Gryf didn\u2019t cause any problems. He's a good dog."
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -8028,7 +7935,7 @@ MonoBehaviour:
           SetEnabled(Canvas, true, DialogueCanvas);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8036,10 +7943,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 46
-        destinationConversationID: 28
-        destinationDialogueID: 47
+        destinationConversationID: 48
+        destinationDialogueID: 106
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -8049,8 +7956,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 320.2353
-        y: 1818.1765
+        x: 321.55112
+        y: 1870.8079
         width: 160
         height: 30
     - id: 47
@@ -8100,7 +8007,7 @@ MonoBehaviour:
           SetContinueMode(true)@4.0;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8108,9 +8015,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 47
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 48
         isConnector: 0
         priority: 2
@@ -8121,8 +8028,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 320.2353
-        y: 1868.1765
+        x: 321.55112
+        y: 2024.8076
         width: 160
         height: 30
     - id: 48
@@ -8155,7 +8062,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8163,9 +8070,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 48
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 49
         isConnector: 0
         priority: 2
@@ -8176,8 +8083,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 320.2353
-        y: 1918.1765
+        x: 321.55112
+        y: 2074.8076
         width: 160
         height: 30
     - id: 49
@@ -8210,7 +8117,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8218,9 +8125,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 49
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 50
         isConnector: 0
         priority: 2
@@ -8231,8 +8138,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 320.2353
-        y: 1968.1765
+        x: 321.55112
+        y: 2124.8076
         width: 160
         height: 30
     - id: 50
@@ -8265,7 +8172,7 @@ MonoBehaviour:
         value: LookAt(Antoni, Player, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8273,9 +8180,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 50
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 51
         isConnector: 0
         priority: 2
@@ -8286,8 +8193,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 320.2353
-        y: 2018.1765
+        x: 321.55112
+        y: 2174.8076
         width: 160
         height: 30
     - id: 51
@@ -8320,7 +8227,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8328,9 +8235,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 51
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 52
         isConnector: 0
         priority: 2
@@ -8341,8 +8248,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 320.2353
-        y: 2068.1765
+        x: 321.55112
+        y: 2224.8076
         width: 160
         height: 30
     - id: 52
@@ -8368,8 +8275,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "My name is Antoni. It\u2019s nice to meet you all. So how did you
-          guys meet?"
+        value: "My name is Antoni. It\u2019s nice to meet you all."
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -8385,7 +8291,7 @@ MonoBehaviour:
           SetContinueMode(true)@2.0;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8393,10 +8299,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 52
-        destinationConversationID: 28
-        destinationDialogueID: 53
+        destinationConversationID: 48
+        destinationDialogueID: 108
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -8406,120 +8312,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 320.2353
-        y: 2118.1765
-        width: 160
-        height: 30
-    - id: 53
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 7
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: "I just went to Cylo\u2019s and when I was leaving I heard barking.
-          I came to see what was going on, and when I got here I met Waeli and Gryf."
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 28
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 28
-        originDialogueID: 53
-        destinationConversationID: 28
-        destinationDialogueID: 54
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 320.2353
-        y: 2168.1765
-        width: 160
-        height: 30
-    - id: 54
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 6
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 7
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: 'I met Gryf a while back. He looked pretty beat up so I gave him some
-          food and I''ve been looking after him ever since. '
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 28
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 28
-        originDialogueID: 54
-        destinationConversationID: 28
-        destinationDialogueID: 55
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 320.2353
-        y: 2218.1765
+        x: 321.55112
+        y: 2274.8076
         width: 160
         height: 30
     - id: 55
@@ -8545,14 +8339,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Here, give him these.
+        value: Here, give these to Gryf..
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: LookAt(Waeli, Antoni, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8560,9 +8354,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 55
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 56
         isConnector: 0
         priority: 2
@@ -8573,8 +8367,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 320.2353
-        y: 2268.1765
+        x: 320.4522
+        y: 2375.1797
         width: 160
         height: 30
     - id: 56
@@ -8588,7 +8382,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 5
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -8607,7 +8401,7 @@ MonoBehaviour:
         value: LookAt(Gryf, Antoni, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8615,9 +8409,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 56
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 57
         isConnector: 0
         priority: 2
@@ -8628,8 +8422,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 320.2353
-        y: 2318.1765
+        x: 320.4522
+        y: 2425.1797
         width: 160
         height: 30
     - id: 57
@@ -8664,7 +8458,7 @@ MonoBehaviour:
           LookAt(GPKSoldier2, Antoni, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8672,9 +8466,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 57
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 58
         isConnector: 0
         priority: 2
@@ -8685,8 +8479,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 320.2353
-        y: 2368.1765
+        x: 320.4522
+        y: 2475.1797
         width: 160
         height: 30
     - id: 58
@@ -8700,7 +8494,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 5
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -8719,7 +8513,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8727,9 +8521,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 58
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 59
         isConnector: 0
         priority: 2
@@ -8740,8 +8534,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 320.2353
-        y: 2419.6052
+        x: 320.4522
+        y: 2526.6084
         width: 160
         height: 30
     - id: 59
@@ -8793,7 +8587,7 @@ MonoBehaviour:
           Delay(1.9);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8801,21 +8595,21 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 59
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 60
         isConnector: 0
         priority: 2
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 59
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 61
         isConnector: 0
         priority: 2
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 59
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 62
         isConnector: 0
         priority: 2
@@ -8826,8 +8620,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 320.2353
-        y: 2468.1765
+        x: 320.4522
+        y: 2575.1797
         width: 160
         height: 30
     - id: 60
@@ -8863,7 +8657,7 @@ MonoBehaviour:
           SetEnabled(Canvas, true, DialogueCanvas);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8871,9 +8665,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 60
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 63
         isConnector: 0
         priority: 2
@@ -8884,8 +8678,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 2578.2659
+        x: 107.51108
+        y: 2685.269
         width: 160
         height: 30
     - id: 61
@@ -8921,7 +8715,7 @@ MonoBehaviour:
           SetEnabled(Canvas, true, DialogueCanvas);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8929,9 +8723,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 61
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 79
         isConnector: 0
         priority: 2
@@ -8942,8 +8736,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 321.4118
-        y: 2577.0002
+        x: 321.62872
+        y: 2684.0034
         width: 160
         height: 30
     - id: 62
@@ -8978,7 +8772,7 @@ MonoBehaviour:
           SetEnabled(Canvas, true, DialogueCanvas);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -8986,9 +8780,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 62
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 91
         isConnector: 0
         priority: 2
@@ -8999,8 +8793,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 536.7058
-        y: 2578.1765
+        x: 536.9227
+        y: 2685.1797
         width: 160
         height: 30
     - id: 63
@@ -9033,7 +8827,7 @@ MonoBehaviour:
         value: LookAt(Player, Antoni, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9041,9 +8835,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 63
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 64
         isConnector: 0
         priority: 2
@@ -9054,8 +8848,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 2627
+        x: 107.51108
+        y: 2734.0034
         width: 160
         height: 30
     - id: 64
@@ -9088,7 +8882,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9096,10 +8890,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 64
-        destinationConversationID: 28
-        destinationDialogueID: 65
+        destinationConversationID: 48
+        destinationDialogueID: 109
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -9109,8 +8903,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 2677
+        x: 107.51108
+        y: 2784.0034
         width: 160
         height: 30
     - id: 65
@@ -9136,15 +8930,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "Hey, come on! I have school tomorrow!  Don\u2019t your parents make
-          you go to bed early?"
+        value: "I have school tomorrow!  Don\u2019t your parents make you go to bed
+          early?"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: LookAt(Antoni, Player, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9152,9 +8946,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 65
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 66
         isConnector: 0
         priority: 2
@@ -9165,8 +8959,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 2727
+        x: 110.702576
+        y: 2885.039
         width: 160
         height: 30
     - id: 66
@@ -9199,7 +8993,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9207,9 +9001,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 66
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 67
         isConnector: 0
         priority: 2
@@ -9220,8 +9014,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 2777
+        x: 110.702576
+        y: 2935.039
         width: 160
         height: 30
     - id: 67
@@ -9254,7 +9048,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9262,9 +9056,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 67
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 68
         isConnector: 0
         priority: 2
@@ -9275,8 +9069,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 2827
+        x: 110.702576
+        y: 2985.039
         width: 160
         height: 30
     - id: 68
@@ -9309,7 +9103,7 @@ MonoBehaviour:
         value: LookAt(Antoni, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9317,9 +9111,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 68
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 69
         isConnector: 0
         priority: 2
@@ -9330,8 +9124,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 2877
+        x: 110.702576
+        y: 3035.039
         width: 160
         height: 30
     - id: 69
@@ -9364,7 +9158,7 @@ MonoBehaviour:
         value: LookAt(Waeli, Antoni, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9372,9 +9166,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 69
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 70
         isConnector: 0
         priority: 2
@@ -9385,8 +9179,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 2927
+        x: 110.702576
+        y: 3085.039
         width: 160
         height: 30
     - id: 70
@@ -9426,7 +9220,7 @@ MonoBehaviour:
           LookAt(Waeli, Gryf, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9434,10 +9228,10 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 70
-        destinationConversationID: 28
-        destinationDialogueID: 71
+        destinationConversationID: 48
+        destinationDialogueID: 110
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -9447,8 +9241,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 2977
+        x: 110.702576
+        y: 3135.039
         width: 160
         height: 30
     - id: 71
@@ -9474,15 +9268,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "But what are we going to do about Gryf? He\u2019s all alone out here,
-          and it's a lot of work for you to care for him every day."
+        value: "He\u2019s all alone out here, and it's a lot of work for you to care
+          for him every day."
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: LookAt(Waeli, Player, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9490,9 +9284,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 71
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 72
         isConnector: 0
         priority: 2
@@ -9503,8 +9297,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 3027
+        x: 114.500046
+        y: 3228.077
         width: 160
         height: 30
     - id: 72
@@ -9537,7 +9331,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9545,9 +9339,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 72
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 73
         isConnector: 0
         priority: 2
@@ -9558,8 +9352,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 3077
+        x: 111.9684
+        y: 3271.7478
         width: 160
         height: 30
     - id: 73
@@ -9592,7 +9386,7 @@ MonoBehaviour:
         value: LookAt(Waeli, Antoni, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9600,9 +9394,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 73
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 74
         isConnector: 0
         priority: 2
@@ -9613,8 +9407,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 3127
+        x: 111.9684
+        y: 3321.7478
         width: 160
         height: 30
     - id: 74
@@ -9628,7 +9422,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 5
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -9640,14 +9434,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u2026And I could bring some toys for him to play with!"
+        value: "\u2026And I could bring some toys for him!"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
         value: LookAt(Waeli, Player, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9655,9 +9449,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 74
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 75
         isConnector: 0
         priority: 2
@@ -9668,8 +9462,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 3177
+        x: 111.9684
+        y: 3371.7478
         width: 160
         height: 30
     - id: 75
@@ -9702,7 +9496,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9710,9 +9504,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 75
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 76
         isConnector: 0
         priority: 2
@@ -9723,8 +9517,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 3227
+        x: 111.9684
+        y: 3421.7478
         width: 160
         height: 30
     - id: 76
@@ -9757,7 +9551,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9765,9 +9559,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 76
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 77
         isConnector: 0
         priority: 2
@@ -9778,8 +9572,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 107.29416
-        y: 3277
+        x: 111.9684
+        y: 3471.7478
         width: 160
         height: 30
     - id: 77
@@ -9822,7 +9616,7 @@ MonoBehaviour:
           Fade(stay, 0.7)@2.5;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9830,9 +9624,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 77
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 104
         isConnector: 0
         priority: 2
@@ -9843,8 +9637,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 104.55443
-        y: 3327
+        x: 109.22867
+        y: 3521.7478
         width: 160
         height: 30
     - id: 79
@@ -9877,7 +9671,7 @@ MonoBehaviour:
         value: LookAt(Player, Antoni, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9885,9 +9679,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 79
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 80
         isConnector: 0
         priority: 2
@@ -9898,8 +9692,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 321.4118
-        y: 2627.0002
+        x: 321.62872
+        y: 2734.0034
         width: 160
         height: 30
     - id: 80
@@ -9932,7 +9726,7 @@ MonoBehaviour:
         value: LookAt(Antoni, Player, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9940,9 +9734,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 80
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 81
         isConnector: 0
         priority: 2
@@ -9953,8 +9747,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 321.4118
-        y: 2677.0002
+        x: 321.62872
+        y: 2784.0034
         width: 160
         height: 30
     - id: 81
@@ -9987,7 +9781,7 @@ MonoBehaviour:
         value: LookAt(Antoni, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -9995,9 +9789,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 81
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 82
         isConnector: 0
         priority: 2
@@ -10008,8 +9802,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 321.4118
-        y: 2727.0002
+        x: 321.62872
+        y: 2834.0034
         width: 160
         height: 30
     - id: 82
@@ -10049,7 +9843,7 @@ MonoBehaviour:
           LookAt(Waeli, Gryf, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10057,9 +9851,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 82
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 83
         isConnector: 0
         priority: 2
@@ -10070,8 +9864,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 321.4118
-        y: 2777.0002
+        x: 321.62872
+        y: 2884.0034
         width: 160
         height: 30
     - id: 83
@@ -10104,7 +9898,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10112,9 +9906,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 83
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 84
         isConnector: 0
         priority: 2
@@ -10125,8 +9919,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 321.4118
-        y: 2827.0002
+        x: 321.62872
+        y: 2934.0034
         width: 160
         height: 30
     - id: 84
@@ -10163,7 +9957,7 @@ MonoBehaviour:
           LookAt(Waeli, Antoni, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10171,9 +9965,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 84
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 85
         isConnector: 0
         priority: 2
@@ -10184,8 +9978,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 321.4118
-        y: 2877.0002
+        x: 321.62872
+        y: 2984.0034
         width: 160
         height: 30
     - id: 85
@@ -10225,7 +10019,7 @@ MonoBehaviour:
           SetContinueMode(true)@1.5;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10233,9 +10027,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 85
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 86
         isConnector: 0
         priority: 2
@@ -10246,8 +10040,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 321.4118
-        y: 2927.0002
+        x: 321.62872
+        y: 3034.0034
         width: 160
         height: 30
     - id: 86
@@ -10261,7 +10055,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 5
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -10280,7 +10074,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10288,9 +10082,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 86
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 87
         isConnector: 0
         priority: 2
@@ -10301,8 +10095,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 321.4118
-        y: 2977.0002
+        x: 321.62872
+        y: 3084.0034
         width: 160
         height: 30
     - id: 87
@@ -10335,7 +10129,7 @@ MonoBehaviour:
         value: LookAt(Antoni, Gryf, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10343,9 +10137,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 87
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 88
         isConnector: 0
         priority: 2
@@ -10356,8 +10150,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 321.4118
-        y: 3027.0002
+        x: 321.62872
+        y: 3134.0034
         width: 160
         height: 30
     - id: 88
@@ -10390,7 +10184,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10398,9 +10192,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 88
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 89
         isConnector: 0
         priority: 2
@@ -10411,8 +10205,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 321.4118
-        y: 3077.0002
+        x: 321.62872
+        y: 3184.0034
         width: 160
         height: 30
     - id: 89
@@ -10450,7 +10244,7 @@ MonoBehaviour:
           MoveTo(AntoniPanel5End, Antoni, 3.0)@0.5;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10458,9 +10252,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 89
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 90
         isConnector: 0
         priority: 2
@@ -10471,8 +10265,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 321.4118
-        y: 3127.0002
+        x: 321.62872
+        y: 3234.0034
         width: 160
         height: 30
     - id: 90
@@ -10510,7 +10304,7 @@ MonoBehaviour:
           Waeli)@0.8;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10518,9 +10312,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 90
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 104
         isConnector: 0
         priority: 2
@@ -10531,8 +10325,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 321.4118
-        y: 3177.0002
+        x: 321.62872
+        y: 3284.0034
         width: 160
         height: 30
     - id: 91
@@ -10565,7 +10359,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10573,9 +10367,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 91
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 92
         isConnector: 0
         priority: 2
@@ -10586,8 +10380,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 536.7058
-        y: 2628.1765
+        x: 536.9227
+        y: 2735.1797
         width: 160
         height: 30
     - id: 92
@@ -10621,7 +10415,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10629,9 +10423,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 92
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 93
         isConnector: 0
         priority: 2
@@ -10642,8 +10436,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 536.7058
-        y: 2678.1765
+        x: 536.9227
+        y: 2785.1797
         width: 160
         height: 30
     - id: 93
@@ -10676,7 +10470,7 @@ MonoBehaviour:
         value: LookAt(Player, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10684,9 +10478,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 93
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 94
         isConnector: 0
         priority: 2
@@ -10697,8 +10491,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 536.7058
-        y: 2728.1765
+        x: 536.9227
+        y: 2835.1797
         width: 160
         height: 30
     - id: 94
@@ -10731,7 +10525,7 @@ MonoBehaviour:
         value: LookAt(Waeli, Antoni, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10739,9 +10533,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 94
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 95
         isConnector: 0
         priority: 2
@@ -10752,8 +10546,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 536.7058
-        y: 2778.1765
+        x: 536.9227
+        y: 2885.1797
         width: 160
         height: 30
     - id: 95
@@ -10791,7 +10585,7 @@ MonoBehaviour:
           Gryf, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10799,9 +10593,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 95
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 96
         isConnector: 0
         priority: 2
@@ -10812,8 +10606,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 536.7058
-        y: 2828.1765
+        x: 536.9227
+        y: 2935.1797
         width: 160
         height: 30
     - id: 96
@@ -10846,7 +10640,7 @@ MonoBehaviour:
         value: LookAt(Waeli, Player, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10854,9 +10648,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 96
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 97
         isConnector: 0
         priority: 2
@@ -10867,8 +10661,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 536.7058
-        y: 2878.1765
+        x: 536.9227
+        y: 2985.1797
         width: 160
         height: 30
     - id: 97
@@ -10901,7 +10695,7 @@ MonoBehaviour:
         value: LookAt(Gryf, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10909,9 +10703,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 97
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 98
         isConnector: 0
         priority: 2
@@ -10922,8 +10716,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 536.7058
-        y: 2928.1765
+        x: 536.9227
+        y: 3035.1797
         width: 160
         height: 30
     - id: 98
@@ -10956,7 +10750,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -10964,9 +10758,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 98
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 99
         isConnector: 0
         priority: 2
@@ -10977,8 +10771,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 536.7058
-        y: 2978.1765
+        x: 536.9227
+        y: 3085.1797
         width: 160
         height: 30
     - id: 99
@@ -11011,7 +10805,7 @@ MonoBehaviour:
         value: LookAt(Antoni, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -11019,9 +10813,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 99
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 100
         isConnector: 0
         priority: 2
@@ -11032,8 +10826,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 536.7058
-        y: 3028.1765
+        x: 536.9227
+        y: 3135.1797
         width: 160
         height: 30
     - id: 100
@@ -11066,7 +10860,7 @@ MonoBehaviour:
         value: LookAt(Gryf, Waeli, 0.5);
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -11074,9 +10868,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 100
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 101
         isConnector: 0
         priority: 2
@@ -11087,8 +10881,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 536.7058
-        y: 3078.1765
+        x: 536.9227
+        y: 3185.1797
         width: 160
         height: 30
     - id: 101
@@ -11121,7 +10915,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -11129,9 +10923,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 101
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 102
         isConnector: 0
         priority: 2
@@ -11142,8 +10936,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 536.7058
-        y: 3128.1765
+        x: 536.9227
+        y: 3235.1797
         width: 160
         height: 30
     - id: 102
@@ -11191,7 +10985,7 @@ MonoBehaviour:
           0.7)@2.8;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -11199,9 +10993,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 102
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 104
         isConnector: 0
         priority: 2
@@ -11212,8 +11006,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 535.56946
-        y: 3179.313
+        x: 535.7864
+        y: 3286.3164
         width: 160
         height: 30
     - id: 103
@@ -11253,7 +11047,7 @@ MonoBehaviour:
           SetContinueMode(true)@2.5;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -11261,14 +11055,14 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 28
+      - originConversationID: 48
         originDialogueID: 103
-        destinationConversationID: 28
+        destinationConversationID: 48
         destinationDialogueID: 15
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Apathy", -5)
+      userScript: AddTheme("Apathy", -3)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11316,7 +11110,7 @@ MonoBehaviour:
           DialogueCanvas)@2.0;'
         type: 0
         typeString: CustomFieldType_Text
-      conversationID: 28
+      conversationID: 48
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -11331,12 +11125,342 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 314.31512
-        y: 3445.8445
+        x: 314.53204
+        y: 3552.8477
+        width: 160
+        height: 30
+    - id: 105
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 12
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 'Waeli has been taking care of Gryf forever. '
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 48
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 48
+        originDialogueID: 105
+        destinationConversationID: 48
+        destinationDialogueID: 37
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 202
+        y: 1449
+        width: 160
+        height: 30
+    - id: 106
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 11
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: I don't know...
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 48
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 48
+        originDialogueID: 106
+        destinationConversationID: 48
+        destinationDialogueID: 107
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 321.55112
+        y: 1920.8079
+        width: 160
+        height: 30
+    - id: 107
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 11
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Gryf is old and he's completely harmless.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 48
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 48
+        originDialogueID: 107
+        destinationConversationID: 48
+        destinationDialogueID: 47
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 321.55112
+        y: 1970.8079
+        width: 160
+        height: 30
+    - id: 108
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: It's nice to meet you too.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 48
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 48
+        originDialogueID: 108
+        destinationConversationID: 48
+        destinationDialogueID: 55
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 321.55112
+        y: 2324.8076
+        width: 160
+        height: 30
+    - id: 109
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 'Hey, come on! '
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 48
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 48
+        originDialogueID: 109
+        destinationConversationID: 48
+        destinationDialogueID: 65
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 108.42851
+        y: 2836.9478
+        width: 160
+        height: 30
+    - id: 110
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 'But what are we going to do about Gryf? '
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 48
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 48
+        originDialogueID: 110
+        destinationConversationID: 48
+        destinationDialogueID: 71
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 110.702576
+        y: 3185.039
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2324.0496}
+    canvasScrollPosition: {x: 7.5949097, y: 2602.4014}
     canvasZoom: 0.7900002
   syncInfo:
     syncActors: 1

@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
 using System;
-using Cinemachine;
 
 public class DisableQuestHudOnConversationStart : MonoBehaviour
 {
     private GameObject Hud;
-    public Camera mainCamera;
-    public Camera sequencerCamera;
+    public GameObject reticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,13 +35,14 @@ public class DisableQuestHudOnConversationStart : MonoBehaviour
 
     public void OnConversationStart()
     {
-        sequencerCamera.transform.position = mainCamera.transform.position;
         //Debug.Log("Disabling Quest Hud During conversation");
         Hud.SetActive(false);
+        reticle.SetActive(false);
     }
     public void OnConversationEnd()
     {
      //   Debug.Log("Enabling quest hud");
         Hud.SetActive(true);
+        reticle.SetActive(true);
     }
 }

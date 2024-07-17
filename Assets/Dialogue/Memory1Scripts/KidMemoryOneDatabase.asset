@@ -788,7 +788,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -848,7 +848,7 @@ MonoBehaviour:
       - originConversationID: 38
         originDialogueID: 0
         destinationConversationID: 38
-        destinationDialogueID: 131
+        destinationDialogueID: 114
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -936,8 +936,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 157.32848
-        y: 532.97723
+        x: 170.1856
+        y: 417.26282
         width: 160
         height: 30
     - id: 102
@@ -1014,8 +1014,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 441.27316
-        y: 539.75385
+        x: 454.13028
+        y: 424.03943
         width: 160
         height: 30
     - id: 103
@@ -1076,8 +1076,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.5572
-        y: 577.258
+        x: 172.41432
+        y: 461.54358
         width: 160
         height: 30
     - id: 104
@@ -1134,8 +1134,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 436.5754
-        y: 585.1407
+        x: 449.43253
+        y: 469.42633
         width: 160
         height: 30
     - id: 105
@@ -1189,8 +1189,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 50.96183
-        y: 644.9069
+        x: 63.818947
+        y: 529.1925
         width: 160
         height: 30
     - id: 106
@@ -1244,8 +1244,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 240.23404
-        y: 645.0789
+        x: 253.09116
+        y: 529.3645
         width: 160
         height: 30
     - id: 107
@@ -1304,8 +1304,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 50.328163
-        y: 684.247
+        x: 63.18528
+        y: 568.5326
         width: 160
         height: 30
     - id: 108
@@ -1365,8 +1365,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 239.44473
-        y: 687.41754
+        x: 252.30185
+        y: 571.7031
         width: 160
         height: 30
     - id: 109
@@ -1480,8 +1480,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 329.17276
-        y: 257.69934
+        x: 342.02988
+        y: 141.9851
         width: 160
         height: 30
     - id: 111
@@ -1537,8 +1537,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 329.01767
-        y: 299.41772
+        x: 341.8748
+        y: 183.7035
         width: 160
         height: 30
     - id: 112
@@ -1594,8 +1594,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 328.1995
-        y: 340.41776
+        x: 341.0566
+        y: 224.7035
         width: 160
         height: 30
     - id: 113
@@ -1661,8 +1661,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 329.3467
-        y: 428.24475
+        x: 342.20383
+        y: 312.53052
         width: 160
         height: 30
     - id: 114
@@ -1692,9 +1692,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Delay(0.5);
-
-          SetEnabled(Canvas, false, DialogueCanvas);
+        value: 'SetEnabled(Canvas, false, DialogueCanvas);
 
           SetContinueMode(false);
 
@@ -1728,8 +1726,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 309.28763
-        y: 195.82698
+        x: 342.14474
+        y: 98.68419
         width: 160
         height: 30
     - id: 115
@@ -1786,8 +1784,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 328.1995
-        y: 382.52283
+        x: 341.0566
+        y: 266.8086
         width: 160
         height: 30
     - id: 116
@@ -2184,10 +2182,8 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'Variable["PlayerMoney"] = true;
 
-        Variable["PlayerMoney"]
-        = Variable["PlayerMoney"] + 10;
-
-        SetQuestState("TV Time", "success");
+        SetQuestState("TV Time",
+        "success");
 
         AddMoney(10)'
       onExecute:
@@ -2669,64 +2665,9 @@ MonoBehaviour:
         y: 1335.3687
         width: 160
         height: 30
-    - id: 131
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: Camera(original);
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 131
-        destinationConversationID: 38
-        destinationDialogueID: 114
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 289.6275
-        y: 128.78423
-        width: 160
-        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 18.571411, y: 0}
-    canvasZoom: 0.7000003
+    canvasScrollPosition: {x: 0, y: 855.2632}
+    canvasZoom: 0.7600002
   - id: 39
     fields:
     - title: Title
@@ -3217,9 +3158,6 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'Variable["MotherPermission"] = true;
 
-        Variable["PlayerMoney"]
-        = Variable["PlayerMoney"] + 10;
-
         AddMoney(10)'
       onExecute:
         m_PersistentCalls:
@@ -3227,7 +3165,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 486.1386
-        y: 425.49933
+        y: 426.8692
         width: 160
         height: 30
     - id: 46
@@ -3649,7 +3587,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(true);
+        value: 'SetContinueMode(false);
 
           MoveTo(Player, PlayerAnchor);
 
@@ -3669,7 +3607,9 @@ MonoBehaviour:
           AnimatorTrigger(Idle, Mama, LeftTurn)@1.5;
 
           LookAt(Mama,
-          player, 0.3);'
+          player, 0.3);
+
+          SetContinueMode(true)@2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 39
@@ -3728,17 +3668,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(original);
+        value: 'SetContinueMode(false);
 
-          SetContinueMode(false);
+          MoveTo(TalkToMom, Player, 0.5);
 
-          MoveTo(TalkToMom,
-          Player, 0.5);
+          LookAt(Mama,
+          player, 0.3);
 
-          LookAt(Mama, player, 0.3);
-
-          Camera(NewModelLookLeft,
-          Mama, 0.5)@0.3;'
+          Camera(NewModelLookLeft, Mama, 0.5)@0.3;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 39
@@ -3759,6 +3696,12 @@ MonoBehaviour:
         originDialogueID: 56
         destinationConversationID: 39
         destinationDialogueID: 53
+        isConnector: 0
+        priority: 2
+      - originConversationID: 39
+        originDialogueID: 56
+        destinationConversationID: 39
+        destinationDialogueID: 58
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3827,8 +3770,59 @@ MonoBehaviour:
         y: 201.92853
         width: 160
         height: 30
+    - id: 58
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Almost there Kay, you have [var=TrashPickedUp] pieces out of 5 so
+          far
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Almost there Kay, you have [var=TrashPickedUp]
+          pieces out of 5 so far.</font>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetContinueMode(true);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 39
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 186.03078
+        y: 149.67053
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 34.02304}
     canvasZoom: 0.73000026
   - id: 40
     fields:
