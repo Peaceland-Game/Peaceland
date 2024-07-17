@@ -1151,7 +1151,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 390.36066
-        y: 48.360657
+        y: 1.7853241
         width: 160
         height: 30
     - id: 1
@@ -1195,7 +1195,7 @@ MonoBehaviour:
       - originConversationID: 44
         originDialogueID: 1
         destinationConversationID: 44
-        destinationDialogueID: 2
+        destinationDialogueID: 26
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1206,7 +1206,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 392
-        y: 135.5625
+        y: 88.98717
         width: 160
         height: 30
     - id: 2
@@ -1232,8 +1232,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Hey Cylo! Do you have any Berry Hazard left? Dad's been asking for
-          it.
+        value: Do you have any Berry Hazard left? Dad's been asking for it.
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -1585,7 +1584,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 5
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -1671,7 +1670,7 @@ MonoBehaviour:
       - originConversationID: 44
         originDialogueID: 11
         destinationConversationID: 44
-        destinationDialogueID: 12
+        destinationDialogueID: 27
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1708,7 +1707,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Yeah, you're probably right ... Bye Cylo, have a good night!
+        value: Bye Cylo, have a good night!
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -1737,7 +1736,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 407.63812
-        y: 539.12
+        y: 585.6953
         width: 160
         height: 30
     - id: 13
@@ -1792,7 +1791,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 407.63812
-        y: 585.61993
+        y: 632.19525
         width: 160
         height: 30
     - id: 14
@@ -1914,7 +1913,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 388.65826
-        y: 89.405426
+        y: 42.830093
         width: 160
         height: 30
     - id: 19
@@ -1990,7 +1989,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 406.07562
-        y: 634.0575
+        y: 680.6328
         width: 160
         height: 30
     - id: 20
@@ -2292,8 +2291,118 @@ MonoBehaviour:
         y: 434.84586
         width: 160
         height: 30
+    - id: 26
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Hey Cylo!
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 44
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 44
+        originDialogueID: 26
+        destinationConversationID: 44
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 392
+        y: 138.98717
+        width: 160
+        height: 30
+    - id: 27
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Yeah, you're probably right ...
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 44
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 44
+        originDialogueID: 27
+        destinationConversationID: 44
+        destinationDialogueID: 12
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 405.92194
+        y: 541.7122
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 47.025978, y: 48.5112}
+    canvasScrollPosition: {x: 10.0396805, y: 261.64377}
     canvasZoom: 0.73000026
   - id: 45
     fields:
@@ -3495,7 +3604,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 5
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -3605,7 +3714,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 5
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
