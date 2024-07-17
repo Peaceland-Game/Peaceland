@@ -3602,9 +3602,7 @@ MonoBehaviour:
           AnimatorTrigger(Idle, Mama, LeftTurn)@1.5;
 
           LookAt(Mama,
-          player, 0.3);
-
-          AddMoney(10);'
+          player, 0.3);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 39
@@ -3626,7 +3624,9 @@ MonoBehaviour:
       userScript: 'ChangeEmotionalState(0, Actor["Mama"].Name); -- CONTENT;
 
         SetQuestState("Trash
-        Collector", "success");'
+        Collector", "success");
+
+        AddMoney(10);'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
