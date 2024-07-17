@@ -47,8 +47,8 @@ public class IntroController : MonoBehaviour
     {
         if (waitForPlayer && Keyboard.current.eKey.wasPressedThisFrame)
         {
+            waitForPlayer = false;
             StartTabletTutorial();
-            
         }
         if (Keyboard.current.f1Key.wasPressedThisFrame)
         {
