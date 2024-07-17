@@ -3788,7 +3788,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -3889,7 +3889,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 'Camera(PlayerStraight, Player, 0.8);
+
+          SetContinueMode(true);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 48
@@ -3913,7 +3915,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
+        x: 159
         y: 80
         width: 160
         height: 30
@@ -4010,10 +4012,10 @@ MonoBehaviour:
 
           MoveTo(AlleyStart, Player)@0.8;
 
-          Fade(in, 0.7)@1.0;
+          Fade(in, 0.7)@1.1;
 
           MoveTo(AlleyMoveUp,
-          Player, 2.0)@1.0;'
+          Player, 2.0)@1.2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 48
@@ -4360,19 +4362,19 @@ MonoBehaviour:
         value: 'SetContinueMode(false);
 
           MoveTo(StrangerEnd, Bystander2,
-          4.0);
+          5.0);
 
-          LookAt(RabidDog, Player, 0.8)@1.0;
+          LookAt(RabidDog, Player, 1.0)@1.0;
 
           MoveTo(AlleyEnd,
-          Player, 4.0)@1.9;
+          Player, 5.0)@1.9;
 
-          LookAt(RabidDogExit, RabidDog, 0.5)@2.8;
+          LookAt(RabidDogExit, RabidDog, 0.7)@2.8;
 
           MoveTo(RabidDogExit,
-          RabidDog, 0.7)@3.4;
+          RabidDog, 1.0)@3.4;
 
-          SetActive(RabidDog, false)@4.2;'
+          SetActive(RabidDog, false)@4.6;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 48
@@ -4429,7 +4431,7 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(true);
 
-          LookAt(Bystander2, Player, 0.7);'
+          LookAt(Bystander2, Player, 1.0);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 48
@@ -4731,7 +4733,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 364}
+    canvasScrollPosition: {x: 10, y: 43}
     canvasZoom: 1
   syncInfo:
     syncActors: 1
