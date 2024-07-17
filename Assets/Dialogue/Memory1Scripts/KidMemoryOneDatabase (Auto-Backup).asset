@@ -848,7 +848,7 @@ MonoBehaviour:
       - originConversationID: 38
         originDialogueID: 0
         destinationConversationID: 38
-        destinationDialogueID: 99
+        destinationDialogueID: 114
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -862,704 +862,7 @@ MonoBehaviour:
         y: 50.212784
         width: 160
         height: 30
-    - id: 70
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Good answer. Remember, you can never trust those people on the other
-          side of the river. And besides, we have better ice cream over here, huh?
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Good answer. Remember, you can never trust
-          those people on the other side of the river. And besides, we have better
-          ice cream over here, huh?</font>
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 70
-        destinationConversationID: 38
-        destinationDialogueID: 71
-        isConnector: 0
-        priority: 2
-      - originConversationID: 38
-        originDialogueID: 70
-        destinationConversationID: 38
-        destinationDialogueID: 72
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 295.0872
-        y: 971.1643
-        width: 160
-        height: 30
-    - id: 71
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Speaking of which, can I go get some ice cream from Cylo's?
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Speaking of which, can I go get some ice
-          cream from Cylo's?</font>
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 71
-        destinationConversationID: 38
-        destinationDialogueID: 73
-        isConnector: 0
-        priority: 2
-      conditionsString: Variable["MotherPermission"] == false
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 200.7312
-        y: 1029.1688
-        width: 160
-        height: 30
-    - id: 72
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Speaking of which, Mama told me to ask you if I could get ice cream.
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Speaking of which, Mama told me to ask
-          you if I could get ice cream.</font>
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 72
-        destinationConversationID: 38
-        destinationDialogueID: 74
-        isConnector: 0
-        priority: 2
-      conditionsString: Variable["MotherPermission"] == true
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 398.44882
-        y: 1033.2104
-        width: 160
-        height: 30
-    - id: 73
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: "If it's ok with your Mama, it\u2019s ok with me. Go check with her."
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "<font=\"RythmusRegular SDF\">If it's ok with your Mama, it\u2019s
-          ok with me. Go check with her.</font>"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 73
-        destinationConversationID: 38
-        destinationDialogueID: 77
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 'Variable["FatherPermission"] = true;
-
-        SetQuestState("TV
-        Time", "success")
-
-        AddTheme("Kindness", 2)'
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 199.05078
-        y: 1076.5466
-        width: 160
-        height: 30
-    - id: 74
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Is it ok with her?
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Is it ok with her?</font>
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 74
-        destinationConversationID: 38
-        destinationDialogueID: 75
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 399.6456
-        y: 1081.7812
-        width: 160
-        height: 30
-    - id: 75
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Yep! I just asked.
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Yep! I just asked.</font>
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 75
-        destinationConversationID: 38
-        destinationDialogueID: 76
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 400.07782
-        y: 1133.5762
-        width: 160
-        height: 30
-    - id: 76
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 'Then it''s ok with me. On one condition... '
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Then it's ok with me. On one condition...</font>
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 76
-        destinationConversationID: 38
-        destinationDialogueID: 78
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 'Variable["PlayerMoney"] = true;
-
-        Variable["Qip"] = Variable["Qip"]
-        + 10;
-
-        SetQuestState("TV Time", "success")'
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 399.014
-        y: 1181.5481
-        width: 160
-        height: 30
-    - id: 77
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 'SetContinueMode(false);
-
-          MoveTo(PlayerAtCouch, Player,
-          0.5);
-
-          Delay(1);
-
-          SetEnabled(Usable, false, SofaDouble);'
-        type: 0
-        typeString: 
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 232.55008
-        y: 1335.1222
-        width: 160
-        height: 30
-    - id: 78
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: You have to bring me back some Berry Hazard if Cylo still has any
-          left.
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">You have to bring me back some Berry Hazard
-          if Cylo still has any left.</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 78
-        destinationConversationID: 38
-        destinationDialogueID: 79
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 399.014
-        y: 1230.2822
-        width: 160
-        height: 30
-    - id: 79
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: "Don\u2019t be out too late\u2026\u2026And stay away from strays!"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: "<font=\"RythmusRegular SDF\">Don\u2019t be out too late\u2026\u2026And
-          stay away from strays!</font>"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 79
-        destinationConversationID: 38
-        destinationDialogueID: 77
-        isConnector: 0
-        priority: 2
-      - originConversationID: 38
-        originDialogueID: 79
-        destinationConversationID: 38
-        destinationDialogueID: 71
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 'Variable["FatherPermission"] = true
-
-        SetQuestState("Talk
-        to Your Parents", "success");
-
-        Variable["Alert"] = "Head outside";'
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 399.90414
-        y: 1282.0623
-        width: 160
-        height: 30
-    - id: 80
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Why?
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Why?</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 80
-        destinationConversationID: 38
-        destinationDialogueID: 81
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 295.21524
-        y: 875.08875
-        width: 160
-        height: 30
-    - id: 81
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Because they will hurt me or take me.
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Because they will hurt me or take me.</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 81
-        destinationConversationID: 38
-        destinationDialogueID: 70
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 295.21524
-        y: 925.08875
-        width: 160
-        height: 30
-    - id: 82
+    - id: 101
       fields:
       - title: Title
         value: 
@@ -1589,27 +892,27 @@ MonoBehaviour:
         value: 'AnimatorTrigger(Father_SitTurnToPlayer, Dad);
 
           AnimatorTrigger(Father_UseTVRemote,
-          Dad, Father_SitTurnToPlayer)@1.5;
+          Dad, Father_SitTurnToPlayer)@2;
 
-          SetActive(TV Remote, false)@4;
+          SetActive(TV Remote, false)@4.5;
 
           MoveTo(DadSitUp1,
-          Dad, 0.5)@3.6;
+          Dad, 0.6)@4.3;
 
-          MoveTo(DadSitUp3, Dad, 0.5)@5;
+          MoveTo(DadSitUp2, Dad, 0.5)@5;
 
           MoveTo(DadSitUp3,
-          Dad, 0.5)@5.5;
-
-          LookAt(Dad, Player, 0.5)@6;
-
-          LookAt(Player,
           Dad, 0.5)@6;
 
-          AnimatorTrigger(Father_DisappointedHeadShake, Dad)@6;
+          LookAt(Dad, Player, 0.5)@6.5;
 
-          AnimatorTrigger(Idle,
-          Dad, Father_DisappointedHeadShake)@8.5;'
+          LookAt(Player,
+          Dad, 0.5)@6.5;
+
+          AnimatorTrigger(Father_DisappointedHeadShake,
+          Dad)@6.5;
+
+          AnimatorTrigger(Idle, Dad, Father_DisappointedHeadShake)@9;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 38
@@ -1621,23 +924,23 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 82
+        originDialogueID: 101
         destinationConversationID: 38
-        destinationDialogueID: 84
+        destinationDialogueID: 103
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(2, Actor["Dad"].Name); -- STUNNED;
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 170.02762
-        y: 417.01624
+        x: 170.1856
+        y: 417.26282
         width: 160
         height: 30
-    - id: 83
+    - id: 102
       fields:
       - title: Title
         value: 
@@ -1667,27 +970,27 @@ MonoBehaviour:
         value: 'AnimatorTrigger(Father_SitTurnToPlayer, Dad);
 
           AnimatorTrigger(Father_UseTVRemote,
-          Dad, Father_SitTurnToPlayer)@1.5;
+          Dad, Father_SitTurnToPlayer)@2;
 
-          SetActive(TV Remote, false)@4;
+          SetActive(TV Remote, false)@4.5;
 
           MoveTo(DadSitUp1,
-          Dad, 0.7)@3.6;
+          Dad, 0.6)@4.3;
 
-          MoveTo(DadSitUp3, Dad, 0.5)@5;
+          MoveTo(DadSitUp2, Dad, 0.5)@5;
 
           MoveTo(DadSitUp3,
-          Dad, 0.5)@5.5;
-
-          LookAt(Dad, Player, 0.5)@6;
-
-          LookAt(Player,
           Dad, 0.5)@6;
 
-          AnimatorTrigger(Father_DisappointedHeadShake, Dad)@6;
+          LookAt(Dad, Player, 0.5)@6.5;
 
-          AnimatorTrigger(Idle,
-          Dad, Father_DisappointedHeadShake)@8.5;'
+          LookAt(Player,
+          Dad, 0.5)@6.5;
+
+          AnimatorTrigger(Father_DisappointedHeadShake,
+          Dad)@6.5;
+
+          AnimatorTrigger(Idle, Dad, Father_DisappointedHeadShake)@9;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 38
@@ -1699,23 +1002,23 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 83
+        originDialogueID: 102
         destinationConversationID: 38
-        destinationDialogueID: 85
+        destinationDialogueID: 104
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ChangeEmotionalState(2, Actor["Dad"].Name); -- STUNNED;
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 453.9723
-        y: 423.79285
+        x: 454.13028
+        y: 424.03943
         width: 160
         height: 30
-    - id: 84
+    - id: 103
       fields:
       - title: Title
         value: 
@@ -1755,15 +1058,15 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 84
+        originDialogueID: 103
         destinationConversationID: 38
-        destinationDialogueID: 86
+        destinationDialogueID: 105
         isConnector: 0
         priority: 2
       - originConversationID: 38
-        originDialogueID: 84
+        originDialogueID: 103
         destinationConversationID: 38
-        destinationDialogueID: 87
+        destinationDialogueID: 106
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1773,11 +1076,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 172.25635
-        y: 461.297
+        x: 172.41432
+        y: 461.54358
         width: 160
         height: 30
-    - id: 85
+    - id: 104
       fields:
       - title: Title
         value: 
@@ -1819,9 +1122,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 85
+        originDialogueID: 104
         destinationConversationID: 38
-        destinationDialogueID: 90
+        destinationDialogueID: 127
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1831,11 +1134,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 449.27454
-        y: 469.17975
+        x: 449.43253
+        y: 469.42633
         width: 160
         height: 30
-    - id: 86
+    - id: 105
       fields:
       - title: Title
         value: 
@@ -1874,9 +1177,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 86
+        originDialogueID: 105
         destinationConversationID: 38
-        destinationDialogueID: 88
+        destinationDialogueID: 107
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1886,11 +1189,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 63.660973
-        y: 528.94604
+        x: 63.818947
+        y: 529.1925
         width: 160
         height: 30
-    - id: 87
+    - id: 106
       fields:
       - title: Title
         value: 
@@ -1929,9 +1232,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 87
+        originDialogueID: 106
         destinationConversationID: 38
-        destinationDialogueID: 89
+        destinationDialogueID: 108
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1941,11 +1244,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 252.93317
-        y: 529.11804
+        x: 253.09116
+        y: 529.3645
         width: 160
         height: 30
-    - id: 88
+    - id: 107
       fields:
       - title: Title
         value: 
@@ -1989,9 +1292,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 88
+        originDialogueID: 107
         destinationConversationID: 38
-        destinationDialogueID: 93
+        destinationDialogueID: 109
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2001,11 +1304,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 63.027306
-        y: 568.28613
+        x: 63.18528
+        y: 568.5326
         width: 160
         height: 30
-    - id: 89
+    - id: 108
       fields:
       - title: Title
         value: 
@@ -2050,9 +1353,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 89
+        originDialogueID: 108
         destinationConversationID: 38
-        destinationDialogueID: 90
+        destinationDialogueID: 127
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2062,178 +1365,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 252.14389
-        y: 571.45667
+        x: 252.30185
+        y: 571.7031
         width: 160
         height: 30
-    - id: 90
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Look Kalin...
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Look Kalin...</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: AnimatorController(Anim_Controllers/Story1Mem1Anims, Dad);
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 90
-        destinationConversationID: 38
-        destinationDialogueID: 91
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 293.33325
-        y: 736.97473
-        width: 160
-        height: 30
-    - id: 91
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: "You have to be safe out there, ok? What\u2019s our rule?"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: "<font=\"RythmusRegular SDF\">You have to be safe out there, ok? What\u2019s
-          our rule?</font>"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 91
-        destinationConversationID: 38
-        destinationDialogueID: 92
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: ChangeEmotionalState(0, Actor["Mama"].Name); -- CONTENT
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 293.39706
-        y: 777.8838
-        width: 160
-        height: 30
-    - id: 92
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Stay on this side of the river and stay away from people I don't know.
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Stay on this side of the river and stay
-          away from people I don't know.</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 92
-        destinationConversationID: 38
-        destinationDialogueID: 80
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 295.21524
-        y: 826.5812
-        width: 160
-        height: 30
-    - id: 93
+    - id: 109
       fields:
       - title: Title
         value: 
@@ -2272,13 +1408,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 93
-        destinationConversationID: 38
-        destinationDialogueID: 94
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -2286,68 +1416,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 62.027306
-        y: 612.28613
+        x: 62.18528
+        y: 612.5326
         width: 160
         height: 30
-    - id: 94
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: And they sacrificed their lives to make sure we would be safe from
-          them.
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">And they sacrificed their lives to make
-          sure we would be safe from them.</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 94
-        destinationConversationID: 38
-        destinationDialogueID: 90
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 62.027306
-        y: 656.28613
-        width: 160
-        height: 30
-    - id: 95
+    - id: 110
       fields:
       - title: Title
         value: 
@@ -2389,9 +1462,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 95
+        originDialogueID: 110
         destinationConversationID: 38
-        destinationDialogueID: 96
+        destinationDialogueID: 111
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2401,11 +1474,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 341.8719
-        y: 141.73837
+        x: 342.02988
+        y: 141.9851
         width: 160
         height: 30
-    - id: 96
+    - id: 111
       fields:
       - title: Title
         value: 
@@ -2446,9 +1519,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 96
+        originDialogueID: 111
         destinationConversationID: 38
-        destinationDialogueID: 97
+        destinationDialogueID: 112
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2458,11 +1531,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 341.7168
-        y: 183.45677
+        x: 341.8748
+        y: 183.7035
         width: 160
         height: 30
-    - id: 97
+    - id: 112
       fields:
       - title: Title
         value: 
@@ -2503,9 +1576,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 97
+        originDialogueID: 112
         destinationConversationID: 38
-        destinationDialogueID: 100
+        destinationDialogueID: 115
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2515,11 +1588,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 340.89862
-        y: 224.45679
+        x: 341.0566
+        y: 224.7035
         width: 160
         height: 30
-    - id: 98
+    - id: 113
       fields:
       - title: Title
         value: 
@@ -2564,15 +1637,15 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 98
+        originDialogueID: 113
         destinationConversationID: 38
-        destinationDialogueID: 82
+        destinationDialogueID: 101
         isConnector: 0
         priority: 2
       - originConversationID: 38
-        originDialogueID: 98
+        originDialogueID: 113
         destinationConversationID: 38
-        destinationDialogueID: 83
+        destinationDialogueID: 102
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2582,11 +1655,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 342.04587
-        y: 312.28397
+        x: 342.20383
+        y: 312.53052
         width: 160
         height: 30
-    - id: 99
+    - id: 114
       fields:
       - title: Title
         value: 
@@ -2635,9 +1708,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 99
+        originDialogueID: 114
         destinationConversationID: 38
-        destinationDialogueID: 95
+        destinationDialogueID: 110
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2647,11 +1720,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 341.98676
-        y: 98.437454
+        x: 342.14474
+        y: 98.68419
         width: 160
         height: 30
-    - id: 100
+    - id: 115
       fields:
       - title: Title
         value: 
@@ -2693,9 +1766,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 100
+        originDialogueID: 115
         destinationConversationID: 38
-        destinationDialogueID: 98
+        destinationDialogueID: 113
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2705,12 +1778,889 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 340.89862
-        y: 266.562
+        x: 341.0566
+        y: 266.8086
+        width: 160
+        height: 30
+    - id: 116
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Good answer. Remember, you can never trust those people on the other
+          side of the river. And besides, we have better ice cream over here, huh?
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Good answer. Remember, you can never trust
+          those people on the other side of the river. And besides, we have better
+          ice cream over here, huh?</font>
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 116
+        destinationConversationID: 38
+        destinationDialogueID: 117
+        isConnector: 0
+        priority: 2
+      - originConversationID: 38
+        originDialogueID: 116
+        destinationConversationID: 38
+        destinationDialogueID: 118
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 295.24515
+        y: 971.41077
+        width: 160
+        height: 30
+    - id: 117
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Speaking of which, can I go get some ice cream from Cylo's?
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Speaking of which, can I go get some ice
+          cream from Cylo's?</font>
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 117
+        destinationConversationID: 38
+        destinationDialogueID: 119
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["MotherPermission"] == false
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 200.88918
+        y: 1029.4153
+        width: 160
+        height: 30
+    - id: 118
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Speaking of which, Mama told me to ask you if I could get ice cream.
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Speaking of which, Mama told me to ask
+          you if I could get ice cream.</font>
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 118
+        destinationConversationID: 38
+        destinationDialogueID: 120
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["MotherPermission"] == true
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 398.60678
+        y: 1033.4569
+        width: 160
+        height: 30
+    - id: 119
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: "If it's ok with your Mama, it\u2019s ok with me. Go check with her."
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "<font=\"RythmusRegular SDF\">If it's ok with your Mama, it\u2019s
+          ok with me. Go check with her.</font>"
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 119
+        destinationConversationID: 38
+        destinationDialogueID: 130
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 'Variable["FatherPermission"] = true;
+
+        SetQuestState("TV
+        Time", "success")
+
+        AddTheme("Kindness", 2)'
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 199.20876
+        y: 1076.7931
+        width: 160
+        height: 30
+    - id: 120
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Is it ok with her?
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Is it ok with her?</font>
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 120
+        destinationConversationID: 38
+        destinationDialogueID: 121
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 399.80356
+        y: 1082.0277
+        width: 160
+        height: 30
+    - id: 121
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Yep! I just asked.
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Yep! I just asked.</font>
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 121
+        destinationConversationID: 38
+        destinationDialogueID: 122
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 400.2358
+        y: 1133.8226
+        width: 160
+        height: 30
+    - id: 122
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 'Then it''s ok with me. On one condition... '
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Then it's ok with me. On one condition...</font>
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 122
+        destinationConversationID: 38
+        destinationDialogueID: 123
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 'Variable["PlayerMoney"] = true;
+
+        Variable["Qip"] = Variable["Qip"]
+        + 10;
+
+        SetQuestState("TV Time", "success")'
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 399.17197
+        y: 1181.7946
+        width: 160
+        height: 30
+    - id: 123
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: You have to bring me back some Berry Hazard if Cylo still has any
+          left.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">You have to bring me back some Berry Hazard
+          if Cylo still has any left.</font>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 123
+        destinationConversationID: 38
+        destinationDialogueID: 124
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 399.17197
+        y: 1230.5287
+        width: 160
+        height: 30
+    - id: 124
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: "Don\u2019t be out too late\u2026\u2026And stay away from strays!"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "<font=\"RythmusRegular SDF\">Don\u2019t be out too late\u2026\u2026And
+          stay away from strays!</font>"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 124
+        destinationConversationID: 38
+        destinationDialogueID: 130
+        isConnector: 0
+        priority: 2
+      - originConversationID: 38
+        originDialogueID: 124
+        destinationConversationID: 38
+        destinationDialogueID: 117
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 'Variable["FatherPermission"] = true
+
+        SetQuestState("Talk
+        to Your Parents", "success");
+
+        Variable["Alert"] = "Head outside";'
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 400.0621
+        y: 1282.3087
+        width: 160
+        height: 30
+    - id: 125
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Why?
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Why?</font>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 125
+        destinationConversationID: 38
+        destinationDialogueID: 126
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 295.3732
+        y: 875.3352
+        width: 160
+        height: 30
+    - id: 126
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Because they will hurt me or take me.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Because they will hurt me or take me.</font>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 126
+        destinationConversationID: 38
+        destinationDialogueID: 116
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 295.3732
+        y: 925.3352
+        width: 160
+        height: 30
+    - id: 127
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Look Kalin...
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Look Kalin...</font>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: AnimatorController(Anim_Controllers/Story1Mem1Anims, Dad);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 127
+        destinationConversationID: 38
+        destinationDialogueID: 128
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: ChangeEmotionalState(0, Actor["Dad"].Name); -- CONTENT;
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 293.49124
+        y: 737.2212
+        width: 160
+        height: 30
+    - id: 128
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: "You have to be safe out there, ok? What\u2019s our rule?"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "<font=\"RythmusRegular SDF\">You have to be safe out there, ok? What\u2019s
+          our rule?</font>"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 128
+        destinationConversationID: 38
+        destinationDialogueID: 129
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 293.55502
+        y: 778.13025
+        width: 160
+        height: 30
+    - id: 129
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Stay on this side of the river and stay away from people I don't know.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Stay on this side of the river and stay
+          away from people I don't know.</font>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 129
+        destinationConversationID: 38
+        destinationDialogueID: 125
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 295.3732
+        y: 826.82764
+        width: 160
+        height: 30
+    - id: 130
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'SetContinueMode(false);
+
+          AnimatorController(Anim_Controllers/BasicAnims,
+          Dad);
+
+          AnimatorPlay(Idle, Dad, 0.5);
+
+          AnimatorTrigger(RightTurn,
+          Dad, Idle)@0.5;
+
+          LookAt(DadTurnToSit, Dad, 1)@0.5;
+
+          MoveTo(DadSitUp1,
+          Dad, 1)@1.5;
+
+          AnimatorTrigger(StandToSit, Dad, RightTurn)@2;
+
+          Delay(1)@4.5;
+
+          SetEnabled(Usable,
+          false, SofaDouble)@4.5;'
+        type: 0
+        typeString: 
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 232.70805
+        y: 1335.3687
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 14.473694, y: 314.47357}
+    canvasScrollPosition: {x: 0, y: 839.4735}
     canvasZoom: 0.7600002
   - id: 39
     fields:
@@ -3810,7 +3760,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 74.68349}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.7900002
   - id: 40
     fields:
@@ -3946,7 +3896,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 40
@@ -4256,7 +4206,7 @@ MonoBehaviour:
       type: 5
       typeString: CustomFieldType_Actor
     - title: Conversant
-      value: 3
+      value: 2
       type: 5
       typeString: CustomFieldType_Actor
     overrideSettings:
@@ -4268,7 +4218,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -4302,7 +4252,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 3
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -4353,7 +4303,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 3
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -4369,6 +4319,61 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
+        value: SetContinueMode(true);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 1
+        destinationConversationID: 13
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: AddTheme("Curiosity", 2)
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 162
+        y: 80
+        width: 160
+        height: 30
+    - id: 2
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
         value: 
         type: 0
         typeString: CustomFieldType_Text
@@ -4381,14 +4386,14 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: AddTheme("Curiosity", 2)
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161
-        y: 80
+        x: 159
+        y: 144
         width: 160
         height: 30
     entryGroups: []
