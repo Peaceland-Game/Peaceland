@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,8 @@ public class HeadlineMaker : MonoBehaviour
     [SerializeField] Transform themesParent;
     [SerializeField] Transform notesParent;
     [SerializeField] TextMeshProUGUI headerTextMesh;
-    [SerializeField] TextMeshProUGUI subtitleTextMesh; // :3
+    [SerializeField] TextMeshProUGUI subheaderTextMesh; // :3
+    [SerializeField] TextMeshProUGUI noteTextMesh;
 
     //[SerializeField] Transform headlineParent;
     [Space]
@@ -104,6 +106,8 @@ public class HeadlineMaker : MonoBehaviour
         if (noteObjs.Count > 0)
             ClearNotes();
 
+
+        // Generate buttons and fill out note textmesh 
         TopicData topic = topics[selectedTopic];
         for (int i = 0; i < topic.notes.Count; i++)
         {
@@ -112,12 +116,8 @@ public class HeadlineMaker : MonoBehaviour
             noteObjs[i].AddComponent<NoteClick>();
 
             // Write text 
-            noteObjs[i].GetComponentInChildren<TextMeshProUGUI>().text = topic.notes[i].description;
+            noteObjs[i].GetComponentInChildren<TextMeshProUGUI>().text = topic.notes[i].headline;
 
-            print(noteObjs[i].GetComponent<NoteClick>());
-
-            // Setup button event 
-            //noteObjs[i].GetComponent<NoteClick>().HeadlineMaker = this;
         }
     }
 
@@ -143,6 +143,14 @@ public class HeadlineMaker : MonoBehaviour
 
         Note note = topic.notes[selectedNote];
 
+        // Clean up textmeshes 
+        noteTextMesh.text = "";
+        for (int i = 0; i < topic.notes.Count; i++)
+        {
+            // Generate notes in text 
+            noteTextMesh.text += topic.notes[i].description + "\n\n";
+        }
+
         /*if (headerHold != null)
         {
             Destroy(headerHold);
@@ -152,7 +160,7 @@ public class HeadlineMaker : MonoBehaviour
         temp.GetComponent<RectTransform>().localPosition = headerPos;
         temp.GetComponentInChildren<TextMeshProUGUI>().text = note.headline;*/
         headerTextMesh.text = topic.topic.ToString();
-        subtitleTextMesh.text = note.headline;
+        subheaderTextMesh.text = note.headline;
         
         //headerHold = temp;
     } 
