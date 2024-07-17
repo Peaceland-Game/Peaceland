@@ -1408,7 +1408,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 109
+        destinationConversationID: 38
+        destinationDialogueID: 127
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -2176,10 +2182,12 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'Variable["PlayerMoney"] = true;
 
-        Variable["Qip"] = Variable["Qip"]
-        + 10;
+        Variable["PlayerMoney"]
+        = Variable["PlayerMoney"] + 10;
 
-        SetQuestState("TV Time", "success")'
+        SetQuestState("TV Time", "success");
+
+        AddMoney(10)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2660,7 +2668,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 839.4735}
+    canvasScrollPosition: {x: 0, y: 855.2632}
     canvasZoom: 0.7600002
   - id: 39
     fields:
@@ -3152,8 +3160,10 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'Variable["MotherPermission"] = true;
 
-        Variable["Qip"]
-        = Variable["Qip"] + 10'
+        Variable["PlayerMoney"]
+        = Variable["PlayerMoney"] + 10;
+
+        AddMoney(10)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3624,9 +3634,7 @@ MonoBehaviour:
       userScript: 'ChangeEmotionalState(0, Actor["Mama"].Name); -- CONTENT;
 
         SetQuestState("Trash
-        Collector", "success");
-
-        AddMoney(10);'
+        Collector", "success");'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
