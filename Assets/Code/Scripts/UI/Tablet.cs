@@ -41,6 +41,10 @@ public class Tablet : MonoBehaviour
     public GameObject artifactPopup;
     public TextMeshProUGUI artifactName;
 
+    private int numberOfArtifacts = 0;
+    private bool playArtifactTutorial = false;
+    public GameObject artifactTutorial;
+
 
     void Start()
     {
@@ -70,6 +74,11 @@ public class Tablet : MonoBehaviour
         if (currentState == SidebarState.Moving)
         {
             MoveTabs();
+        }
+        if (playArtifactTutorial)
+        {
+            playArtifactTutorial = false;
+            PlayArtifactTutorial();
         }
     }
 
@@ -141,6 +150,13 @@ public class Tablet : MonoBehaviour
             //then add
             artifactJournal.RevealArtifact(name);
         }
+
+        numberOfArtifacts++;
+        //if this is the first artifact, play the tutorial the next time the tablet is opened
+        if (numberOfArtifacts == 1)
+        {
+            playArtifactTutorial = true;
+        }
     }
 
     //public void ShowArtifactPopup(string name)
@@ -185,7 +201,10 @@ public class Tablet : MonoBehaviour
         HandleTabClick(tabNumber, false);
     }
     
-    
+    private void PlayArtifactTutorial()
+    {
+        artifactTutorial.SetActive(true);
+    }
 
     public void ExitGame()
     {
