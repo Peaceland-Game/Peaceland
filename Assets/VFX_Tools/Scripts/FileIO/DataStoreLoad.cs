@@ -68,7 +68,7 @@ public class DataStoreLoad
         toStoreData.stringValues = stringHelpers;
 
         // Data is already associated with a bundle 
-        data.SetPacket("SampleData", toStoreData);
+        data.SetPacket(toStoreData);
 
         // Send data to FileIO 
         fileIO.StoreData(data, path);
