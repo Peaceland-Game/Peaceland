@@ -889,20 +889,22 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'AnimatorTrigger(Father_SitTurnToPlayer, Dad);
+        value: 'SetEnabled(SpriteRenderer, false, TVScreen);
 
-          AnimatorTrigger(Father_UseTVRemote,
-          Dad, Father_SitTurnToPlayer)@2;
+          AnimatorTrigger(Father_SitTurnToPlayer,
+          Dad);
 
-          SetActive(TV Remote, false)@4.5;
+          AnimatorTrigger(Father_UseTVRemote, Dad, Father_SitTurnToPlayer)@2;
 
-          MoveTo(DadSitUp,
-          Dad, 1)@5;
+          SetActive(TV
+          Remote, false)@4.5;
 
-          LookAt(Dad, Player, 0.5)@6.5;
+          MoveTo(DadSitUp, Dad, 1)@5;
 
-          LookAt(Player,
-          Dad, 0.5)@6.5;
+          LookAt(Dad,
+          Player, 0.5)@6.5;
+
+          LookAt(Player, Dad, 0.5)@6.5;
 
           AnimatorTrigger(Father_DisappointedHeadShake,
           Dad)@6.5;
@@ -962,20 +964,22 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'AnimatorTrigger(Father_SitTurnToPlayer, Dad);
+        value: 'SetEnabled(SpriteRenderer, false, TVScreen);
 
-          AnimatorTrigger(Father_UseTVRemote,
-          Dad, Father_SitTurnToPlayer)@2;
+          AnimatorTrigger(Father_SitTurnToPlayer,
+          Dad);
 
-          SetActive(TV Remote, false)@4.5;
+          AnimatorTrigger(Father_UseTVRemote, Dad, Father_SitTurnToPlayer)@2;
 
-          MoveTo(DadSitUp,
-          Dad, 1)@5;
+          SetActive(TV
+          Remote, false)@4.5;
 
-          LookAt(Dad, Player, 0.5)@6.5;
+          MoveTo(DadSitUp, Dad, 1)@5;
 
-          LookAt(Player,
-          Dad, 0.5)@6.5;
+          LookAt(Dad,
+          Player, 0.5)@6.5;
+
+          LookAt(Player, Dad, 0.5)@6.5;
 
           AnimatorTrigger(Father_DisappointedHeadShake,
           Dad)@6.5;
@@ -2655,7 +2659,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 20.73172, y: 941.8248}
+    canvasScrollPosition: {x: 13.414612, y: 130.84932}
     canvasZoom: 0.8200002
   - id: 39
     fields:
