@@ -1741,7 +1741,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ChangeEmotionalState(0, Actor["Cylo"].Name); -- CONTENT
+      userScript: 'ChangeEmotionalState(0, Actor["Cylo"].Name); -- CONTENT
+
+        Variable["GotIceCream"]
+        = true;'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2100,7 +2103,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 709.03455
+        x: 707.542
         y: 337.78326
         width: 160
         height: 30
