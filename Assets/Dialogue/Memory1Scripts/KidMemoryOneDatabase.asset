@@ -2684,7 +2684,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -3483,7 +3483,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: KarmicEvent("Mem1", "Kindness", "Getting permission for ice cream",
+        2, "")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3545,7 +3546,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: SetQuestState("Trash Collector", "active");
+      userScript: 'SetQuestState("Trash Collector", "active");
+
+        KarmicEvent("Mem1",
+        "Kindness", "Offering to help Mother", 3, "")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3816,8 +3820,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 38.356186}
-    canvasZoom: 0.73000026
+    canvasScrollPosition: {x: 0, y: 26.759552}
+    canvasZoom: 1.0899999
   - id: 40
     fields:
     - title: Title
@@ -4397,7 +4401,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Curiosity", 2)
+      userScript: 'AddTheme("Curiosity", 2);
+
+        KarmicEvent("Mem1", "Curiosity",
+        "Collecting the newspaper artifact", 2, "")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4654,7 +4661,10 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: Variable["PlayerMoney"] >= 5
-      userScript: AddTheme("Curiosity", 2)
+      userScript: 'AddTheme("Curiosity", 2);
+
+        KarmicEvent("Mem1", "Curiosity",
+        "Finding all of the money that is scattered around the house", 2, "")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []

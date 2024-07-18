@@ -2080,7 +2080,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: KarmicEvent("Mem1", "Kindness", "Hearing Cylo explain his ice cream
+        flavor", 1, "")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2272,7 +2273,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Apathy", -2)
+      userScript: 'AddTheme("Apathy", -2);
+
+        KarmicEvent("Mem1", "Apathy",
+        "Telling Cylo you don''t care about his ice cream flavor''s lore", -2, "")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2467,8 +2471,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 43.919685, y: 0}
-    canvasZoom: 0.6700003
+    canvasScrollPosition: {x: 138.91539, y: 268.0922}
+    canvasZoom: 0.94000006
   - id: 45
     fields:
     - title: Title
@@ -2682,7 +2686,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 90
+        x: 91
         y: 157
         width: 160
         height: 30
@@ -2806,7 +2810,10 @@ MonoBehaviour:
       conditionsString: Variable["HeardDog"] == true;
       userScript: 'StopPlayer();
 
-        AddTheme("Bravery", 2)'
+        AddTheme("Bravery", 2);
+
+        KarmicEvent("Mem1",
+        "Bravery", "Crossing the bridge", 2, "")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2817,8 +2824,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 31.471668, y: 5.5849037}
+    canvasZoom: 1.06
   - id: 46
     fields:
     - title: Title
@@ -3304,7 +3311,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Kindness", 3)
+      userScript: AddTheme("Kindness", 3);
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3359,7 +3366,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Apathy", -2)
+      userScript: 'AddTheme("Apathy", -2);
+
+        KarmicEvent("Mem1", "Apathy",
+        "You deny box guy", -2, "")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3654,7 +3664,10 @@ MonoBehaviour:
       conditionsString: Variable["BoxPlaced"] == true
       userScript: 'SetQuestState("Box Mover", "success");
 
-        AddMoney(10);'
+        AddMoney(10);
+
+        KarmicEvent("Mem1",
+        "Kindness", "Help guy move boxes ", 3, "")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3824,8 +3837,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 49.13247, y: 17.765003}
+    canvasZoom: 1.1199999
   - id: 48
     fields:
     - title: Title
@@ -4823,8 +4836,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 306.7226}
-    canvasZoom: 0.7600002
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.8500002
   - id: 49
     fields:
     - title: Title
