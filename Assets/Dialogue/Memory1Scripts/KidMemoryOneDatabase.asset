@@ -848,6 +848,12 @@ MonoBehaviour:
       - originConversationID: 38
         originDialogueID: 0
         destinationConversationID: 38
+        destinationDialogueID: 197
+        isConnector: 0
+        priority: 2
+      - originConversationID: 38
+        originDialogueID: 0
+        destinationConversationID: 38
         destinationDialogueID: 178
         isConnector: 0
         priority: 2
@@ -2751,9 +2757,7 @@ MonoBehaviour:
           Delay(1)@4.5;
 
           LookAt(Dad, Player,
-          0.5)@4.5;
-
-          SetEnabled(Usable, false, SofaDouble)@4.5;'
+          0.5)@4.5;'
         type: 0
         typeString: 
       conversationID: 38
@@ -2775,9 +2779,121 @@ MonoBehaviour:
         y: 1277.7891
         width: 160
         height: 30
+    - id: 197
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetContinueMode(false);
+
+          Camera(PlayerStraight, Player,
+          0.2);
+
+          LookAt(Player, Dad, 0.5);
+
+          LookAt(Dad, Player,
+          0.3)@0.2;'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 197
+        destinationConversationID: 38
+        destinationDialogueID: 198
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["FatherPermission"] == true
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 519.27625
+        y: 92.909706
+        width: 160
+        height: 30
+    - id: 198
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Stay safe out there, alright?
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 520.49567
+        y: 141.69019
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 251.34787}
-    canvasZoom: 0.43000045
+    canvasScrollPosition: {x: 61.61767, y: 22.738586}
+    canvasZoom: 0.8200002
   - id: 39
     fields:
     - title: Title
@@ -3365,10 +3481,8 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          SetEnabled(Usable, false, Mama);
-
-          Camera(PlayerStraight,
-          Player, 0.5);
+          Camera(PlayerStraight, Player,
+          0.5);
 
           Delay(0.5)@0.5;'
         type: 0
@@ -3801,6 +3915,12 @@ MonoBehaviour:
       - originConversationID: 39
         originDialogueID: 56
         destinationConversationID: 39
+        destinationDialogueID: 59
+        isConnector: 0
+        priority: 2
+      - originConversationID: 39
+        originDialogueID: 56
+        destinationConversationID: 39
         destinationDialogueID: 39
         isConnector: 0
         priority: 2
@@ -3933,8 +4053,115 @@ MonoBehaviour:
         y: 149.67053
         width: 160
         height: 30
+    - id: 59
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Thanks for helping!
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 39
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 39
+        originDialogueID: 59
+        destinationConversationID: 39
+        destinationDialogueID: 60
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["MotherPermission"] == true;
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 402.82068
+        y: 86.32144
+        width: 160
+        height: 30
+    - id: 60
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetContinueMode(false);
+
+          Camera(PlayerStraight, Player,
+          0.5);'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 39
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 597.3412
+        y: 79.47212
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 38.356186}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.73000026
   - id: 40
     fields:
