@@ -90,8 +90,9 @@ public class FileIO
         /// </summary>
         /// <param name="levelName"></param>
         /// <param name="data"></param>
-        public void SetPacket(string packetName, FileIO.Packet data)
+        public void SetPacket(FileIO.Packet data)
         {
+
             // Make sure dataPackets is not null 
             if (dataPackets == null)
                 dataPackets = new Packet[0];
@@ -99,7 +100,7 @@ public class FileIO
             for (int i = 0; i < dataPackets.Length; i++)
             {
                 // Have we found the right level? 
-                if (dataPackets[i].packetName == packetName)
+                if (dataPackets[i].packetName == data.packetName)
                 {
                     dataPackets[i] = data;
                 }
