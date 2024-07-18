@@ -63,7 +63,7 @@ public class MemorySelector : MonoBehaviour
     /// </summary>
     void LoadMemory()
     {
-        SceneManager.LoadScene("SceneLoader");
+        SceneManager.LoadScene(activeMemoryString.sceneNameToLoad);
     }
 
     /// <summary>

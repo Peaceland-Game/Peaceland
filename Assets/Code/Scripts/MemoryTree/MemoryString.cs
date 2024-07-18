@@ -9,7 +9,7 @@ using UnityEngine;
 public class MemoryString : MonoBehaviour
 {
     public List<MemoryTreePhoto> photos = new();    //list of all of the memory photos
-    
+    public string sceneNameToLoad = "SceneLoader2";
     /// <summary>
     /// Set the photo as active by showing the description
     /// </summary>
