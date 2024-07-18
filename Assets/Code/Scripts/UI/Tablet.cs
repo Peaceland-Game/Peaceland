@@ -130,7 +130,7 @@ public class Tablet : MonoBehaviour
     /// <param name="name">The name of the artifact to reveal</param>
     public void AddArtifact(string name, bool showPopup)
     {
-        Debug.Log($"Adding {name} to artifacts");
+       // Debug.Log($"Adding {name} to artifacts");
         //show popup if required
         if (!showPopup)
             artifactJournal.RevealArtifact(name);

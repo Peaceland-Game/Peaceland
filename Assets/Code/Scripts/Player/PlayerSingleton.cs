@@ -19,12 +19,12 @@ public class MoneyCollectedEvent : UnityEvent { }
 public class PlayerSingleton : MonoBehaviour
 {
     public static PlayerSingleton Instance;                     //singleton
-    [SerializeField] private Tablet tablet;                     //reference to the tablet on the user interface
-    [SerializeField] private UserInterface userInterface;       //reference to the user interface object
+    private Tablet tablet;                     //reference to the tablet on the user interface
+    private UserInterface userInterface;       //reference to the user interface object
    
-    [SerializeField] private FirstPersonController controller;  //refrence to player movement controller
+    private FirstPersonController controller;  //refrence to player movement controller
     
-    [SerializeField] private Selector selector;                 //reference to the player's selector component
+    private Selector selector;                 //reference to the player's selector component
 
     public bool playerInMemorySelection = false;                //flag is the player is the memory selection, this is only used in the hub world
     public bool paused = false;                                 //flag if game is paused
@@ -33,6 +33,8 @@ public class PlayerSingleton : MonoBehaviour
     public MoneyCollectedEvent onMoneyCollected = new MoneyCollectedEvent();    //create event
     public GameObject playerObject;                                             //reference to the player parent object in the scene
 
+    [Header("Notifications")]
+    public GameObject karmaNotificationPrefab;
     
     public int GetMoney
     {
@@ -67,9 +69,29 @@ public class PlayerSingleton : MonoBehaviour
     /// <param name="amt">The amount of karma pertaining to that theme/key</param>
     public void AddTheme(string theme, double amt)
     {
-        karmaPoints[theme] = karmaPoints.TryGetValue(theme, out double existingValue)
-            ? existingValue + amt
-            : amt;
+        if (karmaPoints.ContainsKey(theme))
+        {
+            karmaPoints[theme] += amt;
+        }
+        else
+        {
+            karmaPoints.Add(theme, amt);
+            //Instantiate(karmaNotificationPrefab);
+            if (NotificationManager.Instance != null)
+            {
+                NotificationManager.Instance.QueueNotification(karmaNotificationPrefab);
+                
+            }
+            else
+            {
+                Debug.LogWarning("NotificationManager is not initialized!");
+            }
+        }
+    }
+    public IEnumerator WaitThen(float seconds, System.Action action)
+    {
+        yield return new WaitForSeconds(seconds);
+        action();
     }
 
     /// <summary>
@@ -81,9 +103,9 @@ public class PlayerSingleton : MonoBehaviour
     {
         if (karmaPoints.TryGetValue(theme, out double val))
         {
-
+            return val;
         }
-        return karmaPoints[theme];
+        return 0;
     }
 
     public void FindPlayerInScene()

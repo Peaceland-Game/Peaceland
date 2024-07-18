@@ -34,7 +34,7 @@ public class ArtifactJournalController : MonoBehaviour
         var artifact = artifacts.FirstOrDefault(artifact =>
         {
             var n = artifact.artifactName.ToLower();
-            Debug.Log(n);
+            //Debug.Log(n);
             return n == name.ToLower();
 
         });

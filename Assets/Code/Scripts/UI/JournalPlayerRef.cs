@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,17 +28,18 @@ public class JournalPlayerRef : MonoBehaviour
     /// <param name="artifact">The game object artifact, name should match the artifact name in the journal</param>
     public void AddArtifact(Artifact artifact, bool showPopup = true) 
     {
-      //  Debug.Log("Add Artifact method called");
-        var popup = Instantiate(artifactPopupPrefab);
-        popup.GetComponent<ArtifactPopup>().UpdateArtifactName(artifact.artifactName);
+        //  Debug.Log("Add Artifact method called");
+        //var popup = Instantiate(artifactPopupPrefab).GetComponent<PopupNotification>();
+        //if (popup.HasText)
+        //    popup.UpdateArtifactName(artifact.artifactName);
+        NotificationManager.Instance.QueueNotification(artifactPopupPrefab, artifact.artifactName);
         player.AddArtifact(artifact.artifactName, showPopup);
     }
 
     public void AddArtifact(string name)
     {
-       // Debug.Log("Add Artifact string method called");
-        var popup = Instantiate(artifactPopupPrefab);
-        popup.GetComponent<ArtifactPopup>().UpdateArtifactName(name);
+        // Debug.Log("Add Artifact string method called");
+        NotificationManager.Instance.QueueNotification(artifactPopupPrefab, name);
         player.AddArtifact(name, true);
         //var artifact = transform.GetComponentsInChildren<Artifact>().ToList().FirstOrDefault(artifact => artifact.artifactName == name);
         //Destroy(artifact.gameObject);
