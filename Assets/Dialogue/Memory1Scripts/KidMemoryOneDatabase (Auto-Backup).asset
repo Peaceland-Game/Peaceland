@@ -848,7 +848,7 @@ MonoBehaviour:
       - originConversationID: 38
         originDialogueID: 0
         destinationConversationID: 38
-        destinationDialogueID: 114
+        destinationDialogueID: 210
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -859,10 +859,10 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 339.6275
-        y: 50.212784
+        y: 48.784225
         width: 160
         height: 30
-    - id: 101
+    - id: 197
       fields:
       - title: Title
         value: 
@@ -889,25 +889,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'AnimatorTrigger(Father_SitTurnToPlayer, Dad);
-
-          AnimatorTrigger(Father_UseTVRemote,
-          Dad, Father_SitTurnToPlayer)@2;
-
-          SetActive(TV Remote, false)@4.5;
-
-          MoveTo(DadSitUp,
-          Dad, 1)@5;
-
-          LookAt(Dad, Player, 0.5)@6.5;
-
-          LookAt(Player,
-          Dad, 0.5)@6.5;
-
-          AnimatorTrigger(Father_DisappointedHeadShake,
-          Dad)@6.5;
-
-          AnimatorTrigger(Idle, Dad, Father_DisappointedHeadShake)@9.5;'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 38
@@ -919,23 +901,23 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 101
+        originDialogueID: 197
         destinationConversationID: 38
-        destinationDialogueID: 103
+        destinationDialogueID: 215
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); -- ANGRY
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 170.1856
-        y: 417.26282
+        x: 172.93304
+        y: 355.78638
         width: 160
         height: 30
-    - id: 102
+    - id: 198
       fields:
       - title: Title
         value: 
@@ -962,25 +944,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'AnimatorTrigger(Father_SitTurnToPlayer, Dad);
-
-          AnimatorTrigger(Father_UseTVRemote,
-          Dad, Father_SitTurnToPlayer)@2;
-
-          SetActive(TV Remote, false)@4.5;
-
-          MoveTo(DadSitUp,
-          Dad, 1)@5;
-
-          LookAt(Dad, Player, 0.5)@6.5;
-
-          LookAt(Player,
-          Dad, 0.5)@6.5;
-
-          AnimatorTrigger(Father_DisappointedHeadShake,
-          Dad)@6.5;
-
-          AnimatorTrigger(Idle, Dad, Father_DisappointedHeadShake)@9.5;'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 38
@@ -992,23 +956,23 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 102
+        originDialogueID: 198
         destinationConversationID: 38
-        destinationDialogueID: 104
+        destinationDialogueID: 216
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); -- ANGRY
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 454.13028
-        y: 424.03943
+        x: 451.99988
+        y: 357.68506
         width: 160
         height: 30
-    - id: 103
+    - id: 199
       fields:
       - title: Title
         value: 
@@ -1036,7 +1000,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(false);
+        value: 'SetEnabled(Canvas, true, DialogueCanvas);
+
+          SetContinueMode(false)@0.5;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 38
@@ -1048,15 +1014,15 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 103
+        originDialogueID: 199
         destinationConversationID: 38
-        destinationDialogueID: 105
+        destinationDialogueID: 201
         isConnector: 0
         priority: 2
       - originConversationID: 38
-        originDialogueID: 103
+        originDialogueID: 199
         destinationConversationID: 38
-        destinationDialogueID: 106
+        destinationDialogueID: 202
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1066,11 +1032,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 172.41432
-        y: 461.54358
+        x: 173.94226
+        y: 454.9452
         width: 160
         height: 30
-    - id: 104
+    - id: 200
       fields:
       - title: Title
         value: 
@@ -1100,7 +1066,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 'SetEnabled(Canvas, true, DialogueCanvas);
+
+          SetContinueMode(true)@0.5;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 38
@@ -1112,9 +1080,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 104
+        originDialogueID: 200
         destinationConversationID: 38
-        destinationDialogueID: 127
+        destinationDialogueID: 212
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1124,11 +1092,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 449.43253
-        y: 469.42633
+        x: 450.96066
+        y: 462.828
         width: 160
         height: 30
-    - id: 105
+    - id: 201
       fields:
       - title: Title
         value: 
@@ -1167,9 +1135,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 105
+        originDialogueID: 201
         destinationConversationID: 38
-        destinationDialogueID: 107
+        destinationDialogueID: 203
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1179,11 +1147,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 63.818947
-        y: 529.1925
+        x: 65.34692
+        y: 522.5941
         width: 160
         height: 30
-    - id: 106
+    - id: 202
       fields:
       - title: Title
         value: 
@@ -1222,9 +1190,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 106
+        originDialogueID: 202
         destinationConversationID: 38
-        destinationDialogueID: 108
+        destinationDialogueID: 204
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1234,11 +1202,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 253.09116
-        y: 529.3645
+        x: 254.61914
+        y: 522.7661
         width: 160
         height: 30
-    - id: 107
+    - id: 203
       fields:
       - title: Title
         value: 
@@ -1282,9 +1250,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 107
+        originDialogueID: 203
         destinationConversationID: 38
-        destinationDialogueID: 109
+        destinationDialogueID: 205
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1294,11 +1262,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 63.18528
-        y: 568.5326
+        x: 64.71325
+        y: 561.9342
         width: 160
         height: 30
-    - id: 108
+    - id: 204
       fields:
       - title: Title
         value: 
@@ -1343,9 +1311,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 108
+        originDialogueID: 204
         destinationConversationID: 38
-        destinationDialogueID: 127
+        destinationDialogueID: 212
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1355,11 +1323,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 252.30185
-        y: 571.7031
+        x: 253.82983
+        y: 565.10474
         width: 160
         height: 30
-    - id: 109
+    - id: 205
       fields:
       - title: Title
         value: 
@@ -1400,9 +1368,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 109
+        originDialogueID: 205
         destinationConversationID: 38
-        destinationDialogueID: 127
+        destinationDialogueID: 212
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1412,11 +1380,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 62.18528
-        y: 612.5326
+        x: 63.71325
+        y: 605.9342
         width: 160
         height: 30
-    - id: 110
+    - id: 206
       fields:
       - title: Title
         value: 
@@ -1458,9 +1426,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 110
+        originDialogueID: 206
         destinationConversationID: 38
-        destinationDialogueID: 111
+        destinationDialogueID: 207
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1470,11 +1438,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 342.02988
-        y: 141.9851
+        x: 343.55786
+        y: 135.38643
         width: 160
         height: 30
-    - id: 111
+    - id: 207
       fields:
       - title: Title
         value: 
@@ -1515,9 +1483,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 111
+        originDialogueID: 207
         destinationConversationID: 38
-        destinationDialogueID: 112
+        destinationDialogueID: 208
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1527,11 +1495,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 341.8748
-        y: 183.7035
+        x: 343.4027
+        y: 177.10484
         width: 160
         height: 30
-    - id: 112
+    - id: 208
       fields:
       - title: Title
         value: 
@@ -1572,9 +1540,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 112
+        originDialogueID: 208
         destinationConversationID: 38
-        destinationDialogueID: 115
+        destinationDialogueID: 211
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1584,11 +1552,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 341.0566
-        y: 224.7035
+        x: 342.5846
+        y: 218.10486
         width: 160
         height: 30
-    - id: 113
+    - id: 209
       fields:
       - title: Title
         value: 
@@ -1633,15 +1601,15 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 113
+        originDialogueID: 209
         destinationConversationID: 38
-        destinationDialogueID: 101
+        destinationDialogueID: 197
         isConnector: 0
         priority: 2
       - originConversationID: 38
-        originDialogueID: 113
+        originDialogueID: 209
         destinationConversationID: 38
-        destinationDialogueID: 102
+        destinationDialogueID: 198
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1651,11 +1619,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 342.20383
-        y: 312.53052
+        x: 343.7318
+        y: 305.9319
         width: 160
         height: 30
-    - id: 114
+    - id: 210
       fields:
       - title: Title
         value: 
@@ -1704,9 +1672,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 114
+        originDialogueID: 210
         destinationConversationID: 38
-        destinationDialogueID: 110
+        destinationDialogueID: 206
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1716,11 +1684,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 340.82895
-        y: 98.68419
+        x: 342.35693
+        y: 92.08549
         width: 160
         height: 30
-    - id: 115
+    - id: 211
       fields:
       - title: Title
         value: 
@@ -1762,9 +1730,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 115
+        originDialogueID: 211
         destinationConversationID: 38
-        destinationDialogueID: 113
+        destinationDialogueID: 209
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1774,11 +1742,334 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 341.0566
-        y: 266.8086
+        x: 342.5846
+        y: 260.2099
         width: 160
         height: 30
-    - id: 116
+    - id: 212
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Look Kalin...
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Look Kalin...</font>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: AnimatorController(Anim_Controllers/Story1Mem1Anims, Dad);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 212
+        destinationConversationID: 38
+        destinationDialogueID: 213
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: ChangeEmotionalState(0, Actor["Dad"].Name); -- CONTENT;
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 282.11597
+        y: 672.55835
+        width: 160
+        height: 30
+    - id: 213
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: "You have to be safe out there, ok? What\u2019s our rule?"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "<font=\"RythmusRegular SDF\">You have to be safe out there, ok? What\u2019s
+          our rule?</font>"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 213
+        destinationConversationID: 38
+        destinationDialogueID: 214
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 282.1798
+        y: 713.4674
+        width: 160
+        height: 30
+    - id: 214
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Stay on this side of the river and stay away from people I don't know.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: <font="RythmusRegular SDF">Stay on this side of the river and stay
+          away from people I don't know.</font>
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 214
+        destinationConversationID: 38
+        destinationDialogueID: 226
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 283.99792
+        y: 762.1648
+        width: 160
+        height: 30
+    - id: 215
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: -1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetEnabled(SpriteRenderer, false, TVScreen);
+
+          SetEnabled(Canvas,
+          false, DialogueCanvas);
+
+          AnimatorTrigger(Father_SitTurnToPlayer,
+          Dad);
+
+          AnimatorTrigger(Father_UseTVRemote, Dad, Father_SitTurnToPlayer)@2;
+
+          SetActive(TV
+          Remote, false)@4.5;
+
+          MoveTo(DadSitUp, Dad, 1)@5;
+
+          LookAt(Dad,
+          Player, 0.5)@6.5;
+
+          LookAt(Player, Dad, 0.5)@6.5;
+
+          AnimatorTrigger(Father_DisappointedHeadShake,
+          Dad)@6.5;
+
+          AnimatorTrigger(Idle, Dad, Father_DisappointedHeadShake)@9.5;'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 215
+        destinationConversationID: 38
+        destinationDialogueID: 199
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); -- ANGRY
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 170.49402
+        y: 404.5669
+        width: 160
+        height: 30
+    - id: 216
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: -1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetEnabled(SpriteRenderer, false, TVScreen);
+
+          SetEnabled(Canvas,
+          false, DialogueCanvas);
+
+          AnimatorTrigger(Father_SitTurnToPlayer,
+          Dad);
+
+          AnimatorTrigger(Father_UseTVRemote, Dad, Father_SitTurnToPlayer)@2;
+
+          SetActive(TV
+          Remote, false)@4.5;
+
+          MoveTo(DadSitUp, Dad, 1)@5;
+
+          LookAt(Dad,
+          Player, 0.5)@6.5;
+
+          LookAt(Player, Dad, 0.5)@6.5;
+
+          AnimatorTrigger(Father_DisappointedHeadShake,
+          Dad)@6.5;
+
+          AnimatorTrigger(Idle, Dad, Father_DisappointedHeadShake)@9.5;'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 38
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 38
+        originDialogueID: 216
+        destinationConversationID: 38
+        destinationDialogueID: 200
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: ChangeEmotionalState(6, Actor["Dad"].Name); -- ANGRY
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 449.57687
+        y: 409.6167
+        width: 160
+        height: 30
+    - id: 217
       fields:
       - title: Title
         value: 
@@ -1820,15 +2111,15 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 116
+        originDialogueID: 217
         destinationConversationID: 38
-        destinationDialogueID: 117
+        destinationDialogueID: 218
         isConnector: 0
         priority: 2
       - originConversationID: 38
-        originDialogueID: 116
+        originDialogueID: 217
         destinationConversationID: 38
-        destinationDialogueID: 118
+        destinationDialogueID: 219
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1838,11 +2129,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 295.24515
-        y: 971.41077
+        x: 283.86987
+        y: 906.74817
         width: 160
         height: 30
-    - id: 117
+    - id: 218
       fields:
       - title: Title
         value: 
@@ -1882,9 +2173,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 117
+        originDialogueID: 218
         destinationConversationID: 38
-        destinationDialogueID: 119
+        destinationDialogueID: 220
         isConnector: 0
         priority: 2
       conditionsString: Variable["MotherPermission"] == false
@@ -1894,11 +2185,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 200.88918
-        y: 1029.4153
+        x: 189.51392
+        y: 964.75256
         width: 160
         height: 30
-    - id: 118
+    - id: 219
       fields:
       - title: Title
         value: 
@@ -1938,9 +2229,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 118
+        originDialogueID: 219
         destinationConversationID: 38
-        destinationDialogueID: 120
+        destinationDialogueID: 221
         isConnector: 0
         priority: 2
       conditionsString: Variable["MotherPermission"] == true
@@ -1950,11 +2241,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 398.60678
-        y: 1033.4569
+        x: 387.23157
+        y: 968.7943
         width: 160
         height: 30
-    - id: 119
+    - id: 220
       fields:
       - title: Title
         value: 
@@ -1994,9 +2285,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 119
+        originDialogueID: 220
         destinationConversationID: 38
-        destinationDialogueID: 130
+        destinationDialogueID: 228
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2011,11 +2302,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 199.20876
-        y: 1076.7931
+        x: 187.8335
+        y: 1012.13086
         width: 160
         height: 30
-    - id: 120
+    - id: 221
       fields:
       - title: Title
         value: 
@@ -2054,9 +2345,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 120
+        originDialogueID: 221
         destinationConversationID: 38
-        destinationDialogueID: 121
+        destinationDialogueID: 222
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2066,11 +2357,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 399.80356
-        y: 1082.0277
+        x: 388.42834
+        y: 1017.36523
         width: 160
         height: 30
-    - id: 121
+    - id: 222
       fields:
       - title: Title
         value: 
@@ -2109,9 +2400,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 121
+        originDialogueID: 222
         destinationConversationID: 38
-        destinationDialogueID: 122
+        destinationDialogueID: 223
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2121,11 +2412,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 400.2358
-        y: 1133.8226
+        x: 388.8606
+        y: 1069.1602
         width: 160
         height: 30
-    - id: 122
+    - id: 223
       fields:
       - title: Title
         value: 
@@ -2164,16 +2455,13 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 122
+        originDialogueID: 223
         destinationConversationID: 38
-        destinationDialogueID: 123
+        destinationDialogueID: 224
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'Variable["PlayerMoney"] = true;
-
-        SetQuestState("TV Time",
-        "success");
+      userScript: 'SetQuestState("TV Time", "success");
 
         AddMoney(10)'
       onExecute:
@@ -2181,11 +2469,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 399.17197
-        y: 1181.7946
+        x: 387.79675
+        y: 1117.1321
         width: 160
         height: 30
-    - id: 123
+    - id: 224
       fields:
       - title: Title
         value: 
@@ -2226,9 +2514,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 123
+        originDialogueID: 224
         destinationConversationID: 38
-        destinationDialogueID: 124
+        destinationDialogueID: 225
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2238,11 +2526,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 399.17197
-        y: 1230.5287
+        x: 387.79675
+        y: 1165.8662
         width: 160
         height: 30
-    - id: 124
+    - id: 225
       fields:
       - title: Title
         value: 
@@ -2282,9 +2570,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 124
+        originDialogueID: 225
         destinationConversationID: 38
-        destinationDialogueID: 130
+        destinationDialogueID: 228
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2299,11 +2587,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 400.0621
-        y: 1282.3087
+        x: 388.6869
+        y: 1217.6462
         width: 160
         height: 30
-    - id: 125
+    - id: 226
       fields:
       - title: Title
         value: 
@@ -2342,9 +2630,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 125
+        originDialogueID: 226
         destinationConversationID: 38
-        destinationDialogueID: 126
+        destinationDialogueID: 227
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2354,11 +2642,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 295.3732
-        y: 875.3352
+        x: 283.99792
+        y: 810.67236
         width: 160
         height: 30
-    - id: 126
+    - id: 227
       fields:
       - title: Title
         value: 
@@ -2397,9 +2685,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 38
-        originDialogueID: 126
+        originDialogueID: 227
         destinationConversationID: 38
-        destinationDialogueID: 116
+        destinationDialogueID: 217
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2409,178 +2697,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 295.3732
-        y: 925.3352
+        x: 283.99792
+        y: 860.6725
         width: 160
         height: 30
-    - id: 127
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Look Kalin...
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Look Kalin...</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: AnimatorController(Anim_Controllers/Story1Mem1Anims, Dad);
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 127
-        destinationConversationID: 38
-        destinationDialogueID: 128
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: ChangeEmotionalState(0, Actor["Dad"].Name); -- CONTENT;
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 293.49124
-        y: 737.2212
-        width: 160
-        height: 30
-    - id: 128
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: "You have to be safe out there, ok? What\u2019s our rule?"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: "<font=\"RythmusRegular SDF\">You have to be safe out there, ok? What\u2019s
-          our rule?</font>"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 128
-        destinationConversationID: 38
-        destinationDialogueID: 129
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 293.55502
-        y: 778.13025
-        width: 160
-        height: 30
-    - id: 129
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 5
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 3
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: Stay on this side of the river and stay away from people I don't know.
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: <font="RythmusRegular SDF">Stay on this side of the river and stay
-          away from people I don't know.</font>
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 38
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 38
-        originDialogueID: 129
-        destinationConversationID: 38
-        destinationDialogueID: 125
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 295.3732
-        y: 826.82764
-        width: 160
-        height: 30
-    - id: 130
+    - id: 228
       fields:
       - title: Title
         value: 
@@ -2629,8 +2750,10 @@ MonoBehaviour:
 
           Delay(1)@4.5;
 
-          SetEnabled(Usable,
-          false, SofaDouble)@4.5;'
+          LookAt(Dad, Player,
+          0.5)@4.5;
+
+          SetEnabled(Usable, false, SofaDouble)@4.5;'
         type: 0
         typeString: 
       conversationID: 38
@@ -2648,13 +2771,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 232.70805
-        y: 1335.3687
+        x: 221.33282
+        y: 1270.706
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2.4390564, y: 288.16638}
-    canvasZoom: 0.8200002
+    canvasScrollPosition: {x: 139.69315, y: 0}
+    canvasZoom: 0.7000003
   - id: 39
     fields:
     - title: Title
