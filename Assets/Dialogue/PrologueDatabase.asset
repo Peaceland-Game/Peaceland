@@ -190,6 +190,20 @@ MonoBehaviour:
       value: Main brach sec 1 choice 2
       type: 0
       typeString: CustomFieldType_Text
+  - id: 17
+    fields:
+    - title: Name
+      value: HubGuyTalkedTo
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   conversations:
   - id: 37
     fields:
@@ -336,7 +350,7 @@ MonoBehaviour:
         destinationDialogueID: 2
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["HubGuyTalkedTo"] == false
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -1743,7 +1757,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 23
+        value: 20
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1755,10 +1769,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'LookAt(Tour Guide, Journalist, 1);
+        value: 'SetContinueMode(false);
 
-          LookAt(Journalist,
-          Tour Guide, 1);'
+          LookAt(Tour Guide, Journalist,
+          1);
+
+          LookAt(Journalist, Tour Guide, 1);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 37
@@ -1769,6 +1785,12 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
+      - originConversationID: 37
+        originDialogueID: 31
+        destinationConversationID: 37
+        destinationDialogueID: 40
+        isConnector: 0
+        priority: 2
       - originConversationID: 37
         originDialogueID: 31
         destinationConversationID: 37
@@ -1813,7 +1835,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetEnabled(Usable, false, Tour Guide);
+        value: LookAt(NewAdult, Tour Guide, 0.5);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 37
@@ -1830,7 +1852,7 @@ MonoBehaviour:
         destinationDialogueID: 34
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["HubGuyTalkedTo"] == false
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -1991,7 +2013,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["HubGuyTalkedTo"] = true;
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2117,8 +2139,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1130.9854
-        y: 274.69644
+        x: 1132.927
+        y: 305.7644
         width: 160
         height: 30
     - id: 39
@@ -2172,13 +2194,68 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1130.9854
-        y: 324.69644
+        x: 1132.927
+        y: 355.7644
+        width: 160
+        height: 30
+    - id: 40
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 24
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 20
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Oh, did you want to join the tour?
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetEnabled(Usable, false, Tour Guide);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 37
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 37
+        originDialogueID: 40
+        destinationConversationID: 37
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["HubGuyTalkedTo"] == true
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1130.3033
+        y: 110.19911
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 812.24426, y: 584.534}
-    canvasZoom: 0.64000034
+    canvasScrollPosition: {x: 828.9675, y: 303.79742}
+    canvasZoom: 0.7900002
   - id: 36
     fields:
     - title: Title
