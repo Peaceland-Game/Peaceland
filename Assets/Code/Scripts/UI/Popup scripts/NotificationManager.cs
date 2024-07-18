@@ -33,6 +33,7 @@ public class NotificationManager : MonoBehaviour
                 {
                     if (Instantiate(prefab).TryGetComponent(out PopupNotification currentNotification))
                     {
+                        Debug.Log($"showing notifcation at {currentNotification.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition} ");
                         isDisplayingNotification = true;
                         currentNotification.UpdateArtifactName(message);
                         StartCoroutine(WaitForEndOfNotifcation(currentNotification.GetTotalNotifcationTime()));
