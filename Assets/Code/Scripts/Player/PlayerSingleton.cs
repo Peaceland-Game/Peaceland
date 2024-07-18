@@ -79,7 +79,8 @@ public class PlayerSingleton : MonoBehaviour
             //Instantiate(karmaNotificationPrefab);
             if (NotificationManager.Instance != null)
             {
-                NotificationManager.Instance.QueueNotification(karmaNotificationPrefab);
+                // NotificationManager.Instance.QueueNotification(karmaNotificationPrefab);
+                NotificationManager.Instance.QueueNotification(NotificationType.KarmaPopup);
 
             }
             else
