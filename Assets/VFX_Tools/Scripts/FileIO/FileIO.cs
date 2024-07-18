@@ -65,7 +65,7 @@ public class FileIO
     public class DataBundle
     {
         public string bundleName;
-        public Packet[] dataPackets;
+        public Packet[] dataPackets = new Packet[0];
 
         /// <summary>
         /// Get the level data by passing in its name. If level 
@@ -97,12 +97,15 @@ public class FileIO
             if (dataPackets == null)
                 dataPackets = new Packet[0];
 
+            // Does this bundle already have the given packet? 
             for (int i = 0; i < dataPackets.Length; i++)
             {
                 // Have we found the right level? 
                 if (dataPackets[i].packetName == data.packetName)
                 {
+                    // Override 
                     dataPackets[i] = data;
+                    return;
                 }
             }
 
@@ -127,9 +130,9 @@ public class FileIO
     public class Packet
     {
         public string packetName;
-        public JSONIntHelper[] intValues;
-        public JSONFloatHelper[] floatValues;
-        public JSONStringHelper[] stringValues;
+        public JSONIntHelper[] intValues        = new JSONIntHelper[0];
+        public JSONFloatHelper[] floatValues    = new JSONFloatHelper[0];
+        public JSONStringHelper[] stringValues  = new JSONStringHelper[0];
 
         public int GetInt(string variableName)
         {
