@@ -28,6 +28,8 @@ public class MemorySwapper : MonoBehaviour
     public int MemoryIndex = 0;
     [SerializeField] private UserInterface userInterface;
     [SerializeField] private FirstPersonController playerController;
+    [SerializeField] private bool controlLighting = false;
+    [SerializeField] private DialogueSkipper skipper;
     
 
     void Start()
@@ -80,13 +82,26 @@ public class MemorySwapper : MonoBehaviour
             selectedMemory.memoryObject.SetActive(true);
             
         }
-
-        // Change the lighting profile
-        if (lightingController != null)
+        if (controlLighting)
         {
-            lightingController.TransitionToProfile(selectedMemory.timeOfDay, 1f, userInterface, () => { playerController.enabled = true; }); // 1 second transition
+            // Change the lighting profile
+            if (lightingController != null)
+            {
+                lightingController.TransitionToProfile(selectedMemory.timeOfDay, 1f, userInterface, () => { playerController.enabled = true; }); // 1 second transition
+            }
+        }
+        else
+        {
+            StartCoroutine(WaitThen(1, skipper.Skip));
+            playerController.enabled = true;
+            userInterface.DisableLoadScreen();
         }
         
+    }
+    IEnumerator WaitThen(float seconds, System.Action action)
+    {
+        yield return new WaitForSeconds(seconds);
+        action();
     }
 
     void OnEnable()

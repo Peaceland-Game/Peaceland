@@ -14,6 +14,8 @@ public class DialogueSkipper : MonoBehaviour
 
     private FieldInfo[] fields;
 
+
+
 #if (UNITY_EDITOR)
     public void Skip()
     {
