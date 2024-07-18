@@ -585,6 +585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1644901490385268006}
   - component: {fileID: 2044844943822175441}
+  - component: {fileID: 4058200842793458429}
   m_Layer: 5
   m_Name: NotesPage
   m_TagString: Untagged
@@ -630,6 +631,28 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 1
+--- !u!114 &4058200842793458429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503657491521663881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4186a8b0cfccf48862cb14bb965252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryButtons:
+  - {fileID: 860438001972950660}
+  - {fileID: 1520771222451186055}
+  - {fileID: 5050319288858212127}
+  chatLogs:
+  - {fileID: 6497697745631214949}
+  - {fileID: 2410527397230898779}
+  - {fileID: 8602736584507913417}
+  overviewPage: {fileID: 8324965802818101193}
+  memoryPage: {fileID: 3813928550833390343}
 --- !u!1 &2782291134696190696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,6 +2009,46 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2325037401629738087, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325037401629738087, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325037401629738087, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4058200842793458429}
+    - target: {fileID: 2325037401629738087, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325037401629738087, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChatLogDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325037401629738087, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NotesPageController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325037401629738087, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2325037401629738087, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2806367638787577499, guid: c735df0b560eb70499588624df715def,
         type: 3}
       propertyPath: m_Name
@@ -2026,6 +2089,46 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4516564664719350628, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516564664719350628, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516564664719350628, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4058200842793458429}
+    - target: {fileID: 4516564664719350628, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516564664719350628, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChatLogDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516564664719350628, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NotesPageController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516564664719350628, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124875739137623053, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6349601503668639460, guid: c735df0b560eb70499588624df715def,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2044,6 +2147,11 @@ PrefabInstance:
     - target: {fileID: 6349601503668639460, guid: c735df0b560eb70499588624df715def,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954400134472586854, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7278018302310884260, guid: c735df0b560eb70499588624df715def,
@@ -2181,6 +2289,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8307094908788267775, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307094908788267775, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307094908788267775, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4058200842793458429}
+    - target: {fileID: 8307094908788267775, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307094908788267775, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChatLogDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307094908788267775, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NotesPageController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307094908788267775, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307094908788267775, guid: c735df0b560eb70499588624df715def,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8414603102086991847, guid: c735df0b560eb70499588624df715def,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2274,7 +2422,3 @@ MonoBehaviour:
   pagesToDisable:
   - {fileID: 8324965802818101193}
   - {fileID: 6497697745631214949}
-  memoryButtons:
-  - {fileID: 860438001972950660}
-  - {fileID: 1520771222451186055}
-  - {fileID: 5050319288858212127}

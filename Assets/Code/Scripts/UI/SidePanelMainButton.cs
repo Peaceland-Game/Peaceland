@@ -7,7 +7,6 @@ public class SidePanelMainButton : MonoBehaviour
 {
     public GameObject pageToEnable;
     public List<GameObject> pagesToDisable;
-    public List<Button> memoryButtons;
     //i dont think i need to hold a variable for this button itself
     public void OnClickingThisButton()
     {
