@@ -656,7 +656,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -765,7 +765,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'LookAt(Player, Gryf, 0.5);
 
-          SetContinueMode(true)@0.5;'
+          SetContinueMode(true)@0.5;
+
+          AnimatorTrigger(Idle,
+          Waeli, PetDog)@0.5;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -823,7 +826,17 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          LookAt(Player, Waeli, 0.5);
+          MoveTo(WaeliAnchor, Waeli, 0.5);
+
+          AnimatorController(Anim_Controllers/BasicAnims,
+          Waeli);
+
+          AnimatorTrigger(RightTurn, Waeli, Idle)@0.3;
+
+          AnimatorTrigger(BreathingIdle,
+          Waeli, RightTurn)@0.5;
+
+          LookAt(PlayerCamera, Waeli)@0.5;
 
           Camera(Full,
           Waeli, 0.7)@0.5;
@@ -853,7 +866,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 160
-        y: 131.06383
+        y: 128.6248
         width: 160
         height: 30
     - id: 3
@@ -1011,7 +1024,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -1121,10 +1134,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(Mem1Panel4DogClose, Gryf, 0.7);
+        value: 'SetContinueMode(true);
 
-          LookAt(Player,
-          Gryf, 0.5);'
+          Camera(Mem1Panel4DogClose, Gryf,
+          0.7);
+
+          LookAt(Player, Gryf, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -1460,7 +1475,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(false);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -4359,7 +4374,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 467.06943
+        x: 468.28897
         y: 1696.1763
         width: 160
         height: 30
@@ -4640,12 +4655,10 @@ MonoBehaviour:
           MoveTo(Gryf,
           GryfAnchor);
 
-          MoveTo(Waeli, WaeliAnchor);
+          Camera(Mem1Panel4Dog, Gryf, 0.7)@1.4;
 
-          Camera(Mem1Panel4Dog,
-          Gryf, 0.7)@1.4;
-
-          LookAt(Gryf, speaker);
+          LookAt(Gryf,
+          speaker);
 
           Fade(in, 0.7)@2.2;'
         type: 0
@@ -4923,7 +4936,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetContinueMode(false);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -5179,7 +5192,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 14.634155, y: 58.53659}
     canvasZoom: 0.8200002
   - id: 51
     fields:
@@ -11514,7 +11527,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 15.06842, y: 419.17795}
     canvasZoom: 0.73000026
   syncInfo:
     syncActors: 1

@@ -2077,7 +2077,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4450321115218416059}
   m_LocalRotation: {x: 0, y: -0.62524277, z: 0, w: 0.7804304}
-  m_LocalPosition: {x: 337.64, y: -0.4148, z: 84}
+  m_LocalPosition: {x: 337.64, y: -0.507, z: 84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2265,14 +2265,98 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5131788658246422833}
-  m_LocalRotation: {x: -0, y: 0.22496806, z: -0, w: 0.9743662}
-  m_LocalPosition: {x: 408.636, y: -0.98000336, z: 92.17}
+  m_LocalRotation: {x: 0, y: 0.18811849, z: 0, w: 0.9821463}
+  m_LocalPosition: {x: 408.51, y: -0.8589935, z: 92.131}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9105360492053318930}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 26.002, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 21.686, z: 0}
+--- !u!1 &5335938412627467119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3702527032486899246}
+  - component: {fileID: 4394223487902109928}
+  m_Layer: 0
+  m_Name: TVScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3702527032486899246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5335938412627467119}
+  m_LocalRotation: {x: -0, y: 0.70710725, z: -0, w: -0.7071064}
+  m_LocalPosition: {x: 0.035003666, y: 0, z: -0.004035908}
+  m_LocalScale: {x: 0.059886895, y: 0.04401213, z: 0.043395907}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6150583814651104564}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!212 &4394223487902109928
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5335938412627467119}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: f0628a8bf98e4c4419c9564200f41c3e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &5425313716321876534
 GameObject:
   m_ObjectHideFlags: 0
@@ -3160,7 +3244,7 @@ Transform:
   - {fileID: 5431226566788965810}
   - {fileID: 5692776910817387235}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8387129059059471095
 GameObject:
@@ -3456,6 +3540,90 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!1 &8531640798860363506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8559984824708339228}
+  - component: {fileID: 2452920570845937190}
+  m_Layer: 0
+  m_Name: TVScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8559984824708339228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8531640798860363506}
+  m_LocalRotation: {x: -0, y: 0.70710725, z: -0, w: -0.7071064}
+  m_LocalPosition: {x: 0.035003666, y: 0, z: -0.004035908}
+  m_LocalScale: {x: 0.059886895, y: 0.04401213, z: 0.043395907}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6150583814651104564}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!212 &2452920570845937190
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8531640798860363506}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: f0628a8bf98e4c4419c9564200f41c3e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &8578142074274310487
 GameObject:
   m_ObjectHideFlags: 0
@@ -3864,6 +4032,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2039196803393657301}
+  - {fileID: 3702527032486899246}
+  - {fileID: 8559984824708339228}
   m_Father: {fileID: 2043513704794224907}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
@@ -5571,66 +5741,6 @@ MonoBehaviour:
     target: {fileID: 245992427410868173}
     stateName: Father_SittingWithRemote
     crossFadeDuration: 0
-  - condition:
-      luaConditions: []
-      questConditions: []
-      acceptedTags: []
-      acceptedGameObjects: []
-      luaWizardIndex: 0
-      lastEvaluationValue: 0
-    target: {fileID: 0}
-    stateName: GPKSoldier_Surveying
-    crossFadeDuration: 0
-  - condition:
-      luaConditions: []
-      questConditions: []
-      acceptedTags: []
-      acceptedGameObjects: []
-      luaWizardIndex: 0
-      lastEvaluationValue: 0
-    target: {fileID: 0}
-    stateName: GPKSoldier_Surveying
-    crossFadeDuration: 0
-  - condition:
-      luaConditions: []
-      questConditions: []
-      acceptedTags: []
-      acceptedGameObjects: []
-      luaWizardIndex: 0
-      lastEvaluationValue: 0
-    target: {fileID: 0}
-    stateName: GPKSoldier_Surveying
-    crossFadeDuration: 0
-  - condition:
-      luaConditions: []
-      questConditions: []
-      acceptedTags: []
-      acceptedGameObjects: []
-      luaWizardIndex: 0
-      lastEvaluationValue: 0
-    target: {fileID: 0}
-    stateName: GPKSoldier_Surveying
-    crossFadeDuration: 0
-  - condition:
-      luaConditions: []
-      questConditions: []
-      acceptedTags: []
-      acceptedGameObjects: []
-      luaWizardIndex: 0
-      lastEvaluationValue: 0
-    target: {fileID: 0}
-    stateName: GPKSoldier_Surveying
-    crossFadeDuration: 0
-  - condition:
-      luaConditions: []
-      questConditions: []
-      acceptedTags: []
-      acceptedGameObjects: []
-      luaWizardIndex: 0
-      lastEvaluationValue: 0
-    target: {fileID: 0}
-    stateName: GPKSoldier_Surveying
-    crossFadeDuration: 0
   onExecute:
     m_PersistentCalls:
       m_Calls: []
@@ -6827,7 +6937,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7b83016b04000e14895c73c3e3ec4529,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 79.203
+      value: 79.037
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b83016b04000e14895c73c3e3ec4529,
         type: 3}
@@ -8623,7 +8733,7 @@ PrefabInstance:
     - target: {fileID: 2282880553129603729, guid: f7f8ebd2497d91d42bd7117bcff3848e,
         type: 3}
       propertyPath: onExecute.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2282880553129603729, guid: f7f8ebd2497d91d42bd7117bcff3848e,
         type: 3}
@@ -9928,7 +10038,7 @@ PrefabInstance:
     - target: {fileID: 3721666818492503349, guid: 3e85357964a31b94fb19f732c7d10d7d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 78.894
+      value: 78.799
       objectReference: {fileID: 0}
     - target: {fileID: 3721666818492503349, guid: 3e85357964a31b94fb19f732c7d10d7d,
         type: 3}
@@ -9938,12 +10048,12 @@ PrefabInstance:
     - target: {fileID: 3721666818492503349, guid: 3e85357964a31b94fb19f732c7d10d7d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -73.137
+      value: -73.082
       objectReference: {fileID: 0}
     - target: {fileID: 3721666818492503349, guid: 3e85357964a31b94fb19f732c7d10d7d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.97436607
+      value: 0.9821461
       objectReference: {fileID: 0}
     - target: {fileID: 3721666818492503349, guid: 3e85357964a31b94fb19f732c7d10d7d,
         type: 3}
@@ -9953,7 +10063,7 @@ PrefabInstance:
     - target: {fileID: 3721666818492503349, guid: 3e85357964a31b94fb19f732c7d10d7d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.22496843
+      value: 0.18812005
       objectReference: {fileID: 0}
     - target: {fileID: 3721666818492503349, guid: 3e85357964a31b94fb19f732c7d10d7d,
         type: 3}
@@ -9968,7 +10078,7 @@ PrefabInstance:
     - target: {fileID: 3721666818492503349, guid: 3e85357964a31b94fb19f732c7d10d7d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 26.002
+      value: 21.686
       objectReference: {fileID: 0}
     - target: {fileID: 3721666818492503349, guid: 3e85357964a31b94fb19f732c7d10d7d,
         type: 3}
@@ -10090,7 +10200,7 @@ MonoBehaviour:
       luaWizardIndex: 0
       lastEvaluationValue: 0
     target: {fileID: 8643632685836016969}
-    stateName: Waeli_PettingAndFeeding
+    stateName: PetDog
     crossFadeDuration: 0
   onExecute:
     m_PersistentCalls:
@@ -13806,7 +13916,7 @@ MonoBehaviour:
   onExecute:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1654782367848326225}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -14003,7 +14113,7 @@ PrefabInstance:
     - target: {fileID: 8579464321887165448, guid: 431ebfc857fa49e49823397be94494f8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.6900024
+      value: -3.829
       objectReference: {fileID: 0}
     - target: {fileID: 8579464321887165448, guid: 431ebfc857fa49e49823397be94494f8,
         type: 3}
