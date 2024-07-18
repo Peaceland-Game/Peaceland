@@ -92,7 +92,9 @@ public class MemorySwapper : MonoBehaviour
         }
         else
         {
+#if (UNITY_EDITOR)
             StartCoroutine(WaitThen(1, skipper.Skip));
+#endif
             playerController.enabled = true;
             userInterface.DisableLoadScreen();
         }
