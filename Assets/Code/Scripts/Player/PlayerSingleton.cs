@@ -21,9 +21,9 @@ public class PlayerSingleton : MonoBehaviour
     public static PlayerSingleton Instance;                     //singleton
     private Tablet tablet;                     //reference to the tablet on the user interface
     private UserInterface userInterface;       //reference to the user interface object
-   
-    private FirstPersonController controller;  //refrence to player movement controller
-    
+
+    [SerializeField] private FirstPersonController controller;  //refrence to player movement controller
+
     private Selector selector;                 //reference to the player's selector component
 
     public bool playerInMemorySelection = false;                //flag is the player is the memory selection, this is only used in the hub world
@@ -35,7 +35,7 @@ public class PlayerSingleton : MonoBehaviour
 
     [Header("Notifications")]
     public GameObject karmaNotificationPrefab;
-    
+
     public int GetMoney
     {
         get { return DialogueLua.GetVariable("PlayerMoney").asInt; }
@@ -55,7 +55,7 @@ public class PlayerSingleton : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            SceneManager.sceneLoaded += OnSceneLoaded;
+
         }
         else
         {
@@ -80,7 +80,7 @@ public class PlayerSingleton : MonoBehaviour
             if (NotificationManager.Instance != null)
             {
                 NotificationManager.Instance.QueueNotification(karmaNotificationPrefab);
-                
+
             }
             else
             {
@@ -129,6 +129,14 @@ public class PlayerSingleton : MonoBehaviour
                 return;
             }
         }
+    }
+    public void InitPlayer(PlayerObjectReference playerRef)
+    {
+        playerObject = playerRef.gameObject;    
+        userInterface = playerRef.userInterface;
+        userInterface.RegisterEventListener();
+        controller = playerRef.controller;
+        tablet = playerRef.tablet;
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -208,7 +216,7 @@ public class PlayerSingleton : MonoBehaviour
             }
         }
     }
-    
+
 
 
     public void ToggleJournal()
@@ -269,11 +277,11 @@ public class PlayerSingleton : MonoBehaviour
 
     }
 
-    
+
     public double GetTotalKarma()
     {
-        double totalKarma = 0; 
-        foreach(var val in karmaPoints.Values)
+        double totalKarma = 0;
+        foreach (var val in karmaPoints.Values)
         {
             totalKarma += val;
         }
@@ -299,11 +307,11 @@ public class PlayerSingleton : MonoBehaviour
         if (HasNegativeKarma()) return "Negative";
         return "Nuetral";
     }
-    
-    
-    
 
-    
+
+
+
+
 
     public void StopPlayer()
     {

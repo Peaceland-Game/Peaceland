@@ -13,4 +13,31 @@ public class PlayerObjectReference : MonoBehaviour
     public UserInterface userInterface;
     public FirstPersonController controller;
     public Selector selector;
+    private bool infoSent = false;
+
+    //private void Awake()
+    //{
+    //    if (PlayerSingleton.Instance)
+    //    {
+    //        PlayerSingleton.Instance.InitPlayer(this);
+    //    }
+    //}
+    private void Start()
+    {
+        if (PlayerSingleton.Instance)
+        {
+            PlayerSingleton.Instance.InitPlayer(this);
+        }
+    }
+    private void Update()
+    {
+        if (!infoSent)
+        {
+            if (PlayerSingleton.Instance)
+            {
+                infoSent = true;    
+                PlayerSingleton.Instance.InitPlayer(this);
+            }
+        }
+    }
 }
