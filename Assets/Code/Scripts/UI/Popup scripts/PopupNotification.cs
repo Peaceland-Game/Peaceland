@@ -5,29 +5,48 @@ using TMPro;
 public class PopupNotification : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI artifactName;
-    [SerializeField] float popupDuration = 1.5f;
-    [SerializeField] float animationDuration = 0.5f;
-    float xOffsetPercentage = 0.2f; 
-    float xStopLocation;
+    [SerializeField] float popupDuration = 2f;
+    [SerializeField] float animationDuration = .75f;
+    [SerializeField] float xOffsetPercentage = 0.175f;
     [SerializeField] RectTransform popup;
     [SerializeField] bool hasText = true;
     public bool HasText { get { return hasText; } }
 
     private Vector2 startPos;
+    private Vector2 endPos;
 
     void Start()
     {
-        //Debug.Log(xOffsetPercentage);
+        Canvas canvas = GetComponentInParent<Canvas>();
+        if (canvas == null)
+        {
+            Debug.LogError("PopupNotification must be child of a Canvas");
+            return;
+        }
 
-        xStopLocation = -Screen.width / 2f + Screen.width * xOffsetPercentage;
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+        float canvasWidth = canvasRect.rect.width;
 
         startPos = popup.anchoredPosition;
+        endPos = new Vector2(canvasWidth * xOffsetPercentage - canvasWidth / 2, startPos.y);
+
+        //endPos = new Vector2(startPos.x + 400, startPos.y);
         StartCoroutine(AnimatePopup());
+        
     }
+    //private void Update()
+    //{
+    //    popup.anchoredPosition = new Vector2(popup.anchoredPosition.x +1, popup.anchoredPosition.y);
+    //    if (popup.anchoredPosition.x > 1000)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 
     public void UpdateArtifactName(string newName)
     {
-        artifactName.text = newName;
+        if (artifactName != null)
+            artifactName.text = newName;
     }
 
     public float GetTotalNotifcationTime()
@@ -37,54 +56,24 @@ public class PopupNotification : MonoBehaviour
 
     private IEnumerator AnimatePopup()
     {
-        Vector2 startPosition = startPos;
-        Vector2 endPosition = new Vector2(xStopLocation, startPosition.y);
-     //   Debug.Log($"Start Position: {startPosition}, End Position: {endPosition}");
-        float elapsedTime = 0f;
-        while (elapsedTime < animationDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            float t = elapsedTime / animationDuration;
-
-            // Apply easing function (ease-out cubic)
-            float easedT = 1 - Mathf.Pow(1 - t, 3);
-
-            popup.anchoredPosition = Vector3.Lerp(startPosition, endPosition, easedT);
-            yield return null;
-        }
-
-        // Ensure the popup ends exactly at the target position
-        popup.anchoredPosition = endPosition;
-
-        // Wait for the popup duration
+        yield return StartCoroutine(AnimatePopupMovement(startPos, endPos));
         yield return new WaitForSeconds(popupDuration);
-
-        // Animate out (optional)
-        yield return StartCoroutine(AnimatePopupOut());
-
-        // Destroy the popup
+        yield return StartCoroutine(AnimatePopupMovement(endPos, startPos));
         Destroy(gameObject);
     }
 
-    private IEnumerator AnimatePopupOut()
+    private IEnumerator AnimatePopupMovement(Vector2 start, Vector2 end)
     {
-        Vector2 startPosition = popup.anchoredPosition;
-        Vector2 endPosition = startPos;
-
         float elapsedTime = 0f;
         while (elapsedTime < animationDuration)
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / animationDuration;
+            float easedT = 1 - Mathf.Pow(1 - t, 3); // Ease-out cubic
 
-            // Apply easing function (ease-in cubic)
-            float easedT = t * t * t;
-
-            popup.anchoredPosition = Vector3.Lerp(startPosition, endPosition, easedT);
+            popup.anchoredPosition = Vector2.Lerp(start, end, easedT);
             yield return null;
         }
-
-        
-        Destroy(gameObject);
+        popup.anchoredPosition = end;
     }
 }

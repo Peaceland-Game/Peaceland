@@ -14,7 +14,7 @@ public class JournalPlayerRef : MonoBehaviour
 {
     public List<Artifact> artifacts = new List<Artifact>();
     public Tablet player;
-    public GameObject artifactPopupPrefab;
+   // public GameObject artifactPopupPrefab;
     public GameObject imagePopupPrefab;
 
     private void Start()
@@ -32,14 +32,15 @@ public class JournalPlayerRef : MonoBehaviour
         //var popup = Instantiate(artifactPopupPrefab).GetComponent<PopupNotification>();
         //if (popup.HasText)
         //    popup.UpdateArtifactName(artifact.artifactName);
-        NotificationManager.Instance.QueueNotification(artifactPopupPrefab, artifact.artifactName);
+        //NotificationManager.Instance.QueueNotification(artifactPopupPrefab, artifact.artifactName);
+        NotificationManager.Instance.QueueNotification(NotificationType.ArtifactPopup, artifact.artifactName);
         player.AddArtifact(artifact.artifactName, showPopup);
     }
 
     public void AddArtifact(string name)
     {
         // Debug.Log("Add Artifact string method called");
-        NotificationManager.Instance.QueueNotification(artifactPopupPrefab, name);
+        NotificationManager.Instance.QueueNotification(NotificationType.ArtifactPopup, name);
         player.AddArtifact(name, true);
         //var artifact = transform.GetComponentsInChildren<Artifact>().ToList().FirstOrDefault(artifact => artifact.artifactName == name);
         //Destroy(artifact.gameObject);
