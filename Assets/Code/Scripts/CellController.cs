@@ -72,6 +72,8 @@ public class CellController : MonoBehaviour
     {
         string message = $"{cell.parentName}, {cell.cellName}";
         DialogueManager.ShowAlert(message);
+
+        if (cell.cellName == "Your Apartment") DialogueManager.ShowAlert("Kalin, Age 10");
         Debug.Log(message); // Replace this with your preferred method of displaying messages to the player
     }
 
