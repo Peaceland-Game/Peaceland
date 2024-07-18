@@ -14,6 +14,8 @@ public class TabletTutorial : MonoBehaviour {
     private TextMeshProUGUI tutorialText;           //reference to the text mesh in the scene
     [SerializeField]
     private List<Transform> homePageButtons;        //list of the home button graphics to turn on or off during the tutorial
+    [SerializeField]
+    private RectTransform tutorialRect;             // the rect containing the tutorial text and buttons
     private bool waitForPlayer = false;             //if we are at a point where we need to wait for the player set flag here
     private int tutorialStep = -1;                  //holds the current tutorial step
     public GameObject skipButton;                   //reference to the skip tutorial button in the scene
@@ -62,6 +64,7 @@ public class TabletTutorial : MonoBehaviour {
                 break;
             case 1:
                 homePageButtons[0].gameObject.SetActive(true);
+                tutorialRect.anchoredPosition = new Vector2(-425, 30);
                 skipButton.SetActive(false);
                 break;
             case 2:
@@ -71,6 +74,7 @@ public class TabletTutorial : MonoBehaviour {
             case 3:
                 homePageButtons[1].gameObject.SetActive(false);
                 homePageButtons[2].gameObject.SetActive(true);
+                tutorialRect.anchoredPosition = new Vector2(425, 30);
                 contButon.SetActive(false);
                 waitForPlayer = true;
                 break;
