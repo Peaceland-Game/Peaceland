@@ -844,6 +844,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: CustomFieldType_Text
+  - id: 22
+    fields:
+    - title: Name
+      value: BoxQuestInProgress
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   conversations:
   - id: 43
     fields:
@@ -3184,6 +3198,12 @@ MonoBehaviour:
       - originConversationID: 47
         originDialogueID: 0
         destinationConversationID: 47
+        destinationDialogueID: 12
+        isConnector: 0
+        priority: 2
+      - originConversationID: 47
+        originDialogueID: 0
+        destinationConversationID: 47
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
@@ -3194,7 +3214,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
+        x: 142
         y: 30
         width: 160
         height: 30
@@ -3255,7 +3275,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 49
+        x: 31
         y: 136
         width: 160
         height: 30
@@ -3310,7 +3330,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 49
+        x: 31
         y: 186
         width: 160
         height: 30
@@ -3365,7 +3385,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 241
+        x: 223
         y: 134
         width: 160
         height: 30
@@ -3417,7 +3437,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 241
+        x: 223
         y: 184
         width: 160
         height: 30
@@ -3474,12 +3494,6 @@ MonoBehaviour:
       - originConversationID: 47
         originDialogueID: 5
         destinationConversationID: 47
-        destinationDialogueID: 8
-        isConnector: 0
-        priority: 2
-      - originConversationID: 47
-        originDialogueID: 5
-        destinationConversationID: 47
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
@@ -3490,7 +3504,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161
+        x: 143
         y: 82
         width: 160
         height: 30
@@ -3540,13 +3554,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["BoxQuestInProgress"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 49
+        x: 31
         y: 236
         width: 160
         height: 30
@@ -3577,10 +3591,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetEnabled(Usable, false, speaker);
-
-          SetEnabled(Usable,
-          true, Crate);'
+        value: SetEnabled(Usable, true, Crate);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 47
@@ -3598,7 +3609,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 50
+        x: 32
         y: 287
         width: 160
         height: 30
@@ -3651,8 +3662,14 @@ MonoBehaviour:
         destinationDialogueID: 9
         isConnector: 0
         priority: 2
-      conditionsString: Variable["BoxPlaced"] == true
+      conditionsString: 'Variable["BoxPlaced"] == true and
+
+        Variable["BoxQuestInProgress"]
+        == true;'
       userScript: 'SetQuestState("Box Mover", "success");
+
+        Variable["BoxQuestInProgress"]
+        = false;
 
         AddMoney(10);'
       onExecute:
@@ -3660,8 +3677,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 467
-        y: 98
+        x: 402
+        y: 136
         width: 160
         height: 30
     - id: 9
@@ -3715,8 +3732,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 466
-        y: 148
+        x: 401
+        y: 186
         width: 160
         height: 30
     - id: 10
@@ -3746,7 +3763,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetEnabled(Usable, false, speaker);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 47
@@ -3770,8 +3787,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 466
-        y: 198
+        x: 401
+        y: 236
         width: 160
         height: 30
     - id: 11
@@ -3819,8 +3836,182 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 466
-        y: 248
+        x: 401
+        y: 286
+        width: 160
+        height: 30
+    - id: 12
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 16
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetContinueMode(false);
+
+          LookAt(Player, speaker, 0.5);
+
+          LookAt(speaker,
+          Player, 0.5);'
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 47
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 47
+        originDialogueID: 12
+        destinationConversationID: 47
+        destinationDialogueID: 8
+        isConnector: 0
+        priority: 2
+      - originConversationID: 47
+        originDialogueID: 12
+        destinationConversationID: 47
+        destinationDialogueID: 13
+        isConnector: 0
+        priority: 2
+      - originConversationID: 47
+        originDialogueID: 12
+        destinationConversationID: 47
+        destinationDialogueID: 14
+        isConnector: 0
+        priority: 2
+      conditionsString: 'CurrentQuestState("Box Mover") == "success" or
+
+        Variable["BoxQuestInProgress"]
+        == true'
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 321
+        y: 82
+        width: 160
+        height: 30
+    - id: 13
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 16
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: I could go for some ice cream, too, come to think of it...
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 47
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: CurrentQuestState("Box Mover") == "success"
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 754
+        y: 134
+        width: 160
+        height: 30
+    - id: 14
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 16
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: If you could put the crate down by the bridge over there, that'd be
+          great.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 47
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: Variable["BoxQuestInProgress"] == true
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 580
+        y: 136
         width: 160
         height: 30
     entryGroups: []
