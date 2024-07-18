@@ -1394,7 +1394,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 390.46307
-        y: 234.031
+        y: 232.53848
         width: 160
         height: 30
     - id: 52
@@ -2278,7 +2278,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 802.2161
+        x: 803.7087
         y: 443.4392
         width: 160
         height: 30
@@ -2467,8 +2467,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 16.393433, y: 191.80316}
-    canvasZoom: 0.6100004
+    canvasScrollPosition: {x: 43.919685, y: 0}
+    canvasZoom: 0.6700003
   - id: 45
     fields:
     - title: Title
@@ -2786,7 +2786,13 @@ MonoBehaviour:
           MoveTo(BridgeMoveForward,
           Player, 2.0)@5.0;
 
-          SetEnabled(Canvas, true, DialogueCanvas)@7.0;'
+          LookAt(BridgeGPKSoldiersLookAt, GPKSoldier5,
+          0.5)@5;
+
+          LookAt(BridgeGPKSoldiersLookAt, GPKSoldier6, 0.5)@5;
+
+          SetEnabled(Canvas,
+          true, DialogueCanvas)@7.0;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 45
@@ -4423,23 +4429,25 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          MoveTo(StrangerEnd, Bystander2,
-          5.0);
+          AnimatorTrigger(Walk, Bystander2,
+          BreathingIdle)@1;
 
-          LookAt(RabidDog, Player, 1.0)@1.0;
+          MoveTo(StrangerEnd, Bystander2, 5.0)@1;
 
-          MoveTo(AlleyEnd,
-          Player, 5.0)@1.9;
+          LookAt(RabidDog,
+          Player, 1.0)@2.0;
 
-          LookAt(RabidDogExit, RabidDog, 0.7)@2.8;
+          MoveTo(AlleyEnd, Player, 5.0)@3.0;
 
-          MoveTo(RabidDogExit,
-          RabidDog, 1.0)@3.4;
+          LookAt(RabidDogExit,
+          RabidDog, 0.7)@4.4;
 
-          SetActive(RabidDog, false)@4.6;
+          MoveTo(RabidDogExit, RabidDog, 1.0)@5;
 
-          AnimatorTrigger(Idle,
-          Bystander2, BreathingIdle)@4.6;'
+          SetActive(RabidDog,
+          false)@6;
+
+          AnimatorTrigger(Idle, Bystander2, Walk)@5.6;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 48
@@ -4607,7 +4615,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: LookAt(Player, Bystander2, 0.7);
+        value: 'LookAt(Player, Bystander2, 0.7);
+
+          AnimatorTrigger(RightTurn,
+          Bystander2, Idle);
+
+          AnimatorTrigger(Idle, Bystander2, RightTurn)@0.6;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 48
@@ -4810,8 +4823,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.28000045
+    canvasScrollPosition: {x: 0, y: 306.7226}
+    canvasZoom: 0.7600002
   - id: 49
     fields:
     - title: Title
