@@ -299,6 +299,35 @@ public class IntroController : MonoBehaviour
     private void LoadHubWorld()
     {
         if (selectorUI) selectorUI.SetActive(true);
-        SceneManager.LoadScene("HubWorld2");
+        {
+            StartCoroutine(FadeToBlack());
+        }
+        
     }
+
+
+    public IEnumerator FadeToBlack()
+    {
+        float elapsedTime = 0f;
+        Debug.Log("fade to black");
+        fadeImage.gameObject.SetActive(true);
+        buzz1.gameObject.SetActive(false);
+        buzz2.gameObject.SetActive(false);
+        while (elapsedTime < 1)
+        {
+            elapsedTime += Time.deltaTime;
+            if (fadeImage.color.a < 1)
+            {
+                fadeImage.color = new Color(0, 0, 0, fadeImage.color.a + Time.deltaTime);
+            }
+
+            yield return null;
+        }
+        if (elapsedTime >= 1)
+        {
+            SceneManager.LoadScene("HubWorld2");
+        }
+
+    }
+
 }

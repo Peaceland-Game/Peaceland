@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.SceneManagement;
 
 /// <summary>
@@ -18,14 +19,15 @@ public class TabletTutorial : MonoBehaviour {
     public GameObject skipButton;                   //reference to the skip tutorial button in the scene
     public GameObject contButon;                    //reference to the continue button
     private const string LOAD_SCENE_NAME = "HubWorld2";     //the scene that will load after the tutorial is finished 
+    private GameObject controller;
     
     /// <summary>
     /// begin the tutorial
     /// </summary>
     void Start()
     {
+        controller = GameObject.Find("IntroController");
         ProgressTutorial();
-
     }
     
     /// <summary>
@@ -35,7 +37,7 @@ public class TabletTutorial : MonoBehaviour {
     {
         if (waitForPlayer) {
             if (Input.GetKeyDown(KeyCode.Escape)) {
-                SceneManager.LoadScene(LOAD_SCENE_NAME);
+                StartCoroutine(controller.GetComponent<IntroController>().FadeToBlack());
             }
         }
     }
@@ -119,7 +121,7 @@ public class TabletTutorial : MonoBehaviour {
     /// </summary>
     public void SkipTutorial()
     {
-        SceneManager.LoadScene(LOAD_SCENE_NAME);
+        StartCoroutine(controller.GetComponent<IntroController>().FadeToBlack());
     }
 
 
