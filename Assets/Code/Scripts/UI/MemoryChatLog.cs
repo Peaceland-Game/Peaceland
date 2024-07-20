@@ -3,42 +3,22 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
+using UnityEngine.UI;
 
 public class MemoryChatLog : MonoBehaviour
 {
-    public TextMeshProUGUI chatHistoryText; //reference to the chat history GUI text object
-    public ConversationLogger conversationLogger;   //reference to the ConversationLogger component inthe scene 
+    [SerializeField] private List<TextMeshProUGUI> entryTextMeshes = new();
+    [SerializeField] private Image backgroundImage;
 
-    /// <summary>
-    /// Adds the conversation dialogue update listener on Start
-    /// </summary>
-    void Start()
-    {
-        if (conversationLogger != null)
-        {
-            conversationLogger.onDialogueUpdated.AddListener(UpdateChatHistory);
-        }
-        UpdateChatHistory();
+    public void SetEntryText(string speaker, string dialogue) {
+        entryTextMeshes[0].text = speaker;
+        entryTextMeshes[1].text = dialogue;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(entryTextMeshes[1].rectTransform);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(backgroundImage.rectTransform);
     }
-
-    /// <summary>
-    /// Attempt to update the dialogue history text element using the conversation logger
-    /// </summary>
-    public void UpdateChatHistory()
-    {
-        if (conversationLogger == null || chatHistoryText == null) return;
-
-        List<string> history = conversationLogger.GetDialogueHistory();
-        chatHistoryText.text = string.Join("\n", history.ToArray());
-    }
-    /// <summary>
-    /// Remove event listener
-    /// </summary>
-    private void OnDestroy()
-    {
-        if (conversationLogger != null)
-        {
-            conversationLogger.onDialogueUpdated.RemoveListener(UpdateChatHistory);
-        }
+    public void AppendDialogue(string dialogue) {
+        entryTextMeshes[1].text += dialogue;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(entryTextMeshes[1].rectTransform);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(backgroundImage.rectTransform);
     }
 }

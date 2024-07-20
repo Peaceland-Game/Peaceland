@@ -36,12 +36,12 @@ namespace PixelCrushers.DialogueSystem
 
             string speakerName = (subtitle.speakerInfo != null && subtitle.speakerInfo.transform != null) ? subtitle.speakerInfo.transform.name : "(null speaker)";
             string dialogueLine = string.Format("{0}: {1}", speakerName, subtitle.formattedText.text);
-            if (!convoIDs.ContainsKey(dialogueLine)) 
-            {
-                dialogueHistory.Add(string.Format("{0}:\n {1}\n", speakerName, subtitle.formattedText.text));
-                onDialogueUpdated.Invoke();
-                convoIDs[dialogueLine] = true;
-            }
+            //if (!convoIDs.ContainsKey(dialogueLine)) 
+            //{
+            //    dialogueHistory.Add(string.Format("{0}:\n {1}\n", speakerName, subtitle.formattedText.text));
+            //    onDialogueUpdated.Invoke();
+            //    convoIDs[dialogueLine] = true;
+            //}
             //Debug.Log(string.Format("<color={0}>{1}</color>", GetActorColor(subtitle), dialogueLine));
         }
         private void Awake()
@@ -52,6 +52,10 @@ namespace PixelCrushers.DialogueSystem
         public List<string> GetDialogueHistory()
         {
             return dialogueHistory;
+        }
+        public string GetLastEntry() {
+            if (dialogueHistory.Count == 0) return "";  
+            return dialogueHistory[^1];
         }
         public void OnConversationEnd(Transform actor)
         {
@@ -87,7 +91,13 @@ namespace PixelCrushers.DialogueSystem
         {
             if (subtitle == null | subtitle.formattedText == null | string.IsNullOrEmpty(subtitle.formattedText.text)) return;
             string speakerName = (subtitle.speakerInfo != null && subtitle.speakerInfo.transform != null) ? subtitle.speakerInfo.transform.name : "(null speaker)";
+            string dialogueLine = string.Format("{0}: {1}", speakerName, subtitle.formattedText.text);
             Debug.Log(string.Format("<color={0}>Line ended - {1}: {2}</color>", new object[] { GetActorColor(subtitle), speakerName, subtitle.formattedText.text }));
+            if (!convoIDs.ContainsKey(dialogueLine)) {
+                dialogueHistory.Add(string.Format("{0}:\n {1}\n", speakerName, subtitle.formattedText.text));
+                onDialogueUpdated.Invoke();
+                convoIDs[dialogueLine] = true;
+            }
         }
 
         public void OnConversationResponseMenu(Response[] responses)

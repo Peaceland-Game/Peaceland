@@ -18,7 +18,7 @@ public class SidePanelToggle : MonoBehaviour
     [SerializeField] GameObject tabs;
     public TextMeshProUGUI buttonText;
 
-    private float moveSpeed = 300f; // Speed of the movement
+    [SerializeField] private float moveSpeed = 600f; // Speed of the movement
     //private float shownPosition = 150f; // The 'shown' position in local space
 
     private Vector3 hiddenPosition = new(1070.481f, 0, 0);
