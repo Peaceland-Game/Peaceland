@@ -716,13 +716,13 @@ MonoBehaviour:
       - originConversationID: 29
         originDialogueID: 0
         destinationConversationID: 29
-        destinationDialogueID: 162
+        destinationDialogueID: 241
         isConnector: 0
         priority: 2
       - originConversationID: 29
         originDialogueID: 0
         destinationConversationID: 29
-        destinationDialogueID: 166
+        destinationDialogueID: 245
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -732,11 +732,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 199.3909
-        y: 7.8461075
+        x: 291.6973
+        y: 30.532387
         width: 160
         height: 30
-    - id: 94
+    - id: 173
       fields:
       - title: Title
         value: 
@@ -780,9 +780,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 94
+        originDialogueID: 173
         destinationConversationID: 29
-        destinationDialogueID: 95
+        destinationDialogueID: 174
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -792,11 +792,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 66.827805
-        y: 126.10126
+        x: 137.18877
+        y: 152.8811
         width: 160
         height: 30
-    - id: 95
+    - id: 174
       fields:
       - title: Title
         value: 
@@ -826,22 +826,27 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          MoveTo(WaeliAnchor, Waeli, 0.5);
-
           AnimatorController(Anim_Controllers/BasicAnims,
           Waeli);
 
-          AnimatorTrigger(RightTurn, Waeli)@0.3;
+          AnimatorTrigger(StepBack, Waeli)@0.01;
 
-          AnimatorTrigger(Idle,
-          Waeli)@1.1;
+          MoveTo(WaeliAnchor,
+          Waeli, 0.5)@0.2;
 
-          LookAt(Player, Waeli, 0.1)@1.1;
+          AnimatorTrigger(Idle, Waeli)@0.7;
 
-          Camera(Full,
-          Waeli, 0.7)@1.2;
+          AnimatorTrigger(RightTurn,
+          Waeli)@0.8;
 
-          SetContinueMode(true)@1.5;'
+          AnimatorTrigger(Idle, Waeli)@1.6;
+
+          LookAt(Player,
+          Waeli, 0.1)@1.6;
+
+          Camera(Full, Waeli, 0.7)@1.7;
+
+          SetContinueMode(true)@2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -853,9 +858,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 95
+        originDialogueID: 174
         destinationConversationID: 29
-        destinationDialogueID: 96
+        destinationDialogueID: 175
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -865,11 +870,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 68.04732
-        y: 174.72604
+        x: 135.87662
+        y: 202.77173
         width: 160
         height: 30
-    - id: 96
+    - id: 175
       fields:
       - title: Title
         value: 
@@ -923,9 +928,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 96
+        originDialogueID: 175
         destinationConversationID: 29
-        destinationDialogueID: 97
+        destinationDialogueID: 176
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -935,11 +940,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 68.04732
-        y: 227.47113
+        x: 135.87662
+        y: 255.51688
         width: 160
         height: 30
-    - id: 97
+    - id: 176
       fields:
       - title: Title
         value: 
@@ -968,8 +973,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'AnimatorTrigger(RightTurn, Waeli);
 
-          LookAt(PlayerCamera,
-          Waeli, 0.1)@0.8;
+          AnimatorTrigger(Idle,
+          Waeli)@0.8;
+
+          LookAt(PlayerCamera, Waeli, 0.1)@0.8;
 
           SetContinueMode(false);'
         type: 0
@@ -983,15 +990,15 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 97
+        originDialogueID: 176
         destinationConversationID: 29
-        destinationDialogueID: 98
+        destinationDialogueID: 177
         isConnector: 0
         priority: 2
       - originConversationID: 29
-        originDialogueID: 97
+        originDialogueID: 176
         destinationConversationID: 29
-        destinationDialogueID: 99
+        destinationDialogueID: 178
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1001,11 +1008,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 68.04732
-        y: 276.10126
+        x: 135.87662
+        y: 305.4128
         width: 160
         height: 30
-    - id: 98
+    - id: 177
       fields:
       - title: Title
         value: 
@@ -1044,9 +1051,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 98
+        originDialogueID: 177
         destinationConversationID: 29
-        destinationDialogueID: 100
+        destinationDialogueID: 179
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1056,11 +1063,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 322.4711
+        x: 79.033356
+        y: 350.5168
         width: 160
         height: 30
-    - id: 99
+    - id: 178
       fields:
       - title: Title
         value: 
@@ -1099,9 +1106,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 99
+        originDialogueID: 178
         destinationConversationID: 29
-        destinationDialogueID: 105
+        destinationDialogueID: 184
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1111,11 +1118,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 256.3487
-        y: 277.63553
+        x: 324.17813
+        y: 305.68124
         width: 160
         height: 30
-    - id: 100
+    - id: 179
       fields:
       - title: Title
         value: 
@@ -1159,9 +1166,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 100
+        originDialogueID: 179
         destinationConversationID: 29
-        destinationDialogueID: 101
+        destinationDialogueID: 180
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1171,11 +1178,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 421.1013
+        x: 79.033356
+        y: 449.147
         width: 160
         height: 30
-    - id: 101
+    - id: 180
       fields:
       - title: Title
         value: 
@@ -1214,9 +1221,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 101
+        originDialogueID: 180
         destinationConversationID: 29
-        destinationDialogueID: 102
+        destinationDialogueID: 181
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1226,11 +1233,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 471.10123
+        x: 79.033356
+        y: 499.147
         width: 160
         height: 30
-    - id: 102
+    - id: 181
       fields:
       - title: Title
         value: 
@@ -1271,9 +1278,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 102
+        originDialogueID: 181
         destinationConversationID: 29
-        destinationDialogueID: 103
+        destinationDialogueID: 182
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1283,11 +1290,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 521.1012
+        x: 79.033356
+        y: 549.1471
         width: 160
         height: 30
-    - id: 103
+    - id: 182
       fields:
       - title: Title
         value: 
@@ -1326,9 +1333,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 103
+        originDialogueID: 182
         destinationConversationID: 29
-        destinationDialogueID: 104
+        destinationDialogueID: 183
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1338,11 +1345,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 571.1012
+        x: 79.033356
+        y: 599.1471
         width: 160
         height: 30
-    - id: 104
+    - id: 183
       fields:
       - title: Title
         value: 
@@ -1381,9 +1388,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 104
+        originDialogueID: 183
         destinationConversationID: 29
-        destinationDialogueID: 161
+        destinationDialogueID: 240
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1393,11 +1400,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 622.47107
+        x: 79.033356
+        y: 650.51697
         width: 160
         height: 30
-    - id: 105
+    - id: 184
       fields:
       - title: Title
         value: 
@@ -1438,9 +1445,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 105
+        originDialogueID: 184
         destinationConversationID: 29
-        destinationDialogueID: 106
+        destinationDialogueID: 185
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1450,11 +1457,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 433.06116
-        y: 278.32047
+        x: 500.8904
+        y: 306.36618
         width: 160
         height: 30
-    - id: 106
+    - id: 185
       fields:
       - title: Title
         value: 
@@ -1495,9 +1502,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 106
+        originDialogueID: 185
         destinationConversationID: 29
-        destinationDialogueID: 167
+        destinationDialogueID: 246
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1507,11 +1514,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 434.43103
-        y: 328.55392
+        x: 502.26028
+        y: 356.59964
         width: 160
         height: 30
-    - id: 107
+    - id: 186
       fields:
       - title: Title
         value: 
@@ -1550,9 +1557,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 107
+        originDialogueID: 186
         destinationConversationID: 29
-        destinationDialogueID: 109
+        destinationDialogueID: 188
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1562,11 +1569,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 433.52808
-        y: 471.02408
+        x: 501.3572
+        y: 499.06985
         width: 160
         height: 30
-    - id: 108
+    - id: 187
       fields:
       - title: Title
         value: 
@@ -1605,9 +1612,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 108
+        originDialogueID: 187
         destinationConversationID: 29
-        destinationDialogueID: 100
+        destinationDialogueID: 179
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1617,11 +1624,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 194.28455
-        y: 412.66043
+        x: 262.11386
+        y: 440.70615
         width: 160
         height: 30
-    - id: 109
+    - id: 188
       fields:
       - title: Title
         value: 
@@ -1660,9 +1667,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 109
+        originDialogueID: 188
         destinationConversationID: 29
-        destinationDialogueID: 110
+        destinationDialogueID: 189
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1672,11 +1679,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 433.52808
-        y: 521.02405
+        x: 501.3572
+        y: 549.06995
         width: 160
         height: 30
-    - id: 110
+    - id: 189
       fields:
       - title: Title
         value: 
@@ -1715,9 +1722,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 110
+        originDialogueID: 189
         destinationConversationID: 29
-        destinationDialogueID: 111
+        destinationDialogueID: 190
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1727,11 +1734,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 432.15808
-        y: 571.02405
+        x: 499.9873
+        y: 599.06995
         width: 160
         height: 30
-    - id: 111
+    - id: 190
       fields:
       - title: Title
         value: 
@@ -1770,9 +1777,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 111
+        originDialogueID: 190
         destinationConversationID: 29
-        destinationDialogueID: 112
+        destinationDialogueID: 191
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1782,11 +1789,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 432.1582
-        y: 619.6538
+        x: 499.9873
+        y: 647.6997
         width: 160
         height: 30
-    - id: 112
+    - id: 191
       fields:
       - title: Title
         value: 
@@ -1825,9 +1832,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 112
+        originDialogueID: 191
         destinationConversationID: 29
-        destinationDialogueID: 113
+        destinationDialogueID: 192
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1837,11 +1844,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 433.52808
-        y: 671.0237
+        x: 501.3572
+        y: 699.0696
         width: 160
         height: 30
-    - id: 113
+    - id: 192
       fields:
       - title: Title
         value: 
@@ -1880,9 +1887,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 113
+        originDialogueID: 192
         destinationConversationID: 29
-        destinationDialogueID: 161
+        destinationDialogueID: 240
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1892,11 +1899,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 255.4458
-        y: 674.44836
+        x: 323.27518
+        y: 702.49426
         width: 160
         height: 30
-    - id: 114
+    - id: 193
       fields:
       - title: Title
         value: 
@@ -1935,9 +1942,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 114
+        originDialogueID: 193
         destinationConversationID: 29
-        destinationDialogueID: 117
+        destinationDialogueID: 196
         isConnector: 0
         priority: 2
       conditionsString: Variable["What'sWrong"] == false
@@ -1947,11 +1954,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 719.7313
+        x: 79.033356
+        y: 747.7772
         width: 160
         height: 30
-    - id: 115
+    - id: 194
       fields:
       - title: Title
         value: 
@@ -1990,9 +1997,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 115
+        originDialogueID: 194
         destinationConversationID: 29
-        destinationDialogueID: 119
+        destinationDialogueID: 198
         isConnector: 0
         priority: 2
       conditionsString: Variable["MeetingGryf"] == false
@@ -2002,11 +2009,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 157.49927
-        y: 718.36145
+        x: 251.91083
+        y: 748.939
         width: 160
         height: 30
-    - id: 116
+    - id: 195
       fields:
       - title: Title
         value: 
@@ -2045,9 +2052,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 116
+        originDialogueID: 195
         destinationConversationID: 29
-        destinationDialogueID: 129
+        destinationDialogueID: 208
         isConnector: 0
         priority: 2
       conditionsString: Variable["WhyTakeCare"] == false
@@ -2057,11 +2064,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 332.8418
-        y: 719.7313
+        x: 427.2531
+        y: 750.3089
         width: 160
         height: 30
-    - id: 117
+    - id: 196
       fields:
       - title: Title
         value: 
@@ -2104,9 +2111,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 117
+        originDialogueID: 196
         destinationConversationID: 29
-        destinationDialogueID: 168
+        destinationDialogueID: 247
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2116,11 +2123,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 770.41626
+        x: 79.033356
+        y: 798.46216
         width: 160
         height: 30
-    - id: 118
+    - id: 197
       fields:
       - title: Title
         value: 
@@ -2159,9 +2166,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 118
+        originDialogueID: 197
         destinationConversationID: 29
-        destinationDialogueID: 169
+        destinationDialogueID: 248
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2171,11 +2178,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 95.47406
-        y: 1147.0153
+        x: 189.88562
+        y: 1177.5933
         width: 160
         height: 30
-    - id: 119
+    - id: 198
       fields:
       - title: Title
         value: 
@@ -2206,9 +2213,17 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          LookAt(Cylo, Waeli, 0.8)@2;
+          AnimatorTrigger(LeftTurn, Waeli)@2;
 
-          SetContinueMode(true)@3.0;'
+          AnimatorTrigger(LeftTurn,
+          Waeli)@2.8;
+
+          AnimatorTrigger(LeftTurn, Waeli)@3.6;
+
+          AnimatorTrigger(Idle,
+          Waeli)@4.4;
+
+          SetContinueMode(true)@3.6;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -2220,9 +2235,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 119
+        originDialogueID: 198
         destinationConversationID: 29
-        destinationDialogueID: 120
+        destinationDialogueID: 199
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2232,11 +2247,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 157.34894
-        y: 767.9772
+        x: 251.7605
+        y: 798.55475
         width: 160
         height: 30
-    - id: 120
+    - id: 199
       fields:
       - title: Title
         value: 
@@ -2266,7 +2281,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: LookAt(Player, Waeli, 0.5);
+        value: 'AnimatorTrigger(RightTurn, Waeli);
+
+          AnimatorTrigger(RightTurn,
+          Waeli)@0.8;
+
+          AnimatorTrigger(Idle, Waeli)@1.6;
+
+          LookAt(PlayerCamera,
+          Waeli, 0.2)@1.6;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -2278,9 +2301,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 120
+        originDialogueID: 199
         destinationConversationID: 29
-        destinationDialogueID: 121
+        destinationDialogueID: 200
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2290,11 +2313,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156.12946
-        y: 816.30664
+        x: 250.54102
+        y: 846.8842
         width: 160
         height: 30
-    - id: 121
+    - id: 200
       fields:
       - title: Title
         value: 
@@ -2334,9 +2357,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 121
+        originDialogueID: 200
         destinationConversationID: 29
-        destinationDialogueID: 118
+        destinationDialogueID: 197
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2346,11 +2369,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156.12946
-        y: 867.6765
+        x: 250.54102
+        y: 898.2541
         width: 160
         height: 30
-    - id: 122
+    - id: 201
       fields:
       - title: Title
         value: 
@@ -2390,9 +2413,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 122
+        originDialogueID: 201
         destinationConversationID: 29
-        destinationDialogueID: 132
+        destinationDialogueID: 211
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2402,11 +2425,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 94.10419
-        y: 1232.1505
+        x: 191.0474
+        y: 1262.7285
         width: 160
         height: 30
-    - id: 123
+    - id: 202
       fields:
       - title: Title
         value: 
@@ -2453,9 +2476,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 123
+        originDialogueID: 202
         destinationConversationID: 29
-        destinationDialogueID: 124
+        destinationDialogueID: 203
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2465,11 +2488,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 332.63373
-        y: 812.3097
+        x: 427.0451
+        y: 842.88727
         width: 160
         height: 30
-    - id: 124
+    - id: 203
       fields:
       - title: Title
         value: 
@@ -2508,9 +2531,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 124
+        originDialogueID: 203
         destinationConversationID: 29
-        destinationDialogueID: 125
+        destinationDialogueID: 204
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2520,11 +2543,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 334.0036
-        y: 865.04944
+        x: 428.41498
+        y: 895.627
         width: 160
         height: 30
-    - id: 125
+    - id: 204
       fields:
       - title: Title
         value: 
@@ -2563,9 +2586,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 125
+        originDialogueID: 204
         destinationConversationID: 29
-        destinationDialogueID: 126
+        destinationDialogueID: 205
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2575,11 +2598,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 334.0036
-        y: 915.0492
+        x: 428.41498
+        y: 945.6268
         width: 160
         height: 30
-    - id: 126
+    - id: 205
       fields:
       - title: Title
         value: 
@@ -2630,9 +2653,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 126
+        originDialogueID: 205
         destinationConversationID: 29
-        destinationDialogueID: 127
+        destinationDialogueID: 206
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2642,11 +2665,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 335.3734
-        y: 963.7831
+        x: 429.78485
+        y: 994.3608
         width: 160
         height: 30
-    - id: 127
+    - id: 206
       fields:
       - title: Title
         value: 
@@ -2685,9 +2708,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 127
+        originDialogueID: 206
         destinationConversationID: 29
-        destinationDialogueID: 128
+        destinationDialogueID: 207
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2697,11 +2720,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 334.0036
-        y: 1015.0492
+        x: 428.41498
+        y: 1045.6272
         width: 160
         height: 30
-    - id: 128
+    - id: 207
       fields:
       - title: Title
         value: 
@@ -2742,9 +2765,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 128
+        originDialogueID: 207
         destinationConversationID: 29
-        destinationDialogueID: 130
+        destinationDialogueID: 209
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2754,11 +2777,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 334.0036
-        y: 1065.0492
+        x: 428.41498
+        y: 1095.6272
         width: 160
         height: 30
-    - id: 129
+    - id: 208
       fields:
       - title: Title
         value: 
@@ -2800,9 +2823,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 129
+        originDialogueID: 208
         destinationConversationID: 29
-        destinationDialogueID: 123
+        destinationDialogueID: 202
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2812,11 +2835,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 332.7378
-        y: 765.6824
+        x: 427.1491
+        y: 796.25995
         width: 160
         height: 30
-    - id: 130
+    - id: 209
       fields:
       - title: Title
         value: 
@@ -2861,9 +2884,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 130
+        originDialogueID: 209
         destinationConversationID: 29
-        destinationDialogueID: 131
+        destinationDialogueID: 210
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2873,11 +2896,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 331.47192
-        y: 1110.8263
+        x: 425.88324
+        y: 1141.4043
         width: 160
         height: 30
-    - id: 131
+    - id: 210
       fields:
       - title: Title
         value: 
@@ -2916,9 +2939,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 131
+        originDialogueID: 210
         destinationConversationID: 29
-        destinationDialogueID: 172
+        destinationDialogueID: 251
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2928,11 +2951,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 332.7378
-        y: 1158.0865
+        x: 427.1491
+        y: 1188.6646
         width: 160
         height: 30
-    - id: 132
+    - id: 211
       fields:
       - title: Title
         value: 
@@ -2977,9 +3000,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 132
+        originDialogueID: 211
         destinationConversationID: 29
-        destinationDialogueID: 133
+        destinationDialogueID: 212
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2989,11 +3012,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 94.10419
-        y: 1282.1505
+        x: 191.0474
+        y: 1312.7285
         width: 160
         height: 30
-    - id: 133
+    - id: 212
       fields:
       - title: Title
         value: 
@@ -3032,9 +3055,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 133
+        originDialogueID: 212
         destinationConversationID: 29
-        destinationDialogueID: 134
+        destinationDialogueID: 213
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3044,11 +3067,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 94.10419
-        y: 1332.1505
+        x: 191.0474
+        y: 1362.7285
         width: 160
         height: 30
-    - id: 134
+    - id: 213
       fields:
       - title: Title
         value: 
@@ -3092,15 +3115,15 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 134
+        originDialogueID: 213
         destinationConversationID: 29
-        destinationDialogueID: 135
+        destinationDialogueID: 214
         isConnector: 0
         priority: 2
       - originConversationID: 29
-        originDialogueID: 134
+        originDialogueID: 213
         destinationConversationID: 29
-        destinationDialogueID: 136
+        destinationDialogueID: 215
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3110,11 +3133,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 92.73428
-        y: 1382.1505
+        x: 189.67752
+        y: 1412.7285
         width: 160
         height: 30
-    - id: 135
+    - id: 214
       fields:
       - title: Title
         value: 
@@ -3153,9 +3176,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 135
+        originDialogueID: 214
         destinationConversationID: 29
-        destinationDialogueID: 137
+        destinationDialogueID: 216
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3165,11 +3188,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 1442.173
+        x: 108.14725
+        y: 1472.751
         width: 160
         height: 30
-    - id: 136
+    - id: 215
       fields:
       - title: Title
         value: 
@@ -3208,9 +3231,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 136
+        originDialogueID: 215
         destinationConversationID: 29
-        destinationDialogueID: 151
+        destinationDialogueID: 230
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3220,11 +3243,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 190.3067
-        y: 1442.277
+        x: 287.2499
+        y: 1472.855
         width: 160
         height: 30
-    - id: 137
+    - id: 216
       fields:
       - title: Title
         value: 
@@ -3263,9 +3286,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 137
+        originDialogueID: 216
         destinationConversationID: 29
-        destinationDialogueID: 138
+        destinationDialogueID: 217
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3275,11 +3298,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 1493.5428
+        x: 108.14725
+        y: 1524.1208
         width: 160
         height: 30
-    - id: 138
+    - id: 217
       fields:
       - title: Title
         value: 
@@ -3318,9 +3341,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 138
+        originDialogueID: 217
         destinationConversationID: 29
-        destinationDialogueID: 139
+        destinationDialogueID: 218
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3330,11 +3353,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 1543.5428
+        x: 108.14725
+        y: 1574.1208
         width: 160
         height: 30
-    - id: 139
+    - id: 218
       fields:
       - title: Title
         value: 
@@ -3373,9 +3396,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 139
+        originDialogueID: 218
         destinationConversationID: 29
-        destinationDialogueID: 140
+        destinationDialogueID: 219
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3385,11 +3408,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 1593.5428
+        x: 108.14725
+        y: 1624.1208
         width: 160
         height: 30
-    - id: 140
+    - id: 219
       fields:
       - title: Title
         value: 
@@ -3429,9 +3452,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 140
+        originDialogueID: 219
         destinationConversationID: 29
-        destinationDialogueID: 170
+        destinationDialogueID: 249
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3441,11 +3464,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 1643.5428
+        x: 108.14725
+        y: 1674.1208
         width: 160
         height: 30
-    - id: 141
+    - id: 220
       fields:
       - title: Title
         value: 
@@ -3485,9 +3508,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 141
+        originDialogueID: 220
         destinationConversationID: 29
-        destinationDialogueID: 142
+        destinationDialogueID: 221
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3497,11 +3520,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 1738.8553
+        x: 108.14725
+        y: 1769.4333
         width: 160
         height: 30
-    - id: 142
+    - id: 221
       fields:
       - title: Title
         value: 
@@ -3541,9 +3564,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 142
+        originDialogueID: 221
         destinationConversationID: 29
-        destinationDialogueID: 171
+        destinationDialogueID: 250
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3553,11 +3576,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 1788.8553
+        x: 108.14725
+        y: 1819.4333
         width: 160
         height: 30
-    - id: 143
+    - id: 222
       fields:
       - title: Title
         value: 
@@ -3597,9 +3620,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 143
+        originDialogueID: 222
         destinationConversationID: 29
-        destinationDialogueID: 144
+        destinationDialogueID: 223
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3609,11 +3632,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 1884.6178
+        x: 108.14725
+        y: 1915.1958
         width: 160
         height: 30
-    - id: 144
+    - id: 223
       fields:
       - title: Title
         value: 
@@ -3654,9 +3677,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 144
+        originDialogueID: 223
         destinationConversationID: 29
-        destinationDialogueID: 145
+        destinationDialogueID: 224
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3666,11 +3689,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 1929.0309
+        x: 108.14725
+        y: 1959.6089
         width: 160
         height: 30
-    - id: 145
+    - id: 224
       fields:
       - title: Title
         value: 
@@ -3709,9 +3732,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 145
+        originDialogueID: 224
         destinationConversationID: 29
-        destinationDialogueID: 146
+        destinationDialogueID: 225
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3721,11 +3744,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 1977.661
+        x: 108.14725
+        y: 2008.2394
         width: 160
         height: 30
-    - id: 146
+    - id: 225
       fields:
       - title: Title
         value: 
@@ -3766,9 +3789,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 146
+        originDialogueID: 225
         destinationConversationID: 29
-        destinationDialogueID: 147
+        destinationDialogueID: 226
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3778,11 +3801,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 2027.661
+        x: 108.14725
+        y: 2058.2388
         width: 160
         height: 30
-    - id: 147
+    - id: 226
       fields:
       - title: Title
         value: 
@@ -3822,9 +3845,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 147
+        originDialogueID: 226
         destinationConversationID: 29
-        destinationDialogueID: 148
+        destinationDialogueID: 227
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3834,11 +3857,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 2077.661
+        x: 108.14725
+        y: 2108.2383
         width: 160
         height: 30
-    - id: 148
+    - id: 227
       fields:
       - title: Title
         value: 
@@ -3878,9 +3901,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 148
+        originDialogueID: 227
         destinationConversationID: 29
-        destinationDialogueID: 149
+        destinationDialogueID: 228
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3890,11 +3913,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 2127.6611
+        x: 108.14725
+        y: 2158.2388
         width: 160
         height: 30
-    - id: 149
+    - id: 228
       fields:
       - title: Title
         value: 
@@ -3933,9 +3956,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 149
+        originDialogueID: 228
         destinationConversationID: 29
-        destinationDialogueID: 150
+        destinationDialogueID: 229
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -3945,11 +3968,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 2177.6611
+        x: 108.14725
+        y: 2208.2388
         width: 160
         height: 30
-    - id: 150
+    - id: 229
       fields:
       - title: Title
         value: 
@@ -3978,10 +4001,38 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          LookAt(Gryf, Waeli, 0.5)@1;
+          AnimatorTrigger(LeftTurn, Waeli)@0.5;
 
-          LookAt(Player,
-          Waeli, 0.5)@2;'
+          AnimatorTrigger(Idle,
+          Waeli)@1.3;
+
+          AnimatorTrigger(RightTurn, Waeli)@1.8;
+
+          AnimatorTrigger(Idle,
+          Waeli)@2.6;
+
+          LookAt(Player, Waeli, 0.1)@2.6;
+
+
+          SetActive(Antoni,
+          true);
+
+          AnimatorController(Anim_Controllers/BasicAnims, Antoni);
+
+          AnimatorTrigger(Walk,
+          Antoni);
+
+          MoveTo(AntoniIntroMove, Antoni, 1.8);
+
+          AnimatorTrigger(Idle,
+          Antoni)@1.7;
+
+          AnimatorTrigger(LeftTurn, Antoni)@2;
+
+          AnimatorTrigger(Idle,
+          Antoni)@2.8;
+
+          LookAt(Waeli, Antoni, 0.1)@2.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -3993,9 +4044,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 150
+        originDialogueID: 229
         destinationConversationID: 29
-        destinationDialogueID: 163
+        destinationDialogueID: 242
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4005,11 +4056,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 2226.2915
+        x: 108.14725
+        y: 2258.135
         width: 160
         height: 30
-    - id: 151
+    - id: 230
       fields:
       - title: Title
         value: 
@@ -4048,9 +4099,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 151
+        originDialogueID: 230
         destinationConversationID: 29
-        destinationDialogueID: 152
+        destinationDialogueID: 231
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4060,11 +4111,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 190.3067
-        y: 1492.277
+        x: 287.2499
+        y: 1522.855
         width: 160
         height: 30
-    - id: 152
+    - id: 231
       fields:
       - title: Title
         value: 
@@ -4103,9 +4154,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 152
+        originDialogueID: 231
         destinationConversationID: 29
-        destinationDialogueID: 153
+        destinationDialogueID: 232
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4115,11 +4166,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 190.3067
-        y: 1542.277
+        x: 287.2499
+        y: 1572.855
         width: 160
         height: 30
-    - id: 153
+    - id: 232
       fields:
       - title: Title
         value: 
@@ -4158,9 +4209,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 153
+        originDialogueID: 232
         destinationConversationID: 29
-        destinationDialogueID: 154
+        destinationDialogueID: 233
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4170,11 +4221,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 190.3067
-        y: 1592.277
+        x: 287.2499
+        y: 1622.855
         width: 160
         height: 30
-    - id: 154
+    - id: 233
       fields:
       - title: Title
         value: 
@@ -4214,15 +4265,15 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 154
+        originDialogueID: 233
         destinationConversationID: 29
-        destinationDialogueID: 156
+        destinationDialogueID: 235
         isConnector: 0
         priority: 2
       - originConversationID: 29
-        originDialogueID: 154
+        originDialogueID: 233
         destinationConversationID: 29
-        destinationDialogueID: 155
+        destinationDialogueID: 234
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4232,11 +4283,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 190.3067
-        y: 1642.277
+        x: 287.2499
+        y: 1672.855
         width: 160
         height: 30
-    - id: 155
+    - id: 234
       fields:
       - title: Title
         value: 
@@ -4275,9 +4326,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 155
+        originDialogueID: 234
         destinationConversationID: 29
-        destinationDialogueID: 157
+        destinationDialogueID: 236
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4287,11 +4338,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 375.11682
-        y: 1695.0167
+        x: 472.0599
+        y: 1725.5947
         width: 160
         height: 30
-    - id: 156
+    - id: 235
       fields:
       - title: Title
         value: 
@@ -4330,9 +4381,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 156
+        originDialogueID: 235
         destinationConversationID: 29
-        destinationDialogueID: 145
+        destinationDialogueID: 224
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4342,11 +4393,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 190.3067
-        y: 1693.6469
+        x: 287.2499
+        y: 1724.2249
         width: 160
         height: 30
-    - id: 157
+    - id: 236
       fields:
       - title: Title
         value: 
@@ -4385,9 +4436,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 157
+        originDialogueID: 236
         destinationConversationID: 29
-        destinationDialogueID: 164
+        destinationDialogueID: 243
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4397,11 +4448,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 376.33643
-        y: 1742.277
+        x: 473.2794
+        y: 1772.855
         width: 160
         height: 30
-    - id: 158
+    - id: 237
       fields:
       - title: Title
         value: 
@@ -4441,9 +4492,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 158
+        originDialogueID: 237
         destinationConversationID: 29
-        destinationDialogueID: 165
+        destinationDialogueID: 244
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4453,11 +4504,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 373.74695
-        y: 1844.3319
+        x: 470.69003
+        y: 1874.9099
         width: 160
         height: 30
-    - id: 159
+    - id: 238
       fields:
       - title: Title
         value: 
@@ -4484,7 +4535,29 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false);
+
+          AnimatorTrigger(Idle, Waeli);
+
+          SetActive(Antoni,
+          true);
+
+          AnimatorController(Anim_Controllers/BasicAnims, Antoni);
+
+          AnimatorTrigger(Walk,
+          Antoni);
+
+          MoveTo(AntoniIntroMove, Antoni, 1.8);
+
+          AnimatorTrigger(Idle,
+          Antoni)@1.7;
+
+          AnimatorTrigger(LeftTurn, Antoni)@2;
+
+          AnimatorTrigger(Idle,
+          Antoni)@2.8;
+
+          LookAt(Waeli, Antoni, 0.1)@2.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -4496,9 +4569,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 159
+        originDialogueID: 238
         destinationConversationID: 29
-        destinationDialogueID: 163
+        destinationDialogueID: 242
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4508,11 +4581,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 377.25732
-        y: 1950.3033
+        x: 474.2003
+        y: 1980.8815
         width: 160
         height: 30
-    - id: 160
+    - id: 239
       fields:
       - title: Title
         value: 
@@ -4551,9 +4624,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 160
+        originDialogueID: 239
         destinationConversationID: 29
-        destinationDialogueID: 107
+        destinationDialogueID: 186
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4563,11 +4636,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 430.89246
-        y: 419.3336
+        x: 498.72168
+        y: 447.3793
         width: 160
         height: 30
-    - id: 161
+    - id: 240
       fields:
       - title: Title
         value: 
@@ -4611,21 +4684,21 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 161
+        originDialogueID: 240
         destinationConversationID: 29
-        destinationDialogueID: 114
+        destinationDialogueID: 193
         isConnector: 0
         priority: 2
       - originConversationID: 29
-        originDialogueID: 161
+        originDialogueID: 240
         destinationConversationID: 29
-        destinationDialogueID: 115
+        destinationDialogueID: 194
         isConnector: 0
         priority: 2
       - originConversationID: 29
-        originDialogueID: 161
+        originDialogueID: 240
         destinationConversationID: 29
-        destinationDialogueID: 116
+        destinationDialogueID: 195
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4635,11 +4708,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 671.1012
+        x: 79.033356
+        y: 699.1471
         width: 160
         height: 30
-    - id: 162
+    - id: 241
       fields:
       - title: Title
         value: 
@@ -4681,7 +4754,7 @@ MonoBehaviour:
           Camera(Mem1Panel4Dog, Gryf, 0.7)@1.4;
 
           LookAt(Gryf,
-          speaker);
+          Player);
 
           Fade(in, 0.7)@2.2;'
         type: 0
@@ -4695,9 +4768,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 162
+        originDialogueID: 241
         destinationConversationID: 29
-        destinationDialogueID: 94
+        destinationDialogueID: 173
         isConnector: 0
         priority: 2
       conditionsString: Variable["SpokeToWaeli"] == false
@@ -4707,11 +4780,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 97.60422
-        y: 64.91461
+        x: 164.1177
+        y: 92.960304
         width: 160
         height: 30
-    - id: 163
+    - id: 242
       fields:
       - title: Title
         value: 
@@ -4738,17 +4811,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(false);
-
-          AnimatorTrigger(Idle, Waeli);
-
-          SetActive(Antoni,
-          true);
-
-          MoveTo(AntoniIntroMove, Antoni, 0.9);
-
-          LookAt(Waeli,
-          Antoni, 0.6)@1.0;'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -4758,7 +4821,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 29
+        originDialogueID: 242
+        destinationConversationID: 51
+        destinationDialogueID: 0
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: Variable["SpokeToWaeli"] = true
       onExecute:
@@ -4766,11 +4835,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 200.29053
-        y: 2244.227
+        x: 297.23373
+        y: 2274.8047
         width: 160
         height: 30
-    - id: 164
+    - id: 243
       fields:
       - title: Title
         value: 
@@ -4809,9 +4878,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 164
+        originDialogueID: 243
         destinationConversationID: 29
-        destinationDialogueID: 158
+        destinationDialogueID: 237
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4821,11 +4890,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 375.11682
-        y: 1792.277
+        x: 472.0599
+        y: 1822.855
         width: 160
         height: 30
-    - id: 165
+    - id: 244
       fields:
       - title: Title
         value: 
@@ -4864,9 +4933,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 165
+        originDialogueID: 244
         destinationConversationID: 29
-        destinationDialogueID: 159
+        destinationDialogueID: 238
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4876,11 +4945,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 373.74695
-        y: 1894.3319
+        x: 470.69003
+        y: 1924.9099
         width: 160
         height: 30
-    - id: 166
+    - id: 245
       fields:
       - title: Title
         value: 
@@ -4925,11 +4994,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 370.6555
-        y: 83.87146
+        x: 438.4846
+        y: 111.91715
         width: 160
         height: 30
-    - id: 167
+    - id: 246
       fields:
       - title: Title
         value: 
@@ -4968,15 +5037,15 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 167
+        originDialogueID: 246
         destinationConversationID: 29
-        destinationDialogueID: 108
+        destinationDialogueID: 187
         isConnector: 0
         priority: 2
       - originConversationID: 29
-        originDialogueID: 167
+        originDialogueID: 246
         destinationConversationID: 29
-        destinationDialogueID: 160
+        destinationDialogueID: 239
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4986,11 +5055,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 434.43103
-        y: 371.7358
+        x: 502.26028
+        y: 399.78152
         width: 160
         height: 30
-    - id: 168
+    - id: 247
       fields:
       - title: Title
         value: 
@@ -5030,9 +5099,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 168
+        originDialogueID: 247
         destinationConversationID: 29
-        destinationDialogueID: 118
+        destinationDialogueID: 197
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -5042,11 +5111,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 820.41626
+        x: 79.033356
+        y: 848.46216
         width: 160
         height: 30
-    - id: 169
+    - id: 248
       fields:
       - title: Title
         value: 
@@ -5085,9 +5154,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 169
+        originDialogueID: 248
         destinationConversationID: 29
-        destinationDialogueID: 122
+        destinationDialogueID: 201
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -5097,11 +5166,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 94.37512
-        y: 1189.3229
+        x: 188.78668
+        y: 1219.9009
         width: 160
         height: 30
-    - id: 170
+    - id: 249
       fields:
       - title: Title
         value: 
@@ -5140,9 +5209,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 170
+        originDialogueID: 249
         destinationConversationID: 29
-        destinationDialogueID: 141
+        destinationDialogueID: 220
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -5152,11 +5221,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 1693.5428
+        x: 108.14725
+        y: 1724.1208
         width: 160
         height: 30
-    - id: 171
+    - id: 250
       fields:
       - title: Title
         value: 
@@ -5195,9 +5264,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 171
+        originDialogueID: 250
         destinationConversationID: 29
-        destinationDialogueID: 143
+        destinationDialogueID: 222
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -5207,11 +5276,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 11.204071
-        y: 1838.8553
+        x: 108.14725
+        y: 1869.4333
         width: 160
         height: 30
-    - id: 172
+    - id: 251
       fields:
       - title: Title
         value: 
@@ -5258,9 +5327,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 29
-        originDialogueID: 172
+        originDialogueID: 251
         destinationConversationID: 29
-        destinationDialogueID: 118
+        destinationDialogueID: 197
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -5270,13 +5339,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 332.7378
-        y: 1208.0865
+        x: 400.56686
+        y: 1236.1328
         width: 160
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.42999998
+    canvasZoom: 0.7600002
   - id: 51
     fields:
     - title: Title
@@ -5426,7 +5495,7 @@ MonoBehaviour:
       userScript: 'ChangeEmotionalState(6, "Antoni"); -- ANGRY
 
         ChangeEmotionalState(2,
-        "Waeli"); -- STUNNED'
+        "Waeli"); -- STUNNED;'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5467,20 +5536,49 @@ MonoBehaviour:
 
           LookAt(Antoni, Player, 0.7);
 
-          LookAt(Antoni,
-          Waeli, 0.7);
+          AnimatorTrigger(RightTurn,
+          Waeli);
 
-          MoveTo(AntoniTowardsDog, Antoni, 2.0)@1;
+          AnimatorTrigger(RightTurn, Waeli)@0.8;
+
+          AnimatorTrigger(Idle,
+          Waeli);
+
+          LookAt(Antoni, Waeli, 0.1)@1.6;
+
+
+          AnimatorTrigger(Running,
+          Antoni)@1.7;
+
+          MoveTo(AntoniTowardsDog, Antoni, 3.0)@1.7;
+
+          AnimatorTrigger(RightTurn,
+          Waeli)@3.2;
+
+          AnimatorTrigger(Idle, Waeli)@4;
 
           LookAt(AntoniTowardsDog,
-          Waeli, 2.0)@1;
+          Waeli, 0.1)@4;
 
-          LookAt(AntoniTowardsDog, Player, 2.0)@1;
+          LookAt(AntoniTowardsDog, Player, 3.0)@1.7;
 
-          LookAt(Waeli,
-          Antoni, 0.5)@3.2;
 
-          SetContinueMode(true)@3.7;'
+          AnimatorTrigger(SlowDown,
+          Antoni)@4;
+
+          AnimatorTrigger(Idle, Antoni)@4.2;
+
+          AnimatorTrigger(RightTurn,
+          Antoni)@4.4;
+
+          LookAt(Waeli, Antoni, 0.2)@5.2;
+
+          AnimatorTrigger(Idle
+
+          AnimatorTrigger(Antoni_DrawingTaser,
+          Antoni)@5.3;
+
+          SetContinueMode(true)@5.3;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 51
@@ -5803,9 +5901,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: KarmicEvent("Mem1", "Trust", "When Antoni approaches with a taser,
-        Intervene in the argument", 5, "Strangers are Willing to Stand up for Each
-        Other in Pax-Tera")
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5860,9 +5956,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: KarmicEvent("Mem1", "Apathy", "When Antoni approaches with a taser,
-        Don't do anything", -3, "In the face of potential conflict, many are unsure
-        how to proceed")
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5920,8 +6014,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: KarmicEvent("Mem1", "Fear", "When Antoni approaches with a taser,
-        Do as Antoni says (avoid Gryf)", -5, "Stray dogs remain a constant danger")
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7262,9 +7355,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: KarmicEvent("Mem1", "Bravery", "When the GPK soldiers approach,
-        Help Waeli", 5, "Helping a Stranger in the face of danger. A path towards
-        peace?")
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7319,9 +7410,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: KarmicEvent("Mem1", "Fear", "When the GPK soldiers approach, Do
-        nothing", -5, "In the midst of continued GPK presence, many Pax-Terans remain
-        fearful")
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11203,15 +11292,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetEnabled(Canvas, false, DialogueCanvas);
+        value: 'MoveTo(PlayerPanel5Start, Player);
 
-          MoveTo(PlayerPanel5Start,
-          Player);
-
-          Fade(in, 0.7)@1.2;
-
-          SetEnabled(Canvas, true,
-          DialogueCanvas)@2.0;'
+          Fade(in, 0.7)@1.2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 51
@@ -11223,7 +11306,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: SwitchToMemory(1)
+      userScript: 'SwitchToMemory(1);
+
+        SetQuestState("Go Home", "active")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11619,8 +11704,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 27.058777, y: 1794.165}
-    canvasZoom: 0.85000014
+    canvasScrollPosition: {x: 0, y: 20.000183}
+    canvasZoom: 0.7000003
   syncInfo:
     syncActors: 1
     syncItems: 1

@@ -185,6 +185,190 @@ Transform:
   m_Father: {fileID: 1109381220304091690}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -69.89, z: 0}
+--- !u!1 &702171101396339170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7118480991021526084}
+  - component: {fileID: 6055282663070498388}
+  - component: {fileID: 8386914377712878368}
+  - component: {fileID: 4573611994996237246}
+  - component: {fileID: 1104881987549596848}
+  m_Layer: 0
+  m_Name: Gryf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7118480991021526084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702171101396339170}
+  m_LocalRotation: {x: -0, y: 0.82994896, z: -0, w: 0.5578393}
+  m_LocalPosition: {x: 79.156, y: 78.495, z: -72.202}
+  m_LocalScale: {x: 4.4565935, y: 4.4565916, z: 4.4565935}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1707731397643082164}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 22.187, z: 0}
+--- !u!33 &6055282663070498388
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702171101396339170}
+  m_Mesh: {fileID: -7394192372709461333, guid: 24125be04db77e849b1f919371657e24, type: 3}
+--- !u!23 &8386914377712878368
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702171101396339170}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -1556318248580442857, guid: 24125be04db77e849b1f919371657e24, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4573611994996237246
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702171101396339170}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2, y: 0.15, z: 0.08}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1104881987549596848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702171101396339170}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 32
+  condition:
+    luaConditions: []
+    questConditions: []
+    acceptedTags: []
+    acceptedGameObjects: []
+    luaWizardIndex: -1
+    lastEvaluationValue: 0
+  setQuestState: 1
+  questName: 
+  questState: 0
+  setQuestEntryState: 0
+  questEntryNumber: 1
+  questEntryState: 0
+  setAnotherQuestEntryState: 0
+  anotherQuestEntryNumber: 1
+  anotherQuestEntryState: 0
+  luaCode: 
+  sequence: 
+  sequenceSpeaker: {fileID: 0}
+  sequenceListener: {fileID: 0}
+  waitOneFrameOnStartOrEnable: 1
+  alertMessage: 
+  textTable: {fileID: 0}
+  alertDuration: 0
+  sendMessages: []
+  barkSource: 0
+  barkConversation: 
+  barkEntryID: -1
+  barkEntryTitle: 
+  barkText: 
+  barkTextSequence: 
+  barker: {fileID: 0}
+  barkTarget: {fileID: 0}
+  barkOrder: 0
+  allowBarksDuringConversations: 0
+  skipBarkIfNoValidEntries: 0
+  cacheBarkLines: 0
+  conversation: Waeli Conversation
+  conversationConversant: {fileID: 7118480991021526084}
+  conversationActor: {fileID: 0}
+  startConversationEntryID: -1
+  startConversationEntryTitle: 
+  overrideDialogueUI: {fileID: 0}
+  exclusive: 0
+  replace: 0
+  queue: 0
+  skipIfNoValidEntries: 1
+  preventRestartOnSameFrameEnded: 0
+  stopConversationOnTriggerExit: 0
+  marginToAllowTriggerExit: 0.2
+  stopConversationIfTooFar: 0
+  maxConversationDistance: 5
+  monitorConversationDistanceFrequency: 1
+  showCursorDuringConversation: 1
+  pauseGameDuringConversation: 0
+  setActiveActions: []
+  setEnabledActions: []
+  setAnimatorStateActions: []
+  onExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  useConversationTitlePicker: 1
+  useBarkTitlePicker: 1
+  useQuestNamePicker: 1
+  selectedDatabase: {fileID: 11400000, guid: 6c702cc98ad583b408ecc5ed02bddb46, type: 2}
 --- !u!1 &792396980078182281
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,14 +537,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892863246274991214}
-  m_LocalRotation: {x: -0, y: -0.7117798, z: -0, w: 0.7024027}
+  m_LocalRotation: {x: -0, y: -0.6943021, z: -0, w: 0.7196837}
   m_LocalPosition: {x: 409.615, y: -0.98000336, z: 92.064}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2240628867023348915}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: -90.76, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -87.943, z: 0}
 --- !u!1 &909522737208559620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,6 +1251,7 @@ Transform:
   - {fileID: 8643632685836016969}
   - {fileID: 6010868003961078883}
   - {fileID: 569282741665493192}
+  - {fileID: 7118480991021526084}
   m_Father: {fileID: 7712038067871497235}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1390,7 +1575,7 @@ MonoBehaviour:
       acceptedGameObjects: []
       luaWizardIndex: 0
       lastEvaluationValue: 0
-    target: {fileID: 0}
+    target: {fileID: 8288209497308640004}
     state: 0
   - condition:
       luaConditions: []
@@ -1399,7 +1584,7 @@ MonoBehaviour:
       acceptedGameObjects: []
       luaWizardIndex: 0
       lastEvaluationValue: 0
-    target: {fileID: 0}
+    target: {fileID: 4558231582215066570}
     state: 0
   - condition:
       luaConditions: []
@@ -2503,6 +2688,7 @@ Transform:
   - {fileID: 6436025557522186685}
   - {fileID: 4241279305484896538}
   - {fileID: 1051493149797822771}
+  - {fileID: 2045219290157060560}
   - {fileID: 7370633412451088913}
   m_Father: {fileID: 1981096865737337692}
   m_RootOrder: -1
@@ -2530,14 +2716,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5728404833504980579}
-  m_LocalRotation: {x: -0, y: -0.98028743, z: -0, w: 0.19757672}
-  m_LocalPosition: {x: 408.94803, y: -0.16300201, z: 93.0359}
+  m_LocalRotation: {x: -0, y: -0.829949, z: -0, w: -0.55783933}
+  m_LocalPosition: {x: 408.949, y: -0.15799713, z: 93.04101}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9105360492053318930}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: -157.209, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -247.813, z: 0}
 --- !u!1 &5776349396348727486
 GameObject:
   m_ObjectHideFlags: 0
@@ -3330,6 +3516,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8008533306458718639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2045219290157060560}
+  m_Layer: 0
+  m_Name: NewGryfAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2045219290157060560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8008533306458718639}
+  m_LocalRotation: {x: -0, y: -0.829949, z: 0, w: -0.55783933}
+  m_LocalPosition: {x: 409.036, y: -0.5249939, z: 93.258}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9105360492053318930}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: -247.813, z: 0}
 --- !u!1 &8387129059059471095
 GameObject:
   m_ObjectHideFlags: 0
@@ -6450,6 +6667,11 @@ PrefabInstance:
         type: 3}
       propertyPath: conversationActor
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375179759482864597, guid: 431ebfc857fa49e49823397be94494f8,
+        type: 3}
+      propertyPath: showCursorDuringConversation
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8579464321887165448, guid: 431ebfc857fa49e49823397be94494f8,
         type: 3}
@@ -11696,7 +11918,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: fdfbeab8c040964459884560d10e470a, type: 2}
+      objectReference: {fileID: 9100000, guid: 05ee5e7a56ed21946a8ace81b0653b15, type: 2}
     - target: {fileID: 4250709676932338127, guid: 431ebfc857fa49e49823397be94494f8,
         type: 3}
       propertyPath: actor
@@ -12069,7 +12291,7 @@ MonoBehaviour:
       luaWizardIndex: 0
       lastEvaluationValue: 0
     target: {fileID: 4089524721583672825}
-    stateName: GPKSoldier_Surveying
+    stateName: BreathingIdle
     crossFadeDuration: 0
   onExecute:
     m_PersistentCalls:
@@ -12569,7 +12791,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: fdfbeab8c040964459884560d10e470a, type: 2}
+      objectReference: {fileID: 9100000, guid: 05ee5e7a56ed21946a8ace81b0653b15, type: 2}
     - target: {fileID: 4250709676932338127, guid: 431ebfc857fa49e49823397be94494f8,
         type: 3}
       propertyPath: actor
@@ -12923,7 +13145,7 @@ MonoBehaviour:
       luaWizardIndex: 0
       lastEvaluationValue: 0
     target: {fileID: 3139103612036220446}
-    stateName: GPKSoldier_Surveying
+    stateName: BreathingIdle
     crossFadeDuration: 0
   onExecute:
     m_PersistentCalls:
