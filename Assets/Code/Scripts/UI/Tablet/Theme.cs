@@ -43,12 +43,13 @@ public class Theme : MonoBehaviour
 
     public void ShowPopup()
     {
-        if(revealed)
-        {
-            textBox.sprite = hoverTextBox;
-            hoverPopup.gameObject.SetActive(true);
-            description.gameObject.SetActive(true);
-        }
+        //uncomment below when we have an idea of what to do with the popup
+        //if(revealed)
+        //{
+        //    textBox.sprite = hoverTextBox;
+        //    hoverPopup.gameObject.SetActive(true);
+        //    description.gameObject.SetActive(true);
+        //}
     }
 
     public void HidePopup()
