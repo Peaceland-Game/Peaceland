@@ -39,18 +39,24 @@ public class Theme : MonoBehaviour
         }
     }
 
-    void ShowPopup()
+    public void ShowPopup()
     {
-        textBox.sprite = hoverTextBox;
-        hoverPopup.gameObject.SetActive(true);
-        description.gameObject.SetActive(true);
+        if(revealed)
+        {
+            textBox.sprite = hoverTextBox;
+            hoverPopup.gameObject.SetActive(true);
+            description.gameObject.SetActive(true);
+        }
     }
 
-    void HidePopup()
+    public void HidePopup()
     {
-        textBox.sprite = revealedTextBox;
-        hoverPopup.gameObject.SetActive(false);
-        description.gameObject.SetActive(false);
+        if (revealed)
+        {
+            textBox.sprite = revealedTextBox;
+            hoverPopup.gameObject.SetActive(false);
+            description.gameObject.SetActive(false);
+        }
     }
 
     public void RevealTheme()
