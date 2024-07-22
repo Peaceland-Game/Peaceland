@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21606129713750297}
   m_LocalRotation: {x: -0, y: -0.5727867, z: -0, w: 0.8197045}
-  m_LocalPosition: {x: 325.83, y: -0.4148, z: 84.68}
+  m_LocalPosition: {x: 325.83, y: -0.588, z: 84.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2108,7 +2108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4530099844491372007}
   m_LocalRotation: {x: -0, y: -0.5727867, z: -0, w: 0.8197045}
-  m_LocalPosition: {x: 337.95, y: -0.4148, z: 81.42}
+  m_LocalPosition: {x: 337.95, y: -0.5099945, z: 81.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3108,7 +3108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7106323722533180861}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.6239929, y: 7.4789963, z: -0.2669983}
+  m_LocalPosition: {x: -1.782, y: 7.4789963, z: -0.463}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7314,6 +7314,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 151254595376807925}
+    - targetCorrespondingSourceObject: {fileID: 6350760848086103499, guid: 171822e55c6acbd4789dea1c302379f2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3427249023945885102}
   m_SourcePrefab: {fileID: 100100000, guid: 171822e55c6acbd4789dea1c302379f2, type: 3}
 --- !u!4 &8209676092369101824 stripped
 Transform:
@@ -7673,6 +7677,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0522099, y: 0.61885816, z: 0.4126893}
   m_Center: {x: 0.0045225145, y: 0.31086674, z: 0.02171941}
+--- !u!114 &3427249023945885102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837593282689973946}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0.93872154, g: 1, b: 0, a: 1}
+  outlineWidth: 4
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &3238175743782910493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15319,6 +15341,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}
+      propertyPath: setEnabledActions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
       propertyPath: showCursorDuringConversation
       value: 0
       objectReference: {fileID: 0}
@@ -15342,6 +15369,11 @@ PrefabInstance:
       propertyPath: setActiveActions.Array.data[0].target
       value: 
       objectReference: {fileID: 1063138205426804450}
+    - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
+        type: 3}
+      propertyPath: setEnabledActions.Array.data[0].target
+      value: 
+      objectReference: {fileID: 3427249023945885102}
     - target: {fileID: 3262149226668985031, guid: 097e98a190bd84049a025541dd775656,
         type: 3}
       propertyPath: condition.questConditions.Array.data[0].questName

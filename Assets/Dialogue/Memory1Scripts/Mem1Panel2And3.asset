@@ -2800,16 +2800,13 @@ MonoBehaviour:
 
           LookAt(listener, GPKSoldier6, 0.5)@4.0;
 
-          MoveTo(BridgeMoveForward,
-          Player, 2.0)@5.0;
+          LookAt(BridgeGPKSoldiersLookAt,
+          GPKSoldier5, 0.5)@7;
 
-          LookAt(BridgeGPKSoldiersLookAt, GPKSoldier5,
-          0.5)@5;
+          LookAt(BridgeGPKSoldiersLookAt, GPKSoldier6,
+          0.5)@7;
 
-          LookAt(BridgeGPKSoldiersLookAt, GPKSoldier6, 0.5)@5;
-
-          SetEnabled(Canvas,
-          true, DialogueCanvas)@7.0;'
+          SetEnabled(Canvas, true, DialogueCanvas)@7.0;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 45
@@ -4623,25 +4620,26 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          AnimatorTrigger(Walk, Bystander2,
-          BreathingIdle)@1;
+          AnimatorTrigger(WalkBackwards,
+          Bystander2, BreathingIdle)@1;
 
-          MoveTo(StrangerEnd, Bystander2, 5.0)@1;
+          MoveTo(StrangerEnd, Bystander2,
+          5.0)@1;
 
-          LookAt(RabidDog,
-          Player, 1.0)@2.0;
+          LookAt(RabidDog, Player, 1.0)@2.0;
 
-          MoveTo(AlleyEnd, Player, 5.0)@3.0;
+          MoveTo(AlleyEnd,
+          Player, 5.0)@3.0;
 
-          LookAt(RabidDogExit,
-          RabidDog, 0.7)@4.4;
+          LookAt(RabidDogExit, RabidDog, 0.7)@4.4;
 
-          MoveTo(RabidDogExit, RabidDog, 1.0)@5;
+          MoveTo(RabidDogExit,
+          RabidDog, 1.0)@5;
 
-          SetActive(RabidDog,
-          false)@6;
+          SetActive(RabidDog, false)@6;
 
-          AnimatorTrigger(Idle, Bystander2, Walk)@5.6;'
+          AnimatorTrigger(Idle,
+          Bystander2, WalkBackwards)@5.6;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 48
