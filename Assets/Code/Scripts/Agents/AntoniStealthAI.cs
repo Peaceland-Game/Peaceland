@@ -4,18 +4,17 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class AntoniStealthAI : MonoBehaviour
-{
-    enum State
-    {
+public class AntoniStealthAI : MonoBehaviour {
+    enum State {
         WalkHome,
         Alert,
         AlmostSpotted,
         Spotted,
-        TurnAround
+        TurnAround,
+        Waiting
     }
 
-    private State currentState;
+    [SerializeField] private State currentState;
 
     //the waypoints the agent tries to move to
     public Transform[] waypoints;
@@ -33,13 +32,13 @@ public class AntoniStealthAI : MonoBehaviour
     private float directionTimer;
 
     //the waypoint the agent is currently traveling towards
-    private int currentWaypoint = 0;
+    [SerializeField] private int currentWaypoint = 0;
     private UnityEngine.AI.NavMeshAgent agent;
 
     private Stealth stealthScript;
     public VisionConeVisualizer visionConeVisualizer;
     public bool DisplayConeVisualizer = true;
-    
+
     private float currentTurnAroundTimer;
 
     //how long the agent will look at the player before triggering an event
@@ -47,15 +46,15 @@ public class AntoniStealthAI : MonoBehaviour
     private float currentTimeBeforeNoticed;
     private float timer;
 
+    public bool waitingForPlayer = true;
+
     //TEMPORARY MATERIAL dinicating state
     public GameObject stateIndicator;
     public Material stateMaterial;
 
 
-    void Start()
-    {
-        if (!DisplayConeVisualizer)
-        {
+    void Start() {
+        if (!DisplayConeVisualizer) {
             visionConeVisualizer.gameObject.SetActive(false);
         }
         currentState = State.WalkHome;
@@ -66,58 +65,59 @@ public class AntoniStealthAI : MonoBehaviour
     }
 
     //the agent walks to a new waypoint
-    void GoToNextPoint()
-    {
+    void GoToNextPoint() {
         if (waypoints.Length == 0)
             return;
-        
+
         agent.destination = waypoints[currentWaypoint].position;
         currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
     }
 
     //the agent goes to the player
-    void GoToPlayerPoint()
-    {
+    void GoToPlayerPoint() {
         if (waypoints.Length == 0)
             return;
 
         agent.destination = playerPoint.position;
     }
-    void SwitchToWalkHome()
-    {
+    void SwitchToWalkHome() {
         currentState = State.WalkHome;
         currentWaypoint--;
         GoToNextPoint();
     }
-    void SwitchToAlmostSpotted()
-    {
+    void SwitchToAlmostSpotted() {
         currentTimeBeforeNoticed = 0.1f;
         timer = 0;
         currentState = State.AlmostSpotted;
     }
+    public void StopWaiting() {
+        currentState = State.WalkHome;
+        GoToNextPoint();
+    }
 
-    void WalkHome()
-    {
+    void WalkHome() {
         agent.isStopped = false;
         //if the agent reaches a waypoint
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
-        {
+        if (!agent.pathPending && agent.remainingDistance < 0.5f) {
+            //hardcode wait at waypoint 1
+            if (currentWaypoint == 1) {
+                currentState = State.Waiting;
+                return;
+            }
             //check if it is a turnaround waypoint
-            foreach (int i in turnAroundWaypoints)
-            {
-                if (currentWaypoint == i)
-                {
+            foreach (int i in turnAroundWaypoints) {
+                if (currentWaypoint == i) {
                     //set y degrees
                     currentTurnAroundTimer = 0;
                     currentState = State.TurnAround;
                     return;
                 }
             }
-                
+
             //if not, pathfind to next point
             GoToNextPoint();
         }
-            
+
 
         //if they spot the player, seek them
         if (stealthScript.detectedPlayer)
@@ -127,8 +127,7 @@ public class AntoniStealthAI : MonoBehaviour
         if (stealthScript.heardPlayer)
             currentState = State.Alert;
     }
-    void Alert()
-    {
+    void Alert() {
         //stop pathfinding
         agent.isStopped = true;
         agent.velocity = Vector3.zero;
@@ -152,26 +151,24 @@ public class AntoniStealthAI : MonoBehaviour
         if (stealthScript.detectedPlayer)
             SwitchToAlmostSpotted();
     }
-    void AlmostSpotted()
-    {
+    void AlmostSpotted() {
         agent.isStopped = false;
         agent.velocity = Vector3.zero;
         GoToPlayerPoint();
-        
+
         //if they continue to detect the player, get closer to spotting them
-        if (stealthScript.detectedPlayer)
-        {
+        if (stealthScript.detectedPlayer) {
             currentTimeBeforeNoticed += Time.deltaTime;
             timer = 0;
         }
-            
+
         //if they are not detecting them, get closer to being alerted
         if (!stealthScript.detectedPlayer && timer < 0.5)
             timer += Time.deltaTime;
-            
+
 
         else if (!stealthScript.detectedPlayer && timer >= 0.5)
-            currentTimeBeforeNoticed -= Time.deltaTime/4;   
+            currentTimeBeforeNoticed -= Time.deltaTime / 4;
 
         //spot them if they detected them for long enough
         if (currentTimeBeforeNoticed > timeBeforeAgentNoticesPlayer + 0.1f)
@@ -181,21 +178,18 @@ public class AntoniStealthAI : MonoBehaviour
         if (currentTimeBeforeNoticed <= 0)
             SwitchToWalkHome();
     }
-    void Spotted()
-    {
+    void Spotted() {
         agent.isStopped = false;
         agent.velocity = Vector3.zero;
         GoToPlayerPoint();
 
         //if the agent loses the player , go on alert
-        if (!stealthScript.detectedPlayer)
-        {
+        if (!stealthScript.detectedPlayer) {
             //currentState = State.Alert;
         }
-            
+
     }
-    void TurnAround()
-    {
+    void TurnAround() {
         //stop pathfinding
         agent.isStopped = true;
         agent.velocity = Vector3.zero;
@@ -205,12 +199,11 @@ public class AntoniStealthAI : MonoBehaviour
         if (currentTurnAroundTimer <= 1.5)
             transform.Rotate(0, 120 * Time.deltaTime, 0, 0);
         //once they have rotated enough, wait an amount of time
-        else
-        {
+        else {
             currentWaypoint++;
             SwitchToWalkHome();
         }
-            
+
 
         //if they hear the player, go on alert
         if (stealthScript.heardPlayer)
@@ -220,12 +213,10 @@ public class AntoniStealthAI : MonoBehaviour
         if (stealthScript.detectedPlayer)
             SwitchToAlmostSpotted();
     }
-    void Update()
-    {
+    void Update() {
         //Debug.Log(currentState);
         stateIndicator.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        switch (currentState)
-        {
+        switch (currentState) {
             //move from one waypoint to another
             case State.WalkHome:
                 stateMaterial.color = Color.green;
@@ -254,6 +245,8 @@ public class AntoniStealthAI : MonoBehaviour
             case State.TurnAround:
                 stateMaterial.color = Color.blue;
                 TurnAround();
+                break;
+            case State.Waiting:
                 break;
         }
 

@@ -216,17 +216,17 @@ public class Stealth : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.cyan;
-        if (!Application.isPlaying) return;
+        //Gizmos.color = Color.cyan;
+        //if (!Application.isPlaying) return;
 
-        //draw each ray
-        for (int i = 0; i < numberOfRays; i++)
-        {
-            //make the visual refect their current range
-            if (!heardPlayer)
-                Gizmos.DrawRay(rays[i].origin, rays[i].direction * detectionDistance);
-            else
-                Gizmos.DrawRay(rays[i].origin, rays[i].direction * largerDetectionDistance);
-        }
+        ////draw each ray
+        //for (int i = 0; i < numberOfRays; i++)
+        //{
+        //    //make the visual refect their current range
+        //    if (!heardPlayer)
+        //        Gizmos.DrawRay(rays[i].origin, rays[i].direction * detectionDistance);
+        //    else
+        //        Gizmos.DrawRay(rays[i].origin, rays[i].direction * largerDetectionDistance);
+        //}
     }
 }
