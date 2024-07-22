@@ -2161,20 +2161,18 @@ MonoBehaviour:
       - originConversationID: 44
         originDialogueID: 64
         destinationConversationID: 44
-        destinationDialogueID: 56
+        destinationDialogueID: 70
         isConnector: 0
         priority: 2
       conditionsString: Variable["PlayerMoney"] >= 12
-      userScript: 'SubtractMoney(12);
-
-        AddArtifact("IceCream")'
+      userScript: SubtractMoney(12);
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 611.30725
-        y: 438.89386
+        x: 602.352
+        y: 401.5804
         width: 160
         height: 30
     - id: 65
@@ -2481,6 +2479,61 @@ MonoBehaviour:
         serializedVersion: 2
         x: 406.10114
         y: 689.22626
+        width: 160
+        height: 30
+    - id: 70
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 44
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 44
+        originDialogueID: 70
+        destinationConversationID: 44
+        destinationDialogueID: 56
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: AddArtifact("IceCream")
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 603.84454
+        y: 444.11768
         width: 160
         height: 30
     entryGroups: []
@@ -4044,7 +4097,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -4165,7 +4218,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: StopPlayer();
+      userScript: 'StopPlayer();
+
+        StrayWhine();'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4468,7 +4523,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: StrayGrowl();
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5015,7 +5070,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 306.7226}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.7600002
   - id: 49
     fields:
