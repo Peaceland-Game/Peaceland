@@ -17,6 +17,7 @@ public class FirstPersonController : MonoBehaviour
     private CharacterController controller;
 
     public bool lastConvo = false;
+    public bool isConvo = false;
 
     #region Camera Movement Variables
 
@@ -499,7 +500,7 @@ public class FirstPersonController : MonoBehaviour
     public void OnConversationStart(Transform actor)
     {
         cameraRotationHolder = playerCamera.transform.localRotation;
-        playerCanMove = false; cameraCanMove = false; lockCursor = false;
+        playerCanMove = false; cameraCanMove = false; lockCursor = false; isConvo = true;
         SetPitchAndYaw();
         Cursor.lockState = CursorLockMode.None;
     }
@@ -509,17 +510,12 @@ public class FirstPersonController : MonoBehaviour
         playerCamera.transform.localPosition = Vector3.zero;
         SetPitchAndYaw();
 
-        if (lastConvo)
-        {
-            cameraCanMove = false;
-            playerCanMove = false;
-            lockCursor = false;
-        }
-        else 
+        if (!lastConvo)
         {
             cameraCanMove = true;
             playerCanMove = true;
             lockCursor = true;
+            isConvo = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
     }

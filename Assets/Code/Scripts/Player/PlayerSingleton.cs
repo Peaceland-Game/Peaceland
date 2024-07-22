@@ -222,9 +222,13 @@ public class PlayerSingleton : MonoBehaviour
 
     public void ToggleJournal()
     {
-        TogglePause();
-        Debug.Log("toggle pause");
-        userInterface.ToggleJournal(paused);
+        if (!controller.isConvo) 
+        {
+            TogglePause();
+            Debug.Log("toggle pause");
+            userInterface.ToggleJournal(paused);
+            controller.GetComponent<Selector>().enabled = !controller.GetComponent<Selector>().enabled;
+        }
     }
 
     //public void TogglePauseMenu()
