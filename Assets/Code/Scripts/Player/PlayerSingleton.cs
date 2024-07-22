@@ -319,10 +319,16 @@ public class PlayerSingleton : MonoBehaviour
         controller.StopPlayer();
     }
 
+    public void LastDemoConvo() 
+    {
+        controller.LastDemoConvo();
+    }
+
     void OnEnable()
     {
         // Make the functions available to Lua: (Replace these lines with your own.)
         Lua.RegisterFunction(nameof(StopPlayer), this, SymbolExtensions.GetMethodInfo(() => StopPlayer()));
+        Lua.RegisterFunction(nameof(LastDemoConvo), this, SymbolExtensions.GetMethodInfo(() => LastDemoConvo()));
         Lua.RegisterFunction(nameof(AddMoney), this, SymbolExtensions.GetMethodInfo(() => AddMoney(0)));
         Lua.RegisterFunction(nameof(ForceSubtractMoney), this, SymbolExtensions.GetMethodInfo(() => ForceSubtractMoney(0)));
         Lua.RegisterFunction(nameof(SubtractMoney), this, SymbolExtensions.GetMethodInfo(() => SubtractMoney(0)));
