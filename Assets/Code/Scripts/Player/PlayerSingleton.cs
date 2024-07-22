@@ -75,6 +75,7 @@ public class PlayerSingleton : MonoBehaviour
         }
         else
         {
+            tablet.AddTheme(theme);
             karmaPoints.Add(theme, amt);
             //Instantiate(karmaNotificationPrefab);
             if (NotificationManager.Instance != null)
