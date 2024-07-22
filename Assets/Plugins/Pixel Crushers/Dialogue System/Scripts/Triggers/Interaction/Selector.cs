@@ -468,80 +468,19 @@ namespace PixelCrushers.DialogueSystem
 #endif
         }
 
-        //protected virtual void Run3DRaycast() {
-        //    Ray ray = UnityEngine.Camera.main.ScreenPointToRay(GetSelectionPoint());
-        //    lastRay = ray;
-
-        //    // New Variable rayCastDistance is used below for the raycasts instead of maxSelectionDistance to be able to set it to infinity (if using DistanceFrom.GameObject) instead of maxSelectionDistance:
-        //    // Credit: Daniel D. (Thank you!)
-        //    float raycastDistance = (distanceFrom == DistanceFrom.GameObject) ? Mathf.Infinity : maxSelectionDistance;
-
-        //    if (raycastAll) {
-
-        //        // Run RaycastAll:
-        //        lastHits ??= new RaycastHit[MaxHits];
-        //        numLastHits = Physics.RaycastNonAlloc(ray, lastHits, raycastDistance, layerMask);
-        //        bool foundUsable = false;
-        //        for (int i = 0; i < numLastHits; i++) {
-        //            var hit = lastHits[i];
-        //            float hitDistance = (distanceFrom == DistanceFrom.Camera) ? hit.distance
-        //                : (distanceFrom == DistanceFrom.GameObject || actorTransform == null)
-        //                    ? Vector3.Distance(gameObject.transform.position, hit.collider.transform.position)
-        //                    : Vector3.Distance(actorTransform.position, hit.collider.transform.position);
-        //            if (selection == hit.collider.gameObject) {
-        //                foundUsable = true;
-        //                distance = hitDistance;
-        //                break;
-        //            }
-        //            else {
-        //                Usable hitUsable = hit.collider.GetComponent<Usable>();
-        //                if (hitUsable != null && hitUsable.enabled && hitDistance <= maxSelectionDistance) {
-        //                    foundUsable = true;
-        //                    distance = hitDistance;
-        //                    SetCurrentUsable(hitUsable);
-        //                    break;
-        //                }
-        //            }
-        //        }
-        //        if (!foundUsable) {
-        //            DeselectTarget();
-        //        }
-
-        //    }
-        //    else {
-
-        //        // Cast a ray and see what we hit:
-        //        if (Physics.Raycast(ray, out RaycastHit hit, maxSelectionDistance, layerMask)) {
-        //            distance = (distanceFrom == DistanceFrom.Camera) ? hit.distance
-        //                : (distanceFrom == DistanceFrom.GameObject || actorTransform == null)
-        //                    ? Vector3.Distance(gameObject.transform.position, hit.collider.transform.position)
-        //                    : Vector3.Distance(actorTransform.position, hit.collider.transform.position);
-        //            Usable hitUsable = hit.collider.GetComponent<Usable>();
-        //            if (hitUsable != null && hitUsable.enabled) {
-        //                if (selection != hit.collider.gameObject) {
-        //                    SetCurrentUsable(hitUsable);
-        //                }
-        //            }
-        //            else {
-        //                DeselectTarget();
-        //            }
-        //        }
-        //        else {
-        //            DeselectTarget();
-        //        }
-        //        lastHit = hit;
-        //    }
-        //}
-
         protected virtual void Run3DRaycast() {
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(GetSelectionPoint());
             lastRay = ray;
 
+            // New Variable rayCastDistance is used below for the raycasts instead of maxSelectionDistance to be able to set it to infinity (if using DistanceFrom.GameObject) instead of maxSelectionDistance:
+            // Credit: Daniel D. (Thank you!)
             float raycastDistance = (distanceFrom == DistanceFrom.GameObject) ? Mathf.Infinity : maxSelectionDistance;
 
             if (raycastAll) {
+
+                // Run RaycastAll:
                 lastHits ??= new RaycastHit[MaxHits];
-                numLastHits = Physics.SphereCastNonAlloc(ray, sphereRadius, lastHits, raycastDistance, layerMask);
+                numLastHits = Physics.RaycastNonAlloc(ray, lastHits, raycastDistance, layerMask);
                 bool foundUsable = false;
                 for (int i = 0; i < numLastHits; i++) {
                     var hit = lastHits[i];
@@ -567,10 +506,12 @@ namespace PixelCrushers.DialogueSystem
                 if (!foundUsable) {
                     DeselectTarget();
                 }
+
             }
             else {
-                RaycastHit hit;
-                if (Physics.SphereCast(ray, sphereRadius, out hit, maxSelectionDistance, layerMask)) {
+
+                // Cast a ray and see what we hit:
+                if (Physics.Raycast(ray, out RaycastHit hit, maxSelectionDistance, layerMask)) {
                     distance = (distanceFrom == DistanceFrom.Camera) ? hit.distance
                         : (distanceFrom == DistanceFrom.GameObject || actorTransform == null)
                             ? Vector3.Distance(gameObject.transform.position, hit.collider.transform.position)
@@ -591,6 +532,65 @@ namespace PixelCrushers.DialogueSystem
                 lastHit = hit;
             }
         }
+
+        //protected virtual void Run3DRaycast() {
+        //    Ray ray = UnityEngine.Camera.main.ScreenPointToRay(GetSelectionPoint());
+        //    lastRay = ray;
+
+        //    float raycastDistance = (distanceFrom == DistanceFrom.GameObject) ? Mathf.Infinity : maxSelectionDistance;
+
+        //    if (raycastAll) {
+        //        lastHits ??= new RaycastHit[MaxHits];
+        //        numLastHits = Physics.SphereCastNonAlloc(ray, sphereRadius, lastHits, raycastDistance, layerMask);
+        //        bool foundUsable = false;
+        //        for (int i = 0; i < numLastHits; i++) {
+        //            var hit = lastHits[i];
+        //            float hitDistance = (distanceFrom == DistanceFrom.Camera) ? hit.distance
+        //                : (distanceFrom == DistanceFrom.GameObject || actorTransform == null)
+        //                    ? Vector3.Distance(gameObject.transform.position, hit.collider.transform.position)
+        //                    : Vector3.Distance(actorTransform.position, hit.collider.transform.position);
+        //            if (selection == hit.collider.gameObject) {
+        //                foundUsable = true;
+        //                distance = hitDistance;
+        //                break;
+        //            }
+        //            else {
+        //                Usable hitUsable = hit.collider.GetComponent<Usable>();
+        //                if (hitUsable != null && hitUsable.enabled && hitDistance <= maxSelectionDistance) {
+        //                    foundUsable = true;
+        //                    distance = hitDistance;
+        //                    SetCurrentUsable(hitUsable);
+        //                    break;
+        //                }
+        //            }
+        //        }
+        //        if (!foundUsable) {
+        //            DeselectTarget();
+        //        }
+        //    }
+        //    else {
+        //        RaycastHit hit;
+        //        if (Physics.SphereCast(ray, sphereRadius, out hit, maxSelectionDistance, layerMask)) {
+        //            distance = (distanceFrom == DistanceFrom.Camera) ? hit.distance
+        //                : (distanceFrom == DistanceFrom.GameObject || actorTransform == null)
+        //                    ? Vector3.Distance(gameObject.transform.position, hit.collider.transform.position)
+        //                    : Vector3.Distance(actorTransform.position, hit.collider.transform.position);
+        //            Usable hitUsable = hit.collider.GetComponent<Usable>();
+        //            if (hitUsable != null && hitUsable.enabled) {
+        //                if (selection != hit.collider.gameObject) {
+        //                    SetCurrentUsable(hitUsable);
+        //                }
+        //            }
+        //            else {
+        //                DeselectTarget();
+        //            }
+        //        }
+        //        else {
+        //            DeselectTarget();
+        //        }
+        //        lastHit = hit;
+        //    }
+        //}
         public virtual void SetCurrentUsable(Usable usable)
         {
             if (usable == this.usable) return;
