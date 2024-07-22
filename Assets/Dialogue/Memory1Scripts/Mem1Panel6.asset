@@ -303,7 +303,7 @@ MonoBehaviour:
   - id: 10
     fields:
     - title: Name
-      value: Antoni's Nature
+      value: Go Home
       type: 0
       typeString: 
     - title: Pictures
@@ -311,7 +311,7 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: Follow Antoni and find out where he's going.
+      value: Head back to your apartment.
       type: 0
       typeString: 
     - title: Success Description
@@ -515,7 +515,75 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
+        value: 'SetContinueMode(true);
+
+          LookAt(Waypoint_1 (1), Player,
+          0.8);'
+        type: 0
+        typeString: 
+      conversationID: 52
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 52
+        originDialogueID: 1
+        destinationConversationID: 52
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 160
+        height: 30
+    - id: 2
+      fields:
+      - title: Title
         value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'SetContinueMode(false);
+
+          Fade(stay, 0.8);
+
+          SetEnabled(Canvas,
+          false, DialogueCanvas)@0.9;
+
+          SetActive(DemoEnd, true)@0.9;
+
+          Fade(in,
+          0.8)@1.0;'
         type: 0
         typeString: 
       conversationID: 52
@@ -527,14 +595,14 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: LastDemoConvo()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 160
-        y: 80
+        y: 130
         width: 160
         height: 30
     entryGroups: []
