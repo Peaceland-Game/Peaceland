@@ -303,7 +303,7 @@ MonoBehaviour:
   - id: 10
     fields:
     - title: Name
-      value: Antoni's Nature
+      value: Go Home
       type: 0
       typeString: 
     - title: Pictures
@@ -311,7 +311,7 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: Follow Antoni and find out where he's going.
+      value: Head back to your apartment.
       type: 0
       typeString: 
     - title: Success Description
@@ -372,8 +372,22 @@ MonoBehaviour:
       value: The effect of the player's actions
       type: 0
       typeString: CustomFieldType_Text
+  - id: 6
+    fields:
+    - title: Name
+      value: PlayerMoney
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   conversations:
-  - id: 49
+  - id: 52
     fields:
     - title: Title
       value: Panel 6 Start
@@ -449,7 +463,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 49
+      conversationID: 52
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -457,9 +471,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 49
+      - originConversationID: 52
         originDialogueID: 0
-        destinationConversationID: 49
+        destinationConversationID: 52
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
@@ -501,17 +515,26 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false);
+
+          LookAt(Waypoint_1 (1), Player,
+          10)@0.8;'
         type: 0
         typeString: 
-      conversationID: 49
+      conversationID: 52
       isRoot: 0
       isGroup: 0
       nodeColor: 
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 52
+        originDialogueID: 1
+        destinationConversationID: 52
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -523,10 +546,69 @@ MonoBehaviour:
         y: 80
         width: 160
         height: 30
+    - id: 2
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 5
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'SetContinueMode(false);
+
+          Fade(stay, 0.8);
+
+          SetEnabled(Canvas,
+          false, DialogueCanvas)@0.9;
+
+          SetActive(DemoEnd, true)@0.9;
+
+          Fade(in,
+          0.8)@1.0;'
+        type: 0
+        typeString: 
+      conversationID: 52
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: LastDemoConvo()
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 160
+        y: 130
+        width: 160
+        height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 1
-  - id: 30
+  - id: 53
     fields:
     - title: Title
       value: Hide Trash Can
@@ -602,7 +684,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 30
+      conversationID: 53
       isRoot: 0
       isGroup: 0
       nodeColor: 
@@ -610,9 +692,9 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
-      - originConversationID: 30
+      - originConversationID: 53
         originDialogueID: 0
-        destinationConversationID: 30
+        destinationConversationID: 53
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
@@ -658,7 +740,7 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      conversationID: 30
+      conversationID: 53
       isRoot: 0
       isGroup: 0
       nodeColor: 
