@@ -18,7 +18,7 @@ public class NotesPageController : MonoBehaviour
     private string currentSpeaker;
     private MemoryChatLog currentChatItem;
 
-
+    private Dictionary<string, string> lastLoggedDialogue = new Dictionary<string, string>();
 
     // Start is called before the first frame update
     void Start()
@@ -53,18 +53,18 @@ public class NotesPageController : MonoBehaviour
         currentChatItem = Instantiate(chatItemPrefab, parent).GetComponent<MemoryChatLog>();
 
         currentChatItem.SetEntryText(speaker, dialogue);
-        Debug.Log("Chat entry added");  
+       // Debug.Log("Chat entry added");  
     }
     /// <summary>
     /// Attempt to update the dialogue history text element using the conversation logger
     /// </summary>
     public void UpdateChatHistory() {
-        if (conversationLogger == null) return;
-
-        //var history = conversationLogger.GetDialogueHistory();
-        //chatHistoryText.text = string.Join("\n", history.ToArray());
-
+        if (conversationLogger == null) {
+            Debug.LogError("Missing conversation logger on chat history update");
+            return;
+        }
         var lastEntry = conversationLogger.GetLastEntry();
+        //Debug.Log("Last entry: " + lastEntry);
         if (lastEntry == "") return;
 
         var parts = lastEntry.Split(new[] { ':' }, 2);
@@ -72,6 +72,17 @@ public class NotesPageController : MonoBehaviour
 
         var speaker = parts[0];
         var dialogue = parts[1].Trim();
+
+        // Check if this dialogue is a duplicate for this speaker
+        if (lastLoggedDialogue.TryGetValue(speaker, out string lastDialogue)) {
+            if (lastDialogue == dialogue) {
+                // This is a duplicate, so we ignore it
+                return;
+            }
+        }
+
+        // Update the last logged dialogue for this speaker
+        lastLoggedDialogue[speaker] = dialogue;
 
         if (speaker == currentSpeaker) {
             currentChatItem.AppendDialogue(dialogue);
