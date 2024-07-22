@@ -792,8 +792,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 134.65714
-        y: 154.14694
+        x: 137.18877
+        y: 152.8811
         width: 160
         height: 30
     - id: 174
@@ -826,22 +826,27 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          MoveTo(WaeliAnchor, Waeli, 0.5);
-
           AnimatorController(Anim_Controllers/BasicAnims,
           Waeli);
 
-          AnimatorTrigger(RightTurn, Waeli)@0.3;
+          AnimatorTrigger(StepBack, Waeli)@0.01;
 
-          AnimatorTrigger(Idle,
-          Waeli)@1.1;
+          MoveTo(WaeliAnchor,
+          Waeli, 0.5)@0.2;
 
-          LookAt(Player, Waeli, 0.1)@1.1;
+          AnimatorTrigger(Idle, Waeli)@0.7;
 
-          Camera(Full,
-          Waeli, 0.7)@1.2;
+          AnimatorTrigger(RightTurn,
+          Waeli)@0.8;
 
-          SetContinueMode(true)@1.5;'
+          AnimatorTrigger(Idle, Waeli)@1.6;
+
+          LookAt(Player,
+          Waeli, 0.1)@1.6;
+
+          Camera(Full, Waeli, 0.7)@1.7;
+
+          SetContinueMode(true)@2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -2208,9 +2213,17 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          LookAt(Cylo, Waeli, 0.8)@2;
+          AnimatorTrigger(LeftTurn, Waeli)@2;
 
-          SetContinueMode(true)@3.0;'
+          AnimatorTrigger(LeftTurn,
+          Waeli)@2.8;
+
+          AnimatorTrigger(LeftTurn, Waeli)@3.6;
+
+          AnimatorTrigger(Idle,
+          Waeli)@4.4;
+
+          SetContinueMode(true)@3.6;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -2268,7 +2281,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: LookAt(Player, Waeli, 0.5);
+        value: 'AnimatorTrigger(RightTurn, Waeli);
+
+          AnimatorTrigger(RightTurn,
+          Waeli)@0.8;
+
+          AnimatorTrigger(Idle, Waeli)@1.6;
+
+          LookAt(PlayerCamera,
+          Waeli, 0.2)@1.6;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -3980,10 +4001,38 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          LookAt(Gryf, Waeli, 0.5)@1;
+          AnimatorTrigger(LeftTurn, Waeli)@0.5;
 
-          LookAt(Player,
-          Waeli, 0.5)@2;'
+          AnimatorTrigger(Idle,
+          Waeli)@1.3;
+
+          AnimatorTrigger(RightTurn, Waeli)@1.8;
+
+          AnimatorTrigger(Idle,
+          Waeli)@2.6;
+
+          LookAt(Player, Waeli, 0.1)@2.6;
+
+
+          SetActive(Antoni,
+          true);
+
+          AnimatorController(Anim_Controllers/BasicAnims, Antoni);
+
+          AnimatorTrigger(Walk,
+          Antoni);
+
+          MoveTo(AntoniIntroMove, Antoni, 1.8);
+
+          AnimatorTrigger(Idle,
+          Antoni)@1.7;
+
+          AnimatorTrigger(LeftTurn, Antoni)@2;
+
+          AnimatorTrigger(Idle,
+          Antoni)@2.8;
+
+          LookAt(Waeli, Antoni, 0.1)@2.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -4008,7 +4057,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 108.14725
-        y: 2256.8691
+        y: 2258.135
         width: 160
         height: 30
     - id: 230
@@ -4486,7 +4535,29 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false);
+
+          AnimatorTrigger(Idle, Waeli);
+
+          SetActive(Antoni,
+          true);
+
+          AnimatorController(Anim_Controllers/BasicAnims, Antoni);
+
+          AnimatorTrigger(Walk,
+          Antoni);
+
+          MoveTo(AntoniIntroMove, Antoni, 1.8);
+
+          AnimatorTrigger(Idle,
+          Antoni)@1.7;
+
+          AnimatorTrigger(LeftTurn, Antoni)@2;
+
+          AnimatorTrigger(Idle,
+          Antoni)@2.8;
+
+          LookAt(Waeli, Antoni, 0.1)@2.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -4740,17 +4811,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(false);
-
-          AnimatorTrigger(Idle, Waeli);
-
-          SetActive(Antoni,
-          true);
-
-          MoveTo(AntoniIntroMove, Antoni, 0.9);
-
-          LookAt(Waeli,
-          Antoni, 0.6)@1.0;'
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -5283,8 +5344,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1272.2684}
-    canvasZoom: 0.7900002
+    canvasScrollPosition: {x: 0, y: 1876.3154}
+    canvasZoom: 0.7600002
   - id: 51
     fields:
     - title: Title
@@ -5312,7 +5373,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -5475,20 +5536,44 @@ MonoBehaviour:
 
           LookAt(Antoni, Player, 0.7);
 
-          LookAt(Antoni,
-          Waeli, 0.7);
+          AnimatorTrigger(RightTurn,
+          Waeli);
 
-          MoveTo(AntoniTowardsDog, Antoni, 2.0)@1;
+          AnimatorTrigger(RightTurn, Waeli)@0.8;
+
+          AnimatorTrigger(Idle,
+          Waeli);
+
+          LookAt(Antoni, Waeli, 0.1)@1.6;
+
+
+          AnimatorTrigger(Running,
+          Antoni)@1.7;
+
+          MoveTo(AntoniTowardsDog, Antoni, 3.0)@1.7;
+
+          AnimatorTrigger(RightTurn,
+          Waeli)@3.2;
+
+          AnimatorTrigger(Idle, Waeli)@4;
 
           LookAt(AntoniTowardsDog,
-          Waeli, 2.0)@1;
+          Waeli, 0.1)@3.4;
 
-          LookAt(AntoniTowardsDog, Player, 2.0)@1;
+          LookAt(AntoniTowardsDog, Player, 3.0)@1.7;
 
-          LookAt(Waeli,
-          Antoni, 0.5)@3.2;
 
-          SetContinueMode(true)@3.7;'
+          AnimatorTrigger(SlowDown,
+          Antoni)@4;
+
+          AnimatorTrigger(Idle, Antoni)@4.2;
+
+          AnimatorTrigger(RightTurn,
+          Antoni)@4.4;
+
+          LookAt(Waeli, Antoni, 0.2)@5.2;
+
+          SetContinueMode(true)@5.3;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 51
@@ -11618,8 +11703,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 34.24652, y: 3168.4944}
-    canvasZoom: 0.73000026
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.7000003
   syncInfo:
     syncActors: 1
     syncItems: 1

@@ -361,7 +361,7 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: Sit next to papa to see what's going on.
+      value: Sit on the couch to see what's going on.
       type: 0
       typeString: CustomFieldType_Text
     - title: Success Description
@@ -788,7 +788,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -1657,6 +1657,9 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 'SetEnabled(Canvas, false, DialogueCanvas);
+
+          SetEnabled(Outline,
+          false, SofaDouble);
 
           SetContinueMode(false);
 
@@ -2811,10 +2814,7 @@ MonoBehaviour:
           Camera(PlayerStraight, Player,
           0.2);
 
-          LookAt(Player, Dad, 0.5);
-
-          LookAt(Dad, Player,
-          0.3)@0.2;'
+          LookAt(Dad, Player, 0.3)@0.2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 38
@@ -2892,7 +2892,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 246.05255}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.7600002
   - id: 39
     fields:
@@ -3832,10 +3832,13 @@ MonoBehaviour:
 
           AnimatorTrigger(LeftTurn, Mama, Idle)@0.5;
 
-          AnimatorPlayWait(LeftTurn,
-          Mama, 0.3)@1;
+          AnimatorTrigger(LeftTurn,
+          Mama)@1.3;
 
-          AnimatorTrigger(Idle, Mama, LeftTurn)@1.5;
+          AnimatorTrigger(Idle, Mama, LeftTurn)@2.1;
+
+          LookAt(PlayerCamera,
+          Mama, 0.1)@2.1;
 
           SetContinueMode(true)@2;'
         type: 0

@@ -26,6 +26,7 @@ public class StartScreen : MonoBehaviour
     {
         // Override current file 
         SceneManager.LoadScene(sceneName);
+        PixelCrushers.DialogueSystem.DialogueManager.ResetDatabase();
     }
 
     /// <summary>

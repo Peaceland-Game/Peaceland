@@ -16,6 +16,8 @@ public class FirstPersonController : MonoBehaviour
 {
     private CharacterController controller;
 
+    public bool lastConvo = false;
+
     #region Camera Movement Variables
 
     public Camera playerCamera;
@@ -419,6 +421,12 @@ public class FirstPersonController : MonoBehaviour
     {
         velocity = Vector3.zero;
     }
+
+    public void LastDemoConvo() 
+    {
+        lastConvo = true;
+    }
+
     private void Jump()
     {
         // Adds force to the player rigidbody to jump
@@ -491,16 +499,29 @@ public class FirstPersonController : MonoBehaviour
     public void OnConversationStart(Transform actor)
     {
         cameraRotationHolder = playerCamera.transform.localRotation;
-        playerCanMove = false; cameraCanMove = false;
+        playerCanMove = false; cameraCanMove = false; lockCursor = false;
         SetPitchAndYaw();
+        Cursor.lockState = CursorLockMode.None;
     }
     public void OnConversationEnd(Transform actor)
     {
         
         playerCamera.transform.localPosition = Vector3.zero;
         SetPitchAndYaw();
-        cameraCanMove = true;
-        playerCanMove = true;
+
+        if (lastConvo)
+        {
+            cameraCanMove = false;
+            playerCanMove = false;
+            lockCursor = false;
+        }
+        else 
+        {
+            cameraCanMove = true;
+            playerCanMove = true;
+            lockCursor = true;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
     public void SetPitchAndYaw(float pitch = 0, float yaw = 0)
     {
