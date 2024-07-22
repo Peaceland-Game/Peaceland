@@ -656,7 +656,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -783,7 +783,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: SetQuestState("A Strange Noise", "success");
+      userScript: 'SetQuestState("A Strange Noise", "success");
+
+        GryfGrowl();'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5179,8 +5181,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.8200002
+    canvasScrollPosition: {x: 0, y: 1352.2703}
+    canvasZoom: 0.8800001
   - id: 51
     fields:
     - title: Title
@@ -5572,7 +5574,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: GryfGrowl();
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9234,7 +9236,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: GryfWhine();
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9857,7 +9859,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: GryfWhine();
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11514,7 +11516,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 2527.4077}
     canvasZoom: 0.73000026
   syncInfo:
     syncActors: 1

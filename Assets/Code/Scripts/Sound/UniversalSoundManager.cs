@@ -1,4 +1,4 @@
-using System.Collections;
+using PixelCrushers.DialogueSystem;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -18,28 +18,29 @@ public class UniversalSoundManager : MonoBehaviour
 
     [Space]
 
-    [SerializeField] protected AudioClip GooberWalkCarpet;
-    [SerializeField] protected AudioClip GooberWalkConcrete;
-    [SerializeField] protected AudioClip GooberWalkGrass;
-    [SerializeField] protected AudioClip GooberWalkWood;
+    [SerializeField] protected AudioClip gooberWalkCarpet;
+    [SerializeField] protected AudioClip gooberWalkConcrete;
+    [SerializeField] protected AudioClip gooberWalkGrass;
+    [SerializeField] protected AudioClip gooberWalkWood;
 
     [Space]
 
-    [SerializeField] protected AudioClip ArtifactPickup;
-    [SerializeField] protected AudioClip CoinPickup;
-    [SerializeField] protected AudioClip GenericPickup;
+    [SerializeField] protected AudioClip artifactPickup;
+    [SerializeField] protected AudioClip themePickup;
+    [SerializeField] protected AudioClip coinPickup;
+    [SerializeField] protected AudioClip genericPickup;
 
     [Space]
 
-    [SerializeField] protected AudioClip DialogueSelect;
-    [SerializeField] protected AudioClip MenuSelect;
-    [SerializeField] protected AudioClip Purchase;
-    [SerializeField] protected AudioClip TabletSelect;
+    [SerializeField] protected AudioClip dialogueSelect;
+    [SerializeField] protected AudioClip menuSelect;
+    [SerializeField] protected AudioClip purchase;
+    [SerializeField] protected AudioClip tabletSelect;
 
     [Space]
 
-    [SerializeField] protected AudioClip AmbienceRiver;
-    [SerializeField] protected AudioClip AmbienceStreetlight;
+    [SerializeField] protected AudioClip ambienceRiver;
+    [SerializeField] protected AudioClip ambienceStreetlight;
 
     /// <summary>
     /// Gets audio sources that are likely to be in multiple memories and the hub
@@ -52,7 +53,7 @@ public class UniversalSoundManager : MonoBehaviour
         otherPickups = new List<GameObject>();
         streetLights = new List<GameObject>();
 
-        Debug.Log("Getting sound sources...");
+        //Debug.Log("Getting sound sources...");
 
         foreach (GameObject a in gameObjects)
         {
@@ -61,12 +62,13 @@ public class UniversalSoundManager : MonoBehaviour
                 case "Player":
 
                     player = a;
-                    Debug.Log("Got the player");
+                    //Debug.Log("Got the player...");
 
                     break;
+                // NPCList and Artifacts cause issues right now, so be careful about uncommenting those
                 case "NPCList":
 
-                    //foreach(GameObject b in a.GetComponentsInChildren<GameObject>())
+                    //foreach (GameObject b in a.GetComponentsInChildren<GameObject>())
                     //{
                     //    allCharacters.Add(b);
                     //}
@@ -111,6 +113,11 @@ public class UniversalSoundManager : MonoBehaviour
         audioSource.PlayOneShot(clip);
     }
 
+    /// <summary>
+    /// Makes a game object's audio source play a sound (if it has one assigned to it). 
+    /// Note that you must enable looping in the audio source itself in order for it to play more than once.
+    /// </summary>
+    /// <param name="source"></param>
     public void PlayLoopingSound(GameObject source)
     {
         AudioSource audioSource = source.GetComponent<AudioSource>();
@@ -126,36 +133,46 @@ public class UniversalSoundManager : MonoBehaviour
 
     public void ArtifactGet()
     {
-        PlaySound(player, ArtifactPickup);
+        PlaySound(player, artifactPickup);
+    }
+
+    public void ThemeGet()
+    {
+        PlaySound(player, themePickup);
     }
 
     public void CoinGet()
     {
-        PlaySound(player, CoinPickup);
+        PlaySound(player, coinPickup);
     }
 
     public void Pickup()
     {
-        PlaySound(player, GenericPickup);
+        PlaySound(player, genericPickup);
     }
 
-    public void SelectDialogueOption()
+    public void SelectDialogueOptionSound()
     {
-        PlaySound(player, DialogueSelect);
+        PlaySound(player, dialogueSelect);
     }
 
     public void SelectMenuOption()
     {
-        PlaySound(player, MenuSelect);
+        PlaySound(player, menuSelect);
     }
 
     public void MakePurchase()
     {
-        PlaySound(player, Purchase);
+        PlaySound(player, purchase);
     }
 
     public void SelectTabletOption()
     {
-        PlaySound(player, TabletSelect);
+        PlaySound(player, tabletSelect);
+    }
+
+    protected virtual void OnEnable()
+    {
+        Lua.RegisterFunction(nameof(SelectDialogueOptionSound), this, SymbolExtensions.GetMethodInfo(() => SelectDialogueOptionSound()));
     }
 }

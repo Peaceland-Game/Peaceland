@@ -71,6 +71,8 @@ public class PlayerSingleton : MonoBehaviour
     /// <param name="amt">The amount of karma pertaining to that theme/key</param>
     public void AddTheme(string theme, double amt)
     {
+        soundManager.ThemeGet();
+
         if (karmaPoints.ContainsKey(theme))
         {
             karmaPoints[theme] += amt;
