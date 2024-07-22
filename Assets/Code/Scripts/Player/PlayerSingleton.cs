@@ -26,6 +26,8 @@ public class PlayerSingleton : MonoBehaviour
 
     private Selector selector;                 //reference to the player's selector component
 
+    private UniversalSoundManager soundManager;
+
     public bool playerInMemorySelection = false;                //flag is the player is the memory selection, this is only used in the hub world
     public bool paused = false;                                 //flag if game is paused
     public bool isMouseLocked;                                  //flag if the mouse is locked to the screen or not
@@ -141,10 +143,12 @@ public class PlayerSingleton : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         FindPlayerInScene();
-
     }
 
-
+    public void GetSoundManager(UniversalSoundManager mgr)
+    {
+        soundManager = mgr;
+    }
 
     // Update is called once per frame
     void Update()
@@ -254,6 +258,8 @@ public class PlayerSingleton : MonoBehaviour
             AddTheme("Curiosity", 2);
         }
 
+        soundManager.CoinGet();
+
         onMoneyCollected.Invoke();
 
     }
@@ -268,6 +274,7 @@ public class PlayerSingleton : MonoBehaviour
         var money = DialogueLua.GetVariable("PlayerMoney").asInt;
         if (amt > money) return false;
         DialogueLua.SetVariable("PlayerMoney", money - (int)amt);
+        soundManager.MakePurchase(); // Might need to be changed if the player can lose money in other ways
         onMoneyCollected.Invoke();
         return true;
     }

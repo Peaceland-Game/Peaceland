@@ -517,11 +517,13 @@ public class FirstPersonControllerEditor : Editor
 {
     FirstPersonController fpc;
     SerializedObject SerFPC;
+    WalkSurface currentSurface;
 
     private void OnEnable()
     {
         fpc = (FirstPersonController)target;
         SerFPC = new SerializedObject(fpc);
+        currentSurface = WalkSurface.carpet; // get rid of this when this variable is actually updated (or don't, I guess)
     }
 
     public override void OnInspectorGUI()
@@ -722,6 +724,18 @@ public class FirstPersonControllerEditor : Editor
         }
     }
 
+    public WalkSurface CurrentSurface
+    {
+        get { return currentSurface; }
+    }
+}
+
+public enum WalkSurface
+{
+    carpet,
+    concrete,
+    grass,
+    wood
 }
 
 #endif

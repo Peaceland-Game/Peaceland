@@ -16,6 +16,7 @@ public class JournalPlayerRef : MonoBehaviour
     public Tablet player;
     public GameObject artifactPopupPrefab;
     public GameObject imagePopupPrefab;
+    public UniversalSoundManager soundManager;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class JournalPlayerRef : MonoBehaviour
         //if (popup.HasText)
         //    popup.UpdateArtifactName(artifact.artifactName);
         NotificationManager.Instance.QueueNotification(artifactPopupPrefab, artifact.artifactName);
+        soundManager.ArtifactGet();
         player.AddArtifact(artifact.artifactName, showPopup);
     }
 
@@ -40,6 +42,7 @@ public class JournalPlayerRef : MonoBehaviour
     {
         // Debug.Log("Add Artifact string method called");
         NotificationManager.Instance.QueueNotification(artifactPopupPrefab, name);
+        soundManager.ArtifactGet();
         player.AddArtifact(name, true);
         //var artifact = transform.GetComponentsInChildren<Artifact>().ToList().FirstOrDefault(artifact => artifact.artifactName == name);
         //Destroy(artifact.gameObject);
