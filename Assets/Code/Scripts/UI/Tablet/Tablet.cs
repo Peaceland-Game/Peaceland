@@ -41,6 +41,8 @@ public class Tablet : MonoBehaviour
     public GameObject artifactPopup;
     public TextMeshProUGUI artifactName;
 
+    public ThemeNotesController themeNotesPage;
+
     private int numberOfArtifacts = 0;
     private bool playArtifactTutorial = false;
     public GameObject artifactTutorial;
@@ -157,6 +159,11 @@ public class Tablet : MonoBehaviour
         {
             playArtifactTutorial = true;
         }
+    }
+
+    public void AddTheme(string name)
+    {
+        themeNotesPage.RevealTheme(name);
     }
 
     //public void ShowArtifactPopup(string name)
