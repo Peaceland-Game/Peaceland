@@ -23,8 +23,10 @@ public class Theme : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HidePopup();
-        if(revealed)
+        textBox.sprite = revealedTextBox;
+        hoverPopup.gameObject.SetActive(false);
+        description.gameObject.SetActive(false);
+        if (revealed)
         {
             textBox.sprite = revealedTextBox;
             lockImage.sprite = revealedUnlock;
