@@ -656,7 +656,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -2988,9 +2988,9 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          AnimatorTrigger(LookBehind, Waeli);
+          AnimatorTrigger(LookBehind, Waeli)@2;
 
-          SetContinueMode(true)@3.0;'
+          SetContinueMode(true)@5;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 29
@@ -5346,8 +5346,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1352.2703}
-    canvasZoom: 0.8800001
+    canvasScrollPosition: {x: 0, y: 1202.4998}
+    canvasZoom: 0.85000014
   - id: 51
     fields:
     - title: Title
@@ -5565,25 +5565,25 @@ MonoBehaviour:
           LookAt(AntoniTowardsDog, Player, 3.0)@1.7;
 
 
-          AnimatorTrigger(SlowDown,
-          Antoni)@4;
+          AnimatorTrigger(Walk,
+          Antoni)@5;
 
-          AnimatorTrigger(Idle, Antoni)@4.2;
+          AnimatorTrigger(Idle, Antoni)@4.7;
 
           AnimatorTrigger(RightTurn,
-          Antoni)@4.4;
+          Antoni)@4.9;
 
           AnimatorController(Anim_Controllers/Story1Mem1Anims,
-          Antoni)@5.2;
+          Antoni)@5.7;
 
-          AnimatorPlay(Idle, Antoni)@5.21;
+          AnimatorPlay(Idle, Antoni)@5.71;
 
           LookAt(Gryf,
-          Antoni, 0.2)@5.2;
+          Antoni, 0.2)@5.7;
 
-          AnimatorTrigger(Antoni_DrawingTaser, Antoni)@5.4;
+          AnimatorTrigger(Antoni_DrawingTaser, Antoni)@5.9;
 
-          SetContinueMode(true)@5.3;'
+          SetContinueMode(true)@5.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 51
@@ -5839,9 +5839,7 @@ MonoBehaviour:
           LookAt(Player,
           Waeli, 0.1)@4;
 
-          LookAt(Waeli, Player, 0.5)@4.8;
-
-          SetContinueMode(true)@5.3;'
+          LookAt(Waeli, Player, 0.5)@4.2;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 51
@@ -6076,9 +6074,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'LookAt(Antoni, Player, 0.5);
+        value: 'SetContinueMode(true);
 
-          LookAt(Player, Antoni, 0.5)@0.3;'
+          LookAt(Antoni, Player, 0.5);
+
+          LookAt(Player,
+          Antoni, 0.5)@0.3;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 51
@@ -6478,7 +6479,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 51
@@ -6663,7 +6664,7 @@ MonoBehaviour:
           SetActive(GPKSoldierP5B,
           true);
 
-          AnimatorTrigger(BreathingIdle, GPKSoldierP5A)@0.1;
+          AnimatorTrigger(BreathingIdle, GPKSoldierP5A)@0.5;
 
           AnimatorTrigger(BreathingIdle,
           GPKSoldierP5B)@0.1;
@@ -6748,9 +6749,7 @@ MonoBehaviour:
           LookAt(GPKSoldierP5B, Player, 0.5)@1.0;
 
           LookAt(GPKSoldierP5A,
-          Antoni, 0.5)@1.0;
-
-          SetContinueMode(true)@1.5;'
+          Antoni, 0.5)@1.0;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 51
@@ -6806,7 +6805,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetContinueMode(true);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 51
@@ -6917,30 +6916,29 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'LookAt(Antoni, GPKSoldierP5B, 0.5);
+        value: 'SetContinueMode(false);
 
-          LookAt(Antoni, Player,
-          1.0);
+          LookAt(Antoni, GPKSoldierP5B,
+          0.5);
 
-          AnimatorTrigger(Walk, GPKSoldierP5B);
+          LookAt(Antoni, Player, 1.0);
 
-          MoveTo(GPKBGrabTaser,
-          GPKSoldierP5B, 1.0)@0.5;
+          AnimatorTrigger(Walk,
+          GPKSoldierP5B);
 
-          AnimatorTrigger(Idle, GPKSoldierP5B)@1.4;
+          MoveTo(GPKBGrabTaser, GPKSoldierP5B, 1.0)@0.5;
 
-          AnimationTrigger(RightTurn,
+          AnimatorTrigger(Idle,
+          GPKSoldierP5B)@1.4;
+
+          LookAt(GPKSoldierP5B, Antoni)@1.5;
+
+          AnimatorTrigger(Antoni_SurrenderingTaser,
           Antoni)@1.5;
 
-          AnimationTrigger(Idle, Antoni)@2.3;
+          SetActive(Prop_Taser, false)@6.7;
 
-          LookAt(GPKSoldierP5B,
-          Antoni)@2.3;
-
-          AnimationTrigger(Antoni, SurrenderingTaser)@2.4;
-
-          SetActive(Taser,
-          false)@3.6;'
+          SetContinueMode(true)@6.7;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 51
@@ -11302,9 +11300,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(false);
-
-          AnimatorTrigger(LeftTurn, Waeli)@1;
+        value: 'AnimatorTrigger(LeftTurn, Waeli)@1;
 
           AnimatorTrigger(Idle,
           Waeli)@1.8;
@@ -11786,7 +11782,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2527.4077}
+    canvasScrollPosition: {x: 0, y: 498.62973}
     canvasZoom: 0.73000026
   syncInfo:
     syncActors: 1
