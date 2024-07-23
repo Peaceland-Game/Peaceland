@@ -2165,7 +2165,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["PlayerMoney"] >= 12
-      userScript: SubtractMoney(12);
+      userScript: 'SubtractMoney(12);
+
+        KarmicEvent("Mem 1", "Kindness", "Hearing
+        Cylo explain his ice cream flavor", 1, "")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2287,7 +2290,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Apathy", -2)
+      userScript: 'AddTheme("Apathy", -2);
+
+        KarmicEvent("Mem 1", "Disdain",
+        "Hearing Cylo explain his ice cream flavor", -2, "")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2537,8 +2543,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 43.919685, y: 0}
-    canvasZoom: 0.6700003
+    canvasScrollPosition: {x: 265.5771, y: 192.49489}
+    canvasZoom: 1
   - id: 45
     fields:
     - title: Title
@@ -2697,8 +2703,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 93
-        y: 99
+        x: 92
+        y: 100
         width: 160
         height: 30
     - id: 2
@@ -2873,7 +2879,10 @@ MonoBehaviour:
       conditionsString: Variable["HeardDog"] == true;
       userScript: 'StopPlayer();
 
-        AddTheme("Bravery", 2)'
+        AddTheme("Bravery", 2);
+
+        KarmicEvent("Mem
+        1", "Bravery", "Crossing the bridge", 2, "")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3432,7 +3441,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Apathy", -2)
+      userScript: 'AddTheme("Apathy", -2);
+
+        KarmicEvent("Mem 1", "Disdain",
+        "You deny box guy", -2, "")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3834,7 +3846,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["NewFlavorKnowledge"] = true
+      userScript: 'Variable["NewFlavorKnowledge"] = true;
+
+        KarmicEvent("Mem
+        1", "Kindness", "Help guy move boxes ", 3, "")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4068,8 +4083,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 26.471996, y: 11.749314}
+    canvasZoom: 1.06
   - id: 48
     fields:
     - title: Title
@@ -4523,7 +4538,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: StrayGrowl();
+      userScript: 'StrayGrowl();
+
+        KarmicEvent("Mem 1", "Fear", "Getting attacked
+        by the feral dog", -4, "")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5070,8 +5088,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.7600002
+    canvasScrollPosition: {x: 24.175842, y: 336.13214}
+    canvasZoom: 0.9100001
   - id: 49
     fields:
     - title: Title
