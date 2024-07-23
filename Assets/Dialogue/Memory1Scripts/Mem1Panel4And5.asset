@@ -5566,7 +5566,7 @@ MonoBehaviour:
 
 
           AnimatorTrigger(SlowDown,
-          Antoni)@3.2;
+          Antoni)@3.6;
 
           AnimatorTrigger(Idle, Antoni)@4.7;
 
@@ -6962,7 +6962,7 @@ MonoBehaviour:
           AnimatorTrigger(Antoni_SurrenderingTaser,
           Antoni)@1.3;
 
-          SetActive(Prop_Taser, false)@4.8;
+          SetActive(Prop_Taser, false)@4.9;
 
           SetContinueMode(true)@6.7;'
         type: 0
@@ -8021,12 +8021,12 @@ MonoBehaviour:
           0.1)@0.8;
 
 
-          AnimatorTrigger(Walk, GPKSoldierP5A)@1.7;
+          AnimatorTrigger(Walk, GPKSoldierP5A)@1.6;
 
           MoveTo(GPKSoldierReturn,
           GPKSoldierP5A, 4)@1.9;
 
-          AnimatorTrigger(Walk, GPKSoldierP5B)@2.2;
+          AnimatorTrigger(Walk, GPKSoldierP5B)@2.1;
 
           MoveTo(GPKSoldierReturn,
           GPKSoldierP5B, 4)@2.4;
@@ -8452,35 +8452,35 @@ MonoBehaviour:
           AnimatorTrigger(Walk,
           Antoni)@1.5;
 
-          MoveTo(AntoniToPetGryf, Antoni, 0.5)@1.7;
+          MoveTo(AntoniToPetGryf, Antoni, 1.5)@1.7;
 
           AnimatorTrigger(Idle,
-          Antoni)@2;
+          Antoni)@3;
 
-          LookAt(Gryf, Antoni, 0.5)@2;
+          LookAt(Gryf, Antoni, 0.5)@3;
 
           LookAt(Antoni,
-          Gryf, 0.5)@2;
+          Gryf, 0.5)@3;
 
 
-          AnimatorTrigger(RightTurn, Waeli)@1.7;
+          AnimatorTrigger(RightTurn, Waeli)@2.7;
 
           AnimatorTrigger(Idle,
-          Waeli)@2.5;
+          Waeli)@3.5;
 
-          LookAt(AntoniToPetGryf, Waeli, 0.2)@2.5;
+          LookAt(AntoniToPetGryf, Waeli, 0.2)@3.5;
 
           LookAt(Antoni,
-          Player, 0.5)@1.9;
+          Player, 0.5)@2.9;
 
 
           AnimatorController(Anim_Controllers/Story1Mem1Anims,
-          Antoni)@2.5;
+          Antoni)@3.5;
 
           AnimatorTrigger(Antoni_LetGryfSniffHandThenPet,
-          Antoni)@2.6;
+          Antoni)@3.6;
 
-          Delay(2)@2.6;'
+          Delay(2)@3.6;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 51
@@ -12029,7 +12029,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 710.5263}
+    canvasScrollPosition: {x: 0, y: 2134.2102}
     canvasZoom: 0.76
   syncInfo:
     syncActors: 1
