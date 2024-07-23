@@ -60,6 +60,7 @@ public class UniversalSoundManager : MonoBehaviour
             switch (a.tag)
             {
                 case "Player":
+                case "MainCamera":
 
                     player = a;
 

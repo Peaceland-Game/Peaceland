@@ -38,6 +38,8 @@ public class IntroController : MonoBehaviour {
     private bool waitForPlayer = false;
     private GameObject selectorUI;
 
+    private HubSoundManager soundManager;
+
     /// <summary>
     /// Handles keyboard inputs for starting the tablet tutorial and loading the hub world.
     /// </summary>
@@ -67,6 +69,7 @@ public class IntroController : MonoBehaviour {
     /// </summary>
     private void StartTabletTutorial() {
         waitForPlayer = false;
+        soundManager.Pickup();
         pickUpTabletPrompt.gameObject.SetActive(false);
         StartCoroutine(MoveToTarget(tablet.transform, 1f));
     }
@@ -126,8 +129,18 @@ public class IntroController : MonoBehaviour {
     private IEnumerator IntroSequence() {
         yield return new WaitForSeconds(2);
 
-        yield return StartCoroutine(FadeText(buzz1, 1, 2, false));
-        yield return StartCoroutine(FadeText(buzz2, 1, 2, false));
+        if(soundManager)
+        {
+            soundManager.IncomingCall();
+            yield return StartCoroutine(FadeText(buzz1, 1, 2, false));
+            soundManager.IncomingCall();
+            yield return StartCoroutine(FadeText(buzz2, 1, 2, false));
+        }
+        else
+        {
+            yield return StartCoroutine(FadeText(buzz1, 1, 2, false));
+            yield return StartCoroutine(FadeText(buzz2, 1, 2, false));
+        }
 
 
         wakeUpButton.gameObject.SetActive(true);
@@ -359,4 +372,8 @@ public class IntroController : MonoBehaviour {
 
     }
 
+    public void GetSoundManager(UniversalSoundManager mgr)
+    {
+        soundManager = (HubSoundManager)mgr;
+    }
 }
