@@ -14,6 +14,7 @@ public class Controls : MonoBehaviour
         if (Keyboard.current.enterKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame)
         {
             PlayerSingleton.Instance.EnableMovement();
+            PlayerSingleton.Instance.playerInMemorySelection = false;
             this.gameObject.SetActive(false);
         }
     }
