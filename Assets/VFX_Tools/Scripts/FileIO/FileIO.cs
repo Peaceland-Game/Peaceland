@@ -48,8 +48,8 @@ public class FileIO
         string basePath = Directory.GetCurrentDirectory();
         string finalPath = basePath + path + data.bundleName + ".json";
 
-        if (!File.Exists(finalPath))
-            File.CreateText(finalPath);
+        /*if (!File.Exists(finalPath))
+            File.Create(finalPath);*/
 
         File.WriteAllText(finalPath, JsonUtility.ToJson(data, true));
     }
