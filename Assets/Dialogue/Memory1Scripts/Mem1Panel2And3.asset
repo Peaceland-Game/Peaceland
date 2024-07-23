@@ -4540,8 +4540,7 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'StrayGrowl();
 
-        KarmicEvent("Mem 1", "Fear", "Getting attacked
-        by the feral dog", -4, "")'
+'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4599,7 +4598,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: KarmicEvent("Mem 1", "Fear", "Getting attacked by the feral dog",
+        -4, "")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4661,7 +4661,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 157.55223
-        y: 430.7691
+        y: 429.67023
         width: 160
         height: 30
     - id: 39
@@ -5088,7 +5088,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 24.175842, y: 336.13214}
+    canvasScrollPosition: {x: 0, y: 213.0552}
     canvasZoom: 0.9100001
   - id: 49
     fields:
