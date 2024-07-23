@@ -27,17 +27,17 @@ public class JournalPlayerRef : MonoBehaviour
     /// pass the artifact's name to the player journal controller
     /// </summary>
     /// <param name="artifact">The game object artifact, name should match the artifact name in the journal</param>
-    public void AddArtifact(Artifact artifact, bool showPopup = true) 
-    {
-        //  Debug.Log("Add Artifact method called");
-        //var popup = Instantiate(artifactPopupPrefab).GetComponent<PopupNotification>();
-        //if (popup.HasText)
-        //    popup.UpdateArtifactName(artifact.artifactName);
-        //NotificationManager.Instance.QueueNotification(artifactPopupPrefab, artifact.artifactName);
-        NotificationManager.Instance.QueueNotification(NotificationType.ArtifactPopup, artifact.artifactName);
-        soundManager.ArtifactGet();
-        player.AddArtifact(artifact.artifactName, showPopup);
-    }
+    //public void AddArtifact(Artifact artifact, bool showPopup = true) 
+    //{
+    //    //  Debug.Log("Add Artifact method called");
+    //    //var popup = Instantiate(artifactPopupPrefab).GetComponent<PopupNotification>();
+    //    //if (popup.HasText)
+    //    //    popup.UpdateArtifactName(artifact.artifactName);
+    //    //NotificationManager.Instance.QueueNotification(artifactPopupPrefab, artifact.artifactName);
+    //    NotificationManager.Instance.QueueNotification(NotificationType.ArtifactPopup, artifact.artifactName);
+    //    soundManager.ArtifactGet();
+    //    player.AddArtifact(artifact.artifactName, showPopup);
+    //}
 
     public void AddArtifact(string name)
     {
