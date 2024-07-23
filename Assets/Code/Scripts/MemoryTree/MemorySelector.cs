@@ -63,6 +63,7 @@ public class MemorySelector : MonoBehaviour
     /// </summary>
     void LoadMemory()
     {
+        PlayerSingleton.Instance.playerInMemorySelection = false;
         SceneManager.LoadScene(activeMemoryString.sceneNameToLoad);
     }
 
