@@ -34,7 +34,7 @@ public class ThemeNotesController : MonoBehaviour
         if (!theme)
         {
             //throw new System.Exception($"Tried to reveal missing artifact {name}");
-            Debug.LogError($"Tried to reveal missing artifact {name}");
+            Debug.LogError($"Tried to reveal missing theme {name}");
             return;
         }
         theme.RevealTheme();
