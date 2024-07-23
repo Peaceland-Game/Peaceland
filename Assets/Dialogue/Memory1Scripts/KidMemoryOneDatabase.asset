@@ -3022,7 +3022,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 'Camera(NewModelLookLeft, Mama, 0.5);
+
+          SetContinueMode(true);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 39
@@ -3835,15 +3837,12 @@ MonoBehaviour:
 
           AnimatorTrigger(LeftTurn, Mama, Idle)@0.5;
 
-          AnimatorTrigger(LeftTurn,
-          Mama)@1.3;
+          AnimatorTrigger(Idle,
+          Mama, LeftTurn)@1.3;
 
-          AnimatorTrigger(Idle, Mama, LeftTurn)@2.1;
+          LookAt(PlayerCamera, Mama, 0.2)@1.3;
 
-          LookAt(PlayerCamera,
-          Mama, 0.1)@2.1;
-
-          SetContinueMode(true)@2;'
+          SetContinueMode(true)@1.3;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 39
@@ -3906,10 +3905,7 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          MoveTo(TalkToMom, Player, 0.5);
-
-          Camera(NewModelLookLeft,
-          Mama, 0.5)@0.3;'
+          MoveTo(TalkToMom, Player, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 39
@@ -4039,7 +4035,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 'Camera(NewModelLookLeft, Mama, 0.5);
+
+          SetContinueMode(true);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 39
@@ -4088,7 +4086,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'Camera(NewModelLookUp, Mama, 0.5);
+
+          SetContinueMode(true);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 39
@@ -4171,8 +4171,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0.97088623, y: 227.18448}
-    canvasZoom: 1.03
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.85000014
   - id: 40
     fields:
     - title: Title
