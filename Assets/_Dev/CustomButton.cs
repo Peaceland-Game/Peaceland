@@ -3,6 +3,10 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
+/// <summary>
+/// Depreciated class that was written before we realized we could
+/// use sprite swap to change how buttons looked on hover/click/clicked
+/// </summary>
 public class CustomButton : Button
 {
     public enum ButtonState
