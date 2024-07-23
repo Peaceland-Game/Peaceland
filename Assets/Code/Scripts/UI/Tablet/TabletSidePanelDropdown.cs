@@ -25,12 +25,9 @@ public class TabletSidePanelDropdown : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    /// <summary>
+    /// Toggles the memory button visibility when called
+    /// </summary>
     public void ToggleDropDownButtons()
     {
         currentlyActive = !currentlyActive;

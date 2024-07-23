@@ -41,6 +41,9 @@ public class Theme : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Currently commented out code that when uncommented will show a popup when hovering over a theme
+    /// </summary>
     public void ShowPopup()
     {
         //uncomment below when we have an idea of what to do with the popup
@@ -52,6 +55,9 @@ public class Theme : MonoBehaviour
         //}
     }
 
+    /// <summary>
+    /// Code meant to hide the popup that is currently not in use since ShowPopup() is commented out
+    /// </summary>
     public void HidePopup()
     {
         if (revealed)
@@ -62,6 +68,10 @@ public class Theme : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Reveal the theme by enabling the text, and changing the sprites of the textbox and lock to 
+    /// show that it is now unlocked.
+    /// </summary>
     public void RevealTheme()
     {
         revealed = true;
@@ -71,6 +81,10 @@ public class Theme : MonoBehaviour
         title.gameObject.SetActive(true);
     }
 
+    /// <summary>
+    /// Hide the theme by disabling the text, and changing the sprites of the textbox and lock to
+    /// show that it is now locked.
+    /// </summary>
     public void HideTheme()
     {
         revealed = false;
