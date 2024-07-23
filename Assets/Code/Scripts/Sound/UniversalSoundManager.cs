@@ -55,6 +55,8 @@ public class UniversalSoundManager : MonoBehaviour
 
         //Debug.Log("Getting sound sources...");
 
+        bool foundPlayer = false;
+
         foreach (GameObject a in gameObjects)
         {
             switch (a.tag)
@@ -62,7 +64,12 @@ public class UniversalSoundManager : MonoBehaviour
                 case "Player":
                 case "MainCamera":
 
-                    player = a;
+                    if(!foundPlayer || a.tag == "Player")
+                    {
+                        player = a;
+                        Debug.Log($"Got player: {player.name}");
+                        foundPlayer = true;
+                    }
 
                     break;
                 case "NPC":
