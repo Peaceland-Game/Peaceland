@@ -1,0 +1,308 @@
+\doxysection{Player\+Singleton Class Reference}
+\hypertarget{class_player_singleton}{}\label{class_player_singleton}\index{PlayerSingleton@{PlayerSingleton}}
+
+
+Handles various player functions such as toggling pause menu, picking up money, and storing karma information.  
+
+
+Inheritance diagram for Player\+Singleton\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player_singleton}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_singleton_a1e59a53ec4af768ac8ec495648c68273}{Add\+Theme}} (string theme, double amt)
+\begin{DoxyCompactList}\small\item\em Add a theme to the dictionary. \end{DoxyCompactList}\item 
+IEnumerator \mbox{\hyperlink{class_player_singleton_aa9a8c30444c7c9ac2b30ceeddc68e654}{Wait\+Then}} (float seconds, System.\+Action action)
+\begin{DoxyCompactList}\small\item\em Simple coroutine to wait for a certain amount of time before executing an action. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_player_singleton_ae3430061bddbacaede526e214e27c282}{Get\+Theme\+Karma}} (string theme)
+\begin{DoxyCompactList}\small\item\em Get the amount of karma for a specific theme. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_singleton_a39241c1e2ceb7fcecc9ab73d0785b52d}{Init\+Player}} (\mbox{\hyperlink{class_player_object_reference}{Player\+Object\+Reference}} player\+Ref)
+\begin{DoxyCompactList}\small\item\em Used to initialize the player singleton with the player object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_singleton_a47ab566677bf28bb1345206009e254db}{Get\+Sound\+Manager}} (\mbox{\hyperlink{class_universal_sound_manager}{Universal\+Sound\+Manager}} mgr)
+\begin{DoxyCompactList}\small\item\em Getter for sound manager component. \end{DoxyCompactList}\item 
+\Hypertarget{class_player_singleton_af3cc5b4ede087242820f45535ecfd440}\label{class_player_singleton_af3cc5b4ede087242820f45535ecfd440} 
+void {\bfseries Disable\+Movement} ()
+\begin{DoxyCompactList}\small\item\em turns off movement \end{DoxyCompactList}\item 
+\Hypertarget{class_player_singleton_abc1f8dd5d0bc60629c0642f97369fb01}\label{class_player_singleton_abc1f8dd5d0bc60629c0642f97369fb01} 
+void {\bfseries Enable\+Movement} ()
+\begin{DoxyCompactList}\small\item\em Turns on movement. \end{DoxyCompactList}\item 
+\Hypertarget{class_player_singleton_a5c33cc76f9ebab8e256675d542666c89}\label{class_player_singleton_a5c33cc76f9ebab8e256675d542666c89} 
+void {\bfseries Select\+Memory\+String} ()
+\begin{DoxyCompactList}\small\item\em Called in the hub world to select a memory string. \end{DoxyCompactList}\item 
+\Hypertarget{class_player_singleton_a5b92e3300e8f689d4712ad68d74a6b3a}\label{class_player_singleton_a5b92e3300e8f689d4712ad68d74a6b3a} 
+void {\bfseries Deselect\+Memory} ()
+\begin{DoxyCompactList}\small\item\em Called in the hub world to deselect a memory string. \end{DoxyCompactList}\item 
+\Hypertarget{class_player_singleton_ad45ec8de4622d7c420878bfc360f7b84}\label{class_player_singleton_ad45ec8de4622d7c420878bfc360f7b84} 
+void {\bfseries Toggle\+Tablet} ()
+\begin{DoxyCompactList}\small\item\em handles turning on or off the pause menu (tablet) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_singleton_a072d15821b40f9f8a832d6db9ddb4f32}{Add\+Money}} (double amt)
+\begin{DoxyCompactList}\small\item\em Adds money to the player by increasing the lua variable in the Dialogue System. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_singleton_a588faf5b779860613ee2987a212dcdd1}{Force\+Subtract\+Money}} (double amt)
+\begin{DoxyCompactList}\small\item\em Forces the player to lose money by subtracting from the lua variable in the Dialogue System doesn\textquotesingle{}t check if the player has enough money. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_singleton_afa60389002aff3f9d5956ab0d32b884c}{Subtract\+Money}} (double amt)
+\begin{DoxyCompactList}\small\item\em Checks if the player has enough money before subtracting from the lua variable in the Dialogue System. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_player_singleton_a8f0aca316824421ea6f64222f5a592fb}{Get\+Total\+Karma}} ()
+\begin{DoxyCompactList}\small\item\em Get the total value of all theme/karma points. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_singleton_a77eeae02424513ee29d4876dfefb5d9c}{Has\+Positive\+Karma}} ()
+\begin{DoxyCompactList}\small\item\em Get if the player has positive karma. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_singleton_ade922277e83a7bb900d45790c75b2514}{Has\+Negative\+Karma}} ()
+\begin{DoxyCompactList}\small\item\em Get if the player has negative karma. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_singleton_ad9eea366fd82a9be10750ae099611325}{Has\+Neutral\+Karma}} ()
+\begin{DoxyCompactList}\small\item\em Get if the player has nuetral karma. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_player_singleton_aca184c8fa2ca2ef5f97352c3c161f10b}{Get\+Karma\+Class}} ()
+\begin{DoxyCompactList}\small\item\em Get a string value of the player\textquotesingle{}s karma class. \end{DoxyCompactList}\item 
+\Hypertarget{class_player_singleton_a95fcaecb802fbacca17abb2c14f17455}\label{class_player_singleton_a95fcaecb802fbacca17abb2c14f17455} 
+void {\bfseries Stop\+Player} ()
+\begin{DoxyCompactList}\small\item\em Stops the player movement completely and instantly. \end{DoxyCompactList}\item 
+\Hypertarget{class_player_singleton_ae56ce4aa1763d6c9efb0eba06a0b1eb0}\label{class_player_singleton_ae56ce4aa1763d6c9efb0eba06a0b1eb0} 
+void {\bfseries Last\+Demo\+Convo} ()
+\begin{DoxyCompactList}\small\item\em Used byh lua to tell the player controller that the game will end after the current conversation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_singleton_a1f301cb9fb8847aff15d53895a40097e}\label{class_player_singleton_a1f301cb9fb8847aff15d53895a40097e} 
+bool {\bfseries player\+In\+Memory\+Selection} = false
+\item 
+\Hypertarget{class_player_singleton_a68bc99cae269db328f13c4a62f20542f}\label{class_player_singleton_a68bc99cae269db328f13c4a62f20542f} 
+bool {\bfseries paused} = false
+\item 
+\Hypertarget{class_player_singleton_ad4843bfec5d7990b5939ea01ddb22c71}\label{class_player_singleton_ad4843bfec5d7990b5939ea01ddb22c71} 
+bool {\bfseries is\+Mouse\+Locked}
+\item 
+\Hypertarget{class_player_singleton_a0606ab9816ac6c7a8260edce1844c6cc}\label{class_player_singleton_a0606ab9816ac6c7a8260edce1844c6cc} 
+\mbox{\hyperlink{class_money_collected_event}{Money\+Collected\+Event}} {\bfseries on\+Money\+Collected} = new \mbox{\hyperlink{class_money_collected_event}{Money\+Collected\+Event}}()
+\item 
+\Hypertarget{class_player_singleton_ab526819ea7323cfc2a8fcd2ceec14464}\label{class_player_singleton_ab526819ea7323cfc2a8fcd2ceec14464} 
+Game\+Object {\bfseries player\+Object}
+\item 
+\Hypertarget{class_player_singleton_a3934f847d012857c16586988601b5857}\label{class_player_singleton_a3934f847d012857c16586988601b5857} 
+Game\+Object {\bfseries karma\+Notification\+Prefab}
+\item 
+\Hypertarget{class_player_singleton_a863972d90479d0a5d13838f1892a9820}\label{class_player_singleton_a863972d90479d0a5d13838f1892a9820} 
+Dictionary$<$ string, double $>$ {\bfseries karma\+Points} = new()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_singleton_ade33e8525c3171b91a0f9704aa645540}\label{class_player_singleton_ade33e8525c3171b91a0f9704aa645540} 
+static \mbox{\hyperlink{class_player_singleton}{Player\+Singleton}} {\bfseries Instance}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_singleton_aac3c061f42978bc997e785a89c0a5b76}\label{class_player_singleton_aac3c061f42978bc997e785a89c0a5b76} 
+int {\bfseries Get\+Money}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles various player functions such as toggling pause menu, picking up money, and storing karma information. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_singleton_a072d15821b40f9f8a832d6db9ddb4f32}\index{PlayerSingleton@{PlayerSingleton}!AddMoney@{AddMoney}}
+\index{AddMoney@{AddMoney}!PlayerSingleton@{PlayerSingleton}}
+\doxysubsubsection{\texorpdfstring{AddMoney()}{AddMoney()}}
+{\footnotesize\ttfamily \label{class_player_singleton_a072d15821b40f9f8a832d6db9ddb4f32} 
+void Player\+Singleton.\+Add\+Money (\begin{DoxyParamCaption}\item[{double}]{amt}{}\end{DoxyParamCaption})}
+
+
+
+Adds money to the player by increasing the lua variable in the Dialogue System. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amt} & The amount of money to give the player\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_singleton_a1e59a53ec4af768ac8ec495648c68273}\index{PlayerSingleton@{PlayerSingleton}!AddTheme@{AddTheme}}
+\index{AddTheme@{AddTheme}!PlayerSingleton@{PlayerSingleton}}
+\doxysubsubsection{\texorpdfstring{AddTheme()}{AddTheme()}}
+{\footnotesize\ttfamily \label{class_player_singleton_a1e59a53ec4af768ac8ec495648c68273} 
+void Player\+Singleton.\+Add\+Theme (\begin{DoxyParamCaption}\item[{string}]{theme}{, }\item[{double}]{amt}{}\end{DoxyParamCaption})}
+
+
+
+Add a theme to the dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theme} & The key, or theme that should be added\\
+\hline
+{\em amt} & The amount of karma pertaining to that theme/key\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_singleton_a588faf5b779860613ee2987a212dcdd1}\index{PlayerSingleton@{PlayerSingleton}!ForceSubtractMoney@{ForceSubtractMoney}}
+\index{ForceSubtractMoney@{ForceSubtractMoney}!PlayerSingleton@{PlayerSingleton}}
+\doxysubsubsection{\texorpdfstring{ForceSubtractMoney()}{ForceSubtractMoney()}}
+{\footnotesize\ttfamily \label{class_player_singleton_a588faf5b779860613ee2987a212dcdd1} 
+void Player\+Singleton.\+Force\+Subtract\+Money (\begin{DoxyParamCaption}\item[{double}]{amt}{}\end{DoxyParamCaption})}
+
+
+
+Forces the player to lose money by subtracting from the lua variable in the Dialogue System doesn\textquotesingle{}t check if the player has enough money. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amt} & the amount of money to reduce the player\textquotesingle{}s money by\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_singleton_aca184c8fa2ca2ef5f97352c3c161f10b}\index{PlayerSingleton@{PlayerSingleton}!GetKarmaClass@{GetKarmaClass}}
+\index{GetKarmaClass@{GetKarmaClass}!PlayerSingleton@{PlayerSingleton}}
+\doxysubsubsection{\texorpdfstring{GetKarmaClass()}{GetKarmaClass()}}
+{\footnotesize\ttfamily \label{class_player_singleton_aca184c8fa2ca2ef5f97352c3c161f10b} 
+string Player\+Singleton.\+Get\+Karma\+Class (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get a string value of the player\textquotesingle{}s karma class. 
+
+\begin{DoxyReturn}{Returns}
+"{}\+Positive"{} if the player has positive karma, "{}\+Negative"{} if the player has negative karma, "{}\+Neutral"{} otherwise
+\end{DoxyReturn}
+\Hypertarget{class_player_singleton_a47ab566677bf28bb1345206009e254db}\index{PlayerSingleton@{PlayerSingleton}!GetSoundManager@{GetSoundManager}}
+\index{GetSoundManager@{GetSoundManager}!PlayerSingleton@{PlayerSingleton}}
+\doxysubsubsection{\texorpdfstring{GetSoundManager()}{GetSoundManager()}}
+{\footnotesize\ttfamily \label{class_player_singleton_a47ab566677bf28bb1345206009e254db} 
+void Player\+Singleton.\+Get\+Sound\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_universal_sound_manager}{Universal\+Sound\+Manager}}}]{mgr}{}\end{DoxyParamCaption})}
+
+
+
+Getter for sound manager component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mgr} & The sound manager component\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_singleton_ae3430061bddbacaede526e214e27c282}\index{PlayerSingleton@{PlayerSingleton}!GetThemeKarma@{GetThemeKarma}}
+\index{GetThemeKarma@{GetThemeKarma}!PlayerSingleton@{PlayerSingleton}}
+\doxysubsubsection{\texorpdfstring{GetThemeKarma()}{GetThemeKarma()}}
+{\footnotesize\ttfamily \label{class_player_singleton_ae3430061bddbacaede526e214e27c282} 
+double Player\+Singleton.\+Get\+Theme\+Karma (\begin{DoxyParamCaption}\item[{string}]{theme}{}\end{DoxyParamCaption})}
+
+
+
+Get the amount of karma for a specific theme. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theme} & The theme/key to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_player_singleton_a8f0aca316824421ea6f64222f5a592fb}\index{PlayerSingleton@{PlayerSingleton}!GetTotalKarma@{GetTotalKarma}}
+\index{GetTotalKarma@{GetTotalKarma}!PlayerSingleton@{PlayerSingleton}}
+\doxysubsubsection{\texorpdfstring{GetTotalKarma()}{GetTotalKarma()}}
+{\footnotesize\ttfamily \label{class_player_singleton_a8f0aca316824421ea6f64222f5a592fb} 
+double Player\+Singleton.\+Get\+Total\+Karma (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the total value of all theme/karma points. 
+
+\begin{DoxyReturn}{Returns}
+The total value (sum) of all karma points inthe karma\+Points dictionary
+\end{DoxyReturn}
+\Hypertarget{class_player_singleton_ade922277e83a7bb900d45790c75b2514}\index{PlayerSingleton@{PlayerSingleton}!HasNegativeKarma@{HasNegativeKarma}}
+\index{HasNegativeKarma@{HasNegativeKarma}!PlayerSingleton@{PlayerSingleton}}
+\doxysubsubsection{\texorpdfstring{HasNegativeKarma()}{HasNegativeKarma()}}
+{\footnotesize\ttfamily \label{class_player_singleton_ade922277e83a7bb900d45790c75b2514} 
+bool Player\+Singleton.\+Has\+Negative\+Karma (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get if the player has negative karma. 
+
+\begin{DoxyReturn}{Returns}
+true if the player has below the min neutral negative karma
+\end{DoxyReturn}
+\Hypertarget{class_player_singleton_ad9eea366fd82a9be10750ae099611325}\index{PlayerSingleton@{PlayerSingleton}!HasNeutralKarma@{HasNeutralKarma}}
+\index{HasNeutralKarma@{HasNeutralKarma}!PlayerSingleton@{PlayerSingleton}}
+\doxysubsubsection{\texorpdfstring{HasNeutralKarma()}{HasNeutralKarma()}}
+{\footnotesize\ttfamily \label{class_player_singleton_ad9eea366fd82a9be10750ae099611325} 
+bool Player\+Singleton.\+Has\+Neutral\+Karma (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get if the player has nuetral karma. 
+
+\begin{DoxyReturn}{Returns}
+true if the player has neutral karma, not too high or too low
+\end{DoxyReturn}
+\Hypertarget{class_player_singleton_a77eeae02424513ee29d4876dfefb5d9c}\index{PlayerSingleton@{PlayerSingleton}!HasPositiveKarma@{HasPositiveKarma}}
+\index{HasPositiveKarma@{HasPositiveKarma}!PlayerSingleton@{PlayerSingleton}}
+\doxysubsubsection{\texorpdfstring{HasPositiveKarma()}{HasPositiveKarma()}}
+{\footnotesize\ttfamily \label{class_player_singleton_a77eeae02424513ee29d4876dfefb5d9c} 
+bool Player\+Singleton.\+Has\+Positive\+Karma (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get if the player has positive karma. 
+
+\begin{DoxyReturn}{Returns}
+true if the player has above the max neutral positive karma
+\end{DoxyReturn}
+\Hypertarget{class_player_singleton_a39241c1e2ceb7fcecc9ab73d0785b52d}\index{PlayerSingleton@{PlayerSingleton}!InitPlayer@{InitPlayer}}
+\index{InitPlayer@{InitPlayer}!PlayerSingleton@{PlayerSingleton}}
+\doxysubsubsection{\texorpdfstring{InitPlayer()}{InitPlayer()}}
+{\footnotesize\ttfamily \label{class_player_singleton_a39241c1e2ceb7fcecc9ab73d0785b52d} 
+void Player\+Singleton.\+Init\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player_object_reference}{Player\+Object\+Reference}}}]{player\+Ref}{}\end{DoxyParamCaption})}
+
+
+
+Used to initialize the player singleton with the player object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Ref} & player reference object instance that stores the player data\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_singleton_afa60389002aff3f9d5956ab0d32b884c}\index{PlayerSingleton@{PlayerSingleton}!SubtractMoney@{SubtractMoney}}
+\index{SubtractMoney@{SubtractMoney}!PlayerSingleton@{PlayerSingleton}}
+\doxysubsubsection{\texorpdfstring{SubtractMoney()}{SubtractMoney()}}
+{\footnotesize\ttfamily \label{class_player_singleton_afa60389002aff3f9d5956ab0d32b884c} 
+bool Player\+Singleton.\+Subtract\+Money (\begin{DoxyParamCaption}\item[{double}]{amt}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the player has enough money before subtracting from the lua variable in the Dialogue System. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amt} & the amount of money to reduce the player\textquotesingle{}s money by\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the player had enough money, false otherwise
+\end{DoxyReturn}
+\Hypertarget{class_player_singleton_aa9a8c30444c7c9ac2b30ceeddc68e654}\index{PlayerSingleton@{PlayerSingleton}!WaitThen@{WaitThen}}
+\index{WaitThen@{WaitThen}!PlayerSingleton@{PlayerSingleton}}
+\doxysubsubsection{\texorpdfstring{WaitThen()}{WaitThen()}}
+{\footnotesize\ttfamily \label{class_player_singleton_aa9a8c30444c7c9ac2b30ceeddc68e654} 
+IEnumerator Player\+Singleton.\+Wait\+Then (\begin{DoxyParamCaption}\item[{float}]{seconds}{, }\item[{System.\+Action}]{action}{}\end{DoxyParamCaption})}
+
+
+
+Simple coroutine to wait for a certain amount of time before executing an action. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & time to wait in seconds\\
+\hline
+{\em action} & runnable to perform after waiting\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+Player/Player\+Singleton.\+cs\end{DoxyCompactItemize}

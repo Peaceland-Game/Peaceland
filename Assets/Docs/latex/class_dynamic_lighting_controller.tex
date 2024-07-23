@@ -1,0 +1,111 @@
+\doxysection{Dynamic\+Lighting\+Controller Class Reference}
+\hypertarget{class_dynamic_lighting_controller}{}\label{class_dynamic_lighting_controller}\index{DynamicLightingController@{DynamicLightingController}}
+
+
+Handles changing outdoor lighting between different profiles used to change the time of day during a scene.  
+
+
+Inheritance diagram for Dynamic\+Lighting\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dynamic_lighting_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dynamic_lighting_controller_a986f3b8b92651d6f908cd876f221aa8f}{Transition\+To\+Next\+Profile}} (\mbox{\hyperlink{class_user_interface}{User\+Interface}} user\+Interface, Action action)
+\begin{DoxyCompactList}\small\item\em Handles Transitioning to the next profile (up 1 from the current profile index) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dynamic_lighting_controller_a58876d243007a07acb80b7878b032ac6}{Transition\+To\+Profile}} (Time\+Of\+Day time\+Of\+Day, float duration, \mbox{\hyperlink{class_user_interface}{User\+Interface}} user\+Interface, Action action)
+\begin{DoxyCompactList}\small\item\em Handles transitioning to a specific profile via the Time of day enum type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dynamic_lighting_controller_aaf912acd684c5a9c0445f638677d2f92}\label{class_dynamic_lighting_controller_aaf912acd684c5a9c0445f638677d2f92} 
+Light {\bfseries directional\+Light}
+\item 
+\Hypertarget{class_dynamic_lighting_controller_a34faf54a1f991a8e1b920506e32d5af9}\label{class_dynamic_lighting_controller_a34faf54a1f991a8e1b920506e32d5af9} 
+\mbox{\hyperlink{class_lighting_profile}{Lighting\+Profile}}\mbox{[}$\,$\mbox{]} {\bfseries lighting\+Profiles}
+\item 
+\Hypertarget{class_dynamic_lighting_controller_a59e7a45437c111526a41a39d693deda9}\label{class_dynamic_lighting_controller_a59e7a45437c111526a41a39d693deda9} 
+int {\bfseries current\+Profile\+Index} = 0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_dynamic_lighting_controller_aaf2792e721a1e92ac8e8dce5dd099e24}{Raise\+Lighting\+Profile\+Changed\+Event}} (\mbox{\hyperlink{class_lighting_profile}{Lighting\+Profile}} old\+Profile, \mbox{\hyperlink{class_lighting_profile}{Lighting\+Profile}} new\+Profile, int new\+Profile\+Index)
+\begin{DoxyCompactList}\small\item\em Triggers a lighting profile change event for other scripts to hook in to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dynamic_lighting_controller_a3b509807b2e384020c13a6b63ccd9900}\label{class_dynamic_lighting_controller_a3b509807b2e384020c13a6b63ccd9900} 
+System.\+Event\+Handler$<$ \mbox{\hyperlink{class_lighting_profile_changed_event_args}{Lighting\+Profile\+Changed\+Event\+Args}} $>$ {\bfseries On\+Lighting\+Profile\+Changed}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles changing outdoor lighting between different profiles used to change the time of day during a scene. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dynamic_lighting_controller_aaf2792e721a1e92ac8e8dce5dd099e24}\index{DynamicLightingController@{DynamicLightingController}!RaiseLightingProfileChangedEvent@{RaiseLightingProfileChangedEvent}}
+\index{RaiseLightingProfileChangedEvent@{RaiseLightingProfileChangedEvent}!DynamicLightingController@{DynamicLightingController}}
+\doxysubsubsection{\texorpdfstring{RaiseLightingProfileChangedEvent()}{RaiseLightingProfileChangedEvent()}}
+{\footnotesize\ttfamily \label{class_dynamic_lighting_controller_aaf2792e721a1e92ac8e8dce5dd099e24} 
+virtual void Dynamic\+Lighting\+Controller.\+Raise\+Lighting\+Profile\+Changed\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_lighting_profile}{Lighting\+Profile}}}]{old\+Profile}{, }\item[{\mbox{\hyperlink{class_lighting_profile}{Lighting\+Profile}}}]{new\+Profile}{, }\item[{int}]{new\+Profile\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Triggers a lighting profile change event for other scripts to hook in to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Profile} & The lighting profile object we are changing from\\
+\hline
+{\em new\+Profile} & The lighting profile object we are changing to\\
+\hline
+{\em new\+Profile\+Index} & The integer index of the new profile\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dynamic_lighting_controller_a986f3b8b92651d6f908cd876f221aa8f}\index{DynamicLightingController@{DynamicLightingController}!TransitionToNextProfile@{TransitionToNextProfile}}
+\index{TransitionToNextProfile@{TransitionToNextProfile}!DynamicLightingController@{DynamicLightingController}}
+\doxysubsubsection{\texorpdfstring{TransitionToNextProfile()}{TransitionToNextProfile()}}
+{\footnotesize\ttfamily \label{class_dynamic_lighting_controller_a986f3b8b92651d6f908cd876f221aa8f} 
+void Dynamic\+Lighting\+Controller.\+Transition\+To\+Next\+Profile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_user_interface}{User\+Interface}}}]{user\+Interface}{, }\item[{Action}]{action}{}\end{DoxyParamCaption})}
+
+
+
+Handles Transitioning to the next profile (up 1 from the current profile index) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Interface} & A reference to the user\+Interface script used to display a load screen\\
+\hline
+{\em action} & A runnable used to perform an action after the transition is over\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dynamic_lighting_controller_a58876d243007a07acb80b7878b032ac6}\index{DynamicLightingController@{DynamicLightingController}!TransitionToProfile@{TransitionToProfile}}
+\index{TransitionToProfile@{TransitionToProfile}!DynamicLightingController@{DynamicLightingController}}
+\doxysubsubsection{\texorpdfstring{TransitionToProfile()}{TransitionToProfile()}}
+{\footnotesize\ttfamily \label{class_dynamic_lighting_controller_a58876d243007a07acb80b7878b032ac6} 
+void Dynamic\+Lighting\+Controller.\+Transition\+To\+Profile (\begin{DoxyParamCaption}\item[{Time\+Of\+Day}]{time\+Of\+Day}{, }\item[{float}]{duration}{, }\item[{\mbox{\hyperlink{class_user_interface}{User\+Interface}}}]{user\+Interface}{, }\item[{Action}]{action}{}\end{DoxyParamCaption})}
+
+
+
+Handles transitioning to a specific profile via the Time of day enum type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Of\+Day} & The Time\+Of\+Day enum type for time of day usually like Day/\+Evening/\+Night\\
+\hline
+{\em duration} & how long the transition should take in seconds\\
+\hline
+{\em user\+Interface} & A reference to the user\+Interface script used to display a load screen\\
+\hline
+{\em action} & A runnable used to perform an action after the transition is over\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+Lighting/Dynamic\+Lighting\+Controller.\+cs\end{DoxyCompactItemize}

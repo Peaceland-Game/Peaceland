@@ -1,0 +1,85 @@
+\doxysection{Memory\+String Class Reference}
+\hypertarget{class_memory_string}{}\label{class_memory_string}\index{MemoryString@{MemoryString}}
+
+
+\doxylink{class_controls}{Controls} a single memory string of memory photos.  
+
+
+Inheritance diagram for Memory\+String\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_memory_string}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_memory_string_a30095e59eece4012a00f47c90c32dbcf}{Select\+Photo}} (\mbox{\hyperlink{class_memory_tree_photo}{Memory\+Tree\+Photo}} active\+Photo)
+\begin{DoxyCompactList}\small\item\em Set the photo as active by showing the description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_memory_string_a297fa5e1bb3cb95d15ae8c4dbc0a54c8}{Deselect\+Photo}} (\mbox{\hyperlink{class_memory_tree_photo}{Memory\+Tree\+Photo}} active\+Photo)
+\begin{DoxyCompactList}\small\item\em Deselect photo by hiding description. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_memory_tree_photo}{Memory\+Tree\+Photo}} \mbox{\hyperlink{class_memory_string_abd253bce67de12cde484b716730e8364}{Get\+Active\+Photo}} ()
+\begin{DoxyCompactList}\small\item\em Gets the active photo by finding the first uncompleted memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_memory_string_ae16889b9aaeedea69944c0add036e0da}\label{class_memory_string_ae16889b9aaeedea69944c0add036e0da} 
+List$<$ \mbox{\hyperlink{class_memory_tree_photo}{Memory\+Tree\+Photo}} $>$ {\bfseries photos} = new()
+\item 
+\Hypertarget{class_memory_string_a933fc514052c6116056869ca2cf5313b}\label{class_memory_string_a933fc514052c6116056869ca2cf5313b} 
+string {\bfseries scene\+Name\+To\+Load} = "{}Scene\+Loader2"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_controls}{Controls} a single memory string of memory photos. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_memory_string_a297fa5e1bb3cb95d15ae8c4dbc0a54c8}\index{MemoryString@{MemoryString}!DeselectPhoto@{DeselectPhoto}}
+\index{DeselectPhoto@{DeselectPhoto}!MemoryString@{MemoryString}}
+\doxysubsubsection{\texorpdfstring{DeselectPhoto()}{DeselectPhoto()}}
+{\footnotesize\ttfamily \label{class_memory_string_a297fa5e1bb3cb95d15ae8c4dbc0a54c8} 
+void Memory\+String.\+Deselect\+Photo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_memory_tree_photo}{Memory\+Tree\+Photo}}}]{active\+Photo}{}\end{DoxyParamCaption})}
+
+
+
+Deselect photo by hiding description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em active\+Photo} & photo description to hide\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_memory_string_abd253bce67de12cde484b716730e8364}\index{MemoryString@{MemoryString}!GetActivePhoto@{GetActivePhoto}}
+\index{GetActivePhoto@{GetActivePhoto}!MemoryString@{MemoryString}}
+\doxysubsubsection{\texorpdfstring{GetActivePhoto()}{GetActivePhoto()}}
+{\footnotesize\ttfamily \label{class_memory_string_abd253bce67de12cde484b716730e8364} 
+\mbox{\hyperlink{class_memory_tree_photo}{Memory\+Tree\+Photo}} Memory\+String.\+Get\+Active\+Photo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the active photo by finding the first uncompleted memory. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the first photo that is not marked as completed
+\end{DoxyReturn}
+\Hypertarget{class_memory_string_a30095e59eece4012a00f47c90c32dbcf}\index{MemoryString@{MemoryString}!SelectPhoto@{SelectPhoto}}
+\index{SelectPhoto@{SelectPhoto}!MemoryString@{MemoryString}}
+\doxysubsubsection{\texorpdfstring{SelectPhoto()}{SelectPhoto()}}
+{\footnotesize\ttfamily \label{class_memory_string_a30095e59eece4012a00f47c90c32dbcf} 
+void Memory\+String.\+Select\+Photo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_memory_tree_photo}{Memory\+Tree\+Photo}}}]{active\+Photo}{}\end{DoxyParamCaption})}
+
+
+
+Set the photo as active by showing the description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em active\+Photo} & The photo to activate\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+Memory\+Tree/Memory\+String.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,122 @@
+\doxysection{User\+Interface Class Reference}
+\hypertarget{class_user_interface}{}\label{class_user_interface}\index{UserInterface@{UserInterface}}
+
+
+Manages the user interface elements and interactions in the game, including pause menu, journal, loading screen, and various UI toggles.  
+
+
+Inheritance diagram for User\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_user_interface}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_user_interface_abe51654dc9a5da856bb99cbc34fa2506}\label{class_user_interface_abe51654dc9a5da856bb99cbc34fa2506} 
+void {\bfseries Register\+Event\+Listener} ()
+\begin{DoxyCompactList}\small\item\em Registers event listeners for player events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_interface_a38cc3217759a375a186cb96cd30c63a2}{Toggle\+Pause\+Menu}} (bool is\+Paused)
+\begin{DoxyCompactList}\small\item\em Toggles the pause menu and reticle visibility. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_interface_abcc42cc9092561b2c16403385f695682}{Toggle\+Tablet}} (bool is\+Paused)
+\begin{DoxyCompactList}\small\item\em Toggles the tablet interface and reticle visibility. \end{DoxyCompactList}\item 
+\Hypertarget{class_user_interface_a4b88138984d793c18e1f1ce4797c0645}\label{class_user_interface_a4b88138984d793c18e1f1ce4797c0645} 
+void {\bfseries Enable\+Load\+Screen} ()
+\begin{DoxyCompactList}\small\item\em Enables the loading screen. \end{DoxyCompactList}\item 
+\Hypertarget{class_user_interface_a80734fbb2cc7277c11aeada7287626e0}\label{class_user_interface_a80734fbb2cc7277c11aeada7287626e0} 
+void {\bfseries Disable\+Load\+Screen} ()
+\begin{DoxyCompactList}\small\item\em Disables the loading screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_interface_aadf3d69a7ceba7a21cd9137a7146a70e}{Update\+Loading\+Progress}} (float progress)
+\begin{DoxyCompactList}\small\item\em Updates the loading progress bar. \end{DoxyCompactList}\item 
+\Hypertarget{class_user_interface_a0b5058a692ee27bac813cdd122bcdd5b}\label{class_user_interface_a0b5058a692ee27bac813cdd122bcdd5b} 
+void {\bfseries Exit} ()
+\begin{DoxyCompactList}\small\item\em Exits the application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_interface_abe848ed13ab9ba1a4d7e63ea2028586e}{Toggle\+Memory\+Select\+UI}} (bool active)
+\begin{DoxyCompactList}\small\item\em Toggles the visibility of the memory select UI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_user_interface_a301da12fdda017ee6a60c425b973e9d9}\label{class_user_interface_a301da12fdda017ee6a60c425b973e9d9} 
+\mbox{\hyperlink{class_scroll_to_bottom}{Scroll\+To\+Bottom}} {\bfseries scroll\+To\+Bottom}
+\item 
+\Hypertarget{class_user_interface_a6daf1c87f48598fc1dfd93a8cffcaf8e}\label{class_user_interface_a6daf1c87f48598fc1dfd93a8cffcaf8e} 
+Game\+Object {\bfseries memory\+Select\+UI}
+\item 
+\Hypertarget{class_user_interface_aef0c53fbd56bfeb4bcc779f1dbd6fbd6}\label{class_user_interface_aef0c53fbd56bfeb4bcc779f1dbd6fbd6} 
+bool {\bfseries Check\+Mouse\+Clicks} = false
+\item 
+\Hypertarget{class_user_interface_ad4b44c7a03adf24cd23baef7fd927bb2}\label{class_user_interface_ad4b44c7a03adf24cd23baef7fd927bb2} 
+Game\+Object {\bfseries reticle}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the user interface elements and interactions in the game, including pause menu, journal, loading screen, and various UI toggles. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_user_interface_abe848ed13ab9ba1a4d7e63ea2028586e}\index{UserInterface@{UserInterface}!ToggleMemorySelectUI@{ToggleMemorySelectUI}}
+\index{ToggleMemorySelectUI@{ToggleMemorySelectUI}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{ToggleMemorySelectUI()}{ToggleMemorySelectUI()}}
+{\footnotesize\ttfamily \label{class_user_interface_abe848ed13ab9ba1a4d7e63ea2028586e} 
+void User\+Interface.\+Toggle\+Memory\+Select\+UI (\begin{DoxyParamCaption}\item[{bool}]{active}{}\end{DoxyParamCaption})}
+
+
+
+Toggles the visibility of the memory select UI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em active} & Whether the memory select UI should be active.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_interface_a38cc3217759a375a186cb96cd30c63a2}\index{UserInterface@{UserInterface}!TogglePauseMenu@{TogglePauseMenu}}
+\index{TogglePauseMenu@{TogglePauseMenu}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{TogglePauseMenu()}{TogglePauseMenu()}}
+{\footnotesize\ttfamily \label{class_user_interface_a38cc3217759a375a186cb96cd30c63a2} 
+void User\+Interface.\+Toggle\+Pause\+Menu (\begin{DoxyParamCaption}\item[{bool}]{is\+Paused}{}\end{DoxyParamCaption})}
+
+
+
+Toggles the pause menu and reticle visibility. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Paused} & Whether the game is paused.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_interface_abcc42cc9092561b2c16403385f695682}\index{UserInterface@{UserInterface}!ToggleTablet@{ToggleTablet}}
+\index{ToggleTablet@{ToggleTablet}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{ToggleTablet()}{ToggleTablet()}}
+{\footnotesize\ttfamily \label{class_user_interface_abcc42cc9092561b2c16403385f695682} 
+void User\+Interface.\+Toggle\+Tablet (\begin{DoxyParamCaption}\item[{bool}]{is\+Paused}{}\end{DoxyParamCaption})}
+
+
+
+Toggles the tablet interface and reticle visibility. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Paused} & Whether the tablet is open.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_interface_aadf3d69a7ceba7a21cd9137a7146a70e}\index{UserInterface@{UserInterface}!UpdateLoadingProgress@{UpdateLoadingProgress}}
+\index{UpdateLoadingProgress@{UpdateLoadingProgress}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{UpdateLoadingProgress()}{UpdateLoadingProgress()}}
+{\footnotesize\ttfamily \label{class_user_interface_aadf3d69a7ceba7a21cd9137a7146a70e} 
+void User\+Interface.\+Update\+Loading\+Progress (\begin{DoxyParamCaption}\item[{float}]{progress}{}\end{DoxyParamCaption})}
+
+
+
+Updates the loading progress bar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em progress} & The loading progress value between 0 and 1.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+UI/User\+Interface.\+cs\end{DoxyCompactItemize}

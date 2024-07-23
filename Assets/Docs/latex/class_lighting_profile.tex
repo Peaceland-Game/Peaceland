@@ -1,0 +1,144 @@
+\doxysection{Lighting\+Profile Class Reference}
+\hypertarget{class_lighting_profile}{}\label{class_lighting_profile}\index{LightingProfile@{LightingProfile}}
+
+
+Holds lighting information in a scriptable object that can be used to change the lighting during runtime.  
+
+
+Inheritance diagram for Lighting\+Profile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_lighting_profile}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lighting_profile_a2de80908ff6aaab8dbe1ea0546dc0d03}\label{class_lighting_profile_a2de80908ff6aaab8dbe1ea0546dc0d03} 
+enum {\bfseries Sky\+Type\+Enum} \{ {\bfseries HDRI}
+, {\bfseries Procedural}
+ \}
+\item 
+\Hypertarget{class_lighting_profile_a7b256125f1b449bcddb8c429d8054efb}\label{class_lighting_profile_a7b256125f1b449bcddb8c429d8054efb} 
+enum {\bfseries Shadow\+Casting\+Mode} \{ {\bfseries Soft}
+, {\bfseries Hard}
+ \}
+\item 
+\Hypertarget{class_lighting_profile_ad6963049a3dec6d12ddb75d8deca0edc}\label{class_lighting_profile_ad6963049a3dec6d12ddb75d8deca0edc} 
+enum {\bfseries Shadow\+Resolution} \{ \newline
+{\bfseries From\+Quality\+Settings}
+, {\bfseries Low}
+, {\bfseries Medium}
+, {\bfseries High}
+, \newline
+{\bfseries Very\+High}
+ \}
+\item 
+\Hypertarget{class_lighting_profile_a31f325ed7d0494a5aa167147501bf4b1}\label{class_lighting_profile_a31f325ed7d0494a5aa167147501bf4b1} 
+enum {\bfseries Ambient\+Mode\+Enum} \{ {\bfseries Skybox}
+, {\bfseries Gradient}
+, {\bfseries Color}
+, {\bfseries Trilight}
+ \}
+\item 
+\Hypertarget{class_lighting_profile_a13b518b3f7fb72b1a783d0e3013ac6f9}\label{class_lighting_profile_a13b518b3f7fb72b1a783d0e3013ac6f9} 
+enum {\bfseries Fog\+Mode\+Enum} \{ {\bfseries Linear}
+, {\bfseries Exponential}
+, {\bfseries Exponential\+Squared}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lighting_profile_a7e4b4e617b9a5258d4ee4c1159d82c72}\label{class_lighting_profile_a7e4b4e617b9a5258d4ee4c1159d82c72} 
+Color {\bfseries Get\+Sun\+Color} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_lighting_profile_ab226adc7bc716563643543036d735926}\label{class_lighting_profile_ab226adc7bc716563643543036d735926} 
+bool {\bfseries update\+Changes\+In\+Realtime} = true
+\item 
+\Hypertarget{class_lighting_profile_ac02d741adb28b4bb575e0ec427d8c092}\label{class_lighting_profile_ac02d741adb28b4bb575e0ec427d8c092} 
+Sky\+Type\+Enum {\bfseries profile\+Sky\+Type} = Sky\+Type\+Enum.\+HDRI
+\item 
+\Hypertarget{class_lighting_profile_a27858570eaeb65776e5229c5231c279d}\label{class_lighting_profile_a27858570eaeb65776e5229c5231c279d} 
+Volume\+Profile {\bfseries post\+Processing\+Profile}
+\item 
+\Hypertarget{class_lighting_profile_adf67533e7e335974f1b53c5d30d7df2a}\label{class_lighting_profile_adf67533e7e335974f1b53c5d30d7df2a} 
+Cubemap {\bfseries hdri\+Skybox}
+\item 
+\Hypertarget{class_lighting_profile_ab09c0b874f1a51fc42034b63d3948de8}\label{class_lighting_profile_ab09c0b874f1a51fc42034b63d3948de8} 
+Color {\bfseries skybox\+Tint} = Color.\+white
+\item 
+\Hypertarget{class_lighting_profile_aebfecbf40e42b6d63bb874e66aea1f28}\label{class_lighting_profile_aebfecbf40e42b6d63bb874e66aea1f28} 
+float {\bfseries skybox\+Exposure} = 1f
+\item 
+\Hypertarget{class_lighting_profile_a54d54c6b2ee6622fbe3e89f2df6c750a}\label{class_lighting_profile_a54d54c6b2ee6622fbe3e89f2df6c750a} 
+float {\bfseries skybox\+Rotation\+Offset} = 0f
+\item 
+\Hypertarget{class_lighting_profile_af8d6249d695e688da0aa5d2414dafae8}\label{class_lighting_profile_af8d6249d695e688da0aa5d2414dafae8} 
+float {\bfseries sun\+Rotation} = 0f
+\item 
+\Hypertarget{class_lighting_profile_aeb8b9e2c464e34fc48914ecda657d9b8}\label{class_lighting_profile_aeb8b9e2c464e34fc48914ecda657d9b8} 
+float {\bfseries sun\+Pitch} = 50f
+\item 
+\Hypertarget{class_lighting_profile_a9121978618e30565577ddccead5c8d38}\label{class_lighting_profile_a9121978618e30565577ddccead5c8d38} 
+bool {\bfseries use\+Kelvin} = true
+\item 
+\Hypertarget{class_lighting_profile_a319f2e9f634159fd99f8ca0ed03f59de}\label{class_lighting_profile_a319f2e9f634159fd99f8ca0ed03f59de} 
+Gradient {\bfseries kelvin\+Gradient}
+\item 
+\Hypertarget{class_lighting_profile_a096361b13ca59707f0efbbf4d7144e50}\label{class_lighting_profile_a096361b13ca59707f0efbbf4d7144e50} 
+float {\bfseries kelvin} = 5750f
+\item 
+\Hypertarget{class_lighting_profile_ac3b366c06cf6633a8cd726af89226f1a}\label{class_lighting_profile_ac3b366c06cf6633a8cd726af89226f1a} 
+float {\bfseries sun\+Intensity} = 5.\+5f
+\item 
+\Hypertarget{class_lighting_profile_ac43cd51138ad667e823abed2ffc41f62}\label{class_lighting_profile_ac43cd51138ad667e823abed2ffc41f62} 
+float {\bfseries sun\+Shadow\+Strength} = 1f
+\item 
+\Hypertarget{class_lighting_profile_ab5155d02c3e9f1403de74aa190b3fe20}\label{class_lighting_profile_ab5155d02c3e9f1403de74aa190b3fe20} 
+Shadow\+Casting\+Mode {\bfseries sun\+Shadow\+Casting\+Mode} = Shadow\+Casting\+Mode.\+Soft
+\item 
+\Hypertarget{class_lighting_profile_a1dd19a59941351afdf61976ebf298458}\label{class_lighting_profile_a1dd19a59941351afdf61976ebf298458} 
+Shadow\+Resolution {\bfseries sun\+Shadow\+Resolution} = Shadow\+Resolution.\+From\+Quality\+Settings
+\item 
+\Hypertarget{class_lighting_profile_a44cdfe654066a11d54d674d2083ac6d0}\label{class_lighting_profile_a44cdfe654066a11d54d674d2083ac6d0} 
+float {\bfseries shadow\+Distance} = 512f
+\item 
+\Hypertarget{class_lighting_profile_abffa3f6df359e9bbcb03e72faf59c937}\label{class_lighting_profile_abffa3f6df359e9bbcb03e72faf59c937} 
+Ambient\+Mode\+Enum {\bfseries ambient\+Mode} = Ambient\+Mode\+Enum.\+Trilight
+\item 
+\Hypertarget{class_lighting_profile_a01b4fbccdfadad96fea067f475125673}\label{class_lighting_profile_a01b4fbccdfadad96fea067f475125673} 
+Color {\bfseries sky\+Ambient} = Color.\+white
+\item 
+\Hypertarget{class_lighting_profile_ae2ba62e3d3da29bbfac76d89687f67c7}\label{class_lighting_profile_ae2ba62e3d3da29bbfac76d89687f67c7} 
+Color {\bfseries equator\+Ambient} = Color.\+gray
+\item 
+\Hypertarget{class_lighting_profile_a15639d0e21a1b8ff5a26443242307081}\label{class_lighting_profile_a15639d0e21a1b8ff5a26443242307081} 
+Color {\bfseries ground\+Ambient} = Color.\+black
+\item 
+\Hypertarget{class_lighting_profile_ace86c6c78c08b069ee5a83ef5ff884e2}\label{class_lighting_profile_ace86c6c78c08b069ee5a83ef5ff884e2} 
+Fog\+Mode\+Enum {\bfseries fog\+Mode} = Fog\+Mode\+Enum.\+Exponential
+\item 
+\Hypertarget{class_lighting_profile_af4d93f0f41c20673c462ce6133df3c89}\label{class_lighting_profile_af4d93f0f41c20673c462ce6133df3c89} 
+Color {\bfseries fog\+Color} = Color.\+white
+\item 
+\Hypertarget{class_lighting_profile_ac3358247a2ef9d5f728766f090d0a06f}\label{class_lighting_profile_ac3358247a2ef9d5f728766f090d0a06f} 
+float {\bfseries fog\+Density} = 0.\+001f
+\item 
+\Hypertarget{class_lighting_profile_aa4f92bb0569a429ad47442af47ac104c}\label{class_lighting_profile_aa4f92bb0569a429ad47442af47ac104c} 
+float {\bfseries fog\+Height} = 0f
+\item 
+\Hypertarget{class_lighting_profile_a44fc247ca30df32a833e99a6acbde2fd}\label{class_lighting_profile_a44fc247ca30df32a833e99a6acbde2fd} 
+float {\bfseries fog\+Gradient} = 0.\+75f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Holds lighting information in a scriptable object that can be used to change the lighting during runtime. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+Lighting/Lighting\+Profile.\+cs\end{DoxyCompactItemize}

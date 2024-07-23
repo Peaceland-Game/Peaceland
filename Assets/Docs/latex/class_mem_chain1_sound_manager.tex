@@ -1,0 +1,114 @@
+\doxysection{Mem\+Chain1\+Sound\+Manager Class Reference}
+\hypertarget{class_mem_chain1_sound_manager}{}\label{class_mem_chain1_sound_manager}\index{MemChain1SoundManager@{MemChain1SoundManager}}
+Inheritance diagram for Mem\+Chain1\+Sound\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_mem_chain1_sound_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mem_chain1_sound_manager_a1a59655f2378c0326716646a8ec0b15c}\label{class_mem_chain1_sound_manager_a1a59655f2378c0326716646a8ec0b15c} 
+void {\bfseries Gryf\+Growl} ()
+\item 
+\Hypertarget{class_mem_chain1_sound_manager_a54754dd7b4f5d88ab0c91ce899d82b15}\label{class_mem_chain1_sound_manager_a54754dd7b4f5d88ab0c91ce899d82b15} 
+void {\bfseries Gryf\+Whine} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_universal_sound_manager}{Universal\+Sound\+Manager}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_universal_sound_manager_a0b1a5f7d8ad09c8cf9554feb8a5a4248}{Play\+Sound}} (Game\+Object source, Audio\+Clip clip)
+\begin{DoxyCompactList}\small\item\em Plays a sound clip. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_universal_sound_manager_ac9a0c385db6088adf658ffb22faddccc}{Play\+Looping\+Sound}} (Game\+Object source)
+\begin{DoxyCompactList}\small\item\em Makes a game object\textquotesingle{}s audio source play a sound (if it has one assigned to it). Note that you must enable looping in the audio source itself in order for it to play more than once. \end{DoxyCompactList}\item 
+void {\bfseries Walk} ()
+\item 
+void {\bfseries Artifact\+Get} ()
+\item 
+void {\bfseries Theme\+Get} ()
+\item 
+void {\bfseries Coin\+Get} ()
+\item 
+void {\bfseries Pickup} ()
+\item 
+void {\bfseries Select\+Dialogue\+Option\+Sound} ()
+\item 
+void {\bfseries Select\+Menu\+Option} ()
+\item 
+void {\bfseries Make\+Purchase} ()
+\item 
+void {\bfseries Select\+Tablet\+Option} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_mem_chain1_sound_manager_a919e99ca911e3e6ee0f132a326419e74}{On\+Enable}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_universal_sound_manager}{Universal\+Sound\+Manager}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Get\+Universal\+Sound\+Sources} ()
+\begin{DoxyCompactList}\small\item\em Gets audio sources that are likely to be in multiple memories and the hub. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_universal_sound_manager}{Universal\+Sound\+Manager}}}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object {\bfseries player}
+\item 
+List$<$ Game\+Object $>$ {\bfseries all\+Characters}
+\item 
+List$<$ Game\+Object $>$ {\bfseries artifacts}
+\item 
+List$<$ Game\+Object $>$ {\bfseries other\+Pickups}
+\item 
+Game\+Object {\bfseries river}
+\item 
+List$<$ Game\+Object $>$ {\bfseries street\+Lights}
+\item 
+Audio\+Clip {\bfseries goober\+Walk\+Carpet}
+\item 
+Audio\+Clip {\bfseries goober\+Walk\+Concrete}
+\item 
+Audio\+Clip {\bfseries goober\+Walk\+Grass}
+\item 
+Audio\+Clip {\bfseries goober\+Walk\+Wood}
+\item 
+Audio\+Clip {\bfseries artifact\+Pickup}
+\item 
+Audio\+Clip {\bfseries theme\+Pickup}
+\item 
+Audio\+Clip {\bfseries coin\+Pickup}
+\item 
+Audio\+Clip {\bfseries generic\+Pickup}
+\item 
+Audio\+Clip {\bfseries dialogue\+Select}
+\item 
+Audio\+Clip {\bfseries menu\+Select}
+\item 
+Audio\+Clip {\bfseries purchase}
+\item 
+Audio\+Clip {\bfseries tablet\+Select}
+\item 
+Audio\+Clip {\bfseries ambience\+River}
+\item 
+Audio\+Clip {\bfseries ambience\+Streetlight}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mem_chain1_sound_manager_a919e99ca911e3e6ee0f132a326419e74}\index{MemChain1SoundManager@{MemChain1SoundManager}!OnEnable@{OnEnable}}
+\index{OnEnable@{OnEnable}!MemChain1SoundManager@{MemChain1SoundManager}}
+\doxysubsubsection{\texorpdfstring{OnEnable()}{OnEnable()}}
+{\footnotesize\ttfamily \label{class_mem_chain1_sound_manager_a919e99ca911e3e6ee0f132a326419e74} 
+override void Mem\+Chain1\+Sound\+Manager.\+On\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_universal_sound_manager}{Universal\+Sound\+Manager}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+Sound/\+Memory\+Chain1/Mem\+Chain1\+Sound\+Manager.\+cs\end{DoxyCompactItemize}

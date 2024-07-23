@@ -1,0 +1,158 @@
+\doxysection{Tablet Class Reference}
+\hypertarget{class_tablet}{}\label{class_tablet}\index{Tablet@{Tablet}}
+
+
+Manages the functionality of a tablet device in the game, including sidebar navigation, artifact journal, and theme notes.  
+
+
+Inheritance diagram for Tablet\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tablet}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_tablet_a66e2ecbe1f6f2aaf8dfc19aef7b4e1fd}\label{class_tablet_a66e2ecbe1f6f2aaf8dfc19aef7b4e1fd} 
+enum {\bfseries Sidebar\+State} \{ {\bfseries Shown}
+, {\bfseries Moving}
+, {\bfseries Hidden}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_tablet_a72b825190ff6772887b8006cbddc55b5}\label{class_tablet_a72b825190ff6772887b8006cbddc55b5} 
+void {\bfseries Toggle\+Sidebar} ()
+\begin{DoxyCompactList}\small\item\em Toggles the sidebar between shown and hidden states. \end{DoxyCompactList}\item 
+\Hypertarget{class_tablet_ad198e0b65494d570ff575959d816c968}\label{class_tablet_ad198e0b65494d570ff575959d816c968} 
+void {\bfseries Toggle\+Tablet} ()
+\begin{DoxyCompactList}\small\item\em Toggles the tablet visibility. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tablet_aab2c4bb0e9a328e7960f7b64d1e7894f}{Add\+Artifact}} (string name, bool show\+Popup)
+\begin{DoxyCompactList}\small\item\em Passes the name of the artifact to reveal to the artifact journal controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tablet_a4cd28e24e5c4e7627b17bec862832df8}{Add\+Theme}} (string name)
+\begin{DoxyCompactList}\small\item\em Adds a theme to the theme notes page. \end{DoxyCompactList}\item 
+IEnumerator \mbox{\hyperlink{class_tablet_aa1e7c3e102986a21165300a3ac9550e1}{Wait\+Popup}} ()
+\begin{DoxyCompactList}\small\item\em Waits for a short duration, used for popup display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tablet_add900660733afe7c77232c6f62e264bb}{Handle\+Home\+Button\+Click}} (int tab\+Number)
+\begin{DoxyCompactList}\small\item\em Handles home button click events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tablet_a44ad4e80aea3804db7935268cc27b132}{Handle\+Tab\+Click}} (int tab\+Number)
+\begin{DoxyCompactList}\small\item\em Handles tab click events. \end{DoxyCompactList}\item 
+\Hypertarget{class_tablet_a6ac7044ea265e0d9c0b25390e06b72f4}\label{class_tablet_a6ac7044ea265e0d9c0b25390e06b72f4} 
+void {\bfseries Exit\+Game} ()
+\begin{DoxyCompactList}\small\item\em Exits the game application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_tablet_a587671af0e7a577f065d515c8fb039e5}\label{class_tablet_a587671af0e7a577f065d515c8fb039e5} 
+Game\+Object {\bfseries tabs}
+\item 
+\Hypertarget{class_tablet_afe7455492b42436416d70a99d86ceb4d}\label{class_tablet_afe7455492b42436416d70a99d86ceb4d} 
+Text\+Mesh\+Pro\+UGUI {\bfseries button\+Text}
+\item 
+\Hypertarget{class_tablet_a7414912485d70fdd84525f2d248e4c82}\label{class_tablet_a7414912485d70fdd84525f2d248e4c82} 
+List$<$ Game\+Object $>$ {\bfseries apps} = new()
+\item 
+\Hypertarget{class_tablet_a98f1406a79ebd4a0849a6ec84fe91134}\label{class_tablet_a98f1406a79ebd4a0849a6ec84fe91134} 
+int {\bfseries current\+Page} = 0
+\item 
+\Hypertarget{class_tablet_aba28c099ed7acfe1c43b62a98ba11ffc}\label{class_tablet_aba28c099ed7acfe1c43b62a98ba11ffc} 
+\mbox{\hyperlink{class_artifact_journal_controller}{Artifact\+Journal\+Controller}} {\bfseries artifact\+Journal}
+\item 
+\Hypertarget{class_tablet_a853862f47d807fa1a734064e043e30ff}\label{class_tablet_a853862f47d807fa1a734064e043e30ff} 
+Game\+Object {\bfseries artifact\+Popup}
+\item 
+\Hypertarget{class_tablet_a24515a6d92cdb136e6f4281725431af1}\label{class_tablet_a24515a6d92cdb136e6f4281725431af1} 
+Text\+Mesh\+Pro\+UGUI {\bfseries artifact\+Name}
+\item 
+\Hypertarget{class_tablet_afecbd4ae973600316a5a379d8fc0029d}\label{class_tablet_afecbd4ae973600316a5a379d8fc0029d} 
+\mbox{\hyperlink{class_theme_notes_controller}{Theme\+Notes\+Controller}} {\bfseries theme\+Notes\+Page}
+\item 
+\Hypertarget{class_tablet_ad25962dce4df589715adf274d96dbcc7}\label{class_tablet_ad25962dce4df589715adf274d96dbcc7} 
+Game\+Object {\bfseries artifact\+Tutorial}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the functionality of a tablet device in the game, including sidebar navigation, artifact journal, and theme notes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_tablet_aab2c4bb0e9a328e7960f7b64d1e7894f}\index{Tablet@{Tablet}!AddArtifact@{AddArtifact}}
+\index{AddArtifact@{AddArtifact}!Tablet@{Tablet}}
+\doxysubsubsection{\texorpdfstring{AddArtifact()}{AddArtifact()}}
+{\footnotesize\ttfamily \label{class_tablet_aab2c4bb0e9a328e7960f7b64d1e7894f} 
+void Tablet.\+Add\+Artifact (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{bool}]{show\+Popup}{}\end{DoxyParamCaption})}
+
+
+
+Passes the name of the artifact to reveal to the artifact journal controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the artifact to reveal\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_tablet_a4cd28e24e5c4e7627b17bec862832df8}\index{Tablet@{Tablet}!AddTheme@{AddTheme}}
+\index{AddTheme@{AddTheme}!Tablet@{Tablet}}
+\doxysubsubsection{\texorpdfstring{AddTheme()}{AddTheme()}}
+{\footnotesize\ttfamily \label{class_tablet_a4cd28e24e5c4e7627b17bec862832df8} 
+void Tablet.\+Add\+Theme (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Adds a theme to the theme notes page. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the theme to add.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_tablet_add900660733afe7c77232c6f62e264bb}\index{Tablet@{Tablet}!HandleHomeButtonClick@{HandleHomeButtonClick}}
+\index{HandleHomeButtonClick@{HandleHomeButtonClick}!Tablet@{Tablet}}
+\doxysubsubsection{\texorpdfstring{HandleHomeButtonClick()}{HandleHomeButtonClick()}}
+{\footnotesize\ttfamily \label{class_tablet_add900660733afe7c77232c6f62e264bb} 
+void Tablet.\+Handle\+Home\+Button\+Click (\begin{DoxyParamCaption}\item[{int}]{tab\+Number}{}\end{DoxyParamCaption})}
+
+
+
+Handles home button click events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab\+Number} & The index of the tab to switch to.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_tablet_a44ad4e80aea3804db7935268cc27b132}\index{Tablet@{Tablet}!HandleTabClick@{HandleTabClick}}
+\index{HandleTabClick@{HandleTabClick}!Tablet@{Tablet}}
+\doxysubsubsection{\texorpdfstring{HandleTabClick()}{HandleTabClick()}}
+{\footnotesize\ttfamily \label{class_tablet_a44ad4e80aea3804db7935268cc27b132} 
+void Tablet.\+Handle\+Tab\+Click (\begin{DoxyParamCaption}\item[{int}]{tab\+Number}{}\end{DoxyParamCaption})}
+
+
+
+Handles tab click events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab\+Number} & The index of the clicked tab.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_tablet_aa1e7c3e102986a21165300a3ac9550e1}\index{Tablet@{Tablet}!WaitPopup@{WaitPopup}}
+\index{WaitPopup@{WaitPopup}!Tablet@{Tablet}}
+\doxysubsubsection{\texorpdfstring{WaitPopup()}{WaitPopup()}}
+{\footnotesize\ttfamily \label{class_tablet_aa1e7c3e102986a21165300a3ac9550e1} 
+IEnumerator Tablet.\+Wait\+Popup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Waits for a short duration, used for popup display. 
+
+\begin{DoxyReturn}{Returns}
+An IEnumerator for the coroutine system.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+UI/\+Tablet/Tablet.\+cs\end{DoxyCompactItemize}

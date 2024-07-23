@@ -1,0 +1,123 @@
+\doxysection{Antoni Class Reference}
+\hypertarget{class_antoni}{}\label{class_antoni}\index{Antoni@{Antoni}}
+
+
+Depricated A specialized \doxylink{class_citizen_a_i}{Citizen\+AI} that also contains logic for stopping at certain waypoints and looking around.  
+
+
+Inheritance diagram for Antoni\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_antoni}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_antoni_a47821b24fe71710a5129001730934849}\label{class_antoni_a47821b24fe71710a5129001730934849} 
+void {\bfseries Start\+Antoni} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_citizen_a_i}{Citizen\+AI}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_citizen_a_i_a91221f615f7416c93dbf47bccf15ac8f}{Set\+Waypoints}} (Game\+Object way\+Points\+Parent, bool randomize=false)
+\begin{DoxyCompactList}\small\item\em Used to set the waypoint parent when instantiating the citizens from prefabs in code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_antoni_ab8dfbf07e28fce855b095e39746fec8e}\label{class_antoni_ab8dfbf07e28fce855b095e39746fec8e} 
+Game\+Object {\bfseries player}
+\item 
+\Hypertarget{class_antoni_a69e03baa2f2f5c0058b5da52bc6ba9a8}\label{class_antoni_a69e03baa2f2f5c0058b5da52bc6ba9a8} 
+List$<$ int $>$ {\bfseries turn\+Around\+Waypoints} = new()\{ 1, 2 \}
+\item 
+\Hypertarget{class_antoni_aab2ba39ded5196cb3c392f42481a7917}\label{class_antoni_aab2ba39ded5196cb3c392f42481a7917} 
+Sphere\+Collider {\bfseries minimum\+Move\+Distance}
+\item 
+\Hypertarget{class_antoni_a383f1e9d111e7a4f7235e8622ce1c292}\label{class_antoni_a383f1e9d111e7a4f7235e8622ce1c292} 
+Sphere\+Collider {\bfseries lose\+Agent\+Distance}
+\item 
+\Hypertarget{class_antoni_a63be17fcfc37f75a62aab75384371824}\label{class_antoni_a63be17fcfc37f75a62aab75384371824} 
+bool {\bfseries Is\+Ai\+Active} = false
+\item 
+\Hypertarget{class_antoni_a3b3bea475e698c22288f813561f7590f}\label{class_antoni_a3b3bea475e698c22288f813561f7590f} 
+int {\bfseries run\+Waypoint} = 4
+\item 
+\Hypertarget{class_antoni_a4b3528c48a4fa31fcc2bd6088cc63aa4}\label{class_antoni_a4b3528c48a4fa31fcc2bd6088cc63aa4} 
+float {\bfseries look\+Around\+Duration} = 3f
+\item 
+\Hypertarget{class_antoni_a39e807e49abf6af5a15120398e5c104d}\label{class_antoni_a39e807e49abf6af5a15120398e5c104d} 
+float {\bfseries rotation\+Speed} = 90f
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_citizen_a_i}{Citizen\+AI}}}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object {\bfseries Waypoint\+Parent}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_antoni_abbbee3368bc79721b93875f255d81450}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the navmesh agent, waypoint array, and tells the Citizen to move to the first point. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_antoni_ae89b6468cdeba2ab5153a79db42dff89}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Checks each frame to see how close to the next waypoint the agent is in order to move it to the next one. \end{DoxyCompactList}\item 
+\Hypertarget{class_antoni_ac9c0cfaf468320f2be52cb3236587e1d}\label{class_antoni_ac9c0cfaf468320f2be52cb3236587e1d} 
+void {\bfseries Antoni\+Pathing} ()
+\item 
+\Hypertarget{class_antoni_a4cb43cbf7c47d69523eab1915d5d51bd}\label{class_antoni_a4cb43cbf7c47d69523eab1915d5d51bd} 
+void {\bfseries Wait} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_citizen_a_i}{Citizen\+AI}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Goto\+Next\+Point} ()
+\begin{DoxyCompactList}\small\item\em Advances the citizen by incrementing current waypoint and passing the destination to the navmesh agent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_citizen_a_i}{Citizen\+AI}}}
+\begin{DoxyCompactItemize}
+\item 
+Transform\mbox{[}$\,$\mbox{]} {\bfseries waypoints}
+\item 
+int {\bfseries current\+Waypoint} = 0
+\item 
+Nav\+Mesh\+Agent {\bfseries agent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Depricated A specialized \doxylink{class_citizen_a_i}{Citizen\+AI} that also contains logic for stopping at certain waypoints and looking around. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_antoni_abbbee3368bc79721b93875f255d81450}\index{Antoni@{Antoni}!Start@{Start}}
+\index{Start@{Start}!Antoni@{Antoni}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_antoni_abbbee3368bc79721b93875f255d81450} 
+override void Antoni.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Initializes the navmesh agent, waypoint array, and tells the Citizen to move to the first point. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_citizen_a_i_aa1c4daf98175ed01295e7ddc345f9832}{Citizen\+AI}}.
+
+\Hypertarget{class_antoni_ae89b6468cdeba2ab5153a79db42dff89}\index{Antoni@{Antoni}!Update@{Update}}
+\index{Update@{Update}!Antoni@{Antoni}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_antoni_ae89b6468cdeba2ab5153a79db42dff89} 
+override void Antoni.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Checks each frame to see how close to the next waypoint the agent is in order to move it to the next one. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_citizen_a_i_ae181dc6e7026b492b23d83bd9e16d30d}{Citizen\+AI}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+Agents/Antoni.\+cs\end{DoxyCompactItemize}
