@@ -2,7 +2,9 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// Currently unused, but could be used to scroll to the bottom of a scroll rect
+/// </summary>
 public class ScrollToBottom : MonoBehaviour
 {
     public ScrollRect scrollRect;  // Assign the Scroll Rect component in the Inspector

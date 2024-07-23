@@ -17,7 +17,7 @@ public class PlayerSound : MonoBehaviour
     //used to draw gizmos
     private float currentRadius;
 
-    public float getCurrentSoundFootprint()
+    public float GetCurrentSoundFootprint()
     {
         
         //player makes a lot of sound when running

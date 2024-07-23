@@ -5,8 +5,10 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class IntroController : MonoBehaviour
-{
+/// <summary>
+/// Controls the intro sequence for the game.
+/// </summary>
+public class IntroController : MonoBehaviour {
     [Header("UI Elements")]
     public Image fadeImage;
     public TextMeshProUGUI buzz1;
@@ -14,7 +16,7 @@ public class IntroController : MonoBehaviour
     public Button wakeUpButton;
     public Button goToComputerButton;
     public TextMeshProUGUI pickUpTabletPrompt;
-    
+
 
     [Header("Other References")]
     public GameObject tablet;
@@ -36,51 +38,58 @@ public class IntroController : MonoBehaviour
     private bool waitForPlayer = false;
     private GameObject selectorUI;
 
-    private void Start()
-    {
+    /// <summary>
+    /// Handles keyboard inputs for starting the tablet tutorial and loading the hub world.
+    /// </summary>
+    private void Start() {
         InitializeUI();
-        
+
         StartCoroutine(IntroSequence());
     }
 
-    private void Update()
-    {
-        if (waitForPlayer && Keyboard.current.eKey.wasPressedThisFrame)
-        {
+    /// <summary>
+    /// Handles keyboard inputs for starting the tablet tutorial and loading the hub world.
+    /// </summary>
+    private void Update() {
+        if (waitForPlayer && Keyboard.current.eKey.wasPressedThisFrame) {
             waitForPlayer = false;
             StartTabletTutorial();
         }
-        if (Keyboard.current.f1Key.wasPressedThisFrame)
-        {
+        //allows the user to hard skip out of the tutorial
+        //should probably be removed at some point but is useful for testing
+        if (Keyboard.current.f1Key.wasPressedThisFrame) {
             LoadHubWorld();
         }
-        if (Keyboard.current.f2Key.wasPressedThisFrame) {
-            
-            StartTabletTutorial();
-        }
-    }
 
+    }
+    /// <summary>
+    /// Starts the tablet tutorial by moving the tablet to the target location.
+    /// </summary>
     private void StartTabletTutorial() {
         waitForPlayer = false;
         pickUpTabletPrompt.gameObject.SetActive(false);
         StartCoroutine(MoveToTarget(tablet.transform, 1f));
     }
-
+    /// <summary>
+    /// Moves the specified transform to the target location over a given duration.
+    /// </summary>
+    /// <param name="transform">The transform to move.</param>
+    /// <param name="duration">The duration of the movement.</param>
     private IEnumerator MoveToTarget(Transform transform, float duration) {
         transform.GetPositionAndRotation(
-            out Vector3 startPosition, 
+            out Vector3 startPosition,
             out Quaternion startRotation);
         float elapsedTime = 0f;
 
         while (elapsedTime < duration) {
-            
+
             elapsedTime += Time.deltaTime;
             float t = Mathf.Clamp01(elapsedTime / duration);
 
             // Smoothly interpolate position
             // Smoothly interpolate rotation
             transform.SetPositionAndRotation(
-                Vector3.Lerp(startPosition, tabletPickupLoc.position, t), 
+                Vector3.Lerp(startPosition, tabletPickupLoc.position, t),
                 Quaternion.Slerp(startRotation, tabletPickupLoc.rotation, t));
 
             yield return null;
@@ -93,9 +102,10 @@ public class IntroController : MonoBehaviour
         tabletTutorialInstance = Instantiate(tutorialPrefab, playerTablet.transform);
     }
 
-
-    private void InitializeUI()
-    {
+    /// <summary>
+    /// Initializes the UI elements.
+    /// </summary>
+    private void InitializeUI() {
         topEyelid.gameObject.SetActive(false);
         bottomEyelid.gameObject.SetActive(false);
         fadeImage.gameObject.SetActive(true);
@@ -105,15 +115,15 @@ public class IntroController : MonoBehaviour
         goToComputerButton.gameObject.SetActive(false);
         pickUpTabletPrompt.gameObject.SetActive(false);
 
-        StartCoroutine(WaitThen(0.01f, () =>
-        {
+        StartCoroutine(WaitThen(0.01f, () => {
             selectorUI = GameObject.FindWithTag("StandardUISelector");
             if (selectorUI) selectorUI.SetActive(false);
         }));
     }
-
-    private IEnumerator IntroSequence()
-    {
+    /// <summary>
+    /// Plays the intro sequence with fade-in and text display.
+    /// </summary>
+    private IEnumerator IntroSequence() {
         yield return new WaitForSeconds(2);
 
         yield return StartCoroutine(FadeText(buzz1, 1, 2, false));
@@ -122,15 +132,17 @@ public class IntroController : MonoBehaviour
 
         wakeUpButton.gameObject.SetActive(true);
     }
-
-    public void WakeUp()
-    {
-      //  Debug.Log("start wakeup");
+    /// <summary>
+    /// Starts the wake-up sequence coroutine.
+    /// </summary>
+    public void WakeUp() {
+        //  Debug.Log("start wakeup");
         StartCoroutine(WakeUpSequence());
     }
-
-    private IEnumerator WakeUpSequence()
-    {
+    /// <summary>
+    /// Handles the wake-up sequence with eyelid animations and camera movements.
+    /// </summary>
+    private IEnumerator WakeUpSequence() {
         wakeUpButton.gameObject.SetActive(false);
 
         // Ensure eyelids are fully open at the start
@@ -163,14 +175,13 @@ public class IntroController : MonoBehaviour
 
         // Final eye closing and camera movement
         float elapsedTime = 0f;
-        while (elapsedTime < wakeUpDuration)
-        {
+        while (elapsedTime < wakeUpDuration) {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / wakeUpDuration;
 
             // Move and rotate camera
             playerCam.transform.SetPositionAndRotation(
-                Vector3.Lerp(initialPosition, CameraConversationLoc.position, t), 
+                Vector3.Lerp(initialPosition, CameraConversationLoc.position, t),
                 Quaternion.Slerp(initialRotation, CameraConversationLoc.rotation, t));
 
             // Close eyelids
@@ -196,17 +207,19 @@ public class IntroController : MonoBehaviour
 
         goToComputerButton.gameObject.SetActive(true);
     }
-
-    private IEnumerator PartialEyeClose(float duration, float closeAmount)
-    {
+    /// <summary>
+    /// Closes the eyes partially over a specified duration.
+    /// </summary>
+    /// <param name="duration">The duration of the eye closing.</param>
+    /// <param name="closeAmount">The amount to close the eyes (0 to 1).</param>
+    private IEnumerator PartialEyeClose(float duration, float closeAmount) {
         float elapsedTime = 0f;
         float startTopPos = -Screen.height * 0.5f;
         float startBottomPos = Screen.height * 0.5f;
         float targetTopPos = -Screen.height * 0.5f * (1 - closeAmount);
         float targetBottomPos = Screen.height * 0.5f * (1 - closeAmount);
 
-        while (elapsedTime < duration)
-        {
+        while (elapsedTime < duration) {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
             float eyeCloseT = Mathf.Sin(t * Mathf.PI * 0.5f); // Ease out
@@ -217,17 +230,18 @@ public class IntroController : MonoBehaviour
             yield return null;
         }
     }
-
-    private IEnumerator OpenEyes(float duration)
-    {
+    /// <summary>
+    /// Opens the eyes over a specified duration.
+    /// </summary>
+    /// <param name="duration">The duration of the eye opening.</param>
+    private IEnumerator OpenEyes(float duration) {
         float elapsedTime = 0f;
         Vector2 topStart = topEyelid.rectTransform.anchoredPosition;
         Vector2 bottomStart = bottomEyelid.rectTransform.anchoredPosition;
         Vector2 topEnd = new Vector2(0, -Screen.height * 0.5f);
         Vector2 bottomEnd = new Vector2(0, Screen.height * 0.5f);
 
-        while (elapsedTime < duration)
-        {
+        while (elapsedTime < duration) {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
             float eyeOpenT = Mathf.Sin(t * Mathf.PI * 0.5f); // Ease out
@@ -241,23 +255,28 @@ public class IntroController : MonoBehaviour
         topEyelid.rectTransform.anchoredPosition = topEnd;
         bottomEyelid.rectTransform.anchoredPosition = bottomEnd;
     }
-
-    public void TakeTabletPrompt()
-    {
+    /// <summary>
+    /// Prompts the player to take the tablet and waits for their input.
+    /// </summary>
+    public void TakeTabletPrompt() {
         StartCoroutine(FadeText(pickUpTabletPrompt, 0.5f, 3, false));
         waitForPlayer = true;
     }
-
-    public void EndScene()
-    {
+    /// <summary>
+    /// Ends the scene by fading the screen to black.
+    /// </summary>
+    public void EndScene() {
         StartCoroutine(FadeImage(fadeImage, 4, false));
     }
-
-    private IEnumerator FadeImage(Image image, float duration, bool fadeOut)
-    {
+    /// <summary>
+    /// Fades an image in or out over a specified duration.
+    /// </summary>
+    /// <param name="image">The image to fade.</param>
+    /// <param name="duration">The duration of the fade.</param>
+    /// <param name="fadeOut">Whether to fade out (true) or fade in (false).</param>
+    private IEnumerator FadeImage(Image image, float duration, bool fadeOut) {
         float elapsedTime = 0f;
-        while (elapsedTime < duration)
-        {
+        while (elapsedTime < duration) {
             elapsedTime += Time.deltaTime;
             float alpha = fadeOut ? 1 - (elapsedTime / duration) : elapsedTime / duration;
             image.color = new Color(image.color.r, image.color.g, image.color.b, alpha);
@@ -265,66 +284,76 @@ public class IntroController : MonoBehaviour
         }
         image.gameObject.SetActive(!fadeOut);
     }
-
-    private IEnumerator FadeText(TextMeshProUGUI text, float fadeDuration, float displayDuration, bool fadeOut)
-    {
+    /// <summary>
+    /// Fades text in or out, displays it for a duration, then optionally fades it out again.
+    /// </summary>
+    /// <param name="text">The text to fade.</param>
+    /// <param name="fadeDuration">The duration of the fade.</param>
+    /// <param name="displayDuration">The duration to display the text.</param>
+    /// <param name="fadeOut">Whether to fade out after display (true) or not (false).</param>
+    private IEnumerator FadeText(TextMeshProUGUI text, float fadeDuration, float displayDuration, bool fadeOut) {
         text.gameObject.SetActive(true);
         yield return StartCoroutine(FadeTextAlpha(text, fadeDuration, !fadeOut));
         yield return new WaitForSeconds(displayDuration);
-        if (fadeOut)
-        {
+        if (fadeOut) {
             yield return StartCoroutine(FadeTextAlpha(text, fadeDuration, false));
             text.gameObject.SetActive(false);
         }
     }
-
-    private IEnumerator FadeTextAlpha(TextMeshProUGUI text, float duration, bool fadeIn)
-    {
+    /// <summary>
+    /// Fades the alpha of the text in or out over a specified duration.
+    /// </summary>
+    /// <param name="text">The text to fade.</param>
+    /// <param name="duration">The duration of the fade.</param>
+    /// <param name="fadeIn">Whether to fade in (true) or fade out (false).</param>
+    private IEnumerator FadeTextAlpha(TextMeshProUGUI text, float duration, bool fadeIn) {
         float elapsedTime = 0f;
-        while (elapsedTime < duration)
-        {
+        while (elapsedTime < duration) {
             elapsedTime += Time.deltaTime;
             float alpha = fadeIn ? elapsedTime / duration : 1 - (elapsedTime / duration);
             text.color = new Color(text.color.r, text.color.g, text.color.b, alpha);
             yield return null;
         }
     }
-
-    private IEnumerator WaitThen(float seconds, System.Action action)
-    {
+    /// <summary>
+    /// Waits for a specified number of seconds, then performs the given action.
+    /// </summary>
+    /// <param name="seconds">The number of seconds to wait.</param>
+    /// <param name="action">The action to perform after waiting.</param>
+    private IEnumerator WaitThen(float seconds, System.Action action) {
         yield return new WaitForSeconds(seconds);
         action();
     }
+    /// <summary>
+    /// Loads the hub world scene, with an optional fade to black.
+    /// </summary>
+    private void LoadHubWorld() {
+        if (selectorUI)
+            selectorUI.SetActive(true);
 
-    private void LoadHubWorld()
-    {
-        if (selectorUI) selectorUI.SetActive(true);
-        {
-            StartCoroutine(FadeToBlack());
-        }
-        
+        StartCoroutine(FadeToBlack());
+
+
     }
 
-
-    public IEnumerator FadeToBlack()
-    {
+    /// <summary>
+    /// Fades the screen to black, then loads the "HubWorld2" scene.
+    /// </summary>
+    public IEnumerator FadeToBlack() {
         float elapsedTime = 0f;
         Debug.Log("fade to black");
         fadeImage.gameObject.SetActive(true);
         buzz1.gameObject.SetActive(false);
         buzz2.gameObject.SetActive(false);
-        while (elapsedTime < 1)
-        {
+        while (elapsedTime < 1) {
             elapsedTime += Time.deltaTime;
-            if (fadeImage.color.a < 1)
-            {
+            if (fadeImage.color.a < 1) {
                 fadeImage.color = new Color(0, 0, 0, fadeImage.color.a + Time.deltaTime);
             }
 
             yield return null;
         }
-        if (elapsedTime >= 1)
-        {
+        if (elapsedTime >= 1) {
             SceneManager.LoadScene("HubWorld2");
         }
 

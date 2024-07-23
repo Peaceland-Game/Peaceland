@@ -2,6 +2,9 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Controls the display of a popup notification in the game.
+/// </summary>
 public class PopupNotification : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI artifactName;
@@ -15,6 +18,9 @@ public class PopupNotification : MonoBehaviour
     private Vector2 startPos;
     private Vector2 endPos;
 
+    /// <summary>
+    /// Initializes the popup notification, calculates positions, and starts the animation.
+    /// </summary>
     void Start()
     {
         Canvas canvas = GetComponentInParent<Canvas>();
@@ -34,26 +40,30 @@ public class PopupNotification : MonoBehaviour
         StartCoroutine(AnimatePopup());
         
     }
-    //private void Update()
-    //{
-    //    popup.anchoredPosition = new Vector2(popup.anchoredPosition.x +1, popup.anchoredPosition.y);
-    //    if (popup.anchoredPosition.x > 1000)
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
 
+    /// <summary>
+    /// Updates the artifact name displayed in the notification.
+    /// </summary>
+    /// <param name="newName">The new name to display.</param>
     public void UpdateArtifactName(string newName)
     {
         if (artifactName != null)
             artifactName.text = newName;
     }
 
+    /// <summary>
+    /// Gets the total duration of the notification, including animations and display time.
+    /// </summary>
+    /// <returns>The total duration in seconds.</returns>
     public float GetTotalNotifcationTime()
     {
         return animationDuration * 2 + popupDuration;
     }
 
+    /// <summary>
+    /// Coroutine that manages the full animation sequence of the popup.
+    /// </summary>
+    /// <returns>An IEnumerator for the coroutine system.</returns>
     private IEnumerator AnimatePopup()
     {
         yield return StartCoroutine(AnimatePopupMovement(startPos, endPos));
@@ -62,6 +72,12 @@ public class PopupNotification : MonoBehaviour
         Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Coroutine that animates the popup movement between two positions.
+    /// </summary>
+    /// <param name="start">The starting position.</param>
+    /// <param name="end">The ending position.</param>
+    /// <returns>An IEnumerator for the coroutine system.</returns>
     private IEnumerator AnimatePopupMovement(Vector2 start, Vector2 end)
     {
         float elapsedTime = 0f;

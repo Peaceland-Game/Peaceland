@@ -7,7 +7,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-
+/// <summary>
+/// Manages the user interface elements and interactions in the game,
+/// including pause menu, journal, loading screen, and various UI toggles.
+/// </summary>
 public class UserInterface : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
@@ -22,7 +25,9 @@ public class UserInterface : MonoBehaviour
     private EventSystem eventSystem;
     public bool CheckMouseClicks = false;
     public GameObject reticle;
-    // Start is called before the first frame update
+    /// <summary>
+    /// Initializes the UserInterface component.
+    /// </summary>
     void Start()
     {
         // Get the GraphicRaycaster component attached to this canvas
@@ -31,13 +36,18 @@ public class UserInterface : MonoBehaviour
         // Get the current EventSystem
         eventSystem = EventSystem.current;
     }
+    /// <summary>
+    /// Registers event listeners for player events.
+    /// </summary>
     public void RegisterEventListener()
     {
         PlayerSingleton.Instance.onMoneyCollected.AddListener(UpdateMoneyUI);
     }
 
 
-    // Update is called once per frame
+    /// <summary>
+    /// Updates the UserInterface and checks for mouse clicks if enabled.
+    /// </summary>
     void Update()
     {
         if (CheckMouseClicks) {
@@ -48,6 +58,9 @@ public class UserInterface : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// Detects and logs information about UI elements clicked by the user.
+    /// </summary>
     void DetectUIClick()
     {
         // Create a PointerEventData with the current mouse position
@@ -88,31 +101,34 @@ public class UserInterface : MonoBehaviour
             Debug.Log("Click detected, but no UI element was hit.");
         }
     }
+    /// <summary>
+    /// Toggles the pause menu and reticle visibility.
+    /// </summary>
+    /// <param name="isPaused">Whether the game is paused.</param>
     public void TogglePauseMenu(bool isPaused)
     {
         pauseMenu.SetActive(isPaused);
         reticle.SetActive(!isPaused);
     }
-
-    public void ToggleJournal(bool isPaused)
+    /// <summary>
+    /// Toggles the tablet interface and reticle visibility.
+    /// </summary>
+    /// <param name="isPaused">Whether the tablet is open.</param>
+    public void ToggleTablet(bool isPaused)
     {
         journal.SetActive(isPaused);
         reticle.SetActive(!isPaused);
     }
+    /// <summary>
+    /// Updates the displayed money amount in the UI.
+    /// </summary>
     void UpdateMoneyUI()
     {
         moneyText.text = "Money: " + DialogueLua.GetVariable("PlayerMoney").asInt;
     }
-
-    public void ToggleHistoryMenu()
-    {
-        //var menuActive = !historyMenu.activeInHierarchy;
-        //historyMenu.SetActive(menuActive);
-        //scrollToBottom.ScrollToBottomInstant();
-        //if (state == PlayerMovement.MovementState.Talking) return;
-        //Time.timeScale = menuActive ? 0 : 1;
-        //Cursor.lockState = menuActive ? CursorLockMode.None : CursorLockMode.Locked;
-    }
+    /// <summary>
+    /// Enables the loading screen.
+    /// </summary>
     public void EnableLoadScreen()
     {
         if (!loadScreen.activeInHierarchy)
@@ -121,11 +137,19 @@ public class UserInterface : MonoBehaviour
             loadScreen.SetActive(true);
         }
     }
+    /// <summary>
+    /// Disables the loading screen.
+    /// </summary>
     public void DisableLoadScreen()
     {
        // Debug.Log("Disable loadscreen");
         loadScreen.SetActive(false);
     }
+
+    /// <summary>
+    /// Updates the loading progress bar.
+    /// </summary>
+    /// <param name="progress">The loading progress value between 0 and 1.</param>
     public void UpdateLoadingProgress(float progress)
     {
         if (loadingSlider != null)
@@ -133,10 +157,17 @@ public class UserInterface : MonoBehaviour
             loadingSlider.value = progress;
         }
     }
-
+    /// <summary>
+    /// Exits the application.
+    /// </summary>
     public void Exit() {
         Application.Quit();
     }
+
+    /// <summary>
+    /// Toggles the visibility of the memory select UI.
+    /// </summary>
+    /// <param name="active">Whether the memory select UI should be active.</param>
     public void ToggleMemorySelectUI(bool active)
     {
         memorySelectUI.SetActive(active);

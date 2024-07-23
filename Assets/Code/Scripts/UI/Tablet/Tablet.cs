@@ -7,9 +7,13 @@ using UnityEngine.UI;
 using Unity.VisualScripting;
 using System.Linq;
 
+/// <summary>
+/// Manages the functionality of a tablet device in the game,
+/// including sidebar navigation, artifact journal, and theme notes.
+/// </summary>
 public class Tablet : MonoBehaviour
 {
-    
+    //state of the left sidebar
     public enum SidebarState
     {
         Shown,
@@ -47,7 +51,9 @@ public class Tablet : MonoBehaviour
     private bool playArtifactTutorial = false;
     public GameObject artifactTutorial;
 
-
+    /// <summary>
+    /// Initializes the tablet, setting up pages and buttons.
+    /// </summary>
     void Start()
     {
         totalPages = apps.Count;
@@ -70,7 +76,9 @@ public class Tablet : MonoBehaviour
         ToggleTabButtons(false);
 
     }
-
+    /// <summary>
+    /// Updates the tablet state and handles artifact tutorial.
+    /// </summary>
     void Update()
     {
         if (currentState == SidebarState.Moving)
@@ -83,7 +91,9 @@ public class Tablet : MonoBehaviour
             PlayArtifactTutorial();
         }
     }
-
+    /// <summary>
+    /// Toggles the sidebar between shown and hidden states.
+    /// </summary>
     public void ToggleSidebar()
     {
         if (currentState != SidebarState.Moving)
@@ -99,11 +109,16 @@ public class Tablet : MonoBehaviour
 
         }
     }
+    /// <summary>
+    /// Toggles the tablet visibility.
+    /// </summary>
     public void ToggleTablet()
     {
-        PlayerSingleton.Instance.ToggleJournal();
+        PlayerSingleton.Instance.ToggleTablet();
     }
-
+    /// <summary>
+    /// Moves the tabs towards the target position based on the current state.
+    /// </summary>
     private void MoveTabs()
     {
         Vector3 targetPosition = (targetState == SidebarState.Shown) ? shownPosition : hiddenPosition;
@@ -121,12 +136,17 @@ public class Tablet : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// Enables or disables the tab buttons.
+    /// </summary>
+    /// <param name="enabled">Whether to enable or disable the buttons.</param>
     private void ToggleTabButtons(bool enabled)
     {
         sideTabButtons.ForEach(button => button.enabled = enabled);
     }
-
+    /// <summary>
+    /// Updates the button text based on the target state.
+    /// </summary>
     private void UpdateButtonText()
     {
         if (buttonText != null)
@@ -160,29 +180,28 @@ public class Tablet : MonoBehaviour
             playArtifactTutorial = true;
         }
     }
-
+    /// <summary>
+    /// Adds a theme to the theme notes page.
+    /// </summary>
+    /// <param name="name">The name of the theme to add.</param>
     public void AddTheme(string name)
     {
         themeNotesPage.RevealTheme(name);
     }
-
-    //public void ShowArtifactPopup(string name)
-    //{
-    //    artifactName.text = name;
-    //    artifactPopup.SetActive(true);
-    //    StartCoroutine(WaitPopup());
-    //    artifactPopup.SetActive(false);
-    //}
-
+    /// <summary>
+    /// Waits for a short duration, used for popup display.
+    /// </summary>
+    /// <returns>An IEnumerator for the coroutine system.</returns>
     public IEnumerator WaitPopup()
     {
         yield return new WaitForSeconds(1.5f);
     }
 
     /// <summary>
-    /// Handle's the player clicking on a tab by changing the page
+    /// Handles tab click events, changing the current page.
     /// </summary>
-    /// <param name="tabNumber">The tab number that was clicked on [0-totalPages)</param>
+    /// <param name="tabNumber">The index of the clicked tab.</param>
+    /// <param name="fromHomePage">Whether the click originated from the home page.</param>
     private void HandleTabClick(int tabNumber, bool fromHomePage = false)
     {
         if (tabNumber < totalPages && tabNumber != currentPage)
@@ -201,18 +220,30 @@ public class Tablet : MonoBehaviour
 
         }
     }
+    /// <summary>
+    /// Handles home button click events.
+    /// </summary>
+    /// <param name="tabNumber">The index of the tab to switch to.</param>
     public void HandleHomeButtonClick(int tabNumber) {
         HandleTabClick(tabNumber, true);
     }
+    /// <summary>
+    /// Handles tab click events.
+    /// </summary>
+    /// <param name="tabNumber">The index of the clicked tab.</param>
     public void HandleTabClick(int tabNumber) {
         HandleTabClick(tabNumber, false);
     }
-    
+    /// <summary>
+    /// Plays the artifact tutorial.
+    /// </summary>
     private void PlayArtifactTutorial()
     {
         artifactTutorial.SetActive(true);
     }
-
+    /// <summary>
+    /// Exits the game application.
+    /// </summary>
     public void ExitGame()
     {
         Application.Quit();

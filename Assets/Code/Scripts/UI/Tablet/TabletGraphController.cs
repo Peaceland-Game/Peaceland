@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Manages the graph functionality within the tablet interface,
+/// including displaying and hiding popups for graph points.
+/// </summary>
 public class TabletGraphController : MonoBehaviour {
     public List<GraphPointButton> graphPoints = new();
     [SerializeField] private GameObject graphPointPrefab;
@@ -12,7 +16,9 @@ public class TabletGraphController : MonoBehaviour {
 
     bool popupActive = false;
     public static TabletGraphController Instance;
-    // Start is called before the first frame update
+    /// <summary>
+    /// Initializes the TabletGraphController as a singleton instance.
+    /// </summary>
     void Start() {
         if (Instance == null) {
             Instance = this;
@@ -22,17 +28,17 @@ public class TabletGraphController : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
-    void Update() {
-
-    }
-
-
+    /// <summary>
+    /// Closes the graph point popup.
+    /// </summary>
     public void ClosePopup() {
         popupActive = false;
         GraphPopup.SetActive(false);
     }
-
+    /// <summary>
+    /// Opens the graph point popup with information from the specified index.
+    /// </summary>
+    /// <param name="index">The index of the graph point to display.</param>
     public void OpenPopup(int index) {
         if (popupActive) {
             ClosePopup();
@@ -42,7 +48,10 @@ public class TabletGraphController : MonoBehaviour {
         GraphPopup.SetActive(true);
         popupActive = true;
     }
-
+    /// <summary>
+    /// Opens the graph point popup with information from the specified GraphPointButton.
+    /// </summary>
+    /// <param name="button">The GraphPointButton containing the information to display.</param>
     public void OpenPopup(GraphPointButton button) {
         if (popupActive) {
             ClosePopup();

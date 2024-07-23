@@ -94,6 +94,12 @@ public class PlayerSingleton : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// Simple coroutine to wait for a certain amount of time before executing an action
+    /// </summary>
+    /// <param name="seconds">time to wait in seconds</param>
+    /// <param name="action">runnable to perform after waiting</param>
+    /// <returns></returns>
     public IEnumerator WaitThen(float seconds, System.Action action)
     {
         yield return new WaitForSeconds(seconds);
@@ -113,29 +119,10 @@ public class PlayerSingleton : MonoBehaviour
         }
         return 0;
     }
-
-    public void FindPlayerInScene()
-    {
-        if (!playerObject)
-        {
-            playerInMemorySelection = false;
-            //  Debug.Log("Found new player object, redoing references");
-            playerObject = GameObject.FindWithTag("Player");
-            if (playerObject)
-            {
-                var playerRef = playerObject.GetComponent<PlayerObjectReference>();
-                userInterface = playerRef.userInterface;
-                userInterface.RegisterEventListener();
-                controller = playerRef.controller;
-                tablet = playerRef.tablet;
-            }
-            else
-            {
-                Debug.LogWarning("Player is missing");
-                return;
-            }
-        }
-    }
+    /// <summary>
+    /// Used to initialize the player singleton with the player object
+    /// </summary>
+    /// <param name="playerRef">player reference object instance that stores the player data</param>
     public void InitPlayer(PlayerObjectReference playerRef)
     {
         playerObject = playerRef.gameObject;    
@@ -144,108 +131,102 @@ public class PlayerSingleton : MonoBehaviour
         controller = playerRef.controller;
         tablet = playerRef.tablet;
     }
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        FindPlayerInScene();
-    }
-
+    /// <summary>
+    /// Getter for sound manager component
+    /// </summary>
+    /// <param name="mgr">The sound manager component</param>
     public void GetSoundManager(UniversalSoundManager mgr)
     {
         soundManager = mgr;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Handle UI input every frame
+    /// </summary>
     void Update()
     {
-        if (playerObject == null)
-        {
-
-        }
         HandleInterfaceInput();
         isMouseLocked = Cursor.lockState == CursorLockMode.Locked;
-
-
     }
+    /// <summary>
+    /// turns off movement
+    /// </summary>
     public void DisableMovement()
     {
-        if (playerObject)
-        {
-            if (!selector)
-            {
+        ToggleMovement(false);
+    }
+    /// <summary>
+    /// Turns on or off movement and selector components
+    /// </summary>
+    /// <param name="canMove">boolean if movement should be enabled or not</param>
+    private void ToggleMovement(bool canMove) {
+        if (playerObject) {
+            if (!selector) {
                 selector = playerObject.GetComponent<Selector>();
             }
-            if (!controller)
-            {
+            if (!controller) {
                 controller = playerObject.GetComponent<FirstPersonController>();
             }
         }
-        controller.enabled = false;
-        selector.enabled = false;
-
-
+        controller.enabled = canMove;
+        selector.enabled = canMove;
     }
+    /// <summary>
+    /// Turns on movement
+    /// </summary>
     public void EnableMovement()
     {
-        if (playerObject)
-        {
-            if (!selector)
-            {
-                selector = playerObject.GetComponent<Selector>();
-            }
-            if (!controller)
-            {
-                controller = playerObject.GetComponent<FirstPersonController>();
-            }
-        }
+        ToggleMovement(true);
         Cursor.lockState = CursorLockMode.Locked;
-        controller.enabled = true;
-        selector.enabled = true;
+        
     }
+    /// <summary>
+    /// Called in the hub world to select a memory string
+    /// </summary>
     public void SelectMemoryString()
     {
         DisableMovement();
-
         userInterface.ToggleMemorySelectUI(true);
     }
+    /// <summary>
+    /// Called in the hub world to deselect a memory string
+    /// </summary>
     public void DeselectMemory()
     {
         EnableMovement();
         playerInMemorySelection = false;
         userInterface.ToggleMemorySelectUI(false);
     }
-
+    /// <summary>
+    /// Called every frame to handle pressing the escape key to toggle the tablet
+    /// </summary>
     void HandleInterfaceInput()
     {
         if (!playerInMemorySelection)
         {
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
-                ToggleJournal();
+                ToggleTablet();
             }
         }
     }
 
 
-
-    public void ToggleJournal()
+    /// <summary>
+    /// handles turning on or off the pause menu (tablet)
+    /// </summary>
+    public void ToggleTablet()
     {
         if (!controller.isConvo) 
         {
             TogglePause();
-            Debug.Log("toggle pause");
-            userInterface.ToggleJournal(paused);
+            userInterface.ToggleTablet(paused);
             controller.GetComponent<Selector>().enabled = !controller.GetComponent<Selector>().enabled;
         }
     }
 
-    //public void TogglePauseMenu()
-    //{
-    //    TogglePause();
-    //    userInterface.TogglePauseMenu(paused);
-    //}
-
     /// <summary>
-    /// Toggles whether in UI or first person mode 
+    /// Toggles whether in UI or first person mode, unlocks the cursor and disables the movement 
     /// </summary>
     private void TogglePause()
     {
@@ -254,6 +235,11 @@ public class PlayerSingleton : MonoBehaviour
         controller.enabled = !paused;
 
     }
+
+    /// <summary>
+    /// Adds money to the player by increasing the lua variable in the Dialogue System
+    /// </summary>
+    /// <param name="amt">The amount of money to give the player</param>
     public void AddMoney(double amt)
     {
 
@@ -261,22 +247,35 @@ public class PlayerSingleton : MonoBehaviour
         money += (int)amt;
         DialogueLua.SetVariable("PlayerMoney", money);
 
+        //TODO: change this to collecting all coins in the apartment not just getting 5 total money
         if (GetMoney == 5)
         {
             AddTheme("Curiosity", 2);
         }
 
+        //play sound
         soundManager.CoinGet();
 
+        //raise event to update UI
         onMoneyCollected.Invoke();
 
     }
+    /// <summary>
+    /// Forces the player to lose money by subtracting from the lua variable in the Dialogue System
+    /// doesn't check if the player has enough money
+    /// </summary>
+    /// <param name="amt">the amount of money to reduce the player's money by</param>
     public void ForceSubtractMoney(double amt)
     {
         var money = DialogueLua.GetVariable("PlayerMoney").asInt;
         DialogueLua.SetVariable("PlayerMoney", money - (int)amt);
         onMoneyCollected.Invoke();
     }
+    /// <summary>
+    /// Checks if the player has enough money before subtracting from the lua variable in the Dialogue System
+    /// </summary>
+    /// <param name="amt">the amount of money to reduce the player's money by</param>
+    /// <returns>true if the player had enough money, false otherwise</returns>
     public bool SubtractMoney(double amt)
     {
         var money = DialogueLua.GetVariable("PlayerMoney").asInt;
@@ -286,13 +285,10 @@ public class PlayerSingleton : MonoBehaviour
         onMoneyCollected.Invoke();
         return true;
     }
-
-    void OnConversationEnd(Transform actor)
-    {
-
-    }
-
-
+    /// <summary>
+    /// Get the total value of all theme/karma points
+    /// </summary>
+    /// <returns>The total value (sum) of all karma points inthe karmaPoints dictionary</returns>
     public double GetTotalKarma()
     {
         double totalKarma = 0;
@@ -302,45 +298,63 @@ public class PlayerSingleton : MonoBehaviour
         }
         return totalKarma;
     }
-
+    /// <summary>
+    /// Get if the player has positive karma
+    /// </summary>
+    /// <returns>true if the player has above the max neutral positive karma</returns>
     public bool HasPositiveKarma()
     {
         return GetTotalKarma() > nuetralMaxKarma;
     }
+    /// <summary>
+    /// Get if the player has negative karma
+    /// </summary>
+    /// <returns>true if the player has below the min neutral negative karma</returns>
     public bool HasNegativeKarma()
     {
         return GetTotalKarma() < -nuetralMaxKarma;
     }
+    /// <summary>
+    /// Get if the player has nuetral karma
+    /// </summary>
+    /// <returns>true if the player has neutral karma, not too high or too low</returns>
     public bool HasNeutralKarma()
     {
         return !HasNegativeKarma() && !HasPositiveKarma();
     }
-
+    /// <summary>
+    /// Get a string value of the player's karma class
+    /// </summary>
+    /// <returns>"Positive" if the player has positive karma, "Negative" if the player has negative karma, "Neutral" otherwise</returns>
     public string GetKarmaClass()
     {
         if (HasPositiveKarma()) return "Positive";
         if (HasNegativeKarma()) return "Negative";
-        return "Nuetral";
+        return "Neutral";
     }
-
-
-
-
-
-
+    /// <summary>
+    /// Stops the player movement completely and instantly
+    /// </summary>
     public void StopPlayer()
     {
         controller.StopPlayer();
     }
-
+    /// <summary>
+    /// Used byh lua to tell the player controller that the game will end after the current conversation
+    /// </summary>
     public void LastDemoConvo() 
     {
         controller.LastDemoConvo();
     }
 
+    /// <summary>
+    /// Called when the object is enabled
+    /// This is where the functions are registered with Lua
+    /// This is in combination with the custom LUA asset in Assets/ScritableObjects/Lua
+    /// </summary>
     void OnEnable()
     {
-        // Make the functions available to Lua: (Replace these lines with your own.)
+        
         Lua.RegisterFunction(nameof(StopPlayer), this, SymbolExtensions.GetMethodInfo(() => StopPlayer()));
         Lua.RegisterFunction(nameof(LastDemoConvo), this, SymbolExtensions.GetMethodInfo(() => LastDemoConvo()));
         Lua.RegisterFunction(nameof(AddMoney), this, SymbolExtensions.GetMethodInfo(() => AddMoney(0)));
@@ -353,9 +367,10 @@ public class PlayerSingleton : MonoBehaviour
         Lua.RegisterFunction(nameof(HasNeutralKarma), this, SymbolExtensions.GetMethodInfo(() => HasNeutralKarma()));
         Lua.RegisterFunction(nameof(HasNegativeKarma), this, SymbolExtensions.GetMethodInfo(() => HasNegativeKarma()));
         Lua.RegisterFunction(nameof(HasPositiveKarma), this, SymbolExtensions.GetMethodInfo(() => HasPositiveKarma()));
-        // Lua.RegisterFunction(nameof(AddOne), this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
     }
     /*
+     * This is necessary if you want to unregister the functions from Lua
+     * This game object is never disabled so it is not necessary
     void OnDisable()
     {
         if (true)

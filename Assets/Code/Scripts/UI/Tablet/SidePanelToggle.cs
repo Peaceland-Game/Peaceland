@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Manages the behavior of a toggleable side panel in the UI,
+/// controlling its visibility and movement.
+/// </summary>
 public class SidePanelToggle : MonoBehaviour
 {
     public enum PanelState
@@ -24,14 +28,10 @@ public class SidePanelToggle : MonoBehaviour
     private Vector3 hiddenPosition = new(1070.481f, 0, 0);
     private Vector3 shownPosition = new(767, 0, 0);
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Debug.Log($"{transform.localPosition}");
-        //Debug.Log($"{hiddenPosition}");
-        //Debug.Log($"{shownPosition}");
-    }
 
+    /// <summary>
+    /// Toggles the panel between shown and hidden states.
+    /// </summary>
     public void TogglePanel()
     {
         if (currentState != PanelState.Moving)
@@ -41,7 +41,9 @@ public class SidePanelToggle : MonoBehaviour
             UpdateButtonText();
         }
     }
-
+    /// <summary>
+    /// Moves the tabs towards the target position based on the current state.
+    /// </summary>
     private void MoveTabs()
     {
         Vector3 targetPosition = (targetState == PanelState.Shown) ? shownPosition : hiddenPosition;
@@ -53,7 +55,9 @@ public class SidePanelToggle : MonoBehaviour
             currentState = targetState;
         }
     }
-
+    /// <summary>
+    /// Updates the button text based on the target state.
+    /// </summary>
     private void UpdateButtonText()
     {
         if (buttonText != null)
@@ -62,7 +66,9 @@ public class SidePanelToggle : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Updates the panel movement each frame when in the Moving state.
+    /// </summary>
     void Update()
     {
         if (currentState == PanelState.Moving)

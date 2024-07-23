@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI; // For UI elements (loading screen)
 
+/// <summary>
+/// This script is used to load multiple scenes additively one by one.
+/// </summary>
 public class SceneLoader : MonoBehaviour
 {
     public List<string> sceneNames = new List<string>(); // List of scenes to load
@@ -13,11 +16,18 @@ public class SceneLoader : MonoBehaviour
     public GameObject loaderCamera;
     public string mainSceneName = "TerrainCreation";
     public string sceneLoaderSceneName = "SceneLoader";
+
+    /// <summary>
+    /// Start loading the scenes additively one by one.
+    /// </summary>
     void Start()
     {
         StartCoroutine(LoadScenesOneByOne());
     }
-
+    /// <summary>
+    /// Coroutine to load the scenes additively one by one.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator LoadScenesOneByOne()
     {
         //// Show loading screen
@@ -26,6 +36,7 @@ public class SceneLoader : MonoBehaviour
         //    loadingScreen.SetActive(true);
         //}
 
+        // Load the scene loader scene additively
         foreach (string sceneName in sceneNames)
         {
             yield return StartCoroutine(LoadAdditiveScene(sceneName));
@@ -38,11 +49,18 @@ public class SceneLoader : MonoBehaviour
             loaderCamera.SetActive(false);
             // player.SetActive(true);
 
+            // Unload the scene loader scene
             SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName(sceneLoaderSceneName));
+            // Set the main scene as the active scene (this scene will control the lighting)
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(mainSceneName));
         }
     }
 
+    /// <summary>
+    /// Loads a single scene additively.
+    /// </summary>
+    /// <param name="sceneName">the scene name to load</param>
+    /// <returns></returns>
     IEnumerator LoadAdditiveScene(string sceneName)
     {
         // Check if the scene is already loaded

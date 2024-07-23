@@ -96,7 +96,7 @@ public class Stealth : MonoBehaviour
         distanceToPlayer = GetDistance(transform.position, player.transform.position);
 
         //check if the agent can hear the player
-        if (distanceToPlayer <= player.GetComponent<PlayerSound>().getCurrentSoundFootprint())
+        if (distanceToPlayer <= player.GetComponent<PlayerSound>().GetCurrentSoundFootprint())
             currentAlertTime = 0;
         //agent is alerted until time runs out
         if (currentAlertTime < secondsAgentStaysAlerted)

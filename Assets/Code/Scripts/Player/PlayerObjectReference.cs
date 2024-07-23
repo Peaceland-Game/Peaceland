@@ -15,13 +15,7 @@ public class PlayerObjectReference : MonoBehaviour
     public Selector selector;
     private bool infoSent = false;
 
-    //private void Awake()
-    //{
-    //    if (PlayerSingleton.Instance)
-    //    {
-    //        PlayerSingleton.Instance.InitPlayer(this);
-    //    }
-    //}
+   
     private void Start()
     {
         if (PlayerSingleton.Instance)
@@ -29,6 +23,9 @@ public class PlayerObjectReference : MonoBehaviour
             PlayerSingleton.Instance.InitPlayer(this);
         }
     }
+    /// <summary>
+    /// Will try and find the player singleton and send the references to it until it succeeds
+    /// </summary>
     private void Update()
     {
         if (!infoSent)
