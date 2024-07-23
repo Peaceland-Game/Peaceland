@@ -24,7 +24,7 @@ public class FileIO
     /// <returns></returns>
     public DataBundle LoadData(string bundleName, string path = "")
     {
-        string basePath = Directory.GetCurrentDirectory() + "\\jsons\\";
+        string basePath = Directory.GetCurrentDirectory();
         string finalPath = basePath + path + bundleName + ".json";
 
         if (!File.Exists(finalPath))
@@ -45,7 +45,7 @@ public class FileIO
     /// <param name="data"></param>
     public void StoreData(DataBundle data, string path = "")
     {
-        string basePath = Directory.GetCurrentDirectory() + "\\jsons\\";
+        string basePath = Directory.GetCurrentDirectory();
         string finalPath = basePath + path + data.bundleName + ".json";
 
         if (!File.Exists(finalPath))
