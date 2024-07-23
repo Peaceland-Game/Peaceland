@@ -1,0 +1,154 @@
+\doxysection{Universal\+Sound\+Manager Class Reference}
+\hypertarget{class_universal_sound_manager}{}\label{class_universal_sound_manager}\index{UniversalSoundManager@{UniversalSoundManager}}
+Inheritance diagram for Universal\+Sound\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_universal_sound_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_universal_sound_manager_a0b1a5f7d8ad09c8cf9554feb8a5a4248}{Play\+Sound}} (Game\+Object source, Audio\+Clip clip)
+\begin{DoxyCompactList}\small\item\em Plays a sound clip. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_universal_sound_manager_ac9a0c385db6088adf658ffb22faddccc}{Play\+Looping\+Sound}} (Game\+Object source)
+\begin{DoxyCompactList}\small\item\em Makes a game object\textquotesingle{}s audio source play a sound (if it has one assigned to it). Note that you must enable looping in the audio source itself in order for it to play more than once. \end{DoxyCompactList}\item 
+\Hypertarget{class_universal_sound_manager_a3a17b0eec67c15aa7d4a769928d030f8}\label{class_universal_sound_manager_a3a17b0eec67c15aa7d4a769928d030f8} 
+void {\bfseries Walk} ()
+\item 
+\Hypertarget{class_universal_sound_manager_a26cdc3a1becc1de7c3209ac27aab64c5}\label{class_universal_sound_manager_a26cdc3a1becc1de7c3209ac27aab64c5} 
+void {\bfseries Artifact\+Get} ()
+\item 
+\Hypertarget{class_universal_sound_manager_a541a84f744e9313ba6f477e66ad3ee6a}\label{class_universal_sound_manager_a541a84f744e9313ba6f477e66ad3ee6a} 
+void {\bfseries Theme\+Get} ()
+\item 
+\Hypertarget{class_universal_sound_manager_ae6ce79e2ed96bc9585e20bb5270e3859}\label{class_universal_sound_manager_ae6ce79e2ed96bc9585e20bb5270e3859} 
+void {\bfseries Coin\+Get} ()
+\item 
+\Hypertarget{class_universal_sound_manager_afb8731865938ef2f3c08a06fcbdaacac}\label{class_universal_sound_manager_afb8731865938ef2f3c08a06fcbdaacac} 
+void {\bfseries Pickup} ()
+\item 
+\Hypertarget{class_universal_sound_manager_a6f836d9d44930c132f1babe07a299c94}\label{class_universal_sound_manager_a6f836d9d44930c132f1babe07a299c94} 
+void {\bfseries Select\+Dialogue\+Option\+Sound} ()
+\item 
+\Hypertarget{class_universal_sound_manager_a0ae29587ec3a1c24e8d7e23a7c7eba4a}\label{class_universal_sound_manager_a0ae29587ec3a1c24e8d7e23a7c7eba4a} 
+void {\bfseries Select\+Menu\+Option} ()
+\item 
+\Hypertarget{class_universal_sound_manager_ac96cc7c4b382aea16e882c842d380fce}\label{class_universal_sound_manager_ac96cc7c4b382aea16e882c842d380fce} 
+void {\bfseries Make\+Purchase} ()
+\item 
+\Hypertarget{class_universal_sound_manager_aee872ae13a3210b703d90e94e65e49f2}\label{class_universal_sound_manager_aee872ae13a3210b703d90e94e65e49f2} 
+void {\bfseries Select\+Tablet\+Option} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_universal_sound_manager_a9a765c45ddc9952a95e97fbd1b1376e9}\label{class_universal_sound_manager_a9a765c45ddc9952a95e97fbd1b1376e9} 
+void {\bfseries Get\+Universal\+Sound\+Sources} ()
+\begin{DoxyCompactList}\small\item\em Gets audio sources that are likely to be in multiple memories and the hub. \end{DoxyCompactList}\item 
+\Hypertarget{class_universal_sound_manager_a9b6c3b47a32f67f7b98a6fafc37b6742}\label{class_universal_sound_manager_a9b6c3b47a32f67f7b98a6fafc37b6742} 
+virtual void {\bfseries On\+Enable} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_universal_sound_manager_a6d24b0ea95e63949bf2396fce94d1b81}\label{class_universal_sound_manager_a6d24b0ea95e63949bf2396fce94d1b81} 
+Game\+Object {\bfseries player}
+\item 
+\Hypertarget{class_universal_sound_manager_ab9ef9d7ebcd51ea277db0132efd19a50}\label{class_universal_sound_manager_ab9ef9d7ebcd51ea277db0132efd19a50} 
+List$<$ Game\+Object $>$ {\bfseries all\+Characters}
+\item 
+\Hypertarget{class_universal_sound_manager_a4f0cffca7d2b82fe6534ed28e9aad440}\label{class_universal_sound_manager_a4f0cffca7d2b82fe6534ed28e9aad440} 
+List$<$ Game\+Object $>$ {\bfseries artifacts}
+\item 
+\Hypertarget{class_universal_sound_manager_aa867ef186a51431308551e4c888059a4}\label{class_universal_sound_manager_aa867ef186a51431308551e4c888059a4} 
+List$<$ Game\+Object $>$ {\bfseries other\+Pickups}
+\item 
+\Hypertarget{class_universal_sound_manager_a1161ce15cae0dc866ab85726fd5ae816}\label{class_universal_sound_manager_a1161ce15cae0dc866ab85726fd5ae816} 
+Game\+Object {\bfseries river}
+\item 
+\Hypertarget{class_universal_sound_manager_a61398e09073cbdc930236a02168bdba3}\label{class_universal_sound_manager_a61398e09073cbdc930236a02168bdba3} 
+List$<$ Game\+Object $>$ {\bfseries street\+Lights}
+\item 
+\Hypertarget{class_universal_sound_manager_ac70157f0c7acb983a445dafeaa1c68dd}\label{class_universal_sound_manager_ac70157f0c7acb983a445dafeaa1c68dd} 
+Audio\+Clip {\bfseries goober\+Walk\+Carpet}
+\item 
+\Hypertarget{class_universal_sound_manager_a572434554bf925b26eba01294f5375cd}\label{class_universal_sound_manager_a572434554bf925b26eba01294f5375cd} 
+Audio\+Clip {\bfseries goober\+Walk\+Concrete}
+\item 
+\Hypertarget{class_universal_sound_manager_aa95e62c095453dbd22d61150a6f7948e}\label{class_universal_sound_manager_aa95e62c095453dbd22d61150a6f7948e} 
+Audio\+Clip {\bfseries goober\+Walk\+Grass}
+\item 
+\Hypertarget{class_universal_sound_manager_ae2e0bd554358f721dc34eca3804862d6}\label{class_universal_sound_manager_ae2e0bd554358f721dc34eca3804862d6} 
+Audio\+Clip {\bfseries goober\+Walk\+Wood}
+\item 
+\Hypertarget{class_universal_sound_manager_a47193084a5f35904fad57e8fa8b84071}\label{class_universal_sound_manager_a47193084a5f35904fad57e8fa8b84071} 
+Audio\+Clip {\bfseries artifact\+Pickup}
+\item 
+\Hypertarget{class_universal_sound_manager_a95390433c7831412d16cab63a02490e6}\label{class_universal_sound_manager_a95390433c7831412d16cab63a02490e6} 
+Audio\+Clip {\bfseries theme\+Pickup}
+\item 
+\Hypertarget{class_universal_sound_manager_a4b54cfb9b27384ad52305b7ebe984f8b}\label{class_universal_sound_manager_a4b54cfb9b27384ad52305b7ebe984f8b} 
+Audio\+Clip {\bfseries coin\+Pickup}
+\item 
+\Hypertarget{class_universal_sound_manager_aa871b34b1a37168f92105f684d30a8f1}\label{class_universal_sound_manager_aa871b34b1a37168f92105f684d30a8f1} 
+Audio\+Clip {\bfseries generic\+Pickup}
+\item 
+\Hypertarget{class_universal_sound_manager_a9b29b5f79a9196229d51da2cbf95c7fa}\label{class_universal_sound_manager_a9b29b5f79a9196229d51da2cbf95c7fa} 
+Audio\+Clip {\bfseries dialogue\+Select}
+\item 
+\Hypertarget{class_universal_sound_manager_ac464aba51729058ce0d9916e22776c2d}\label{class_universal_sound_manager_ac464aba51729058ce0d9916e22776c2d} 
+Audio\+Clip {\bfseries menu\+Select}
+\item 
+\Hypertarget{class_universal_sound_manager_a371cdd461abd2085506747c09fa32275}\label{class_universal_sound_manager_a371cdd461abd2085506747c09fa32275} 
+Audio\+Clip {\bfseries purchase}
+\item 
+\Hypertarget{class_universal_sound_manager_ab4b215a541fa9efae701490d12228a2d}\label{class_universal_sound_manager_ab4b215a541fa9efae701490d12228a2d} 
+Audio\+Clip {\bfseries tablet\+Select}
+\item 
+\Hypertarget{class_universal_sound_manager_a358fa3dd9e0d9ca0b392f6c17193ebed}\label{class_universal_sound_manager_a358fa3dd9e0d9ca0b392f6c17193ebed} 
+Audio\+Clip {\bfseries ambience\+River}
+\item 
+\Hypertarget{class_universal_sound_manager_a125f1e23ce085af919452ea851a7e970}\label{class_universal_sound_manager_a125f1e23ce085af919452ea851a7e970} 
+Audio\+Clip {\bfseries ambience\+Streetlight}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_universal_sound_manager_ac9a0c385db6088adf658ffb22faddccc}\index{UniversalSoundManager@{UniversalSoundManager}!PlayLoopingSound@{PlayLoopingSound}}
+\index{PlayLoopingSound@{PlayLoopingSound}!UniversalSoundManager@{UniversalSoundManager}}
+\doxysubsubsection{\texorpdfstring{PlayLoopingSound()}{PlayLoopingSound()}}
+{\footnotesize\ttfamily \label{class_universal_sound_manager_ac9a0c385db6088adf658ffb22faddccc} 
+void Universal\+Sound\+Manager.\+Play\+Looping\+Sound (\begin{DoxyParamCaption}\item[{Game\+Object}]{source}{}\end{DoxyParamCaption})}
+
+
+
+Makes a game object\textquotesingle{}s audio source play a sound (if it has one assigned to it). Note that you must enable looping in the audio source itself in order for it to play more than once. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_universal_sound_manager_a0b1a5f7d8ad09c8cf9554feb8a5a4248}\index{UniversalSoundManager@{UniversalSoundManager}!PlaySound@{PlaySound}}
+\index{PlaySound@{PlaySound}!UniversalSoundManager@{UniversalSoundManager}}
+\doxysubsubsection{\texorpdfstring{PlaySound()}{PlaySound()}}
+{\footnotesize\ttfamily \label{class_universal_sound_manager_a0b1a5f7d8ad09c8cf9554feb8a5a4248} 
+void Universal\+Sound\+Manager.\+Play\+Sound (\begin{DoxyParamCaption}\item[{Game\+Object}]{source}{, }\item[{Audio\+Clip}]{clip}{}\end{DoxyParamCaption})}
+
+
+
+Plays a sound clip. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & the object from which the sound plays \\
+\hline
+{\em clip} & the sound clip to be played \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+Sound/Universal\+Sound\+Manager.\+cs\end{DoxyCompactItemize}

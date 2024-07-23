@@ -1,0 +1,89 @@
+\doxysection{Notes\+Page\+Controller Class Reference}
+\hypertarget{class_notes_page_controller}{}\label{class_notes_page_controller}\index{NotesPageController@{NotesPageController}}
+
+
+Controller for the notes page on the tablet.  
+
+
+Inheritance diagram for Notes\+Page\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_notes_page_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_notes_page_controller_a6e6af31ab5bf56a64cde9e2613548bbe}{Chat\+Log\+Display}} (int memory\+Number)
+\begin{DoxyCompactList}\small\item\em used by the buttons to select which memory chat log to display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_notes_page_controller_ab08eb46034fbacba4e432bfe9aa8b821}{Add\+Chat\+Entry}} (int memory\+Number, string speaker, string dialogue)
+\begin{DoxyCompactList}\small\item\em Adds a chat log entry by creating a new chat log item and setting the text. \end{DoxyCompactList}\item 
+\Hypertarget{class_notes_page_controller_a952f6b4d577e45f8d3ad927cafd9307c}\label{class_notes_page_controller_a952f6b4d577e45f8d3ad927cafd9307c} 
+void {\bfseries Update\+Chat\+History} ()
+\begin{DoxyCompactList}\small\item\em Attempt to update the dialogue history text element using the conversation logger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_notes_page_controller_a500badf4e851783b5f9e089c9d090b1a}\label{class_notes_page_controller_a500badf4e851783b5f9e089c9d090b1a} 
+List$<$ Button $>$ {\bfseries memory\+Buttons}
+\item 
+\Hypertarget{class_notes_page_controller_af25fbaa2e5fea5652437d2037fcfcbc5}\label{class_notes_page_controller_af25fbaa2e5fea5652437d2037fcfcbc5} 
+List$<$ Game\+Object $>$ {\bfseries chat\+Logs}
+\item 
+\Hypertarget{class_notes_page_controller_ade05c4346a371c4b9335fcd0ce8e6244}\label{class_notes_page_controller_ade05c4346a371c4b9335fcd0ce8e6244} 
+List$<$ Game\+Object $>$ {\bfseries chat\+Log\+Content\+Panes}
+\item 
+\Hypertarget{class_notes_page_controller_ae15eba34f816d0a472aeaff3db4870b1}\label{class_notes_page_controller_ae15eba34f816d0a472aeaff3db4870b1} 
+Game\+Object {\bfseries overview\+Page}
+\item 
+\Hypertarget{class_notes_page_controller_a194cba60b71056771b50210c9142a888}\label{class_notes_page_controller_a194cba60b71056771b50210c9142a888} 
+Game\+Object {\bfseries memory\+Page}
+\item 
+\Hypertarget{class_notes_page_controller_afaa3a11af96fcc00e1b1ceee7d3aa382}\label{class_notes_page_controller_afaa3a11af96fcc00e1b1ceee7d3aa382} 
+Game\+Object {\bfseries chat\+Item\+Prefab}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller for the notes page on the tablet. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_notes_page_controller_ab08eb46034fbacba4e432bfe9aa8b821}\index{NotesPageController@{NotesPageController}!AddChatEntry@{AddChatEntry}}
+\index{AddChatEntry@{AddChatEntry}!NotesPageController@{NotesPageController}}
+\doxysubsubsection{\texorpdfstring{AddChatEntry()}{AddChatEntry()}}
+{\footnotesize\ttfamily \label{class_notes_page_controller_ab08eb46034fbacba4e432bfe9aa8b821} 
+void Notes\+Page\+Controller.\+Add\+Chat\+Entry (\begin{DoxyParamCaption}\item[{int}]{memory\+Number}{, }\item[{string}]{speaker}{, }\item[{string}]{dialogue}{}\end{DoxyParamCaption})}
+
+
+
+Adds a chat log entry by creating a new chat log item and setting the text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em memory\+Number} & Which memory to add the chat log to\\
+\hline
+{\em speaker} & string name for the speaker of the line of dialogue\\
+\hline
+{\em dialogue} & the string line of dialogue\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_notes_page_controller_a6e6af31ab5bf56a64cde9e2613548bbe}\index{NotesPageController@{NotesPageController}!ChatLogDisplay@{ChatLogDisplay}}
+\index{ChatLogDisplay@{ChatLogDisplay}!NotesPageController@{NotesPageController}}
+\doxysubsubsection{\texorpdfstring{ChatLogDisplay()}{ChatLogDisplay()}}
+{\footnotesize\ttfamily \label{class_notes_page_controller_a6e6af31ab5bf56a64cde9e2613548bbe} 
+void Notes\+Page\+Controller.\+Chat\+Log\+Display (\begin{DoxyParamCaption}\item[{int}]{memory\+Number}{}\end{DoxyParamCaption})}
+
+
+
+used by the buttons to select which memory chat log to display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em memory\+Number} & int memory number to display\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+UI/\+Tablet/Notes\+Page\+Controller.\+cs\end{DoxyCompactItemize}

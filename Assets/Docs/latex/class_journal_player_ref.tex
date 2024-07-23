@@ -1,0 +1,65 @@
+\doxysection{Journal\+Player\+Ref Class Reference}
+\hypertarget{class_journal_player_ref}{}\label{class_journal_player_ref}\index{JournalPlayerRef@{JournalPlayerRef}}
+
+
+Simple passthrough reference object for the artifacts to access the player should be on the artifact\textquotesingle{}s parent object in Unity so you don\textquotesingle{}t have to assign the player for each artifact only once per scene.  
+
+
+Inheritance diagram for Journal\+Player\+Ref\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_journal_player_ref}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_journal_player_ref_a3b42ccf9944054824bd71266a0dc1b36}{Add\+Artifact}} (\mbox{\hyperlink{class_artifact}{Artifact}} artifact, bool show\+Popup=true)
+\begin{DoxyCompactList}\small\item\em pass the artifact\textquotesingle{}s name to the player journal controller \end{DoxyCompactList}\item 
+\Hypertarget{class_journal_player_ref_add7470c07ee80412d04d82baa263c8d9}\label{class_journal_player_ref_add7470c07ee80412d04d82baa263c8d9} 
+void {\bfseries Add\+Artifact} (string name)
+\item 
+\Hypertarget{class_journal_player_ref_a59d8851c632133c19e8083f7d73b9ca2}\label{class_journal_player_ref_a59d8851c632133c19e8083f7d73b9ca2} 
+void {\bfseries Add\+Artifact\+With\+Image} (string name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_journal_player_ref_a7edf50ce5250942e14ed15d40e4c721f}\label{class_journal_player_ref_a7edf50ce5250942e14ed15d40e4c721f} 
+List$<$ \mbox{\hyperlink{class_artifact}{Artifact}} $>$ {\bfseries artifacts} = new List$<$\mbox{\hyperlink{class_artifact}{Artifact}}$>$()
+\item 
+\Hypertarget{class_journal_player_ref_a693371251cedee989ea6bd037de30145}\label{class_journal_player_ref_a693371251cedee989ea6bd037de30145} 
+\mbox{\hyperlink{class_tablet}{Tablet}} {\bfseries player}
+\item 
+\Hypertarget{class_journal_player_ref_ae208df81d3f6acd622383e51e5d08fa7}\label{class_journal_player_ref_ae208df81d3f6acd622383e51e5d08fa7} 
+Game\+Object {\bfseries image\+Popup\+Prefab}
+\item 
+\Hypertarget{class_journal_player_ref_ae9ea55181c676bd0151b65db0568d56c}\label{class_journal_player_ref_ae9ea55181c676bd0151b65db0568d56c} 
+\mbox{\hyperlink{class_universal_sound_manager}{Universal\+Sound\+Manager}} {\bfseries sound\+Manager}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple passthrough reference object for the artifacts to access the player should be on the artifact\textquotesingle{}s parent object in Unity so you don\textquotesingle{}t have to assign the player for each artifact only once per scene. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_journal_player_ref_a3b42ccf9944054824bd71266a0dc1b36}\index{JournalPlayerRef@{JournalPlayerRef}!AddArtifact@{AddArtifact}}
+\index{AddArtifact@{AddArtifact}!JournalPlayerRef@{JournalPlayerRef}}
+\doxysubsubsection{\texorpdfstring{AddArtifact()}{AddArtifact()}}
+{\footnotesize\ttfamily \label{class_journal_player_ref_a3b42ccf9944054824bd71266a0dc1b36} 
+void Journal\+Player\+Ref.\+Add\+Artifact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_artifact}{Artifact}}}]{artifact}{, }\item[{bool}]{show\+Popup}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+pass the artifact\textquotesingle{}s name to the player journal controller 
+
+
+\begin{DoxyParams}{Parameters}
+{\em artifact} & The game object artifact, name should match the artifact name in the journal\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+UI/\+Tablet/Journal\+Player\+Ref.\+cs\end{DoxyCompactItemize}

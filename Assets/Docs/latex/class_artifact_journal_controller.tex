@@ -1,0 +1,127 @@
+\doxysection{Artifact\+Journal\+Controller Class Reference}
+\hypertarget{class_artifact_journal_controller}{}\label{class_artifact_journal_controller}\index{ArtifactJournalController@{ArtifactJournalController}}
+
+
+\doxylink{class_controls}{Controls} all of the artifact images in the journal to reveal them when found This should be on the parent object of each of the artifact images.  
+
+
+Inheritance diagram for Artifact\+Journal\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_artifact_journal_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_artifact_journal_controller_abb9c2778aea6c80a2aefb59a2cf997a8}{Reveal\+Artifact}} (string name)
+\begin{DoxyCompactList}\small\item\em Attempts to reveal the artifact by calling the child object\textquotesingle{}s reveal function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_artifact_journal_controller_a5eace306b9e5f27d196546006da1ec6f}{Reveal\+Artifact}} (\mbox{\hyperlink{class_artifact_image}{Artifact\+Image}} target)
+\begin{DoxyCompactList}\small\item\em Attempts to reveal the artifact by calling the child object\textquotesingle{}s reveal function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_artifact_journal_controller_ab13c8034b639ea6e8db7b239fe88ea51}{Hide\+Artifact}} (string name)
+\begin{DoxyCompactList}\small\item\em Attempts to hide the named artifact... in case you want to do that for some reason. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_artifact_journal_controller_afa1430cc1333fd9a40ceae2ccacb2719}{Hide\+Artifact}} (\mbox{\hyperlink{class_artifact_image}{Artifact\+Image}} target)
+\begin{DoxyCompactList}\small\item\em Attempts to hide the named artifact... in case you want to do that for some reason. \end{DoxyCompactList}\item 
+\Hypertarget{class_artifact_journal_controller_a251360b3767840f840329249510b7d4a}\label{class_artifact_journal_controller_a251360b3767840f840329249510b7d4a} 
+void {\bfseries Change\+Artifact\+Group} (\mbox{\hyperlink{class_artifact_group}{Artifact\+Group}} target)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_artifact_journal_controller_ab6b8d3abbdccb0f04f93921cbd879967}\label{class_artifact_journal_controller_ab6b8d3abbdccb0f04f93921cbd879967} 
+List$<$ \mbox{\hyperlink{class_artifact_image}{Artifact\+Image}} $>$ {\bfseries artifacts} = new()
+\item 
+\Hypertarget{class_artifact_journal_controller_a8f65aab9c0735d414fbab3d34f1c9673}\label{class_artifact_journal_controller_a8f65aab9c0735d414fbab3d34f1c9673} 
+List$<$ \mbox{\hyperlink{class_artifact_group}{Artifact\+Group}} $>$ {\bfseries artifact\+Groups} = new()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_controls}{Controls} all of the artifact images in the journal to reveal them when found This should be on the parent object of each of the artifact images. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_artifact_journal_controller_afa1430cc1333fd9a40ceae2ccacb2719}\index{ArtifactJournalController@{ArtifactJournalController}!HideArtifact@{HideArtifact}}
+\index{HideArtifact@{HideArtifact}!ArtifactJournalController@{ArtifactJournalController}}
+\doxysubsubsection{\texorpdfstring{HideArtifact()}{HideArtifact()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_artifact_journal_controller_afa1430cc1333fd9a40ceae2ccacb2719} 
+void Artifact\+Journal\+Controller.\+Hide\+Artifact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_artifact_image}{Artifact\+Image}}}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Attempts to hide the named artifact... in case you want to do that for some reason. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the artifact to hide.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Exception} & Thrown when the artifact does not exist\\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_artifact_journal_controller_ab13c8034b639ea6e8db7b239fe88ea51}\index{ArtifactJournalController@{ArtifactJournalController}!HideArtifact@{HideArtifact}}
+\index{HideArtifact@{HideArtifact}!ArtifactJournalController@{ArtifactJournalController}}
+\doxysubsubsection{\texorpdfstring{HideArtifact()}{HideArtifact()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_artifact_journal_controller_ab13c8034b639ea6e8db7b239fe88ea51} 
+void Artifact\+Journal\+Controller.\+Hide\+Artifact (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Attempts to hide the named artifact... in case you want to do that for some reason. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the artifact to hide. This should match the game object\textquotesingle{}s name in Unity\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Exception} & Thrown when the artifact does not exist\\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_artifact_journal_controller_a5eace306b9e5f27d196546006da1ec6f}\index{ArtifactJournalController@{ArtifactJournalController}!RevealArtifact@{RevealArtifact}}
+\index{RevealArtifact@{RevealArtifact}!ArtifactJournalController@{ArtifactJournalController}}
+\doxysubsubsection{\texorpdfstring{RevealArtifact()}{RevealArtifact()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_artifact_journal_controller_a5eace306b9e5f27d196546006da1ec6f} 
+void Artifact\+Journal\+Controller.\+Reveal\+Artifact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_artifact_image}{Artifact\+Image}}}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Attempts to reveal the artifact by calling the child object\textquotesingle{}s reveal function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & the artifact to reveal.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Exception} & Thrown when the name of the artifact does not match the scene object\\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_artifact_journal_controller_abb9c2778aea6c80a2aefb59a2cf997a8}\index{ArtifactJournalController@{ArtifactJournalController}!RevealArtifact@{RevealArtifact}}
+\index{RevealArtifact@{RevealArtifact}!ArtifactJournalController@{ArtifactJournalController}}
+\doxysubsubsection{\texorpdfstring{RevealArtifact()}{RevealArtifact()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_artifact_journal_controller_abb9c2778aea6c80a2aefb59a2cf997a8} 
+void Artifact\+Journal\+Controller.\+Reveal\+Artifact (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Attempts to reveal the artifact by calling the child object\textquotesingle{}s reveal function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the artifact to reveal. This should match the game object\textquotesingle{}s name in Unity\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Exception} & Thrown when the name of the artifact does not match the scene object\\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+UI/\+Tablet/Artifact\+Journal\+Controller.\+cs\end{DoxyCompactItemize}

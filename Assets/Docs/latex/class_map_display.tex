@@ -1,0 +1,184 @@
+\doxysection{Map\+Display Class Reference}
+\hypertarget{class_map_display}{}\label{class_map_display}\index{MapDisplay@{MapDisplay}}
+
+
+Script that handles the display of the map on the tablet.  
+
+
+Inheritance diagram for Map\+Display\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_map_display}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_map_display_ab56eb0c71884c998495ac49e01e9ee76}{On\+Scroll}} (Pointer\+Event\+Data event\+Data)
+\begin{DoxyCompactList}\small\item\em Handles scroll events for zooming the map. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_map_display_a760fa2bddc1d2e62155ab80a14286238}{Add\+Map\+Marker}} (string name, Vector3 world\+Position, string marker\+Type)
+\begin{DoxyCompactList}\small\item\em Adds a marker to the map at the specified world position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_map_display_ac5ee07d7e04fd6d667cd6957cf8b0ca5}{Add\+Marker\+By\+Name}} (string marker\+Name, string game\+Object\+Name, string marker\+Type)
+\begin{DoxyCompactList}\small\item\em Adds a marker to the map based on a Game\+Object\textquotesingle{}s name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_map_display_a53e46747efe856b85d68b57a22506d95}{Remove\+Map\+Marker}} (string name)
+\begin{DoxyCompactList}\small\item\em Removes a marker from the map. \end{DoxyCompactList}\item 
+Vector2 \mbox{\hyperlink{class_map_display_ad1eacc2234cff0b0bf9fcad71726e0e6}{World\+To\+Map\+Loc}} (Vector3 pos)
+\begin{DoxyCompactList}\small\item\em Converts a world position to a map position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_map_display_a6831e5b439b587a540af559e269ee779}{On\+Zoom}} (float zoom\+Delta, Vector2 mouse\+Position)
+\begin{DoxyCompactList}\small\item\em Handles zooming of the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_map_display_a577da77a7eeb805606d07d310b8adfb7}\label{class_map_display_a577da77a7eeb805606d07d310b8adfb7} 
+Image {\bfseries map\+Image}
+\item 
+\Hypertarget{class_map_display_a8c36833af3921ca7a35b85240ab3d9f3}\label{class_map_display_a8c36833af3921ca7a35b85240ab3d9f3} 
+Rect\+Transform {\bfseries map\+Rect}
+\item 
+\Hypertarget{class_map_display_a09b1e641aa51cde9b2929b1d5344f6cf}\label{class_map_display_a09b1e641aa51cde9b2929b1d5344f6cf} 
+Rect\+Transform {\bfseries player\+Marker}
+\item 
+\Hypertarget{class_map_display_acd5aecb01282ef6d1e152e90fe4d1a7a}\label{class_map_display_acd5aecb01282ef6d1e152e90fe4d1a7a} 
+Transform {\bfseries player}
+\item 
+\Hypertarget{class_map_display_a166e627ebba3e9b3e2d623b2fcb06f5d}\label{class_map_display_a166e627ebba3e9b3e2d623b2fcb06f5d} 
+Vector2 {\bfseries world\+Top\+Left}
+\item 
+\Hypertarget{class_map_display_aac23fac28edfd3e89864661f42a89f79}\label{class_map_display_aac23fac28edfd3e89864661f42a89f79} 
+Vector2 {\bfseries world\+Bottom\+Right}
+\item 
+\Hypertarget{class_map_display_ab465b5273dd212b40f41864dad10c438}\label{class_map_display_ab465b5273dd212b40f41864dad10c438} 
+float {\bfseries min\+Zoom} = 1f
+\item 
+\Hypertarget{class_map_display_a260530e900565e5ff39c55c90d4863b9}\label{class_map_display_a260530e900565e5ff39c55c90d4863b9} 
+float {\bfseries max\+Zoom} = 2f
+\item 
+\Hypertarget{class_map_display_a1fb996b6c12eb0177de5920b319d4d5f}\label{class_map_display_a1fb996b6c12eb0177de5920b319d4d5f} 
+float {\bfseries zoom\+Speed} = 0.\+01f
+\item 
+\Hypertarget{class_map_display_a2ed7db781b3e41b80ce0b274906a3fb5}\label{class_map_display_a2ed7db781b3e41b80ce0b274906a3fb5} 
+float {\bfseries current\+Zoom} = 1.\+5f
+\item 
+\Hypertarget{class_map_display_af51afaa5cd777c06b79fc509cc34dc41}\label{class_map_display_af51afaa5cd777c06b79fc509cc34dc41} 
+Game\+Object {\bfseries objective\+Marker\+Prefab}
+\item 
+\Hypertarget{class_map_display_a19779da7a2b758298471c1c9714efb5b}\label{class_map_display_a19779da7a2b758298471c1c9714efb5b} 
+bool {\bfseries show\+Debug\+Visuals} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Script that handles the display of the map on the tablet. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_map_display_a760fa2bddc1d2e62155ab80a14286238}\index{MapDisplay@{MapDisplay}!AddMapMarker@{AddMapMarker}}
+\index{AddMapMarker@{AddMapMarker}!MapDisplay@{MapDisplay}}
+\doxysubsubsection{\texorpdfstring{AddMapMarker()}{AddMapMarker()}}
+{\footnotesize\ttfamily \label{class_map_display_a760fa2bddc1d2e62155ab80a14286238} 
+Game\+Object Map\+Display.\+Add\+Map\+Marker (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{Vector3}]{world\+Position}{, }\item[{string}]{marker\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Adds a marker to the map at the specified world position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the marker.\\
+\hline
+{\em world\+Position} & The world position of the marker.\\
+\hline
+{\em marker\+Type} & The type of marker to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The instantiated marker Game\+Object.
+\end{DoxyReturn}
+\Hypertarget{class_map_display_ac5ee07d7e04fd6d667cd6957cf8b0ca5}\index{MapDisplay@{MapDisplay}!AddMarkerByName@{AddMarkerByName}}
+\index{AddMarkerByName@{AddMarkerByName}!MapDisplay@{MapDisplay}}
+\doxysubsubsection{\texorpdfstring{AddMarkerByName()}{AddMarkerByName()}}
+{\footnotesize\ttfamily \label{class_map_display_ac5ee07d7e04fd6d667cd6957cf8b0ca5} 
+void Map\+Display.\+Add\+Marker\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{marker\+Name}{, }\item[{string}]{game\+Object\+Name}{, }\item[{string}]{marker\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Adds a marker to the map based on a Game\+Object\textquotesingle{}s name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em marker\+Name} & The name of the marker.\\
+\hline
+{\em game\+Object\+Name} & The name of the Game\+Object to place the marker on.\\
+\hline
+{\em marker\+Type} & The type of marker to add.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_map_display_ab56eb0c71884c998495ac49e01e9ee76}\index{MapDisplay@{MapDisplay}!OnScroll@{OnScroll}}
+\index{OnScroll@{OnScroll}!MapDisplay@{MapDisplay}}
+\doxysubsubsection{\texorpdfstring{OnScroll()}{OnScroll()}}
+{\footnotesize\ttfamily \label{class_map_display_ab56eb0c71884c998495ac49e01e9ee76} 
+void Map\+Display.\+On\+Scroll (\begin{DoxyParamCaption}\item[{Pointer\+Event\+Data}]{event\+Data}{}\end{DoxyParamCaption})}
+
+
+
+Handles scroll events for zooming the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Data} & Pointer event data containing scroll information.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_map_display_a6831e5b439b587a540af559e269ee779}\index{MapDisplay@{MapDisplay}!OnZoom@{OnZoom}}
+\index{OnZoom@{OnZoom}!MapDisplay@{MapDisplay}}
+\doxysubsubsection{\texorpdfstring{OnZoom()}{OnZoom()}}
+{\footnotesize\ttfamily \label{class_map_display_a6831e5b439b587a540af559e269ee779} 
+void Map\+Display.\+On\+Zoom (\begin{DoxyParamCaption}\item[{float}]{zoom\+Delta}{, }\item[{Vector2}]{mouse\+Position}{}\end{DoxyParamCaption})}
+
+
+
+Handles zooming of the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zoom\+Delta} & The amount of zoom to apply.\\
+\hline
+{\em mouse\+Position} & The position of the mouse during zooming.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_map_display_a53e46747efe856b85d68b57a22506d95}\index{MapDisplay@{MapDisplay}!RemoveMapMarker@{RemoveMapMarker}}
+\index{RemoveMapMarker@{RemoveMapMarker}!MapDisplay@{MapDisplay}}
+\doxysubsubsection{\texorpdfstring{RemoveMapMarker()}{RemoveMapMarker()}}
+{\footnotesize\ttfamily \label{class_map_display_a53e46747efe856b85d68b57a22506d95} 
+void Map\+Display.\+Remove\+Map\+Marker (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Removes a marker from the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the marker to remove.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_map_display_ad1eacc2234cff0b0bf9fcad71726e0e6}\index{MapDisplay@{MapDisplay}!WorldToMapLoc@{WorldToMapLoc}}
+\index{WorldToMapLoc@{WorldToMapLoc}!MapDisplay@{MapDisplay}}
+\doxysubsubsection{\texorpdfstring{WorldToMapLoc()}{WorldToMapLoc()}}
+{\footnotesize\ttfamily \label{class_map_display_ad1eacc2234cff0b0bf9fcad71726e0e6} 
+Vector2 Map\+Display.\+World\+To\+Map\+Loc (\begin{DoxyParamCaption}\item[{Vector3}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+Converts a world position to a map position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The world position to convert.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding position on the map.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+UI/\+Tablet/Map\+Display.\+cs\end{DoxyCompactItemize}

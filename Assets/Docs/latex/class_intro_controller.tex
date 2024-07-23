@@ -1,0 +1,87 @@
+\doxysection{Intro\+Controller Class Reference}
+\hypertarget{class_intro_controller}{}\label{class_intro_controller}\index{IntroController@{IntroController}}
+
+
+\doxylink{class_controls}{Controls} the intro sequence for the game.  
+
+
+Inheritance diagram for Intro\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_intro_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_intro_controller_a490d92268ca29f5a632b3990b674f542}\label{class_intro_controller_a490d92268ca29f5a632b3990b674f542} 
+void {\bfseries Wake\+Up} ()
+\begin{DoxyCompactList}\small\item\em Starts the wake-\/up sequence coroutine. \end{DoxyCompactList}\item 
+\Hypertarget{class_intro_controller_ade8a4722ae1467e53b2f7450f416191b}\label{class_intro_controller_ade8a4722ae1467e53b2f7450f416191b} 
+void {\bfseries Take\+Tablet\+Prompt} ()
+\begin{DoxyCompactList}\small\item\em Prompts the player to take the tablet and waits for their input. \end{DoxyCompactList}\item 
+\Hypertarget{class_intro_controller_a15367c8ca389f286b08b195fc8efc332}\label{class_intro_controller_a15367c8ca389f286b08b195fc8efc332} 
+void {\bfseries End\+Scene} ()
+\begin{DoxyCompactList}\small\item\em Ends the scene by fading the screen to black. \end{DoxyCompactList}\item 
+\Hypertarget{class_intro_controller_a06d1f4c1e7b3e41259b23952491dfacc}\label{class_intro_controller_a06d1f4c1e7b3e41259b23952491dfacc} 
+IEnumerator {\bfseries Fade\+To\+Black} ()
+\begin{DoxyCompactList}\small\item\em Fades the screen to black, then loads the "{}\+Hub\+World2"{} scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_intro_controller_aef5a80b32407f84482bc1854cbd7b7e1}\label{class_intro_controller_aef5a80b32407f84482bc1854cbd7b7e1} 
+Image {\bfseries fade\+Image}
+\item 
+\Hypertarget{class_intro_controller_afb8f9041dc0f75fdbedd58a97c248b9b}\label{class_intro_controller_afb8f9041dc0f75fdbedd58a97c248b9b} 
+Text\+Mesh\+Pro\+UGUI {\bfseries buzz1}
+\item 
+\Hypertarget{class_intro_controller_afda569a71ba6a57bc140abca320df455}\label{class_intro_controller_afda569a71ba6a57bc140abca320df455} 
+Text\+Mesh\+Pro\+UGUI {\bfseries buzz2}
+\item 
+\Hypertarget{class_intro_controller_aa7d7fa59fd727aea2c571ac51f35f6a6}\label{class_intro_controller_aa7d7fa59fd727aea2c571ac51f35f6a6} 
+Button {\bfseries wake\+Up\+Button}
+\item 
+\Hypertarget{class_intro_controller_a26a4ff2ea2e7aa73f7c489ec0259b0dc}\label{class_intro_controller_a26a4ff2ea2e7aa73f7c489ec0259b0dc} 
+Button {\bfseries go\+To\+Computer\+Button}
+\item 
+\Hypertarget{class_intro_controller_af1e30e12013f676329b52f10bddc03e2}\label{class_intro_controller_af1e30e12013f676329b52f10bddc03e2} 
+Text\+Mesh\+Pro\+UGUI {\bfseries pick\+Up\+Tablet\+Prompt}
+\item 
+\Hypertarget{class_intro_controller_ad61295d58f5f24269e8c52c10621f1f8}\label{class_intro_controller_ad61295d58f5f24269e8c52c10621f1f8} 
+Game\+Object {\bfseries tablet}
+\item 
+\Hypertarget{class_intro_controller_a7e606ef96df7fceb1177cec095caeffc}\label{class_intro_controller_a7e606ef96df7fceb1177cec095caeffc} 
+Camera {\bfseries player\+Cam}
+\item 
+\Hypertarget{class_intro_controller_abab0717fdf872721b32dd4a5508f7a7a}\label{class_intro_controller_abab0717fdf872721b32dd4a5508f7a7a} 
+Transform {\bfseries Camera\+Conversation\+Loc}
+\item 
+\Hypertarget{class_intro_controller_a3ac593cdc5cda95c1e83ea03f89c5896}\label{class_intro_controller_a3ac593cdc5cda95c1e83ea03f89c5896} 
+Image {\bfseries top\+Eyelid}
+\item 
+\Hypertarget{class_intro_controller_ac4e68a296fdc31a931eff1e7b235c314}\label{class_intro_controller_ac4e68a296fdc31a931eff1e7b235c314} 
+Image {\bfseries bottom\+Eyelid}
+\item 
+\Hypertarget{class_intro_controller_a943e1c489e738f5b43b8d9dfde5779d0}\label{class_intro_controller_a943e1c489e738f5b43b8d9dfde5779d0} 
+float {\bfseries eye\+Open\+Speed} = 1f
+\item 
+\Hypertarget{class_intro_controller_ac1d7a99af0eddf7197165082561105d0}\label{class_intro_controller_ac1d7a99af0eddf7197165082561105d0} 
+float {\bfseries wake\+Up\+Duration} = 2f
+\item 
+\Hypertarget{class_intro_controller_a9457541f31ba3e712e7f5a79ea674e1e}\label{class_intro_controller_a9457541f31ba3e712e7f5a79ea674e1e} 
+Transform {\bfseries tablet\+Pickup\+Loc}
+\item 
+\Hypertarget{class_intro_controller_ac3de45e57a50d80ab2629f812144f20e}\label{class_intro_controller_ac3de45e57a50d80ab2629f812144f20e} 
+Game\+Object {\bfseries tutorial\+Prefab}
+\item 
+\Hypertarget{class_intro_controller_ab88fc11b5b224af27925e0f1e6342380}\label{class_intro_controller_ab88fc11b5b224af27925e0f1e6342380} 
+\mbox{\hyperlink{class_tablet}{Tablet}} {\bfseries player\+Tablet}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_controls}{Controls} the intro sequence for the game. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+UI/\+Intro/Intro\+Controller.\+cs\end{DoxyCompactItemize}

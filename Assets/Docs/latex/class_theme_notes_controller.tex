@@ -1,0 +1,101 @@
+\doxysection{Theme\+Notes\+Controller Class Reference}
+\hypertarget{class_theme_notes_controller}{}\label{class_theme_notes_controller}\index{ThemeNotesController@{ThemeNotesController}}
+
+
+Controller of all the themes in the notes page to reveal them when unlocked. This should be on the parent object of each of the themes.  
+
+
+Inheritance diagram for Theme\+Notes\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_theme_notes_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_theme_notes_controller_a1f662dd3a625aa5cae2448f36694b57a}{Reveal\+Theme}} (string name)
+\begin{DoxyCompactList}\small\item\em Attempts to reveal the theme by calling the child\textquotesingle{}s Reveal\+Theme function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_theme_notes_controller_a8c1e39958f2772132a24ed86a97c15e3}{Reveal\+Theme}} (\mbox{\hyperlink{class_theme}{Theme}} target)
+\begin{DoxyCompactList}\small\item\em Attempts to reveal the theme by calling the child\textquotesingle{}s Reveal\+Theme function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_theme_notes_controller_ae39531d09ecef6d0a285acf0937d3e37}{Hide\+Theme}} (string name)
+\begin{DoxyCompactList}\small\item\em Attempts to hide the named theme... in case you want to do that for some reason. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_theme_notes_controller_a7fb3cda74827b0ad4d870e9acd09b664}{Hide\+Artifact}} (\mbox{\hyperlink{class_theme}{Theme}} target)
+\begin{DoxyCompactList}\small\item\em Attempts to hide the named theme... in case you want to do that for some reason. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_theme_notes_controller_a74a2fc4e235a2352c62b6c5b655553c1}\label{class_theme_notes_controller_a74a2fc4e235a2352c62b6c5b655553c1} 
+List$<$ \mbox{\hyperlink{class_theme}{Theme}} $>$ {\bfseries themes} = new()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller of all the themes in the notes page to reveal them when unlocked. This should be on the parent object of each of the themes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_theme_notes_controller_a7fb3cda74827b0ad4d870e9acd09b664}\index{ThemeNotesController@{ThemeNotesController}!HideArtifact@{HideArtifact}}
+\index{HideArtifact@{HideArtifact}!ThemeNotesController@{ThemeNotesController}}
+\doxysubsubsection{\texorpdfstring{HideArtifact()}{HideArtifact()}}
+{\footnotesize\ttfamily \label{class_theme_notes_controller_a7fb3cda74827b0ad4d870e9acd09b664} 
+void Theme\+Notes\+Controller.\+Hide\+Artifact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_theme}{Theme}}}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Attempts to hide the named theme... in case you want to do that for some reason. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the theme to hide.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_theme_notes_controller_ae39531d09ecef6d0a285acf0937d3e37}\index{ThemeNotesController@{ThemeNotesController}!HideTheme@{HideTheme}}
+\index{HideTheme@{HideTheme}!ThemeNotesController@{ThemeNotesController}}
+\doxysubsubsection{\texorpdfstring{HideTheme()}{HideTheme()}}
+{\footnotesize\ttfamily \label{class_theme_notes_controller_ae39531d09ecef6d0a285acf0937d3e37} 
+void Theme\+Notes\+Controller.\+Hide\+Theme (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Attempts to hide the named theme... in case you want to do that for some reason. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the theme to hide. This should match the game object\textquotesingle{}s name in Unity\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_theme_notes_controller_a1f662dd3a625aa5cae2448f36694b57a}\index{ThemeNotesController@{ThemeNotesController}!RevealTheme@{RevealTheme}}
+\index{RevealTheme@{RevealTheme}!ThemeNotesController@{ThemeNotesController}}
+\doxysubsubsection{\texorpdfstring{RevealTheme()}{RevealTheme()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_theme_notes_controller_a1f662dd3a625aa5cae2448f36694b57a} 
+void Theme\+Notes\+Controller.\+Reveal\+Theme (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Attempts to reveal the theme by calling the child\textquotesingle{}s Reveal\+Theme function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the theme to reveal. This should match the game object\textquotesingle{}s name in unity\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_theme_notes_controller_a8c1e39958f2772132a24ed86a97c15e3}\index{ThemeNotesController@{ThemeNotesController}!RevealTheme@{RevealTheme}}
+\index{RevealTheme@{RevealTheme}!ThemeNotesController@{ThemeNotesController}}
+\doxysubsubsection{\texorpdfstring{RevealTheme()}{RevealTheme()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_theme_notes_controller_a8c1e39958f2772132a24ed86a97c15e3} 
+void Theme\+Notes\+Controller.\+Reveal\+Theme (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_theme}{Theme}}}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Attempts to reveal the theme by calling the child\textquotesingle{}s Reveal\+Theme function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The theme to reveal\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+UI/\+Tablet/Theme\+Notes\+Controller.\+cs\end{DoxyCompactItemize}

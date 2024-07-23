@@ -1,0 +1,193 @@
+\doxysection{First\+Person\+Controller Class Reference}
+\hypertarget{class_first_person_controller}{}\label{class_first_person_controller}\index{FirstPersonController@{FirstPersonController}}
+Inheritance diagram for First\+Person\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_first_person_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_first_person_controller_a33ab9417ddc1150c57f54dafb7960d01}\label{class_first_person_controller_a33ab9417ddc1150c57f54dafb7960d01} 
+void {\bfseries Pick\+Up\+Item} (Transform item)
+\item 
+\Hypertarget{class_first_person_controller_adbf7e97ec53cd08c344b7d27357dc466}\label{class_first_person_controller_adbf7e97ec53cd08c344b7d27357dc466} 
+void {\bfseries Drop\+Item} (Transform drop\+Point)
+\item 
+\Hypertarget{class_first_person_controller_ad2cfbb5c13aea582ca542085716e425d}\label{class_first_person_controller_ad2cfbb5c13aea582ca542085716e425d} 
+void {\bfseries Reset\+Item} (Transform reset\+Pos)
+\item 
+\Hypertarget{class_first_person_controller_a6cc8197de8b6b4bfe75452d124d547f7}\label{class_first_person_controller_a6cc8197de8b6b4bfe75452d124d547f7} 
+void {\bfseries Stop\+Player} ()
+\item 
+\Hypertarget{class_first_person_controller_a6530031af59a39703e91ba9247f80333}\label{class_first_person_controller_a6530031af59a39703e91ba9247f80333} 
+void {\bfseries Last\+Demo\+Convo} ()
+\item 
+\Hypertarget{class_first_person_controller_a50b02eaf0239ad02d5d5de1248e7300e}\label{class_first_person_controller_a50b02eaf0239ad02d5d5de1248e7300e} 
+void {\bfseries On\+Conversation\+Start} (Transform actor)
+\item 
+\Hypertarget{class_first_person_controller_ad48e0e850e346fa421d6c4bd6976dc7a}\label{class_first_person_controller_ad48e0e850e346fa421d6c4bd6976dc7a} 
+void {\bfseries On\+Conversation\+End} (Transform actor)
+\item 
+\Hypertarget{class_first_person_controller_a3e3cd05562c9a640e4195e90a2096fea}\label{class_first_person_controller_a3e3cd05562c9a640e4195e90a2096fea} 
+void {\bfseries Set\+Pitch\+And\+Yaw} (float pitch=0, float yaw=0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_first_person_controller_ab309734e24bb4a186d2c89b9b721e26b}\label{class_first_person_controller_ab309734e24bb4a186d2c89b9b721e26b} 
+bool {\bfseries last\+Convo} = false
+\item 
+\Hypertarget{class_first_person_controller_a028ce29fd54e95b2c59d783e480f4297}\label{class_first_person_controller_a028ce29fd54e95b2c59d783e480f4297} 
+bool {\bfseries is\+Convo} = false
+\item 
+\Hypertarget{class_first_person_controller_a5f6024f82c0a87d8c6c64f8d7eca72ed}\label{class_first_person_controller_a5f6024f82c0a87d8c6c64f8d7eca72ed} 
+Camera {\bfseries player\+Camera}
+\item 
+\Hypertarget{class_first_person_controller_acc8eaaca23f44f304a10d00b92ab6133}\label{class_first_person_controller_acc8eaaca23f44f304a10d00b92ab6133} 
+float {\bfseries fov} = 60f
+\item 
+\Hypertarget{class_first_person_controller_a256ba408ce4843601728df3e885293e2}\label{class_first_person_controller_a256ba408ce4843601728df3e885293e2} 
+bool {\bfseries invert\+Camera} = false
+\item 
+\Hypertarget{class_first_person_controller_a5a65981121adb3a87f0b745497c25102}\label{class_first_person_controller_a5a65981121adb3a87f0b745497c25102} 
+bool {\bfseries camera\+Can\+Move} = true
+\item 
+\Hypertarget{class_first_person_controller_a9d77dbe9afeb1851ec65623828c70a55}\label{class_first_person_controller_a9d77dbe9afeb1851ec65623828c70a55} 
+float {\bfseries mouse\+Sensitivity} = 2f
+\item 
+\Hypertarget{class_first_person_controller_ae47126c6fec95eadc5b25cd1a1d3d8f3}\label{class_first_person_controller_ae47126c6fec95eadc5b25cd1a1d3d8f3} 
+float {\bfseries max\+Look\+Angle} = 50f
+\item 
+\Hypertarget{class_first_person_controller_ab3dc4597b0c083e82020a4dad01fcaef}\label{class_first_person_controller_ab3dc4597b0c083e82020a4dad01fcaef} 
+bool {\bfseries lock\+Cursor} = true
+\item 
+\Hypertarget{class_first_person_controller_a20efb5d80aa4dbf2d6a8d66c9b7123e4}\label{class_first_person_controller_a20efb5d80aa4dbf2d6a8d66c9b7123e4} 
+bool {\bfseries crosshair} = true
+\item 
+\Hypertarget{class_first_person_controller_a47c5f1c74d75d7aad8fa60be4362d98b}\label{class_first_person_controller_a47c5f1c74d75d7aad8fa60be4362d98b} 
+Sprite {\bfseries crosshair\+Image}
+\item 
+\Hypertarget{class_first_person_controller_af1347daa98917f45f408ce8a5e87ea88}\label{class_first_person_controller_af1347daa98917f45f408ce8a5e87ea88} 
+Color {\bfseries crosshair\+Color} = Color.\+white
+\item 
+\Hypertarget{class_first_person_controller_a722e6f5de0236e4929ba2be73f3229d1}\label{class_first_person_controller_a722e6f5de0236e4929ba2be73f3229d1} 
+bool {\bfseries enable\+Zoom} = true
+\item 
+\Hypertarget{class_first_person_controller_a149f2af4ee5be7890fe0788e2737a7b6}\label{class_first_person_controller_a149f2af4ee5be7890fe0788e2737a7b6} 
+bool {\bfseries hold\+To\+Zoom} = false
+\item 
+\Hypertarget{class_first_person_controller_ae7a6facbb04ce0d647df6eb9d946df22}\label{class_first_person_controller_ae7a6facbb04ce0d647df6eb9d946df22} 
+Key\+Code {\bfseries zoom\+Key} = Key\+Code.\+Mouse1
+\item 
+\Hypertarget{class_first_person_controller_a385472fad6d575eafc89c91668eb2d85}\label{class_first_person_controller_a385472fad6d575eafc89c91668eb2d85} 
+float {\bfseries zoom\+FOV} = 30f
+\item 
+\Hypertarget{class_first_person_controller_a21d5adc647701a54e33531092e433172}\label{class_first_person_controller_a21d5adc647701a54e33531092e433172} 
+float {\bfseries zoom\+Step\+Time} = 5f
+\item 
+\Hypertarget{class_first_person_controller_a5e64b67f3405cf0afb255ce573079cbf}\label{class_first_person_controller_a5e64b67f3405cf0afb255ce573079cbf} 
+bool {\bfseries player\+Can\+Move} = true
+\item 
+\Hypertarget{class_first_person_controller_a92593f3df59d4c33ae91059980dba5ea}\label{class_first_person_controller_a92593f3df59d4c33ae91059980dba5ea} 
+float {\bfseries walk\+Speed} = 5f
+\item 
+\Hypertarget{class_first_person_controller_aaab3bbf17570440553dc3bd593f096e1}\label{class_first_person_controller_aaab3bbf17570440553dc3bd593f096e1} 
+float {\bfseries gravity} = -\/9.\+81f
+\item 
+\Hypertarget{class_first_person_controller_a55b65398df8fe70a38a79edaa20cebd3}\label{class_first_person_controller_a55b65398df8fe70a38a79edaa20cebd3} 
+bool {\bfseries is\+Walking} = false
+\item 
+\Hypertarget{class_first_person_controller_a575a280b2d0cd490b19313cfc98c7028}\label{class_first_person_controller_a575a280b2d0cd490b19313cfc98c7028} 
+bool {\bfseries enable\+Sprint} = true
+\item 
+\Hypertarget{class_first_person_controller_a5f16ddf5b3c3911a7f3992e072c97ae7}\label{class_first_person_controller_a5f16ddf5b3c3911a7f3992e072c97ae7} 
+bool {\bfseries unlimited\+Sprint} = false
+\item 
+\Hypertarget{class_first_person_controller_aa3299d205561aee28d101ce838e1c6e6}\label{class_first_person_controller_aa3299d205561aee28d101ce838e1c6e6} 
+Key\+Code {\bfseries sprint\+Key} = Key\+Code.\+Left\+Shift
+\item 
+\Hypertarget{class_first_person_controller_ac1b308fb13e2cc31d729a34e1ab417f6}\label{class_first_person_controller_ac1b308fb13e2cc31d729a34e1ab417f6} 
+float {\bfseries sprint\+Speed} = 7f
+\item 
+\Hypertarget{class_first_person_controller_a47d75af5f663116d3d1e38594b186f8f}\label{class_first_person_controller_a47d75af5f663116d3d1e38594b186f8f} 
+float {\bfseries sprint\+Duration} = 5f
+\item 
+\Hypertarget{class_first_person_controller_a67103bcea08725f4b185515430376b64}\label{class_first_person_controller_a67103bcea08725f4b185515430376b64} 
+float {\bfseries sprint\+Cooldown} = .\+5f
+\item 
+\Hypertarget{class_first_person_controller_abf54685ba8a23e3bb5b1ab7ce7fff20e}\label{class_first_person_controller_abf54685ba8a23e3bb5b1ab7ce7fff20e} 
+bool {\bfseries use\+Sprint\+Bar} = true
+\item 
+\Hypertarget{class_first_person_controller_ac56dbffbc7835ee57ded596c8e250078}\label{class_first_person_controller_ac56dbffbc7835ee57ded596c8e250078} 
+bool {\bfseries hide\+Bar\+When\+Full} = true
+\item 
+\Hypertarget{class_first_person_controller_a71568e749bc89018ac4052743b2ef1b9}\label{class_first_person_controller_a71568e749bc89018ac4052743b2ef1b9} 
+Image {\bfseries sprint\+Bar\+BG}
+\item 
+\Hypertarget{class_first_person_controller_a93dfa6e013c95261049901edb81ba509}\label{class_first_person_controller_a93dfa6e013c95261049901edb81ba509} 
+Image {\bfseries sprint\+Bar}
+\item 
+\Hypertarget{class_first_person_controller_a706e9b887743e90af3357017f39309ac}\label{class_first_person_controller_a706e9b887743e90af3357017f39309ac} 
+float {\bfseries sprint\+Bar\+Width\+Percent} = .\+3f
+\item 
+\Hypertarget{class_first_person_controller_a6056d6ce0bb236a62d1bcecd7a10d2ed}\label{class_first_person_controller_a6056d6ce0bb236a62d1bcecd7a10d2ed} 
+float {\bfseries sprint\+Bar\+Height\+Percent} = .\+015f
+\item 
+\Hypertarget{class_first_person_controller_a4d406608d9c918f20d735e461d2e04e9}\label{class_first_person_controller_a4d406608d9c918f20d735e461d2e04e9} 
+bool {\bfseries is\+Sprinting} = false
+\item 
+\Hypertarget{class_first_person_controller_aa0def67ae3065494e4c630da43c055ce}\label{class_first_person_controller_aa0def67ae3065494e4c630da43c055ce} 
+Transform {\bfseries carry\+Pos}
+\item 
+\Hypertarget{class_first_person_controller_ae038229fce2e8dcf908524339590c42a}\label{class_first_person_controller_ae038229fce2e8dcf908524339590c42a} 
+Transform {\bfseries held\+Item}
+\item 
+\Hypertarget{class_first_person_controller_aa37494033a0bc8496970b3cfd0fe95a0}\label{class_first_person_controller_aa37494033a0bc8496970b3cfd0fe95a0} 
+bool {\bfseries enable\+Jump} = true
+\item 
+\Hypertarget{class_first_person_controller_a311f8c938c217b2c2bb849d1f4f3ddc1}\label{class_first_person_controller_a311f8c938c217b2c2bb849d1f4f3ddc1} 
+Key\+Code {\bfseries jump\+Key} = Key\+Code.\+Space
+\item 
+\Hypertarget{class_first_person_controller_ac58cf705bace26c1b93508b254b250e1}\label{class_first_person_controller_ac58cf705bace26c1b93508b254b250e1} 
+float {\bfseries jump\+Power} = 5f
+\item 
+\Hypertarget{class_first_person_controller_a110f6bb643dda16b838ca5156d316310}\label{class_first_person_controller_a110f6bb643dda16b838ca5156d316310} 
+bool {\bfseries is\+Grounded} = false
+\item 
+\Hypertarget{class_first_person_controller_a8dd119368c446bbb5f93d9a3194aec69}\label{class_first_person_controller_a8dd119368c446bbb5f93d9a3194aec69} 
+bool {\bfseries enable\+Crouch} = true
+\item 
+\Hypertarget{class_first_person_controller_a839e20146eadd626093f355ef04eda5d}\label{class_first_person_controller_a839e20146eadd626093f355ef04eda5d} 
+bool {\bfseries hold\+To\+Crouch} = true
+\item 
+\Hypertarget{class_first_person_controller_a24c26ac9ef5bf75a385aae684c2a08da}\label{class_first_person_controller_a24c26ac9ef5bf75a385aae684c2a08da} 
+Key\+Code {\bfseries crouch\+Key} = Key\+Code.\+Left\+Control
+\item 
+\Hypertarget{class_first_person_controller_a1afd392fa5ca424dba33a942c2003840}\label{class_first_person_controller_a1afd392fa5ca424dba33a942c2003840} 
+float {\bfseries crouch\+Height} = .\+75f
+\item 
+\Hypertarget{class_first_person_controller_af108055eb4a2f82d1ef1d2b3fc3964ad}\label{class_first_person_controller_af108055eb4a2f82d1ef1d2b3fc3964ad} 
+float {\bfseries speed\+Reduction} = .\+5f
+\item 
+\Hypertarget{class_first_person_controller_ac51d619fb593ba08e5b200c977ebd54c}\label{class_first_person_controller_ac51d619fb593ba08e5b200c977ebd54c} 
+bool {\bfseries is\+Crouched} = false
+\item 
+\Hypertarget{class_first_person_controller_a57a06531df8ff772b9a1a330250e064d}\label{class_first_person_controller_a57a06531df8ff772b9a1a330250e064d} 
+bool {\bfseries enable\+Head\+Bob} = true
+\item 
+\Hypertarget{class_first_person_controller_ab879246fef6424ba4e7da8c4b505cf20}\label{class_first_person_controller_ab879246fef6424ba4e7da8c4b505cf20} 
+Transform {\bfseries joint}
+\item 
+\Hypertarget{class_first_person_controller_a3bbc4b06b7fe8f0a7cc52afb6fffd171}\label{class_first_person_controller_a3bbc4b06b7fe8f0a7cc52afb6fffd171} 
+float {\bfseries bob\+Speed} = 10f
+\item 
+\Hypertarget{class_first_person_controller_a88230b1316e88aceb27ebfe9d7a35339}\label{class_first_person_controller_a88230b1316e88aceb27ebfe9d7a35339} 
+Vector3 {\bfseries bob\+Amount} = new Vector3(.\+15f, .\+05f, 0f)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Code/\+Scripts/\+Player/First\+Person\+Controller.\+cs\end{DoxyCompactItemize}
