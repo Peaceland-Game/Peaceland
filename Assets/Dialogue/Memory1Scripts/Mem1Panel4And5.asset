@@ -5565,15 +5565,13 @@ MonoBehaviour:
           LookAt(AntoniTowardsDog, Player, 3.0)@1.7;
 
 
-          AnimatorTrigger(Run,
-          Antoni)@4.2;
+          AnimatorTrigger(SlowDown,
+          Antoni)@3.2;
 
-          AnimatorTrigger(Walk, Antoni)@4.5;
+          AnimatorTrigger(Idle, Antoni)@4.7;
 
-          AnimatorTrigger(Idle,
-          Antoni)@4.7;
-
-          AnimatorTrigger(RightTurn, Antoni)@4.9;
+          AnimatorTrigger(RightTurn,
+          Antoni)@4.9;
 
           AnimatorController(Anim_Controllers/Story1Mem1Anims,
           Antoni)@5.7;
@@ -6955,14 +6953,14 @@ MonoBehaviour:
           AnimatorController(Anim_Controllers/Story1Mem1Anims,
           GPKSoldierP5B)@1.4;
 
-          LookAt(GPKSoldierP5B, Antoni)@1.5;
+          LookAt(GPKGrabTaser, Antoni)@1.2;
 
           AnimatorTrigger(GPKSoldier_TakingTaser,
-          GPKSoldierP5B)@1.7;
+          GPKSoldierP5B)@1.9;
 
 
           AnimatorTrigger(Antoni_SurrenderingTaser,
-          Antoni)@1.5;
+          Antoni)@1.3;
 
           SetActive(Prop_Taser, false)@4.8;
 
@@ -12031,7 +12029,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2318.4219}
+    canvasScrollPosition: {x: 0, y: 710.5263}
     canvasZoom: 0.76
   syncInfo:
     syncActors: 1
