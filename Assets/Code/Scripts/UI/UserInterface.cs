@@ -25,6 +25,9 @@ public class UserInterface : MonoBehaviour
     private EventSystem eventSystem;
     public bool CheckMouseClicks = false;
     public GameObject reticle;
+
+    private UniversalSoundManager soundManager;
+
     /// <summary>
     /// Initializes the UserInterface component.
     /// </summary>
@@ -171,5 +174,26 @@ public class UserInterface : MonoBehaviour
     public void ToggleMemorySelectUI(bool active)
     {
         memorySelectUI.SetActive(active);
+    }
+
+    /// <summary>
+    /// Gets a sound manager
+    /// </summary>
+    /// <param name="mgr"> the manager to use </param>
+    public void GetSoundManager(UniversalSoundManager mgr)
+    {
+        soundManager = mgr;
+    }
+
+    public void TabletButtonSound()
+    {
+        if (soundManager)
+        {
+            soundManager.SelectTabletOption();
+        }
+        else
+        {
+            Debug.Log("Tried to play tablet sound with no sound manager");
+        }
     }
 }

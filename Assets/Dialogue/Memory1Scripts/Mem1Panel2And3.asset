@@ -4172,7 +4172,7 @@ MonoBehaviour:
       - originConversationID: 48
         originDialogueID: 0
         destinationConversationID: 48
-        destinationDialogueID: 31
+        destinationDialogueID: 46
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -4241,8 +4241,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158.3704
-        y: 80.76916
+        x: 156.1726
+        y: 111.53838
         width: 160
         height: 30
     - id: 32
@@ -4298,8 +4298,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.3704
-        y: 130.76917
+        x: 157.1726
+        y: 161.53839
         width: 160
         height: 30
     - id: 33
@@ -4365,8 +4365,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.3704
-        y: 180.76917
+        x: 157.1726
+        y: 211.53839
         width: 160
         height: 30
     - id: 34
@@ -4422,8 +4422,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.3704
-        y: 230.76917
+        x: 157.1726
+        y: 261.53842
         width: 160
         height: 30
     - id: 35
@@ -4455,10 +4455,8 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          SetActive(RabidDog, true);
-
-          MoveTo(RabidDogAppear,
-          RabidDog, 0.6);
+          MoveTo(RabidDogAppear, RabidDog,
+          0.6);
 
           LookAt(Player, RabidDog, 0.5)@0.7;'
         type: 0
@@ -4484,8 +4482,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.3704
-        y: 280.7691
+        x: 157.1726
+        y: 311.53836
         width: 160
         height: 30
     - id: 36
@@ -4546,8 +4544,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.3704
-        y: 330.7691
+        x: 157.1726
+        y: 361.53836
         width: 160
         height: 30
     - id: 37
@@ -4605,8 +4603,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.3704
-        y: 380.7691
+        x: 157.1726
+        y: 411.53836
         width: 160
         height: 30
     - id: 38
@@ -4660,8 +4658,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 157.55223
-        y: 429.67023
+        x: 155.35443
+        y: 461.53836
         width: 160
         height: 30
     - id: 39
@@ -4736,8 +4734,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.3704
-        y: 480.7691
+        x: 157.1726
+        y: 511.53836
         width: 160
         height: 30
     - id: 40
@@ -4793,8 +4791,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.3704
-        y: 530.7693
+        x: 157.1726
+        y: 561.5381
         width: 160
         height: 30
     - id: 41
@@ -4848,8 +4846,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.3704
-        y: 580.7693
+        x: 157.1726
+        y: 611.5381
         width: 160
         height: 30
     - id: 42
@@ -4909,8 +4907,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.3704
-        y: 630.7693
+        x: 157.1726
+        y: 661.5381
         width: 160
         height: 30
     - id: 43
@@ -4964,8 +4962,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.3704
-        y: 682.5874
+        x: 157.1726
+        y: 713.3562
         width: 160
         height: 30
     - id: 44
@@ -5019,8 +5017,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.3704
-        y: 730.7693
+        x: 157.1726
+        y: 761.5381
         width: 160
         height: 30
     - id: 45
@@ -5083,12 +5081,67 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.3704
-        y: 780.7693
+        x: 157.1726
+        y: 811.5381
+        width: 160
+        height: 30
+    - id: 46
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetActive(RabidDog, true);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 48
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 48
+        originDialogueID: 46
+        destinationConversationID: 48
+        destinationDialogueID: 31
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 157.80223
+        y: 70.10989
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 213.0552}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.9100001
   - id: 49
     fields:
