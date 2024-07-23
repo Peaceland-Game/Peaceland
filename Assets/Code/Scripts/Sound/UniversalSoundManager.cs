@@ -47,7 +47,7 @@ public class UniversalSoundManager : MonoBehaviour
     /// </summary>
     protected void GetUniversalSoundSources()
     {
-        List<GameObject> gameObjects = FindObjectsOfType<GameObject>().ToList();
+        List<GameObject> gameObjects = FindObjectsOfType<GameObject>(true).ToList();
         allCharacters = new List<GameObject>();
         artifacts = new List<GameObject>();
         otherPickups = new List<GameObject>();
@@ -55,31 +55,31 @@ public class UniversalSoundManager : MonoBehaviour
 
         //Debug.Log("Getting sound sources...");
 
+        bool foundPlayer = false;
+
         foreach (GameObject a in gameObjects)
         {
-            switch(a.tag)
+            switch (a.tag)
             {
                 case "Player":
+                case "MainCamera":
 
-                    player = a;
-                    //Debug.Log("Got the player...");
+                    if(!foundPlayer || a.tag == "Player")
+                    {
+                        player = a;
+                        Debug.Log($"Got player: {player.name}");
+                        foundPlayer = true;
+                    }
 
                     break;
-                // NPCList and Artifacts cause issues right now, so be careful about uncommenting those
-                case "NPCList":
+                case "NPC":
 
-                    //foreach (GameObject b in a.GetComponentsInChildren<GameObject>())
-                    //{
-                    //    allCharacters.Add(b);
-                    //}
+                    allCharacters.Add(a);
 
                     break;
                 case "Artifacts":
 
-                    //foreach (GameObject b in a.GetComponentsInChildren<GameObject>())
-                    //{
-                    //    artifacts.Add(b);
-                    //}
+                    artifacts.Add(a);
 
                     break;
                 case "Interactable":
@@ -117,7 +117,7 @@ public class UniversalSoundManager : MonoBehaviour
     /// Makes a game object's audio source play a sound (if it has one assigned to it). 
     /// Note that you must enable looping in the audio source itself in order for it to play more than once.
     /// </summary>
-    /// <param name="source"></param>
+    /// <param name="source"> the game object to play a sound, which must have an audio source component with an audio clip </param>
     public void PlayLoopingSound(GameObject source)
     {
         AudioSource audioSource = source.GetComponent<AudioSource>();
@@ -125,54 +125,96 @@ public class UniversalSoundManager : MonoBehaviour
         audioSource.Play();
     }
 
+    /// <summary>
+    /// Stops a game object's audio source from playing its sound
+    /// </summary>
+    /// <param name="source"> the game object to stop playing sound </param>
+    public void StopSound(GameObject source)
+    {
+        AudioSource audioSource = source.GetComponent<AudioSource>();
+
+        audioSource.Stop();
+    }
+
+    /// <summary>
+    /// Plays footstep sounds
+    /// </summary>
     public void Walk()
     {
         // I started working on putting an enum for this in the player controller, but it isn't
         // quite ready to use yet
     }
 
+    /// <summary>
+    /// Plays the sound effect for obtaining an artifact
+    /// </summary>
     public void ArtifactGet()
     {
         PlaySound(player, artifactPickup);
     }
 
+    /// <summary>
+    /// Plays the sound effect for obtaining a theme
+    /// </summary>
     public void ThemeGet()
     {
         PlaySound(player, themePickup);
     }
 
+    /// <summary>
+    /// Plays the sound effect for gaining money
+    /// </summary>
     public void CoinGet()
     {
         PlaySound(player, coinPickup);
     }
 
+    /// <summary>
+    /// Plays the sound effect for picking up most objects
+    /// </summary>
     public void Pickup()
     {
         PlaySound(player, genericPickup);
     }
 
+    /// <summary>
+    /// Plays the sound effect for selecting a dialogue option
+    /// </summary>
     public void SelectDialogueOptionSound()
     {
         PlaySound(player, dialogueSelect);
     }
 
-    public void SelectMenuOption()
+    /// <summary>
+    /// Plays the sound effect for clicking a button on the main menu or settings menu, if in a scene with a player object
+    /// </summary>
+    public void SelectMenuOptionWithPlayer()
     {
         PlaySound(player, menuSelect);
     }
 
+    /// <summary>
+    /// Plays the sound effect for spending money
+    /// </summary>
     public void MakePurchase()
     {
         PlaySound(player, purchase);
     }
 
+    /// <summary>
+    /// Plays the sound effect for clicking a tablet button
+    /// </summary>
     public void SelectTabletOption()
     {
         PlaySound(player, tabletSelect);
     }
 
+    /// <summary>
+    /// Give Lua some functions
+    /// </summary>
     protected virtual void OnEnable()
     {
         Lua.RegisterFunction(nameof(SelectDialogueOptionSound), this, SymbolExtensions.GetMethodInfo(() => SelectDialogueOptionSound()));
+        Lua.RegisterFunction(nameof(Pickup), this, SymbolExtensions.GetMethodInfo(() => Pickup()));
     }
 }
