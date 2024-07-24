@@ -33,12 +33,6 @@ public class IntroSoundManager : UniversalSoundManager
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void IncomingCall()
     {
         PlaySound(player, incomingCall);
