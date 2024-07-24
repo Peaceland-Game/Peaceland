@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Xml;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 
 public class HeadlineMaker : MonoBehaviour
@@ -265,6 +266,12 @@ public class HeadlineMaker : MonoBehaviour
         }
 
         GenerateTopics();
+    }
+
+
+    public void Publish()
+    {
+        SceneManager.LoadScene(0);
     }
 
 
