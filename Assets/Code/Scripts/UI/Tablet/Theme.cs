@@ -5,6 +5,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Represents a theme to control hiding/revealing the theme when first encountered.
+/// </summary>
 public class Theme : MonoBehaviour
 {
     [SerializeField] private Image lockImage; //reference to the UI image game object for the lock

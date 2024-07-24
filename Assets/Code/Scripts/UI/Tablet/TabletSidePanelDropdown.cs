@@ -5,15 +5,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using static Tablet;
 
+/// <summary>
+/// UI element that controls the dropdown of the side panel present in the notes page.
+/// </summary>
 public class TabletSidePanelDropdown : MonoBehaviour
 {
-    [SerializeField] Button button;
-    [SerializeField] List<GameObject> dropdownButtons;
-    [SerializeField] Sprite upArrow;
-    [SerializeField] Sprite downArrow;
-    [SerializeField] Image currentArrow;
-    [SerializeField] Image dropDownImage;
-    bool currentlyActive;
+    [SerializeField] Button button; //the button that should be clicked to toggle the dropdown
+    [SerializeField] List<GameObject> dropdownButtons; //the buttons featured in the dropdown itself
+    [SerializeField] Sprite upArrow; //the sprite present when the dropdown is toggled on
+    [SerializeField] Sprite downArrow; //the sprite present when the dropdown is toggled off
+    [SerializeField] Image currentArrow; //the current sprite
+    [SerializeField] Image dropDownImage; //the dark background present as part of the dropdown
+    bool currentlyActive; //whether the dropdown is currently toggled on or not
     // Start is called before the first frame update
     void Start()
     {
