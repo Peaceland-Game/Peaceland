@@ -45,14 +45,30 @@ public class DialogueToCharacterVisuals : MonoBehaviour
     /// <param name="next"></param>
     public void ChangeEmotionalState(double next, string character)
     {
+        //Holds the actual game object that has the same name as the character
         GameObject actor = GameObject.Find(character);
-        CharacterVisualController visualController = actor.GetComponent<CharacterVisualController>();
+        //The visual controller to help change expressions for the actor
+        CharacterVisualController visualController = null;
 
-        if(visualController == null)
+        //As long as the actor was found, assign its visual controller to the corresponding variable
+        if (actor != null)
+        {
+            visualController = actor.GetComponent<CharacterVisualController>();
+        }
+
+        //If actor is null, log to console and return
+        if (actor == null)
+        {
+            Debug.LogError("Actor is null for " + character);
+            return;
+        }
+        //Else if the visualController is null, then log to console and return
+        else if(visualController == null)
         {
             Debug.LogError("Unable to change character " + character);
             return;
         }
+        //Otherwise change the emotional state in the actor's visual controller to the state given by the vraiable next
         else
         {
             CharacterVisualController.EmotionalState state = (CharacterVisualController.EmotionalState)(int)next;
