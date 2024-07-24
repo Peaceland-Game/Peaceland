@@ -38,12 +38,6 @@ public class MemChain1SoundManager : UniversalSoundManager
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void GryfGrowl()
     {
         PlaySound(gryf, gryfGrowl);
