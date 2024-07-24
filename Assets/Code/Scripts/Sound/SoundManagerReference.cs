@@ -11,12 +11,14 @@ public class SoundManagerReference : MonoBehaviour
     private UniversalSoundManager soundManager;
     private UserInterface ui;
     private IntroController introController;
+    //private DialogueSystemController dialogueSystemController;
 
     private void Start()
     {
         soundManager = GetComponent<UniversalSoundManager>();
         ui = FindObjectOfType<UserInterface>();
         introController = FindObjectOfType<IntroController>();
+        //dialogueSystemController = FindObjectOfType<DialogueSystemController>();
 
         if (PlayerSingleton.Instance)
         {
@@ -32,6 +34,11 @@ public class SoundManagerReference : MonoBehaviour
         {
             introController.GetSoundManager(soundManager);
         }
+
+        //if(dialogueSystemController)
+        //{
+        //    dialogueSystemController.
+        //}
     }
 
     private void Update()
