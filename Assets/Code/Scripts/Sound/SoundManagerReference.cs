@@ -4,19 +4,23 @@ using UnityEngine;
 using PixelCrushers.DialogueSystem;
 
 /// <summary>
-/// Gives the player singleton and user interface object a reference to the sound manager
+/// Gives a reference to the sound manager to objects that need it
 /// </summary>
 public class SoundManagerReference : MonoBehaviour
 {
     private UniversalSoundManager soundManager;
     private UserInterface ui;
     private IntroController introController;
+    //private DialogueSystemController dialogueSystemController;
 
-    private void Start()
+    private void Awake()
     {
+        Debug.Log("Sending sound manager references...");
+
         soundManager = GetComponent<UniversalSoundManager>();
         ui = FindObjectOfType<UserInterface>();
         introController = FindObjectOfType<IntroController>();
+        //dialogueSystemController = FindObjectOfType<DialogueSystemController>();
 
         if (PlayerSingleton.Instance)
         {
@@ -32,11 +36,16 @@ public class SoundManagerReference : MonoBehaviour
         {
             introController.GetSoundManager(soundManager);
         }
+
+        //if(dialogueSystemController)
+        //{
+        //    dialogueSystemController.
+        //}
     }
 
     private void Update()
     {
-
+        
     }
 }
 
