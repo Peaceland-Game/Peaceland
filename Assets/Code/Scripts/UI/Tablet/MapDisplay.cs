@@ -152,10 +152,10 @@ public class MapDisplay : MonoBehaviour, IScrollHandler {
     /// </summary>
     /// <param name="zoom">The new zoom level.</param>
     /// <param name="mousePosition">The position of the mouse during zooming.</param>
-    private void SetZoom(float zoom, Vector2 mousePosition) {
-        // Store old position and size
+    private void SetZoom(float zoom, Vector2 mousePosition)
+    {
+        // Store old size
         Vector2 oldSize = mapRect.sizeDelta;
-        Vector2 oldPosition = scrollRect.content.anchoredPosition;
 
         // Calculate zoom
         currentZoom = Mathf.Clamp(zoom, minZoom, maxZoom);
@@ -165,13 +165,16 @@ public class MapDisplay : MonoBehaviour, IScrollHandler {
         Vector2 newSize = viewportSize * currentZoom;
         mapRect.sizeDelta = newSize;
 
-        // Calculate the position delta
-        Vector2 mousePositionOnContent = mousePosition + oldPosition;
-        Vector2 newMousePositionOnContent = mousePositionOnContent * (newSize.x / oldSize.x);
-        Vector2 positionDelta = newMousePositionOnContent - mousePosition;
-
-        // Set new position
-        scrollRect.content.anchoredPosition = positionDelta;
+        // Calculate the new position
+        Vector2 normalizedMousePos = new Vector2(
+            mousePosition.x / scrollRect.viewport.rect.width,
+            mousePosition.y / scrollRect.viewport.rect.height
+        );
+        Vector2 newContentPos = new Vector2(
+            (newSize.x - viewportSize.x) * normalizedMousePos.x,
+            (newSize.y - viewportSize.y) * normalizedMousePos.y
+        );
+        scrollRect.content.anchoredPosition = -newContentPos;
 
         // Ensure player marker stays in the correct position
         UpdatePlayerPosition();
