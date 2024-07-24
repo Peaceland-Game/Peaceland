@@ -38,7 +38,7 @@ public class IntroController : MonoBehaviour {
     private bool waitForPlayer = false;
     private GameObject selectorUI;
 
-    private HubSoundManager soundManager;
+    private IntroSoundManager soundManager;
 
     /// <summary>
     /// Handles keyboard inputs for starting the tablet tutorial and loading the hub world.
@@ -374,6 +374,6 @@ public class IntroController : MonoBehaviour {
 
     public void GetSoundManager(UniversalSoundManager mgr)
     {
-        soundManager = (HubSoundManager)mgr;
+        soundManager = (IntroSoundManager)mgr;
     }
 }

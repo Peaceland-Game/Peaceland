@@ -1,6 +1,7 @@
 using PixelCrushers.DialogueSystem;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UniversalSoundManager : MonoBehaviour
@@ -42,6 +43,11 @@ public class UniversalSoundManager : MonoBehaviour
     [SerializeField] protected AudioClip ambienceRiver;
     [SerializeField] protected AudioClip ambienceStreetlight;
 
+    protected virtual void Awake()
+    {
+        GetUniversalSoundSources();
+    }
+
     /// <summary>
     /// Gets audio sources that are likely to be in multiple memories and the hub
     /// </summary>
@@ -53,7 +59,7 @@ public class UniversalSoundManager : MonoBehaviour
         otherPickups = new List<GameObject>();
         streetLights = new List<GameObject>();
 
-        //Debug.Log("Getting sound sources...");
+        Debug.Log("Getting sound sources...");
 
         bool foundPlayer = false;
 
@@ -98,6 +104,15 @@ public class UniversalSoundManager : MonoBehaviour
 
                     break;
             }
+        }
+    }
+
+    protected void Update()
+    {
+        if(player.IsDestroyed())
+        {
+            player = GameObject.FindGameObjectWithTag("MainCamera");
+            player = GameObject.FindGameObjectWithTag("Player");
         }
     }
 
@@ -182,13 +197,21 @@ public class UniversalSoundManager : MonoBehaviour
     /// </summary>
     public void SelectDialogueOptionSound()
     {
+        // Not sure why this needs to be here... but apparently it does. Feel free to fix if you
+        // figure out what the issue is
+        if (player.IsDestroyed())
+        {
+            player = GameObject.FindGameObjectWithTag("MainCamera");
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
         PlaySound(player, dialogueSelect);
     }
 
     /// <summary>
     /// Plays the sound effect for clicking a button on the main menu or settings menu, if in a scene with a player object
     /// </summary>
-    public void SelectMenuOptionWithPlayer()
+    public void SelectMenuOption()
     {
         PlaySound(player, menuSelect);
     }
