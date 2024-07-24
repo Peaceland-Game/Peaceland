@@ -32,6 +32,8 @@ public class HeadlineMaker : MonoBehaviour
     [SerializeField] List<GameObject> noteObjs;
     int selectedTopic = -1; 
     int selectedNote = -1;
+
+    public Dictionary<int, int> childIndexToTopicIndex;
     
     public int SelectedTopic { get { return selectedTopic; } }
     public int SelectedNote { get { return selectedNote; } }
@@ -94,18 +96,23 @@ public class HeadlineMaker : MonoBehaviour
         if (noteObjs.Count > 0)
             ClearNotes();
 
+        childIndexToTopicIndex = new Dictionary<int, int>();
 
         // Generate buttons and fill out note textmesh 
         TopicData topic = topics[selectedTopic];
         for (int i = 0; i < topic.notes.Count; i++)
         {
+            string headline = topic.notes[i].headline;
+            if (headline == "")
+                continue;
+
             // Create object 
             noteObjs.Add(Instantiate(btnNoteElement, notesParent));
-            noteObjs[i].AddComponent<NoteClick>();
+            noteObjs[noteObjs.Count - 1].AddComponent<NoteClick>();
 
             // Write text 
-            noteObjs[i].GetComponentInChildren<TextMeshProUGUI>().text = topic.notes[i].headline;
-
+            noteObjs[noteObjs.Count - 1].GetComponentInChildren<TextMeshProUGUI>().text = headline;
+            childIndexToTopicIndex.Add(noteObjs.Count - 1, i);
         }
     }
 

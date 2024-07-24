@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class NoteClick : ClickExample
 {
+    
     private HeadlineMaker hm;
+
     void Start()
     {
         Button btn = this.GetComponent<Button>();
@@ -19,6 +21,6 @@ public class NoteClick : ClickExample
         if (hm == null)
             return;
 
-        hm.GenerateHeadline(this.transform.GetSiblingIndex());
+        hm.GenerateHeadline(/*this.transform.GetSiblingIndex()*/hm.childIndexToTopicIndex[this.transform.GetSiblingIndex()]);
     }
 }
