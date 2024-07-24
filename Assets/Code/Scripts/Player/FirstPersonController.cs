@@ -6,6 +6,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using PixelCrushers.DialogueSystem;
+using System.Collections.Generic;
+using System.Linq;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -66,6 +68,8 @@ public class FirstPersonController : MonoBehaviour
     public bool isWalking = false;
     private Vector3 moveDirection = Vector3.zero;
     private Vector3 velocity = Vector3.zero;
+
+    private AudioSource audioSource;
 
     #region Sprint
 
@@ -150,6 +154,10 @@ public class FirstPersonController : MonoBehaviour
         playerCamera.fieldOfView = fov;
         originalScale = transform.localScale;
         jointOriginalPos = joint.localPosition;
+
+        List<AudioSource> audioSources = GetComponents<AudioSource>().ToList();
+
+        audioSource = audioSources[1];
 
         if (!unlimitedSprint)
         {
@@ -415,6 +423,17 @@ public class FirstPersonController : MonoBehaviour
         if (enableHeadBob)
         {
             HeadBob();
+        }
+
+
+
+        if ((velocity.x != 0 && velocity.z != 0) && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+        else if (velocity.x == 0 && velocity.z == 0)
+        {
+            audioSource.Stop();
         }
     }
 
