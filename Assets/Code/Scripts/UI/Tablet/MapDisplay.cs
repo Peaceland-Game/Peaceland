@@ -18,13 +18,13 @@ public class MapDisplay : MonoBehaviour, IScrollHandler {
     public Transform player;            // Reference to the player transform
     public Vector2 worldTopLeft;        // World position of the top left corner of the map
     public Vector2 worldBottomRight;    // World position of the bottom right corner of the map
-    public float minZoom = 1f;          
+    public float minZoom = 1f;
     public float maxZoom = 2f;
     public float zoomSpeed = 0.01f;
 
     private ScrollRect scrollRect;      // Reference to the scroll rect component
     private Vector2 worldSize;          // Size of the world in world units
-    public float currentZoom = 1.5f;    
+    public float currentZoom = 1.5f;
     public GameObject objectiveMarkerPrefab;    // Prefab for the objective markers
 
     private Dictionary<string, RectTransform> mapMarkers = new();   // Dictionary of map markers by name
@@ -44,6 +44,7 @@ public class MapDisplay : MonoBehaviour, IScrollHandler {
         worldSize = worldBottomRight - worldTopLeft;
 
         SetContentSize();
+        //SetZoom(maxZoom, mapRect.rect.size / 2f);
         scrollRect.normalizedPosition = new Vector2(0.5f, 0.5f);
     }
 
@@ -59,12 +60,14 @@ public class MapDisplay : MonoBehaviour, IScrollHandler {
     /// </summary>
     /// <param name="eventData">Pointer event data containing scroll information.</param>
     public void OnScroll(PointerEventData eventData) {
-        // Convert screen position to local position within the scroll rect
+        // Convert screen position to local position within the viewport
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             scrollRect.viewport, eventData.position, eventData.pressEventCamera, out Vector2 localPoint);
 
-        OnZoom(eventData.scrollDelta.y, localPoint);
+        // Convert local point to anchored position
+        Vector2 mousePositionInViewport = localPoint + scrollRect.viewport.rect.size * 0.5f;
 
+        OnZoom(eventData.scrollDelta.y, mousePositionInViewport);
     }
     /// <summary>
     /// Updates the player marker's position and rotation on the map.
@@ -145,15 +148,18 @@ public class MapDisplay : MonoBehaviour, IScrollHandler {
     /// <param name="mousePosition">The position of the mouse during zooming.</param>
     public void OnZoom(float zoomDelta, Vector2 mousePosition) {
         float newZoom = currentZoom * (1f + zoomDelta * zoomSpeed);
-        SetZoom(newZoom, mousePosition);
+        var adjustedMousePos = new Vector2(
+            mousePosition.x - mapRect.anchoredPosition.x,
+            mousePosition.y - mapRect.anchoredPosition.y);
+       // Debug.Log($"Map mouse pos: {adjustedMousePos}");
+        SetZoom(newZoom, adjustedMousePos);
     }
     /// <summary>
     /// Sets the zoom level of the map.
     /// </summary>
     /// <param name="zoom">The new zoom level.</param>
     /// <param name="mousePosition">The position of the mouse during zooming.</param>
-    private void SetZoom(float zoom, Vector2 mousePosition)
-    {
+    private void SetZoom(float zoom, Vector2 mousePosition) {
         // Store old size
         Vector2 oldSize = mapRect.sizeDelta;
 
@@ -165,16 +171,28 @@ public class MapDisplay : MonoBehaviour, IScrollHandler {
         Vector2 newSize = viewportSize * currentZoom;
         mapRect.sizeDelta = newSize;
 
-        // Calculate the new position
+        //// Calculate the new position
         Vector2 normalizedMousePos = new Vector2(
             mousePosition.x / scrollRect.viewport.rect.width,
             mousePosition.y / scrollRect.viewport.rect.height
         );
+      //  Debug.Log(normalizedMousePos);
+        //new_map_x = map_x - (cursor_x / screen_max_width * (new_map_width - map_width))
+        //new_map_y = map_y - (cursor_y / screen_max_height * (new_map_height - map_height))
+
         Vector2 newContentPos = new Vector2(
-            (newSize.x - viewportSize.x) * normalizedMousePos.x,
-            (newSize.y - viewportSize.y) * normalizedMousePos.y
-        );
-        scrollRect.content.anchoredPosition = -newContentPos;
+            mapRect.anchoredPosition.x -
+            (normalizedMousePos.x * (newSize.x - oldSize.x)),
+            mapRect.anchoredPosition.y -
+            (normalizedMousePos.y * (newSize.y - oldSize.y)));
+
+
+
+        //Vector2 newContentPos = new Vector2(
+        //    (newSize.x - viewportSize.x) * normalizedMousePos.x,
+        //    (newSize.y - viewportSize.y) * normalizedMousePos.y
+        //);
+        scrollRect.content.anchoredPosition = newContentPos;
 
         // Ensure player marker stays in the correct position
         UpdatePlayerPosition();
@@ -188,10 +206,10 @@ public class MapDisplay : MonoBehaviour, IScrollHandler {
         Vector2 newSize = viewportSize * Mathf.Max(currentZoom, 1f);
         mapRect.sizeDelta = newSize;
 
-        // Adjust content position to zoom towards the center
-        Vector2 sizeDelta = newSize - oldSize;
-        Vector2 adjustedPosition = scrollRect.content.anchoredPosition - (sizeDelta * 0.5f);
-        scrollRect.content.anchoredPosition = adjustedPosition;
+        //// Adjust content position to zoom towards the center
+        //Vector2 sizeDelta = newSize - oldSize;
+        //Vector2 adjustedPosition = scrollRect.content.anchoredPosition - (sizeDelta * 0.5f);
+        //scrollRect.content.anchoredPosition = adjustedPosition;
 
         // Ensure player marker stays in the correct position
         UpdatePlayerPosition();
