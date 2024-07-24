@@ -46,6 +46,7 @@ public class HeadlineMaker : MonoBehaviour
     {
         // Hard load only playable level 
         LoadJsonData("Mem 1");
+        Cursor.visible = true;
     }
 
     public void SelectTopic()
@@ -211,7 +212,7 @@ public class HeadlineMaker : MonoBehaviour
         // Digest each karmic string helper 
         foreach (FileIO.JSONStringHelper strHelper in packet.stringValues)
         {
-            string[] str = strHelper.value.Split(':');
+            string[] str = strHelper.value.Split('+');
             print(str.Length);
 
             // Get Topic 
@@ -220,19 +221,23 @@ public class HeadlineMaker : MonoBehaviour
             // Generate note 
             string note = str[1];
 
-            int value = Int32.Parse(str[2]); // TODO : Include calculation 
+            int value;
+            if(!Int32.TryParse(str[2], out value)) // TODO : Include calculation 
+                value = 0;
 
             // Header 
             string header = "";
             if (str.Length >= 4)
                 header = str[3];
 
+            Debug.Log(strHelper.value);
             // Save to typeToData
-            TopicData td = !typeToData.ContainsKey(topic) ? new TopicData() : typeToData[topic];
+            TopicData td = !typeToData.ContainsKey(topic) ? null : typeToData[topic];
             if(td == null)
             {
                 td = new TopicData();
                 td.topic = topic;
+                typeToData.Add(topic, td);
             }
 
             Note noteData = new Note();
@@ -290,6 +295,9 @@ public class HeadlineMaker : MonoBehaviour
         TRUST,
         SENTIMENTAL,
         ASSERTIVE,
-        DETERMINATION
+        DETERMINATION,
+        BRAVERY,
+        KINDNESS,
+        DISDAIN
     }
 }

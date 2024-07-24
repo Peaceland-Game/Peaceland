@@ -56,9 +56,9 @@ public class Samsara : MonoBehaviour
         // Score
         FileIO.JSONStringHelper karmicMemory = new FileIO.JSONStringHelper();
         karmicMemory.name = "Karmic " + (theme + description).GetHashCode(); // Don't want to override other karmic events 
-        karmicMemory.value = theme             + ":" +
-                             description       + ":" +
-                             value.ToString()  + ":" +
+        karmicMemory.value = theme             + "+" +
+                             description       + "+" +
+                             value.ToString()  + "+" +
                              headline;
 
 
