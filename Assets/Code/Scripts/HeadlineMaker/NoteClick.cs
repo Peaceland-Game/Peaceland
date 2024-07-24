@@ -21,6 +21,6 @@ public class NoteClick : ClickExample
         if (hm == null)
             return;
 
-        hm.GenerateHeadline(/*this.transform.GetSiblingIndex()*/hm.childIndexToTopicIndex[this.transform.GetSiblingIndex()]);
+        hm.GenerateHeadline(hm.childIndexToTopicIndex[this.transform.GetSiblingIndex()]);
     }
 }
