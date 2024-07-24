@@ -5,6 +5,7 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using Gaia;
 
 public class DebugHelper : MonoBehaviour {
     [Header("Free Cam")]
@@ -107,6 +108,13 @@ public class DebugHelper : MonoBehaviour {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
             }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            consoleIsActive = true;
+            inputField.ActivateInputField();
+            inputField.Select();
         }
     }
 
@@ -259,6 +267,7 @@ public class DebugHelper : MonoBehaviour {
         // Implement setting Lua variable logic here
         Debug.Log($"Set Lua variable '{var}' to {value}");
     }
+
     /// <summary>
     /// Attempts to swap currently active memory 
     /// </summary>

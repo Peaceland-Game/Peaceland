@@ -99,6 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8045388665714886164}
   - component: {fileID: 3778961605683663149}
+  - component: {fileID: 6971736182138427674}
   m_Layer: 0
   m_Name: DebugCam
   m_TagString: Untagged
@@ -140,6 +141,20 @@ MonoBehaviour:
   m_MoveSpeed: 10
   m_MoveSpeedIncrement: 2.5
   m_Turbo: 10
+--- !u!114 &6971736182138427674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228818474336974325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfea197617d105c499ae3a4c185a3928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeedSensitivity: 1
+  cam: {fileID: 3778961605683663149}
 --- !u!1 &8432393663133639776
 GameObject:
   m_ObjectHideFlags: 0
