@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class HeadlineMaker : MonoBehaviour
 {
@@ -37,6 +40,12 @@ public class HeadlineMaker : MonoBehaviour
     {
         GenerateTopics();
         //AnimateAppear();
+    }
+
+    private void OnEnable()
+    {
+        // Hard load only playable level 
+        LoadJsonData("Mem 1");
     }
 
     public void SelectTopic()
@@ -187,6 +196,63 @@ public class HeadlineMaker : MonoBehaviour
     {
         selectedTopic = -1;
         selectedNote = -1;
+    }
+
+    private void LoadJsonData(string file)
+    {
+        FileIO fileIO = new FileIO();
+        var data = fileIO.LoadData(file);
+
+
+        var packet = data.GetPacket("Karma");
+
+        Dictionary<TopicType, TopicData> typeToData = new Dictionary<TopicType, TopicData>(); 
+
+        // Digest each karmic string helper 
+        foreach (FileIO.JSONStringHelper strHelper in packet.stringValues)
+        {
+            string[] str = strHelper.value.Split(':');
+            print(str.Length);
+
+            // Get Topic 
+            TopicType topic = (TopicType)System.Enum.Parse(typeof(TopicType), str[0].ToUpper());
+
+            // Generate note 
+            string note = str[1];
+
+            int value = Int32.Parse(str[2]); // TODO : Include calculation 
+
+            // Header 
+            string header = "";
+            if (str.Length >= 4)
+                header = str[3];
+
+            // Save to typeToData
+            TopicData td = !typeToData.ContainsKey(topic) ? new TopicData() : typeToData[topic];
+            if(td == null)
+            {
+                td = new TopicData();
+                td.topic = topic;
+            }
+
+            Note noteData = new Note();
+            noteData.description = note;
+            noteData.headline = header; 
+            if(td.notes == null)
+                td.notes = new List<Note>();
+            td.notes.Add(noteData);
+
+            typeToData[topic] = td;
+        }
+
+        // Replace topics with entries in typeToData
+        topics = new List<TopicData>();
+        foreach (var item in typeToData.Values)
+        {
+            topics.Add(item);
+        }
+
+        GenerateTopics();
     }
 
 

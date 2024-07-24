@@ -43,7 +43,6 @@ public class CategorySelection : MonoBehaviour
     /// </summary>
     private void UpdateLerp()
     {
-        print(hm.SelectedTopic);
         if ((isTopic ? hm.SelectedTopic : hm.SelectedNote) == this.transform.GetSiblingIndex())
         {
             lerp = Mathf.Clamp01(lerp + Time.deltaTime * speed);

@@ -3294,7 +3294,11 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Suspicion", -2)
+      userScript: 'AddTheme("Suspicion", -2);
+
+        KarmicEvent("Mem 1", "Trust",
+        "Switch from speaking Common language to Matollan", 4, "The Trust In Your
+        Language: How Your Spoken Language Matters")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4107,7 +4111,11 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Trust", 4)
+      userScript: 'AddTheme("Trust", 4);
+
+        KarmicEvent("Mem 1", "Suspicion",
+        "Continue speaking in the common language", -2, "The Dangers of Speaking
+        the Wrong Language")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4389,7 +4397,11 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Suspicion", -2)
+      userScript: 'AddTheme("Suspicion", -2);
+
+        KarmicEvent("Mem 1", "Suspicion",
+        "If switched to speaking Matollan, then switches back to common language",
+        -2, "The Dangers of Speaking the Wrong Language")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4444,7 +4456,11 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Apathy", -5)
+      userScript: 'AddTheme("Apathy", -5);
+
+        KarmicEvent("Mem 1", "Disdain",
+        "If switched to speaking Matollan, then continues speaking Matollan", -5,
+        "The Nationalism in Language Can Cause Incidental Division")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5346,8 +5362,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 225.88232}
-    canvasZoom: 0.85000014
+    canvasScrollPosition: {x: 0, y: 1979.5756}
+    canvasZoom: 0.94000006
   - id: 51
     fields:
     - title: Title
@@ -5375,7 +5391,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 1
+      continueButton: 0
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -5928,7 +5944,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: KarmicEvent("Mem 1", "Trust", "When Antoni approaches with a taser,
+        Intervene in the argument", 5, "Strangers are Willing to Stand up for Each
+        Other in Pax-Tera")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5983,7 +6001,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: KarmicEvent("Mem 1", "Disdain", "When Antoni approaches with a
+        taser, Don't do anything", -3, "In the face of potential conflict, many are
+        unsure how to proceed")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6041,7 +6061,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: KarmicEvent("Mem 1", "Fear", "When Antoni approaches with a taser,
+        Do as Antoni says (avoid Gryf)", -5, "Stray dogs remain a constant danger")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7513,7 +7534,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: KarmicEvent("Mem 1", "Bravery", "When the GPK soldiers approach,
+        Help Waeli", 5, "Helping a Stranger in the face of danger. A path towards
+        peace?")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7568,7 +7591,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: KarmicEvent("Mem 1", "Fear", "When the GPK soldiers approach, Do
+        nothing", -5, "In the midst of continued GPK presence, many Pax-Terans remain
+        fearful")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -10143,7 +10168,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'KarmicEvent("Mem 1", "Kindness", "Final Outcome: Friends", 0,
+        "Despite conflict being a recent memory, some are willing to work together
+        towards peace")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -10771,7 +10798,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'KarmicEvent("Mem 1", "Suspicion", "Final Outcome: Wary, but still
+        together", 0, "With conflict a recent memory, many are unable to find common
+        ground")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11442,7 +11471,8 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'KarmicEvent("Mem 1", "Disdain", "Final Outcome: Not friends",
+        0, "With conflict a recent memory, most are unwilling to find common ground")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -12029,8 +12059,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2134.2102}
-    canvasZoom: 0.76
+    canvasScrollPosition: {x: 30.300556, y: 3041.9465}
+    canvasZoom: 0.90999985
   syncInfo:
     syncActors: 1
     syncItems: 1
