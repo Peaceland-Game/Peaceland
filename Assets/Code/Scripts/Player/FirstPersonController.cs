@@ -155,7 +155,9 @@ public class FirstPersonController : MonoBehaviour
         originalScale = transform.localScale;
         jointOriginalPos = joint.localPosition;
 
-        audioSource = GetComponent<AudioSource>();
+        List<AudioSource> sources = GetComponents<AudioSource>().ToList();
+
+        audioSource = sources[1];
 
         if (!unlimitedSprint)
         {
