@@ -74,7 +74,7 @@ public class TabletTutorial : MonoBehaviour {
             case 3:
                 homePageButtons[1].gameObject.SetActive(false);
                 homePageButtons[2].gameObject.SetActive(true);
-                tutorialRect.anchoredPosition = new Vector2(425, 30);
+                tutorialRect.anchoredPosition = new Vector2(75, 30);
                 contButon.SetActive(false);
                 waitForPlayer = true;
                 break;
