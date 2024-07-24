@@ -2290,7 +2290,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'AddTheme("Apathy", -2);
+      userScript: 'AddTheme("Disdain", -2);
 
         KarmicEvent("Mem 1", "Disdain",
         "Hearing Cylo explain his ice cream flavor", -2, "")'
@@ -2543,8 +2543,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 195.57709, y: 144.49489}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 358.9067, y: 133.99164}
+    canvasZoom: 0.9100001
   - id: 45
     fields:
     - title: Title
@@ -4112,7 +4112,7 @@ MonoBehaviour:
       skipPCSubtitleAfterResponseMenu: 0
       subtitleCharsPerSecond: 30
       minSubtitleSeconds: 2
-      continueButton: 0
+      continueButton: 1
       overrideSequenceSettings: 0
       defaultSequence: 
       defaultPlayerSequence: 
@@ -5112,7 +5112,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetActive(RabidDog, true);
+        value: 'SetContinueMode(false);
+
+          SetActive(RabidDog, true);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 48
