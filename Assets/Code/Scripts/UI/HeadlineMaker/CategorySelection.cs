@@ -43,11 +43,28 @@ public class CategorySelection : MonoBehaviour
     /// </summary>
     private void UpdateLerp()
     {
-        if ((isTopic ? hm.SelectedTopic : hm.SelectedNote) == this.transform.GetSiblingIndex())
+        if(isTopic)
+        {
+            if(hm.SelectedTopic == this.transform.GetSiblingIndex())
+            {
+                lerp = Mathf.Clamp01(lerp + Time.deltaTime * speed);
+                return;
+            }
+        }
+        else
+        {
+            if (hm.SelectedNote == hm.childIndexToTopicIndex[this.transform.GetSiblingIndex()])
+            {
+                lerp = Mathf.Clamp01(lerp + Time.deltaTime * speed);
+                return;
+            }
+        }
+
+        /*if ((isTopic ? hm.SelectedTopic : hm.SelectedNote) == this.transform.GetSiblingIndex())
         {
             lerp = Mathf.Clamp01(lerp + Time.deltaTime * speed);
             return;
-        }
+        }*/
 
         lerp = Mathf.Clamp01(lerp - Time.deltaTime * speed);
     }
