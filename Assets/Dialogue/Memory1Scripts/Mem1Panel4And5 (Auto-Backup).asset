@@ -1174,7 +1174,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: ChangeEmotionalState(5, Actor["Waeli"].Name); -- HAPPY
+      userScript: 'ChangeEmotionalState(5, Actor["Waeli"].Name); -- HAPPY;
+
+        AddTheme("Trust",
+        5)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1453,7 +1456,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Suspicion", -3)
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1565,7 +1568,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: AddTheme("Suspicion", -2)
+      userScript: AddTheme("Suspicion", -5)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5346,7 +5349,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 225.88232}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.85000014
   - id: 51
     fields:
