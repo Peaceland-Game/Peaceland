@@ -7688,9 +7688,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(true);
+        value: 'MoveTo(PlayerSpeakUp, Player, 1.0);
 
-          MoveTo(PlayerSpeakUp, Player, 1.0);'
+          SetContinueMode(true)@1;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 51
@@ -8107,12 +8107,12 @@ MonoBehaviour:
           AnimatorTrigger(Walk, GPKSoldierP5A)@1.6;
 
           MoveTo(GPKSoldierReturn,
-          GPKSoldierP5A, 4)@1.9;
+          GPKSoldierP5A, 5)@1.9;
 
           AnimatorTrigger(Walk, GPKSoldierP5B)@2.2;
 
           MoveTo(GPKSoldierReturn,
-          GPKSoldierP5B, 4)@2.5;
+          GPKSoldierP5B, 5)@2.5;
 
 
           SetActive(GPKSoldierP5A, false)@6;
@@ -12381,7 +12381,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 3106.252}
+    canvasScrollPosition: {x: 0, y: 1285.883}
     canvasZoom: 0.84999967
   syncInfo:
     syncActors: 1
