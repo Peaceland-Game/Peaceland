@@ -1,3 +1,4 @@
+using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,5 +56,9 @@ public class JournalPlayerRef : MonoBehaviour
         var imagePopup = Instantiate(imagePopupPrefab);
         var artifact = artifacts.FirstOrDefault(artifact => artifact.artifactName == name);
         imagePopup.GetComponentInChildren<Image>().sprite = artifact.artifactImageToDisplay;
+    }
+
+    private void OnEnable() {
+        Lua.RegisterFunction(nameof(AddArtifact), this, SymbolExtensions.GetMethodInfo(() => AddArtifact("")));
     }
 }
