@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,6 +28,13 @@ public class StartScreen : MonoBehaviour
         // Override current file 
         SceneManager.LoadScene(sceneName);
         PixelCrushers.DialogueSystem.DialogueManager.ResetDatabase();
+
+        string basePath = Directory.GetCurrentDirectory() + "//";
+        string finalPath = basePath + "Mem 1" + ".json"; // Hardcoded, should be automated to a folder or pattern 
+        if (File.Exists(finalPath))
+        {
+            File.Delete(finalPath);
+        }
     }
 
     /// <summary>
