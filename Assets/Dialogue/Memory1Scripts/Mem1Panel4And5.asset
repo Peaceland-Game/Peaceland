@@ -9183,15 +9183,17 @@ MonoBehaviour:
           Fade(stay,
           0.7);
 
-          MoveTo(PlayerPanel4Start, Player)@0.8;
+          MoveTo(AntoniGoodAndNeutralStand, Antoni)@0.8;
 
-          LookAt(Antoni,
-          Player)@0.9;
+          MoveTo(PlayerPanel4Start,
+          Player)@0.8;
 
-          LookAt(Gryf, Antoni)@0.9;
+          LookAt(Antoni, Player)@0.9;
 
           LookAt(Gryf,
-          Waeli)@0.8;
+          Antoni)@0.9;
+
+          LookAt(Gryf, Waeli)@0.8;
 
           Fade(in, 0.7)@1.0;
 
@@ -9999,7 +10001,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(false):
+        value: 'SetContinueMode(false);
 
           AnimatorTrigger(LeftTurn, Waeli);
 
@@ -12381,8 +12383,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1285.883}
-    canvasZoom: 0.84999967
+    canvasScrollPosition: {x: 0, y: 2411.2744}
+    canvasZoom: 0.8199997
   syncInfo:
     syncActors: 1
     syncItems: 1

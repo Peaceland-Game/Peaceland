@@ -292,7 +292,13 @@ MonoBehaviour:
       - originConversationID: 37
         originDialogueID: 0
         destinationConversationID: 37
-        destinationDialogueID: 31
+        destinationDialogueID: 40
+        isConnector: 0
+        priority: 2
+      - originConversationID: 37
+        originDialogueID: 0
+        destinationConversationID: 37
+        destinationDialogueID: 1
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -333,7 +339,32 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 'AnimatorTrigger(RightTurn, Tour Guide)@0.5;
+
+          AnimatorTrigger(Idle,
+          Tour Guide)@1.3;
+
+          LookAt(Journalist, Tour Guide, 0.1)@1.3;
+
+          LookAt(Tour
+          Guide, Journalist, 1);
+
+          LookAt(Tour Guide, NewAdult);
+
+          LookAt(Tour
+          Guide, NewAdult (1));
+
+          LookAt(Tour Guide, NewAdult (2));
+
+          LookAt(Tour
+          Guide, NewAdult (3));
+
+          LookAt(Tour Guide, NewAdult (4));
+
+          AnimatorTrigger(BreathingIdle,
+          NewAdult(3));
+
+          AnimatorTrigger(WeightShiftIdle, NewAdult (1));'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 37
@@ -444,7 +475,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(false);
+        value: 'SetContinueMode(false);
+
+          Delay(2);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 37
@@ -896,7 +929,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false);
+
+          Delay(2);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 37
@@ -1129,10 +1164,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(true);
+        value: 'SetContinueMode(true)@0.8;
 
-          LookAt(Journalist, Tour Guide,
-          1);'
+          AnimatorTrigger(RightTurn,
+          Tour Guide);
+
+          AnimatorTrigger(Idle, Tour Guide)@0.8;
+
+          LookAt(Journalist,
+          Tour Guide, 0.1)@0.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 37
@@ -1299,7 +1339,17 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: LookAt(NewAdult (4), Tour Guide, 1);
+        value: 'SetContinueMode(false);
+
+          AnimatorTrigger(LeftTurn, Tour
+          Guide);
+
+          AnimatorTrigger(Idle, Tour Guide)@0.8;
+
+          LookAt(NewAdult
+          (4), Tour Guide, 0.1)@0.8;
+
+          Delay(1.1)@0.9;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 37
@@ -1366,10 +1416,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'SetContinueMode(true);
+        value: 'SetContinueMode(true)@0.8;
 
-          LookAt(Journalist, Tour Guide,
-          1);'
+          AnimatorTrigger(RightTurn,
+          Tour Guide);
+
+          AnimatorTrigger(Idle, Tour Guide)@0.8;
+
+          LookAt(Journalist,
+          Tour Guide, 0.1)@0.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 37
@@ -1646,7 +1701,17 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: LookAt(NewAdult (4), Tour Guide, 1);
+        value: 'SetContinueMode(false);
+
+          AnimatorTrigger(LeftTurn, Tour
+          Guide)@1;
+
+          AnimatorTrigger(Idle, Tour Guide)@1.8;
+
+          LookAt(NewAdult
+          (4), Tour Guide, 0.1)@1.8;
+
+          Delay(1.1)@1.9;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 37
@@ -1714,7 +1779,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 'SetContinueMode(true);
+
+          SetEnabled(Usable, false, Tour
+          Guide);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 37
@@ -1740,72 +1808,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 1177.113
         y: 919.86084
-        width: 160
-        height: 30
-    - id: 31
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 24
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 20
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 'SetContinueMode(false);
-
-          LookAt(Tour Guide, Journalist,
-          1);
-
-          LookAt(Journalist, Tour Guide, 1);'
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 37
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 37
-        originDialogueID: 31
-        destinationConversationID: 37
-        destinationDialogueID: 40
-        isConnector: 0
-        priority: 2
-      - originConversationID: 37
-        originDialogueID: 31
-        destinationConversationID: 37
-        destinationDialogueID: 1
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: StopPlayer()
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 935.78284
-        y: 80.74704
         width: 160
         height: 30
     - id: 33
@@ -1835,7 +1837,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: LookAt(NewAdult, Tour Guide, 0.5);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 37
@@ -2057,8 +2059,13 @@ MonoBehaviour:
           MoveTo(Player
           Tour Position, Journalist, 1)@1;
 
-          LookAt(NewAdult, Tour Guide,
-          0.5)@2;
+          AnimatorTrigger(LeftTurn, Tour
+          Guide)@1;
+
+          AnimatorTrigger(Idle, Tour Guide)@1.8;
+
+          LookAt(NewAdult
+          (4), Tour Guide, 0.1)@1.8;
 
           Fade(in, 0.7)@2.4;'
         type: 0
@@ -2170,7 +2177,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetContinueMode(true);
+        value: 'SetContinueMode(true);
+
+          AnimatorTrigger(LeftTurn, Tour
+          Guide)@1;
+
+          AnimatorTrigger(Idle, Tour Guide)@1.8;
+
+          LookAt(NewAdult
+          (4), Tour Guide, 0.1)@1.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 37
@@ -2225,7 +2240,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetEnabled(Usable, false, Tour Guide);
+        value: 'SetEnabled(Usable, false, Tour Guide);
+
+          LookAt(Journalist,
+          Tour Guide, 1);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 37
@@ -2254,7 +2272,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 782.13214, y: 0}
+    canvasScrollPosition: {x: 740.9285, y: 7.428362}
     canvasZoom: 0.7900002
   - id: 36
     fields:
@@ -2385,7 +2403,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: LookAt(Photo, Journalist, 1)@0.5;
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 36
