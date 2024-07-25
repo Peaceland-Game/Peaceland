@@ -69,7 +69,7 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private Vector3 velocity = Vector3.zero;
 
-    private UniversalSoundManager soundManager;
+    public UniversalSoundManager soundManager;
     private AudioSource audioSource;
     private WalkSurface currentSurface;
 
@@ -586,6 +586,7 @@ public class FirstPersonControllerEditor : Editor
         GUILayout.Label("Camera Setup", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 13 }, GUILayout.ExpandWidth(true));
         EditorGUILayout.Space();
 
+        fpc.soundManager = (UniversalSoundManager)EditorGUILayout.ObjectField(new GUIContent("Sound Manager", "The sound manager attached to the player."), fpc.soundManager, typeof(UniversalSoundManager), true);
         fpc.playerCamera = (Camera)EditorGUILayout.ObjectField(new GUIContent("Camera", "Camera attached to the controller."), fpc.playerCamera, typeof(Camera), true);
         fpc.fov = EditorGUILayout.Slider(new GUIContent("Field of View", "The camera’s view angle. Changes the player camera directly."), fpc.fov, fpc.zoomFOV, 179f);
         fpc.cameraCanMove = EditorGUILayout.ToggleLeft(new GUIContent("Enable Camera Rotation", "Determines if the camera is allowed to move."), fpc.cameraCanMove);
