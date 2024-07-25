@@ -273,7 +273,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: efcb4e5052b8f5e4489755b4476ac7aa, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.392
+  m_Volume: 0.173
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -332,7 +332,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -115038,9 +115038,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gooberWalkCarpet: {fileID: 8300000, guid: e524a2330c9308b44b5765393c50c24c, type: 3}
+  gooberRunCarpet: {fileID: 0}
   gooberWalkConcrete: {fileID: 8300000, guid: 19a6ef99b2f85884695d5eea3f547a49, type: 3}
+  gooberRunConcrete: {fileID: 0}
   gooberWalkGrass: {fileID: 8300000, guid: a9ee73f518352d248a4e6944f4453b90, type: 3}
+  gooberRunGrass: {fileID: 0}
   gooberWalkWood: {fileID: 8300000, guid: bd520c8732155c24aa76926c95d19084, type: 3}
+  gooberRunWood: {fileID: 0}
   artifactPickup: {fileID: 8300000, guid: 22bd1ae4157957b4ea47b59a3701f630, type: 3}
   themePickup: {fileID: 8300000, guid: c91671431463a4949a6d24c3dca35066, type: 3}
   coinPickup: {fileID: 8300000, guid: 6a73e9a5eabe9c44c9ab9a603f2cf377, type: 3}
@@ -118505,6 +118509,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754551161035145761, guid: 513d3e68a89e1f24497c3a5cfdb0e61e,
+        type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4785103012686585969, guid: 513d3e68a89e1f24497c3a5cfdb0e61e,
         type: 3}
