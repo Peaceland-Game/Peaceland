@@ -157,12 +157,6 @@ public class FirstPersonController : MonoBehaviour
         originalScale = transform.localScale;
         jointOriginalPos = joint.localPosition;
 
-        List<AudioSource> sources = GetComponents<AudioSource>().ToList();
-
-        audioSource = sources[1];
-
-        Debug.Log($"found audio source: {audioSource != null}");
-
         currentSurface = WalkSurface.carpet; // get rid of this when this variable is actually updated (or don't, I guess)
 
         if (!unlimitedSprint)
@@ -431,32 +425,17 @@ public class FirstPersonController : MonoBehaviour
             HeadBob();
         }
 
-        // Change audio clip based on the current surface that the player is walking on,
-        // and whether they are sprinting
+        // Play the footstep sound when walking, stop when not
         // TO DO: make it possible for the player to identify what surface they're standing on
-        if (isSprinting)
+        // (by updating currentSurface)
+        if (velocity.x != 0 || velocity.z != 0)
         {
-            audioSource.clip = soundManager.GetRun(currentSurface);
+            soundManager.Footsteps(gameObject, currentSurface, isSprinting);
         }
         else
         {
-            audioSource.clip = soundManager.GetWalk(currentSurface);
+            soundManager.StopSound(gameObject);
         }
-
-        // Play the footstep sound when walking, stop when not
-        if ((velocity.x != 0 && velocity.z != 0) && !audioSource.isPlaying)
-        {
-            audioSource.Play();
-        }
-        else if (velocity.x == 0 && velocity.z == 0)
-        {
-            audioSource.Stop();
-        }
-    }
-
-    public WalkSurface CurrentSurface
-    {
-        get { return currentSurface; }
     }
 
     public void StopPlayer()

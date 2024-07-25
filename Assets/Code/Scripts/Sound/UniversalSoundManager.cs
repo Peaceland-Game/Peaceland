@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 
 public class UniversalSoundManager : MonoBehaviour
 {
@@ -139,7 +140,16 @@ public class UniversalSoundManager : MonoBehaviour
     /// <param name="source"> the game object to play a sound, which must have an audio source component with an audio clip </param>
     public void PlayLoopingSound(GameObject source)
     {
-        AudioSource audioSource = source.GetComponent<AudioSource>();
+        AudioSource audioSource;
+
+        if (source == player)
+        {
+            audioSource = source.GetComponents<AudioSource>()[1];
+        }
+        else
+        {
+            audioSource = source.GetComponent<AudioSource>();
+        }
 
         audioSource.Play();
     }
@@ -150,20 +160,68 @@ public class UniversalSoundManager : MonoBehaviour
     /// <param name="source"> the game object to stop playing sound </param>
     public void StopSound(GameObject source)
     {
-        AudioSource audioSource = source.GetComponent<AudioSource>();
+        AudioSource audioSource;
+
+        if (source == player)
+        {
+            audioSource = source.GetComponents<AudioSource>()[1];
+        }
+        else
+        {
+            audioSource = source.GetComponent<AudioSource>();
+        }
 
         audioSource.Stop();
     }
 
     /// <summary>
-    /// Plays footstep sounds
+    /// Plays footstep sounds. Use StopSound to... stop the sounds.
+    /// NOTE: if you figure out the issue that necessitates the second audio 
+    /// source on the player, revisit this method, as well as PlayLoopingSound and StopSound,
+    /// as they assume that the player has 2.
     /// </summary>
-    public void Footsteps()
+    public void Footsteps(GameObject source, WalkSurface surface, bool isSprinting)
     {
-        // I started working on putting an enum for this in the player controller, but it isn't
-        // quite ready to use yet
+        AudioSource audioSource;
+
+        if (source == player)
+        {
+            audioSource = source.GetComponents<AudioSource>()[1];
+        }
+        else
+        {
+            audioSource = source.GetComponent<AudioSource>();
+        }
+
+        AudioClip newClip;
+
+        if(isSprinting)
+        {
+            newClip = GetRun(surface);
+        }
+        else
+        {
+            newClip = GetWalk(surface);
+        }
+
+        if (!audioSource.isPlaying || audioSource.clip != newClip)
+        {
+            audioSource.Stop();
+
+            if (newClip != audioSource.clip)
+            {
+                audioSource.clip = newClip;
+            }
+
+            PlayLoopingSound(source);
+        }
     }
 
+    /// <summary>
+    /// Gets the running sound clip for the given surface
+    /// </summary>
+    /// <param name="surface"> the surface that the character is running on </param>
+    /// <returns> the appropriate sound clip </returns>
     public AudioClip GetRun(WalkSurface surface)
     {
         switch(surface)
@@ -176,6 +234,11 @@ public class UniversalSoundManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gets the walking sound clip for the given surface
+    /// </summary>
+    /// <param name="surface"> the surface that the character is walking on </param>
+    /// <returns> the appropriate sound clip </returns>
     public AudioClip GetWalk(WalkSurface surface)
     {
         switch (surface)
