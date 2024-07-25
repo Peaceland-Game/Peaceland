@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Script used to return to the title screen.
+/// </summary>
 public class ReturnToTitle : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -17,6 +20,9 @@ public class ReturnToTitle : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Method that is called when the game needs to return to title screen.
+    /// </summary>
     public void Return() 
     {
         SceneManager.LoadScene("StartScreen");

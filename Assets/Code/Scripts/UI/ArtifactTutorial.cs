@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Script to run a tutorial of artifacts on checking the tablet after picking up an artifact.
+/// </summary>
 public class ArtifactTutorial : MonoBehaviour
 {
     [SerializeField]
@@ -32,6 +35,9 @@ public class ArtifactTutorial : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Disables the tutorial window.
+    /// </summary>
     public void EndTutorial()
     {
         gameObject.SetActive(false);
