@@ -769,6 +769,8 @@ public class FirstPersonControllerEditor : Editor
     }
 }
 
+#endif
+
 public enum WalkSurface
 {
     carpet,
@@ -776,5 +778,3 @@ public enum WalkSurface
     grass,
     wood
 }
-
-#endif
