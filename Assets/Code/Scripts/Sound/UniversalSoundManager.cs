@@ -64,7 +64,7 @@ public class UniversalSoundManager : MonoBehaviour
         otherPickups = new List<GameObject>();
         streetLights = new List<GameObject>();
 
-        Debug.Log("Getting sound sources...");
+        //Debug.Log("Getting sound sources...");
 
         bool foundPlayer = false;
 
@@ -78,7 +78,7 @@ public class UniversalSoundManager : MonoBehaviour
                     if(!foundPlayer || a.tag == "Player")
                     {
                         player = a;
-                        Debug.Log($"Got player: {player.name}");
+                        //Debug.Log($"Got player: {player.name}");
                         foundPlayer = true;
                     }
 
@@ -182,6 +182,7 @@ public class UniversalSoundManager : MonoBehaviour
     /// </summary>
     public void Footsteps(GameObject source, WalkSurface surface, bool isSprinting)
     {
+        // Get the audio source
         AudioSource audioSource;
 
         if (source == player)
@@ -193,6 +194,7 @@ public class UniversalSoundManager : MonoBehaviour
             audioSource = source.GetComponent<AudioSource>();
         }
 
+        // Get the new audio clip (if there is one)
         AudioClip newClip;
 
         if(isSprinting)
@@ -204,9 +206,10 @@ public class UniversalSoundManager : MonoBehaviour
             newClip = GetWalk(surface);
         }
 
+        // Update the clip being played if necessary
         if (!audioSource.isPlaying || audioSource.clip != newClip)
         {
-            audioSource.Stop();
+            StopSound(source);
 
             if (newClip != audioSource.clip)
             {
