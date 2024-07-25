@@ -69,7 +69,9 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private Vector3 velocity = Vector3.zero;
 
+    private UniversalSoundManager soundManager;
     private AudioSource audioSource;
+    private WalkSurface currentSurface;
 
     #region Sprint
 
@@ -158,6 +160,10 @@ public class FirstPersonController : MonoBehaviour
         List<AudioSource> sources = GetComponents<AudioSource>().ToList();
 
         audioSource = sources[1];
+
+        Debug.Log($"found audio source: {audioSource != null}");
+
+        currentSurface = WalkSurface.carpet; // get rid of this when this variable is actually updated (or don't, I guess)
 
         if (!unlimitedSprint)
         {
@@ -425,8 +431,19 @@ public class FirstPersonController : MonoBehaviour
             HeadBob();
         }
 
+        // Change audio clip based on the current surface that the player is walking on,
+        // and whether they are sprinting
+        // TO DO: make it possible for the player to identify what surface they're standing on
+        if (isSprinting)
+        {
+            audioSource.clip = soundManager.GetRun(currentSurface);
+        }
+        else
+        {
+            audioSource.clip = soundManager.GetWalk(currentSurface);
+        }
 
-
+        // Play the footstep sound when walking, stop when not
         if ((velocity.x != 0 && velocity.z != 0) && !audioSource.isPlaying)
         {
             audioSource.Play();
@@ -435,6 +452,11 @@ public class FirstPersonController : MonoBehaviour
         {
             audioSource.Stop();
         }
+    }
+
+    public WalkSurface CurrentSurface
+    {
+        get { return currentSurface; }
     }
 
     public void StopPlayer()
@@ -543,6 +565,15 @@ public class FirstPersonController : MonoBehaviour
         this.pitch = pitch; 
         this.yaw = yaw;
     }
+
+    /// <summary>
+    /// Getter for sound manager component
+    /// </summary>
+    /// <param name="mgr">The sound manager component</param>
+    public void GetSoundManager(UniversalSoundManager mgr)
+    {
+        soundManager = mgr;
+    }
 }
 
 
@@ -553,13 +584,11 @@ public class FirstPersonControllerEditor : Editor
 {
     FirstPersonController fpc;
     SerializedObject SerFPC;
-    WalkSurface currentSurface;
 
     private void OnEnable()
     {
         fpc = (FirstPersonController)target;
         SerFPC = new SerializedObject(fpc);
-        currentSurface = WalkSurface.carpet; // get rid of this when this variable is actually updated (or don't, I guess)
     }
 
     public override void OnInspectorGUI()
@@ -758,11 +787,6 @@ public class FirstPersonControllerEditor : Editor
             Undo.RecordObject(fpc, "FPC Change");
             SerFPC.ApplyModifiedProperties();
         }
-    }
-
-    public WalkSurface CurrentSurface
-    {
-        get { return currentSurface; }
     }
 }
 
