@@ -138,6 +138,7 @@ public class PlayerSingleton : MonoBehaviour
     public void GetSoundManager(UniversalSoundManager mgr)
     {
         soundManager = mgr;
+        controller.GetSoundManager(soundManager);
     }
 
     /// <summary>

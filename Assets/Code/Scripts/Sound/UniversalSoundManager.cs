@@ -20,9 +20,13 @@ public class UniversalSoundManager : MonoBehaviour
     [Space]
 
     [SerializeField] protected AudioClip gooberWalkCarpet;
+    [SerializeField] protected AudioClip gooberRunCarpet;
     [SerializeField] protected AudioClip gooberWalkConcrete;
+    [SerializeField] protected AudioClip gooberRunConcrete;
     [SerializeField] protected AudioClip gooberWalkGrass;
+    [SerializeField] protected AudioClip gooberRunGrass;
     [SerializeField] protected AudioClip gooberWalkWood;
+    [SerializeField] protected AudioClip gooberRunWood;
 
     [Space]
 
@@ -154,10 +158,34 @@ public class UniversalSoundManager : MonoBehaviour
     /// <summary>
     /// Plays footstep sounds
     /// </summary>
-    public void Walk()
+    public void Footsteps()
     {
         // I started working on putting an enum for this in the player controller, but it isn't
         // quite ready to use yet
+    }
+
+    public AudioClip GetRun(WalkSurface surface)
+    {
+        switch(surface)
+        {
+            case WalkSurface.carpet: return gooberRunCarpet;
+            case WalkSurface.concrete: return gooberRunConcrete;
+            case WalkSurface.grass: return gooberRunGrass;
+            case WalkSurface.wood: return gooberRunWood;
+            default: return null;
+        }
+    }
+
+    public AudioClip GetWalk(WalkSurface surface)
+    {
+        switch (surface)
+        {
+            case WalkSurface.carpet: return gooberWalkCarpet;
+            case WalkSurface.concrete: return gooberWalkConcrete;
+            case WalkSurface.grass: return gooberWalkGrass;
+            case WalkSurface.wood: return gooberWalkWood;
+            default: return null;
+        }
     }
 
     /// <summary>

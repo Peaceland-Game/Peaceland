@@ -11,16 +11,14 @@ public class SoundManagerReference : MonoBehaviour
     private UniversalSoundManager soundManager;
     private UserInterface ui;
     private IntroController introController;
-    //private DialogueSystemController dialogueSystemController;
 
-    private void Awake()
+    private void Start()
     {
-        Debug.Log("Sending sound manager references...");
-
         soundManager = GetComponent<UniversalSoundManager>();
         ui = FindObjectOfType<UserInterface>();
         introController = FindObjectOfType<IntroController>();
-        //dialogueSystemController = FindObjectOfType<DialogueSystemController>();
+
+        //Debug.Log($"Sending sound manager reference: {soundManager != null}");
 
         if (PlayerSingleton.Instance)
         {
@@ -36,11 +34,6 @@ public class SoundManagerReference : MonoBehaviour
         {
             introController.GetSoundManager(soundManager);
         }
-
-        //if(dialogueSystemController)
-        //{
-        //    dialogueSystemController.
-        //}
     }
 
     private void Update()
