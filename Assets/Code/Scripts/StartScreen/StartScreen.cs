@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class StartScreen : MonoBehaviour
 {
     [Tooltip("This is a subsitute before we implement a save system")]
-    [SerializeField] string sceneName; 
+    [SerializeField] string sceneName;
+    [SerializeField] string continueSceneName;
+    [SerializeField] GameObject settings;
 
     /// <summary>
     /// Continue to the most recent save file 
@@ -17,7 +19,7 @@ public class StartScreen : MonoBehaviour
         // Load using FileIO system 
 
         // Load correct scene 
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(continueSceneName);
     }
 
     /// <summary>
@@ -42,7 +44,17 @@ public class StartScreen : MonoBehaviour
     /// </summary>
     public void Settings()
     {
+        //Turn on the settings screen
+        settings.SetActive(true);
+    }
 
+    /// <summary>
+    /// Exits the settings back to the title screen
+    /// </summary>
+    public void ExitSettings()
+    {
+        //Turn off the settings screen
+        settings.SetActive(false);
     }
 
     /// <summary>
