@@ -3445,7 +3445,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'AddTheme("Apathy", -2);
+      userScript: 'AddTheme("Disdain", -2);
 
         KarmicEvent("Mem 1", "Disdain",
         "You deny box guy", -2, "")'
@@ -3485,10 +3485,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'LookAt(Bystander1, speaker, 0.5);
+        value: 'AnimatorTrigger(RightTurn, speaker)@0.5;
 
-          SetEnabled(Usable, false,
-          speaker);'
+          AnimatorTrigger(Idle,
+          spekaer, RightTurn)@1.3;
+
+          LookAt(Bystander1, speaker, 0.1)@1.3;
+
+          SetEnabled(Usable,
+          false, speaker);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 47
@@ -3544,12 +3549,20 @@ MonoBehaviour:
           MoveTo(StruggleManQuest,
           Player)@0.8;
 
-          LookAt(Player, speaker, 0.5)@1.0;
+          AnimatorTrigger(LeftTurn, speaker)@0.8;
 
-          LookAt(speaker,
-          Player)@0.9;
+          AnimatorTrigger(LeftTurn,
+          speaker)@1.6;
 
-          Fade(in, 0.7)@1.1;'
+          AnimatorTrigger(Idle, spekaer, RightTurn)@2.4;
+
+          LookAt(Player,
+          speaker, 0.1)@2.4;
+
+          LookAt(speaker, Player)@0.9;
+
+          Fade(in,
+          0.7)@1.1;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 47
@@ -3660,7 +3673,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetEnabled(Usable, true, Crate);
+        value: 'SetEnabled(Usable, true, Crate);
+
+          AnimatorTrigger(RightTurn,
+          speaker)@1.0;
+
+          AnimatorTrigger(Idle, spekaer, RightTurn)@1.8;
+
+          LookAt(Bystander1,
+          speaker, 0.1)@1.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 47
@@ -3890,7 +3911,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'AnimatorTrigger(RightTurn, speaker)@2.0;
+
+          AnimatorTrigger(Idle,
+          spekaer, RightTurn)@2.8;
+
+          LookAt(Bystander1, speaker, 0.1)@2.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 47
@@ -3941,10 +3967,17 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          LookAt(Player, speaker, 0.5);
+          AnimatorTrigger(LeftTurn, speaker);
 
-          LookAt(speaker,
-          Player, 0.5);'
+          AnimatorTrigger(LeftTurn,
+          speaker)@0.8;
+
+          AnimatorTrigger(Idle, spekaer, RightTurn)@1.6;
+
+          LookAt(Player,
+          speaker, 0.1)@1.6;
+
+          LookAt(speaker, Player, 0.5);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 47
@@ -4064,7 +4097,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'AnimatorTrigger(RightTurn, speaker)@2.0;
+
+          AnimatorTrigger(Idle,
+          spekaer, RightTurn)@2.8;
+
+          LookAt(Bystander1, speaker, 0.1)@2.8;'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 47
@@ -5147,7 +5185,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 381.3186}
     canvasZoom: 0.9100001
   - id: 49
     fields:
