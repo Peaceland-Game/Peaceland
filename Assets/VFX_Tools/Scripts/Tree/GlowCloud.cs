@@ -22,7 +22,7 @@ public class GlowCloud : MonoBehaviour
     {
         float disSqr = Vector3.SqrMagnitude(this.transform.position - cam.transform.position);
         float lerp = Mathf.InverseLerp(disRange.x, disRange.y, disSqr);
-
+        print(lerp);
         renderer.material.SetColor("_Color", color * Mathf.Lerp(intensityRange.x, intensityRange.y, lerp));
     }
 }
