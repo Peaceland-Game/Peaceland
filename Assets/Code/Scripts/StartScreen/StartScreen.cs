@@ -10,6 +10,18 @@ public class StartScreen : MonoBehaviour
     [SerializeField] string sceneName;
     [SerializeField] string continueSceneName;
     [SerializeField] GameObject settings;
+    [SerializeField] GameObject continueButton;
+
+    private bool isNewGame = true;
+
+    public void Start()
+    {
+        if (!isNewGame)
+        {
+            //Enable the continue button, so they can load back into the game once a new game has been started
+            //continueButton.SetActive(true);
+        }
+    }
 
     /// <summary>
     /// Continue to the most recent save file 
@@ -37,6 +49,8 @@ public class StartScreen : MonoBehaviour
         {
             File.Delete(finalPath);
         }
+
+        isNewGame = false;
     }
 
     /// <summary>
